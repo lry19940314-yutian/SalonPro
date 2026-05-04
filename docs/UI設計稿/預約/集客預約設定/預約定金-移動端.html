@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 預約定金設定</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .touch-target {
+            min-height: 44px;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#861259",
+                        "on-background": "#23191d",
+                        "outline": "#88717a",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "background": "#fff8f8",
+                        "tertiary-container": "#328517",
+                        "secondary-container": "#e8b3fe",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "primary-fixed": "#ffd8e7",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#554149",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-tint": "#a52f72",
+                        "primary": "#a22c70",
+                        "on-primary-fixed": "#3d0025",
+                        "inverse-surface": "#392d32",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#f1dee3",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-variant": "#f1dee3",
+                        "on-secondary-fixed": "#300247",
+                        "surface": "#fff8f8",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#f6d9ff",
+                        "primary-container": "#c14689",
+                        "on-secondary-container": "#6c4082",
+                        "on-primary-container": "#fffbff",
+                        "surface-bright": "#fff8f8",
+                        "on-secondary-fixed-variant": "#603475",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary": "#1c6b00",
+                        "surface-container-low": "#fff0f4",
+                        "surface-dim": "#e8d5db",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#fde9ef",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#ffafd3",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#794c8f",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#dac0c9",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary-container": "#f8ffee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "gutter": "20px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-50 p-2 rounded-full transition-all">menu</button>
+<h1 class="text-lg font-bold text-slate-900 dark:text-slate-100 font-['Plus_Jakarta_Sans']">Wonder sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-50 p-2 rounded-full transition-all">notifications</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a female salon manager with a friendly expression, set against a soft-focus minimalist interior of a luxury beauty spa. The lighting is warm and flattering, emphasizing a clean and high-end professional aesthetic that aligns with a premium B2B SaaS platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPN0RmE1tlWwOnS9X_Em4Ma-8y3_xtGMu6Yl1lT7Wi076L7RQxWmIGMQlOtufalg5GBqTFJpsjW5uwGuEwtos144USf46Y8u3dD-UAULULO8sB83I30iMfesoZ_PIXBQak2ONOAx8fnipTEyJQK-aKou-LFS_7JH4ApmjlIC810Q6s2Rg5R0svztwSixRG5dLipyZrDmHmJa_wcUwCqlPhSwY0L8DBT0rmRkH_7Rf2S1madpRDbT6VVxw3ZVGsrDAHP8KcvZ9MM_E"/>
+</div>
+</div>
+</header>
+<main class="pt-20 px-4 max-w-md mx-auto">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-caption text-outline mb-4">
+<span>預約</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>集客預約設定</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">預約定金</span>
+</nav>
+<section class="space-y-4">
+<!-- Main Form Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm p-lg">
+<div class="space-y-6">
+<!-- Deposit Policy -->
+<div class="space-y-2">
+<label class="block font-label-md text-on-surface-variant">預約定金制度</label>
+<div class="relative">
+<select class="w-full touch-target bg-surface-container-low border border-outline-variant rounded-lg px-4 text-body-md focus:ring-2 focus:ring-primary focus:border-primary appearance-none">
+<option>預約不需支付定金</option>
+<option>預約需支付固定定金</option>
+<option>預約需支付服務項目比例定金</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+<p class="text-caption text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+                            本系統已與藍新金流串接，設定定金後顧客需完成支付才算預約成功。
+                        </p>
+</div>
+<!-- Deposit Amount -->
+<div class="space-y-2">
+<label class="block font-label-md text-on-surface-variant">固定定金金額</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-outline">$</span>
+<input class="w-full touch-target bg-surface-container-low border border-outline-variant rounded-lg pl-8 pr-4 text-body-md focus:ring-2 focus:ring-primary focus:border-primary" type="number" value="0"/>
+</div>
+</div>
+<!-- Auto Cancel Rule -->
+<div class="space-y-2">
+<label class="block font-label-md text-on-surface-variant">預約未付定金取消規則</label>
+<div class="relative">
+<select class="w-full touch-target bg-surface-container-low border border-outline-variant rounded-lg px-4 text-body-md focus:ring-2 focus:ring-primary focus:border-primary appearance-none">
+<option>不取消</option>
+<option>15分鐘後自動取消</option>
+<option>30分鐘後自動取消</option>
+<option>1小時後自動取消</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<!-- Forfeit Toggle -->
+<div class="flex items-center justify-between touch-target">
+<span class="font-label-md text-on-surface-variant">會員取消預約沒收定金</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</label>
+</div>
+<!-- Forfeit Time -->
+<div class="space-y-2">
+<label class="block font-label-md text-on-surface-variant">沒收定金時間</label>
+<div class="relative">
+<select class="w-full touch-target bg-surface-container-low border border-outline-variant rounded-lg px-4 text-body-md focus:ring-2 focus:ring-primary focus:border-primary appearance-none">
+<option>當天</option>
+<option>預約前1天</option>
+<option>預約前3天</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Preview Area (Collapsible) -->
+<div class="border border-outline-variant rounded-xl overflow-hidden bg-white">
+<button class="w-full px-lg py-4 flex items-center justify-between bg-surface-container-lowest active:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">smartphone</span>
+<span class="font-label-md text-on-surface">手機預覽</span>
+</div>
+<span class="material-symbols-outlined text-outline">expand_less</span>
+</button>
+<div class="p-lg bg-slate-50 border-t border-slate-100">
+<div class="max-w-[280px] mx-auto bg-white rounded-[2rem] border-8 border-slate-900 shadow-2xl overflow-hidden aspect-[9/18]">
+<div class="h-6 bg-slate-900 flex justify-center items-end pb-1">
+<div class="w-20 h-3 bg-slate-800 rounded-full"></div>
+</div>
+<div class="p-4 space-y-4">
+<div class="h-32 rounded-xl bg-slate-100 flex items-center justify-center">
+<img alt="Preview Spa" class="w-full h-full object-cover" data-alt="A high-end interior shot of a minimalist beauty treatment room with soft lavender accents, featuring professional aesthetic equipment and plush white linens. The lighting is ethereal and bright, reflecting a luxury salon experience within the mobile preview interface of the SaaS application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKBG4nYgVevlPR5E-KgwbsDUu4kGEyTY1j28gH9FUnyig5kwLabncZnLNkauaHty-wjlxa18yse1LccGMFPyLWIOeKoXzq3sw70Kon5bU8xf-bX0A9-_dmEM2FLibH1T1sN6SLIqt5McEb81eqzqIFDRSsC4PrCyk6oIr4LOUiMzQnhAhtM4q2jT7125TB4BEk4SdheF-tnMx6k6F9k0_kATx1j3IrkNaIatPUKmRIm72oDCagbbDVohYi1Np0_Xe7ZsHTJyNPeEs"/>
+</div>
+<div class="space-y-2">
+<div class="h-4 w-3/4 bg-slate-100 rounded"></div>
+<div class="h-3 w-1/2 bg-slate-50 rounded"></div>
+</div>
+<div class="p-3 border border-dashed border-primary/30 rounded-lg bg-primary/5">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold text-primary">預約定金</span>
+<span class="text-[10px] font-bold text-primary">$0</span>
+</div>
+<p class="text-[8px] text-slate-400">完成付款後系統將自動為您保留預約時段。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Button -->
+<div class="fixed bottom-16 left-0 w-full p-4 bg-white/80 backdrop-blur-md border-t border-slate-100 z-40">
+<button class="w-full touch-target bg-[#c84c8f] text-white font-bold rounded-lg shadow-lg shadow-[#c84c8f]/20 active:scale-[0.98] transition-transform">
+            儲存設定
+        </button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-16 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] font-['Plus_Jakarta_Sans'] text-[10px] font-medium">
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">home</span>
+<span>首頁</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#c84c8f] scale-110 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event</span>
+<span>預約</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">analytics</span>
+<span>報表</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">tune</span>
+<span>設定</span>
+</button>
+</nav>
+</body></html>

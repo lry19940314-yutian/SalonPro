@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#fff0f4",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#392d32",
+                        "primary": "#a22c70",
+                        "surface-container": "#fde9ef",
+                        "on-surface": "#23191d",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#554149",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#dac0c9",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#88717a",
+                        "on-primary-fixed": "#3d0025",
+                        "inverse-primary": "#ffafd3",
+                        "tertiary": "#1c6b00",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-tint": "#a52f72",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "background": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-secondary-fixed": "#300247",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-background": "#23191d",
+                        "surface-dim": "#e8d5db",
+                        "primary-fixed": "#ffd8e7",
+                        "on-tertiary-fixed": "#042100",
+                        "on-primary-container": "#fffbff",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary-container": "#e8b3fe",
+                        "on-secondary-container": "#6c4082",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-variant": "#f1dee3",
+                        "surface": "#fff8f8",
+                        "secondary": "#794c8f",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#328517",
+                        "surface-bright": "#fff8f8",
+                        "surface-container-highest": "#f1dee3",
+                        "brand-pink": "#c84c8f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .bottom-sheet-shadow {
+            box-shadow: 0 -10px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased overflow-hidden">
+<!-- Background Mockup Content (The Page Behind the Modal) -->
+<div class="fixed inset-0 flex flex-col h-full bg-surface-container-lowest">
+<!-- TopAppBar Anchor -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white border-b border-gray-100 shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-brand-pink cursor-pointer" data-icon="menu">menu</span>
+<h1 class="text-brand-pink font-bold text-xl tracking-tight font-h1">Wonder Sky</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-brand-pink cursor-pointer" data-icon="notifications">notifications</span>
+</div>
+</header>
+<!-- Mock Content -->
+<main class="flex-1 pt-20 px-4 space-y-6">
+<div class="p-6 bg-surface-container rounded-xl">
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-h2 text-h2 text-on-surface">集客預約設定</h2>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="settings">settings</span>
+</div>
+<div class="space-y-4">
+<div class="h-4 bg-surface-container-high rounded w-3/4"></div>
+<div class="h-4 bg-surface-container-high rounded w-1/2"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Anchor (Determined active: 預約) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-16 bg-white/90 backdrop-blur-md border-t border-gray-100 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-gray-400">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium font-label-md">首頁</span>
+</div>
+<div class="flex flex-col items-center justify-center text-brand-pink scale-110">
+<span class="material-symbols-outlined" data-icon="calendar_month" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="text-[10px] font-bold font-label-md">預約</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-medium font-label-md">報表</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium font-label-md">會員</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="text-[10px] font-medium font-label-md">更多</span>
+</div>
+</nav>
+</div>
+<!-- Black Overlay (Backdrop) -->
+<div class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-[2px]"></div>
+<!-- Bottom Sheet UI -->
+<div class="fixed bottom-0 left-0 right-0 z-[70] bg-white rounded-t-[28px] bottom-sheet-shadow flex flex-col max-h-[751px]">
+<!-- Drag Handle (Visual Indicator) -->
+<div class="w-full flex justify-center pt-3 pb-1">
+<div class="w-10 h-1 rounded-full bg-outline-variant/50"></div>
+</div>
+<!-- Modal Header -->
+<div class="px-6 py-4 text-center">
+<h2 class="font-h3 text-h3 text-on-surface">進階管理</h2>
+</div>
+<!-- Tabs -->
+<div class="flex w-full border-b border-gray-100">
+<button class="flex-1 py-4 text-center relative group min-h-[44px]">
+<span class="font-label-md text-brand-pink font-bold">品牌設定</span>
+<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-pink mx-auto w-full"></div>
+</button>
+<button class="flex-1 py-4 text-center min-h-[44px]">
+<span class="font-label-md text-on-surface-variant">門店設定</span>
+</button>
+</div>
+<!-- Functional List -->
+<div class="p-4 space-y-3 overflow-y-auto">
+<!-- Item 1: 預約項目排序 -->
+<div class="w-full bg-surface-container-lowest border border-gray-100 rounded-xl p-4 flex items-center gap-4 active:bg-surface-container transition-colors cursor-pointer min-h-[72px]">
+<div class="w-12 h-12 rounded-full bg-brand-pink/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-pink" data-icon="sort">sort</span>
+</div>
+<div class="flex-1">
+<h3 class="font-h3 text-body-lg text-on-surface mb-0.5">預約項目排序</h3>
+<p class="font-caption text-caption text-on-surface-variant">調整服務項目在集客預約中的顯示順序</p>
+</div>
+<span class="material-symbols-outlined text-brand-pink shrink-0" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Item 2: 點數顯示可兌換內容 -->
+<div class="w-full bg-surface-container-lowest border border-gray-100 rounded-xl p-4 flex items-center gap-4 active:bg-surface-container transition-colors cursor-pointer min-h-[72px]">
+<div class="w-12 h-12 rounded-full bg-brand-pink/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-pink" data-icon="redeem">redeem</span>
+</div>
+<div class="flex-1">
+<h3 class="font-h3 text-body-lg text-on-surface mb-0.5">點數顯示可兌換內容</h3>
+<p class="font-caption text-caption text-on-surface-variant">設定會員點數可兌換的項目內容</p>
+</div>
+<span class="material-symbols-outlined text-brand-pink shrink-0" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Visual Context - Subtle Illustration/Pattern -->
+<div class="pt-6 px-4">
+<div class="relative w-full h-32 rounded-2xl overflow-hidden bg-surface-container">
+<img alt="Beauty salon setting" class="w-full h-full object-cover mix-blend-overlay opacity-30" data-alt="A luxurious, high-end beauty salon interior with soft, warm ambient lighting. The space features minimalist furniture, plush chairs, and elegant product displays. The overall aesthetic is clean, professional, and tranquil, utilizing a color palette of soft pinks, white, and subtle gold accents. The atmosphere is sophisticated and inviting, designed for a premium wellness experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO9RLVyRf8POasdCW445VOzEUmidX4wZQtX7lX0mGJei2sSxC_anKeXDwqRj58laVARnT6CawU50aE1J_pteP-T2aDBfExLeQT-BNvF_Ztpx07dwXsh21eIes3Z7YmeVOppxdGB5Gsc3nHWj1jkYNoYnIeIEfPRoohqXhZQfahAXwfVNF2Hqraev6-jQ37C1Qv5O_BSvUVu9A7S9T4-9Znz_ro8e2y0iCnNZl93H3lGbokGT5b9CQzJi2irY9TXUyHGwv3G0zL0d0"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<p class="text-on-surface-variant/40 font-caption text-[10px] uppercase tracking-widest px-4 text-center">Premium Management Tools for Professionals</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Button -->
+<div class="p-6 pt-2 pb-safe-bottom">
+<button class="w-full py-4 bg-brand-pink text-white rounded-xl font-h3 text-body-lg shadow-lg active:scale-[0.98] transition-transform min-h-[44px]">
+                關閉
+            </button>
+</div>
+</div>
+</body></html>

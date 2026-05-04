@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky - 黑名單設定</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#f7e3e9",
+                        "on-error": "#ffffff",
+                        "primary-container": "#c14689",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-surface-variant": "#554149",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#f1dee3",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#ffecf1",
+                        "inverse-surface": "#392d32",
+                        "tertiary-fixed-dim": "#84db64",
+                        "primary-fixed-dim": "#ffafd3",
+                        "tertiary-container": "#328517",
+                        "background": "#fff8f8",
+                        "on-surface": "#23191d",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#300247",
+                        "surface-bright": "#fff8f8",
+                        "surface-container-low": "#fff0f4",
+                        "on-tertiary-fixed": "#042100",
+                        "inverse-primary": "#ffafd3",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "outline-variant": "#dac0c9",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-secondary-container": "#6c4082",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#e8b3fe",
+                        "surface-container-highest": "#f1dee3",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-container": "#fde9ef",
+                        "on-primary-container": "#fffbff",
+                        "surface": "#fff8f8",
+                        "primary": "#a22c70",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#794c8f",
+                        "on-background": "#23191d",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-tint": "#a52f72",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary": "#1c6b00",
+                        "outline": "#88717a",
+                        "surface-dim": "#e8d5db"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .phone-preview-shadow {
+            box-shadow: 0 0 0 12px #1e293b, 0 0 0 14px #334155, 0 20px 50px -10px rgba(0,0,0,0.3);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- Sidebar Shell -->
+<aside class="flex flex-col fixed left-0 top-0 h-full z-40 bg-white dark:bg-slate-900 h-screen w-64 border-r border-slate-200 font-['Plus_Jakarta_Sans'] text-sm antialiased shadow-none">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div>
+<h1 class="text-xl font-extrabold tracking-tight text-[#c84c8f]">Wonder Sky</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest">國際美妍管理系統</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-2 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#c84c8f] transition-colors mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>資訊中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#c84c8f] transition-colors mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>財務中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#c84c8f] transition-colors mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>記帳管理</span>
+</a>
+<div class="space-y-1">
+<button class="w-full flex items-center justify-between px-4 py-3 bg-[#c84c8f]/5 text-[#c84c8f] font-semibold rounded-lg mx-2 transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>預約管理</span>
+</div>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="ml-12 space-y-1 py-1">
+<a class="block py-2 text-slate-500 hover:text-[#c84c8f] transition-colors" href="#">預約列表</a>
+<a class="block py-2 text-[#c84c8f] font-medium transition-colors" href="#">集客預約設定</a>
+<div class="ml-4 border-l-2 border-[#c84c8f]/20 pl-4">
+<a class="block py-1.5 text-[#c84c8f] font-bold" href="#">黑名單</a>
+</div>
+<a class="block py-2 text-slate-500 hover:text-[#c84c8f] transition-colors" href="#">服務項目</a>
+</div>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#c84c8f] transition-colors mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>會員中心</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#c84c8f] transition-colors mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>系統設定</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#c84c8f] transition-colors mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>幫助中心</span>
+</a>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="flex items-center justify-between px-6 sticky top-0 z-30 ml-64 bg-white/80 backdrop-blur-md dark:bg-slate-900/80 full-width h-16 border-b border-slate-200 shadow-sm">
+<div class="flex items-center gap-4">
+<nav class="flex text-sm text-slate-400 font-['Plus_Jakarta_Sans'] font-medium">
+<span>預約</span>
+<span class="mx-2 text-slate-300">/</span>
+<span>集客預約設定</span>
+<span class="mx-2 text-slate-300">/</span>
+<span class="text-slate-800 dark:text-slate-100 font-bold">黑名單</span>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-[#c84c8f] text-white px-5 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>新增預約</span>
+</button>
+<div class="flex items-center gap-1 border-l border-slate-200 ml-4 pl-4">
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full p-2 transition-colors relative">
+<span class="material-symbols-outlined text-slate-600" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined text-slate-600" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<div class="flex items-center gap-3 ml-2 group cursor-pointer">
+<div class="w-9 h-9 rounded-full bg-surface-container-high border-2 border-white shadow-sm overflow-hidden">
+<img alt="Manager Avatar" class="w-full h-full object-cover" data-alt="A professional high-end headshot of a female salon manager with a friendly smile, set against a minimalist studio background with soft warm lighting. The image maintains a clean, corporate SaaS aesthetic with soft-focus elements, embodying professional leadership in the beauty industry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH9w3fw1agSshN9KUQpUnnie2xVhOvU4JOTHRLVDQ6stqJuvYyQCsNN5qE5ozUsZSAGcRFx1SJD8Bbg-rWDD7tgjM_7K4aKI6RKSisjKiLMdAANRvQ8i4yuozwkV0ndGlpB_YxoCKgxyITuBafm-F67NceLT3SymDpIqZQTCE77hp7twRzgpqCcS0aWq-4LLLYCEGcNYFDnn2HECImBIi3aNinqUW5i_x7XDZE3E0joZ2bb3Pxbj4pEFXHi-wcV1iw6agicxRVLIE"/>
+</div>
+<div class="hidden xl:block">
+<p class="text-xs font-bold text-slate-800">張美美</p>
+<p class="text-[10px] text-slate-500">旗艦店總監</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-8 min-h-[calc(100vh-64px)] bg-surface flex gap-8">
+<!-- Configuration Area -->
+<div class="flex-1 max-w-3xl">
+<div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col h-full">
+<!-- Header Alert Banner -->
+<div class="bg-blue-50 border-b border-blue-100 px-6 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-500 text-lg">info</span>
+<p class="text-sm text-blue-700 font-medium">黑名單機制可自動過濾惡意放鳥的客人，降低門市營運成本。</p>
+</div>
+<div class="p-8 space-y-10 flex-1 overflow-y-auto">
+<!-- Section: Mechanism Toggle -->
+<div class="flex items-center justify-between group">
+<div class="space-y-1">
+<h3 class="font-h3 text-slate-800 flex items-center gap-2">
+                                黑名單機制
+                                <span class="material-symbols-outlined text-slate-400 text-sm cursor-help">help</span>
+</h3>
+<p class="text-sm text-slate-500">開啟後，系統將依據下方規則自動將符合條件的會員列入黑名單</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-7 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+<!-- Rule 1 -->
+<div class="space-y-3">
+<label class="block text-sm font-bold text-slate-700">在時間範圍</label>
+<div class="relative">
+<select class="w-full bg-slate-50 border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] appearance-none transition-all">
+<option>1個月</option>
+<option selected="">3個月</option>
+<option>6個月</option>
+<option>一年</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Rule 2 -->
+<div class="space-y-3">
+<label class="block text-sm font-bold text-slate-700">取消已確認預約超過</label>
+<div class="relative">
+<select class="w-full bg-slate-50 border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] appearance-none transition-all">
+<option>3次</option>
+<option selected="">5次</option>
+<option>10次</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Rule 3 -->
+<div class="space-y-3 md:col-span-2">
+<label class="block text-sm font-bold text-slate-700">將停權客人</label>
+<div class="relative max-w-xs">
+<select class="w-full bg-slate-50 border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] appearance-none transition-all">
+<option>1個月</option>
+<option selected="">3個月</option>
+<option>永久</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Rule 4: Text Content -->
+<div class="space-y-3 md:col-span-2">
+<div class="flex justify-between items-end">
+<label class="block text-sm font-bold text-slate-700">黑名單會員進入預約的顯示文字</label>
+<span class="text-[11px] text-slate-400 font-medium">0 / 256</span>
+</div>
+<textarea class="w-full bg-slate-50 border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] transition-all resize-none" placeholder="輸入當黑名單會員點擊預約時要顯示的提醒內容..." rows="4"></textarea>
+<p class="text-[11px] text-[#c84c8f] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_fix_high</span>
+                                提示：建議明確告知停權原因與恢復方式（例如：致電門市）。
+                            </p>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="p-6 border-t border-slate-100 flex justify-end">
+<button class="bg-[#c84c8f] text-white px-10 py-3 rounded-xl font-bold hover:shadow-lg hover:shadow-[#c84c8f]/20 active:scale-[0.98] transition-all">
+                        儲存設定
+                    </button>
+</div>
+</div>
+</div>
+<!-- Preview Area (Right Side) -->
+<div class="w-[360px] flex flex-col">
+<div class="sticky top-24">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[#c84c8f]">smartphone</span>
+<h4 class="text-sm font-bold text-slate-600">預約端介面預覽</h4>
+</div>
+<!-- Phone Mockup -->
+<div class="relative w-[300px] h-[600px] mx-auto bg-slate-800 rounded-[3rem] p-3 phone-preview-shadow">
+<div class="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative border border-slate-200">
+<!-- Phone Notch -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-2xl z-20"></div>
+<!-- App UI Simulation -->
+<div class="h-full bg-slate-50 flex flex-col">
+<div class="h-14 bg-white border-b border-slate-100 flex items-center justify-center pt-4">
+<span class="font-bold text-slate-800 text-sm">Wonder Sky 預約</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center p-8 text-center bg-white">
+<div class="w-20 h-20 bg-pink-50 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-4xl text-[#c84c8f]" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<h5 class="text-lg font-bold text-slate-800 mb-2">預約提醒</h5>
+<div class="w-full h-px bg-slate-100 my-4"></div>
+<p class="text-sm text-slate-500 leading-relaxed">
+                                    由於您在過去3個月內取消已確認預約超過5次，您的預約權限已暫時停權。
+                                </p>
+<p class="text-sm text-slate-500 mt-4 leading-relaxed">
+                                    如有任何疑問或欲恢復權限，請直接聯繫門市人員。
+                                </p>
+<button class="w-full mt-10 bg-slate-100 text-slate-600 py-3 rounded-xl text-sm font-bold">
+                                    返回首頁
+                                </button>
+<button class="w-full mt-3 border border-[#c84c8f] text-[#c84c8f] py-3 rounded-xl text-sm font-bold">
+                                    致電門市
+                                </button>
+</div>
+</div>
+<!-- App Bottom Bar -->
+<div class="h-16 bg-white border-t border-slate-100 flex items-center justify-around px-4">
+<span class="material-symbols-outlined text-slate-300">home</span>
+<span class="material-symbols-outlined text-[#c84c8f]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="material-symbols-outlined text-slate-300">person</span>
+</div>
+</div>
+</div>
+<p class="text-center text-xs text-slate-400 mt-6 px-4">此預覽僅供參考，實際樣式將根據您的品牌自定義顏色進行調整。</p>
+</div>
+</div>
+</main>
+<!-- Global FAB (Contextual for Settings - Hidden based on rules but included as logic shell) -->
+<!-- Rule check: This is a sub-page/settings page, so FAB is suppressed as per guidelines -->
+</body></html>

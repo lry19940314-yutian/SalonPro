@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#fff0f4",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#392d32",
+                        "primary": "#a22c70",
+                        "surface-container": "#fde9ef",
+                        "on-surface": "#23191d",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#554149",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#dac0c9",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#88717a",
+                        "on-primary-fixed": "#3d0025",
+                        "inverse-primary": "#ffafd3",
+                        "tertiary": "#1c6b00",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-tint": "#a52f72",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "background": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-secondary-fixed": "#300247",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-background": "#23191d",
+                        "surface-dim": "#e8d5db",
+                        "primary-fixed": "#ffd8e7",
+                        "on-tertiary-fixed": "#042100",
+                        "on-primary-container": "#fffbff",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary-container": "#e8b3fe",
+                        "on-secondary-container": "#6c4082",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-variant": "#f1dee3",
+                        "surface": "#fff8f8",
+                        "secondary": "#794c8f",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#328517",
+                        "surface-bright": "#fff8f8",
+                        "surface-container-highest": "#f1dee3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+<div class="bg-surface-container-lowest w-full max-w-[560px] rounded-[24px] shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in duration-300">
+<header class="pt-8 pb-4 flex flex-col items-center gap-6">
+<h1 class="font-h2 text-h2 text-on-surface">進階管理</h1>
+<div class="flex w-full px-8">
+<div class="flex w-full border-b border-outline-variant">
+<button class="flex-1 pb-3 text-primary border-b-2 border-primary font-label-md text-label-md transition-all">
+                            品牌設定
+                        </button>
+<button class="flex-1 pb-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all">
+                            門店設定
+                        </button>
+</div>
+</div>
+</header>
+<main class="px-8 py-6 space-y-4 flex-1">
+<div class="group flex items-center p-5 bg-white border border-outline-variant rounded-xl shadow-sm hover:shadow-md hover:border-primary-container transition-all cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mr-4 text-[#c84c8f]">
+<span class="material-symbols-outlined text-[28px]" data-icon="sort">sort</span>
+</div>
+<div class="flex-1">
+<h3 class="font-h3 text-h3 text-on-surface mb-1">預約項目排序</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">調整服務項目在集客預約中的顯示順序</p>
+</div>
+<div class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<div class="group flex items-center p-5 bg-white border border-outline-variant rounded-xl shadow-sm hover:shadow-md hover:border-primary-container transition-all cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mr-4 text-[#c84c8f]">
+<span class="material-symbols-outlined text-[28px]" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+</div>
+<div class="flex-1">
+<h3 class="font-h3 text-h3 text-on-surface mb-1">點數顯示可兌換內容</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">設定會員點數可兌換的項目內容</p>
+</div>
+<div class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</main>
+<footer class="px-8 pb-8 pt-2 flex justify-end">
+<button class="px-8 py-2.5 rounded-full border border-outline text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+                    關閉
+                </button>
+</footer>
+</div>
+</div>
+<div class="hidden lg:block fixed inset-0 -z-10 overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-20">
+<img alt="Spa interior" class="w-full h-full object-cover" data-alt="A serene and luxurious spa interior featuring soft warm lighting, minimalist wooden furniture, and clean white architectural lines. The atmosphere is professional and calming, reflecting a high-end wellness center. Subtle pink floral accents are placed strategically to match the brand identity. The background is slightly out of focus to emphasize the modern UI overlay." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA18FIqsDjM6XIzztg6q2Yiz92V-gLvIwy8EdAXtz7XxnVgM-NQQiRO1QBRti45CzDHiUUkeER6luC1fSiTQyr8AspACbcLmCjOfCR1R2FZRjcmk5IGKgQFvoQGnp7eUMrtP5D8YcFIbl8Bhah_Yjl7nTzuqDm8lplO7GJ2a4y0rgP74ft2Axll4TGK6e8_dTmbm2BYsB7sSA2bSTlRkfmoCOsfNjRxyVupG3IsYNeXWO_lUJ1cjRjrpdhKvwKxbaRaJBYihvXq9n8"/>
+</div>
+</div>
+</body></html>
