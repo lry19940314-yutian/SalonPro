@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky 國際美妍館 - 門店日結費用</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff8f8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#ffd8e7",
+                      "tertiary": "#1c6b00",
+                      "surface": "#fff8f8",
+                      "on-tertiary-container": "#f8ffee",
+                      "on-secondary-fixed": "#300247",
+                      "surface-bright": "#fff8f8",
+                      "surface-tint": "#a52f72",
+                      "tertiary-container": "#328517",
+                      "secondary-container": "#e8b3fe",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#ffafd3",
+                      "on-tertiary-fixed": "#042100",
+                      "on-primary-container": "#fffbff",
+                      "on-primary-fixed": "#3d0025",
+                      "inverse-surface": "#392d32",
+                      "tertiary-fixed-dim": "#84db64",
+                      "on-background": "#23191d",
+                      "background": "#fff8f8",
+                      "on-primary": "#ffffff",
+                      "secondary": "#794c8f",
+                      "surface-container-low": "#fff0f4",
+                      "inverse-primary": "#ffafd3",
+                      "on-secondary-container": "#6c4082",
+                      "primary-container": "#c14689",
+                      "on-surface": "#23191d",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#554149",
+                      "error-container": "#ffdad6",
+                      "primary": "#a22c70",
+                      "secondary-fixed": "#f6d9ff",
+                      "surface-container-high": "#f7e3e9",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#f1dee3",
+                      "on-secondary-fixed-variant": "#603475",
+                      "outline": "#88717a",
+                      "on-primary-fixed-variant": "#861259",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#9ff87d",
+                      "surface-dim": "#e8d5db",
+                      "surface-variant": "#f1dee3",
+                      "outline-variant": "#dac0c9",
+                      "surface-container": "#fde9ef",
+                      "inverse-on-surface": "#ffecf1",
+                      "secondary-fixed-dim": "#e8b3fe",
+                      "on-tertiary-fixed-variant": "#145200"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "gutter": "20px",
+                      "container-padding": "24px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "h1": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "h3": ["Plus Jakarta Sans"],
+                      "caption": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "h2": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+<!-- Mock Background Content (Dashboard) -->
+<div class="fixed inset-0 flex">
+<!-- Sidebar Shell -->
+<aside class="h-screen w-64 border-r border-slate-200 bg-white shadow-[4px_0_12px_rgba(0,0,0,0.02)] flex flex-col p-4 space-y-2 z-0">
+<div class="px-2 py-4 mb-4">
+<span class="font-black text-primary text-xl">Wonder Sky</span>
+<p class="text-[10px] text-outline uppercase tracking-widest">SaaS Platform</p>
+</div>
+<nav class="space-y-1">
+<div class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-body-md">營運概況</span>
+</div>
+<div class="flex items-center space-x-3 px-3 py-2.5 rounded-lg bg-primary-fixed text-primary">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-body-md">預約排程</span>
+</div>
+<div class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600">
+<span class="material-symbols-outlined">face_3</span>
+<span class="font-label-md text-body-md">會員資料</span>
+</div>
+</nav>
+</aside>
+<!-- Content Canvas -->
+<main class="flex-1 p-lg bg-surface relative">
+<div class="max-w-6xl mx-auto">
+<header class="flex justify-between items-center mb-xl">
+<div>
+<h1 class="font-h1 text-on-surface">店鋪數據管理</h1>
+<p class="text-body-md text-on-surface-variant">檢視今日門店所有收支明細與預約報表</p>
+</div>
+</header>
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-8 bg-white border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="h-64 flex items-center justify-center border-2 border-dashed border-outline-variant rounded-lg">
+<img class="w-full h-full object-cover rounded-lg opacity-40" data-alt="A clean and professional dashboard screen for a high-end beauty salon SaaS platform. The interface displays elegant data charts and a detailed list of business expenses in a soft light-mode aesthetic. The primary color accents are a sophisticated rose pink, blending with deep charcoal text and soft gray containers. Minimalist icons and clear typography provide a sense of modern efficiency and clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoCEut4ywlHX_9eWI68WkbJpFbRGxCak55QfxYrwmCkQe5NKaRPyzBxdTaxDrBvoJf-gZSlHYqPfZTs8NQm2Aj932w7hkxmqAMFklW0rRedjQY_D2QpqqXvxYrapAQa8UtsBvxp3H9fuK8Snc1oQHluYcoa_NHLJpTJMLkI8M6ZE3bjfiiE-0KYtlopsrhAI6H7mLnk6SJCVm5mh_9eYdP2V4xnvVX8W9RvTdo8lIimWTg8c036yTsxdqobQjsVU9u9YFba3wrURs"/>
+</div>
+</div>
+<div class="col-span-4 space-y-gutter">
+<div class="bg-white border border-outline-variant rounded-xl p-lg shadow-sm">
+<h3 class="font-h3 mb-md">今日摘要</h3>
+<div class="space-y-sm">
+<div class="h-4 bg-surface-container rounded w-3/4"></div>
+<div class="h-4 bg-surface-container rounded w-1/2"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 glass-overlay z-50 flex items-center justify-center p-md">
+<!-- Modal Container -->
+<div class="bg-white w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden flex flex-col">
+<!-- Modal Header -->
+<div class="relative px-lg py-md border-b border-outline-variant">
+<h2 class="text-center font-h2 text-on-surface">門店日結費用</h2>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary hover:bg-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="p-lg space-y-lg overflow-y-auto max-h-[819px]">
+<!-- Transfer Section -->
+<div class="flex items-start space-x-md p-md bg-surface-container rounded-lg border border-outline-variant/30">
+<div class="mt-1">
+<!-- Custom Switch (Off) -->
+<div class="w-12 h-6 bg-slate-300 rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all"></div>
+</div>
+</div>
+<div>
+<span class="font-label-md text-on-surface block mb-1">轉存帳戶</span>
+<p class="text-caption text-on-surface-variant leading-relaxed">
+                            選擇轉存帳戶，會扣除當日櫃檯現金，不會計算在門店總結成本
+                        </p>
+</div>
+</div>
+<!-- Form Controls Grid -->
+<div class="grid grid-cols-2 gap-x-gutter gap-y-lg">
+<!-- Row 1: Full width dropdown -->
+<div class="col-span-2">
+<label class="block font-label-md text-on-surface mb-2">出帳選項</label>
+<div class="relative">
+<select class="w-full h-11 px-4 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary appearance-none">
+<option>當日現金出帳</option>
+<option>銀行帳戶支出</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+<p class="mt-2 text-caption text-on-surface-variant flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">info</span>
+                            銀行帳戶支出:不會扣除當日櫃檯現金
+                        </p>
+</div>
+<!-- Row 2: Date & Time side-by-side -->
+<div>
+<label class="block font-label-md text-on-surface mb-2">記錄時間</label>
+<div class="relative">
+<input class="w-full h-11 px-4 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="2026-03-05"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">calendar_today</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">時間</label>
+<div class="relative">
+<input class="w-full h-11 px-4 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="03:32 PM"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">schedule</span>
+</div>
+</div>
+<!-- Row 3: Store & Department side-by-side -->
+<div>
+<label class="block font-label-md text-on-surface mb-2">門店</label>
+<div class="relative">
+<select class="w-full h-11 px-4 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary appearance-none">
+<option>沐茉珐複合式國際美妍館</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">部門</label>
+<div class="relative">
+<select class="w-full h-11 px-4 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary appearance-none">
+<option>美容部</option>
+<option>美甲部</option>
+<option>行政部</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<!-- Row 4: Subject & Name side-by-side -->
+<div>
+<label class="block font-label-md text-on-surface mb-2">支出科目</label>
+<div class="relative">
+<select class="w-full h-11 px-4 bg-rose-50 border border-primary text-primary font-medium rounded-lg text-body-md appearance-none">
+<option>進貨</option>
+<option>房租</option>
+<option>薪資</option>
+<option>雜費</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">名稱</label>
+<input class="w-full h-11 px-4 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary" placeholder="請輸入支出項目名稱" type="text"/>
+</div>
+<!-- Row 5: Amount & Notes side-by-side -->
+<div>
+<label class="block font-label-md text-on-surface mb-2">金額</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span>
+<input class="w-full h-11 pl-8 pr-4 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary text-right" type="number" value="0"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">備註</label>
+<textarea class="w-full px-4 py-2 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary resize-none min-h-[44px]" placeholder="輸入額外備註事項..." rows="1"></textarea>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-lg border-t border-outline-variant flex justify-end items-center space-x-md">
+<button class="px-xl py-2.5 font-label-md text-outline hover:text-on-surface-variant transition-colors">取消</button>
+<button class="px-xl py-2.5 font-label-md bg-slate-100 text-slate-400 rounded-lg cursor-not-allowed" disabled="">儲存</button>
+</div>
+</div>
+</div>
+</body></html>

@@ -31,7 +31,7 @@ import { getDeviceType } from './adaptive'
 const LOGIN_PATH = '/login'
 
 /** 首頁路徑 */
-const HOME_PATH = '/dashboard'
+const HOME_PATH = '/info-center'
 
 /** 無權限頁面路徑 */
 const FORBIDDEN_PATH = '/403'

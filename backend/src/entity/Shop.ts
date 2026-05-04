@@ -19,34 +19,34 @@ export class Shop {
   @PrimaryGeneratedColumn({ type: 'bigint', comment: '門店 ID（主鍵）' })
   id: number;
 
-  @Column({ type: 'varchar', length: 20, unique: true, comment: '客戶代碼（登錄用，唯一標識）' })
+  @Column({ type: 'varchar', length: 20, unique: true, name: 'code', comment: '客戶代碼（登錄用，唯一標識）' })
   code: string;
 
-  @Column({ type: 'varchar', length: 100, comment: '門店名稱' })
+  @Column({ type: 'varchar', length: 100, name: 'name', comment: '門店名稱' })
   name: string;
 
-  @Column({ type: 'varchar', length: 20, nullable: true, comment: '聯繫電話' })
+  @Column({ type: 'varchar', length: 20, nullable: true, name: 'phone', comment: '聯繫電話' })
   phone: string;
 
-  @Column({ type: 'varchar', length: 255, nullable: true, comment: '門店地址' })
+  @Column({ type: 'varchar', length: 255, nullable: true, name: 'address', comment: '門店地址' })
   address: string;
 
-  @Column({ type: 'varchar', length: 255, nullable: true, comment: '門店 Logo URL' })
+  @Column({ type: 'varchar', length: 255, nullable: true, name: 'logo', comment: '門店 Logo URL' })
   logo: string;
 
-  @Column({ type: 'tinyint', default: 1, comment: '狀態：1=啟用，0=停用' })
+  @Column({ type: 'tinyint', default: 1, name: 'status', comment: '狀態：1=啟用，0=停用' })
   status: number;
 
-  @Column({ type: 'json', nullable: true, comment: '營業時間配置（JSON 格式）' })
+  @Column({ type: 'json', nullable: true, name: 'business_hours', comment: '營業時間配置（JSON 格式）' })
   businessHours: Record<string, unknown>;
 
-  @Column({ type: 'json', nullable: true, comment: '抽成規則配置（JSON 格式）' })
+  @Column({ type: 'json', nullable: true, name: 'commission_rules', comment: '抽成規則配置（JSON 格式）' })
   commissionRules: Record<string, unknown>;
 
-  @CreateDateColumn({ type: 'datetime', comment: '創建時間' })
+  @CreateDateColumn({ type: 'datetime', name: 'created_at', comment: '創建時間' })
   createdAt: Date;
 
-  @UpdateDateColumn({ type: 'datetime', comment: '更新時間' })
+  @UpdateDateColumn({ type: 'datetime', name: 'updated_at', comment: '更新時間' })
   updatedAt: Date;
 
   // ========== 關聯 ==========

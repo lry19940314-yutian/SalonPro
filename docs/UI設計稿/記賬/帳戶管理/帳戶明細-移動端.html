@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#1c6b00",
+                        "surface-bright": "#fff8f8",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-container-high": "#f7e3e9",
+                        "on-surface": "#23191d",
+                        "on-secondary-container": "#6c4082",
+                        "inverse-surface": "#392d32",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface": "#fff8f8",
+                        "surface-dim": "#e8d5db",
+                        "primary": "#a22c70",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-tint": "#a52f72",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#88717a",
+                        "on-secondary-fixed": "#300247",
+                        "primary-container": "#c14689",
+                        "secondary-container": "#e8b3fe",
+                        "on-surface-variant": "#554149",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#23191d",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f1dee3",
+                        "surface-container-low": "#fff0f4",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#042100",
+                        "inverse-primary": "#ffafd3",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-container": "#328517",
+                        "background": "#fff8f8",
+                        "secondary-fixed": "#f6d9ff",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary": "#794c8f",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#fde9ef",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-variant": "#f1dee3",
+                        "primary-fixed-dim": "#ffafd3",
+                        "outline-variant": "#dac0c9",
+                        "inverse-on-surface": "#ffecf1",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .safe-area-inset-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .bottom-sheet-backdrop {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- Parent Page Background Content (Simulated Dashboard) -->
+<header class="bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm sticky top-0 z-50 flex justify-between items-center px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated Asian woman in a modern wellness clinic setting. The lighting is soft and flattering, with a bright, clean-mode aesthetic. The background features blurred glass partitions and a hint of a high-end beauty spa interior. The style is professional, corporate, and polished." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARnRNFIQwlzzypscTR1rXOGArnSpnz7IndHUp5ZMPT9WNWwxUsXYCJCH0NglwwL52hZ-Bt3ygY_eVa4d0Ed5IWA6l_iXJAIsfeBVWeXB2GwDMtoKNOFcrYzbi-wIyoNvlWmIP3XZVZkb6utuUJ_89gFw6ZpbhBRKlTMCJgznqmWr0mBgkZFt1bMIj5fw0aOw6jUc9d_qKbN_WxLba9DYknCVHHdPXFi39m_N1N22kDHjv1wuWyRlWPxJ5F32sz9mvr98QuiKcKWSo"/>
+</div>
+<h1 class="text-lg font-bold tracking-tight text-pink-600 font-['Plus_Jakarta_Sans'] antialiased">Wonder sky 國際美妍館</h1>
+</div>
+<button class="text-slate-600"><span class="material-symbols-outlined">notifications</span></button>
+</header>
+<main class="p-lg space-y-lg">
+<div class="bg-white border border-slate-100 rounded-xl p-lg shadow-sm">
+<h2 class="font-h2 text-on-surface mb-md">現金帳戶總覽</h2>
+<div class="text-h1 font-bold text-primary">$128,450</div>
+</div>
+</main>
+<!-- Bottom Sheet Component -->
+<div class="fixed inset-0 z-50 bottom-sheet-backdrop flex items-end">
+<div class="bg-surface w-full max-h-[813px] rounded-t-[32px] overflow-hidden flex flex-col shadow-2xl">
+<!-- Header -->
+<div class="px-md py-md border-b border-surface-variant flex items-center justify-between">
+<button aria-label="關閉" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:scale-90">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+<h3 class="font-h2 text-on-surface text-center">帳戶明細</h3>
+<button aria-label="新增" class="h-11 px-4 flex items-center gap-1 rounded-xl bg-primary text-on-primary font-label-md shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>新增</span>
+</button>
+</div>
+<!-- Content Area -->
+<div class="overflow-y-auto flex-1">
+<!-- Filter Section -->
+<div class="p-md space-y-md border-b border-surface-variant">
+<div class="flex gap-sm overflow-x-auto pb-xs no-scrollbar">
+<button class="px-md py-sm bg-primary text-on-primary rounded-full whitespace-nowrap text-label-md">全部項目</button>
+<button class="px-md py-sm bg-surface-container text-on-surface-variant border border-outline-variant rounded-full whitespace-nowrap text-label-md">收入</button>
+<button class="px-md py-sm bg-surface-container text-on-surface-variant border border-outline-variant rounded-full whitespace-nowrap text-label-md">支出</button>
+<button class="px-md py-sm bg-surface-container text-on-surface-variant border border-outline-variant rounded-full whitespace-nowrap text-label-md">轉帳</button>
+</div>
+<div class="flex items-center gap-sm bg-surface-container-low border border-outline-variant px-md py-sm rounded-xl">
+<span class="material-symbols-outlined text-outline">calendar_month</span>
+<span class="text-body-md text-on-surface-variant">2023年 10月</span>
+<span class="material-symbols-outlined text-outline ml-auto">expand_more</span>
+</div>
+</div>
+<!-- Transaction List -->
+<div class="p-md space-y-md">
+<!-- Card 1 -->
+<div class="bg-white border border-slate-100 rounded-xl p-md shadow-sm space-y-sm">
+<div class="flex justify-between items-start">
+<div class="space-y-xs">
+<div class="flex items-center gap-xs">
+<span class="px-xs py-[2px] bg-secondary-container text-on-secondary-container text-[10px] rounded font-bold">信義店</span>
+<span class="text-body-md font-semibold text-on-surface">課程預約：韓式亮顏</span>
+</div>
+<div class="text-caption text-on-surface-variant">勞務科目 / 信用卡結帳</div>
+</div>
+<div class="text-h3 text-tertiary font-bold">+ $2,800</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-slate-50">
+<span class="text-caption text-outline italic">"顧客備註：首次體驗，加購安瓶"</span>
+<div class="flex items-center text-outline text-[18px]">
+<span class="material-symbols-outlined">schedule</span>
+<span class="text-[11px] ml-[2px]">14:30</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-slate-100 rounded-xl p-md shadow-sm space-y-sm">
+<div class="flex justify-between items-start">
+<div class="space-y-xs">
+<div class="flex items-center gap-xs">
+<span class="px-xs py-[2px] bg-surface-container-high text-on-surface-variant text-[10px] rounded font-bold">總部</span>
+<span class="text-body-md font-semibold text-on-surface">店內耗材採購</span>
+</div>
+<div class="text-caption text-on-surface-variant">行政支出 / 現金支付</div>
+</div>
+<div class="text-h3 text-error font-bold">- $15,200</div>
+</div>
+<details class="group">
+<summary class="list-none flex items-center justify-between pt-sm border-t border-slate-50 cursor-pointer">
+<span class="text-caption text-outline italic truncate pr-md">"精油五組、按摩巾三打"</span>
+<span class="material-symbols-outlined text-outline text-[20px] transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="pt-sm space-y-xs">
+<div class="flex justify-between text-caption text-on-surface-variant">
+<span>記錄人員：</span>
+<span>店經理-王小明</span>
+</div>
+<div class="flex justify-between text-caption text-on-surface-variant">
+<span>記錄時間：</span>
+<span>2023-10-25 10:15:22</span>
+</div>
+</div>
+</details>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-slate-100 rounded-xl p-md shadow-sm space-y-sm">
+<div class="flex justify-between items-start">
+<div class="space-y-xs">
+<div class="flex items-center gap-xs">
+<span class="px-xs py-[2px] bg-secondary-container text-on-secondary-container text-[10px] rounded font-bold">大安店</span>
+<span class="text-body-md font-semibold text-on-surface">儲值卡加值</span>
+</div>
+<div class="text-caption text-on-surface-variant">會員營收 / 轉帳收款</div>
+</div>
+<div class="text-h3 text-tertiary font-bold">+ $10,000</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-slate-50">
+<span class="text-caption text-outline italic">"編號：M00892 續卡"</span>
+<div class="flex items-center text-outline text-[18px]">
+<span class="material-symbols-outlined">schedule</span>
+<span class="text-[11px] ml-[2px]">09:12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Safe area spacer -->
+<div class="h-20 safe-area-inset-bottom"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Hidden behind sheet but structured for context) -->
+<nav class="fixed bottom-0 left-0 w-full z-40 flex justify-around items-center px-2 pb-safe-area pt-2 bg-white border-t border-slate-100 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-pink-600 bg-pink-50 rounded-xl px-3 py-1">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">首頁</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-3 py-1">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">員工</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-3 py-1">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">薪資</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-3 py-1">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">報表</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-3 py-1">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">設定</span>
+</div>
+</nav>
+</body></html>

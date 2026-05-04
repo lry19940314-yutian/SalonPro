@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "commonjs",
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "inlineSourceMap": true,
@@ -26,12 +26,6 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": false
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "test"
-  ]
+  "include": ["src/**/*", "typings/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

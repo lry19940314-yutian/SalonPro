@@ -31,6 +31,7 @@ export class GlobalErrorFilter {
     let statusCode = 500;
     let code = 99999;
     let message = '伺服器內部錯誤，請稍後再試';
+    let detail: string | undefined;
 
     // ========== 處理自定義業務異常 ==========
     if (err instanceof BusinessError) {
@@ -60,6 +61,11 @@ export class GlobalErrorFilter {
       message = '請求數據格式錯誤';
     }
 
+    // 開發環境下返回詳細錯誤信息
+    if (process.env.NODE_ENV === 'development') {
+      detail = err.message + '\n' + (err.stack || '');
+    }
+
     // 設置 HTTP 狀態碼
     ctx.status = statusCode;
 
@@ -68,6 +74,7 @@ export class GlobalErrorFilter {
       code,
       message,
       data: null,
+      detail,
       timestamp: Date.now(),
     };
   }

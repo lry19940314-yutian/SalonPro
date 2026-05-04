@@ -48,22 +48,22 @@ export class Staff {
   @Column({ type: 'varchar', length: 50, nullable: true, comment: '職稱（如資深美容師）' })
   title: string;
 
-  @Column({ type: 'json', nullable: true, comment: '專長標籤（JSON 陣列）' })
+  @Column({ type: 'json', nullable: true, name: 'specialties', comment: '專長標籤（JSON 陣列）' })
   specialties: string[];
 
-  @Column({ type: 'date', nullable: true, comment: '入職日期' })
+  @Column({ type: 'date', nullable: true, name: 'hire_date', comment: '入職日期' })
   hireDate: string;
 
-  @Column({ type: 'tinyint', default: 1, comment: '狀態：1=在職，0=離職' })
+  @Column({ type: 'tinyint', default: 1, name: 'status', comment: '狀態：1=在職，0=離職' })
   status: number;
 
-  @Column({ type: 'datetime', nullable: true, comment: '最後登錄時間' })
+  @Column({ type: 'datetime', nullable: true, name: 'last_login', comment: '最後登錄時間' })
   lastLogin: Date;
 
-  @CreateDateColumn({ type: 'datetime', comment: '創建時間' })
+  @CreateDateColumn({ type: 'datetime', name: 'created_at', comment: '創建時間' })
   createdAt: Date;
 
-  @UpdateDateColumn({ type: 'datetime', comment: '更新時間' })
+  @UpdateDateColumn({ type: 'datetime', name: 'updated_at', comment: '更新時間' })
   updatedAt: Date;
 
   // ========== 關聯 ==========

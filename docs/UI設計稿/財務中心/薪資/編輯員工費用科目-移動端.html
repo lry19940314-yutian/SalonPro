@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff8f8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bottom-sheet-overlay {
+            background-color: rgba(35, 25, 29, 0.6);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e8b3fe",
+                        "primary-fixed-dim": "#ffafd3",
+                        "surface-dim": "#e8d5db",
+                        "primary-container": "#c14689",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-primary-fixed": "#3d0025",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary-container": "#328517",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary": "#794c8f",
+                        "surface-bright": "#fff8f8",
+                        "surface": "#fff8f8",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-tint": "#a52f72",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffafd3",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-background": "#23191d",
+                        "outline-variant": "#dac0c9",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary-fixed": "#042100",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-variant": "#f1dee3",
+                        "on-surface-variant": "#554149",
+                        "surface-container": "#fde9ef",
+                        "on-secondary-container": "#6c4082",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#392d32",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "error-container": "#ffdad6",
+                        "primary": "#a22c70",
+                        "primary-fixed": "#ffd8e7",
+                        "outline": "#88717a",
+                        "on-secondary-fixed": "#300247",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container-highest": "#f1dee3",
+                        "background": "#fff8f8",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#1c6b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "container-padding": "24px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Header / TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none flex justify-between items-center w-full px-4 h-16 fixed top-0 z-40">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden">
+<img alt="Profile" data-alt="A professional close-up portrait of a salon manager in a high-end beauty spa environment. The lighting is soft and flattering, with a bright white and soft pink color palette reflecting the 'Luminous Analytics' brand. The manager has a warm, confident expression, wearing a clean, modern uniform. The background shows blurred clinical beauty equipment and elegant floral arrangements, creating a refined B2B corporate atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSZgoqJp7nNALdbiJ-Frsb9GtGTWut89zJgV1wws8eajHevT5HL2AC-2ge2NKx0sEk6pszGhDYMVQmPKQ3NyW3PNVLAM-UpLlTIqZ0cIwRE5n738qYYkzOgOL9RLJ2CVffJe6xnHirpO5dPkjjIodCO4erh-VNwTWSK1MvPphdl0qmbvH5sJasHGVxsTOxwVE6b_WCOvOxsA12xFsPYQBo1kXIRrXKyhFwLr-2rhLPAlK2AIYBPh_bvpHATmX0oiyOHYfoGqYkaqQ"/>
+</div>
+<h1 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Wonder sky 國際美妍館</h1>
+</div>
+<button class="text-slate-500 dark:text-slate-400 p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Sub-navigation Tabs -->
+<nav class="fixed top-16 left-0 w-full bg-white z-30 border-b border-surface-variant px-4">
+<div class="flex items-center justify-around h-12 overflow-x-auto no-scrollbar">
+<a class="font-label-md text-label-md px-4 h-full flex items-center text-on-surface-variant hover:text-primary transition-colors" href="#">Salary</a>
+<a class="font-label-md text-label-md px-4 h-full flex items-center text-primary border-b-2 border-primary" href="#">Expense Subjects</a>
+<a class="font-label-md text-label-md px-4 h-full flex items-center text-on-surface-variant hover:text-primary transition-colors" href="#">Expense List</a>
+</div>
+</nav>
+<!-- Main Content Canvas (Behind Overlay) -->
+<main class="pt-32 pb-24 px-4 min-h-screen">
+<div class="space-y-4">
+<!-- Mock List Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl shadow-sm flex justify-between items-center">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">交通費 (Transportation)</h3>
+<p class="font-caption text-caption text-on-surface-variant">Type: Monthly</p>
+</div>
+<span class="material-symbols-outlined text-primary">edit</span>
+</div>
+<!-- Mock List Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl shadow-sm flex justify-between items-center">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">租金 (Rent)</h3>
+<p class="font-caption text-caption text-on-surface-variant">Type: Fixed</p>
+</div>
+<span class="material-symbols-outlined text-primary">edit</span>
+</div>
+<!-- Mock List Item 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl shadow-sm flex justify-between items-center">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">水電費 (Utilities)</h3>
+<p class="font-caption text-caption text-on-surface-variant">Type: Variable</p>
+</div>
+<span class="material-symbols-outlined text-primary">edit</span>
+</div>
+</div>
+</main>
+<!-- Bottom Sheet Component (Active State) -->
+<div class="fixed inset-0 z-50 bottom-sheet-overlay flex flex-col justify-end">
+<!-- Close trigger overlay -->
+<div class="flex-grow"></div>
+<!-- The Sheet -->
+<div class="bg-white rounded-t-[32px] w-full max-w-lg mx-auto shadow-2xl px-6 pb-10 pt-4 animate-slide-up">
+<!-- Drag Handle -->
+<div class="flex justify-center mb-6">
+<div class="w-12 h-1.5 bg-slate-200 rounded-full"></div>
+</div>
+<!-- Sheet Header -->
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-h2 text-h2 text-on-surface">編輯支出項目</h2>
+<button class="text-on-surface-variant p-2 hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+<!-- Form Content -->
+<form class="space-y-6">
+<!-- Subject Name -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">項目名稱 (Subject Name)</label>
+<input class="w-full h-12 px-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-lowest text-on-surface font-body-md" placeholder="例如：交通費" type="text" value="Transportation"/>
+</div>
+<!-- Expense Type -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">支出類型 (Expense Type)</label>
+<div class="relative">
+<select class="w-full h-12 pl-4 pr-10 rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-lowest text-on-surface font-body-md appearance-none">
+<option selected="">Monthly</option>
+<option>Fixed</option>
+<option>Variable</option>
+<option>One-time</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">描述 (Description)</label>
+<textarea class="w-full p-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-lowest text-on-surface font-body-md" placeholder="請輸入詳細描述..." rows="3">包含員工通勤補貼及商務出差交通報銷項目。</textarea>
+</div>
+<!-- Action Buttons -->
+<div class="flex gap-4 pt-4">
+<button class="flex-1 h-14 rounded-xl border border-primary text-primary font-body-lg font-semibold hover:bg-primary/5 transition-colors" type="button">
+                        取消
+                    </button>
+<button class="flex-[2] h-14 rounded-xl bg-primary text-white font-body-lg font-semibold shadow-lg shadow-primary/20 active:scale-95 transition-all" type="submit">
+                        儲存項目設定
+                    </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Hidden behind sheet overlay, but conceptually present) -->
+<footer class="fixed bottom-0 left-0 w-full z-10 bg-white border-t border-slate-100 flex justify-around items-center px-2 pb-safe h-16 shadow-[0_-4px_12px_0_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-slate-400 px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c84c8f] bg-[#c84c8f]/5 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="payments" data-weight="fill" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Salary</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Settings</span>
+</a>
+</footer>
+</body></html>

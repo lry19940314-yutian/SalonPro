@@ -23,6 +23,7 @@ import { useAuthStore } from '@/stores/auth'
 import { useDevice } from '@/composables/useDevice'
 import { loginApi } from '@/api/auth'
 import type { LoginParams } from '@/types/api'
+import SalonDialog from '@/components/common/SalonDialog.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -33,19 +34,19 @@ const { isMobile } = useDevice()
 
 /** 登入表單數據 */
 const loginForm = reactive<LoginParams>({
-  customerCode: '',
-  account: '',
+  shopCode: '',
+  username: '',
   password: '',
 })
 
 /** 表單驗證錯誤訊息 */
 const formErrors = reactive<{
-  customerCode: string
-  account: string
+  shopCode: string
+  username: string
   password: string
 }>({
-  customerCode: '',
-  account: '',
+  shopCode: '',
+  username: '',
   password: '',
 })
 
@@ -61,13 +62,22 @@ const loading = ref(false)
 /** 登入錯誤訊息 */
 const loginError = ref('')
 
+/** 錯誤彈窗顯示狀態 */
+const showErrorDialog = ref(false)
+
+/** 錯誤彈窗標題 */
+const errorDialogTitle = ref('登入失敗')
+
+/** 錯誤彈窗內容 */
+const errorDialogMessage = ref('')
+
 // ==================== 計算屬性 ====================
 
 /** 表單是否有效 */
 const isFormValid = computed(() => {
   return (
-    loginForm.customerCode.trim() !== '' &&
-    loginForm.account.trim() !== '' &&
+    loginForm.shopCode.trim() !== '' &&
+    loginForm.username.trim() !== '' &&
     loginForm.password.trim() !== ''
   )
 })
@@ -85,20 +95,20 @@ const bgImageUrl = computed(() => {
  */
 function validateForm(): boolean {
   let isValid = true
-  const errors = { customerCode: '', account: '', password: '' }
+  const errors = { shopCode: '', username: '', password: '' }
 
   // 客戶代碼驗證
-  if (!loginForm.customerCode.trim()) {
-    errors.customerCode = '請輸入客戶代碼'
+  if (!loginForm.shopCode.trim()) {
+    errors.shopCode = '請輸入客戶代碼'
     isValid = false
-  } else if (loginForm.customerCode.trim().length < 2) {
-    errors.customerCode = '客戶代碼格式不正確'
+  } else if (loginForm.shopCode.trim().length < 2) {
+    errors.shopCode = '客戶代碼格式不正確'
     isValid = false
   }
 
   // 帳號驗證
-  if (!loginForm.account.trim()) {
-    errors.account = '請輸入員工帳號'
+  if (!loginForm.username.trim()) {
+    errors.username = '請輸入員工帳號'
     isValid = false
   }
 
@@ -136,16 +146,16 @@ async function handleLogin(): Promise<void> {
   try {
     // 調用登入 API
     const response = await loginApi({
-      customerCode: loginForm.customerCode.trim(),
-      account: loginForm.account.trim(),
+      shopCode: loginForm.shopCode.trim(),
+      username: loginForm.username.trim(),
       password: loginForm.password,
     })
 
-    const { token, refreshToken, expiresIn, user } = response.data
+    const { accessToken, refreshToken, expiresIn, user } = response.data
 
     // 儲存登入狀態到 Pinia Store
     authStore.login({
-      token,
+      token: accessToken,
       refreshToken,
       expiresIn,
       user,
@@ -154,7 +164,7 @@ async function handleLogin(): Promise<void> {
     // 記住此裝置：儲存客戶代碼
     if (rememberDevice.value) {
       try {
-        localStorage.setItem('salon_remembered_code', loginForm.customerCode.trim())
+        localStorage.setItem('salon_remembered_code', loginForm.shopCode.trim())
       } catch {
         // localStorage 不可用時忽略
       }
@@ -167,14 +177,46 @@ async function handleLogin(): Promise<void> {
     }
 
     // 登入成功，跳轉至原始目標頁面或首頁
-    const redirect = (route.query.redirect as string) || '/dashboard'
+    const redirect = (route.query.redirect as string) || '/info-center'
     router.replace(redirect)
   } catch (error: any) {
-    // 顯示錯誤訊息
-    loginError.value = error.message || '登入失敗，請檢查帳號密碼'
+    // 顯示錯誤訊息（同時顯示內聯提示和彈窗）
+    const message = error.message || '登入失敗，請檢查帳號密碼'
+    loginError.value = message
+
+    // 根據錯誤類型設置彈窗標題和內容
+    if (error.response) {
+      const status = error.response.status
+      const data = error.response.data
+      if (status === 401) {
+        errorDialogTitle.value = '認證失敗'
+        errorDialogMessage.value = data?.message || '請先登錄'
+      } else if (status === 422) {
+        errorDialogTitle.value = '參數錯誤'
+        errorDialogMessage.value = data?.message || '請檢查輸入的資料格式'
+      } else if (status === 500) {
+        errorDialogTitle.value = '伺服器錯誤'
+        errorDialogMessage.value = data?.message || '伺服器內部錯誤，請稍後再試'
+      } else {
+        errorDialogTitle.value = '登入失敗'
+        errorDialogMessage.value = data?.message || message
+      }
+    } else if (error.message) {
+      errorDialogTitle.value = '登入失敗'
+      errorDialogMessage.value = error.message
+    } else {
+      errorDialogTitle.value = '登入失敗'
+      errorDialogMessage.value = '網路異常，請檢查連線後再試'
+    }
+    showErrorDialog.value = true
   } finally {
     loading.value = false
   }
+}
+
+/** 關閉錯誤彈窗 */
+function closeErrorDialog(): void {
+  showErrorDialog.value = false
 }
 
 // ==================== 生命週期 ====================
@@ -184,7 +226,7 @@ onMounted(() => {
   try {
     const rememberedCode = localStorage.getItem('salon_remembered_code')
     if (rememberedCode) {
-      loginForm.customerCode = rememberedCode
+      loginForm.shopCode = rememberedCode
       rememberDevice.value = true
     }
   } catch {
@@ -230,6 +272,21 @@ onMounted(() => {
             </div>
           </transition>
 
+          <!-- 登入錯誤彈窗 -->
+          <SalonDialog
+            :visible="showErrorDialog"
+            :title="errorDialogTitle"
+            :show-cancel="false"
+            confirm-text="知道了"
+            @update:visible="closeErrorDialog"
+            @confirm="closeErrorDialog"
+          >
+            <div class="login-error-dialog">
+              <span class="material-symbols-outlined login-error-dialog__icon">error</span>
+              <p class="login-error-dialog__message">{{ errorDialogMessage }}</p>
+            </div>
+          </SalonDialog>
+
           <!-- 客戶代碼 -->
           <div class="login-view__field">
             <label class="login-view__label">
@@ -238,20 +295,20 @@ onMounted(() => {
             </label>
             <div class="login-view__input-wrapper">
               <input
-                v-model="loginForm.customerCode"
+                v-model="loginForm.shopCode"
                 type="text"
                 class="login-view__input"
-                :class="{ 'login-view__input--error': formErrors.customerCode }"
+                :class="{ 'login-view__input--error': formErrors.shopCode }"
                 placeholder="請輸入您的客戶代碼"
                 maxlength="20"
                 autocomplete="off"
-                @input="clearFieldError('customerCode')"
+                @input="clearFieldError('shopCode')"
                 @keyup.enter="handleLogin"
               />
             </div>
             <transition name="fade-slide">
-              <p v-if="formErrors.customerCode" class="login-view__field-error">
-                {{ formErrors.customerCode }}
+              <p v-if="formErrors.shopCode" class="login-view__field-error">
+                {{ formErrors.shopCode }}
               </p>
             </transition>
           </div>
@@ -264,20 +321,20 @@ onMounted(() => {
             </label>
             <div class="login-view__input-wrapper">
               <input
-                v-model="loginForm.account"
+                v-model="loginForm.username"
                 type="text"
                 class="login-view__input"
-                :class="{ 'login-view__input--error': formErrors.account }"
+                :class="{ 'login-view__input--error': formErrors.username }"
                 placeholder="請輸入您的員工帳號"
                 maxlength="30"
                 autocomplete="username"
-                @input="clearFieldError('account')"
+                @input="clearFieldError('username')"
                 @keyup.enter="handleLogin"
               />
             </div>
             <transition name="fade-slide">
-              <p v-if="formErrors.account" class="login-view__field-error">
-                {{ formErrors.account }}
+              <p v-if="formErrors.username" class="login-view__field-error">
+                {{ formErrors.username }}
               </p>
             </transition>
           </div>
@@ -369,6 +426,7 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
+// ==================== 登入錯誤彈窗樣式 ====================
 // ==================== 變數定義 ====================
 $color-primary: #ac235a;
 $color-primary-light: #cc3e73;
@@ -384,6 +442,29 @@ $color-white-90: rgba(255, 255, 255, 0.9);
 $color-white-70: rgba(255, 255, 255, 0.7);
 $color-white-60: rgba(255, 255, 255, 0.6);
 $color-black-10: rgba(0, 0, 0, 0.1);
+
+.login-error-dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.login-error-dialog__icon {
+  font-size: 48px;
+  color: $color-error;
+}
+
+.login-error-dialog__message {
+  font-size: 15px;
+  color: $color-on-surface-variant;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 
 // ==================== 全域佈局 ====================
 

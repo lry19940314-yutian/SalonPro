@@ -60,7 +60,7 @@ const routes: AdaptiveRouteConfig[] = [
     path: '/login',
     name: 'Login',
     meta: {
-      title: '登入',
+      title: '登錄',
       requiresAuth: false,
       roles: [], // 公開路由，無需登入
       hidden: true, // 側邊欄/底部導航隱藏
@@ -74,7 +74,7 @@ const routes: AdaptiveRouteConfig[] = [
   {
     path: '/',
     name: 'Root',
-    redirect: '/dashboard',
+    redirect: '/info-center',
     meta: {
       title: '首頁',
       requiresAuth: true,
@@ -85,7 +85,23 @@ const routes: AdaptiveRouteConfig[] = [
     component: () => import('@/layouts/PCLayout.vue'),
     mobileComponent: () => import('@/layouts/MobileLayout.vue'),
     children: [
-      // ===== 儀表板 / 首頁 =====
+      // ===== 資訊中心總覽（首頁）=====
+      // 角色：美容師、店長均可訪問
+      // 終端：PC / 移動端均支援
+      {
+        path: 'info-center',
+        name: 'InfoCenter',
+        meta: {
+          title: '資訊中心總覽',
+          requiresAuth: true,
+          roles: ['manager', 'beautician'],
+          icon: 'dashboard',
+          keepAlive: true, // 首頁建議緩存
+        },
+        component: () => import('@/views/info-center/InfoCenterView.vue'),
+      },
+
+      // ===== 儀表板（保留向後相容）=====
       // 角色：美容師、店長均可訪問
       // 終端：PC / 移動端均支援
       {
@@ -96,7 +112,7 @@ const routes: AdaptiveRouteConfig[] = [
           requiresAuth: true,
           roles: ['manager', 'beautician'],
           icon: 'dashboard',
-          keepAlive: true, // 首頁建議緩存
+          keepAlive: true,
         },
         component: () => import('@/views/dashboard/DashboardView.vue'),
       },

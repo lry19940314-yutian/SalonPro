@@ -11,7 +11,7 @@ import { Shop } from '../entity/Shop';
 
 @Provide()
 export class ShopDAO {
-  @InjectDataSource()
+  @InjectDataSource('default')
   dataSource: DataSource;
 
   get entityManager() {

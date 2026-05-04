@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 新增收入分類</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#145200",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-primary-fixed-variant": "#861259",
+                        "error-container": "#ffdad6",
+                        "secondary": "#794c8f",
+                        "error": "#ba1a1a",
+                        "primary-container": "#c14689",
+                        "surface-bright": "#fff8f8",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#dac0c9",
+                        "surface-container": "#fde9ef",
+                        "primary": "#a22c70",
+                        "on-surface": "#23191d",
+                        "on-secondary-fixed": "#300247",
+                        "surface-variant": "#f1dee3",
+                        "inverse-primary": "#ffafd3",
+                        "background": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed-variant": "#603475",
+                        "secondary-container": "#e8b3fe",
+                        "on-background": "#23191d",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "outline": "#88717a",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-tertiary-container": "#f8ffee",
+                        "tertiary": "#1c6b00",
+                        "inverse-surface": "#392d32",
+                        "on-surface-variant": "#554149",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-container": "#328517",
+                        "surface": "#fff8f8",
+                        "on-primary-fixed": "#3d0025",
+                        "primary-fixed": "#ffd8e7",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-tint": "#a52f72",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f1dee3",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#6c4082",
+                        "surface-dim": "#e8d5db",
+                        "tertiary-fixed": "#9ff87d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bottom-sheet-shadow {
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- Screen Mockup Background -->
+<main class="min-h-screen relative flex flex-col">
+<!-- Background Page Content (Accounting Dashboard Mockup) -->
+<div class="p-container-padding space-y-md opacity-40 select-none pointer-events-none">
+<div class="flex justify-between items-center mb-xl">
+<h1 class="font-h1 text-h1">收支管理</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container-high"></div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="p-md rounded-xl bg-white border border-outline-variant">
+<p class="font-label-md text-on-surface-variant mb-xs">本月收入</p>
+<p class="font-h2 text-h2 text-primary">$128,400</p>
+</div>
+<div class="p-md rounded-xl bg-white border border-outline-variant">
+<p class="font-label-md text-on-surface-variant mb-xs">本月支出</p>
+<p class="font-h2 text-h2">$45,200</p>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="p-md rounded-xl bg-white border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary p-xs bg-primary-fixed rounded-lg">spa</span>
+<span class="font-body-lg">美容服務收入</span>
+</div>
+<span class="font-h3">$85,000</span>
+</div>
+<div class="p-md rounded-xl bg-white border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary p-xs bg-secondary-fixed rounded-lg">shopping_bag</span>
+<span class="font-body-lg">產品銷售收入</span>
+</div>
+<span class="font-h3">$43,400</span>
+</div>
+</div>
+</div>
+<!-- Semi-transparent Black Overlay Backdrop -->
+<div class="fixed inset-0 bg-black/60 z-40 backdrop-blur-[2px]"></div>
+<!-- Bottom Sheet Popup -->
+<div class="fixed bottom-0 left-0 right-0 z-50 transform transition-transform duration-300 translate-y-0">
+<div class="bg-surface rounded-t-xl bottom-sheet-shadow flex flex-col max-h-[813px]">
+<!-- 彈窗頂部: 拖曳條 & 標題 -->
+<div class="flex flex-col items-center pt-sm pb-md px-container-padding sticky top-0 bg-surface z-10">
+<div class="w-10 h-1 bg-outline-variant rounded-full mb-md"></div>
+<h2 class="font-h2 text-h2 text-on-surface">新增</h2>
+</div>
+<!-- 表單控件容器 -->
+<div class="px-container-padding pb-xl space-y-lg overflow-y-auto hide-scrollbar">
+<!-- 分類名稱 (文本輸入框) -->
+<div class="space-y-sm">
+<label class="font-label-md text-on-surface-variant block">分類名稱</label>
+<input class="w-full h-[48px] px-md rounded-lg border border-outline-variant bg-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" placeholder="請輸入分類名稱 (如：頭皮護理服務)" type="text" value=""/>
+</div>
+<!-- 隸屬分類 (可滾動列表選擇框) -->
+<div class="space-y-sm">
+<label class="font-label-md text-on-surface-variant block">隸屬分類</label>
+<div class="border border-outline-variant rounded-lg bg-white overflow-hidden">
+<div class="max-h-[220px] overflow-y-auto hide-scrollbar">
+<!-- List Item: Active/Selected -->
+<div class="flex items-center justify-between h-[56px] px-md bg-primary/5 border-b border-outline-variant/30">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="spa">spa</span>
+<span class="font-body-lg font-semibold text-primary">美容美體</span>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- List Item -->
+<div class="flex items-center h-[56px] px-md border-b border-outline-variant/30 active:bg-surface-variant transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="content_cut">content_cut</span>
+<span class="font-body-lg">美甲美睫</span>
+</div>
+</div>
+<!-- List Item -->
+<div class="flex items-center h-[56px] px-md border-b border-outline-variant/30 active:bg-surface-variant transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-body-lg">產品銷售</span>
+</div>
+</div>
+<!-- List Item -->
+<div class="flex items-center h-[56px] px-md border-b border-outline-variant/30 active:bg-surface-variant transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="card_membership">card_membership</span>
+<span class="font-body-lg">儲值課程</span>
+</div>
+</div>
+<!-- List Item -->
+<div class="flex items-center h-[56px] px-md active:bg-surface-variant transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+<span class="font-body-lg">其他收入</span>
+</div>
+</div>
+</div>
+</div>
+<p class="font-caption text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+                            選擇主分類後，此項目將歸類於該報表統計項下
+                        </p>
+</div>
+<!-- Category Icon Grid Picker (Extra Detail for high-end feel) -->
+<div class="space-y-sm">
+<label class="font-label-md text-on-surface-variant block">選擇圖示</label>
+<div class="grid grid-cols-6 gap-sm">
+<div class="h-10 w-10 flex items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-h3" data-icon="spa">spa</span>
+</div>
+<div class="h-10 w-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant active:bg-surface-variant transition-all">
+<span class="material-symbols-outlined text-h3" data-icon="face">face</span>
+</div>
+<div class="h-10 w-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant active:bg-surface-variant transition-all">
+<span class="material-symbols-outlined text-h3" data-icon="health_and_safety">health_and_safety</span>
+</div>
+<div class="h-10 w-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant active:bg-surface-variant transition-all">
+<span class="material-symbols-outlined text-h3" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="h-10 w-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant active:bg-surface-variant transition-all">
+<span class="material-symbols-outlined text-h3" data-icon="category">category</span>
+</div>
+<div class="h-10 w-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant active:bg-surface-variant transition-all">
+<span class="material-symbols-outlined text-h3" data-icon="add">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 表單底部: 取消與儲存按鈕 -->
+<div class="p-container-padding pt-md pb-xl border-t border-outline-variant/30 flex gap-gutter bg-surface">
+<button class="flex-1 h-[48px] font-h3 text-primary border border-primary rounded-lg active:scale-95 transition-transform duration-200">
+                        取消
+                    </button>
+<button class="flex-[2] h-[48px] font-h3 text-white bg-primary rounded-lg active:scale-95 transition-transform duration-200 shadow-md">
+                        儲存
+                    </button>
+</div>
+</div>
+</div>
+<!-- Floating Action Background Image Decorative Element -->
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 -z-10 blur-3xl opacity-20 pointer-events-none">
+<div class="w-full h-full bg-primary rounded-full"></div>
+</div>
+</main>
+<!-- Contextual Information for Screen Visuals -->
+<div class="hidden">
+<img data-alt="A luxurious, high-end beauty salon interior with soft, warm ambient lighting. The space features minimalist pink and white marble textures, sleek furniture, and organized beauty products on display. The atmosphere is professional and serene, reflecting a modern wellness brand aesthetic with a palette of rose pink and clean whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw7QrPmi_RJ9_9egXXtv2LpVoA_EKdTSWq8WiATYvZIIU-eeNLWNRbQjUIq9bpPjn7VtxfXm0SQxTS-F032zzdPD2Y_tUpru5EBMkmCsqm1nQpR202AXmN6WmC7YmYzrqNKqnFApW4IuJjT05jWhmK0iRr9KfFFqOPTqzvUqs7OY_FilSviesD-6XnjtGn_t8QfftTwrF1Br6Iw1kCASTwzHnTTXtzV5jZ38LQHsAraGodJybP9vsBURA4mKyEljg7dG7314F2Ms8"/>
+</div>
+</body></html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-primary-container": "#fffbff",
+                        "on-background": "#23191d",
+                        "tertiary": "#1c6b00",
+                        "surface-container-highest": "#f1dee3",
+                        "on-secondary-fixed-variant": "#603475",
+                        "tertiary-fixed-dim": "#84db64",
+                        "outline": "#88717a",
+                        "primary": "#a22c70",
+                        "on-tertiary-container": "#f8ffee",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#300247",
+                        "surface-bright": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-tint": "#a52f72",
+                        "secondary-fixed": "#f6d9ff",
+                        "outline-variant": "#dac0c9",
+                        "primary-container": "#c14689",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fff0f4",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary": "#794c8f",
+                        "inverse-surface": "#392d32",
+                        "secondary-container": "#e8b3fe",
+                        "on-surface-variant": "#554149",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary-container": "#328517",
+                        "surface-dim": "#e8d5db",
+                        "on-primary-fixed-variant": "#861259",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-fixed": "#042100",
+                        "inverse-primary": "#ffafd3",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-variant": "#f1dee3",
+                        "on-secondary-container": "#6c4082",
+                        "surface": "#fff8f8",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "background": "#fff8f8",
+                        "primary-fixed": "#ffd8e7",
+                        "on-surface": "#23191d",
+                        "surface-container": "#fde9ef",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background">
+<!-- TopNavBar Shell -->
+<nav class="bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm fixed top-0 z-40 flex justify-between items-center h-16 px-4 w-full">
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+</button>
+<h1 class="text-xl font-black tracking-tight text-slate-900">Luminous Analytics</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined text-slate-500">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border border-white"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a polished female executive in a modern salon environment. The lighting is soft and flattering, highlighting her friendly expression and well-groomed appearance. She represents the high-end beauty industry with a sophisticated aesthetic that blends professional competence with the elegance of a luxury wellness brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpPwrR4c9JB6siMbcmh05YgzVZYlOJK6RoSFaGfbdWWul0JSMXrfMHGaYEw_wHE6KFbsNdtpL_Mm7g02XB1ZLivmXXFtYeHSKIccSa86vPjln_PlEX7aovJT3YyDTH2pslEWVj0SmtCAHD0r-zBjYREvqOBgateVSP2QhHZyQZo85ippjT4cDKWC4lU5-p6AhyKDJsud0Dh2YoEB-pOG8UB0PXqzdbgBhe2t-C2rG1M9kDlcouc05CfRA7kZx7ERWDCZMsmHJ8ZYQ"/>
+</div>
+</div>
+</nav>
+<!-- Content Canvas -->
+<main class="pt-16 pb-24 px-4 min-h-screen">
+<!-- Scrolling Horizontal Tabs -->
+<div class="mt-4 -mx-4 px-4 overflow-x-auto hide-scrollbar border-b border-slate-200">
+<div class="flex gap-8 whitespace-nowrap min-w-max">
+<button class="text-slate-500 hover:text-slate-900 pb-3 font-label-md text-label-md transition-colors">Salary</button>
+<button class="text-slate-500 hover:text-slate-900 pb-3 font-label-md text-label-md transition-colors">Expense Categories</button>
+<button class="text-pink-600 border-b-2 border-pink-600 pb-3 font-label-md text-label-md">出勤頁面</button>
+<button class="text-slate-500 hover:text-slate-900 pb-3 font-label-md text-label-md transition-colors">Expense List</button>
+</div>
+</div>
+<!-- Vertical Filter Stack -->
+<div class="mt-6 space-y-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-body-md text-body-md" placeholder="搜尋員工姓名或編號..." type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">calendar_today</span>
+<select class="w-full pl-9 pr-3 py-3 bg-white border border-outline-variant rounded-xl appearance-none font-body-md text-body-md text-on-surface-variant">
+<option>2023年10月</option>
+<option>2023年09月</option>
+</select>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">badge</span>
+<select class="w-full pl-9 pr-3 py-3 bg-white border border-outline-variant rounded-xl appearance-none font-body-md text-body-md text-on-surface-variant">
+<option>所有職位</option>
+<option>美療師</option>
+<option>前台顧問</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-primary text-white font-label-md text-label-md py-3 rounded-xl shadow-sm flex items-center justify-center gap-2 hover:bg-primary-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg">download</span>
+                匯出出勤報表
+            </button>
+</div>
+<!-- Attendance List (Card Format) -->
+<div class="mt-8 space-y-4">
+<h2 class="font-h2 text-h2 text-on-background px-1">出勤清單 (24)</h2>
+<!-- Employee Card 1 -->
+<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-[0_8px_20px_-4px_rgba(35,25,29,0.06)]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="Employee avatar" class="w-full h-full object-cover" data-alt="A detailed portrait of a professional beauty therapist with a warm, welcoming smile. She is wearing a crisp white uniform, set against a soft-focus background of a luxurious spa interior with warm wooden accents and ambient pink-toned lighting that reflects the brand's sophisticated identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKSE5FMw2zqeMpleMsHzYue66xY2owDLEtG2p-Rw_yqKvWn4bbLy6Il8ZQAp4dP5cpoA_BKSe31bwylZjsw65v4dqqV-hEPZ-rMKwmj0HmXKXczGblRPJ_pdPbut2sSL8UBFys86FhmPXy2JhTQXrsjh84B8IrEJO-USHXrfuMalftjzobKM-46F6XtLdzNqnYfou0_3ksEs8fWYMZQDfzf4WzPZl8riU9wEzeL6O_nISQgFQ2u8C9HwVj6CABDw1J6-LlkTZmGXU"/>
+</div>
+<div>
+<p class="font-h3 text-h3 text-on-background">李安琪 Angel</p>
+<p class="font-caption text-caption text-slate-500">資深美療師 · ID: 2045</p>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4 bg-surface-container-low rounded-lg p-3">
+<div>
+<p class="font-caption text-caption text-slate-500 mb-1">排休天數</p>
+<p class="font-h3 text-h3 text-primary">8 天</p>
+</div>
+<div class="border-l border-slate-200 pl-4">
+<p class="font-caption text-caption text-slate-500 mb-1">總出勤時數</p>
+<p class="font-h3 text-h3 text-slate-800">176.5 hr</p>
+</div>
+</div>
+<!-- Collapsible Secondary Data -->
+<div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 font-caption text-caption text-slate-600 bg-slate-100 px-2 py-1 rounded-full">
+                            事假 <strong class="text-on-background">1</strong>
+</span>
+<span class="flex items-center gap-1 font-caption text-caption text-slate-600 bg-slate-100 px-2 py-1 rounded-full">
+                            加班 <strong class="text-on-background">12.5</strong>
+</span>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1">
+                        詳情 <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 2 -->
+<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-[0_8px_20px_-4px_rgba(35,25,29,0.06)]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="Employee avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a business-oriented woman with dark hair and a confident expression. She is in a high-end corporate setting, with soft neutral tones and subtle pink accents in the background that align with the brand's aesthetic of professional elegance and modern management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsZ-KSzJJqUFSMAvxM7pubkXTHNnDkBFbwaLm3D6hAmgHF_AOBf3GI57PDmB1v6KR-u95-XqqVLW2NFXBS3tj-64Niv0bQ12do9z-QIcVWPSaq9ImkSmwQHVx_yHWDxbUGV3rudlH7PfYFSM833DpQRRcFVPjXG4bHy6U8jP3wP2-J_Syom3cyDr-q-463WtoKACnjuK7adzrZnBMimNqNo0R16xvAYNja51sZYmAHsMQj8LF7hbgJpsA2593Qvmm5PG3XSj6MuSI"/>
+</div>
+<div>
+<p class="font-h3 text-h3 text-on-background">陳思妤 Sylvia</p>
+<p class="font-caption text-caption text-slate-500">店長 · ID: 1002</p>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4 bg-surface-container-low rounded-lg p-3">
+<div>
+<p class="font-caption text-caption text-slate-500 mb-1">排休天數</p>
+<p class="font-h3 text-h3 text-primary">6 天</p>
+</div>
+<div class="border-l border-slate-200 pl-4">
+<p class="font-caption text-caption text-slate-500 mb-1">總出勤時數</p>
+<p class="font-h3 text-h3 text-slate-800">192.0 hr</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 font-caption text-caption text-slate-600 bg-slate-100 px-2 py-1 rounded-full">
+                            事假 <strong class="text-on-background">0</strong>
+</span>
+<span class="flex items-center gap-1 font-caption text-caption text-slate-600 bg-slate-100 px-2 py-1 rounded-full">
+                            加班 <strong class="text-on-background">5.0</strong>
+</span>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1">
+                        詳情 <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 3 -->
+<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-[0_8px_20px_-4px_rgba(35,25,29,0.06)] opacity-90">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="Employee avatar" class="w-full h-full object-cover" data-alt="A portrait of a male professional working in a creative or wellness field, looking directly at the camera with a calm and assured look. The visual style is crisp and clean, utilizing the high-end light-mode aesthetic of the brand with a palette of soft whites and deep charcoal tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwKgAb-8z7N4Zq3xeGH8oSFooCQtUix7LBawcdKzD-BI6B020dtQ-1rLPd46Nrqspih53vqle-I_F-WkBCoV4ANoUXmATP3dmEYPsdeFdMoA8sfnjZ0BAF9q7XezO_7J65-nGDOJHgwV147s9fmx3A5EaBFiMw_Zpo-aeS9o8zUbjeaFM57rNQic9TE0eS9Cd_oYxMDRKLXc3DjIeKXxXLf5TddIRnMuYwFHFMOfqnTljCPACweoTjgD4szft9L65xFC2caIsuN-o"/>
+</div>
+<div>
+<p class="font-h3 text-h3 text-on-background">王大衛 David</p>
+<p class="font-caption text-caption text-slate-500">客服主管 · ID: 3011</p>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4 bg-surface-container-low rounded-lg p-3">
+<div>
+<p class="font-caption text-caption text-slate-500 mb-1">排休天數</p>
+<p class="font-h3 text-h3 text-primary">10 天</p>
+</div>
+<div class="border-l border-slate-200 pl-4">
+<p class="font-caption text-caption text-slate-500 mb-1">總出勤時數</p>
+<p class="font-h3 text-h3 text-slate-800">160.0 hr</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 font-caption text-caption text-slate-600 bg-slate-100 px-2 py-1 rounded-full">
+                            事假 <strong class="text-on-background">2</strong>
+</span>
+<span class="flex items-center gap-1 font-caption text-caption text-slate-600 bg-slate-100 px-2 py-1 rounded-full">
+                            加班 <strong class="text-on-background">0.0</strong>
+</span>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1">
+                        詳情 <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Responsive Pivot) -->
+<div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-slate-100 flex justify-around items-center h-16 px-2 z-40 md:hidden">
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400 group">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="text-[10px] font-medium">首頁</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span class="text-[10px] font-medium">預約</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-[10px] font-semibold">財務</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<span class="text-[10px] font-medium">人員</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-[24px]">monitoring</span>
+<span class="text-[10px] font-medium">分析</span>
+</button>
+</div>
+<!-- Floating Action Menu (Mock Touch Standard Overlay) -->
+<div class="fixed bottom-20 right-4 flex flex-col items-end gap-3 z-50">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</body></html>

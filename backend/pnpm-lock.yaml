@@ -58,11 +58,14 @@ importers:
         version: 0.3.28(ioredis@5.10.1)(mysql2@3.22.3(@types/node@20.19.39))(ts-node@10.9.2(@types/node@20.19.39)(typescript@5.9.3))
     devDependencies:
       '@midwayjs/cli':
-        specifier: ^1.3.22
-        version: 1.3.22(@midwayjs/mock@4.1.0)(@types/node@20.19.39)(typescript@5.9.3)
+        specifier: ^1.3.18
+        version: 1.3.18(@midwayjs/mock@3.20.24)(@types/node@20.19.39)(typescript@5.9.3)
+      '@midwayjs/logger':
+        specifier: '3'
+        version: 3.4.2
       '@midwayjs/mock':
-        specifier: ^4.1.0
-        version: 4.1.0
+        specifier: ^3.20.24
+        version: 3.20.24
       '@types/bcryptjs':
         specifier: ^2.4.6
         version: 2.4.6
@@ -412,6 +415,10 @@ packages:
     resolution: {integrity: sha512-sYcHglGKTxGF+hQ6x67xDfkE9o+NhVlRHBqq6gLywaMc6CojK/5vFZByphdonKinYlMLkEkacm+HEse9HzwgTA==}
     engines: {node: '>= 12'}
 
+  '@midwayjs/async-hooks-context-manager@3.20.24':
+    resolution: {integrity: sha512-/nu6CsWn7iE4v1hAsgp2+San5TbvhBetCg4zvxJMDRb3C2DsEi2QYIPL0zwENqj9a/FKoqllwoZ/2m5byZXiWw==}
+    engines: {node: '>=12.17.0'}
+
   '@midwayjs/cli-plugin-build@1.3.19':
     resolution: {integrity: sha512-dd6cLgYko+B+p17bKO2l9grJx3hataIovJ1DDZCJW2hw4a5EL2HFH1pHofkNIpRQy42sQywJkDW1X5hL9BHiPw==}
     engines: {node: '>= 10'}
@@ -434,8 +441,8 @@ packages:
     resolution: {integrity: sha512-KGgaFM80O/95g7PYEm4gC+AObt1c40lVcFyC3r/IbzdV8QSQK819wh6vCNOIbK2IkGZifiq6hP991k7EoajE/w==}
     engines: {node: '>= 10'}
 
-  '@midwayjs/cli@1.3.22':
-    resolution: {integrity: sha512-NzWX0xE33MZ97oAl12aCJFKQUQLQH+uhVPgERXPmF1WXXQbtZgo71cQYknDNz+2nu6ABV+eR/9B49/98zrTITA==}
+  '@midwayjs/cli@1.3.18':
+    resolution: {integrity: sha512-SrHpWJpZsb3i/1n9auMTJ3+LOzH45RHsEjjmJZAv7lM47QlwmGvqx9a2vZThApXcYVz0/4jWvAysuOne4qscVw==}
     engines: {node: '>= 10.0.0'}
     hasBin: true
 
@@ -480,14 +487,18 @@ packages:
   '@midwayjs/locate@1.8.1':
     resolution: {integrity: sha512-ZlYKENlBOtN6ODZk9+iHdJcrV+IYk+CZXqyQMT6VzTmBoE/z/HnAxKq39uJsn+dzDTR+c18/qdYVRZ0feKSHMw==}
 
+  '@midwayjs/logger@3.4.2':
+    resolution: {integrity: sha512-BxSdSMog4jxeqpHwgauuKZT6iAiu/Vr1HDjO9l81iqU+l8c9veAJVeLT08nTqKdjUiQXnxTaW6nYlvnzF2HdMA==}
+    engines: {node: '>=10'}
+
   '@midwayjs/luckyeye@1.1.0':
     resolution: {integrity: sha512-B/bBKJjyFT22a0K0K9R+b03tijGL7A8LQshfTha6KanqlYhpuEKA9N1IdR0+2yS4pQtVYJrddjcZ8ZR49ihQ6A==}
     engines: {node: '>= 10.0.0'}
     hasBin: true
 
-  '@midwayjs/mock@4.1.0':
-    resolution: {integrity: sha512-caEVfywl74+g0ChcwyKyHn+PIuiPep+FsJ4B3pCPjZ9gvnXoc0Bk5We/L7Un5NbFNvgKKfcvnf+ZONguhOG38w==}
-    engines: {node: '>=20'}
+  '@midwayjs/mock@3.20.24':
+    resolution: {integrity: sha512-44DODB1uuVsXZyqVZtTTJboH5LttvJM0Dn/Xlg0SmyBDrKmA7m5SYUTqEn/knb/UabgkfOjJnhdjXlkEil0KAA==}
+    engines: {node: '>=12'}
 
   '@midwayjs/mwcc@0.8.0':
     resolution: {integrity: sha512-6TUIW1gWo/fCSLEikpQzwAB+PjvPEoEDTMpkuSHO0wh6VapV0pF1HnK5hmEIOBF6OIj7HT1URCfRHdX+0rAuiw==}
@@ -1768,6 +1779,10 @@ packages:
     resolution: {integrity: sha512-PMSmkqxr106Xa156c2M265Z+FTrPl+oxd/rgOQy2tijQeK5TxQ43psO1ZCwhVOSdnn+RzkzlRz/eY4BgJBYVpg==}
     hasBin: true
 
+  js-yaml@4.1.0:
+    resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
+    hasBin: true
+
   js-yaml@4.1.1:
     resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
@@ -2263,6 +2278,10 @@ packages:
     resolution: {integrity: sha512-x/+Cz4YrimQxQccJf5mKEbIa1NzeCRNI5Ecl/ekmlYaampdNLPalVyIcCZNNH3MvmqBugV5TMYZXv0ljslUlaw==}
     engines: {node: '>= 0.4'}
 
+  safe-stable-stringify@2.5.0:
+    resolution: {integrity: sha512-b3rppTKm9T+PsVCBEOUR46GWI7fdOs00VKZ1+9c1EWDaDMvjQc6tUwuFyIprgGgTcWoVHSKrU8H31ZHA2e0RHA==}
+    engines: {node: '>=10'}
+
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
@@ -2417,8 +2436,8 @@ packages:
     engines: {node: '>=6.4.0 <13 || >=14'}
     deprecated: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
 
-  supertest@6.3.4:
-    resolution: {integrity: sha512-erY3HFDG0dPnhw4U+udPfrzXa4xhSG+n4rxfRuZWCUvjFWwKl+OxWf/7zk50s84/fAAs7vf5QAb9uRa0cCykxw==}
+  supertest@6.3.3:
+    resolution: {integrity: sha512-EMCG6G8gDu5qEqRQ3JjjPs6+FYT1a7Hv5ApHvtSghmOFJYtsU5S+pSb6Y2EUeCEY3CmEL3mmQ8YWlPOzQomabA==}
     engines: {node: '>=6.4.0'}
     deprecated: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
 
@@ -3191,6 +3210,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@midwayjs/async-hooks-context-manager@3.20.24': {}
+
   '@midwayjs/cli-plugin-build@1.3.19':
     dependencies:
       '@midwayjs/command-core': 1.3.19
@@ -3217,11 +3238,11 @@ snapshots:
       '@midwayjs/serverless-spec-builder': 1.3.22
       fs-extra: 8.1.0
 
-  '@midwayjs/cli-plugin-dev@1.3.21(@midwayjs/mock@4.1.0)':
+  '@midwayjs/cli-plugin-dev@1.3.21(@midwayjs/mock@3.20.24)':
     dependencies:
       '@midwayjs/command-core': 1.3.19
       '@midwayjs/debugger': 1.0.9
-      '@midwayjs/mock': 4.1.0
+      '@midwayjs/mock': 3.20.24
       chalk: 4.1.2
       chokidar: 3.6.0
       detect-port: 1.6.1
@@ -3249,12 +3270,12 @@ snapshots:
       - '@swc/wasm'
       - '@types/node'
 
-  '@midwayjs/cli@1.3.22(@midwayjs/mock@4.1.0)(@types/node@20.19.39)(typescript@5.9.3)':
+  '@midwayjs/cli@1.3.18(@midwayjs/mock@3.20.24)(@types/node@20.19.39)(typescript@5.9.3)':
     dependencies:
       '@midwayjs/cli-plugin-build': 1.3.19
       '@midwayjs/cli-plugin-check': 1.3.19
       '@midwayjs/cli-plugin-clean': 1.3.22
-      '@midwayjs/cli-plugin-dev': 1.3.21(@midwayjs/mock@4.1.0)
+      '@midwayjs/cli-plugin-dev': 1.3.21(@midwayjs/mock@3.20.24)
       '@midwayjs/cli-plugin-test': 1.3.19(@types/node@20.19.39)
       '@midwayjs/command-core': 1.3.19
       enquirer: 2.4.1
@@ -3343,6 +3364,11 @@ snapshots:
       fs-extra: 8.1.0
       globby: 10.0.2
 
+  '@midwayjs/logger@3.4.2':
+    dependencies:
+      dayjs: 1.11.20
+      safe-stable-stringify: 2.5.0
+
   '@midwayjs/luckyeye@1.1.0':
     dependencies:
       find-root: 1.1.0
@@ -3351,13 +3377,14 @@ snapshots:
       semver: 7.7.4
       supports-color: 8.1.1
 
-  '@midwayjs/mock@4.1.0':
+  '@midwayjs/mock@3.20.24':
     dependencies:
+      '@midwayjs/async-hooks-context-manager': 3.20.24
       '@types/superagent': 4.1.14
       '@types/supertest': 2.0.16
-      js-yaml: 4.1.1
+      js-yaml: 4.1.0
       raw-body: 2.5.2
-      supertest: 6.3.4
+      supertest: 6.3.3
     transitivePeerDependencies:
       - supports-color
 
@@ -4941,6 +4968,10 @@ snapshots:
       argparse: 1.0.10
       esprima: 4.0.1
 
+  js-yaml@4.1.0:
+    dependencies:
+      argparse: 2.0.1
+
   js-yaml@4.1.1:
     dependencies:
       argparse: 2.0.1
@@ -5419,6 +5450,8 @@ snapshots:
       es-errors: 1.3.0
       is-regex: 1.2.1
 
+  safe-stable-stringify@2.5.0: {}
+
   safer-buffer@2.1.2: {}
 
   scmp@2.1.0: {}
@@ -5568,7 +5601,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  supertest@6.3.4:
+  supertest@6.3.3:
     dependencies:
       methods: 1.1.2
       superagent: 8.1.2

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 帳戶管理</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed-variant": "#861259",
+                        "error": "#ba1a1a",
+                        "primary": "#a22c70",
+                        "on-secondary-container": "#6c4082",
+                        "surface": "#fff8f8",
+                        "background": "#fff8f8",
+                        "surface-variant": "#f1dee3",
+                        "tertiary-container": "#328517",
+                        "surface-tint": "#a52f72",
+                        "on-surface-variant": "#554149",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-dim": "#e8d5db",
+                        "surface-bright": "#fff8f8",
+                        "tertiary": "#1c6b00",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "inverse-surface": "#392d32",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-fixed": "#042100",
+                        "on-tertiary-container": "#f8ffee",
+                        "secondary-container": "#e8b3fe",
+                        "secondary": "#794c8f",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-secondary-fixed": "#300247",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-container": "#fde9ef",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffd8e7",
+                        "outline": "#88717a",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-background": "#23191d",
+                        "on-secondary-fixed-variant": "#603475",
+                        "inverse-primary": "#ffafd3",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#dac0c9",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-container-highest": "#f1dee3",
+                        "surface-container-low": "#fff0f4",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-surface": "#23191d",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "gutter": "20px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f5f5f5; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="flex min-h-screen text-on-surface">
+<!-- SideNavBar (Shared Component Logic) -->
+<aside class="h-screen w-64 border-r border-slate-100 bg-white shadow-[4px_0_12px_rgba(0,0,0,0.02)] flex flex-col py-6 sticky top-0">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-pink-600">Wonder sky</h1>
+<p class="text-xs text-slate-500 font-medium">國際美妍館</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Labels and Icons mapped from JSON logic -->
+<a class="flex items-center gap-3 text-slate-500 hover:text-pink-500 rounded-lg mx-2 my-1 px-4 py-3 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">資訊中心</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-pink-500 rounded-lg mx-2 my-1 px-4 py-3 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-label-md text-label-md">財務中心</span>
+</a>
+<a class="flex items-center gap-3 bg-pink-50 text-pink-600 font-semibold rounded-lg mx-2 my-1 px-4 py-3" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-md text-label-md">帳戶管理</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-pink-500 rounded-lg mx-2 my-1 px-4 py-3 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md">預約排程</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-pink-500 rounded-lg mx-2 my-1 px-4 py-3 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">顧客管理</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-pink-500 rounded-lg mx-2 my-1 px-4 py-3 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">進銷存管理</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-pink-500 rounded-lg mx-2 my-1 px-4 py-3 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">系統設定</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full flex items-center justify-center gap-2 py-2 text-slate-400 hover:text-slate-600 text-sm font-medium transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="keyboard_double_arrow_left">keyboard_double_arrow_left</span>
+                收起選單
+            </button>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar (Shared Component Logic) -->
+<header class="w-full h-16 border-b border-slate-100 bg-white/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-40">
+<div class="flex items-center gap-2 text-slate-500 font-body-md">
+<span class="hover:text-primary cursor-pointer">記帳</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-semibold">帳戶管理</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-50 border-none rounded-full text-sm w-64 focus:ring-2 focus:ring-pink-200 transition-all" placeholder="搜尋帳戶..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-pink-500 rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-semibold shadow-md shadow-primary/20 hover:bg-primary-container transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                        快速開單
+                    </button>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+<div class="text-right hidden lg:block">
+<p class="text-sm font-bold text-on-surface">管理員</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider">Premium Account</p>
+</div>
+<img alt="Admin" class="w-10 h-10 rounded-full object-cover border-2 border-pink-100" data-alt="A professional close-up portrait of a female salon manager with a friendly smile, set against a soft-focus minimalist spa background. The lighting is bright and warm, creating a high-end beauty industry professional aesthetic. The color palette emphasizes soft pinks and clean whites, aligning perfectly with the corporate modern brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASAk__9KHmbncNJs12q_xHXSSFAfrUxv7Hvw0bJel54Ehi8hpdmnHin7JBfei-Hajp0f7W4fTwOrbJYvmpjf9QeIsnYYIS2Lm3fE8yhG3PCdd2GE1mTrts6YRpccrb_76V6dab4M6Co9R_vWlNPTGKQEqmp2EcIwps58vZKq-mYQI_ZxU5imFTvvMFnZgVK8rivomyJuL6o2EOKJWshWv1v5xgScSWXKc9w_kUxD_7KgNmb3NzKRjHCURbgEsjZeEDlGPu3aNAkpA"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="p-8">
+<div class="mb-8 flex items-end justify-between">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface mb-2">帳戶管理</h2>
+<p class="text-slate-500 font-body-md">管理各店面現金、銀行與電子錢包帳戶餘額。</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2.5 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="filter_list">filter_list</span>
+                        篩選
+                    </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                        新增帳戶
+                    </button>
+</div>
+</div>
+<!-- Dashboard Bento Style Highlights -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+2.4%</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">總現金餘額</p>
+<h3 class="text-2xl font-bold text-on-surface mt-1">NT$ 124,500</h3>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<span class="text-xs font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded">穩定</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">銀行存款總計</p>
+<h3 class="text-2xl font-bold text-on-surface mt-1">NT$ 4,820,000</h3>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="wallet">wallet</span>
+</div>
+<span class="text-xs font-bold text-pink-600 bg-pink-50 px-2 py-1 rounded">+12.8%</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">電子支付餘額</p>
+<h3 class="text-2xl font-bold text-on-surface mt-1">NT$ 312,400</h3>
+</div>
+</div>
+<!-- Account List Table Card -->
+<div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-50 flex items-center justify-between">
+<h3 class="font-h3 text-h3 text-on-surface">帳戶列表</h3>
+<div class="flex items-center gap-4">
+<div class="flex bg-slate-100 p-1 rounded-lg">
+<button class="px-3 py-1.5 text-xs font-bold bg-white text-primary rounded-md shadow-sm">全部</button>
+<button class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-slate-700">現金</button>
+<button class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:text-slate-700">銀行</button>
+</div>
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50/50">
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">門店</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">帳戶名稱</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">類別</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">餘額</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-center">更新時間</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-5">
+<span class="font-body-md text-on-surface font-semibold">台北忠孝旗艦店</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<span class="font-body-md text-on-surface">店用現金周轉戶</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-green-50 text-green-700 border border-green-100">現金</span>
+</td>
+<td class="px-6 py-5">
+<span class="font-body-md font-bold text-on-surface">NT$ 45,820</span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="font-caption text-slate-500">2023/11/24 14:30</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-pink-50 rounded-lg transition-all" title="查詢">
+<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all" title="加值">
+<span class="material-symbols-outlined text-lg" data-icon="add_card">add_card</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" title="編輯">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-error hover:bg-red-50 rounded-lg transition-all" title="刪除">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-5">
+<span class="font-body-md text-on-surface font-semibold">台北忠孝旗艦店</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="account_balance" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<span class="font-body-md text-on-surface">國泰世華 營業專戶</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-100">銀行卡</span>
+</td>
+<td class="px-6 py-5">
+<span class="font-body-md font-bold text-on-surface">NT$ 1,284,000</span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="font-caption text-slate-500">2023/11/24 09:15</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-pink-50 rounded-lg transition-all"><span class="material-symbols-outlined text-lg" data-icon="search">search</span></button>
+<button class="p-2 text-slate-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all"><span class="material-symbols-outlined text-lg" data-icon="add_card">add_card</span></button>
+<button class="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"><span class="material-symbols-outlined text-lg" data-icon="edit">edit</span></button>
+<button class="p-2 text-slate-400 hover:text-error hover:bg-red-50 rounded-lg transition-all"><span class="material-symbols-outlined text-lg" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-5">
+<span class="font-body-md text-on-surface font-semibold">台中公益店</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<span class="font-body-md text-on-surface">LINE Pay 線上帳戶</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-purple-50 text-purple-700 border border-purple-100">電子錢包</span>
+</td>
+<td class="px-6 py-5">
+<span class="font-body-md font-bold text-on-surface">NT$ 12,305</span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="font-caption text-slate-500">2023/11/23 18:50</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-pink-50 rounded-lg transition-all"><span class="material-symbols-outlined text-lg" data-icon="search">search</span></button>
+<button class="p-2 text-slate-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all"><span class="material-symbols-outlined text-lg" data-icon="add_card">add_card</span></button>
+<button class="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"><span class="material-symbols-outlined text-lg" data-icon="edit">edit</span></button>
+<button class="p-2 text-slate-400 hover:text-error hover:bg-red-50 rounded-lg transition-all"><span class="material-symbols-outlined text-lg" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 border-t border-slate-50 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<span class="text-sm text-slate-500">顯示</span>
+<select class="bg-slate-50 border-slate-200 text-sm rounded-lg py-1 pl-3 pr-8 focus:ring-pink-200">
+<option>10 筆</option>
+<option>25 筆</option>
+<option>50 筆</option>
+</select>
+<span class="text-sm text-slate-500">，共 18 筆數據</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:bg-slate-100 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-on-primary font-bold rounded-lg shadow-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-100 rounded-lg transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:bg-slate-100 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Promotion / Tip Card -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 p-8 text-white shadow-lg">
+<div class="relative z-10">
+<h4 class="text-xl font-bold mb-2">掌握門店即時金流</h4>
+<p class="text-pink-100 mb-6 text-sm max-w-xs">使用 Wonder sky 智慧對帳功能，減少人工輸入誤差，讓您的財務狀況一目了然。</p>
+<button class="bg-white text-pink-600 px-6 py-2 rounded-full font-bold text-sm hover:bg-pink-50 transition-all">立即體驗</button>
+</div>
+<img alt="Finance Tracking" class="absolute top-0 right-0 w-1/2 h-full object-cover opacity-20 pointer-events-none" data-alt="A high-key, stylized macro shot of sleek modern payment terminals and minimalist aesthetic financial charts. The image is rendered with soft pink and clean white lighting to reflect the luxury beauty SaaS brand's corporate identity. The mood is sophisticated and professional, symbolizing clarity and technological advancement in financial management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuybELPCcV-68b8nR3haofRMGHfdAOJJ81F_22etUnnQsHZ_Dgsj3wdagV34zDW3uBjNfrSY2SgNPDGLY2Vcdlft_ni7_smtQUjEo_fqYggnaMPgLoTZZuxwL80xXNbJenmEO1rBPH9FT7_3Qmh_1o7eSfQ4OazBhPvmo8ZSbw3ywmwVk5gJEqUiWhdO5hNzjOmwJYhdavGl89TWP7eqdF4ReeQaxjLj9aB1rJwQiRiuxf8heUyisFPImhOUXS5ahtryw3NdXZuvU"/>
+</div>
+<div class="bg-white rounded-2xl border border-slate-100 p-8 flex items-center justify-between">
+<div>
+<h4 class="text-on-surface font-bold text-lg mb-2">安全防護已啟動</h4>
+<p class="text-slate-500 text-sm">所有帳戶操作均受 256-bit SSL 加密保護，並記錄於稽核日誌中。</p>
+<div class="mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-sm" data-icon="verified_user">verified_user</span>
+<span class="text-xs font-bold text-green-600">系統狀態：正常運行</span>
+</div>
+</div>
+<div class="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center border-4 border-white shadow-inner">
+<span class="material-symbols-outlined text-4xl text-slate-300" data-icon="shield">shield</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

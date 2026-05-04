@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#794c8f",
+                    "surface": "#fff8f8",
+                    "background": "#fff8f8",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#6c4082",
+                    "inverse-primary": "#ffafd3",
+                    "on-secondary-fixed-variant": "#603475",
+                    "inverse-on-surface": "#ffecf1",
+                    "surface-dim": "#e8d5db",
+                    "surface-bright": "#fff8f8",
+                    "secondary-container": "#e8b3fe",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#f1dee3",
+                    "primary-fixed-dim": "#ffafd3",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#9ff87d",
+                    "secondary-fixed": "#f6d9ff",
+                    "on-tertiary-fixed-variant": "#145200",
+                    "on-surface-variant": "#554149",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#861259",
+                    "outline": "#88717a",
+                    "tertiary-fixed-dim": "#84db64",
+                    "primary-container": "#c14689",
+                    "inverse-surface": "#392d32",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#e8b3fe",
+                    "primary": "#a22c70",
+                    "on-primary-container": "#fffbff",
+                    "on-tertiary-fixed": "#042100",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#3d0025",
+                    "surface-container": "#fde9ef",
+                    "on-background": "#23191d",
+                    "surface-tint": "#a52f72",
+                    "tertiary-container": "#328517",
+                    "outline-variant": "#dac0c9",
+                    "on-tertiary-container": "#f8ffee",
+                    "surface-container-highest": "#f1dee3",
+                    "surface-container-high": "#f7e3e9",
+                    "on-surface": "#23191d",
+                    "primary-fixed": "#ffd8e7",
+                    "on-secondary-fixed": "#300247",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#fff0f4",
+                    "tertiary": "#1c6b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "gutter": "20px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "container-padding": "24px",
+                    "xl": "32px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "label-md": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen">
+<!-- App Shell Background (Mocking Dashboard for Context) -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none opacity-50">
+<header class="flex justify-between items-center px-6 h-16 w-full fixed top-0 bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-200">
+<span class="text-lg font-bold tracking-tight text-[#c84c8f]">Wonder sky 國際美妍館</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+<span class="material-symbols-outlined text-slate-600">help_outline</span>
+</div>
+</header>
+<main class="pt-20 px-4 space-y-4">
+<div class="h-32 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center">
+<div class="w-full h-full p-4">
+<div class="h-4 w-1/3 bg-slate-100 rounded mb-4"></div>
+<div class="h-10 w-full bg-slate-50 rounded"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-40 bg-white rounded-xl shadow-sm border border-slate-100"></div>
+<div class="h-40 bg-white rounded-xl shadow-sm border border-slate-100"></div>
+</div>
+</main>
+</div>
+<!-- Semi-transparent Black Overlay -->
+<div class="fixed inset-0 bg-black/60 z-50 transition-opacity flex items-end">
+<!-- Bottom Sheet Container -->
+<div class="w-full bg-surface-container-lowest rounded-t-[24px] shadow-2xl relative overflow-hidden flex flex-col max-h-[795px]">
+<!-- Bottom Sheet Header -->
+<div class="relative flex items-center justify-center h-16 border-b border-surface-variant">
+<button aria-label="關閉" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center text-[#c84c8f] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl font-bold">close</span>
+</button>
+<h1 class="font-h2 text-h2 text-on-surface">新增</h1>
+<div class="absolute top-2 w-12 h-1.5 bg-slate-200 rounded-full"></div>
+</div>
+<!-- Form Content -->
+<div class="flex-1 overflow-y-auto p-lg space-y-xl pb-32">
+<!-- Field: Category Name -->
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center">
+                        分類名稱 <span class="text-error ml-1">*</span>
+</label>
+<div class="relative group">
+<input class="w-full h-12 px-md font-body-lg text-body-lg rounded-lg border-2 border-[#c84c8f] bg-white text-on-surface focus:ring-4 focus:ring-[#c84c8f]/10 focus:border-[#c84c8f] outline-none transition-all placeholder:text-slate-400" placeholder="請輸入分類名稱" type="text" value=""/>
+</div>
+<p class="font-caption text-caption text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">error</span>
+                        必需要有分類名稱
+                    </p>
+</div>
+<!-- Field: Parent Category -->
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">
+                        隸屬分類
+                    </label>
+<div class="relative">
+<select class="w-full h-12 px-md font-body-lg text-body-lg rounded-lg border border-outline-variant bg-white text-on-surface appearance-none focus:ring-4 focus:ring-[#c84c8f]/10 focus:border-[#c84c8f] outline-none transition-all">
+<option value="">請選擇隸屬分類</option>
+<option value="1">水電瓦斯</option>
+<option value="2">日常耗材</option>
+<option value="3">店面租金</option>
+<option value="4">行銷推廣</option>
+<option value="5">儀器維護</option>
+<option value="6">員工福利</option>
+<option value="7">雜項支出</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant/60">可滾動選擇現有主分類</p>
+</div>
+<!-- Visual Accent / Illustration -->
+<div class="pt-4 flex justify-center">
+<div class="w-24 h-24 rounded-full bg-surface-container flex items-center justify-center text-[#c84c8f]">
+<span class="material-symbols-outlined text-5xl">category</span>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Actions -->
+<div class="p-lg bg-surface-container-lowest border-t border-surface-variant flex gap-md">
+<button class="flex-1 h-12 rounded-lg font-h3 text-h3 border border-outline-variant text-on-surface-variant bg-white active:bg-slate-50 transition-colors min-h-[44px]">
+                    取消
+                </button>
+<button class="flex-1 h-12 rounded-lg font-h3 text-h3 bg-slate-200 text-slate-400 cursor-not-allowed min-h-[44px]" disabled="">
+                    儲存
+                </button>
+</div>
+</div>
+</div>
+<!-- Responsive Navigation Shell (Contextual Background) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-slate-100 flex items-center justify-around px-2 z-10 pointer-events-none opacity-30">
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px]">儀表板</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#c84c8f] font-semibold">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px]">財務報表</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px]">顧客預約</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px]">系統設置</span>
+</div>
+</nav>
+</body></html>

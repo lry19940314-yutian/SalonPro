@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tap-highlight-transparent {
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff8f8;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#88717a",
+                        "surface-dim": "#e8d5db",
+                        "on-tertiary-fixed": "#042100",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#dac0c9",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-container-highest": "#f1dee3",
+                        "secondary-fixed": "#f6d9ff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "surface-variant": "#f1dee3",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-container": "#328517",
+                        "surface-tint": "#a52f72",
+                        "primary-container": "#c14689",
+                        "on-error-container": "#93000a",
+                        "secondary": "#794c8f",
+                        "on-primary-fixed": "#3d0025",
+                        "inverse-primary": "#ffafd3",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "on-primary-fixed-variant": "#861259",
+                        "tertiary": "#1c6b00",
+                        "surface-container": "#fde9ef",
+                        "primary": "#a22c70",
+                        "inverse-surface": "#392d32",
+                        "on-secondary-container": "#6c4082",
+                        "surface": "#fff8f8",
+                        "on-surface": "#23191d",
+                        "primary-fixed": "#ffd8e7",
+                        "on-background": "#23191d",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fff0f4",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#554149"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "8px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-slate-950/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm flex justify-between items-center px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-on-surface-variant p-2 tap-highlight-transparent active:scale-95 duration-200" data-icon="menu">menu</button>
+<h1 class="text-lg font-bold tracking-tight text-pink-600 dark:text-pink-400 font-['Plus_Jakarta_Sans'] antialiased">Wonder sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-slate-600 p-2 hover:opacity-80 transition-opacity" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200">
+<img alt="User Profile Avatar" data-alt="A professional headshot of a female salon manager with a friendly expression. She is in a high-end, brightly lit boutique beauty studio setting. The lighting is soft and flattering, reflecting a professional and trustworthy B2B atmosphere. The overall style is modern and clean with soft pink and white tones characteristic of the luxury beauty industry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPyK5wTxVMNFA1FK8pkgEOQFTTGw0BZDVH55f2yxbx8vRmCeUDOdhkw-VQ5Uqq-Av6gFO0wqFsBJAiAm5jV_V_XcdJzFvLM2FgeDvw85kRUEgaWBI_Bmke6h03yTQv5iRKsbWdrsWT-ELuEs2d3EQp5OKaCtWPhhwq4Jns8r54DyGD4XFNxIbabdBAyxkhgmQhyzRk6CwAe9OqH4SWJtorjtbPeW6hHV8PkufFJtOLH5IhI_VsAtHHsaXYDSWZXM-WuOXGt7L2dw0"/>
+</div>
+</div>
+</header>
+<main class="pb-24 pt-4 px-4 max-w-md mx-auto">
+<!-- Breadcrumb & Action -->
+<div class="flex justify-between items-center mb-6">
+<nav class="flex items-center text-caption text-on-surface-variant">
+<span>記帳</span>
+<span class="material-symbols-outlined text-[14px] mx-1" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">帳戶管理</span>
+</nav>
+<button class="bg-primary hover:bg-primary-container text-white px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg shadow-primary/20 active:scale-95 transition-all h-[44px] min-w-[100px] justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="add" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add</span>
+<span class="text-label-md">新增</span>
+</button>
+</div>
+<!-- Account Cards List -->
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-slate-100 rounded-2xl p-lg shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="space-y-1">
+<span class="text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="store">store</span>
+                            台北忠孝旗艦店
+                        </span>
+<h3 class="text-h3 text-on-surface font-bold">店用現金周轉戶</h3>
+</div>
+<span class="bg-tertiary-container/10 text-tertiary text-caption px-2 py-1 rounded-lg font-medium">現金</span>
+</div>
+<div class="py-3 border-y border-slate-50 mb-3">
+<div class="text-caption text-on-surface-variant mb-1">當前餘額</div>
+<div class="text-h1 text-primary font-extrabold tracking-tight">NT$ 45,820</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex gap-1">
+<button aria-label="Query" class="p-3 text-secondary-container bg-secondary/10 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Add Funds" class="p-3 text-primary-container bg-primary/10 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</button>
+<button aria-label="Edit" class="p-3 text-on-surface-variant bg-surface-container rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</div>
+<button aria-label="Delete" class="p-3 text-error bg-error-container/20 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<!-- Foldable Section Content (Summary for mobile) -->
+<div class="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between text-caption text-on-surface-variant/70">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="update">update</span>
+                        最後更新：2023/11/24 14:30
+                    </span>
+<span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-slate-100 rounded-2xl p-lg shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="space-y-1">
+<span class="text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="store">store</span>
+                            台北忠孝旗艦店
+                        </span>
+<h3 class="text-h3 text-on-surface font-bold">國泰世華 營業專戶</h3>
+</div>
+<span class="bg-secondary-container/20 text-secondary text-caption px-2 py-1 rounded-lg font-medium">銀行卡</span>
+</div>
+<div class="py-3 border-y border-slate-50 mb-3">
+<div class="text-caption text-on-surface-variant mb-1">當前餘額</div>
+<div class="text-h1 text-primary font-extrabold tracking-tight">NT$ 1,284,000</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex gap-1">
+<button class="p-3 text-secondary-container bg-secondary/10 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-3 text-primary-container bg-primary/10 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</button>
+<button class="p-3 text-on-surface-variant bg-surface-container rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</div>
+<button class="p-3 text-error bg-error-container/20 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between text-caption text-on-surface-variant/70">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="update">update</span>
+                        最後更新：2023/11/24 09:15
+                    </span>
+<span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-slate-100 rounded-2xl p-lg shadow-sm opacity-90">
+<div class="flex justify-between items-start mb-3">
+<div class="space-y-1">
+<span class="text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="store">store</span>
+                            台中公益店
+                        </span>
+<h3 class="text-h3 text-on-surface font-bold">LINE Pay 線上帳戶</h3>
+</div>
+<span class="bg-tertiary-container/10 text-tertiary text-caption px-2 py-1 rounded-lg font-medium">電子錢包</span>
+</div>
+<div class="py-3 border-y border-slate-50 mb-3">
+<div class="text-caption text-on-surface-variant mb-1">當前餘額</div>
+<div class="text-h1 text-primary font-extrabold tracking-tight">NT$ 12,305</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex gap-1">
+<button class="p-3 text-secondary-container bg-secondary/10 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-3 text-primary-container bg-primary/10 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</button>
+<button class="p-3 text-on-surface-variant bg-surface-container rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</div>
+<button class="p-3 text-error bg-error-container/20 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between text-caption text-on-surface-variant/70">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="update">update</span>
+                        最後更新：2023/11/23 18:50
+                    </span>
+<span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-8 flex items-center justify-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 bg-primary text-white rounded-xl font-bold">1</button>
+<button class="w-10 h-10 hover:bg-surface-container rounded-xl transition-colors">2</button>
+<button class="w-10 h-10 hover:bg-surface-container rounded-xl transition-colors">3</button>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe-area pt-2 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 hover:text-pink-500 transition-colors active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">首頁</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 hover:text-pink-500 transition-colors active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">員工</span>
+</button>
+<button class="flex flex-col items-center justify-center text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20 rounded-xl px-3 py-1 active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="payments" data-weight="fill" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">薪資</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 hover:text-pink-500 transition-colors active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">報表</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 hover:text-pink-500 transition-colors active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">設定</span>
+</button>
+</nav>
+</body></html>

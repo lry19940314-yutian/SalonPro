@@ -37,13 +37,13 @@ export class Role {
   @Column({ type: 'varchar', length: 255, nullable: true, comment: '角色描述' })
   description: string;
 
-  @Column({ type: 'tinyint', default: 0, comment: '是否系統內建：1=是，0=自定義' })
+  @Column({ type: 'tinyint', default: 0, name: 'is_system', comment: '是否系統內建：1=是，0=自定義' })
   isSystem: number;
 
-  @CreateDateColumn({ type: 'datetime', comment: '創建時間' })
+  @CreateDateColumn({ type: 'datetime', name: 'created_at', comment: '創建時間' })
   createdAt: Date;
 
-  @UpdateDateColumn({ type: 'datetime', comment: '更新時間' })
+  @UpdateDateColumn({ type: 'datetime', name: 'updated_at', comment: '更新時間' })
   updatedAt: Date;
 
   // ========== 關聯 ==========

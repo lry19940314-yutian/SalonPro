@@ -121,17 +121,17 @@ INSERT INTO `shop` (`code`, `name`, `phone`, `address`, `status`, `business_hour
 
 INSERT INTO `staff` (`shop_id`, `role_id`, `username`, `password`, `name`, `phone`, `title`, `status`) VALUES
 (1, (SELECT `id` FROM `role` WHERE `code` = 'manager'),
- 'admin', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy',
+ 'admin', '$2a$10$pi7ptjCdc4clkenzW8mBS.3TtIscP.2SqsBqRZm7op8rV307DVBQu',
  '店長小美', '0911-111-111', '店長', 1);
 
 INSERT INTO `staff` (`shop_id`, `role_id`, `username`, `password`, `name`, `phone`, `title`, `specialties`, `status`) VALUES
 (1, (SELECT `id` FROM `role` WHERE `code` = 'beautician'),
- 'lulu', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy',
+ 'lulu', '$2a$10$/2UUWc2pkbHs/WeM0SsdZ.IGTY2EP9yQoMC9sR80X/2eAJKeNh11W',
  'LULU', '0922-222-222', '資深美容師', '["剪髮","染髮","護理"]', 1);
 
 INSERT INTO `staff` (`shop_id`, `role_id`, `username`, `password`, `name`, `phone`, `title`, `specialties`, `status`) VALUES
 (1, (SELECT `id` FROM `role` WHERE `code` = 'beautician'),
- 'amy', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy',
+ 'amy', '$2a$10$/2UUWc2pkbHs/WeM0SsdZ.IGTY2EP9yQoMC9sR80X/2eAJKeNh11W',
  'AMY', '0933-333-333', '美容師', '["護膚","美甲"]', 1);
 
 -- ============================================================================

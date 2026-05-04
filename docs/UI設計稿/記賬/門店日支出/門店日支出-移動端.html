@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky - 門店日支出</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#84db64",
+                    "surface-container-highest": "#f1dee3",
+                    "on-tertiary-fixed-variant": "#145200",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#9ff87d",
+                    "on-primary-fixed-variant": "#861259",
+                    "surface-dim": "#e8d5db",
+                    "on-tertiary-fixed": "#042100",
+                    "on-primary-container": "#fffbff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fff8f8",
+                    "on-background": "#23191d",
+                    "inverse-on-surface": "#ffecf1",
+                    "inverse-primary": "#ffafd3",
+                    "secondary": "#794c8f",
+                    "background": "#fff8f8",
+                    "secondary-fixed-dim": "#e8b3fe",
+                    "on-secondary-container": "#6c4082",
+                    "primary": "#a22c70",
+                    "on-surface-variant": "#554149",
+                    "primary-fixed": "#ffd8e7",
+                    "primary-container": "#c14689",
+                    "on-surface": "#23191d",
+                    "surface-container": "#fde9ef",
+                    "secondary-fixed": "#f6d9ff",
+                    "inverse-surface": "#392d32",
+                    "tertiary-container": "#328517",
+                    "surface-container-low": "#fff0f4",
+                    "on-secondary-fixed-variant": "#603475",
+                    "on-secondary-fixed": "#300247",
+                    "surface": "#fff8f8",
+                    "outline-variant": "#dac0c9",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#f7e3e9",
+                    "secondary-container": "#e8b3fe",
+                    "on-tertiary-container": "#f8ffee",
+                    "surface-tint": "#a52f72",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#ffafd3",
+                    "surface-variant": "#f1dee3",
+                    "error": "#ba1a1a",
+                    "outline": "#88717a",
+                    "on-primary-fixed": "#3d0025",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#1c6b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "gutter": "20px",
+                    "sm": "8px",
+                    "container-padding": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff8f8;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white border-b border-gray-100">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-600" data-icon="menu">menu</span>
+<h1 class="text-[#c84c8f] font-extrabold text-xl font-['Plus_Jakarta_Sans'] tracking-tight">Wonder Sky</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-500" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="flex-grow pt-20 pb-24 px-4 max-w-md mx-auto w-full">
+<!-- Breadcrumb Navigation -->
+<nav class="mb-4">
+<div class="flex items-center gap-1 text-gray-500 font-label-md text-label-md">
+<span>記帳</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface-variant">門店日支出</span>
+</div>
+</nav>
+<!-- Total Card -->
+<section class="mb-6">
+<div class="bg-white rounded-lg p-lg flex flex-col items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-gray-100">
+<span class="text-on-surface-variant font-label-md text-label-md mb-2">總額</span>
+<span class="text-[#c84c8f] font-h1 text-[32px] font-extrabold">$0</span>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="space-y-4 mb-8">
+<!-- Search Box -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" data-icon="search">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] outline-none text-body-md font-body-md transition-all" placeholder="搜尋名稱、金額與備註" type="text"/>
+</div>
+<!-- Expense Category Select -->
+<div class="relative">
+<select class="w-full h-11 px-4 bg-white border border-gray-200 rounded-lg appearance-none focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] outline-none text-body-md font-body-md transition-all">
+<option disabled="" selected="" value="">支出科目</option>
+<option value="rent">場地租金</option>
+<option value="salary">人事薪資</option>
+<option value="utility">水電瓦斯</option>
+<option value="inventory">耗材採購</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<!-- Date Range Input -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" data-icon="calendar_month">calendar_month</span>
+<input class="w-full h-11 pl-10 pr-4 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] outline-none text-body-md font-body-md transition-all" readonly="" type="text" value="2026-03-01 - 2026-03-31"/>
+</div>
+</section>
+<!-- Empty State Area -->
+<section class="flex flex-col items-center justify-center py-12">
+<div class="mb-6 relative">
+<!-- Abstract visual representation of empty state using Material Symbols -->
+<div class="relative w-32 h-32 flex items-center justify-center bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-gray-300 text-[64px]" data-icon="description">description</span>
+<span class="material-symbols-outlined text-gray-400 text-[32px] absolute bottom-4 right-4 bg-white rounded-full p-1 border border-gray-100" data-icon="search">search</span>
+</div>
+</div>
+<p class="text-gray-400 font-body-lg text-body-lg">目前沒有日支出記錄</p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-6 bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-[0_-2px_10px_rgba(0,0,0,0.04)]">
+<!-- 首頁 -->
+<a class="flex flex-col items-center justify-center text-gray-400 transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">首頁</span>
+</a>
+<!-- 記帳 - ACTIVE -->
+<a class="flex flex-col items-center justify-center text-[#c84c8f] scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">記帳</span>
+</a>
+<!-- 預約 -->
+<a class="flex flex-col items-center justify-center text-gray-400 transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_month">calendar_month</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">預約</span>
+</a>
+<!-- 我的 -->
+<a class="flex flex-col items-center justify-center text-gray-400 transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">我的</span>
+</a>
+</nav>
+<!-- Floating Action Button for Adding Expense (Standard Pattern for Expense pages) -->
+<button class="fixed right-6 bottom-24 w-14 h-14 bg-[#c84c8f] text-white rounded-full shadow-xl flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>

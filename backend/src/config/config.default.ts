@@ -6,9 +6,44 @@
 
 import { MidwayConfig } from '@midwayjs/core';
 import { join } from 'path';
+import {
+  Shop,
+  Staff,
+  Role,
+  Permission,
+  RolePermission,
+  StaffShop,
+  ServiceCategory,
+  ServiceItem,
+  ProductCategory,
+  Product,
+  Member,
+  MemberLevel,
+  MemberAsset,
+  MemberAssetLog,
+  Coupon,
+  MemberCoupon,
+  Schedule,
+  Leave,
+  Appointment,
+  AppointmentItem,
+  AppointmentPayment,
+  Performance,
+  Commission,
+  CommissionSettlement,
+  Inventory,
+  InventoryLog,
+  PickOrder,
+  PickItem,
+  Portfolio,
+  Notification,
+  OperationLog,
+  SystemConfig,
+} from '../entity';
 
 export default (): MidwayConfig => {
   return {
+     keys: 'salon-pro-123456',
     // ========== Koa 應用配置 ==========
     koa: {
       port: parseInt(process.env.APP_PORT || '7001', 10),
@@ -23,13 +58,23 @@ export default (): MidwayConfig => {
           host: process.env.MYSQL_HOST || '127.0.0.1',
           port: parseInt(process.env.MYSQL_PORT || '3306', 10),
           username: process.env.MYSQL_USER || 'root',
-          password: process.env.MYSQL_PASSWORD || 'root',
+          password: process.env.MYSQL_PASSWORD || 'Ray19940314.',
           database: process.env.MYSQL_DATABASE || 'salon_pro',
           charset: 'utf8mb4',
           synchronize: false, // 生產環境禁用自動同步
           logging: process.env.NODE_ENV === 'development',
-          // Entity 自動加載路徑
-          entities: [join(__dirname, '../entity/**/*.{ts,js}')],
+          // Entity 直接導入類（避免 glob 路徑加載問題）
+          entities: [
+            Shop, Staff, Role, Permission, RolePermission, StaffShop,
+            ServiceCategory, ServiceItem, ProductCategory, Product,
+            Member, MemberLevel, MemberAsset, MemberAssetLog,
+            Coupon, MemberCoupon,
+            Schedule, Leave,
+            Appointment, AppointmentItem, AppointmentPayment,
+            Performance, Commission, CommissionSettlement,
+            Inventory, InventoryLog, PickOrder, PickItem,
+            Portfolio, Notification, OperationLog, SystemConfig,
+          ],
           // 連接池配置
           extra: {
             connectionLimit: 10,

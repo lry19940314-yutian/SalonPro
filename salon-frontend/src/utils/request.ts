@@ -140,10 +140,17 @@ service.interceptors.response.use(
     const { status, config } = error.response
 
     // 401：Token 過期或無效，嘗試自動刷新
+    // 注意：登錄接口（/auth/login）返回 401 時不應嘗試刷新 Token，
+    // 應直接將錯誤傳遞給調用方處理（如 LoginView 中的 catch 塊）
     if (status === 401) {
       // 如果是刷新 Token 的請求本身也返回 401，直接登出
       if (config.url?.includes('/auth/refresh')) {
         handleTokenExpired()
+        return Promise.reject(error)
+      }
+
+      // 登錄接口返回 401（帳號密碼錯誤），直接傳遞錯誤，不嘗試刷新 Token
+      if (config.url?.includes('/auth/login')) {
         return Promise.reject(error)
       }
 
@@ -226,15 +233,15 @@ async function tryRefreshToken(): Promise<string | null> {
 
   try {
     const response = await axios.post<ApiResponse<{
-      token: string
+      accessToken: string
       refreshToken: string
       expiresIn: number
     }>>(
-      `${import.meta.env.VITE_API_BASE_URL || '/api/v1'}/auth/refresh`,
+      `${import.meta.env.VITE_API_BASE_URL || '/api'}/auth/refresh`,
       { refreshToken: refreshTokenValue }
     )
 
-    const { token: newToken, refreshToken: newRefreshToken } = response.data.data
+    const { accessToken: newToken, refreshToken: newRefreshToken } = response.data.data
 
     // 更新 localStorage
     localStorage.setItem(STORAGE_KEYS.TOKEN, newToken)

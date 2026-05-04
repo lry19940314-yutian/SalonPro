@@ -34,6 +34,22 @@ import { RequestContext } from '../interface';
 export class AuthMiddleware implements IMiddleware<Context, NextFunction> {
   resolve() {
     return async (ctx: Context, next: NextFunction) => {
+      // 公開路由白名單（不需要認證）
+      // 注意：globalPrefix 為 /api，所以實際路由為 /api/auth/login
+      const publicPaths = [
+        '/api/auth/login',
+        '/api/auth/refresh',
+        '/api/health',
+        '/swagger-ui',
+      ];
+      const isPublicPath = publicPaths.some((path) => ctx.path.startsWith(path));
+
+      // 公開路由直接放行（不檢查 Token）
+      if (isPublicPath) {
+        await next();
+        return;
+      }
+
       // 從 Header 中提取 Token
       const authHeader = ctx.headers.authorization;
 
@@ -70,19 +86,5 @@ export class AuthMiddleware implements IMiddleware<Context, NextFunction> {
 
       await next();
     };
-  }
-
-  /**
-   * 中間件忽略的路徑（公開路由）
-   */
-  static ignore(ctx: Context): boolean {
-    const publicPaths = [
-      '/api/auth/login',
-      '/api/auth/refresh',
-      '/api/health',
-      '/swagger-ui',
-    ];
-
-    return publicPaths.some((path) => ctx.path.startsWith(path));
   }
 }

@@ -17,7 +17,7 @@ import { LoginDTO, RefreshTokenDTO } from '../dto/auth.dto';
 import { StaffDAO } from '../dao/StaffDAO';
 import { LoginResult, RefreshTokenResult } from '../interface';
 
-@Controller('/api/auth')
+@Controller('/auth')
 export class AuthController {
   @Inject()
   authService: AuthService;

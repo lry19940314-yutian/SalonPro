@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 支出分類</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#fde9ef",
+                        "secondary": "#794c8f",
+                        "on-primary-fixed": "#3d0025",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#6c4082",
+                        "inverse-primary": "#ffafd3",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-fixed": "#300247",
+                        "secondary-container": "#e8b3fe",
+                        "primary-container": "#c14689",
+                        "primary": "#a22c70",
+                        "on-surface": "#23191d",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#328517",
+                        "background": "#fff8f8",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-dim": "#e8d5db",
+                        "outline-variant": "#dac0c9",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fff8f8",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f8",
+                        "on-primary-fixed-variant": "#861259",
+                        "outline": "#88717a",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "inverse-surface": "#392d32",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#ffd8e7",
+                        "on-background": "#23191d",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-variant": "#f1dee3",
+                        "primary-fixed-dim": "#ffafd3",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-fixed": "#042100",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#9ff87d",
+                        "tertiary": "#1c6b00",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-container-low": "#fff0f4",
+                        "on-surface-variant": "#554149"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-hidden">
+<!-- Background Content (Simulated List Page) -->
+<div class="fixed inset-0 flex">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 flex flex-col h-full p-4 bg-white border-r border-gray-100 w-64">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h1 class="text-lg font-black tracking-tight text-[#c84c8f]">Aura Beauty</h1>
+<p class="text-xs text-on-surface-variant font-medium">旗艦店</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium text-sm">儀表板</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-medium text-sm">預約管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-medium text-sm">客戶資料</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-medium text-sm">收銀結帳</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 bg-[#c84c8f]/5 text-[#c84c8f] rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium text-sm">財務報表</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium text-sm">系統設定</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-gray-100">
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-medium text-sm">幫助中心</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 p-lg overflow-auto">
+<header class="flex justify-between items-center mb-lg">
+<div class="flex items-center gap-4">
+<h2 class="font-h1 text-h1 text-on-surface">支出分類設定</h2>
+<span class="text-caption text-on-surface-variant">管理您的店務日常支出類別</span>
+</div>
+<button class="bg-[#c84c8f] text-white px-6 py-2 rounded-lg font-medium shadow-sm hover:opacity-90 active:scale-95 transition-all">
+                    新增支出分類
+                </button>
+</header>
+<!-- Table View (Blurred behind modal) -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+<table class="w-full text-left">
+<thead class="bg-gray-50 border-b border-gray-100">
+<tr>
+<th class="px-6 py-4 font-semibold text-sm text-gray-600">分類名稱</th>
+<th class="px-6 py-4 font-semibold text-sm text-gray-600">隸屬層級</th>
+<th class="px-6 py-4 font-semibold text-sm text-gray-600">更新時間</th>
+<th class="px-6 py-4 font-semibold text-sm text-gray-600 text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100">
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4 text-sm">水電瓦斯</td>
+<td class="px-6 py-4 text-sm text-gray-500">主分類</td>
+<td class="px-6 py-4 text-sm text-gray-500">2023/12/10</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="text-[#c84c8f] font-medium text-sm">編輯</button>
+<button class="text-error font-medium text-sm">刪除</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4 text-sm">日常耗材</td>
+<td class="px-6 py-4 text-sm text-gray-500">主分類</td>
+<td class="px-6 py-4 text-sm text-gray-500">2023/11/15</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="text-[#c84c8f] font-medium text-sm">編輯</button>
+<button class="text-error font-medium text-sm">刪除</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4 text-sm pl-12 flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-300 text-xs" data-icon="subdirectory_arrow_right">subdirectory_arrow_right</span>
+                                精油產品
+                            </td>
+<td class="px-6 py-4 text-sm text-gray-500">日常耗材</td>
+<td class="px-6 py-4 text-sm text-gray-500">2023/11/15</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="text-[#c84c8f] font-medium text-sm">編輯</button>
+<button class="text-error font-medium text-sm">刪除</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</main>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-[2px] z-50 flex items-center justify-center p-4">
+<!-- Modal Container -->
+<div class="bg-white w-full max-w-[500px] rounded-xl shadow-2xl flex flex-col overflow-hidden">
+<!-- Modal Header -->
+<div class="relative px-6 py-5 border-b border-gray-100 flex items-center justify-center">
+<h3 class="font-h2 text-h2 text-on-surface font-semibold">新增</h3>
+<button class="absolute right-6 text-[#c84c8f] hover:bg-[#c84c8f]/5 p-1 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Content (Form) -->
+<div class="p-8 space-y-8">
+<!-- Name Field -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">
+                        分類名稱 <span class="text-error">*</span>
+</label>
+<input class="w-full px-4 py-3 rounded-lg border-[#c84c8f] border focus:ring-2 focus:ring-[#c84c8f]/20 outline-none transition-all text-body-md font-body-md" placeholder="請輸入分類名稱" type="text" value=""/>
+<p class="text-error text-caption font-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="error">error</span>
+                        必需要有分類名稱
+                    </p>
+</div>
+<!-- Parent Category Field -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">
+                        隸屬分類
+                    </label>
+<div class="border border-outline-variant rounded-lg overflow-hidden">
+<div class="bg-gray-50 px-4 py-3 border-b border-outline-variant text-body-md text-on-surface-variant font-medium flex items-center justify-between">
+<span>隸屬分類: 無</span>
+<span class="material-symbols-outlined text-gray-400" data-icon="unfold_more">unfold_more</span>
+</div>
+<div class="max-h-[160px] overflow-y-auto">
+<ul class="divide-y divide-gray-50">
+<li class="px-4 py-3 bg-[#c84c8f]/5 text-[#c84c8f] font-semibold text-sm flex items-center justify-between">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="radio_button_checked" data-weight="fill">radio_button_checked</span>
+                                        無 (設為主分類)
+                                    </span>
+</li>
+<li class="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-600 flex items-center justify-between cursor-pointer">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-gray-300" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                        1. 水電瓦斯
+                                    </span>
+</li>
+<li class="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-600 flex items-center justify-between cursor-pointer">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-gray-300" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                        2. 日常耗材
+                                    </span>
+</li>
+<li class="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-600 flex items-center justify-between cursor-pointer">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-gray-300" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                        3. 店面租金
+                                    </span>
+</li>
+<li class="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-600 flex items-center justify-between cursor-pointer">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-gray-300" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                        4. 員工薪資
+                                    </span>
+</li>
+<li class="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-600 flex items-center justify-between cursor-pointer">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-gray-300" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                        5. 行銷廣告
+                                    </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-8 py-6 bg-gray-50 flex justify-end gap-3">
+<button class="px-8 py-2.5 rounded-lg border border-secondary text-gray-600 font-medium hover:bg-secondary/5 transition-all active:scale-95">
+                    取消
+                </button>
+<button class="px-8 py-2.5 rounded-lg bg-[#d1d5db] text-white font-medium cursor-not-allowed transition-all" disabled="">
+                    儲存
+                </button>
+</div>
+</div>
+</div>
+<!-- Hidden decorative images for context -->
+<div class="hidden">
+<img data-alt="A luxurious high-end beauty salon interior with soft ambient lighting, pastel pink and white color palette, minimalist furniture, and large windows that let in soft daylight. The environment is clean, sophisticated, and professional, reflecting a premium SaaS application aesthetic for wellness business managers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJc9_L6fC3LHFNYZMSEa3EjxjVbzyL093KfdoL_owNN0oruTHGbezfkcT4x1v-HJHhScfn3H17NjwyAWBJ0UIdIfq7OPeRUaO9KG5qmQYXwgMB-j073uR1u_D6-S2pqTly2FvE1ogyibox36Pa7JfG4vEdyh33xkLgLmB2Gp1CheUfeSeMHDN3XFeCMPhdDiEvzULcIzKynD7OVrCRAy2SsQXLg_z94JSxpEmSeLqrd_I2scKrV8MLQ3ldDLmVg5YVpAHn4OtLQ68"/>
+<img data-alt="A clean, data-driven financial dashboard interface for a beauty business. Professional charts and metrics are displayed on a white background with subtle grey borders and primary pink accents. The layout is organized, high-density, and corporate, conveying trust and clarity for managers looking at revenue and expense data." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnRUMcXua73Ergm4hgPikfLNdUpS7ZSz-jy69Hi5DG6vkjW06H7bvIVgwgB_1Iz59TOEssAcs76uz9d6vlVKw-1-HXONGwoB8G2VSSfjvRpzvqLN5yPsNAh6wc7Qpi09Og_b2yzZOJnIlkc803zv82CI40gsuG1xabyQQzQcUwR9BF9FuEANjHmcozHeYE8y0wiazax8174G8Y88mE72Co5zGg2h1p8jbiotZ8R-IuVmo_Gk2hwzFBuNBYDCzrpJAjHtAo5UyqyKY"/>
+</div>
+</body></html>

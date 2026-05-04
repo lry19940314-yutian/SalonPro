@@ -4,7 +4,7 @@
 // 功能：登入驗證、JWT Token 生成/刷新/驗證、密碼加密比對
 // ============================================================================
 
-import { Provide, App } from '@midwayjs/core';
+import { Provide, App, Inject } from '@midwayjs/core';
 import { Application } from '@midwayjs/koa';
 import * as bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
@@ -33,6 +33,12 @@ export class AuthService {
   @App()
   app: Application;
 
+  @Inject()
+  shopDAO: ShopDAO;
+
+  @Inject()
+  staffDAO: StaffDAO;
+
   /**
    * 登入驗證
    *
@@ -52,7 +58,7 @@ export class AuthService {
     const { shopCode, username, password } = params;
 
     // 1. 查詢門店
-    const shop = await ShopDAO.prototype.findByCode(shopCode);
+    const shop = await this.shopDAO.findByCode(shopCode);
     if (!shop) {
       throw new InvalidCredentialsError();
     }
@@ -63,7 +69,7 @@ export class AuthService {
     }
 
     // 3. 查詢員工（含門店和角色關聯）
-    const staff = await StaffDAO.prototype.findByUsername(username);
+    const staff = await this.staffDAO.findByUsername(username);
     if (!staff || staff.shopId !== shop.id) {
       throw new InvalidCredentialsError();
     }
@@ -89,7 +95,7 @@ export class AuthService {
     });
 
     // 7. 更新最後登錄時間
-    await StaffDAO.prototype.updateLastLogin(staff.id);
+    await this.staffDAO.updateLastLogin(staff.id);
 
     return {
       accessToken,

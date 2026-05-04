@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#23191d",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#328517",
+                        "background": "#fff8f8",
+                        "tertiary-fixed-dim": "#84db64",
+                        "primary-fixed-dim": "#ffafd3",
+                        "outline-variant": "#dac0c9",
+                        "surface-container-low": "#fff0f4",
+                        "on-tertiary-fixed": "#042100",
+                        "inverse-primary": "#ffafd3",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-bright": "#fff8f8",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#300247",
+                        "primary-fixed": "#ffd8e7",
+                        "primary-container": "#c14689",
+                        "surface-container-high": "#f7e3e9",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#392d32",
+                        "inverse-on-surface": "#ffecf1",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#f1dee3",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-surface-variant": "#554149",
+                        "on-background": "#23191d",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-container": "#f8ffee",
+                        "outline": "#88717a",
+                        "surface-dim": "#e8d5db",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary": "#1c6b00",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "surface-container": "#fde9ef",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#e8b3fe",
+                        "surface-container-highest": "#f1dee3",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-secondary-container": "#6c4082",
+                        "on-error-container": "#93000a",
+                        "secondary": "#794c8f",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fff8f8",
+                        "primary": "#a22c70"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "gutter": "20px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md font-['Plus_Jakarta_Sans'] text-sm antialiased docked full-width top-0 sticky z-40 border-b border-gray-100 dark:border-gray-800 shadow-sm flex justify-between items-center px-6 py-3 w-full">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-gray-500 hover:bg-gray-50 p-2 rounded-lg transition-colors active:scale-95 duration-200" data-icon="menu">menu</button>
+<h1 class="text-xl font-bold tracking-tight text-[#c84c8f]">Wonder sky</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-gray-500 hover:bg-gray-50 p-2 rounded-lg transition-colors active:scale-95 duration-200" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-gray-100">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a female spa manager with a friendly smile, set against a soft-focus minimalist interior with pastel pink and white accents. The lighting is bright and airy, reflecting a clean and modern high-end beauty salon environment. The overall aesthetic is elegant and trustworthy, aligning with a premium professional service provider." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMXeTnvukqWJgI8rr33QRGxzkUA5vXObsGZF9NbjmVq8QQ49L8nD6gHmUJmQo48fXSGOTgYjG38DcWBpfNLPCkgrslw6G73tRF4u4bQxkV30dVIt-_YKLGGGfCscwZum0SdTtOSDOqkwnhGc2c-rRheyv68-DjPrYcm3hwEmY10r4wsslcNwnYJnz0YleEWTPOQxQAKzFZ1-NO0CTgKwJmmlo-5KmVrNcFoszRUGPUFQvvdy-NmQ-tN1Xn0T19wuBVfjb3Tzd-YIE"/>
+</div>
+</div>
+</header>
+<main class="p-md space-y-md">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 px-1 py-2">
+<span class="font-label-md text-caption text-outline">記帳</span>
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="chevron_right">chevron_right</span>
+<span class="font-label-md text-caption text-primary">支出科目</span>
+</nav>
+<!-- Action Bar -->
+<div class="flex gap-gutter px-1">
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary text-on-primary h-[48px] rounded-lg shadow-sm active:scale-95 transition-all duration-200 font-label-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+<span>新增</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-surface-container text-on-surface-variant border border-outline-variant h-[48px] rounded-lg active:scale-95 transition-all duration-200 font-label-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+<span>刪除</span>
+</button>
+</div>
+<!-- Filter/Search Placeholder (UX Enhancement) -->
+<div class="relative px-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-11 pr-4 py-3 bg-white border border-outline-variant rounded-xl text-body-md focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="搜尋支出科目名稱..." type="text"/>
+</div>
+<!-- Expense Subject Cards -->
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-xl p-md shadow-[0_8px_20px_rgba(0,0,0,0.04)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start mb-sm">
+<div class="space-y-1">
+<span class="inline-block px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded text-[10px] font-bold uppercase">水電瓦斯</span>
+<h3 class="font-h3 text-on-surface">店內水費</h3>
+</div>
+<span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-[10px] font-bold">月結</span>
+</div>
+<div class="flex items-center gap-4 py-2 border-t border-dashed border-gray-100">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="history">history</span>
+<span class="text-caption text-on-surface-variant">2023-10-24</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-caption text-on-surface-variant">預設帳戶</span>
+</div>
+</div>
+<details class="group mt-2">
+<summary class="list-none flex items-center justify-center py-1 text-primary cursor-pointer active:bg-pink-50 rounded-lg transition-colors">
+<span class="text-caption font-semibold mr-1">查看詳細</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-open:rotate-180" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</summary>
+<div class="pt-3 pb-2 space-y-2 text-caption text-on-surface-variant bg-surface-container-low p-3 rounded-lg mt-2">
+<p class="flex justify-between"><span>科目代碼:</span> <span class="text-on-surface font-medium">EXP-001</span></p>
+<p class="flex justify-between"><span>備註:</span> <span class="text-on-surface font-medium">每月自來水公司帳單</span></p>
+</div>
+</details>
+<div class="flex gap-2 mt-4 pt-4 border-t border-gray-100">
+<button class="flex-1 py-2 flex items-center justify-center gap-1 border border-outline-variant text-on-surface-variant rounded-lg text-body-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+<span>編輯</span>
+</button>
+<button class="flex-1 py-2 flex items-center justify-center gap-1 border border-error text-error rounded-lg text-body-md hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete_outline">delete_outline</span>
+<span>刪除</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-xl p-md shadow-[0_8px_20px_rgba(0,0,0,0.04)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex justify-between items-start mb-sm">
+<div class="space-y-1">
+<span class="inline-block px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded text-[10px] font-bold uppercase">店面租金</span>
+<h3 class="font-h3 text-on-surface">一樓店面月租</h3>
+</div>
+<span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-[10px] font-bold">月結</span>
+</div>
+<div class="flex items-center gap-4 py-2 border-t border-dashed border-gray-100">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="history">history</span>
+<span class="text-caption text-on-surface-variant">2023-10-15</span>
+</div>
+</div>
+<div class="flex gap-2 mt-4 pt-4 border-t border-gray-100">
+<button class="flex-1 py-2 flex items-center justify-center gap-1 border border-outline-variant text-on-surface-variant rounded-lg text-body-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+<span>編輯</span>
+</button>
+<button class="flex-1 py-2 flex items-center justify-center gap-1 border border-error text-error rounded-lg text-body-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete_outline">delete_outline</span>
+<span>刪除</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-xl p-md shadow-[0_8px_20px_rgba(0,0,0,0.04)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="flex justify-between items-start mb-sm">
+<div class="space-y-1">
+<span class="inline-block px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded text-[10px] font-bold uppercase">耗材採購</span>
+<h3 class="font-h3 text-on-surface">精油補充瓶</h3>
+</div>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold">日結</span>
+</div>
+<div class="flex items-center gap-4 py-2 border-t border-dashed border-gray-100">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="history">history</span>
+<span class="text-caption text-on-surface-variant">2023-10-27</span>
+</div>
+</div>
+<div class="flex gap-2 mt-4 pt-4 border-t border-gray-100">
+<button class="flex-1 py-2 flex items-center justify-center gap-1 border border-outline-variant text-on-surface-variant rounded-lg text-body-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+<span>編輯</span>
+</button>
+<button class="flex-1 py-2 flex items-center justify-center gap-1 border border-error text-error rounded-lg text-body-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete_outline">delete_outline</span>
+<span>刪除</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between py-xl px-1">
+<p class="text-caption text-on-surface-variant">共 24 筆項目</p>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex items-center gap-1">
+<span class="w-8 h-8 flex items-center justify-center bg-primary text-on-primary rounded font-label-md">1</span>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant font-label-md">2</span>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant font-label-md">3</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Contextual Shell) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around items-center py-2 px-4 z-50 shadow-[0_-4px_12px_rgba(0,0,0,0.03)]">
+<div class="flex flex-col items-center gap-1 text-gray-500">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-medium">資訊中心</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#c84c8f] font-semibold">
+<span class="material-symbols-outlined" data-icon="receipt_long" data-weight="fill">receipt_long</span>
+<span class="text-[10px] font-medium">日常記帳</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-500">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="text-[10px] font-medium">預約管理</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-500">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[10px] font-medium">會員管理</span>
+</div>
+</nav>
+<!-- Floating Action Button (FAB Contextual) -->
+<button class="fixed right-6 bottom-24 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center z-40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[32px]" data-icon="add_circle">add_circle</span>
+</button>
+<!-- Padding for Fixed Bottom Nav -->
+<div class="h-20"></div>
+</body></html>

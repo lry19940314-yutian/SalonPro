@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffd8e7",
+                        "surface-container-high": "#f7e3e9",
+                        "primary": "#a22c70",
+                        "inverse-surface": "#392d32",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "outline-variant": "#dac0c9",
+                        "on-primary-container": "#fffbff",
+                        "surface-variant": "#f1dee3",
+                        "surface-dim": "#e8d5db",
+                        "tertiary-container": "#328517",
+                        "on-error": "#ffffff",
+                        "outline": "#88717a",
+                        "surface-container-low": "#fff0f4",
+                        "on-background": "#23191d",
+                        "on-surface": "#23191d",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-secondary-fixed": "#300247",
+                        "surface-container-highest": "#f1dee3",
+                        "inverse-primary": "#ffafd3",
+                        "surface-bright": "#fff8f8",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary": "#1c6b00",
+                        "secondary": "#794c8f",
+                        "on-surface-variant": "#554149",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#c14689",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#f8ffee",
+                        "background": "#fff8f8",
+                        "surface": "#fff8f8",
+                        "on-secondary-container": "#6c4082",
+                        "on-primary-fixed": "#3d0025",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-container": "#fde9ef",
+                        "secondary-container": "#e8b3fe",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-tertiary-fixed": "#042100",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "gutter": "20px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f8;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- SideNavBar -->
+<aside class="w-64 h-screen fixed left-0 top-0 border-r border-slate-100 bg-white z-50 flex flex-col p-4 shadow-[4px_0_12px_rgba(0,0,0,0.02)]">
+<div class="flex items-center space-x-3 mb-10 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="spa">spa</span>
+</div>
+<div>
+<h1 class="text-xl font-extrabold tracking-tight text-[#c84c8f]">Wonder Sky</h1>
+<p class="text-xs text-slate-500">國際美妍館</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-500 font-medium hover:bg-slate-50 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-body-md">資訊中心</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-500 font-medium hover:bg-slate-50 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-body-md">財務中心</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-[#c84c8f] bg-pink-50/50 rounded-lg font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-body-md">記帳</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-500 font-medium hover:bg-slate-50 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-body-md">預約</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-500 font-medium hover:bg-slate-50 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-body-md">會員</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-100 pt-4">
+<div class="flex items-center space-x-3 px-2">
+<img class="w-10 h-10 rounded-full border-2 border-primary-fixed" data-alt="A professional headshot of a female salon manager with a friendly smile, set in a brightly lit, high-end beauty salon. She is wearing professional attire that complements the soft pink and white color palette of the brand. The background shows soft-focus luxury skincare products and minimalist decor, creating an atmosphere of expertise and refined care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm9Gp2J7Yg2nk5gLcZO_GMjhWbrmvchIBC4uaLHATRdVnujDIElkZzhAzSxcG6XsK879GdZ6qhfNJOynUycIQQ75C4atGFwiHuL6bX4Cwc0hIgh6bKBJPnKal_LGJ9Ma1mXI5kOGSvz77qsApqhbeC1xVoXtgFcM-EMr7L1e243wG0yekMwZboFFrA2STmZzCa8sgs8NmrD4KwRrPoKcsi6JnTdAdlsQk-EFx3VeskrYfe0CSGU3RLgIB5mMaz3gAJp47sfMh6fCM"/>
+<div>
+<p class="text-body-md font-bold text-on-surface">Admin User</p>
+<p class="text-caption text-slate-500">超級管理員</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="h-16 fixed top-0 right-0 left-64 bg-white/80 backdrop-blur-md z-40 border-b border-slate-100 flex justify-between items-center px-8">
+<div class="flex items-center space-x-2 text-slate-600">
+<span class="text-body-md font-medium">記帳</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<span class="text-body-md font-bold text-[#c84c8f]">門店收入</span>
+</div>
+<div class="flex items-center space-x-6">
+<button class="bg-[#c84c8f] hover:bg-[#b03d7a] text-white px-5 py-2 rounded-lg text-body-md font-semibold flex items-center space-x-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>快速開單</span>
+</button>
+<div class="flex items-center space-x-4 text-slate-600">
+<button class="hover:text-[#c84c8f] transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="hover:text-[#c84c8f] transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 mt-16 p-lg">
+<!-- Summary Card -->
+<div class="flex justify-center mb-lg">
+<div class="bg-white rounded-xl shadow-[12px_20px_40px_rgba(200,76,143,0.08)] border border-primary-fixed/30 p-xl flex flex-col items-center min-w-[400px]">
+<p class="text-slate-500 font-medium mb-2">本月門店總收入總額</p>
+<div class="flex items-baseline space-x-2">
+<span class="text-primary font-extrabold text-[40px] leading-tight">$47,890</span>
+<span class="text-primary-container font-semibold text-body-lg">TWD</span>
+</div>
+<div class="mt-4 flex space-x-4">
+<div class="flex items-center text-tertiary text-caption font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+                        +12.5% 較上月
+                    </div>
+</div>
+</div>
+</div>
+<!-- Filter and Actions -->
+<div class="bg-white rounded-xl border border-slate-100 p-md mb-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center space-x-4 flex-1">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border-transparent rounded-lg text-body-md focus:bg-white focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] transition-all outline-none" placeholder="搜尋名稱、備註..." type="text"/>
+</div>
+<select class="px-4 py-2 bg-slate-50 border-transparent rounded-lg text-body-md focus:bg-white focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] transition-all outline-none min-w-[140px]">
+<option>收入科目</option>
+<option>服務收入</option>
+<option>產品銷售</option>
+<option>儲值金</option>
+</select>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm" data-icon="calendar_month">calendar_month</span>
+<input class="pl-10 pr-4 py-2 bg-slate-50 border-transparent rounded-lg text-body-md focus:bg-white focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] transition-all outline-none min-w-[240px]" type="text" value="2024/05/01 - 2024/05/31"/>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<button class="bg-[#c84c8f] hover:bg-[#b03d7a] text-white px-5 py-2 rounded-lg text-body-md font-semibold flex items-center space-x-2 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>新增收入</span>
+</button>
+<button class="bg-slate-100 hover:bg-slate-200 text-slate-600 px-5 py-2 rounded-lg text-body-md font-semibold flex items-center space-x-2 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+<span>刪除</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50/50 border-b border-slate-100">
+<th class="p-4 w-12 text-center">
+<input class="rounded text-[#c84c8f] focus:ring-[#c84c8f]" type="checkbox"/>
+</th>
+<th class="p-4 text-slate-500 font-semibold text-body-md">入帳類型</th>
+<th class="p-4 text-slate-500 font-semibold text-body-md">收入型態</th>
+<th class="p-4 text-slate-500 font-semibold text-body-md">門店</th>
+<th class="p-4 text-slate-500 font-semibold text-body-md">分類</th>
+<th class="p-4 text-slate-500 font-semibold text-body-md">科目</th>
+<th class="p-4 text-slate-500 font-semibold text-body-md">名稱</th>
+<th class="p-4 text-slate-500 font-semibold text-body-md">金額</th>
+<th class="p-4 text-slate-500 font-semibold text-body-md">備註</th>
+<th class="p-4 text-slate-500 font-semibold text-body-md">記錄時間</th>
+<th class="p-4 text-right text-slate-500 font-semibold text-body-md">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Row 1 -->
+<tr class="hover:bg-pink-50/20 transition-colors group">
+<td class="p-4 text-center">
+<input class="rounded text-[#c84c8f] focus:ring-[#c84c8f]" type="checkbox"/>
+</td>
+<td class="p-4">
+<span class="px-3 py-1 bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim text-caption font-bold rounded-full border border-tertiary-fixed-dim/30">入帳至當日現金</span>
+</td>
+<td class="p-4 text-body-md">主營業務收入</td>
+<td class="p-4 text-body-md">台北旗艦店</td>
+<td class="p-4 text-body-md">臉部護理</td>
+<td class="p-4 text-body-md">煥活SPA服務</td>
+<td class="p-4 text-body-md font-medium">深層補水療程</td>
+<td class="p-4 text-body-md font-bold text-primary">$3,200</td>
+<td class="p-4 text-caption text-slate-400">客戶指名店長</td>
+<td class="p-4 text-caption text-slate-500">2024/05/28 14:20</td>
+<td class="p-4">
+<div class="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-[#c84c8f] text-slate-400">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error text-slate-400">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-pink-50/20 transition-colors group">
+<td class="p-4 text-center">
+<input class="rounded text-[#c84c8f] focus:ring-[#c84c8f]" type="checkbox"/>
+</td>
+<td class="p-4">
+<span class="px-3 py-1 bg-secondary-fixed/20 text-secondary text-caption font-bold rounded-full border border-secondary-fixed/30">電子支付結算</span>
+</td>
+<td class="p-4 text-body-md">產品銷售</td>
+<td class="p-4 text-body-md">台北旗艦店</td>
+<td class="p-4 text-body-md">零售保養品</td>
+<td class="p-4 text-body-md">精華液系列</td>
+<td class="p-4 text-body-md font-medium">奇蹟賦活精華 50ml</td>
+<td class="p-4 text-body-md font-bold text-primary">$5,800</td>
+<td class="p-4 text-caption text-slate-400">-</td>
+<td class="p-4 text-caption text-slate-500">2024/05/28 11:05</td>
+<td class="p-4">
+<div class="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-[#c84c8f] text-slate-400">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error text-slate-400">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-pink-50/20 transition-colors group">
+<td class="p-4 text-center">
+<input class="rounded text-[#c84c8f] focus:ring-[#c84c8f]" type="checkbox"/>
+</td>
+<td class="p-4">
+<span class="px-3 py-1 bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim text-caption font-bold rounded-full border border-tertiary-fixed-dim/30">入帳至當日現金</span>
+</td>
+<td class="p-4 text-body-md">主營業務收入</td>
+<td class="p-4 text-body-md">信義分店</td>
+<td class="p-4 text-body-md">身體美學</td>
+<td class="p-4 text-body-md">纖體舒壓</td>
+<td class="p-4 text-body-md font-medium">全背舒壓按摩 90min</td>
+<td class="p-4 text-body-md font-bold text-primary">$2,800</td>
+<td class="p-4 text-caption text-slate-400">預約編號 #A9213</td>
+<td class="p-4 text-caption text-slate-500">2024/05/27 18:45</td>
+<td class="p-4">
+<div class="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-[#c84c8f] text-slate-400">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error text-slate-400">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-pink-50/20 transition-colors group">
+<td class="p-4 text-center">
+<input class="rounded text-[#c84c8f] focus:ring-[#c84c8f]" type="checkbox"/>
+</td>
+<td class="p-4">
+<span class="px-3 py-1 bg-primary-fixed/30 text-primary text-caption font-bold rounded-full border border-primary-fixed">儲值金劃扣</span>
+</td>
+<td class="p-4 text-body-md">預收款項</td>
+<td class="p-4 text-body-md">台北旗艦店</td>
+<td class="p-4 text-body-md">會員儲值</td>
+<td class="p-4 text-body-md">金卡會員套裝</td>
+<td class="p-4 text-body-md font-medium">儲值 $20,000</td>
+<td class="p-4 text-body-md font-bold text-primary">$20,000</td>
+<td class="p-4 text-caption text-slate-400">活動贈送2,000點</td>
+<td class="p-4 text-caption text-slate-500">2024/05/27 15:30</td>
+<td class="p-4">
+<div class="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-[#c84c8f] text-slate-400">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error text-slate-400">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 flex items-center justify-between bg-white border-t border-slate-100">
+<div class="flex items-center space-x-2">
+<span class="text-caption text-slate-500">顯示 1 到 10 筆，共 142 筆</span>
+<select class="ml-4 px-2 py-1 bg-slate-50 border-transparent rounded text-caption focus:ring-1 focus:ring-[#c84c8f] outline-none">
+<option>10 筆 / 頁</option>
+<option>20 筆 / 頁</option>
+<option>50 筆 / 頁</option>
+</select>
+</div>
+<div class="flex items-center space-x-1">
+<button class="w-8 h-8 flex items-center justify-center rounded text-slate-400 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-[#c84c8f] text-white text-caption font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-slate-600 hover:bg-slate-100 transition-colors text-caption font-medium">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-slate-600 hover:bg-slate-100 transition-colors text-caption font-medium">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded text-slate-600 hover:bg-slate-100 transition-colors text-caption font-medium">15</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-slate-400 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Visual Elements / Decor -->
+<div class="mt-lg grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-lg rounded-xl bg-gradient-to-br from-pink-50/50 to-white border border-pink-100/50 flex items-center justify-between">
+<div>
+<h4 class="text-slate-500 font-semibold mb-1">今日增長</h4>
+<p class="text-h2 text-primary">+$4,250</p>
+</div>
+<div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+<div class="p-lg rounded-xl bg-gradient-to-br from-slate-50/50 to-white border border-slate-100 flex items-center justify-between">
+<div>
+<h4 class="text-slate-500 font-semibold mb-1">平均客單價</h4>
+<p class="text-h2 text-slate-800">$2,450</p>
+</div>
+<div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+</div>
+</div>
+<div class="p-lg rounded-xl bg-gradient-to-br from-slate-50/50 to-white border border-slate-100 flex items-center justify-between">
+<div>
+<h4 class="text-slate-500 font-semibold mb-1">已開單數量</h4>
+<p class="text-h2 text-slate-800">18 筆</p>
+</div>
+<div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined" data-icon="sticky_note_2">sticky_note_2</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

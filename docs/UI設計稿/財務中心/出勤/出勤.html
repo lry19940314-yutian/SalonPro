@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff8f8;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-primary-container": "#fffbff",
+                        "on-background": "#23191d",
+                        "tertiary": "#1c6b00",
+                        "surface-container-highest": "#f1dee3",
+                        "on-secondary-fixed-variant": "#603475",
+                        "tertiary-fixed-dim": "#84db64",
+                        "outline": "#88717a",
+                        "primary": "#a22c70",
+                        "on-tertiary-container": "#f8ffee",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#300247",
+                        "surface-bright": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-tint": "#a52f72",
+                        "secondary-fixed": "#f6d9ff",
+                        "outline-variant": "#dac0c9",
+                        "primary-container": "#c14689",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fff0f4",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary": "#794c8f",
+                        "inverse-surface": "#392d32",
+                        "secondary-container": "#e8b3fe",
+                        "on-surface-variant": "#554149",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary-container": "#328517",
+                        "surface-dim": "#e8d5db",
+                        "on-primary-fixed-variant": "#861259",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-fixed": "#042100",
+                        "inverse-primary": "#ffafd3",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-variant": "#f1dee3",
+                        "on-secondary-container": "#6c4082",
+                        "surface": "#fff8f8",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "background": "#fff8f8",
+                        "primary-fixed": "#ffd8e7",
+                        "on-surface": "#23191d",
+                        "surface-container": "#fde9ef",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased flex overflow-hidden h-screen">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-screen w-64 flex flex-col p-4 space-y-2 bg-white border-r border-slate-200 z-50">
+<div class="flex items-center gap-3 px-3 py-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden">
+<img alt="Salon Logo" class="w-full h-full object-cover" data-alt="A sophisticated and minimalist salon logo icon featuring abstract geometric lines in a soft rose gold and deep charcoal palette. The background is a crisp, clean white that reflects a high-end, professional beauty and wellness branding. The lighting is bright and airy, suggesting a modern and upscale spa atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyMtwmNTu93ttwmg_QpLRNjk2SjaUZHolpbpvsT5OOJxSU-BCYjdISxKyojhGb8ZVNnW07kyL9o3BINE8L-tamng-QmVSGqKhAPO4bv-eJrPzRggeQgRN-T73GNZtt6w4_3FLio2D5Qa42sY1RlrA-tQZxShRqZPmh0QmohwM1KzMOomLWoH11krA_SHc3IOYAsMJgIcqCp0vmPKtSttp0Dkvkz6uEbf7JdNPveye3ILKozaMYIHFjMDVM_uSxBLydOAAgHw1jTn4"/>
+</div>
+<div>
+<h2 class="font-bold text-primary font-h2 text-body-md tracking-tight">Luminous Pro</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">Premium SaaS</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-slate-600 px-3 py-2 hover:bg-slate-50 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 px-3 py-2 hover:bg-slate-50 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-body-md">Appointments</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 px-3 py-2 hover:bg-slate-50 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-body-md">Staff Management</span>
+</a>
+<a class="flex items-center gap-3 bg-pink-50 text-pink-600 font-semibold rounded-lg px-3 py-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-body-md">Finances</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 px-3 py-2 hover:bg-slate-50 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+<span class="font-label-md text-body-md">Client Base</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 px-3 py-2 hover:bg-slate-50 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-body-md">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 space-y-1 border-t border-slate-100">
+<button class="w-full mb-4 bg-primary text-white font-bold py-2.5 rounded-lg text-sm shadow-sm hover:opacity-90 active:scale-95 transition-all">Upgrade Plan</button>
+<a class="flex items-center gap-3 text-slate-600 px-3 py-2 hover:bg-slate-50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-body-md">Help Center</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 px-3 py-2 hover:bg-slate-50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-body-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<div class="flex-1 ml-64 flex flex-col min-w-0">
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center h-16 px-6 w-full sticky top-0 bg-white/90 backdrop-blur-md z-40 border-b border-slate-200 shadow-sm">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-black tracking-tight text-slate-900 font-h1">Wonder sky 國際美妍館</h1>
+<div class="h-6 w-[1px] bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-6">
+<button class="text-pink-600 border-b-2 border-pink-600 pb-4 mt-4 font-medium font-body-md">Salary</button>
+<button class="text-slate-500 hover:text-slate-900 pb-4 mt-4 font-medium font-body-md transition-colors">Expense Categories</button>
+<button class="text-slate-500 hover:text-slate-900 pb-4 mt-4 font-medium font-body-md transition-colors">Expense List</button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-5 py-2 rounded-full flex items-center gap-2 font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+                    開單
+                </button>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-slate-900">Admin User</p>
+<p class="text-[10px] text-slate-500 font-medium">Store Manager</p>
+</div>
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="A professional headshot of a refined store manager with a warm and welcoming expression. She has neatly styled hair and wears elegant, professional business attire. The lighting is soft and flattering, with a bright, minimalist office background that creates a sense of high-end corporate reliability and modern beauty industry aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4PNR8OKENmNIZNEhjLAuqRadcArA-TXXf9le7JZXVYXxObk4LQJSzZiz4ckRpej1CxDls4YAO7JeDxdVM7DWdAYoBF7AJj9ehCoUTP_X7GpyY7vP33pkRtZh2jHSnODKxDh9XtECrY0j41bWqCh1DHQTUetzlGZQq-XRa2hfF2D78ooz4DeF5avP6rFB2aDxGf0hriRq4Hj9uE3U-J29eQx2fDUz-ZLfTD2MXY1cqz6tFdSl4SeyPvyHV5YeCxPcw3EGqDMMOkCE"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<main class="flex-1 overflow-y-auto p-6 custom-scrollbar space-y-6">
+<!-- Filters Card -->
+<section class="bg-white rounded-xl border border-slate-200 shadow-sm p-lg">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-4 flex-1">
+<!-- Search -->
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="搜尋員工姓名或編號..." type="text"/>
+</div>
+<!-- Time Picker -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="calendar_today">calendar_today</span>
+<input class="pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none min-w-[240px]" type="text" value="2023-11-01 - 2023-11-30"/>
+</div>
+<!-- Position Select -->
+<div class="relative">
+<select class="appearance-none pl-4 pr-10 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none min-w-[140px]">
+<option>全部職位</option>
+<option>美容師</option>
+<option>店長</option>
+<option>行政</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 rounded-lg flex items-center gap-2 font-bold text-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="file_export">file_export</span>
+                        匯出資料
+                    </button>
+</div>
+</section>
+<!-- Table Card -->
+<section class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+<h3 class="font-h3 text-slate-900 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="assignment_turned_in">assignment_turned_in</span>
+                        員工出勤明細
+                    </h3>
+<span class="text-caption text-slate-500">共 124 筆記錄</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50/50 text-slate-500 font-bold text-[13px] border-b border-slate-100">
+<th class="px-6 py-4">員工資訊</th>
+<th class="px-4 py-4 text-center">排休</th>
+<th class="px-4 py-4 text-center">事假</th>
+<th class="px-4 py-4 text-center">病假</th>
+<th class="px-4 py-4 text-center">公假</th>
+<th class="px-4 py-4 text-center">出勤時長</th>
+<th class="px-4 py-4 text-center text-primary">加班</th>
+<th class="px-4 py-4 text-center text-error">遲到</th>
+<th class="px-6 py-4 text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Staff 1" class="w-9 h-9 rounded-full object-cover border border-slate-200" data-alt="A portrait of a professional female staff member with a friendly smile, representing the beauty industry's welcoming atmosphere. She has light makeup and neatly tied hair. The photo is taken in a brightly lit studio environment with soft shadows and a neutral background, echoing a clean and professional corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE5fvn-Hw-dEjmAQI3euYcFUtwg7vy8S3x3ekaP4HKV5AbCwnDmtl2Z5d5FNIt7xQhjPworTrcqA3uiKztlXMCBV3hgxolbz2tVhxpq41q3EpwVVsWC4xSXimfv8CEFoISkEfHcAE0E1kyBHMGVWl7qBAILGTFpP098K1owu_6R9N3_Labjz0VlmN9rdjQPjlNeIb762aRqeXvAwqfg48eTvni3X_iDbyi0XxxcBYwPgPie-Iw-mmaLLS-OVmilnivOvZh2SBpHYg"/>
+<div>
+<p class="text-sm font-bold text-slate-900 leading-tight">王曉美</p>
+<p class="text-[11px] text-slate-500">高級美容師 | A024</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-center text-sm font-medium">8 天</td>
+<td class="px-4 py-4 text-center text-sm">0.5 天</td>
+<td class="px-4 py-4 text-center text-sm">1 天</td>
+<td class="px-4 py-4 text-center text-sm">0</td>
+<td class="px-4 py-4 text-center text-sm font-medium">176.5h</td>
+<td class="px-4 py-4 text-center text-sm text-primary font-bold">12h</td>
+<td class="px-4 py-4 text-center text-sm text-error">15 min</td>
+<td class="px-6 py-4 text-right">
+<div class="relative inline-block text-left group/menu">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-pink-50 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+<!-- Actions Dropdown -->
+<div class="absolute right-0 bottom-0 mb-8 w-48 bg-white border border-slate-200 rounded-xl shadow-xl z-50 py-2 hidden group-hover/menu:block">
+<button class="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-pink-50 hover:text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="event_busy">event_busy</span> 請假
+                                            </button>
+<button class="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-pink-50 hover:text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="block">block</span> 關閉預約
+                                            </button>
+<div class="h-[1px] bg-slate-100 my-1"></div>
+<button class="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-pink-50 hover:text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span> 薪資調整記錄
+                                            </button>
+<button class="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-pink-50 hover:text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_card">add_card</span> 新增薪資調整
+                                            </button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Staff 2" class="w-9 h-9 rounded-full object-cover border border-slate-200" data-alt="A portrait of a male administrative staff member with a clean-cut look and professional attire. He exudes competence and reliability. The lighting is high-key and modern, set in a contemporary office setting that feels integrated with the overall corporate and wellness brand image of the salon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz4lWPDVCZzCL45X9TM2MCdiIsQM1-Bn6RrG1yrAu5ehsHSO0bDlJCp2mOVQFVTrx12MM2vDQ_ZID4uVFcaOsVJkHWykDzjhXGuXet3oVzShLNo4XVjho5-GQ18UQiKPOLIHYtrn6ytv79e8St2XgeoVSc5Ns1FSzClVRn0CWajiISkk2FzRhrC8ulBRpZxlOgrPzhYLqWfjkOWWz7egCMqchmV3Tja9Bmb83r4leqTS-Bfjx471Vf8eiR4uKxBxHoVbVyfFsKLOc"/>
+<div>
+<p class="text-sm font-bold text-slate-900 leading-tight">李大中</p>
+<p class="text-[11px] text-slate-500">行政主管 | A011</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-center text-sm font-medium">10 天</td>
+<td class="px-4 py-4 text-center text-sm">0</td>
+<td class="px-4 py-4 text-center text-sm">0</td>
+<td class="px-4 py-4 text-center text-sm">2 天</td>
+<td class="px-4 py-4 text-center text-sm font-medium">160h</td>
+<td class="px-4 py-4 text-center text-sm text-primary font-bold">4h</td>
+<td class="px-4 py-4 text-center text-sm text-error">0</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-pink-50 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 transition-colors group border-b-0">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Staff 3" class="w-9 h-9 rounded-full object-cover border border-slate-200" data-alt="A bright and professional portrait of a senior beauty consultant with an elegant and confident appearance. Her look is polished and aligns with high-end salon standards. The setting is a minimalist, softly lit professional space with a focus on clean lines and a warm, inviting atmosphere consistent with the brand's luxury identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABW5i0Cubm6_0RupWgxYSgDp7hDEERJuQ09ZP-b0ToKpIa_BCL86IG8rGO7yj7CKHQoWhifMSuKIrwFx3-aR6n3Yjim5WIYFLkALINt2d0OCJAnXVZwy6HZhEKcKrdXvz7aYKO92SnLkGcQeEbstQyD35VUsgUjaqsVhBhYxR-81oJs37gxSTpGc0QOYChlqPjtgkSlHY5a96XoybxpHaX__bRLxlPa-_L6C90RM3WdLNu3elm1OV-r0jNnst73oA8mK0mfw3GJ3c"/>
+<div>
+<p class="text-sm font-bold text-slate-900 leading-tight">林詩涵</p>
+<p class="text-[11px] text-slate-500">中級美容師 | A045</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-center text-sm font-medium">8 天</td>
+<td class="px-4 py-4 text-center text-sm">1 天</td>
+<td class="px-4 py-4 text-center text-sm">0.5 天</td>
+<td class="px-4 py-4 text-center text-sm">0</td>
+<td class="px-4 py-4 text-center text-sm font-medium">172h</td>
+<td class="px-4 py-4 text-center text-sm text-primary font-bold">8h</td>
+<td class="px-4 py-4 text-center text-sm text-error">45 min</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-pink-50 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-slate-50/30 flex justify-between items-center border-t border-slate-100">
+<p class="text-caption text-slate-500">第 1 頁，共 7 頁</p>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white font-bold text-xs shadow-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-white text-xs transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-white text-xs transition-colors">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Data Overview Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<div>
+<p class="text-caption text-slate-500 font-medium">總出勤人數</p>
+<p class="text-xl font-black text-slate-900">42 <span class="text-sm font-medium text-slate-400">位</span></p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+</div>
+<div>
+<p class="text-caption text-slate-500 font-medium">平均工作時數</p>
+<p class="text-xl font-black text-slate-900">168.4 <span class="text-sm font-medium text-slate-400">h</span></p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined" data-icon="pending_actions">pending_actions</span>
+</div>
+<div>
+<p class="text-caption text-slate-500 font-medium">本月加班總時數</p>
+<p class="text-xl font-black text-slate-900">124.5 <span class="text-sm font-medium text-slate-400">h</span></p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-rose-50 flex items-center justify-center text-rose-600">
+<span class="material-symbols-outlined" data-icon="error_outline">error_outline</span>
+</div>
+<div>
+<p class="text-caption text-slate-500 font-medium">本月遲到人次</p>
+<p class="text-xl font-black text-slate-900">8 <span class="text-sm font-medium text-slate-400">次</span></p>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

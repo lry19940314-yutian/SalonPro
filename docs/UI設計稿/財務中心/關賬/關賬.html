@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#9ff87d",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-surface": "#23191d",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#f7e3e9",
+                        "surface": "#fff8f8",
+                        "surface-container": "#fde9ef",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-tertiary-fixed": "#042100",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-tint": "#a52f72",
+                        "on-primary-container": "#fffbff",
+                        "on-background": "#23191d",
+                        "on-tertiary-container": "#f8ffee",
+                        "tertiary": "#1c6b00",
+                        "surface-container-low": "#fff0f4",
+                        "tertiary-container": "#328517",
+                        "secondary-fixed": "#f6d9ff",
+                        "secondary": "#794c8f",
+                        "inverse-primary": "#ffafd3",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-secondary-fixed": "#300247",
+                        "on-secondary-container": "#6c4082",
+                        "secondary-container": "#e8b3fe",
+                        "outline-variant": "#dac0c9",
+                        "on-surface-variant": "#554149",
+                        "primary-container": "#c14689",
+                        "surface-container-highest": "#f1dee3",
+                        "surface-bright": "#fff8f8",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "primary-fixed": "#ffd8e7",
+                        "outline": "#88717a",
+                        "surface-variant": "#f1dee3",
+                        "primary-fixed-dim": "#ffafd3",
+                        "error": "#ba1a1a",
+                        "background": "#fff8f8",
+                        "surface-dim": "#e8d5db",
+                        "inverse-surface": "#392d32",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "primary": "#a22c70",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 border-r border-slate-200 bg-white sticky top-0 flex flex-col p-4 shadow-sm">
+<div class="mb-8 px-2 flex flex-col">
+<span class="text-lg font-bold text-[#c84c8f]">Wonder sky</span>
+<span class="text-xs text-slate-500 font-medium">國際美妍館</span>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                資訊中心
+            </a>
+<!-- Active State: Financial Center -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#c84c8f] bg-[#c84c8f]/5 rounded-lg font-bold font-['Plus_Jakarta_Sans'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                財務中心
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                記帳
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                預約
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                會員
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                服務及商品
+            </a>
+</nav>
+<div class="pt-4 border-t border-slate-100 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                系統設定
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+                切換分店
+            </a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col">
+<!-- TopAppBar Shell -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-6 w-full h-16 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-black tracking-tight text-slate-900">Wonder sky 國際美妍館</h1>
+<div class="h-4 w-px bg-slate-300"></div>
+<nav class="flex items-center gap-4 text-sm">
+<span class="text-slate-500">財務中心</span>
+<span class="material-symbols-outlined text-slate-400 text-sm" data-icon="chevron_right">chevron_right</span>
+<span class="text-[#c84c8f] font-semibold">關帳</span>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-slate-100 rounded-full p-2 transition-all relative">
+<span class="material-symbols-outlined text-slate-600" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="bg-[#c84c8f] text-white px-6 py-2 rounded-lg font-bold text-sm hover:opacity-90 active:scale-95 transition-all">
+                    開單
+                </button>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+<div class="text-right">
+<p class="text-xs font-bold text-slate-900">店長 雅婷</p>
+<p class="text-[10px] text-slate-500">旗艦店</p>
+</div>
+<img alt="User Avatar" class="w-8 h-8 rounded-full object-cover border border-slate-200" data-alt="A professional headshot of a sophisticated Asian woman with a friendly smile, set in a high-end beauty salon environment. The lighting is soft and flattering, emphasizing a clean and corporate light-mode aesthetic. The background features blurred elements of a modern, minimalist wellness center with hints of soft pink and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcXDkA-Y2pt8l9dc4BPYdWX_YdYDwVc2z6F43OxwkER2nnL4DvYawOqv2O1KBxZ9qSzqN4HyTWwfosR29-ymemmMs9_U2OhlyQvPGgrO13WaX3B4Q_BC4GZW26FtQDmdFUucsvLI8twurMcNzy_POskz73fnRtdzm6m-HviVhmigIwUOuKoi7MfAWauPnKtiO0ut3yS5dPIPA_2sOhy3UT9Bjo3zASeprFte_esbomRlsuRmwjfFV8Jocb8wRLR6coJgFT2RgqVEg"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="p-lg flex-1 flex flex-col">
+<!-- Breadcrumbs / Title Section -->
+<div class="mb-lg">
+<h2 class="text-h1 font-h1 text-slate-900">關帳管理</h2>
+<p class="text-body-md font-body-md text-slate-500 mt-xs">管理並審核每日財務結算紀錄</p>
+</div>
+<!-- Empty State Card -->
+<div class="flex-1 flex items-center justify-center bg-white border border-slate-200 rounded-xl shadow-sm">
+<div class="max-w-md w-full text-center p-xl flex flex-col items-center">
+<!-- Illustrated Empty State Icon -->
+<div class="relative mb-lg">
+<div class="w-32 h-32 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-300 text-[64px]" data-icon="receipt_long">receipt_long</span>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-white p-2 rounded-full shadow-md border border-slate-100">
+<span class="material-symbols-outlined text-[#c84c8f] text-3xl" data-icon="search">search</span>
+</div>
+<!-- Decorative points and lines -->
+<div class="absolute -top-4 -left-4 w-4 h-4 rounded-full bg-[#c84c8f]/10"></div>
+<div class="absolute top-1/2 -right-8 w-6 h-px bg-slate-200"></div>
+<div class="absolute bottom-0 -left-6 w-2 h-2 rounded-full bg-slate-200"></div>
+</div>
+<h3 class="text-h2 font-h2 text-slate-900 mb-xs">沒有關帳記錄</h3>
+<p class="text-body-md font-body-md text-slate-500 mb-xl">
+                        目前尚未產生任何關帳報表。點擊下方按鈕即可開始建立今日或特定日期的結帳程序。
+                    </p>
+<button class="inline-flex items-center gap-2 bg-[#c84c8f] text-white px-8 py-3 rounded-lg font-bold text-body-lg hover:opacity-90 shadow-lg shadow-[#c84c8f]/20 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        新增
+                    </button>
+</div>
+</div>
+<!-- Helpful Hints (Bento Style Sub-info) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-lg">
+<div class="p-md bg-white border border-slate-200 rounded-lg flex items-start gap-4">
+<div class="bg-secondary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="history_edu">history_edu</span>
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-slate-900">自動備份</h4>
+<p class="text-caption font-caption text-slate-500">系統將自動備份您的關帳數據至雲端。</p>
+</div>
+</div>
+<div class="p-md bg-white border border-slate-200 rounded-lg flex items-start gap-4">
+<div class="bg-tertiary-container/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="security">security</span>
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-slate-900">安全稽核</h4>
+<p class="text-caption font-caption text-slate-500">每筆記錄均包含操作人員與修改時戳。</p>
+</div>
+</div>
+<div class="p-md bg-white border border-slate-200 rounded-lg flex items-start gap-4">
+<div class="bg-primary-fixed p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="analytics">analytics</span>
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-slate-900">報表整合</h4>
+<p class="text-caption font-caption text-slate-500">關帳後數據將自動同步至財務統計中心。</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

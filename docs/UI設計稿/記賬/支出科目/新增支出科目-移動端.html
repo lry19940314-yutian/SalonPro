@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky - 支出科目設定</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-background": "#23191d",
+                        "background": "#fff8f8",
+                        "on-secondary-container": "#6c4082",
+                        "surface-container-low": "#fff0f4",
+                        "inverse-primary": "#ffafd3",
+                        "secondary": "#794c8f",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fff8f8",
+                        "surface": "#fff8f8",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-secondary-fixed": "#300247",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed": "#ffd8e7",
+                        "on-primary-fixed": "#3d0025",
+                        "inverse-surface": "#392d32",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-fixed": "#042100",
+                        "primary-fixed-dim": "#ffafd3",
+                        "tertiary-container": "#328517",
+                        "secondary-container": "#e8b3fe",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#a52f72",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "outline": "#88717a",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-container-highest": "#f1dee3",
+                        "on-secondary-fixed-variant": "#603475",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-container": "#fde9ef",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-variant": "#f1dee3",
+                        "outline-variant": "#dac0c9",
+                        "surface-dim": "#e8d5db",
+                        "tertiary-fixed": "#9ff87d",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#554149",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "primary-container": "#c14689",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#f7e3e9",
+                        "secondary-fixed": "#f6d9ff",
+                        "primary": "#a22c70"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bottom-sheet-active {
+            transform: translateY(0);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- Top App Bar -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm docked full-width top-0 z-50 fixed flex justify-between items-center w-full px-4 h-16">
+<div class="flex items-center gap-3">
+<button class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors active:opacity-70 flex items-center justify-center w-10 h-10">
+<span class="material-symbols-outlined text-gray-500" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-extrabold tracking-tight text-xl text-[#c84c8f] dark:text-[#e077ad]">Wonder sky</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors active:opacity-70 flex items-center justify-center w-10 h-10">
+<span class="material-symbols-outlined text-gray-500" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas (Background page content) -->
+<main class="pt-20 pb-24 px-4">
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-white border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-h2 text-h2 text-on-surface">支出科目管理</h2>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                        新增科目
+                    </button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg border border-gray-50">
+<div>
+<p class="font-body-lg font-medium text-on-background">店內耗材</p>
+<p class="text-caption text-outline">日常支出</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="edit">edit</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg border border-gray-50">
+<div>
+<p class="font-body-lg font-medium text-on-background">房租水電</p>
+<p class="text-caption text-outline">固定支出</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="edit">edit</span>
+</div>
+</div>
+</div>
+<div class="relative h-48 rounded-xl overflow-hidden shadow-sm group">
+<img class="w-full h-full object-cover" data-alt="A luxurious high-end beauty salon interior with soft ambient lighting and pink floral accents. The scene captures a professional and serene atmosphere with modern treatment beds and minimalist decor. The lighting is high-key and bright, emphasizing a premium light-mode aesthetic for a sophisticated spa or wellness center. The color palette features whites and soft rose tones consistent with a luxury brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFLLm3AQtBSp48Uqv5uw6202OTzKhKTlPjx3Ns43qAcaGkzeqJDi4TCE6J7A4_WQkUJU86uI5CZCSGQlHrRvComw1QYvZ-2p3MHu5WaoNYSfKusYdZS0bkMYQl6zYnGDoVP6YLIMhUUyXOPsiLPtpsuQLBEyYhtmRk-GCLyO9b6DIHDKExw1UTrgZhIAux_BMmj_Yehp_aMYfl458_U1j7HIZscvuMX37ZXCtjM20IsQV2SVOmmdDXX2kwAleS6IJHjZGRFtNmeCE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<p class="text-white font-medium">提升店務管理效率，從科目分類開始</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Overlay Mask -->
+<div class="fixed inset-0 bg-black/50 z-[100] backdrop-blur-sm"></div>
+<!-- Bottom Sheet (支出科目 - 新增/編輯) -->
+<div class="fixed bottom-0 left-0 right-0 z-[110] bg-white rounded-t-[32px] shadow-2xl flex flex-col max-h-[795px] translate-y-0 transition-transform duration-300">
+<!-- Handle Bar -->
+<div class="w-full flex justify-center pt-3 pb-2">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="px-6 py-4 flex justify-between items-center border-b border-gray-100">
+<div class="w-10"></div> <!-- Spacer for centering -->
+<h3 class="font-h1 text-h1 text-on-surface text-center">新增支出科目</h3>
+<button class="w-10 h-10 flex items-center justify-center text-[#c84c8f] active:opacity-60 transition-all">
+<span class="material-symbols-outlined text-[28px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- Scrollable Form Content -->
+<div class="flex-1 overflow-y-auto px-6 py-6 custom-scrollbar">
+<div class="space-y-8 pb-32">
+<!-- Toggle Switch 1: 月結項 -->
+<div class="flex items-center justify-between min-h-[44px]">
+<div>
+<span class="font-body-lg font-semibold text-on-background">月結項</span>
+<p class="text-caption text-outline">列入每月底自動結算項目</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-8 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle Switch 2: 日結項 -->
+<div class="flex items-center justify-between min-h-[44px]">
+<div>
+<span class="font-body-lg font-semibold text-on-background">日結項</span>
+<p class="text-caption text-outline">顯示於每日結帳清單中</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-8 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Name Input -->
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant flex items-center gap-1">
+                        科目名稱 <span class="text-error">*</span>
+</label>
+<input class="w-full h-12 px-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-body-lg bg-surface-container-lowest placeholder:text-outline-variant" placeholder="請輸入支出科目名稱" type="text"/>
+</div>
+<!-- Classification Picker -->
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">隸屬分類</label>
+<div class="border border-outline-variant rounded-xl overflow-hidden bg-surface-container-lowest">
+<div class="max-h-[180px] overflow-y-auto custom-scrollbar">
+<label class="flex items-center gap-3 px-4 py-4 border-b border-gray-50 active:bg-primary-fixed cursor-pointer transition-colors">
+<input class="w-5 h-5 text-primary border-outline focus:ring-primary" name="category" type="radio"/>
+<span class="text-body-lg text-on-background">日常營運支出</span>
+</label>
+<label class="flex items-center gap-3 px-4 py-4 border-b border-gray-50 active:bg-primary-fixed cursor-pointer transition-colors">
+<input checked="" class="w-5 h-5 text-primary border-outline focus:ring-primary" name="category" type="radio"/>
+<span class="text-body-lg text-on-background">人事與薪資</span>
+</label>
+<label class="flex items-center gap-3 px-4 py-4 border-b border-gray-50 active:bg-primary-fixed cursor-pointer transition-colors">
+<input class="w-5 h-5 text-primary border-outline focus:ring-primary" name="category" type="radio"/>
+<span class="text-body-lg text-on-background">場地租金與稅務</span>
+</label>
+<label class="flex items-center gap-3 px-4 py-4 border-b border-gray-50 active:bg-primary-fixed cursor-pointer transition-colors">
+<input class="w-5 h-5 text-primary border-outline focus:ring-primary" name="category" type="radio"/>
+<span class="text-body-lg text-on-background">廣告行銷費用</span>
+</label>
+<label class="flex items-center gap-3 px-4 py-4 border-b border-gray-50 active:bg-primary-fixed cursor-pointer transition-colors">
+<input class="w-5 h-5 text-primary border-outline focus:ring-primary" name="category" type="radio"/>
+<span class="text-body-lg text-on-background">進貨成本</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Buttons -->
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-white/80 backdrop-blur-md border-t border-gray-100 flex gap-3 z-20">
+<button class="flex-1 h-[48px] rounded-xl border border-outline-variant text-on-surface-variant font-semibold text-body-lg active:bg-gray-100 transition-colors">
+                取消
+            </button>
+<button class="flex-[1.5] h-[48px] rounded-xl bg-primary text-on-primary font-semibold text-body-lg shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
+                儲存
+            </button>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-white/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] md:hidden">
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-[#c84c8f] transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">首頁</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-[#c84c8f] transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">預約</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-[#c84c8f] transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">報表</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c84c8f] bg-[#c84c8f]/5 rounded-xl px-3 py-1 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">設定</span>
+</a>
+</nav>
+</body></html>

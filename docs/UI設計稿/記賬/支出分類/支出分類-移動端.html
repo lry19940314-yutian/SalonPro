@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#fff0f4",
+                        "outline": "#88717a",
+                        "surface": "#fff8f8",
+                        "secondary": "#794c8f",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-primary-fixed": "#3d0025",
+                        "background": "#fff8f8",
+                        "tertiary-container": "#328517",
+                        "on-background": "#23191d",
+                        "on-secondary-container": "#6c4082",
+                        "surface-container-highest": "#f1dee3",
+                        "on-secondary": "#ffffff",
+                        "primary": "#a22c70",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#c14689",
+                        "outline-variant": "#dac0c9",
+                        "surface-tint": "#a52f72",
+                        "inverse-surface": "#392d32",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-dim": "#e8d5db",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary-fixed": "#042100",
+                        "primary-fixed": "#ffd8e7",
+                        "on-tertiary-container": "#f8ffee",
+                        "secondary-fixed": "#f6d9ff",
+                        "inverse-on-surface": "#ffecf1",
+                        "tertiary": "#1c6b00",
+                        "surface-container": "#fde9ef",
+                        "on-surface": "#23191d",
+                        "on-secondary-fixed": "#300247",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#f1dee3",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#fffbff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#e8b3fe",
+                        "surface-bright": "#fff8f8",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-surface-variant": "#554149",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "inverse-primary": "#ffafd3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200">
+<span class="material-symbols-outlined text-pink-600 dark:text-pink-400" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-semibold text-lg text-slate-900 dark:text-white">Wonder sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200">
+<span class="material-symbols-outlined text-pink-600 dark:text-pink-400" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-pink-100">
+<img alt="User" class="w-full h-full object-cover" data-alt="A professional headshot of a beauty salon manager with a friendly expression. The person has styled hair and wears a clean, professional uniform in a bright, modern salon setting with soft, high-key lighting. The background features blurred shelves of premium beauty products and a soft pink and white color palette, reflecting a high-end corporate B2B wellness environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmFOOQ1qehQdEz8YQ889YCWUFk-GpOvqISoPjVJiuo9awR2WUoGM92dEHLHX1CrnHkStHyallq2ShjOH_90ob_UDxq4GAZ-Iaq1QOuYOp7Qw7w03GHSu0JsGNDGwGZw0mfK_0d6AqI2XSK3fzjV1MztDeCO-lchJ4_6_OUMf8cm84xaUQkF1m0BH9ZdXg-gfnX7CErFi-UVL1gcUaXwjDTBe6WfrKy_Zl7p-LFVpBF_tUg6TxJfU9IGrq4XZX2z3s7dEfV4gC-63c"/>
+</div>
+</div>
+</header>
+<main class="pt-20 px-4">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 mb-4">
+<span class="font-caption text-caption text-outline">記帳</span>
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="chevron_right">chevron_right</span>
+<span class="font-caption text-caption text-primary font-medium">支出分類</span>
+</nav>
+<!-- Page Header & Action Bar -->
+<div class="mb-6">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-h2 text-h2 text-on-surface">分類管理</h2>
+<div class="flex items-center gap-2">
+<button class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Main Actions -->
+<div class="grid grid-cols-3 gap-2">
+<button class="min-h-[44px] flex items-center justify-center gap-2 rounded-lg border border-outline-variant text-on-surface font-label-md hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+<span>編輯</span>
+</button>
+<button class="min-h-[44px] flex items-center justify-center gap-2 rounded-lg bg-primary text-on-primary font-label-md shadow-md active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+<span>新增</span>
+</button>
+<button class="min-h-[44px] flex items-center justify-center gap-2 rounded-lg border border-outline-variant text-on-surface font-label-md hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+<span>刪除</span>
+</button>
+</div>
+</div>
+<!-- Category List (Bento-style list) -->
+<div class="space-y-3">
+<!-- Group 1: Utilities -->
+<div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="bolt">bolt</span>
+</div>
+<span class="font-h3 text-h3 text-slate-800">基礎營運</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-surface-bright border border-slate-50 p-3 rounded-lg flex items-center justify-between">
+<span class="font-body-md text-body-md text-slate-700">水電瓦斯</span>
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="bg-surface-bright border border-slate-50 p-3 rounded-lg flex items-center justify-between">
+<span class="font-body-md text-body-md text-slate-700">電話網路</span>
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="bg-surface-bright border border-slate-50 p-3 rounded-lg flex items-center justify-between">
+<span class="font-body-md text-body-md text-slate-700">營業租賃</span>
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="bg-surface-bright border border-slate-50 p-3 rounded-lg flex items-center justify-between">
+<span class="font-body-md text-body-md text-slate-700">雜項支出</span>
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="drag_indicator">drag_indicator</span>
+</div>
+</div>
+</div>
+<!-- Group 2: Consumables (Horizontal Scroll Area) -->
+<div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm overflow-hidden">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="inventory_2">inventory_2</span>
+</div>
+<span class="font-h3 text-h3 text-slate-800">美容耗材</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-pink-50 text-primary font-label-md rounded-full border border-pink-100">洗臉巾</span>
+<span class="px-4 py-2 bg-pink-50 text-primary font-label-md rounded-full border border-pink-100">化妝棉</span>
+<span class="px-4 py-2 bg-pink-50 text-primary font-label-md rounded-full border border-pink-100">日常耗材</span>
+<span class="px-4 py-2 bg-pink-50 text-primary font-label-md rounded-full border border-pink-100">衛生紙</span>
+<span class="px-4 py-2 bg-pink-50 text-primary font-label-md rounded-full border border-pink-100">垃圾袋</span>
+<span class="px-4 py-2 bg-pink-50 text-primary font-label-md rounded-full border border-pink-100">保養品</span>
+<span class="px-4 py-2 bg-pink-50 text-primary font-label-md rounded-full border border-pink-100">洗髮類</span>
+<span class="px-4 py-2 bg-pink-50 text-primary font-label-md rounded-full border border-pink-100">健康食品</span>
+</div>
+</div>
+<!-- Group 3: Human Resources -->
+<div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="groups">groups</span>
+</div>
+<span class="font-h3 text-h3 text-slate-800">人力成本</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+<div class="space-y-2">
+<div class="p-3 bg-surface border border-slate-100 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-body-md text-body-md text-slate-700">福利津貼</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="p-3 bg-surface border border-slate-100 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-body-md text-body-md text-slate-700">年終提撥</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="p-3 bg-surface border border-slate-100 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-body-md text-body-md text-slate-700">員工保險</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Group 4: Others -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="campaign">campaign</span>
+<span class="font-h3 text-h3 text-slate-800">廣告行銷</span>
+<span class="text-caption text-slate-400">FB / IG / 線下</span>
+</div>
+<div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="build">build</span>
+<span class="font-h3 text-h3 text-slate-800">設備維護</span>
+<span class="text-caption text-slate-400">儀器 / 裝潢</span>
+</div>
+</div>
+<div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
+<div class="space-y-4">
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="restaurant">restaurant</span>
+<span class="font-body-md text-body-md text-slate-700">餐點伙食</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-1 border-t border-slate-50 pt-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="category">category</span>
+<span class="font-body-md text-body-md text-slate-700">其他</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Info Card -->
+<div class="mt-8 mb-4 relative rounded-2xl overflow-hidden h-32 flex items-center p-6 bg-primary-container text-on-primary-container">
+<div class="relative z-10 max-w-[60%]">
+<h4 class="font-bold text-lg mb-1">分類管理提示</h4>
+<p class="text-xs opacity-90">良好的分類能幫助您更精確地分析店內經營毛利。</p>
+</div>
+<div class="absolute right-[-20px] top-[-10px] w-40 h-40 opacity-20">
+<span class="material-symbols-outlined text-[160px]" data-icon="analytics">analytics</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-pink-500 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">首頁</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-pink-500 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">預約</span>
+</div>
+<div class="flex flex-col items-center justify-center text-pink-600 dark:text-pink-400 bg-pink-50/50 dark:bg-pink-900/20 rounded-xl px-3 py-1 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">記帳</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-pink-500 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">報表</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-pink-500 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] mt-1">會員</span>
+</div>
+</nav>
+</body></html>

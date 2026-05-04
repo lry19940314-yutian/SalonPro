@@ -46,9 +46,9 @@ export interface PaginatedData<T> {
 /** 登錄請求參數 */
 export interface LoginParams {
   /** 客戶代碼（門店代碼） */
-  customerCode: string
+  shopCode: string
   /** 員工帳號 */
-  account: string
+  username: string
   /** 密碼 */
   password: string
 }
@@ -56,7 +56,7 @@ export interface LoginParams {
 /** 登錄響應數據 */
 export interface LoginResult {
   /** JWT Access Token */
-  token: string
+  accessToken: string
   /** Refresh Token */
   refreshToken: string
   /** Token 過期時間戳（秒） */
@@ -89,7 +89,7 @@ export interface RefreshTokenParams {
 /** Token 刷新響應數據 */
 export interface RefreshTokenResult {
   /** 新的 Access Token */
-  token: string
+  accessToken: string
   /** 新的 Refresh Token */
   refreshToken: string
   /** 新的過期時間戳（秒） */

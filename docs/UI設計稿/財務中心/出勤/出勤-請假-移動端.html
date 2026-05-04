@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#6c4082",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "tertiary-fixed": "#9ff87d",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-error-container": "#93000a",
+                        "outline": "#88717a",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#23191d",
+                        "on-primary-fixed": "#3d0025",
+                        "inverse-surface": "#392d32",
+                        "background": "#fff8f8",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#e8d5db",
+                        "on-surface-variant": "#554149",
+                        "surface-container": "#fde9ef",
+                        "secondary": "#794c8f",
+                        "tertiary-container": "#328517",
+                        "secondary-container": "#e8b3fe",
+                        "surface-container-high": "#f7e3e9",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#300247",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed-dim": "#ffafd3",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-primary-fixed-variant": "#861259",
+                        "primary-container": "#c14689",
+                        "surface-container-highest": "#f1dee3",
+                        "surface-container-low": "#fff0f4",
+                        "inverse-primary": "#ffafd3",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-bright": "#fff8f8",
+                        "surface-variant": "#f1dee3",
+                        "primary-fixed": "#ffd8e7",
+                        "surface": "#fff8f8",
+                        "on-tertiary-container": "#f8ffee",
+                        "primary": "#a22c70",
+                        "outline-variant": "#dac0c9",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#23191d",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bottom-sheet-shadow {
+            box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.12);
+        }
+        .tap-highlight-transparent {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-zinc-100 font-body-md text-on-surface antialiased">
+<!-- Mobile Background Mockup -->
+<main class="min-h-screen relative flex flex-col max-w-md mx-auto bg-background overflow-hidden shadow-2xl">
+<!-- Shared Component: TopAppBar -->
+<header class="flex justify-between items-center w-full px-4 h-16 bg-white dark:bg-zinc-950 border-b border-zinc-100 dark:border-zinc-800 shadow-sm dark:shadow-none sticky top-0 z-40 transition-colors duration-200">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-zinc-500" data-icon="menu">menu</span>
+<h1 class="text-lg font-extrabold text-zinc-900 dark:text-zinc-100 font-['Plus_Jakarta_Sans'] tracking-tight">Wonder sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-zinc-500" data-icon="notifications">notifications</span>
+</div>
+</header>
+<!-- Page Content Mockup (Dashboard Background) -->
+<section class="p-4 space-y-4 pb-24">
+<div class="flex justify-between items-center">
+<h2 class="font-h2 text-h2 text-on-surface">出勤狀況</h2>
+<div class="flex gap-2">
+<button class="bg-primary-container text-on-primary px-4 py-2 rounded-lg text-label-md">請假申請</button>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between mb-4">
+<span class="text-label-md text-on-surface-variant">今日出勤率</span>
+<span class="text-primary font-bold">92%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-4 border-b border-outline-variant bg-surface-container-low">
+<h3 class="font-h3 text-h3">待審核請假 (3)</h3>
+</div>
+<div class="divide-y divide-outline-variant">
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold">SY</div>
+<div>
+<p class="font-label-md">沈雲雲</p>
+<p class="text-caption text-on-surface-variant">特休 • 2024-05-20</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Sheet Overlay -->
+<div class="fixed inset-0 bg-black/60 z-50 flex flex-col justify-end">
+<!-- iOS Style Bottom Sheet -->
+<div class="bg-white rounded-t-[32px] w-full max-h-[813px] overflow-y-auto bottom-sheet-shadow flex flex-col">
+<!-- Handle for iOS aesthetic -->
+<div class="flex justify-center pt-3 pb-1">
+<div class="w-10 h-1.5 bg-zinc-200 rounded-full"></div>
+</div>
+<!-- Modal Header -->
+<div class="px-6 py-4 flex items-center justify-between sticky top-0 bg-white z-10 border-b border-zinc-50">
+<div class="w-10"></div> <!-- Placeholder for centering title -->
+<h2 class="text-h2 font-h2 text-on-surface">請假</h2>
+<button class="w-10 h-10 flex items-center justify-center rounded-full active:bg-zinc-100 tap-highlight-transparent">
+<span class="material-symbols-outlined text-primary text-3xl font-bold" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Body (Form) -->
+<div class="px-6 py-4 space-y-6 pb-32">
+<!-- Toggle Group 1 -->
+<div class="flex items-center justify-between py-3 min-h-[44px]">
+<span class="font-label-md text-on-surface">選擇多個單一日期</span>
+<button class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none bg-zinc-200">
+<span class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<!-- Date Range Input -->
+<div class="space-y-2">
+<label class="block text-label-md text-on-surface-variant">日期區間</label>
+<div class="relative min-h-[44px]">
+<input class="w-full h-11 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md outline-none transition-all" readonly="" type="text" value="2024-05-20 ~ 2024-05-21"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant" data-icon="calendar_today">calendar_today</span>
+</div>
+</div>
+<!-- Toggle Group 2 -->
+<div class="flex items-center justify-between py-3 min-h-[44px]">
+<span class="font-label-md text-on-surface">整日</span>
+<button class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none bg-primary">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<!-- Time Selectors -->
+<div class="grid grid-cols-1 gap-4">
+<div class="space-y-2">
+<label class="block text-label-md text-on-surface-variant">每日開始時間</label>
+<div class="relative min-h-[44px]">
+<select class="w-full h-11 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg appearance-none text-body-md outline-none">
+<option>09:00</option>
+<option>10:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-label-md text-on-surface-variant">每日結束時間</label>
+<div class="relative min-h-[44px]">
+<select class="w-full h-11 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg appearance-none text-body-md outline-none">
+<option>20:00</option>
+<option>21:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Leave Type -->
+<div class="space-y-2">
+<label class="block text-label-md text-on-surface">假別 <span class="text-error">*</span></label>
+<div class="relative min-h-[44px]">
+<select class="w-full h-11 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg appearance-none text-body-md outline-none focus:border-primary">
+<option disabled="" selected="" value="">請選擇假別</option>
+<option>事假</option>
+<option>病假</option>
+<option>特休</option>
+<option>補休</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Store Select -->
+<div class="space-y-2">
+<label class="block text-label-md text-on-surface-variant">門店</label>
+<div class="relative min-h-[44px]">
+<select class="w-full h-11 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg appearance-none text-body-md outline-none">
+<option>台北中山旗艦店</option>
+<option>台中西屯店</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Staff Select -->
+<div class="space-y-2">
+<label class="block text-label-md text-on-surface-variant">工作人員</label>
+<div class="relative min-h-[44px]">
+<select class="w-full h-11 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg appearance-none text-body-md outline-none">
+<option>沈雲雲 (SY001)</option>
+<option>王曉美 (WM005)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Remarks -->
+<div class="space-y-2">
+<label class="block text-label-md text-on-surface-variant">備註</label>
+<textarea class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg text-body-md outline-none focus:border-primary resize-none transition-all min-h-[100px]" placeholder="請輸入請假事由或備註..." rows="4"></textarea>
+</div>
+</div>
+<!-- Modal Bottom Actions -->
+<div class="p-6 bg-white border-t border-zinc-100 flex gap-4 absolute bottom-0 left-0 w-full z-20">
+<button class="flex-1 h-[52px] rounded-xl border border-primary text-primary font-bold text-lg active:bg-pink-50 transition-colors tap-highlight-transparent">
+                        取消
+                    </button>
+<button class="flex-1 h-[52px] rounded-xl bg-primary text-on-primary font-bold text-lg shadow-lg shadow-primary/20 active:opacity-90 transition-opacity tap-highlight-transparent">
+                        儲存
+                    </button>
+</div>
+</div>
+</div>
+<!-- Shared Component: BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-30 flex justify-around items-center px-4 py-3 pb-safe bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-t border-zinc-100 dark:border-zinc-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center text-zinc-400 dark:text-zinc-600 tap-highlight-transparent">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold">Home</span>
+</div>
+<div class="flex flex-col items-center text-zinc-400 dark:text-zinc-600 tap-highlight-transparent">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold">Finance</span>
+</div>
+<div class="flex flex-col items-center text-[#c84c8f] scale-110 tap-highlight-transparent">
+<span class="material-symbols-outlined" data-icon="group" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold">Staff</span>
+</div>
+<div class="flex flex-col items-center text-zinc-400 dark:text-zinc-600 tap-highlight-transparent">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold">Me</span>
+</div>
+</nav>
+</main>
+</body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#e8d5db",
+                        "on-tertiary-fixed": "#042100",
+                        "primary-fixed": "#ffd8e7",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed-variant": "#603475",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed-dim": "#ffafd3",
+                        "background": "#fff8f8",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-high": "#f7e3e9",
+                        "primary-container": "#c14689",
+                        "inverse-surface": "#392d32",
+                        "surface-container-highest": "#f1dee3",
+                        "primary": "#a22c70",
+                        "surface": "#fff8f8",
+                        "secondary": "#794c8f",
+                        "surface-bright": "#fff8f8",
+                        "outline": "#88717a",
+                        "surface-container": "#fde9ef",
+                        "secondary-fixed": "#f6d9ff",
+                        "secondary-container": "#e8b3fe",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-container": "#6c4082",
+                        "inverse-primary": "#ffafd3",
+                        "tertiary-container": "#328517",
+                        "surface-tint": "#a52f72",
+                        "on-background": "#23191d",
+                        "outline-variant": "#dac0c9",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-surface-variant": "#554149",
+                        "on-primary-fixed": "#3d0025",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#300247",
+                        "tertiary-fixed": "#9ff87d",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-primary-fixed-variant": "#861259",
+                        "brand-pink": "#c84c8f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "xl": "32px",
+                        "container-padding": "24px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bottom-sheet-gradient {
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.4));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-200 font-body-md text-on-surface min-h-screen flex items-end">
+<!-- Backdrop Overlay -->
+<div class="fixed inset-0 bg-black/50 z-40 backdrop-blur-[2px]"></div>
+<!-- Bottom Sheet Container -->
+<div class="fixed inset-x-0 bottom-0 z-50 transform transition-transform duration-300 ease-out flex flex-col max-h-[813px] bg-surface rounded-t-[28px] shadow-2xl border-x border-t border-outline-variant/30">
+<!-- Drag Indicator -->
+<div class="w-full flex justify-center pt-3 pb-2">
+<div class="w-12 h-1.5 bg-slate-300 rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="flex items-center justify-between px-6 py-2">
+<div class="w-10"></div> <!-- Spacer for centering -->
+<h1 class="font-h2 text-h2 text-on-surface">門店日結費用</h1>
+<button class="w-10 h-10 flex items-center justify-center text-brand-pink active:scale-95 transition-transform">
+<span class="material-symbols-outlined !text-[32px]">close</span>
+</button>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-6 py-4 space-y-6 pb-32">
+<!-- Account Transfer Toggle -->
+<div class="space-y-2">
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-xl">
+<span class="font-label-md text-body-lg text-on-surface">轉存帳戶</span>
+<button class="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-300 transition-colors focus:outline-none">
+<span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1"></span>
+</button>
+</div>
+<p class="text-caption text-on-surface-variant px-1">
+                    選擇轉存帳戶，會扣除當日櫃檯現金，不會計算在門店總結成本
+                </p>
+</div>
+<!-- Form Controls -->
+<div class="space-y-5">
+<!-- Output Option -->
+<div class="space-y-1.5">
+<label class="font-label-md text-on-surface-variant px-1">出帳選項</label>
+<div class="relative">
+<select class="w-full h-[44px] appearance-none bg-surface border border-outline-variant rounded-lg px-4 pr-10 focus:border-brand-pink focus:ring-1 focus:ring-brand-pink outline-none transition-all">
+<option>當日現金出帳</option>
+<option>銀行帳戶支出</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<p class="text-caption text-on-surface-variant px-1">銀行帳戶支出:不會扣除當日櫃檯現金</p>
+</div>
+<!-- Grid for Date and Time -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="font-label-md text-on-surface-variant px-1">記錄時間</label>
+<div class="relative">
+<input class="w-full h-[44px] bg-surface border border-outline-variant rounded-lg px-4 pr-10 focus:border-brand-pink outline-none" readonly="" type="text" value="2026-03-05"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">calendar_today</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-on-surface-variant px-1">時間</label>
+<div class="relative">
+<input class="w-full h-[44px] bg-surface border border-outline-variant rounded-lg px-4 pr-10 focus:border-brand-pink outline-none" readonly="" type="text" value="下午 03:32"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">schedule</span>
+</div>
+</div>
+</div>
+<!-- Branch and Department -->
+<div class="grid grid-cols-1 gap-5">
+<div class="space-y-1.5">
+<label class="font-label-md text-on-surface-variant px-1">門店</label>
+<div class="relative">
+<select class="w-full h-[44px] appearance-none bg-surface border border-outline-variant rounded-lg px-4 pr-10 focus:border-brand-pink outline-none">
+<option>沐茉珐複合式國際美妍館</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-on-surface-variant px-1">部門</label>
+<div class="relative">
+<select class="w-full h-[44px] appearance-none bg-surface border border-outline-variant rounded-lg px-4 pr-10 focus:border-brand-pink outline-none">
+<option>美容部</option>
+<option>美甲部</option>
+<option>管理層</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Category -->
+<div class="space-y-1.5">
+<label class="font-label-md text-on-surface-variant px-1">支出科目</label>
+<div class="relative">
+<select class="w-full h-[44px] appearance-none bg-surface border border-brand-pink ring-1 ring-brand-pink rounded-lg px-4 pr-10 outline-none">
+<option selected="">進貨</option>
+<option>租金</option>
+<option>水電</option>
+<option>雜支</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-brand-pink">expand_more</span>
+</div>
+</div>
+<!-- Name and Amount -->
+<div class="space-y-5">
+<div class="space-y-1.5">
+<label class="font-label-md text-on-surface-variant px-1">名稱</label>
+<input class="w-full h-[44px] bg-surface border border-outline-variant rounded-lg px-4 focus:border-brand-pink focus:ring-1 focus:ring-brand-pink outline-none" placeholder="請輸入支出明細名稱" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-on-surface-variant px-1">金額</label>
+<div class="relative">
+<input class="w-full h-[44px] bg-surface border border-outline-variant rounded-lg px-4 focus:border-brand-pink focus:ring-1 focus:ring-brand-pink outline-none text-right pr-8" type="number" value="0"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span>
+</div>
+</div>
+</div>
+<!-- Remarks -->
+<div class="space-y-1.5">
+<label class="font-label-md text-on-surface-variant px-1">備註</label>
+<textarea class="w-full bg-surface border border-outline-variant rounded-lg p-4 focus:border-brand-pink focus:ring-1 focus:ring-brand-pink outline-none resize-none" placeholder="添加額外說明..." rows="3"></textarea>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Buttons -->
+<div class="absolute bottom-0 inset-x-0 bg-white/80 backdrop-blur-md p-6 border-t border-outline-variant/30 flex gap-4">
+<button class="flex-1 h-12 rounded-xl font-h3 text-slate-500 active:bg-slate-100 transition-colors">
+                取消
+            </button>
+<button class="flex-[2] h-12 bg-brand-pink text-white rounded-xl font-h3 shadow-lg shadow-brand-pink/20 active:scale-[0.98] transition-transform">
+                儲存
+            </button>
+</div>
+</div>
+<!-- Background Content for Context -->
+<div class="fixed top-0 inset-x-0 p-6 space-y-6 pointer-events-none opacity-20">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-full bg-slate-300"></div>
+<div class="h-6 w-32 bg-slate-300 rounded"></div>
+<div class="w-12 h-12 rounded-full bg-slate-300"></div>
+</div>
+<div class="h-40 w-full bg-white rounded-2xl shadow-sm"></div>
+<div class="h-40 w-full bg-white rounded-2xl shadow-sm"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-24 bg-white rounded-xl shadow-sm"></div>
+<div class="h-24 bg-white rounded-xl shadow-sm"></div>
+</div>
+</div>
+</body></html>

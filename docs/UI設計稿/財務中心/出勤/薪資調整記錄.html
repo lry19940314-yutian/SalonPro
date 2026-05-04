@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 薪資調整記錄</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffafd3",
+                        "on-secondary-container": "#6c4082",
+                        "on-primary-fixed": "#3d0025",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#fde9ef",
+                        "secondary": "#794c8f",
+                        "primary": "#a22c70",
+                        "on-surface": "#23191d",
+                        "error": "#ba1a1a",
+                        "primary-container": "#c14689",
+                        "secondary-container": "#e8b3fe",
+                        "on-secondary-fixed": "#300247",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-primary-container": "#fffbff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-fixed-variant": "#603475",
+                        "tertiary-container": "#328517",
+                        "background": "#fff8f8",
+                        "surface-bright": "#fff8f8",
+                        "on-error": "#ffffff",
+                        "surface": "#fff8f8",
+                        "outline-variant": "#dac0c9",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#f6d9ff",
+                        "outline": "#88717a",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-variant": "#f1dee3",
+                        "primary-fixed": "#ffd8e7",
+                        "on-background": "#23191d",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#392d32",
+                        "surface-tint": "#a52f72",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary": "#1c6b00",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-fixed": "#042100",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-surface-variant": "#554149",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary-container": "#f8ffee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .modal-overlay { background-color: rgba(0, 0, 0, 0.6); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Sidebar Navigation (Derived from Shared Components JSON) -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-slate-100 bg-white fixed left-0 top-0 z-50">
+<div class="flex flex-col h-full p-4 space-y-2">
+<div class="px-2 py-6 mb-4">
+<h1 class="text-lg font-black text-primary">Wonder Sky</h1>
+<p class="text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Beauty &amp; Wellness</p>
+</div>
+<!-- Navigation Items -->
+<nav class="flex-1 space-y-1">
+<div class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[13px] font-medium">Information Center</span>
+</div>
+<!-- ACTIVE TAB: Finance (Based on User Context) -->
+<div class="flex items-center gap-3 px-3 py-2 bg-pink-50 text-primary rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[13px] font-semibold">Finance</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[13px] font-medium">Billing</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[13px] font-medium">Appointments</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[13px] font-medium">Members</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">spa</span>
+<span class="text-[13px] font-medium">Services</span>
+</div>
+</nav>
+<div class="pt-4 border-t border-slate-100 space-y-1">
+<div class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[13px] font-medium">Settings</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-[13px] font-medium">Support</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area (Background for Modal) -->
+<main class="md:ml-64 min-h-screen">
+<!-- Top Nav Bar (Derived from JSON) -->
+<header class="flex justify-between items-center px-6 h-16 w-full bg-white border-b border-slate-100 sticky top-0 z-40 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-primary">Wonder sky 國際美妍館</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold active:scale-95 duration-200">Quick Order</button>
+<div class="p-2 text-slate-600 hover:bg-slate-50 rounded-full cursor-pointer">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-slate-200">
+<img alt="User Profile" data-alt="A professional headshot of a female salon manager with a friendly smile, set against a soft-focus modern salon interior. The lighting is warm and professional, reflecting the high-end beauty brand identity with soft pink and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkBEraBY7yylwxeQpn42KDQG5t_36C-nhDYYWtWj4w4Q4zgkaJzBAUJv1y_uH5t_sH7KJskd6xBFNxjBF65Be7UnRg3tr0wErpwYFUu6UIVoOYIPCbGjRpPg7EHjrUS1TRUbYyRVMrOUg-P6kAWbfYMd1kuJiXXKW8hBfMktXkEcvRZZ2yzAR8aJ5RnJ3x8c-tdrds6p0gvKgMGRO2houtNEs1YnQIWaSb_5nY_yNoe9pxj1QSWHuz8ivr5z-oUZzKqiv-v5FN07U"/>
+</div>
+</div>
+</header>
+<!-- Page Content Placeholder -->
+<div class="p-8">
+<div class="h-[819px] w-full border-2 border-dashed border-slate-200 rounded-xl flex items-center justify-center text-slate-400">
+                後台主介面內容載入中...
+            </div>
+</div>
+</main>
+<!-- MODAL OVERLAY -->
+<div class="fixed inset-0 z-50 flex items-center justify-center modal-overlay">
+<!-- MODAL BODY -->
+<div class="bg-white w-[90%] max-w-6xl max-h-[921px] rounded-xl shadow-2xl overflow-hidden flex flex-col">
+<!-- MODAL HEADER -->
+<div class="px-8 py-6 flex items-center justify-between border-b border-slate-100">
+<div class="flex-1 text-center">
+<h2 class="font-h2 text-h2 text-on-surface">LULU薪資調整記錄</h2>
+</div>
+<button class="p-2 text-primary hover:bg-primary/5 rounded-full transition-colors">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<!-- MODAL ACTION BAR -->
+<div class="px-8 py-5 flex items-center justify-between bg-surface-container-low">
+<!-- Left: Date Picker -->
+<div class="flex items-center gap-3">
+<div class="relative flex items-center bg-white border border-outline-variant rounded-lg px-4 py-2 focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-outline mr-2">calendar_today</span>
+<input class="bg-transparent border-none focus:ring-0 font-body-md text-on-surface-variant w-56 p-0" readonly="" type="text" value="2023-11-01 至 2023-11-30"/>
+</div>
+</div>
+<!-- Right: Stats & Actions -->
+<div class="flex items-center gap-6">
+<div class="flex flex-col items-end">
+<span class="text-label-md text-on-surface-variant mb-0.5">調整總金額</span>
+<span class="text-h2 text-primary font-bold tracking-tight">$50,000</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-4 py-2 bg-primary text-white rounded-lg font-label-md shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                            新增
+                        </button>
+<button class="flex items-center gap-1.5 px-4 py-2 bg-slate-100 text-slate-600 rounded-lg font-label-md hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                            刪除
+                        </button>
+</div>
+</div>
+</div>
+<!-- DATA TABLE SECTION -->
+<div class="flex-1 overflow-auto px-8 py-4">
+<table class="w-full text-left border-separate border-spacing-0">
+<thead>
+<tr class="bg-slate-50">
+<th class="py-4 px-4 rounded-l-lg border-b border-slate-100">
+<input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+</th>
+<th class="py-4 px-4 font-label-md text-on-surface-variant border-b border-slate-100">門店</th>
+<th class="py-4 px-4 font-label-md text-on-surface-variant border-b border-slate-100">工作人員</th>
+<th class="py-4 px-4 font-label-md text-on-surface-variant border-b border-slate-100">金額</th>
+<th class="py-4 px-4 font-label-md text-on-surface-variant border-b border-slate-100">事由</th>
+<th class="py-4 px-4 font-label-md text-on-surface-variant border-b border-slate-100">調整日期</th>
+<th class="py-4 px-4 font-label-md text-on-surface-variant border-b border-slate-100">建立時間</th>
+<th class="py-4 px-4 font-label-md text-on-surface-variant border-b border-slate-100">更新時間</th>
+<th class="py-4 px-4 font-label-md text-on-surface-variant border-b border-slate-100 rounded-r-lg text-center">操作</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-surface">
+<!-- Table Row 1 -->
+<tr class="group hover:bg-primary-container/10 transition-colors">
+<td class="py-4 px-4 border-b border-slate-50">
+<input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+</td>
+<td class="py-4 px-4 border-b border-slate-50">台北忠孝店</td>
+<td class="py-4 px-4 border-b border-slate-50 font-semibold">LULU</td>
+<td class="py-4 px-4 border-b border-slate-50 text-primary font-bold">+$15,000</td>
+<td class="py-4 px-4 border-b border-slate-50 text-on-surface-variant">Q3 季度績效獎金加給</td>
+<td class="py-4 px-4 border-b border-slate-50">2023-11-25</td>
+<td class="py-4 px-4 border-b border-slate-50 text-caption text-outline">2023-11-20 14:30</td>
+<td class="py-4 px-4 border-b border-slate-50 text-caption text-outline">2023-11-20 14:30</td>
+<td class="py-4 px-4 border-b border-slate-50 text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="group hover:bg-primary-container/10 transition-colors">
+<td class="py-4 px-4 border-b border-slate-50">
+<input checked="" class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+</td>
+<td class="py-4 px-4 border-b border-slate-50">台北忠孝店</td>
+<td class="py-4 px-4 border-b border-slate-50 font-semibold">LULU</td>
+<td class="py-4 px-4 border-b border-slate-50 text-primary font-bold">+$25,000</td>
+<td class="py-4 px-4 border-b border-slate-50 text-on-surface-variant">技術指導課程津貼</td>
+<td class="py-4 px-4 border-b border-slate-50">2023-11-15</td>
+<td class="py-4 px-4 border-b border-slate-50 text-caption text-outline">2023-11-10 10:15</td>
+<td class="py-4 px-4 border-b border-slate-50 text-caption text-outline">2023-11-11 09:20</td>
+<td class="py-4 px-4 border-b border-slate-50 text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="group hover:bg-primary-container/10 transition-colors">
+<td class="py-4 px-4 border-b border-slate-50">
+<input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+</td>
+<td class="py-4 px-4 border-b border-slate-50">台北忠孝店</td>
+<td class="py-4 px-4 border-b border-slate-50 font-semibold">LULU</td>
+<td class="py-4 px-4 border-b border-slate-50 text-primary font-bold">+$10,000</td>
+<td class="py-4 px-4 border-b border-slate-50 text-on-surface-variant">指定客回門店達成獎勵</td>
+<td class="py-4 px-4 border-b border-slate-50">2023-11-05</td>
+<td class="py-4 px-4 border-b border-slate-50 text-caption text-outline">2023-11-01 16:45</td>
+<td class="py-4 px-4 border-b border-slate-50 text-caption text-outline">2023-11-01 16:45</td>
+<td class="py-4 px-4 border-b border-slate-50 text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- MODAL FOOTER / PAGINATION -->
+<div class="px-8 py-5 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2 text-caption text-on-surface-variant">
+<span>每頁顯示</span>
+<select class="bg-slate-50 border-none rounded text-caption py-1 pl-2 pr-8 focus:ring-1 focus:ring-primary">
+<option>10 筆</option>
+<option>20 筆</option>
+<option>50 筆</option>
+</select>
+<span>共 3 筆記錄</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:bg-slate-100">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white font-label-md">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100 font-label-md">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100 font-label-md">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:bg-slate-100">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>
