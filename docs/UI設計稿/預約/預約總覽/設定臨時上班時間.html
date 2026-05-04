@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta_Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary-container": "#328517",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-surface-variant": "#554149",
+                        "surface-tint": "#a52f72",
+                        "outline": "#88717a",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#dac0c9",
+                        "inverse-surface": "#392d32",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-high": "#f7e3e9",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#3d0025",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "secondary-container": "#e8b3fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-fixed": "#042100",
+                        "on-secondary-container": "#6c4082",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface": "#fff8f8",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "secondary": "#794c8f",
+                        "on-background": "#23191d",
+                        "surface-bright": "#fff8f8",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-surface": "#23191d",
+                        "primary": "#a22c70",
+                        "primary-container": "#c14689",
+                        "background": "#fff8f8",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container": "#fde9ef",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-primary": "#ffafd3",
+                        "on-secondary-fixed": "#300247",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-fixed-variant": "#603475"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "container-padding": "24px",
+                        "lg": "24px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen">
+<!-- Background Content Layer (Dashboard Mock) -->
+<div class="flex min-h-screen">
+<!-- Sidebar Placeholder from JSON Logic -->
+<aside class="fixed left-0 top-0 h-screen flex flex-col p-4 space-y-2 bg-white border-r border-slate-200 w-64 hidden md:flex">
+<div class="flex items-center gap-3 px-3 py-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">L</div>
+<div>
+<h2 class="font-h3 text-primary">Luminous Pro</h2>
+<p class="text-caption text-outline">Premium SaaS</p>
+</div>
+</div>
+<nav class="space-y-1">
+<div class="flex items-center gap-3 bg-pink-50 text-pink-600 font-semibold rounded-lg px-3 py-2">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</div>
+<div class="flex items-center gap-3 text-slate-600 px-3 py-2 hover:bg-slate-50 rounded-lg transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-body-md">Appointments</span>
+</div>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-lg">
+<div class="flex justify-between items-center mb-lg">
+<h1 class="font-h1 text-on-surface">Wonder sky國際美妍館</h1>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-8 bg-white border border-outline-variant rounded-xl shadow-sm p-lg">
+<div class="h-96 flex items-center justify-center border-2 border-dashed border-outline-variant rounded-lg">
+<p class="text-outline">Main Calendar View Content</p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<div class="bg-white border border-outline-variant rounded-xl shadow-sm p-lg">
+<h3 class="font-h3 mb-md">Quick Actions</h3>
+<div class="space-y-sm">
+<div class="w-full h-12 bg-surface-container rounded-lg"></div>
+<div class="w-full h-12 bg-surface-container rounded-lg"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center modal-overlay p-md overflow-y-auto">
+<!-- Dialog Container -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-2xl w-full max-w-2xl transform transition-all border border-outline-variant">
+<!-- Modal Header -->
+<div class="relative p-lg border-b border-outline-variant text-center">
+<h2 class="font-h2 text-on-surface">設定臨時上班時間</h2>
+<button class="absolute right-6 top-6 text-primary hover:bg-primary-container/10 p-1 rounded-full transition-colors Active:scale-95">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="p-lg space-y-lg">
+<!-- Business Rule Warning -->
+<div class="bg-surface-container-low p-md rounded-lg border border-primary-fixed-dim">
+<p class="text-center text-primary font-label-md leading-relaxed">
+                        *每位工作人員每日只能設定一個臨時上班時間或臨時停止營業時間，新設定的時間會取代原先設定的時間*
+                    </p>
+</div>
+<div class="space-y-gutter">
+<!-- Multi-Date Toggle -->
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-md">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary-fixed rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 font-body-md text-on-surface">選擇多個單一日期</span>
+</label>
+</div>
+<p class="text-caption text-outline pl-14 italic">例: 2024-06-01, 2024-06-05, 2024-06-10</p>
+</div>
+<!-- Date Range Selection -->
+<div class="grid grid-cols-1 gap-sm">
+<label class="font-label-md text-on-surface-variant">日期區間</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary" data-icon="calendar_today">calendar_today</span>
+<input class="w-full pl-11 pr-4 py-3 bg-white border border-outline rounded-lg font-body-md focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all outline-none" readonly="" type="text" value="2026-03-05 ~ 2026-03-05"/>
+</div>
+</div>
+<!-- Time Selectors -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-sm">
+<label class="font-label-md text-on-surface-variant">每日開始時間</label>
+<div class="relative">
+<select class="w-full pl-4 pr-10 py-3 bg-white border border-outline rounded-lg font-body-md focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all appearance-none outline-none">
+<option>09:00</option>
+<option>10:00</option>
+<option>11:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="font-label-md text-on-surface-variant">每日結束時間</label>
+<div class="relative">
+<select class="w-full pl-4 pr-10 py-3 bg-white border border-outline rounded-lg font-body-md focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all appearance-none outline-none">
+<option>20:00</option>
+<option>21:00</option>
+<option>22:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+<!-- Store Selection (Required) -->
+<div class="space-y-sm">
+<label class="font-label-md text-on-surface-variant flex items-center gap-1">
+                            門店 <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full pl-4 pr-10 py-3 bg-white border border-outline rounded-lg font-body-md focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all appearance-none outline-none">
+<option selected="">沐茉珐複合式國際美妍館</option>
+<option>忠孝旗艦店</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="store">store</span>
+</div>
+</div>
+<!-- Staff Selection -->
+<div class="space-y-sm">
+<label class="font-label-md text-on-surface-variant">工作人員</label>
+<div class="relative">
+<select class="w-full pl-4 pr-10 py-3 bg-white border border-outline rounded-lg font-body-md focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all appearance-none outline-none">
+<option disabled="" selected="" value="">請選擇工作人員</option>
+<option>陳小美 (資深美療師)</option>
+<option>林大華 (首席美甲師)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="person">person</span>
+</div>
+</div>
+<!-- Notes Area -->
+<div class="space-y-sm">
+<label class="font-label-md text-on-surface-variant">備註</label>
+<textarea class="w-full p-4 bg-white border border-outline rounded-lg font-body-md focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all outline-none resize-none" placeholder="請輸入額外說明..." rows="3"></textarea>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-lg border-t border-outline-variant flex justify-center gap-gutter">
+<button class="px-xl py-3 border-2 border-secondary-container text-secondary font-h3 rounded-lg hover:bg-secondary-container/10 transition-all Active:scale-95">
+                    取消
+                </button>
+<button class="px-xl py-3 bg-outline-variant text-white font-h3 rounded-lg cursor-not-allowed transition-all opacity-60" disabled="">
+                    儲存
+                </button>
+</div>
+</div>
+</div>
+<!-- Decorative Image Context (Background Dashboard Aesthetics) -->
+<div class="fixed -bottom-20 -right-20 opacity-10 pointer-events-none">
+<img class="w-96 rounded-full" data-alt="A clean and minimal aesthetic scene in a high-end beauty salon with soft pink floral arrangements and marble surfaces. The lighting is bright and ethereal, perfectly reflecting a modern corporate wellness brand identity. The background is slightly blurred to emphasize a sense of professional serenity and luxury spa environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcAyZNzUvmhN90SbOjszj97H2GuDI7KalLsee7UFyq5llFcya_IGoh3ZN82p0WOJ6Q2OpnhjT5UniS77Czq64ZOzwI6yM4nkl5chHYZ2Lgl9zbnu89H0_YkECv2FCQugYpwxVp9zr-XTyZP3foAreQtSMx7lJHJAVd2iACWoGlSYtOgHGEuTve-2BEg4j22IKVJJJnzpKfifsPJNOwfVHoLzVFmv1jwDtaljRUgQIWEsKVKf5YkBo16fT_yqwfq7ejbkNmgV259Zs"/>
+</div>
+</body></html>

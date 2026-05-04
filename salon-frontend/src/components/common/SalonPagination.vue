@@ -95,8 +95,8 @@ function handleSizeChange(size: number): void {
     <!-- PC 端使用 Element Plus Pagination -->
     <template v-if="!isMobile">
       <el-pagination
-        v-model:current-page="currentPage"
-        v-model:page-size="pageSize"
+        :current-page="currentPage"
+        :page-size="pageSize"
         :page-sizes="pageSizes"
         :total="total"
         :disabled="loading"

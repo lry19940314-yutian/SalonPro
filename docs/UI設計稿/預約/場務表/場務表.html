@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+        .time-grid-line {
+            background-image: linear-gradient(to right, #f1dee3 1px, transparent 1px);
+            background-size: 100% 1px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffd8e7",
+                        "outline": "#88717a",
+                        "on-secondary-fixed": "#300247",
+                        "surface-container-low": "#fff0f4",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary-fixed": "#042100",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#554149",
+                        "secondary": "#794c8f",
+                        "inverse-surface": "#392d32",
+                        "inverse-primary": "#ffafd3",
+                        "outline-variant": "#dac0c9",
+                        "surface-container-highest": "#f1dee3",
+                        "tertiary": "#1c6b00",
+                        "primary": "#a22c70",
+                        "surface-variant": "#f1dee3",
+                        "background": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "tertiary-container": "#328517",
+                        "on-background": "#23191d",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#e8d5db",
+                        "surface-container": "#fde9ef",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-tertiary-container": "#f8ffee",
+                        "secondary-container": "#e8b3fe",
+                        "on-primary-container": "#fffbff",
+                        "on-surface": "#23191d",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-tint": "#a52f72",
+                        "surface-bright": "#fff8f8",
+                        "on-secondary-container": "#6c4082",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#9ff87d",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface": "#fff8f8",
+                        "primary-container": "#c14689"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "gutter": "20px",
+                        "xs": "4px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "sm": "8px"
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex font-body-md overflow-hidden">
+<!-- SideNavBar Section -->
+<aside class="h-screen sticky top-0 border-r border-slate-100 dark:border-slate-800 w-64 flex flex-col bg-white dark:bg-slate-900 shadow-sm z-50">
+<div class="px-6 py-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern minimalist logo for a luxury beauty SaaS called Wonder Sky. The logo features abstract stylized clouds and stars integrated into a sleek geometric emblem. The color palette is dominated by soft pinks and deep purples against a clean white background. The mood is professional, elegant, and high-end." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzzUyLAuhP7SVoAXVBHEQepKPwn8uIxQfu5zpxXVdT5DR-7v1krmGhedndEjguXRXAt35ExYtCommOc0X9tvqUGd6w1eZh_wBrf81PMO3PheGqqjYLBrgzT9gOeJyIcZ7LY2_YJAknJ37qOWrTn-k4EiFs-eLyr5F3jUEFEkf6D5DriNgOJAUBqYWpgc9dWH_5TPHDW9O__yXXoVS9gvwp4ktscTy6J1Ugm90E9yFDX5PyyLofi-2qGivXpHPKQj_pPW9eeTNyszA"/>
+</div>
+<div>
+<h1 class="text-xl font-bold text-pink-600 dark:text-pink-400 tracking-tight">Wonder sky</h1>
+<p class="text-[10px] text-outline opacity-70">國際美妍館 SaaS</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1 px-2">
+<a class="text-slate-500 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 mx-2 px-4 py-2 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">資訊中心</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 mx-2 px-4 py-2 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">財務中心</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 mx-2 px-4 py-2 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-md text-label-md">記帳管理</span>
+</a>
+<a class="bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-300 font-semibold rounded-lg mx-2 px-4 py-2 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-label-md text-label-md">預約管理</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 mx-2 px-4 py-2 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">會員管理</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 mx-2 px-4 py-2 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">服務與商品</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<a class="text-slate-500 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 mx-2 px-4 py-2 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">設定</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 mx-2 px-4 py-2 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">登出</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0 bg-background overflow-hidden relative">
+<!-- TopAppBar Section -->
+<header class="sticky top-0 z-40 w-full border-b border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex justify-between items-center px-6 py-3">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-slate-500 font-medium">
+<span>預約</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-slate-900 font-bold">場務表</span>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant/30"></div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-full text-body-md focus:ring-2 focus:ring-primary focus:border-transparent outline-none w-64 transition-all" placeholder="搜尋預約、會員..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1">
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full p-2 transition-colors duration-200">
+<span class="material-symbols-outlined text-slate-600" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full p-2 transition-colors duration-200">
+<span class="material-symbols-outlined text-slate-600" data-icon="help_outline">help_outline</span>
+</button>
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full p-2 transition-colors duration-200">
+<span class="material-symbols-outlined text-slate-600" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3 ml-2 cursor-pointer hover:bg-slate-50 p-1 rounded-lg transition-all">
+<div class="text-right hidden md:block">
+<p class="text-sm font-bold text-slate-800">Salon Manager</p>
+<p class="text-[10px] text-slate-500 uppercase">Administrator</p>
+</div>
+<img class="w-9 h-9 rounded-full object-cover border-2 border-primary-fixed" data-alt="Professional portrait of a salon manager, a woman in her 30s with an elegant look, wearing a modern corporate outfit. The lighting is soft and warm, studio quality. Clean blurred background of a high-end beauty salon interior. Soft pastel tones to match the brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5xVjYKZgycAJTSSE6ciWmgEct8XwTZXSXuBu-p8_XuFz-MxdO3utxeUR21v8RjgBc5VEMG9tyvoPtUvhs4YM-Igfh-PAtLE31D6a-G8pqGSFyshKjr7XPU4LC4Q68YdgN_dA6g8TicmjLGK5SyVCUNj4IRfP_AfVCYZT1ambfgMwEwiG3pHLcXOGdWxRDsAwvYu6tpThSoVyApq3fCmHJgxwMViNkl9pUiwxsZDEW3zwQdSq5B7IzXGNm_GiE6OhDSySP5lJOoUA"/>
+</div>
+</div>
+</header>
+<!-- Tool Bar Section -->
+<div class="px-6 py-4 flex flex-wrap items-center justify-between gap-4 bg-white border-b border-slate-100">
+<div class="flex flex-wrap items-center gap-3">
+<!-- Date Picker -->
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="calendar_month">calendar_month</span>
+<span class="font-semibold text-sm">2026-03-04</span>
+<span class="material-symbols-outlined text-slate-400 text-xs">expand_more</span>
+</div>
+<!-- Position Select -->
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="text-sm text-slate-500">職位:</span>
+<span class="font-medium text-sm">美容師</span>
+<span class="material-symbols-outlined text-slate-400 text-xs">expand_more</span>
+</div>
+<!-- Staff Select -->
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="text-sm text-slate-500">工作人員:</span>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 bg-primary-fixed text-primary text-[11px] rounded-full font-bold">LULU</span>
+<span class="px-2 py-0.5 bg-secondary-fixed text-secondary text-[11px] rounded-full font-bold">君君</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-xs">close</span>
+</div>
+<!-- Status Select -->
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="text-sm text-slate-500">狀態:</span>
+<span class="font-medium text-sm">全部預約</span>
+<span class="material-symbols-outlined text-slate-400 text-xs">expand_more</span>
+</div>
+<!-- Vacation Toggle -->
+<div class="flex items-center gap-2 ml-2">
+<span class="text-sm text-slate-600">顯示休假</span>
+<div class="w-9 h-5 bg-primary rounded-full relative flex items-center px-1">
+<div class="w-3.5 h-3.5 bg-white rounded-full absolute right-1"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-surface-container rounded-lg p-1">
+<button class="px-3 py-1 text-xs font-bold text-primary bg-white rounded shadow-sm">100%</button>
+<button class="px-3 py-1 text-xs font-bold text-slate-500 hover:text-primary">今天</button>
+<div class="flex items-center ml-2 border-l border-outline-variant/30 pl-2">
+<button class="p-1 hover:bg-white rounded transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-1 hover:bg-white rounded transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-bold shadow-md hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>新增預約</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-slate-50">
+<span class="material-symbols-outlined text-slate-600">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Venue Schedule Main Section -->
+<div class="flex-1 overflow-hidden flex flex-col bg-white">
+<!-- Header Row -->
+<div class="flex border-b border-slate-100 bg-slate-50/50">
+<div class="w-20 flex-shrink-0 flex items-center justify-center border-r border-slate-100">
+<span class="material-symbols-outlined text-slate-400">schedule</span>
+</div>
+<div class="flex-1 grid grid-cols-3">
+<div class="py-4 px-6 border-r border-slate-100 text-center">
+<span class="text-xs font-bold text-slate-400 block mb-1">LOCATION</span>
+<span class="text-sm font-bold text-slate-800">門店 (沐茉珐)</span>
+</div>
+<div class="py-4 px-6 border-r border-slate-100 text-center relative group">
+<span class="text-xs font-bold text-primary opacity-60 block mb-1">THERAPIST</span>
+<div class="flex items-center justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-sm font-bold text-slate-800">LULU</span>
+</div>
+</div>
+<div class="py-4 px-6 text-center">
+<span class="text-xs font-bold text-secondary opacity-60 block mb-1">THERAPIST</span>
+<div class="flex items-center justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-sm font-bold text-slate-800">君君</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Scrollable Body -->
+<div class="flex-1 overflow-y-auto custom-scrollbar relative">
+<!-- The Grid Lines -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="flex h-full">
+<div class="w-20 border-r border-slate-100"></div>
+<div class="flex-1 grid grid-cols-3 divide-x divide-slate-100">
+<div></div><div></div><div></div>
+</div>
+</div>
+</div>
+<!-- Time Rows -->
+<div class="relative z-10">
+<!-- Iterative Hour Blocks (Simplified for mockup display) -->
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">06:00</div>
+<div class="flex-1 grid grid-cols-3"></div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">07:00</div>
+<div class="flex-1 grid grid-cols-3"></div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">08:00</div>
+<div class="flex-1 grid grid-cols-3">
+<!-- Vacation Slot in Column 2 -->
+<div class="relative p-1">
+<div class="absolute inset-x-1 top-2 h-32 bg-slate-100 border border-slate-200 rounded-lg flex flex-col items-center justify-center text-slate-400 opacity-60">
+<span class="material-symbols-outlined text-sm">bedtime</span>
+<span class="text-[10px] font-bold">休假 (08:00-10:00)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">09:00</div>
+<div class="flex-1 grid grid-cols-3"></div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">10:00</div>
+<div class="flex-1 grid grid-cols-3">
+<!-- Column 2 Appointment -->
+<div class="relative p-1">
+<div class="absolute inset-x-1 top-2 h-40 bg-pink-50 border-l-4 border-primary rounded-r-lg p-3 shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-primary bg-white px-1.5 rounded">已開單</span>
+<span class="text-[10px] text-slate-400">10:00 - 12:00</span>
+</div>
+<p class="text-xs font-extrabold text-slate-800 truncate">陳敏敏 / 全身精油SPA</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-xs text-slate-400" data-weight="fill">person</span>
+<span class="text-[10px] text-slate-500">LULU</span>
+</div>
+<!-- Hover Detail Card (Ghost) -->
+<div class="hidden group-hover:block absolute left-full ml-4 top-0 w-64 bg-white border border-slate-100 shadow-xl rounded-xl z-50 p-4">
+<h4 class="font-bold text-sm text-slate-800 mb-2">預約詳情</h4>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between"><span class="text-slate-400">客：</span><span>陳敏敏 (VVIP)</span></div>
+<div class="flex justify-between"><span class="text-slate-400">項：</span><span>頂級皇家全身精油萃取SPA</span></div>
+<div class="flex justify-between"><span class="text-slate-400">時：</span><span>120 分鐘</span></div>
+<div class="flex justify-between"><span class="text-slate-400">額：</span><span class="text-primary font-bold">$3,600</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">11:00</div>
+<div class="flex-1 grid grid-cols-3">
+<!-- Column 3 Appointment -->
+<div class="relative p-1">
+<div class="absolute inset-x-1 top-4 h-24 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg p-3 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-emerald-600 bg-white px-1.5 rounded">已接受</span>
+<span class="text-[10px] text-slate-400">11:15 - 12:30</span>
+</div>
+<p class="text-xs font-extrabold text-slate-800 truncate">林曉琪 / 臉部保濕護理</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-xs text-slate-400" data-weight="fill">person</span>
+<span class="text-[10px] text-slate-500">君君</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">12:00</div>
+<div class="flex-1 grid grid-cols-3"></div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">13:00</div>
+<div class="flex-1 grid grid-cols-3">
+<!-- Column 1 Appointment (Store general) -->
+<div class="relative p-1">
+<div class="absolute inset-x-1 top-0 h-40 bg-slate-50 border-l-4 border-slate-300 rounded-r-lg p-3 shadow-sm">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-slate-500 bg-white px-1.5 rounded">待排班</span>
+<span class="text-[10px] text-slate-400">13:00 - 15:00</span>
+</div>
+<p class="text-xs font-extrabold text-slate-800 truncate">王大明 / 專業採耳</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-xs text-slate-400">store</span>
+<span class="text-[10px] text-slate-500">門店指派</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">14:00</div>
+<div class="flex-1 grid grid-cols-3"></div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">15:00</div>
+<div class="flex-1 grid grid-cols-3">
+<!-- Column 3 Appointment -->
+<div class="relative p-1">
+<div class="absolute inset-x-1 top-0 h-60 bg-pink-50 border-l-4 border-primary rounded-r-lg p-3 shadow-sm">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-primary bg-white px-1.5 rounded">已開單</span>
+<span class="text-[10px] text-slate-400">15:00 - 18:00</span>
+</div>
+<p class="text-xs font-extrabold text-slate-800 truncate">張語嫣 / 婚前全身美白套裝</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-xs text-slate-400" data-weight="fill">person</span>
+<span class="text-[10px] text-slate-500">君君</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional slots can continue to 22:00 -->
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">16:00</div>
+<div class="flex-1 grid grid-cols-3"></div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">17:00</div>
+<div class="flex-1 grid grid-cols-3"></div>
+</div>
+<div class="flex h-20 border-b border-slate-50">
+<div class="w-20 flex-shrink-0 flex justify-center py-2 text-xs font-bold text-slate-400">18:00</div>
+<div class="flex-1 grid grid-cols-3"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Stats Bar -->
+<footer class="h-12 bg-white border-t border-slate-100 px-6 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<span class="text-xs text-slate-500">已接受: <b class="text-slate-800">4</b></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="text-xs text-slate-500">已開單: <b class="text-slate-800">8</b></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+<span class="text-xs text-slate-500">休假/不公開: <b class="text-slate-800">2</b></span>
+</div>
+</div>
+<div class="text-xs text-slate-400">
+                最後更新時間: 2026-03-04 14:25:31
+            </div>
+</footer>
+</main>
+</body></html>

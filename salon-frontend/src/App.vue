@@ -35,10 +35,35 @@ const layoutClass = computed<string>(() => {
   return `app-layout ${layoutMap[currentDevice]}`
 })
 
+/**
+ * Devtools 錯誤關鍵字列表
+ * 與 main.ts 中的定義保持一致
+ */
+const DEVTOOLS_ERROR_KEYWORDS = [
+  '__vrv_devtools',
+  '__vue_devtools',
+  'Could not establish connection',
+  'Receiving end does not exist',
+] as const
+
+/** 判斷是否為 Vue Devtools 擴充功能錯誤 */
+function isDevtoolsError(msg: string): boolean {
+  return DEVTOOLS_ERROR_KEYWORDS.some((keyword) => msg.includes(keyword))
+}
+
 /** 全域錯誤捕獲 */
 onErrorCaptured((err: Error) => {
+  // 過濾 Vue Devtools 擴充功能相關的錯誤（非應用程式錯誤）
+  const errMsg = err.message || ''
+  if (isDevtoolsError(errMsg)) {
+    if (import.meta.env.DEV) {
+      console.warn('[Devtools] 已過濾 Vue Devtools 擴充功能錯誤:', errMsg)
+    }
+    return false
+  }
+
   hasError.value = true
-  errorMessage.value = err.message || '應用程式發生未知錯誤'
+  errorMessage.value = errMsg || '應用程式發生未知錯誤'
   console.error('[全域錯誤]', err)
   return false
 })
@@ -75,8 +100,10 @@ function reloadPage(): void {
             - 僅緩存 meta.keepAlive = true 的路由
             - 使用 include 精確控制緩存的白名單
             - 非緩存頁面（如詳情頁、編輯頁）每次進入重新創建
+            - 注意：當 keepAlive 為 false 時，不傳入 include（設為 undefined），
+              避免空陣列觸發 Vue Router devtools 內部遍歷 component.ref 為 null 的 bug
           -->
-          <keep-alive :include="route.meta?.keepAlive ? [route.name as string] : []">
+          <keep-alive :include="route.meta?.keepAlive ? [route.name as string] : undefined">
             <component :is="Component" :key="route.path" />
           </keep-alive>
         </transition>

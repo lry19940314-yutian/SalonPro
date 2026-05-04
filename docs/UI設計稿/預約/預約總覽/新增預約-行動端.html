@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#f7e3e9",
+                        "tertiary-container": "#328517",
+                        "on-primary-fixed": "#3d0025",
+                        "surface": "#fff8f8",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-secondary-fixed": "#300247",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-container-low": "#fff0f4",
+                        "outline-variant": "#dac0c9",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-tertiary-fixed": "#042100",
+                        "primary": "#a22c70",
+                        "secondary-container": "#e8b3fe",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-background": "#23191d",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-container": "#6c4082",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#88717a",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-surface-variant": "#554149",
+                        "surface-bright": "#fff8f8",
+                        "surface-container-highest": "#f1dee3",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#f6d9ff",
+                        "inverse-surface": "#392d32",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#fffbff",
+                        "surface-tint": "#a52f72",
+                        "inverse-primary": "#ffafd3",
+                        "primary-fixed": "#ffd8e7",
+                        "on-primary-fixed-variant": "#861259",
+                        "secondary": "#794c8f",
+                        "on-primary": "#ffffff",
+                        "background": "#fff8f8",
+                        "on-surface": "#23191d",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-variant": "#f1dee3",
+                        "primary-container": "#c14689",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#1c6b00",
+                        "surface-container": "#fde9ef",
+                        "brand-primary": "#c84c8f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "8px",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "container-padding": "24px",
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-900 font-body-md text-on-surface min-h-screen flex items-end justify-center overflow-hidden">
+<!-- Semi-transparent overlay -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-[2px] z-0"></div>
+<!-- Bottom Sheet Modal -->
+<div class="relative w-full max-w-lg bg-surface rounded-t-[32px] flex flex-col h-[795px] z-10 shadow-2xl overflow-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/30 shrink-0">
+<div class="w-10"></div> <!-- Spacer -->
+<h1 class="font-h1 text-on-surface">預約</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-brand-primary bg-surface-container-high active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[28px]">close</span>
+</button>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto px-6 py-6 hide-scrollbar space-y-8">
+<!-- Section 1: Appointment Info -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="w-1 h-5 bg-brand-primary rounded-full"></span>
+<h2 class="font-h2 text-on-surface">預約資訊</h2>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">預約日期 <span class="text-error">*</span></label>
+<div class="relative">
+<input class="w-full h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all" type="text" value="2026-03-05"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline">calendar_today</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">預約時間 <span class="text-error">*</span></label>
+<div class="relative">
+<input class="w-full h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all" type="time" value="15:00"/>
+</div>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">店鋪 <span class="text-error">*</span></label>
+<select class="w-full h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none appearance-none transition-all">
+<option>沐茉珐複合式國際美妍館</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">服務人員</label>
+<select class="w-full h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all">
+<option>請選擇人員</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">緩衝時間</label>
+<select class="w-full h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all">
+<option>15 分鐘</option>
+<option>30 分鐘</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Section 2: Member Info -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="w-1 h-5 bg-brand-primary rounded-full"></span>
+<h2 class="font-h2 text-on-surface">會員資訊</h2>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">會員姓名 <span class="text-error">*</span></label>
+<div class="flex gap-2">
+<input class="flex-1 h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all" placeholder="輸入姓名或搜尋" type="text"/>
+<button class="w-[48px] h-[48px] bg-brand-primary text-white rounded-lg flex items-center justify-center active:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">手機號碼 <span class="text-error">*</span></label>
+<input class="w-full h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all" placeholder="0912345678" type="tel"/>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">性別 <span class="text-error">*</span></label>
+<div class="flex gap-3">
+<label class="flex-1 flex items-center justify-center gap-2 h-[48px] rounded-lg border-2 border-brand-primary bg-surface-container-low text-brand-primary font-semibold cursor-pointer">
+<input checked="" class="hidden" name="gender" type="radio" value="female"/>
+                            女性
+                        </label>
+<label class="flex-1 flex items-center justify-center gap-2 h-[48px] rounded-lg border border-outline-variant bg-white text-on-surface-variant cursor-pointer">
+<input class="hidden" name="gender" type="radio" value="male"/>
+                            男性
+                        </label>
+</div>
+</div>
+</section>
+<!-- Section 3: Appointment Service -->
+<section class="space-y-4 pb-4">
+<div class="flex items-center gap-2">
+<span class="w-1 h-5 bg-brand-primary rounded-full"></span>
+<h2 class="font-h2 text-on-surface">預約服務</h2>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">服務項目 <span class="text-error">*</span></label>
+<select class="w-full h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all">
+<option>請選擇服務項目</option>
+<option>水飛梭深層淨膚 (60min)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">預估時長 (分鐘)</label>
+<input class="w-full h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all" type="number" value="60"/>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">預約人數</label>
+<input class="w-full h-[48px] px-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all" type="number" value="1"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface-variant">備註說明</label>
+<textarea class="w-full min-h-[100px] p-4 rounded-lg border border-outline-variant bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-all resize-none" placeholder="請輸入備註內容"></textarea>
+</div>
+<div class="flex flex-col gap-4 py-2">
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-on-surface">指定服務人員</span>
+<div class="relative inline-flex h-8 w-14 items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-full h-full bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-brand-primary"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-on-surface">首次預約</span>
+<div class="relative inline-flex h-8 w-14 items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-full h-full bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-brand-primary"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="p-6 bg-white border-t border-outline-variant/30 shrink-0 flex gap-4">
+<button class="flex-1 h-[52px] border-2 border-secondary-fixed-dim text-brand-primary font-bold rounded-xl active:bg-secondary-fixed-dim/10 transition-colors">
+                取消
+            </button>
+<button class="flex-1 h-[52px] bg-slate-200 text-slate-400 font-bold rounded-xl cursor-not-allowed" disabled="">
+                儲存
+            </button>
+</footer>
+</div>
+<!-- Navigation Shell Placeholder (Suppressed per task context as this is a Modal focused journey) -->
+<div class="sr-only">Wonder sky 國際美妍館 - 預約管理系統</div>
+</body></html>

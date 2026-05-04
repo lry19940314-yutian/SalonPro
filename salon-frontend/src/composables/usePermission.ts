@@ -39,17 +39,19 @@ export interface RoutePermission {
 }
 
 /**
- * 菜單項配置介面
+ * 菜單項配置介面（支援巢狀子菜單）
  */
 export interface MenuItem {
   /** 路由路徑 */
   path: string
   /** 顯示名稱 */
   name: string
-  /** 圖示名稱（Material Symbols） */
+  /** 圖示名稱（Element Plus 圖示名） */
   icon: string
   /** 允許訪問的角色列表 */
   roles: UserRole[]
+  /** 子菜單項（可選） */
+  children?: MenuItem[]
 }
 
 // ==================== 常量 ====================
@@ -148,6 +150,7 @@ export function usePermission() {
 
   /**
    * 過濾菜單項（根據當前角色顯示可訪問的菜單）
+   * 支援巢狀子菜單遞迴過濾
    *
    * @param items - 菜單項陣列
    * @returns 過濾後的可訪問菜單項
@@ -160,9 +163,21 @@ export function usePermission() {
    * ```
    */
   function filterMenus(items: MenuItem[]): MenuItem[] {
-    return items.filter((item) => {
-      return canAccess(item.roles) && canAccessPath(item.path)
-    })
+    return items
+      .filter((item) => {
+        return canAccess(item.roles) && canAccessPath(item.path)
+      })
+      .map((item) => {
+        // 遞迴過濾子菜單
+        if (item.children && item.children.length > 0) {
+          const filteredChildren = filterMenus(item.children)
+          return {
+            ...item,
+            children: filteredChildren.length > 0 ? filteredChildren : undefined,
+          }
+        }
+        return item
+      })
   }
 
   /**

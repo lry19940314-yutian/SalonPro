@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bottom-sheet-gradient {
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,248,248,1) 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #f1dee3;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#fffbff",
+                        "surface-container-highest": "#f1dee3",
+                        "primary-fixed": "#ffd8e7",
+                        "on-surface": "#23191d",
+                        "secondary": "#794c8f",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#c14689",
+                        "outline-variant": "#dac0c9",
+                        "tertiary-fixed": "#9ff87d",
+                        "tertiary-fixed-dim": "#84db64",
+                        "primary-fixed-dim": "#ffafd3",
+                        "tertiary-container": "#328517",
+                        "on-surface-variant": "#554149",
+                        "on-secondary-container": "#6c4082",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-fixed": "#300247",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-primary-fixed-variant": "#861259",
+                        "primary": "#a22c70",
+                        "surface-variant": "#f1dee3",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#ffafd3",
+                        "surface": "#fff8f8",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "secondary-container": "#e8b3fe",
+                        "tertiary": "#1c6b00",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-container-high": "#f7e3e9",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-container": "#fde9ef",
+                        "outline": "#88717a",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#392d32",
+                        "error-container": "#ffdad6",
+                        "background": "#fff8f8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-background": "#23191d",
+                        "surface-bright": "#fff8f8",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#3d0025",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#f6d9ff"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen">
+<!-- App Background Mockup -->
+<div class="fixed inset-0 z-0">
+<header class="bg-white px-4 h-16 flex justify-between items-center border-b border-gray-100">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">menu</span>
+<h1 class="text-lg font-bold text-primary tracking-tight font-h1">Wonder sky 國際美妍館</h1>
+</div>
+<span class="material-symbols-outlined text-slate-500">notifications</span>
+</header>
+<main class="p-6 space-y-6">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-h2 text-h2">今日營收總覽</h2>
+<span class="text-primary text-label-md font-label-md">查看詳情</span>
+</div>
+<div class="h-48 bg-surface-container-low rounded-lg flex items-center justify-center">
+<p class="text-on-surface-variant italic">數據載入中...</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 h-32"></div>
+<div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 h-32"></div>
+</div>
+</main>
+</div>
+<!-- Semi-transparent Overlay -->
+<div class="fixed inset-0 bg-black/60 z-[70] backdrop-blur-sm"></div>
+<!-- Leave Request Bottom Sheet -->
+<div class="fixed inset-x-0 bottom-0 z-[80] bottom-sheet-gradient rounded-t-[32px] shadow-2xl flex flex-col max-h-[813px]">
+<!-- Handle & Header -->
+<div class="flex flex-col items-center pt-3 pb-2 px-6">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full mb-4"></div>
+<div class="w-full flex justify-between items-center">
+<h2 class="font-h1 text-h1 text-on-surface">請假申請</h2>
+<button class="w-11 h-11 flex items-center justify-center rounded-full bg-primary-fixed/30 text-primary hover:bg-primary-fixed/50 transition-colors">
+<span class="material-symbols-outlined font-bold">close</span>
+</button>
+</div>
+</div>
+<!-- Form Content -->
+<div class="flex-1 overflow-y-auto px-6 pb-8 space-y-6 custom-scrollbar">
+<!-- Multiple Single Dates Toggle -->
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="text-body-lg font-medium text-on-surface">選擇多個單一日期</span>
+<span class="text-caption text-on-surface-variant">適用於非連續的單日請假</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer h-11">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[11px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Date Range Picker -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">日期區間</label>
+<div class="relative min-h-[48px] flex items-center border border-outline-variant rounded-xl bg-white px-4 hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary mr-3">calendar_month</span>
+<span class="text-body-md text-on-surface">2023/12/01 - 2023/12/03</span>
+<span class="material-symbols-outlined text-outline absolute right-4 group-hover:text-primary">expand_more</span>
+</div>
+</div>
+<!-- Full Day Toggle (Active State) -->
+<div class="flex items-center justify-between py-2">
+<span class="text-body-lg font-medium text-on-surface">整日</span>
+<label class="relative inline-flex items-center cursor-pointer h-11">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[11px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Time Selectors (Row) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">每日開始時間</label>
+<div class="h-[48px] flex items-center border border-outline-variant rounded-xl bg-surface-container-low px-4 text-outline cursor-not-allowed">
+<span class="text-body-md">09:00</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">每日結束時間</label>
+<div class="h-[48px] flex items-center border border-outline-variant rounded-xl bg-surface-container-low px-4 text-outline cursor-not-allowed">
+<span class="text-body-md">18:00</span>
+</div>
+</div>
+</div>
+<!-- Leave Type Dropdown -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">假別*</label>
+<div class="relative h-[48px] flex items-center border border-outline-variant rounded-xl bg-white px-4 hover:border-primary transition-colors cursor-pointer group">
+<span class="text-body-md text-outline">請選擇假別</span>
+<span class="material-symbols-outlined text-outline absolute right-4 group-hover:text-primary">expand_more</span>
+</div>
+</div>
+<!-- Store Dropdown (Pre-selected & Focused Style) -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">門店*</label>
+<div class="relative h-[48px] flex items-center border-2 border-primary rounded-xl bg-white px-4 shadow-[0_0_0_4px_rgba(162,44,112,0.1)]">
+<span class="text-body-md text-on-surface font-medium">沐茉珐複合式國際美妍館</span>
+<span class="material-symbols-outlined text-primary absolute right-4">check_circle</span>
+</div>
+</div>
+<!-- Staff Dropdown -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">工作人員</label>
+<div class="relative h-[48px] flex items-center border border-outline-variant rounded-xl bg-white px-4 hover:border-primary transition-colors cursor-pointer group">
+<span class="text-body-md text-on-surface">店長小美</span>
+<span class="material-symbols-outlined text-outline absolute right-4 group-hover:text-primary">person</span>
+</div>
+</div>
+<!-- Notes Textarea -->
+<div class="space-y-2 pb-4">
+<label class="block text-label-md font-label-md text-on-surface-variant">備註</label>
+<textarea class="w-full border border-outline-variant rounded-xl bg-white px-4 py-3 text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" placeholder="請輸入備註內容..." rows="3"></textarea>
+</div>
+</div>
+<!-- Bottom Action Button -->
+<div class="p-6 bg-white border-t border-outline-variant flex gap-4">
+<button class="flex-1 h-12 rounded-xl border border-primary text-primary font-bold hover:bg-primary-fixed/10 transition-all">
+                取消
+            </button>
+<button class="flex-[2] h-12 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                提交申請
+            </button>
+</div>
+</div>
+<!-- Hidden background element for image prompt simulation -->
+<div class="hidden">
+<img data-alt="A sophisticated and clean interior of a high-end beauty salon with soft pink and cream tones. The lighting is warm and inviting, highlighting marble surfaces and minimalist product displays. The overall atmosphere is one of professional luxury and serene wellness, echoing the Luminous Analytics brand identity with its refined corporate aesthetic. Shallow depth of field focuses on a modern reception area with subtle brand logos." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn0RXt6DkcesMPky1xif124DFy71GeTai7owukNk0XZDVs8A04QPFLq2AXTFAG4JXZfe1p0FQcz6DXx_hSciz2cuAFYKeMD_A9gg8T8CI3ndAhcdKuIjZTNNHhA8VtE7BJFw6V7GqsYURcSYtmmzPA-F5mirqA7xvJJ2roPEr2RnkNrbtlFA6T2gj7NOVDkp_MhFIRSqq2OlLk7byPVisvnezGVElyqbLnXxCYQ5x2t-5SxOFbiqA6kmCT5Mdvp_Y0yQfgq_YP4xs"/>
+</div>
+</body></html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-tint": "#a52f72",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary": "#794c8f",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#554149",
+                        "surface-bright": "#fff8f8",
+                        "surface": "#fff8f8",
+                        "on-background": "#23191d",
+                        "on-secondary-fixed": "#300247",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "background": "#fff8f8",
+                        "outline-variant": "#dac0c9",
+                        "outline": "#88717a",
+                        "inverse-primary": "#ffafd3",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed-variant": "#603475",
+                        "tertiary": "#1c6b00",
+                        "secondary-fixed": "#f6d9ff",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed": "#3d0025",
+                        "error": "#ba1a1a",
+                        "surface-container": "#fde9ef",
+                        "primary": "#a22c70",
+                        "on-primary-container": "#fffbff",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-container-high": "#f7e3e9",
+                        "secondary-container": "#e8b3fe",
+                        "primary-fixed": "#ffd8e7",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-dim": "#e8d5db",
+                        "on-surface": "#23191d",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "inverse-surface": "#392d32",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#6c4082",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary-container": "#328517",
+                        "surface-variant": "#f1dee3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "md": "16px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface-bright text-on-surface antialiased">
+<!-- Dashboard Layout Wrapper -->
+<div class="flex min-h-screen">
+<!-- Side Navigation Bar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-white dark:bg-slate-900 h-screen w-64 border-r border-slate-200 dark:border-slate-800 z-30">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h1 class="font-black text-pink-600 text-lg leading-tight">Wonder Sky</h1>
+<p class="text-xs text-slate-500 font-medium uppercase tracking-wider">管理後台</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-pink-600 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium text-sm">儀表板</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-pink-600 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-medium text-sm">預約管理</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-pink-600 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+<span class="font-medium text-sm">顧客資料</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-pink-600 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="content_cut">content_cut</span>
+<span class="font-medium text-sm">療程項目</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-pink-600 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-medium text-sm">庫存管理</span>
+</a>
+<a class="flex items-center gap-3 bg-pink-50 dark:bg-pink-900/10 text-pink-600 dark:text-pink-400 rounded-lg px-4 py-3 border-r-4 border-pink-600 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium text-sm">系統設定</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<div class="bg-surface-container-low rounded-xl p-4 mb-6">
+<p class="text-xs font-bold text-primary mb-2">升級專業版</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">解鎖更多數據分析功能，提升店鋪經營效率。</p>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 text-slate-500 px-4 py-2 hover:text-pink-600 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="help">help</span>
+<span class="text-sm font-medium">幫助中心</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-2 hover:text-pink-600 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+<span class="text-sm font-medium">登出</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content (Mock Background) -->
+<main class="ml-64 flex-1 p-8">
+<header class="fixed top-0 right-0 left-64 z-40 flex items-center justify-between px-6 h-16 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border-none rounded-full text-sm focus:ring-2 focus:ring-primary/20" placeholder="搜尋顧客或預約..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 active:scale-95 transition-all">快速開單</button>
+<div class="flex gap-2">
+<button class="p-2 text-slate-600 hover:bg-pink-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+<div class="h-8 w-px bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-3">
+<img alt="User" class="w-8 h-8 rounded-full border-2 border-primary/20" data-alt="Professional portrait of a salon manager, a woman in her 30s with styled hair and a friendly expression, set against a clean, softly lit modern office background. High-key lighting, soft pastel color palette, luxury skincare clinic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIMH9oEAk3NcF2rlnl9-KS5jAMYAWC9Rlf97bclyYUrv8D2d_EgwGMvOF7ThRO9RpG8ZokO5r0bIpFgqY378uSwWSLK3z5unm0bPLDAyvwkuAIycdH_aClK_PY_trS6c5EWaIAJQFOuSKVnLzbFFHKEnK1J_EDJEmT-u0Bf1TL-kAggDLh1m3PVwyFWCef5jpm4VrIGDK0ezxGZ8ERwzoHQK9oI0UOYg8B_ohWcIGDOyjepzLrwuR30HzY-Y1QgkK33EM9f0m2i9s"/>
+<span class="text-sm font-bold text-on-surface">店長雅婷</span>
+</div>
+</div>
+</header>
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+<!-- Modal Container -->
+<div class="bg-white dark:bg-slate-900 w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-white/20">
+<!-- Modal Header -->
+<div class="px-8 py-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-6 bg-primary rounded-full"></div>
+<h2 class="text-xl font-bold text-on-surface tracking-tight">設定線上不指定預約關閉時間</h2>
+</div>
+<button class="text-primary hover:bg-primary-container/10 p-2 rounded-full transition-all active:scale-90">
+<span class="material-symbols-outlined text-2xl font-bold" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Body / Form -->
+<div class="p-8 space-y-6 max-h-[716px] overflow-y-auto">
+<!-- Date Range Selection -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_month">calendar_month</span>
+                                選擇關閉日期區間
+                            </label>
+<div class="grid grid-cols-2 gap-4">
+<div class="relative">
+<input class="w-full px-4 py-3 bg-slate-50 border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" type="date" value="2024-05-20"/>
+</div>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-slate-50 border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" type="date" value="2024-05-24"/>
+</div>
+</div>
+</div>
+<!-- All Day Toggle -->
+<div class="flex items-center justify-between p-4 bg-primary-container/5 rounded-xl border border-primary-container/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<span class="text-sm font-bold text-on-surface">設定為整日關閉</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Specific Time Selection -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="more_time">more_time</span>
+                                每日關閉時段 (非整日)
+                            </label>
+<div class="grid grid-cols-2 gap-4 items-center">
+<div class="flex items-center gap-3">
+<span class="text-xs text-slate-500 whitespace-nowrap">開始</span>
+<select class="w-full px-4 py-3 bg-slate-50 border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary">
+<option>09:00</option>
+<option>10:00</option>
+<option selected="">11:00</option>
+<option>12:00</option>
+</select>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs text-slate-500 whitespace-nowrap">結束</span>
+<select class="w-full px-4 py-3 bg-slate-50 border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary">
+<option>17:00</option>
+<option selected="">18:00</option>
+<option>19:00</option>
+<option>20:00</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Store Selection -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="store">store</span>
+                                適用門店
+                            </label>
+<select class="w-full px-4 py-3 bg-slate-50 border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary appearance-none">
+<option>台北信義旗艦店</option>
+<option>台中精誠美學館</option>
+<option>高雄瑞豐形象店</option>
+<option>全門店適用</option>
+</select>
+</div>
+<!-- Notes -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="edit_note">edit_note</span>
+                                備註事項
+                            </label>
+<textarea class="w-full px-4 py-3 bg-slate-50 border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="請輸入關閉原因，例如：店內員工培訓..." rows="3"></textarea>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-8 py-6 bg-slate-50 dark:bg-slate-800/50 flex items-center justify-end gap-4">
+<button class="px-6 py-2.5 rounded-xl text-sm font-bold text-slate-600 border border-slate-300 bg-white hover:bg-slate-50 active:scale-95 transition-all">
+                            取消
+                        </button>
+<!-- Disabled Initial State -->
+<button class="px-8 py-2.5 rounded-xl text-sm font-bold text-white bg-slate-300 cursor-not-allowed transition-all" disabled="">
+                            確認儲存
+                        </button>
+<!-- The target style for primary button (for visual reference/development) -->
+<!-- <button class="px-8 py-2.5 rounded-xl text-sm font-bold text-on-primary bg-primary hover:bg-primary-container shadow-lg shadow-primary/20 active:scale-95 transition-all">確認儲存</button> -->
+</div>
+</div>
+</div>
+<!-- Page Content Placeholder -->
+<div class="mt-20">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-8 space-y-6">
+<div class="bg-white p-lg rounded-xl border border-slate-200 shadow-sm">
+<h3 class="text-h3 text-on-surface mb-4">預約關閉記錄</h3>
+<div class="flex items-center justify-center h-64 border-2 border-dashed border-slate-100 rounded-lg">
+<p class="text-slate-400">目前尚無關閉記錄</p>
+</div>
+</div>
+</div>
+<div class="col-span-4">
+<div class="bg-white p-lg rounded-xl border border-slate-200 shadow-sm h-full">
+<h3 class="text-h3 text-on-surface mb-4">系統提示</h3>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">關閉「不指定預約」時，消費者仍可預約特定美容師。</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">設定完成後將即時同步至線上預約官網。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

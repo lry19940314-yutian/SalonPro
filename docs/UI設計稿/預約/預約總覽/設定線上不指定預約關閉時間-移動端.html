@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#a22c70",
+                        "tertiary-fixed-dim": "#84db64",
+                        "primary-container": "#c14689",
+                        "inverse-surface": "#392d32",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "outline": "#88717a",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-surface-variant": "#554149",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#f1dee3",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-secondary-fixed-variant": "#603475",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-dim": "#e8d5db",
+                        "surface-bright": "#fff8f8",
+                        "secondary-container": "#e8b3fe",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#6c4082",
+                        "inverse-primary": "#ffafd3",
+                        "on-error-container": "#93000a",
+                        "surface": "#fff8f8",
+                        "background": "#fff8f8",
+                        "secondary": "#794c8f",
+                        "surface-container-low": "#fff0f4",
+                        "tertiary": "#1c6b00",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#300247",
+                        "on-surface": "#23191d",
+                        "primary-fixed": "#ffd8e7",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-container-highest": "#f1dee3",
+                        "outline-variant": "#dac0c9",
+                        "surface-tint": "#a52f72",
+                        "tertiary-container": "#328517",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-container": "#fde9ef",
+                        "on-background": "#23191d",
+                        "on-tertiary-fixed": "#042100",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#fffbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Background Content (Settings Screen Context) -->
+<header class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-4 h-16 bg-white border-b border-slate-100 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">menu</span>
+<h1 class="text-lg font-bold text-slate-900 font-h1">Main Branch</h1>
+</div>
+<span class="material-symbols-outlined text-primary">notifications</span>
+</header>
+<main class="pt-20 pb-24 px-container-padding">
+<div class="space-y-md">
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center justify-between mb-sm">
+<h2 class="font-h2 text-on-surface">線上預約設定</h2>
+<span class="material-symbols-outlined text-primary">settings_applications</span>
+</div>
+<p class="font-body-md text-on-surface-variant">管理您的店舖線上預約開放時間與特殊關閉時段。</p>
+</div>
+<div class="grid grid-cols-1 gap-gutter">
+<div class="bg-white border border-outline-variant rounded-xl p-md flex items-center justify-between">
+<div>
+<p class="font-label-md text-primary">不指定預約時段</p>
+<p class="font-body-lg font-semibold">目前狀態：正常營運</p>
+</div>
+<button class="bg-primary-container text-white px-md py-sm rounded-lg font-label-md shadow-sm">
+                        新增關閉時段
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Shell (Inactive Background) -->
+<nav class="fixed bottom-0 left-0 w-full z-40 flex justify-around items-center px-2 py-3 bg-white/80 backdrop-blur-md border-t border-slate-100 shadow-[0_-4px_12px_0_rgba(0,0,0,0.04)]">
+<div class="flex flex-col items-center justify-center text-slate-500 px-3 py-1">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-medium">Calendar</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-3 py-1">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-medium">Clients</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-3 py-1">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-medium">Staff</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-3 py-1">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-medium">Stats</span>
+</div>
+<!-- Active Tab: Settings -->
+<div class="flex flex-col items-center justify-center bg-[#c84c8f]/10 text-[#c84c8f] rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-medium">Settings</span>
+</div>
+</nav>
+<!-- Overlay Mask -->
+<div class="fixed inset-0 bg-black/60 z-[60] backdrop-blur-[2px]"></div>
+<!-- Bottom Sheet UI -->
+<section class="fixed bottom-0 left-0 right-0 z-[70] bg-white rounded-t-[24px] shadow-2xl flex flex-col max-h-[813px]">
+<!-- Bottom Sheet Header -->
+<div class="relative px-lg py-md flex items-center justify-center border-b border-surface-container-highest">
+<div class="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-1 bg-surface-container-highest rounded-full"></div>
+<h3 class="font-h3 text-on-surface text-center pt-2">設定線上不指定預約關閉時間</h3>
+<button class="absolute right-lg top-1/2 -translate-y-1/2 text-primary p-2">
+<span class="material-symbols-outlined text-[32px] font-bold">close</span>
+</button>
+</div>
+<!-- Form Content -->
+<div class="flex-1 overflow-y-auto px-lg py-lg space-y-lg hide-scrollbar">
+<!-- Date Range Picker -->
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                    日期區間
+                </label>
+<div class="relative">
+<input class="w-full h-[48px] px-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-container-lowest" readonly="" type="text" value="2024/11/20 - 2024/11/22"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">event</span>
+</div>
+</div>
+<!-- All Day Toggle -->
+<div class="flex items-center justify-between h-[48px] px-md border border-outline-variant rounded-lg bg-surface-container-lowest">
+<span class="font-body-md font-semibold text-on-surface">整日關閉</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</div>
+<!-- Time Selection (Grouped) -->
+<div class="grid grid-cols-1 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">每日開始時間</label>
+<div class="relative">
+<select class="appearance-none w-full h-[48px] px-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-container-lowest">
+<option>09:00</option>
+<option>10:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">每日結束時間</label>
+<div class="relative">
+<select class="appearance-none w-full h-[48px] px-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-container-lowest">
+<option>21:00</option>
+<option>22:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Branch Selector -->
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">套用門店</label>
+<div class="relative">
+<select class="appearance-none w-full h-[48px] px-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-container-lowest">
+<option>Wonder sky 台北總店</option>
+<option>Wonder sky 台中分店</option>
+<option>全部門店</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">storefront</span>
+</div>
+</div>
+<!-- Notes -->
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">備註說明（顧客不可見）</label>
+<textarea class="w-full px-md py-sm border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-container-lowest resize-none" placeholder="請輸入關閉原因..." rows="3"></textarea>
+</div>
+<!-- Contextual Image Decor -->
+<div class="w-full h-32 rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A serene and luxurious spa treatment room in a high-end beauty salon. The space is filled with soft natural light coming through sheer white curtains, illuminating a minimalist wooden table with neatly stacked organic towels and essential oils. The color palette is composed of soft rose pinks, warm creams, and delicate purples, creating a professional and trustworthy B2B SaaS atmosphere. The lighting is bright and high-key, emphasizing a clean and calming environment for wellness management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY0DzaHeCtwVEzPJTCq1LaboPh8vbDH8jl3TE0MV-pQlLvpzmapTeXcU6ibbOn1_F3W6EQ8Bh2UFG4NN7aW4KsidTB7_Xf3tyV0g7V6B-OXNHDYj0j3r28LBSIpflW680Eyo-bbCdMmWJgIh7refNFgoWHl5nn1MaHgIdVwJgr8IIbH_cAriB56uLUuK3GoDoxOBwpVoejA-mhhJ6A9jZ418gv--QIxp37aUW17WOZcXVtsRFcmGfJMRySNeOAh9bd7LxYMIHY-r8"/>
+</div>
+</div>
+<!-- Sticky Footer Buttons -->
+<div class="px-lg py-md border-t border-surface-container-highest bg-white rounded-b-none flex gap-gutter">
+<button class="flex-1 h-[48px] rounded-lg border border-primary-container text-primary-container font-h3 transition-colors active:bg-primary-container/5">
+                取消
+            </button>
+<button class="flex-1 h-[48px] rounded-lg bg-primary-container text-white font-h3 shadow-sm active:opacity-90 transition-opacity">
+                儲存
+            </button>
+</div>
+<!-- Safe Area Spacing for Mobile -->
+<div class="h-6 bg-white"></div>
+</section>
+</body></html>

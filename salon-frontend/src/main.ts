@@ -1,128 +1,130 @@
 /**
- * main.ts - 應用程式入口文件
+ * main.ts - 應用程式入口
  *
  * 功能：
  * 1. 建立 Vue 應用實例
- * 2. 註冊 Pinia 狀態管理
- * 3. 註冊 Vue Router
- * 4. 根據設備類型動態註冊 UI 組件庫（Element Plus / Vant）
- * 5. 掛載應用
+ * 2. 註冊 Pinia 狀態管理、Vue Router
+ * 3. 註冊 Element Plus（PC 端）與 Vant（移動端）UI 庫
+ * 4. 註冊全域共用組件
+ * 5. 掛載應用程式至 DOM
+ * 6. 修補 Vue Devtools 瀏覽器擴充功能的已知問題
  *
- * UI 組件庫註冊規則：
- * - PC 端（≥768px，含平板）：註冊 Element Plus
- * - 手機端（＜768px）：註冊 Vant
- *
- * 技術棧：Vue 3 + Pinia + Vue Router 4 + Element Plus + Vant
+ * 技術棧：Vue 3 + Vite + TypeScript
  */
 
 import { createApp } from 'vue'
-import pinia from '@/stores'
-import router from '@/router'
-import App from '@/App.vue'
+import App from './App.vue'
+import router from './router'
+import pinia from './stores'
 
-// ==================== 建立 Vue 應用實例 ====================
+// ==================== Element Plus（PC 端 UI 庫）====================
 
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
+// ==================== Vant（移動端 UI 庫）====================
+
+import Vant from 'vant'
+import 'vant/lib/index.css'
+
+// ==================== 全域共用組件 ====================
+
+import { globalComponents } from './components/common'
+
+/**
+ * Devtools 錯誤關鍵字列表
+ * 用於識別 Vue Devtools 瀏覽器擴充功能的已知通訊錯誤
+ */
+const DEVTOOLS_ERROR_KEYWORDS = [
+  '__vrv_devtools',
+  '__vue_devtools',
+  '__vcc_devtools',
+  'Could not establish connection',
+  'Receiving end does not exist',
+] as const
+
+/**
+ * 判斷錯誤訊息是否來自 Vue Devtools 擴充功能
+ *
+ * @param msg - 錯誤訊息字串
+ * @returns 是否為 Devtools 相關錯誤
+ */
+function isDevtoolsError(msg: string): boolean {
+  return DEVTOOLS_ERROR_KEYWORDS.some((keyword) => msg.includes(keyword))
+}
+
+/**
+ * 修補 Vue Devtools 瀏覽器擴充功能的已知問題
+ */
+function patchVueDevtools(): void {
+  // 確保掛載點元素存在，避免 Devtools 在 null 上設置屬性
+  const appEl = document.getElementById('app')
+  if (appEl) {
+    // 預先初始化 Devtools 可能使用的內部屬性，避免後續設置失敗
+    ;(appEl as any).__vue_app__ = null
+  }
+
+  // 捕獲 Devtools 相關的全域錯誤（同步/非同步錯誤）
+  window.addEventListener('error', (event: ErrorEvent) => {
+    const msg = event.message || ''
+    if (isDevtoolsError(msg)) {
+      event.preventDefault()
+      if (import.meta.env.DEV) {
+        console.warn('[Devtools] 已攔截 Vue Devtools 擴充功能錯誤:', msg)
+      }
+    }
+  })
+
+  // 捕獲未處理的 Promise 拒絕（Devtools 的非同步通訊錯誤）
+  window.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
+    const reason = event.reason
+    const msg = reason?.message || String(reason) || ''
+    if (isDevtoolsError(msg)) {
+      event.preventDefault()
+      if (import.meta.env.DEV) {
+        console.warn('[Devtools] 已攔截 Vue Devtools Promise 錯誤:', msg)
+      }
+    }
+  })
+}
+
+// ==================== 應用程式初始化 ====================
+
+// 執行 Devtools 修補（必須在 createApp 之前）
+patchVueDevtools()
+
+// 建立 Vue 應用實例
 const app = createApp(App)
 
-// ==================== 註冊核心插件 ====================
-
-// Pinia 狀態管理
+// 註冊 Pinia 狀態管理
 app.use(pinia)
 
-// Vue Router
+// 註冊 Vue Router
 app.use(router)
 
-// ==================== 動態註冊 UI 組件庫 ====================
+// 註冊 Element Plus（PC 端 UI 庫）
+app.use(ElementPlus)
 
-/**
- * 根據設備類型動態註冊對應的 UI 組件庫
- *
- * 注意：此處使用動態 import 實現按需載入，
- * 避免在手機端加載 Element Plus 或在 PC 端加載 Vant
- *
- * 平板設備（768px ~ 1024px）使用 Element Plus（與 PC 一致）
- * 與 useDevice.ts 中的 BREAKPOINTS 斷點邏輯保持一致
- */
-async function registerUIComponents(): Promise<void> {
-  const deviceType = detectDeviceType()
+// 註冊 Vant（移動端 UI 庫）
+app.use(Vant)
 
-  if (deviceType === 'mobile') {
-    // 手機端：註冊 Vant
-    const Vant = await import('vant')
-    app.use(Vant.default || Vant)
+// 全域註冊 Element Plus 圖示
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 
-    // 引入 Vant 全域樣式
-    await import('vant/lib/index.css')
-
-    if (import.meta.env.DEV) {
-      console.log('[UI組件] 手機端模式 → 已註冊 Vant')
-    }
-  } else {
-    // PC / 平板端：註冊 Element Plus
-    const ElementPlus = await import('element-plus')
-    app.use(ElementPlus.default || ElementPlus)
-
-    // 引入 Element Plus 全域樣式
-    await import('element-plus/dist/index.css')
-
-    if (import.meta.env.DEV) {
-      console.log('[UI組件] PC/平板模式 → 已註冊 Element Plus')
-    }
+// 註冊全域共用組件
+globalComponents.forEach((component) => {
+  if (component.name) {
+    app.component(component.name, component)
   }
+})
+
+// 掛載應用程式至 DOM
+app.mount('#app')
+
+// 開發環境輸出初始化完成訊息
+if (import.meta.env.DEV) {
+  console.log('[SalonPro] 應用程式初始化完成')
 }
-
-/**
- * 檢測設備類型（用於 UI 組件庫註冊）
- *
- * 與 useDevice 邏輯一致，但此處為獨立函數避免循環依賴
- * 平板（768px 以上）歸類為 pc
- *
- * @returns 'pc' | 'mobile'
- */
-function detectDeviceType(): 'pc' | 'mobile' {
-  const width = window.innerWidth
-  // 與 BREAKPOINTS.MOBILE_MAX = 767 保持一致
-  if (width <= 767) return 'mobile'
-  return 'pc'
-}
-
-// ==================== 掛載應用 ====================
-
-/**
- * 啟動應用
- *
- * 流程：
- * 1. 先註冊 UI 組件庫（確保首次渲染時組件可用）
- * 2. 掛載應用至 #app
- * 3. 若啟動失敗，顯示降級錯誤提示
- */
-async function bootstrap(): Promise<void> {
-  try {
-    // 註冊 UI 組件庫
-    await registerUIComponents()
-
-    // 掛載應用
-    app.mount('#app')
-
-    if (import.meta.env.DEV) {
-      console.log(`[SalonPro] 應用啟動成功 | 環境: ${import.meta.env.VITE_APP_ENV}`)
-    }
-  } catch (error) {
-    console.error('[SalonPro] 應用啟動失敗:', error)
-
-    // 顯示降級提示（無需 Vue 即可渲染的純 HTML）
-    const appEl = document.getElementById('app')
-    if (appEl) {
-      appEl.innerHTML = `
-        <div style="display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;gap:16px;font-family:sans-serif;">
-          <h1 style="color:#ac235a;">系統載入失敗</h1>
-          <p style="color:#574146;">請重新整理頁面或聯繫系統管理員</p>
-          <button onclick="location.reload()" style="padding:8px 24px;cursor:pointer;background:#ac235a;color:#fff;border:none;border-radius:8px;font-size:16px;">重新整理</button>
-        </div>
-      `
-    }
-  }
-}
-
-// 啟動應用
-bootstrap()

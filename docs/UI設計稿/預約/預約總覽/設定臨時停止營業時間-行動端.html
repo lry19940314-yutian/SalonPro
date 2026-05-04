@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fff8f8",
+                    "surface": "#fff8f8",
+                    "on-tertiary-container": "#f8ffee",
+                    "on-secondary-fixed": "#300247",
+                    "tertiary": "#1c6b00",
+                    "primary-fixed": "#ffd8e7",
+                    "on-primary-fixed": "#3d0025",
+                    "inverse-surface": "#392d32",
+                    "on-primary-container": "#fffbff",
+                    "on-tertiary-fixed": "#042100",
+                    "primary-fixed-dim": "#ffafd3",
+                    "tertiary-container": "#328517",
+                    "secondary-container": "#e8b3fe",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#a52f72",
+                    "tertiary-fixed-dim": "#84db64",
+                    "on-background": "#23191d",
+                    "background": "#fff8f8",
+                    "on-secondary-container": "#6c4082",
+                    "surface-container-low": "#fff0f4",
+                    "inverse-primary": "#ffafd3",
+                    "secondary": "#794c8f",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#554149",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#23191d",
+                    "primary-container": "#c14689",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#f7e3e9",
+                    "secondary-fixed": "#f6d9ff",
+                    "primary": "#a22c70",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "outline": "#88717a",
+                    "on-primary-fixed-variant": "#861259",
+                    "surface-container-highest": "#f1dee3",
+                    "on-secondary-fixed-variant": "#603475",
+                    "secondary-fixed-dim": "#e8b3fe",
+                    "on-tertiary-fixed-variant": "#145200",
+                    "surface-container": "#fde9ef",
+                    "inverse-on-surface": "#ffecf1",
+                    "surface-variant": "#f1dee3",
+                    "outline-variant": "#dac0c9",
+                    "surface-dim": "#e8d5db",
+                    "tertiary-fixed": "#9ff87d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "8px",
+                    "lg": "8px",
+                    "xl": "12px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "lg": "24px",
+                    "gutter": "20px",
+                    "container-padding": "24px",
+                    "xl": "32px",
+                    "unit": "4px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h1": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bottom-sheet-active {
+            transform: translateY(0);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#f0f0f0] font-body-md text-on-surface">
+<!-- Background Mockup for context (SaaS Dashboard) -->
+<div class="min-h-screen flex flex-col">
+<!-- TopAppBar Shared Component -->
+<header class="bg-white/90 dark:bg-neutral-900/90 text-[#c84c8f] font-['Plus_Jakarta_Sans'] font-semibold tracking-tight shadow-sm border-b border-gray-100 dark:border-neutral-800 docked full-width top-0 sticky flex justify-between items-center w-full px-4 py-3 z-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-500">menu</span>
+<span class="text-lg font-extrabold text-[#c84c8f] tracking-tighter">Wonder Sky</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center border border-pink-200 overflow-hidden">
+<img alt="Profile" data-alt="A professional headshot of a female salon administrator with a warm, welcoming expression, set against a soft-focus interior of a luxury modern beauty salon. The lighting is flattering and high-end, mirroring the sophisticated and clean corporate brand identity of the Wonder Sky platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqJtjjfLRuzcO4zYDUaQWPbGkzUW9O-xyQc7BuLRzySNkZUFR4OUxIYqxvKaeIiw9bR6KNWnQsZIk8kuF_r4V_Nqs_Da9YFG3QRVW2q3ir1_g_Tb-u9YdL4dTAJt6j7T-G-5JlJZOnuhL3Tg4_wHwcSrS-L52QvydNFWTk6zd0VCNRUQnT2zI2rRrPvSHP-SudodB-6MhSU_mvYDgrrXpeZBI7Ga8F1I7PQh_cH6qyemaC0md_TjYZ5clJdO64Ikx9tutkp-Jp5LQ"/>
+</div>
+</header>
+<main class="p-4 flex-1 pb-24">
+<div class="bg-white rounded-xl p-4 shadow-sm mb-4">
+<h2 class="font-h2 text-primary mb-4">今日預約概覽</h2>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant">
+<p class="text-caption text-on-surface-variant">待處理</p>
+<p class="text-h1 text-primary">12</p>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant">
+<p class="text-caption text-on-surface-variant">已完成</p>
+<p class="text-h1 text-secondary">28</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm overflow-hidden">
+<div class="p-4 border-b border-gray-100 flex justify-between items-center">
+<h3 class="font-h3 text-on-surface">預約排程表</h3>
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex gap-3 items-start border-l-4 border-primary pl-3 py-1">
+<div>
+<p class="font-bold text-sm">10:00 - 11:30</p>
+<p class="text-xs text-on-surface-variant">美睫嫁接 - 陳小姐</p>
+</div>
+</div>
+<div class="flex gap-3 items-start border-l-4 border-secondary pl-3 py-1">
+<div>
+<p class="font-bold text-sm">13:00 - 14:30</p>
+<p class="text-xs text-on-surface-variant">深層清粉刺 - 林小姐</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shared Component -->
+<nav class="bg-white/95 dark:bg-neutral-900/95 text-gray-400 dark:text-neutral-500 font-['Plus_Jakarta_Sans'] text-[10px] font-medium border-t border-gray-100 dark:border-neutral-800 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] fixed bottom-0 left-0 w-full z-20 flex justify-around items-center px-4 pb-6 pt-2 rounded-t-2xl">
+<div class="flex flex-col items-center justify-center text-gray-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span>儀表板</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#c84c8f] bg-pink-50/50 dark:bg-pink-900/20 rounded-xl px-3 py-1 font-bold">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>預約</span>
+</div>
+<div class="flex flex-col items-center justify-center">
+<span class="material-symbols-outlined">groups</span>
+<span>顧客</span>
+</div>
+<div class="flex flex-col items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+<span>設定</span>
+</div>
+</nav>
+</div>
+<!-- Modal Overlay (60% Black) -->
+<div class="fixed inset-0 bg-black/60 z-[60] backdrop-blur-[2px]"></div>
+<!-- Bottom Sheet Container -->
+<div class="fixed bottom-0 left-0 right-0 z-[70] bg-white rounded-t-[24px] shadow-2xl flex flex-col max-h-[813px] overflow-hidden transition-transform duration-300">
+<!-- Sheet Handle -->
+<div class="flex justify-center pt-3 pb-1">
+<div class="w-10 h-1 bg-gray-200 rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="px-6 py-4 flex justify-between items-center border-b border-gray-50">
+<h1 class="text-h2 text-on-surface font-bold text-center flex-1 ml-6">設定臨時停止營業時間</h1>
+<button class="text-[#c84c8f] hover:bg-pink-50 p-2 rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined !text-3xl">close</span>
+</button>
+</div>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto custom-scrollbar px-6 py-4 space-y-6">
+<!-- Warning Message -->
+<div class="bg-pink-50 border border-pink-100 p-4 rounded-xl">
+<p class="text-center text-[#c84c8f] font-semibold text-body-md">
+                    請注意：設定停止營業期間，顧客將無法透過預約網頁進行預約。
+                </p>
+</div>
+<!-- Form -->
+<div class="space-y-5 pb-8">
+<!-- Multi-date Toggle -->
+<div class="flex items-center justify-between min-h-[44px]">
+<span class="font-body-lg text-on-surface font-medium">選擇多個單一日期</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</label>
+</div>
+<!-- Date Picker Field -->
+<div class="space-y-2">
+<label class="text-label-md text-on-surface-variant">日期選擇</label>
+<div class="relative min-h-[44px] flex items-center">
+<input class="w-full h-12 pl-4 pr-12 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md focus:ring-1 focus:ring-primary focus:border-primary outline-none" readonly="" type="text" value="2024年10月25日"/>
+<span class="material-symbols-outlined absolute right-4 text-on-surface-variant">calendar_today</span>
+</div>
+</div>
+<!-- Full Day Toggle -->
+<div class="flex items-center justify-between min-h-[44px]">
+<span class="font-body-lg text-on-surface font-medium">整日</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</label>
+</div>
+<!-- Time Selectors -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-label-md text-on-surface-variant">每日開始時間</label>
+<div class="relative min-h-[44px] flex items-center opacity-50 bg-gray-50 rounded-lg">
+<select class="w-full h-12 px-4 bg-transparent border border-outline-variant rounded-lg font-body-md appearance-none" disabled="">
+<option>00:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 text-on-surface-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label-md text-on-surface-variant">每日結束時間</label>
+<div class="relative min-h-[44px] flex items-center opacity-50 bg-gray-50 rounded-lg">
+<select class="w-full h-12 px-4 bg-transparent border border-outline-variant rounded-lg font-body-md appearance-none" disabled="">
+<option>23:59</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 text-on-surface-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<!-- Store Selector -->
+<div class="space-y-2">
+<label class="text-label-md text-on-surface-variant">套用門店</label>
+<div class="relative min-h-[44px] flex items-center">
+<select class="w-full h-12 px-4 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md appearance-none focus:ring-1 focus:ring-primary focus:border-primary outline-none">
+<option>全部門店 (旗艦店、分店 A、分店 B)</option>
+<option>台北大安旗艦店</option>
+<option>台中西屯門市</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 text-on-surface-variant pointer-events-none">store</span>
+</div>
+</div>
+<!-- Remarks -->
+<div class="space-y-2">
+<label class="text-label-md text-on-surface-variant">備註說明</label>
+<textarea class="w-full p-4 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md focus:ring-1 focus:ring-primary focus:border-primary outline-none min-h-[100px]" placeholder="例如：店內例行維護、員工教育培訓..." rows="3"></textarea>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Buttons -->
+<div class="p-6 border-t border-gray-100 bg-white flex gap-4">
+<button class="flex-1 h-[48px] rounded-lg border border-outline-variant font-semibold text-on-surface active:bg-gray-100 transition-all">
+                取消
+            </button>
+<button class="flex-1 h-[48px] rounded-lg bg-[#c84c8f] font-semibold text-white shadow-md active:scale-[0.98] transition-all">
+                儲存
+            </button>
+</div>
+</div>
+</body></html>

@@ -131,12 +131,12 @@ export function resolveDeviceComponent(
   const isMobile = width <= BREAKPOINTS.MOBILE_MAX
 
   // 手機端：優先使用 mobileComponent，若無則降級使用 PC 組件
-  if (isMobile && routeConfig.mobileComponent) {
-    return routeConfig.mobileComponent
+  if (isMobile) {
+    return routeConfig.mobileComponent ?? routeConfig.component
   }
 
-  // PC 端（含平板）或手機端無 mobileComponent 時，使用 PC 組件
-  return routeConfig.component
+  // PC 端（含平板）：優先使用 PC 組件，若無則降級使用 mobileComponent
+  return routeConfig.component ?? routeConfig.mobileComponent
 }
 
 // ==================== 路由轉換 ====================
