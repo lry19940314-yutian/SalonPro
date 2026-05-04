@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#f6d9ff",
+                        "primary-container": "#c14689",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-surface": "#23191d",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface": "#fff8f8",
+                        "tertiary": "#1c6b00",
+                        "surface-tint": "#a52f72",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#6c4082",
+                        "tertiary-container": "#328517",
+                        "surface-bright": "#fff8f8",
+                        "tertiary-fixed": "#9ff87d",
+                        "inverse-surface": "#392d32",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#f1dee3",
+                        "primary": "#a22c70",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#f1dee3",
+                        "primary-fixed-dim": "#ffafd3",
+                        "tertiary-fixed-dim": "#84db64",
+                        "secondary": "#794c8f",
+                        "on-surface-variant": "#554149",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#300247",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-dim": "#e8d5db",
+                        "surface-container": "#fde9ef",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-container-high": "#f7e3e9",
+                        "primary-fixed": "#ffd8e7",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#dac0c9",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-primary-fixed": "#3d0025",
+                        "on-primary": "#ffffff",
+                        "background": "#fff8f8",
+                        "secondary-container": "#e8b3fe",
+                        "inverse-primary": "#ffafd3",
+                        "on-secondary": "#ffffff",
+                        "outline": "#88717a",
+                        "on-background": "#23191d",
+                        "surface-container-low": "#fff0f4",
+                        "on-tertiary-fixed": "#042100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex items-center justify-between px-4 h-14">
+<button class="w-10 h-10 flex items-center justify-center active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-[#c84c8f]">menu</span>
+</button>
+<h1 class="text-lg font-extrabold text-[#c84c8f] tracking-tight">Wonder sky</h1>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-slate-500">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200">
+<img alt="User" class="w-full h-full object-cover" data-alt="A high-quality professional portrait of a modern beauty salon manager with a friendly smile, clean aesthetic, and professional attire. The background is a blurred, high-end spa interior with soft warm lighting and minimalist decor. The overall mood is trustworthy, elegant, and modern, reflecting the refined B2B SaaS brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy8XBUy5WPQPgwhORsu9tZSELIJ8eFrzdx4D-0UdQMiG11iWdqCQbIDDjvqzpaDsrPl2omKUdUROHkkNk2uVLPU5-NrHfYoLSMv9QKxBiWGlpUp5aUF1qqhUn7woU8JXqMuH_-tlWJkphBubaEj_gbD7z3zFnZtI7w8OmgSGJMNCREX6fpzc-k6lLtILB-8MDqFIMZW4LA80n2FNvvLeyD5Mu2gLIXu9GW1qsxCm9yJU5sBs-gKV6Zo4-3RlUOwubwpB3esKRlifs"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="pt-20 px-4 max-w-md mx-auto">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-1 mb-4">
+<span class="text-caption font-caption text-on-surface-variant opacity-70">預約</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant opacity-50">chevron_right</span>
+<span class="text-caption font-caption text-on-surface-variant opacity-70">集客預約設定</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant opacity-50">chevron_right</span>
+<span class="text-caption font-caption text-primary font-semibold">基礎設定</span>
+</nav>
+<!-- Page Header -->
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-h1 font-h1 text-on-surface">預約基礎設定</h2>
+</div>
+<!-- Quick Actions Banner -->
+<div class="grid grid-cols-2 gap-3 mb-6">
+<button class="flex items-center justify-center gap-2 py-3 px-4 bg-white border border-outline-variant rounded-lg active:bg-slate-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="text-body-md font-body-md text-on-surface">進階管理</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 px-4 bg-white border border-outline-variant rounded-lg active:bg-slate-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">dashboard_customize</span>
+<span class="text-body-md font-body-md text-on-surface">切換版型</span>
+</button>
+</div>
+<!-- Form Module Card -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0_12px_24px_rgba(0,0,0,0.04)] overflow-hidden">
+<div class="p-6 space-y-6">
+<!-- Appointment Order -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">
+                        預約順序 <span class="text-error ml-0.5">*</span>
+</label>
+<div class="relative group">
+<select class="w-full h-12 pl-4 pr-10 bg-white border border-outline-variant rounded-lg text-body-md appearance-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all outline-none">
+<option selected="">先選工作人員</option>
+<option>先選服務項目</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Appointment Notes -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">
+                        預約須知
+                    </label>
+<div class="relative">
+<textarea class="w-full h-32 p-4 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all outline-none resize-none placeholder:text-outline" placeholder="預約完成後請等待美容師回覆確認">預約完成後請等待美容師回覆確認</textarea>
+<div class="absolute bottom-3 right-3 text-caption font-caption text-on-surface-variant opacity-60">
+                            15 / 1000
+                        </div>
+</div>
+</div>
+<div class="h-[1px] bg-outline-variant/30"></div>
+<!-- Next Month Booking Toggle -->
+<div class="flex items-start justify-between gap-4 py-1">
+<div class="space-y-1">
+<p class="text-body-lg font-semibold text-on-surface">隔月預約設定</p>
+<p class="text-caption font-caption text-on-surface-variant">可設定每月開放下個月預約日期與時間</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-1">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</label>
+</div>
+<!-- Start Date -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">
+                        預約起始日 <span class="text-error ml-0.5">*</span>
+</label>
+<div class="relative group">
+<select class="w-full h-12 pl-4 pr-10 bg-white border border-outline-variant rounded-lg text-body-md appearance-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all outline-none">
+<option selected="">今日起</option>
+<option>明日起</option>
+<option>三天後</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<p class="text-caption font-caption text-tertiary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">info</span>
+                        從 2026-05-04 起開始預約
+                    </p>
+</div>
+<!-- Max Lead Time -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant">
+                        最長可預約至 <span class="text-error ml-0.5">*</span>
+</label>
+<div class="relative group">
+<select class="w-full h-12 pl-4 pr-10 bg-white border border-outline-variant rounded-lg text-body-md appearance-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all outline-none">
+<option>一個月</option>
+<option selected="">兩個月</option>
+<option>三個月</option>
+<option>半年</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<p class="text-caption font-caption text-tertiary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">info</span>
+                        可預約至 2026-07-03
+                    </p>
+</div>
+<div class="h-[1px] bg-outline-variant/30"></div>
+<!-- Allow Strangers Toggle -->
+<div class="flex items-start justify-between gap-4 py-1">
+<div class="space-y-1">
+<p class="text-body-lg font-semibold text-on-surface">可陌生加入</p>
+<p class="text-caption font-caption text-on-surface-variant">允許非會員直接進入預約流程</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Decoration / Visualization Card (Bento style hint) -->
+<div class="mt-6 bg-surface-container rounded-xl p-6 border border-primary/10">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<h3 class="text-h3 font-h3 text-on-surface">預約趨勢預覽</h3>
+</div>
+<p class="text-body-md text-on-surface-variant mb-4">根據您目前的設定，平均預約前置量為 12 天。</p>
+<div class="h-24 w-full bg-white/60 rounded-lg flex items-end justify-around p-3 gap-2">
+<div class="w-full bg-[#c84c8f] h-[40%] rounded-t-sm opacity-40"></div>
+<div class="w-full bg-[#c84c8f] h-[65%] rounded-t-sm opacity-60"></div>
+<div class="w-full bg-[#c84c8f] h-[85%] rounded-t-sm"></div>
+<div class="w-full bg-[#c84c8f] h-[50%] rounded-t-sm opacity-50"></div>
+<div class="w-full bg-[#c84c8f] h-[30%] rounded-t-sm opacity-30"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Button Container -->
+<div class="fixed bottom-0 left-0 w-full bg-white/80 backdrop-blur-md border-t border-slate-100 p-4 z-40">
+<button class="w-full h-12 bg-[#c84c8f] text-white font-bold rounded-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#c84c8f]/20">
+<span class="material-symbols-outlined text-[20px]">save</span>
+            儲存設定
+        </button>
+</div>
+<!-- BottomNavBar (Mobile Shell) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.03)] hidden">
+<!-- Not rendered here as this is a sub-page/focused journey as per mandate -->
+</nav>
+</body></html>

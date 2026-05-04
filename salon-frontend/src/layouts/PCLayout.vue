@@ -1,31 +1,9 @@
-<!--
-  PCLayout.vue - PC 端全局佈局（頂部導航欄 + 左側可折疊菜單 + 主內容區）
-
-  功能：
-  1. 使用 Element Plus el-container + el-header + el-aside + el-main 實現標準後台佈局
-  2. 頂部導航欄：漢堡按鈕、品牌區（Logo + 門店名稱）、通知鈴鐺、開單按鈕、用戶信息
-  3. 左側菜單：可折疊，與漢堡按鈕聯動，展開顯示圖標+文字，收起僅顯示圖標
-  4. 路由聯動：點擊菜單跳轉對應路由，當前頁面自動高亮
-  5. 子菜單折疊：支援一級菜單展開/收起子項
-  6. 根據角色動態顯示菜單（使用 usePermission.filterMenus）
-  7. 平板響應式適配（768px ~ 1024px 自動折疊菜單）
-  8. 移除原底部折疊按鈕，改由頂部漢堡按鈕控制
-
-  設計規範：
-  - 頂部導航欄高度：60px
-  - 側邊欄寬度：240px（折疊後 64px）
-  - 內容區背景：#f5f3f3
-  - 主色：莫蘭迪柔粉 (#ac235a)
-  - 平板適配：768px ~ 1024px 時側邊欄自動折疊
-
-  技術棧：Vue 3 Composition API + Element Plus + SCSS
--->
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import { usePermission } from '@/composables/usePermission'
-import { BREAKPOINTS } from '@/composables/useDevice'
+import { useDevice } from '@/composables/useDevice'
 import { menuConfig, getDefaultOpeneds } from '@/layouts/components/Sidebar/menuConfig'
 import type { MenuConfigItem } from '@/layouts/components/Sidebar/menuConfig'
 
@@ -85,6 +63,7 @@ const router = useRouter()
 const route = useRoute()
 const authStore = useAuthStore()
 const { isManager, filterMenus } = usePermission()
+const { isMobile } = useDevice()
 
 // ==================== 圖示映射表 ====================
 
@@ -140,11 +119,8 @@ const iconMap: Record<string, any> = {
 
 // ==================== 狀態 ====================
 
-/** 側邊欄是否折疊 */
-const sidebarCollapsed = ref(false)
-
-/** 當前視窗寬度（用於平板響應式） */
-const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1024)
+/** 抽屜菜單是否顯示 */
+const drawerVisible = ref(false)
 
 /** 通知數量（模擬數據，後續可接入真實接口） */
 const notificationCount = ref(3)
@@ -153,23 +129,6 @@ const notificationCount = ref(3)
 const userMenuVisible = ref(false)
 
 // ==================== 計算屬性 ====================
-
-/** 是否為平板設備（768px ~ 1024px） */
-const isTablet = computed(() => {
-  return windowWidth.value >= BREAKPOINTS.DESKTOP_MIN && windowWidth.value <= 1024
-})
-
-/** 側邊欄實際折疊狀態 */
-const isCollapsed = computed(() => {
-  // 平板設備自動折疊側邊欄
-  if (isTablet.value) return true
-  return sidebarCollapsed.value
-})
-
-/** 側邊欄寬度 */
-const sidebarWidth = computed(() => {
-  return isCollapsed.value ? '64px' : '240px'
-})
 
 /** 過濾後的菜單列表（根據角色） */
 const filteredMenus = computed(() => {
@@ -215,32 +174,18 @@ watch(
   { immediate: true }
 )
 
-// ==================== Resize 事件 ====================
-
-/** 視窗 resize 處理（用於平板響應式） */
-function handleResize(): void {
-  windowWidth.value = window.innerWidth
-}
-
-onMounted(() => {
-  window.addEventListener('resize', handleResize)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', handleResize)
-})
-
 // ==================== 方法 ====================
 
-/** 切換側邊欄折疊（漢堡按鈕） */
-function toggleSidebar(): void {
-  sidebarCollapsed.value = !sidebarCollapsed.value
+/** 切換抽屜菜單（漢堡按鈕） */
+function toggleDrawer(): void {
+  drawerVisible.value = !drawerVisible.value
 }
 
 /** 導航至指定路徑 */
 function navigateTo(path: string): void {
   router.push(path)
-  // 平板設備點擊菜單後關閉用戶選單
+  // 點擊菜單後關閉抽屜
+  drawerVisible.value = false
   userMenuVisible.value = false
 }
 
@@ -285,18 +230,18 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <el-container class="pc-layout" :class="{ 'pc-layout--tablet': isTablet }">
+  <el-container class="pc-layout">
     <!-- ===== 頂部導航欄 ===== -->
     <el-header class="pc-layout__header" height="60px">
       <div class="pc-layout__header-left">
-        <!-- 漢堡菜單按鈕 -->
+        <!-- 漢堡菜單按鈕（根據抽屜狀態切換圖示和提示） -->
         <button
           class="pc-layout__hamburger"
-          @click="toggleSidebar"
-          :title="isCollapsed ? '展開側邊欄' : '折疊側邊欄'"
+          @click="toggleDrawer"
+          :title="drawerVisible ? '關閉菜單' : '開啟菜單'"
         >
           <el-icon :size="22">
-            <Fold v-if="!isCollapsed" />
+            <Fold v-if="drawerVisible" />
             <Expand v-else />
           </el-icon>
         </button>
@@ -366,82 +311,84 @@ onUnmounted(() => {
       </div>
     </el-header>
 
-    <!-- ===== 主體區域（左側菜單 + 內容區） ===== -->
-    <el-container class="pc-layout__body">
-      <!-- ===== 左側菜單 ===== -->
-      <el-aside
-        class="pc-layout__sidebar"
-        :class="{
-          'pc-layout__sidebar--collapsed': isCollapsed,
-          'pc-layout__sidebar--tablet': isTablet,
-        }"
-        :width="sidebarWidth"
-      >
-        <div class="pc-layout__nav">
-          <el-menu
-            :default-active="activeMenu"
-            :default-openeds="defaultOpeneds"
-            :collapse="isCollapsed"
-            :collapse-transition="false"
-            :unique-opened="true"
-            background-color="#ffffff"
-            text-color="#574146"
-            active-text-color="#ac235a"
-            router
-            class="pc-layout__el-menu"
-          >
-            <template v-for="group in filteredMenus" :key="group.path">
-              <!-- 有子菜單的群組 -->
-              <el-sub-menu v-if="group.children && group.children.length > 0" :index="group.path">
-                <template #title>
-                  <el-icon>
-                    <component :is="iconMap[group.icon]" />
-                  </el-icon>
-                  <span>{{ group.name }}</span>
-                </template>
-                <el-menu-item
-                  v-for="child in group.children"
-                  :key="child.path"
-                  :index="child.path"
-                  @click="navigateTo(child.path)"
-                >
-                  <el-icon>
-                    <component :is="iconMap[child.icon]" />
-                  </el-icon>
-                  <span>{{ child.name }}</span>
-                </el-menu-item>
-              </el-sub-menu>
+    <!-- ===== 主體區域（僅主內容區，菜單由抽屜覆蓋） ===== -->
+    <el-main class="pc-layout__content">
+      <router-view v-slot="{ Component }">
+        <transition name="page-fade" mode="out-in">
+          <keep-alive>
+            <component :is="Component" />
+          </keep-alive>
+        </transition>
+      </router-view>
+    </el-main>
 
-              <!-- 無子菜單的單獨項 -->
-              <el-menu-item v-else :index="group.path" @click="navigateTo(group.path)">
+    <!-- ===== el-drawer 抽屜菜單（覆蓋模式，從頂部導航欄下方開始） ===== -->
+    <!--
+      注意：direction="ltr" 時 el-drawer 的 top 屬性不生效，
+      因此改由 CSS 設定抽屜面板的 top 與 height，
+      並將 z-index 設為 199（低於頂部導航欄的 200），
+      確保頂部導航欄始終可點擊、不被抽屜覆蓋。
+    -->
+    <el-drawer
+      v-model="drawerVisible"
+      direction="ltr"
+      size="220px"
+      :with-header="false"
+      :modal="isMobile"
+      :show-close="false"
+      class="pc-layout__drawer"
+    >
+      <div class="pc-layout__drawer-nav">
+        <el-menu
+          :default-active="activeMenu"
+          :default-openeds="defaultOpeneds"
+          :collapse="false"
+          :unique-opened="true"
+          background-color="#ffffff"
+          text-color="#574146"
+          active-text-color="#ac235a"
+          router
+          class="pc-layout__drawer-menu"
+        >
+          <template v-for="group in filteredMenus" :key="group.path">
+            <!-- 有子菜單的群組 -->
+            <el-sub-menu v-if="group.children && group.children.length > 0" :index="group.path">
+              <template #title>
                 <el-icon>
                   <component :is="iconMap[group.icon]" />
                 </el-icon>
                 <span>{{ group.name }}</span>
+              </template>
+              <el-menu-item
+                v-for="child in group.children"
+                :key="child.path"
+                :index="child.path"
+                @click="navigateTo(child.path)"
+              >
+                <el-icon>
+                  <component :is="iconMap[child.icon]" />
+                </el-icon>
+                <span>{{ child.name }}</span>
               </el-menu-item>
-            </template>
-          </el-menu>
-        </div>
-      </el-aside>
+            </el-sub-menu>
 
-      <!-- ===== 右側主內容區 ===== -->
-      <el-main class="pc-layout__content">
-        <router-view v-slot="{ Component }">
-          <transition name="page-fade" mode="out-in">
-            <keep-alive>
-              <component :is="Component" />
-            </keep-alive>
-          </transition>
-        </router-view>
-      </el-main>
-    </el-container>
+            <!-- 無子菜單的單獨項 -->
+            <el-menu-item v-else :index="group.path" @click="navigateTo(group.path)">
+              <el-icon>
+                <component :is="iconMap[group.icon]" />
+              </el-icon>
+              <span>{{ group.name }}</span>
+            </el-menu-item>
+          </template>
+        </el-menu>
+      </div>
+    </el-drawer>
   </el-container>
 </template>
 
 <style scoped lang="scss">
 // ==================== 變數 ====================
-$sidebar-width: 240px;
-$sidebar-collapsed-width: 64px;
+$drawer-width: 220px;
 $header-height: 60px;
 $color-primary: #ac235a;
 $color-primary-light: #cc3e73;
@@ -453,11 +400,20 @@ $color-on-surface-variant: #574146;
 $color-outline-variant: #debfc5;
 $color-white: #ffffff;
 
+// 抽屜專用色系（與系統風格統一）
+$drawer-bg: #faf7f6;                // 暖白底色，與系統表面色協調
+$drawer-header-border: #ede4e6;     // 淺粉灰邊框
+$drawer-shadow: rgba(87, 65, 70, 0.12); // 莫蘭迪色系陰影
+$drawer-overlay: rgba(27, 28, 28, 0.35); // 深色遮罩，適中透明度
+$drawer-scrollbar-thumb: #d9c8cc;   // 滾動條滑塊色
+$drawer-scrollbar-thumb-hover: #c2adb2;
+
 // ==================== 佈局容器 ====================
 
 .pc-layout {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background: $color-surface-container;
 
   // 覆蓋 Element Plus el-container 預設樣式
@@ -736,87 +692,117 @@ $color-white: #ffffff;
   background: #f0e6e8;
 }
 
-// ==================== 主體區域 ====================
+// ==================== 主內容區 ====================
 
-.pc-layout__body {
+.pc-layout__content {
   flex: 1;
-  display: flex;
-  min-height: 0;
+  padding: 24px;
+  overflow-y: auto;
+  background: $color-surface-container;
+  height: calc(100vh - $header-height);
 
-  // 覆蓋 Element Plus el-container 預設樣式
-  &.el-container {
-    display: flex;
+  // 覆蓋 Element Plus el-main 預設 padding
+  &.el-main {
+    padding: 24px;
   }
 }
 
-// ==================== 左側菜單 ====================
+// ==================== el-drawer 抽屜菜單 ====================
 
-.pc-layout__sidebar {
-  background: $color-white;
-  border-right: 1px solid #f0e6e8;
-  display: flex;
-  flex-direction: column;
-  transition: width 0.25s ease;
-  overflow: hidden;
-  flex-shrink: 0;
-
-  // 覆蓋 Element Plus el-aside 預設樣式
-  &.el-aside {
-    overflow: visible;
+// 抽屜整體樣式
+:deep(.pc-layout__drawer) {
+  // ===== 抽屜面板本體 - 從頂部導航欄下方開始 =====
+  // 由於 direction="ltr" 時 el-drawer 的 top 屬性不生效，
+  // 改為使用 CSS position: fixed 搭配 top/height 控制定位
+  .el-drawer {
+    border-right: 1px solid $drawer-header-border;
+    box-shadow: 4px 0 24px $drawer-shadow;
+    outline: none;
+    // 自訂定位：從頂部導航欄下方開始，高度扣除頂欄高度
+    top: 60px !important;
+    height: calc(100vh - 60px) !important;
+    // 設定 z-index 低於頂部導航欄（z-index: 200），
+    // 確保頂部導航欄按鈕（通知、開單、用戶頭像）不被抽屜攔截點擊
+    z-index: 199 !important;
   }
 
-  &--collapsed {
-    width: $sidebar-collapsed-width !important;
+  // 抽屜主體 - 無內邊距，flex 撐滿
+  .el-drawer__body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: $drawer-bg;
   }
 
-  // 平板設備
-  &--tablet {
-    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+  // ===== 抽屜遮罩層 - 只覆蓋主內容區，不覆蓋頂部導航欄 =====
+  // 僅在移動端（modal=true）時生效，PC/平板端 modal=false 無遮罩
+  .el-overlay {
+    // 使用定位將遮罩限制在頂部導航欄下方
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $drawer-overlay;
+    // 遮罩層 z-index 低於頂部導航欄，確保頂部區域可交互
+    z-index: 198 !important;
   }
+}
+
+// 抽屜菜單導航容器（自定義細款滾動條，內容超出時僅在抽屜內部滾動）
+.pc-layout__drawer-nav {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 0;
+  // 使用 flex 子項自動撐滿剩餘高度，替代 height: 0 hack
+  min-height: 0;
+
+  // ===== 自定義細款淺灰色滾動條（僅作用於抽屜內部） =====
+  // Webkit 瀏覽器（Chrome、Edge、Safari）
+  &::-webkit-scrollbar {
+    width: 4px;                   // 更細的 4px
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;      // 軌道透明
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $drawer-scrollbar-thumb;
+    border-radius: 2px;
+    min-height: 36px;
+    border: none;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $drawer-scrollbar-thumb-hover;
+  }
+
+  // Firefox 滾動條
+  scrollbar-width: thin;
+  scrollbar-color: $drawer-scrollbar-thumb transparent;
 }
 
 // ==================== el-menu 導航 ====================
 
-.pc-layout__nav {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 8px 0;
-
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $color-outline-variant;
-    border-radius: 2px;
-  }
-}
-
-// 覆蓋 Element Plus el-menu 預設樣式
-.pc-layout__el-menu {
+.pc-layout__drawer-menu {
   border-right: none !important;
-
-  // 折疊模式
-  &.el-menu--collapse {
-    width: $sidebar-collapsed-width;
-
-    .el-sub-menu__title {
-      padding: 0 15px;
-    }
-  }
+  background-color: transparent !important; // 繼承抽屜背景色
 
   // 一級菜單
   :deep(.el-sub-menu__title) {
-    height: 44px;
-    line-height: 44px;
+    height: 46px;
+    line-height: 46px;
     font-size: 14px;
     font-weight: 500;
-    padding: 0 16px;
+    padding: 0 16px 0 20px;
     border-radius: 0;
-    margin: 2px 0;
+    margin: 2px 8px;
     transition: all 0.15s ease;
     color: $color-on-surface-variant;
+    background-color: transparent !important;
 
     &:hover {
       background: rgba($color-primary, 0.06) !important;
@@ -825,7 +811,7 @@ $color-white: #ffffff;
 
     .el-icon {
       font-size: 18px;
-      margin-right: 8px;
+      margin-right: 10px;
     }
   }
 
@@ -834,11 +820,12 @@ $color-white: #ffffff;
     height: 40px;
     line-height: 40px;
     font-size: 13px;
-    padding: 0 16px 0 48px !important;
+    padding: 0 16px 0 52px !important;
     border-radius: 0;
-    margin: 1px 0;
+    margin: 1px 8px;
     transition: all 0.15s ease;
     color: $color-on-surface-variant;
+    background-color: transparent !important;
 
     &:hover {
       background: rgba($color-primary, 0.06) !important;
@@ -866,18 +853,7 @@ $color-white: #ffffff;
 
     .el-icon {
       font-size: 16px;
-      margin-right: 6px;
-    }
-  }
-
-  // 折疊模式下的子菜單
-  :deep(.el-menu--collapse) {
-    .el-sub-menu__title {
-      padding: 0 15px;
-    }
-
-    .el-menu-item {
-      padding: 0 15px !important;
+      margin-right: 8px;
     }
   }
 
@@ -895,18 +871,57 @@ $color-white: #ffffff;
   }
 }
 
-// ==================== 主內容區 ====================
+// ==================== 響應式適配 ====================
 
-.pc-layout__content {
-  flex: 1;
-  padding: 24px;
-  overflow-y: auto;
-  background: $color-surface-container;
-  min-height: calc(100vh - $header-height);
+// 平板端（768px ~ 1024px）適配
+@media screen and (max-width: 1024px) {
+  .pc-layout__content {
+    padding: 16px;
 
-  // 覆蓋 Element Plus el-main 預設 padding
-  &.el-main {
-    padding: 24px;
+    &.el-main {
+      padding: 16px;
+    }
+  }
+
+  // 平板端抽屜寬度保持不變，但確保內容完整顯示
+  :deep(.pc-layout__drawer) {
+    .el-drawer {
+      width: 220px !important;
+    }
+  }
+}
+
+// 小屏幕 PC（1024px ~ 1280px）適配
+@media screen and (max-width: 1280px) and (min-width: 1025px) {
+  .pc-layout__content {
+    padding: 20px;
+
+    &.el-main {
+      padding: 20px;
+    }
+  }
+}
+
+// 低屏幕高度適配（< 768px）
+@media screen and (max-height: 768px) {
+  .pc-layout__drawer-nav {
+    padding: 8px 0;
+  }
+
+  .pc-layout__drawer-menu {
+    :deep(.el-sub-menu__title) {
+      height: 40px;
+      line-height: 40px;
+      font-size: 13px;
+      margin: 1px 8px;
+    }
+
+    :deep(.el-menu-item) {
+      height: 36px;
+      line-height: 36px;
+      font-size: 12px;
+      margin: 1px 8px;
+    }
   }
 }
 
@@ -930,23 +945,5 @@ $color-white: #ffffff;
 .page-fade-enter-from,
 .page-fade-leave-to {
   opacity: 0;
-}
-
-// ==================== 平板響應式 ====================
-
-@media screen and (max-width: 1024px) and (min-width: 768px) {
-  .pc-layout__brand-name {
-    font-size: 14px;
-  }
-
-  .pc-layout__user-info {
-    display: none;
-  }
-
-  .pc-layout__order-btn {
-    padding: 0 14px;
-    height: 32px;
-    font-size: 13px;
-  }
 }
 </style>

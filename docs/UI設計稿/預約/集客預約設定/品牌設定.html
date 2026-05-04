@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky - 品牌設定</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#dac0c9",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e8b3fe",
+                        "secondary": "#794c8f",
+                        "inverse-primary": "#ffafd3",
+                        "surface-dim": "#e8d5db",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "primary-fixed": "#ffd8e7",
+                        "surface": "#fff8f8",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-surface": "#23191d",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary-fixed": "#042100",
+                        "background": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "on-background": "#23191d",
+                        "surface-container": "#fde9ef",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "tertiary": "#1c6b00",
+                        "primary-container": "#c14689",
+                        "error": "#ba1a1a",
+                        "outline": "#88717a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#6c4082",
+                        "surface-container-low": "#fff0f4",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fff8f8",
+                        "on-surface-variant": "#554149",
+                        "inverse-surface": "#392d32",
+                        "on-primary-fixed": "#3d0025",
+                        "inverse-on-surface": "#ffecf1",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-variant": "#f1dee3",
+                        "surface-tint": "#a52f72",
+                        "on-secondary-fixed-variant": "#603475",
+                        "primary": "#a22c70",
+                        "on-secondary-fixed": "#300247",
+                        "on-primary-fixed-variant": "#861259",
+                        "tertiary-container": "#328517",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#f1dee3",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-primary-container": "#fffbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dac0c9; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Left Side Navigation -->
+<aside class="fixed left-0 top-0 h-screen w-64 border-r border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-[4px_0_12px_rgba(0,0,0,0.02)] z-50 flex flex-col p-4 gap-2 font-['Plus_Jakarta_Sans'] text-sm antialiased">
+<div class="flex items-center gap-3 px-2 py-4 mb-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-black text-xl tracking-tight shadow-lg shadow-primary/20">W</div>
+<div class="flex flex-col">
+<span class="text-xl font-black text-[#c84c8f] tracking-tight">Wonder Sky</span>
+<span class="text-xs text-slate-400">國際美妍館</span>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-500 hover:bg-slate-50 rounded-lg py-3 px-4 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>首頁概覽
+            </a>
+<a class="text-slate-500 hover:bg-slate-50 rounded-lg py-3 px-4 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>顧客管理
+            </a>
+<div class="space-y-1">
+<a class="bg-pink-50 text-[#c84c8f] font-bold rounded-lg py-3 px-4 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">calendar_month</span>預約排程
+                </a>
+<div class="ml-11 flex flex-col gap-1 border-l-2 border-primary-fixed-dim pl-4 py-2">
+<a class="text-slate-400 hover:text-primary py-2 text-xs" href="#">集客預約設定</a>
+<a class="text-primary font-bold py-2 text-xs" href="#">品牌設定</a>
+</div>
+</div>
+<a class="text-slate-500 hover:bg-slate-50 rounded-lg py-3 px-4 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">spa</span>服務項目
+            </a>
+<a class="text-slate-500 hover:bg-slate-50 rounded-lg py-3 px-4 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>庫存管理
+            </a>
+<a class="text-slate-500 hover:bg-slate-50 rounded-lg py-3 px-4 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>營收分析
+            </a>
+</nav>
+<div class="mt-auto border-t border-slate-50 pt-4 space-y-1">
+<a class="text-slate-500 hover:bg-slate-50 rounded-lg py-3 px-4 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>系統設定
+            </a>
+<a class="text-slate-500 hover:bg-slate-50 rounded-lg py-3 px-4 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">help</span>幫助中心
+            </a>
+</div>
+</aside>
+<!-- Top AppBar -->
+<header class="sticky top-0 z-40 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md flex items-center justify-between px-8 h-16 ml-64 max-w-[calc(100%-16rem)]">
+<div class="flex items-center gap-2 text-slate-500 text-sm">
+<span>預約</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-800 font-semibold">集客預約設定</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-slate-50 rounded-full p-2 transition-all relative">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="bg-primary text-white px-5 py-2 rounded-lg font-bold text-sm active:scale-95 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>快速開單
+            </button>
+<div class="h-8 w-[1px] bg-slate-100 mx-2"></div>
+<div class="flex items-center gap-3">
+<img alt="管理員頭像" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/10" data-alt="A professional headshot of a female salon manager with a friendly smile, dressed in business casual attire. The lighting is soft and warm, typical of a high-end wellness center. The background is a blurred, modern office interior with soft pink and white accents that align with the brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgxtjxLN_MM5S-kUDfLRvfH8SwWf135ccSmcGxx8WTag9TNZmbR_N5tphLuSoGWGERvDwginQccWjacSud1YnG6WpN_wvU7ImJVCbzfFaOxeyGVzJxQ6SAUYW9dsIAAT319_Sbt7BQJmOZ2DL4K7TTKO9OzJ9UN_k9oSGDAgCAKXDXYNOeBiXevQ2aUCJHhnOWdqpezbQe06xF0t_oPlug8BDw1bZoF_z7oJkVzvrWOW9jjdcQgcruERGCslwL1E9X5svm6Cie4CY"/>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-800">Jessica Chen</span>
+<span class="text-[10px] text-slate-400">總管理者</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-8 bg-surface-container-low min-h-[calc(100vh-64px)]">
+<div class="max-w-7xl mx-auto grid grid-cols-12 gap-8">
+<!-- Left: Form Area -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<div class="bg-white border border-slate-100 rounded-xl shadow-sm overflow-hidden">
+<!-- Warning Banner -->
+<div class="bg-sky-50 text-sky-700 px-6 py-3 flex items-center gap-3 border-b border-sky-100">
+<span class="material-symbols-outlined text-sky-500">info</span>
+<span class="text-sm font-medium">此為全品牌共用設定，變更後將同步套用到所有分店。</span>
+</div>
+<div class="p-8 space-y-8">
+<!-- Logo Upload Section -->
+<div class="grid grid-cols-4 gap-6 items-start">
+<label class="col-span-1 text-sm font-bold text-slate-700 pt-2">品牌 LOGO</label>
+<div class="col-span-3 flex items-center gap-8">
+<div class="w-24 h-24 rounded-full border-2 border-dashed border-slate-200 bg-slate-50 flex items-center justify-center relative group cursor-pointer overflow-hidden">
+<span class="material-symbols-outlined text-slate-300 group-hover:scale-110 transition-transform">add_a_photo</span>
+<!-- Preview Placeholder -->
+<img alt="Logo Preview" class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="A minimalist and elegant brand logo for a beauty center, featuring a stylized celestial motif in rose pink. The design is clean, vector-style, and centered within a white circular space. The lighting is bright and professional, conveying a sense of premium skincare and wellness services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClqJtT7d6NBI0fzlqA1fAx0jMIKuD3gFIW6oXfjKSR5_675V_Mf9WZH08IxhK6G-Q7fxdCyLgffo_3_oSI6ZIgWEQ57inA3CHfM815Fyf66oX5UYiy10vVZotgrV8EsEjA1ad61mACH5NRHu5tCeZ37Pu9fuT1DKoVcbVuRa_s5r7vsINqxMVGNbxrIegWZAVl0599rHUHpP2ghgoobDSn-mK4FsTmyXYIZIKfC3SCUupJa3Gq4YumEcwQpKcTuQnUGVjcbIZjA3E"/>
+</div>
+<div class="space-y-1">
+<button class="text-primary font-bold text-sm hover:underline">上傳新檔案</button>
+<p class="text-slate-400 text-xs">建議尺寸 500x500 px，支援 JPG, PNG 格式</p>
+</div>
+</div>
+</div>
+<!-- Banner Upload Section -->
+<div class="grid grid-cols-4 gap-6 items-start">
+<label class="col-span-1 text-sm font-bold text-slate-700 pt-2">預約背景圖</label>
+<div class="col-span-3 space-y-3">
+<div class="w-full h-40 rounded-xl border-2 border-dashed border-error bg-error/5 flex flex-col items-center justify-center gap-2 group cursor-pointer transition-colors relative overflow-hidden">
+<span class="material-symbols-outlined text-error">cloud_off</span>
+<div class="text-center">
+<p class="text-error font-bold text-sm">上傳失敗 404</p>
+<p class="text-error/60 text-xs mt-1">圖片尺寸不符合 (建議 1920x1080 px)</p>
+</div>
+<button class="absolute top-4 right-4 text-slate-400 hover:text-error"><span class="material-symbols-outlined">close</span></button>
+</div>
+<p class="text-slate-400 text-xs">此圖片將顯示於顧客預約頁面的頂部視覺區。</p>
+</div>
+</div>
+<hr class="border-slate-50"/>
+<!-- Input Fields -->
+<div class="grid grid-cols-2 gap-x-12 gap-y-8">
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700">工作人員統稱</label>
+<input class="w-full h-11 px-4 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" placeholder="例如：美療師、設計師" type="text" value="美療顧問"/>
+<p class="text-slate-400 text-xs">顧客在預約流程中看到的職稱顯示方式。</p>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700">價目表名稱</label>
+<input class="w-full h-11 px-4 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" placeholder="預設顯示為「服務價目表」" type="text" value="年度熱門服務清單"/>
+<p class="text-slate-400 text-xs">顧客查看可預約服務時的標題名稱。</p>
+</div>
+</div>
+<!-- Color Pickers -->
+<div class="space-y-4">
+<label class="text-sm font-bold text-slate-700">品牌視覺色彩</label>
+<div class="grid grid-cols-5 gap-4">
+<div class="space-y-2">
+<div class="flex items-center justify-between border border-slate-200 rounded-lg p-3 hover:border-primary transition-all cursor-pointer">
+<div class="w-6 h-6 rounded bg-[#c84c8f] shadow-sm"></div>
+<span class="text-xs font-mono uppercase text-slate-500">#C84C8F</span>
+</div>
+<span class="text-[10px] text-slate-400 block text-center">會員主色</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between border border-slate-200 rounded-lg p-3 hover:border-primary transition-all cursor-pointer">
+<div class="w-6 h-6 rounded bg-primary-container shadow-sm"></div>
+<span class="text-xs font-mono uppercase text-slate-500">#C14689</span>
+</div>
+<span class="text-[10px] text-slate-400 block text-center">預約主色</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between border border-slate-200 rounded-lg p-3 hover:border-primary transition-all cursor-pointer">
+<div class="w-6 h-6 rounded bg-slate-800 shadow-sm"></div>
+<span class="text-xs font-mono uppercase text-slate-500">#1E293B</span>
+</div>
+<span class="text-[10px] text-slate-400 block text-center">LINE標題色</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between border border-slate-200 rounded-lg p-3 hover:border-primary transition-all cursor-pointer">
+<div class="w-6 h-6 rounded bg-surface shadow-sm border border-slate-100"></div>
+<span class="text-xs font-mono uppercase text-slate-500">#FFF8F8</span>
+</div>
+<span class="text-[10px] text-slate-400 block text-center">LINE背景色</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between border border-slate-200 rounded-lg p-3 hover:border-primary transition-all cursor-pointer">
+<div class="w-6 h-6 rounded bg-primary shadow-sm"></div>
+<span class="text-xs font-mono uppercase text-slate-500">#A22C70</span>
+</div>
+<span class="text-[10px] text-slate-400 block text-center">LINE按鈕色</span>
+</div>
+</div>
+</div>
+<!-- Toggle Switch -->
+<div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">qr_code_2</span>
+<div>
+<p class="text-sm font-bold text-slate-700">預約確認訊息顯示 QR Code</p>
+<p class="text-xs text-slate-400">開啟後，顧客收到的預約通知信件將包含報到用 QR Code。</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Bottom Action -->
+<div class="flex justify-end pt-4">
+<button class="bg-[#c84c8f] text-white px-8 py-3 rounded-lg font-bold text-sm shadow-lg shadow-pink-500/20 active:scale-95 transition-transform">儲存品牌設定</button>
+</div>
+</div>
+<!-- Right: Preview Area -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-white border border-slate-100 rounded-xl p-6 shadow-sm sticky top-24">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-h3 font-h3 text-slate-800">畫面即時預覽</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-slate-50 rounded-lg text-slate-400" title="切換版型">
+<span class="material-symbols-outlined text-lg">dashboard_customize</span>
+</button>
+<button class="p-2 hover:bg-slate-50 rounded-lg text-slate-400" title="進階管理">
+<span class="material-symbols-outlined text-lg">settings_suggest</span>
+</button>
+</div>
+</div>
+<!-- Mobile Mockup -->
+<div class="relative mx-auto w-[280px] h-[560px] bg-slate-900 rounded-[3rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden ring-4 ring-slate-100">
+<div class="absolute top-0 inset-x-0 h-6 bg-slate-800 flex justify-center items-end pb-1">
+<div class="w-16 h-4 bg-slate-900 rounded-full"></div>
+</div>
+<!-- Mockup Content -->
+<div class="bg-[#fff8f8] h-full overflow-y-auto custom-scrollbar pt-6">
+<!-- Mockup Header -->
+<div class="h-40 bg-pink-100 relative">
+<img alt="Banner Mockup" class="w-full h-full object-cover" data-alt="A lush and soothing aesthetic interior of a luxury spa treatment room. Soft ambient lighting, white marble surfaces, and delicate floral arrangements create a peaceful atmosphere. The color palette is predominantly cream and soft pink, echoing the high-end beauty brand identity of Wonder Sky. Professional and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvDoRv2R_3Cjjl9--gwB8KW4rcFQkYRReZFAxF25UOTKTaKmQL8eicpZ0f0zPEUL3E7gxu2sAaDEl2YzCDQzMu2jASFhXQchcI_9_fotha09oYLBJHYngXmibmtSyqqRkJp-iCLHe0Lm0bA200DcissKtiTnq63EDO1uGFEPJE65aIUZD0n-mYcgjapCwDXgKTHBzAi17wF6rixpEHVWLc3UFpLavmqT_2k8obp4Z8ffKqmycOklElVvLhbCpo0WqaAm8zECJD51s"/>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white bg-white shadow-md overflow-hidden">
+<img alt="Logo Mockup" class="w-full h-full object-cover" data-alt="A minimalist and elegant brand logo for a beauty center, featuring a stylized celestial motif in rose pink. The design is clean, vector-style, and centered within a white circular space. The lighting is bright and professional, conveying a sense of premium skincare and wellness services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0KeQdSBxfV57d9HiyPA8hxJmiLqaNuAELKZp9PzxaLTeL2KE3YOZOc6Re5Ij27ffvB2h_1VRNq47nVy3OCnBpi6XFZ84zqZqhpH1hNq5e0ROre5oVkBkNpmx_K1iErXlbi5CZRtLyGkGIgjvsraUn7H-_GTtlLaJPqeqQCg40lFfPdew3H9MZdL_4dUpnl_5FWaNsox-XZNPSB4H6So611wx4LCf2OTzR4qLaFSOh4NKgMtJqwdyn05oAAWNe0wKSDIDxTJm1IeQ"/>
+</div>
+</div>
+<div class="mt-12 px-4 text-center">
+<h4 class="text-sm font-bold text-slate-800">Wonder Sky 國際美妍館</h4>
+<p class="text-[10px] text-slate-400 mt-1">致力於提供最高等級的肌膚修復與美學管理</p>
+</div>
+<!-- Mockup Buttons -->
+<div class="mt-6 px-4 space-y-3">
+<div class="p-3 bg-white border border-slate-100 rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="text-xs font-medium text-slate-700">年度熱門服務清單</span>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-sm">chevron_right</span>
+</div>
+<div class="p-3 bg-white border border-slate-100 rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-xs font-medium text-slate-700">選擇美療顧問</span>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-sm">chevron_right</span>
+</div>
+</div>
+<!-- Mockup Action -->
+<div class="mt-8 px-4 pb-12">
+<button class="w-full bg-[#c84c8f] text-white py-3 rounded-lg text-xs font-bold shadow-md">立即預約服務</button>
+</div>
+</div>
+</div>
+<div class="mt-6 flex flex-col gap-3">
+<button class="w-full py-2.5 border border-primary text-primary font-bold rounded-lg text-sm hover:bg-pink-50 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">edit_document</span>切換版型
+                        </button>
+<button class="w-full py-2.5 text-slate-500 font-medium rounded-lg text-xs hover:bg-slate-50 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">visibility</span>查看全螢幕預覽
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

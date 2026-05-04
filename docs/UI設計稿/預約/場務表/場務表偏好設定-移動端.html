@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fff8f8",
+                    "primary-container": "#c14689",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#dac0c9",
+                    "surface-container": "#fde9ef",
+                    "primary": "#a22c70",
+                    "on-tertiary-fixed-variant": "#145200",
+                    "primary-fixed-dim": "#ffafd3",
+                    "on-primary-fixed-variant": "#861259",
+                    "secondary": "#794c8f",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#e8b3fe",
+                    "on-background": "#23191d",
+                    "on-secondary-fixed-variant": "#603475",
+                    "secondary-fixed-dim": "#e8b3fe",
+                    "secondary-fixed": "#f6d9ff",
+                    "outline": "#88717a",
+                    "surface-variant": "#f1dee3",
+                    "on-surface": "#23191d",
+                    "on-secondary-fixed": "#300247",
+                    "surface-container-high": "#f7e3e9",
+                    "inverse-primary": "#ffafd3",
+                    "background": "#fff8f8",
+                    "surface-container-low": "#fff0f4",
+                    "on-surface-variant": "#554149",
+                    "on-primary-container": "#fffbff",
+                    "surface": "#fff8f8",
+                    "tertiary-container": "#328517",
+                    "on-primary-fixed": "#3d0025",
+                    "primary-fixed": "#ffd8e7",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#f8ffee",
+                    "tertiary": "#1c6b00",
+                    "inverse-surface": "#392d32",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#f1dee3",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#6c4082",
+                    "tertiary-fixed": "#9ff87d",
+                    "surface-dim": "#e8d5db",
+                    "tertiary-fixed-dim": "#84db64",
+                    "inverse-on-surface": "#ffecf1",
+                    "on-tertiary-fixed": "#042100",
+                    "surface-tint": "#a52f72",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "xl": "32px",
+                    "unit": "4px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "gutter": "20px",
+                    "container-padding": "24px"
+            },
+            "fontFamily": {
+                    "h2": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .bottom-sheet-shadow {
+            box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface">
+<!-- Screen Content Mockup (Behind Bottom Sheet) -->
+<div class="h-screen w-full flex flex-col p-lg opacity-40 select-none pointer-events-none">
+<header class="flex justify-between items-center mb-lg">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+<h1 class="font-h1 text-h1 text-on-surface">預約行事曆</h1>
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">notifications</span>
+</header>
+<div class="space-y-md">
+<div class="bg-white rounded-xl h-32 w-full shadow-sm"></div>
+<div class="bg-white rounded-xl h-64 w-full shadow-sm"></div>
+</div>
+</div>
+<!-- Black Overlay -->
+<div class="fixed inset-0 bg-black/60 z-[70] backdrop-blur-[2px]"></div>
+<!-- Bottom Sheet Container -->
+<div class="fixed bottom-0 left-0 right-0 z-[80] bg-white rounded-t-[32px] bottom-sheet-shadow max-h-[813px] flex flex-col overflow-hidden">
+<!-- Bottom Sheet Handle -->
+<div class="w-full flex justify-center pt-4 pb-2">
+<div class="w-12 h-1.5 bg-gray-200 rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="px-lg pb-md flex justify-between items-center relative">
+<div class="w-12"></div> <!-- Spacer -->
+<h2 class="font-h2 text-h2 text-on-surface text-center">場務表設定</h2>
+<button class="w-12 h-12 flex items-center justify-end active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary text-[32px]">close</span>
+</button>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-lg pb-xl custom-scrollbar space-y-lg">
+<!-- Time Controls -->
+<div class="space-y-md">
+<div class="relative">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1 ml-1">場務表開始時間</label>
+<div class="relative group">
+<select class="w-full appearance-none h-14 pl-4 pr-12 rounded-xl border border-outline-variant bg-surface-bright font-body-lg text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<option>已選門店營業時間 (09:00)</option>
+<option>08:00</option>
+<option>10:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-4 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="relative">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1 ml-1">場務表結束時間</label>
+<div class="relative group">
+<select class="w-full appearance-none h-14 pl-4 pr-12 rounded-xl border border-outline-variant bg-surface-bright font-body-lg text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<option>預設 23:00</option>
+<option>22:00</option>
+<option>21:00</option>
+<option>00:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-4 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Function Switches -->
+<div class="space-y-sm bg-surface-container-low p-md rounded-2xl">
+<div class="flex items-center justify-between py-2">
+<span class="font-body-lg text-on-surface">預約資訊以實際工時延展</span>
+<button class="relative inline-flex h-7 w-12 items-center rounded-full bg-primary-container transition-colors focus:outline-none">
+<span class="translate-x-6 inline-block h-5 w-5 transform rounded-full bg-white transition-transform"></span>
+</button>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<div class="flex items-center justify-between py-2">
+<span class="font-body-lg text-on-surface">顯示門店 / 不指定</span>
+<button class="relative inline-flex h-7 w-12 items-center rounded-full bg-slate-200 transition-colors focus:outline-none">
+<span class="translate-x-1 inline-block h-5 w-5 transform rounded-full bg-white transition-transform"></span>
+</button>
+</div>
+</div>
+<!-- Preview Section (Collapsible) -->
+<div class="border border-outline-variant rounded-2xl overflow-hidden shadow-sm">
+<button class="w-full flex items-center justify-between px-md py-4 bg-white active:bg-pink-50 transition-colors">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">visibility</span>
+<span class="font-h3 text-h3 text-on-surface">預約資訊預覽</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">keyboard_arrow_up</span>
+</button>
+<div class="px-md pb-md bg-white">
+<div class="bg-surface-container-lowest border border-dashed border-primary-container p-sm rounded-xl space-y-1">
+<div class="flex justify-between items-center border-b border-surface-variant pb-1">
+<span class="text-[10px] font-bold text-primary px-2 py-0.5 bg-pink-100 rounded-full">已預約</span>
+<span class="text-[10px] text-on-surface-variant font-medium">14:00 - 15:30</span>
+</div>
+<p class="font-label-md text-on-surface">會員：林小美 (V0982)</p>
+<p class="font-label-md text-on-surface">課程：極致水潤嫩膚保養</p>
+<p class="font-label-md text-on-surface">人員：美容師 Asta</p>
+</div>
+</div>
+</div>
+<!-- Multi-Column Preference Settings -->
+<div class="space-y-md">
+<!-- Column 1 -->
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface">第一欄顯示</h3>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between bg-white border border-outline-variant p-md rounded-xl active:bg-pink-50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
+<span class="font-body-md text-on-surface">預約狀態</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[28px]">edit_note</span>
+</div>
+<div class="flex items-center justify-between bg-white border border-outline-variant p-md rounded-xl active:bg-pink-50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
+<span class="font-body-md text-on-surface">會員名稱</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[28px]">edit_note</span>
+</div>
+<div class="flex items-center justify-between bg-white border border-outline-variant p-md rounded-xl active:bg-pink-50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
+<span class="font-body-md text-on-surface">工作人員</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[28px]">edit_note</span>
+</div>
+</div>
+</div>
+<!-- Column 2 -->
+<div class="space-y-sm pt-2">
+<div class="flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface">第二欄顯示</h3>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<div class="flex items-center justify-between bg-white border border-outline-variant p-md rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
+<span class="font-body-md text-on-surface">預約備註 (預設顯示)</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[28px]">edit_note</span>
+</div>
+</div>
+<!-- Column 3 -->
+<div class="space-y-sm pt-2">
+<div class="flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface">第三欄顯示</h3>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<div class="flex items-center justify-center py-8 border-2 border-dashed border-outline-variant rounded-xl bg-surface-container-low">
+<span class="font-label-md text-on-surface-variant">尚未新增欄位</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Buttons -->
+<div class="p-lg bg-white flex items-center gap-4 border-t border-gray-100 mb-safe">
+<button class="flex-1 h-12 flex items-center justify-center rounded-xl font-h3 text-on-surface-variant active:bg-gray-100 transition-colors">
+                取消
+            </button>
+<button class="flex-1 h-12 flex items-center justify-center rounded-xl border-2 border-primary text-primary font-h3 active:bg-pink-50 transition-all">
+                儲存
+            </button>
+</div>
+</div>
+<!-- Background Decoration Image -->
+<img alt="Background context" class="fixed -z-10 w-full h-full object-cover" data-alt="A luxurious and minimalist beauty salon interior with soft, warm recessed lighting and marble surfaces. The aesthetic is clean, professional, and sophisticated, reflecting a high-end wellness center. Delicate pink and white floral arrangements are subtly placed in the background, maintaining a serene and trustworthy atmosphere consistent with a premium SaaS management platform interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkA5C3vHPNALCVjb9Uf7XImLn-gmlaOE7Y50ShGQFuqNTGgiN68i204Tzfblp3h0kWkP9qVzdWcNEoGQEz-fYxQM60nLbCEkaLjixHCA2w_-vbz5hfVhtzY7zRXPi3EOm1Aq_ftlXG-YywWoHm1D_HAwHliO9kOz4HEt1eSlQmDmT4u_oA2uBXmEMGMAvUxuFoIsOdX2BnD9jraKvhcnPj9XFZFql0xHIA94WASXnhuIN7EyHXQLJ7UWaM3JfVUmwWcwa6K4KdGw4"/>
+</body></html>
