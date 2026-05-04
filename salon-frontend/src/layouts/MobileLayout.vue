@@ -126,12 +126,7 @@ watch(
     <!-- ===== 頂部導航欄 ===== -->
     <header class="mobile-layout__header">
       <div class="mobile-layout__header-left">
-        <button
-          v-if="showBack"
-          class="mobile-layout__header-btn"
-          @click="goBack"
-          title="返回"
-        >
+        <button v-if="showBack" class="mobile-layout__header-btn" @click="goBack" title="返回">
           <span class="material-symbols-outlined">arrow_back</span>
         </button>
       </div>
@@ -155,20 +150,6 @@ watch(
         </transition>
       </router-view>
     </main>
-
-    <!-- ===== 底部導航欄 ===== -->
-    <nav class="mobile-layout__tabbar" v-if="tabItems.length > 0">
-      <button
-        v-for="(item, index) in tabItems"
-        :key="item.path"
-        class="mobile-layout__tab-item"
-        :class="{ 'mobile-layout__tab-item--active': activeTab === index }"
-        @click="onTabChange(index)"
-      >
-        <span class="material-symbols-outlined mobile-layout__tab-icon">{{ item.icon }}</span>
-        <span class="mobile-layout__tab-label">{{ item.name }}</span>
-      </button>
-    </nav>
   </div>
 </template>
 
@@ -263,23 +244,6 @@ $color-white: #ffffff;
   flex: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-}
-
-// ==================== 底部導航 ====================
-
-.mobile-layout__tabbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: calc($tabbar-height + $safe-area-bottom);
-  padding-bottom: $safe-area-bottom;
-  display: flex;
-  align-items: center;
-  background: $color-white;
-  border-top: 1px solid #f0e6e8;
-  z-index: 100;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .mobile-layout__tab-item {

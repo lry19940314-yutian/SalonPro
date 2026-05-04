@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#300247",
+                        "surface-container-low": "#fff0f4",
+                        "primary-fixed": "#ffd8e7",
+                        "outline": "#88717a",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary-fixed": "#042100",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#f1dee3",
+                        "on-surface-variant": "#554149",
+                        "secondary": "#794c8f",
+                        "inverse-surface": "#392d32",
+                        "inverse-primary": "#ffafd3",
+                        "outline-variant": "#dac0c9",
+                        "tertiary-container": "#328517",
+                        "on-background": "#23191d",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#e8d5db",
+                        "tertiary": "#1c6b00",
+                        "primary": "#a22c70",
+                        "surface-variant": "#f1dee3",
+                        "background": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-container": "#fde9ef",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-tertiary-container": "#f8ffee",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e8b3fe",
+                        "on-primary-container": "#fffbff",
+                        "on-surface": "#23191d",
+                        "surface-bright": "#fff8f8",
+                        "on-secondary-container": "#6c4082",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-tint": "#a52f72",
+                        "primary-container": "#c14689",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface": "#fff8f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "gutter": "20px",
+                        "xs": "4px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e0e0e0; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen overflow-hidden">
+<!-- Sidebar (Shared Component Style Mapping) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-50 h-screen w-64 border-r border-gray-100 bg-white shadow-sm">
+<div class="px-6 py-8">
+<h1 class="text-lg font-black text-[#c84c8f]">Wonder Sky</h1>
+<p class="text-[10px] tracking-widest text-slate-400 uppercase font-bold mt-1">SaaS Admin</p>
+</div>
+<nav class="flex-1 px-4 space-y-1 custom-scrollbar overflow-y-auto">
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">儀表板</span>
+</a>
+<a class="flex items-center gap-3 bg-[#c84c8f]/5 text-[#c84c8f] rounded-lg px-4 py-3 font-bold transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-body-md text-body-md">預約管理</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md text-body-md">會員中心</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">content_cut</span>
+<span class="font-body-md text-body-md">服務項目</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">庫存管理</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-gray-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-body-md text-body-md">數據報表</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-gray-50">
+<div class="flex items-center gap-3 p-2">
+<img alt="Manager" class="w-10 h-10 rounded-full border-2 border-primary-fixed" data-alt="A professional headshot of a refined Asian beauty salon manager with subtle makeup and elegant attire, set against a soft blurred studio background with warm lighting, conveying trustworthiness and expertise in high-end wellness services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGbuBEvNH7GnYooHl2DrZ4cYnEdXPno2OHFbHgISziAKEoN7UzyJlm0QpBr6jGI7lf-3bteEaTA8rJa7lQmC5SXX2w2SQYDwj0CNVdaTVOalvqTeZRXgvnePtqtkASrtpDB_DsBRDloGCl0Se0214pAWIpLuo6em-WOrGtbuQ2lkgNYVMTIfXaf6H4fQ_nkPIeXkMmRNxA0pOP2OqcJKM3GaAw_tDv466JXEH4pz5CNmF5mD7on61mI4lfxffheZN568bSWtQr3RY"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Manager Admin</p>
+<p class="text-[10px] text-slate-400">系統管理員</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col h-screen overflow-hidden">
+<!-- Top Bar (Shared Component Style Mapping) -->
+<header class="flex justify-between items-center px-6 py-3 w-full bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-gray-100">
+<div class="flex items-center gap-2 text-slate-400 font-label-md text-label-md">
+<span>預約</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface font-semibold">集客預約設定</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-[#c84c8f] text-white px-4 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+                    快速開單
+                </button>
+<div class="flex items-center gap-4 text-slate-600">
+<span class="material-symbols-outlined cursor-pointer hover:text-[#c84c8f] transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-[#c84c8f] transition-colors">settings</span>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Secondary Navigation (Inside Main Area) -->
+<aside class="w-56 border-r border-gray-100 bg-white p-4 space-y-2 overflow-y-auto">
+<p class="px-4 py-2 text-[11px] font-bold text-slate-400 uppercase tracking-widest">集客預約設定</p>
+<a class="block px-4 py-2.5 text-body-md font-body-md text-slate-600 hover:bg-gray-50 rounded-lg" href="#">預約基本設定</a>
+<a class="block px-4 py-2.5 text-body-md font-body-md text-slate-600 hover:bg-gray-50 rounded-lg" href="#">線上預約時段</a>
+<a class="block px-4 py-2.5 text-body-md font-body-md text-[#c84c8f] bg-[#c84c8f]/5 font-bold rounded-lg" href="#">會員卡</a>
+<a class="block px-4 py-2.5 text-body-md font-body-md text-slate-600 hover:bg-gray-50 rounded-lg" href="#">通知設定</a>
+<a class="block px-4 py-2.5 text-body-md font-body-md text-slate-600 hover:bg-gray-50 rounded-lg" href="#">品牌官網連結</a>
+</aside>
+<!-- Settings Form Container (Middle Column) -->
+<section class="flex-1 p-lg overflow-y-auto custom-scrollbar bg-slate-50/50">
+<div class="max-w-3xl mx-auto space-y-6">
+<!-- Notice Bar -->
+<div class="bg-blue-50 border border-blue-100 rounded-lg px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-500">info</span>
+<p class="text-blue-700 font-label-md text-label-md">此為全品牌共用設定，變更將影響所有連鎖分店的會員卡呈現樣式。</p>
+</div>
+<!-- Member Card Settings Card -->
+<div class="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+<div class="p-6 border-b border-gray-50">
+<h2 class="font-h2 text-h2 text-on-surface">會員卡樣式</h2>
+<p class="text-caption text-slate-400 mt-1">設定品牌專屬的會員卡外觀與顏色方案</p>
+</div>
+<div class="p-6 space-y-8">
+<!-- Field: Upload Style -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md text-on-surface">自行上傳會員卡樣式</p>
+<p class="text-caption text-slate-400">開啟後可自定義背景圖，關閉則使用預設樣式</p>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</div>
+</div>
+<!-- Field: Style Dropdown -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">會員卡樣式</label>
+<div class="relative">
+<select class="w-full h-11 px-4 bg-gray-50 border border-gray-200 rounded-lg text-body-md font-body-md appearance-none focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] outline-none">
+<option selected="">適用樣 1</option>
+<option>簡約時尚版</option>
+<option>尊爵黑金版</option>
+<option>柔美櫻花版</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Field: Text Color Colorpicker -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">會員卡文字顏色</label>
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg border border-gray-200 bg-white p-1">
+<div class="w-full h-full rounded bg-white border border-gray-100 flex items-center justify-center">
+<div class="w-4 h-4 rounded-full bg-white border border-gray-200"></div>
+</div>
+</div>
+<input class="h-11 px-4 flex-1 bg-gray-50 border border-gray-200 rounded-lg text-body-md font-body-md uppercase focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] outline-none" type="text" value="#FFFFFF"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Balance Display Settings Card -->
+<div class="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+<div class="p-6 border-b border-gray-50">
+<h2 class="font-h2 text-h2 text-on-surface">餘額顯示設定</h2>
+<p class="text-caption text-slate-400 mt-1">控制在顧客手機端會員卡面上顯示的資產餘額項目</p>
+</div>
+<div class="divide-y divide-gray-50">
+<!-- Toggle Point 1 -->
+<div class="px-6 py-4 flex items-center justify-between">
+<span class="font-body-md text-body-md text-slate-700">點數餘額顯示</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</div>
+</div>
+<!-- Toggle Point 2 -->
+<div class="px-6 py-4 flex items-center justify-between">
+<span class="font-body-md text-body-md text-slate-700">優惠券餘額顯示</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</div>
+</div>
+<!-- Toggle Point 3 -->
+<div class="px-6 py-4 flex items-center justify-between">
+<span class="font-body-md text-body-md text-slate-700">商品券餘額顯示</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</div>
+</div>
+<!-- Toggle Point 4 -->
+<div class="px-6 py-4 flex items-center justify-between">
+<span class="font-body-md text-body-md text-slate-700">儲值金餘額顯示</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Action -->
+<div class="max-w-3xl mx-auto py-12 flex justify-end">
+<button class="px-10 py-3 bg-[#c84c8f] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform active:scale-95">
+                        儲存設定
+                    </button>
+</div>
+</section>
+<!-- Preview Area (Right Column) -->
+<aside class="w-[400px] border-l border-gray-100 bg-white p-8 flex flex-col items-center justify-start overflow-y-auto">
+<p class="font-label-md text-label-md text-slate-400 mb-8 uppercase tracking-widest self-start">顧客端預覽效果</p>
+<!-- Phone Mockup -->
+<div class="relative w-[280px] h-[580px] bg-slate-900 rounded-[3rem] p-2 shadow-2xl border-4 border-slate-800">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-slate-800 rounded-b-2xl z-10"></div>
+<div class="w-full h-full bg-slate-50 rounded-[2.5rem] overflow-hidden flex flex-col">
+<!-- Preview Header -->
+<div class="bg-white px-4 pt-10 pb-4 flex justify-between items-center border-b border-slate-100">
+<h3 class="text-on-surface font-black text-lg">個人帳戶</h3>
+<span class="material-symbols-outlined text-slate-400">qr_code_scanner</span>
+</div>
+<!-- Preview Content (The actual card) -->
+<div class="p-4 space-y-4">
+<!-- Configured Member Card -->
+<div class="relative w-full aspect-[1.6/1] rounded-2xl overflow-hidden shadow-md group">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A luxurious beauty spa background with soft focused pink orchid flowers and elegant marble surfaces, softly illuminated by warm ambient lighting. The aesthetic is clean, high-end, and tranquil, reflecting a premium wellness brand identity with sophisticated rose-pink and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd7V_uPVm1eBKsD6kZWH4V033BgRnvbFuaqEYBfHZ49bCfaDxZ0UBcRAY7U2khNG_IgMQjcQDHZHbGFqV7CzEpByIDNNbgXqDhMj917cIwNklF-bn_87NElMM_28VHDCVpYdvIllSAJX15T4r-0P0pbSiBclGxwVhR8a_2drBagbFH22DYXmpgZhb5-Wd3qmnR7GDzk2yo6uMz_bJssHXBnVqg5EosmWXYLrcNIIgGrp66v2K31CB0msWjmvO5TvKY-bqiANOWJhA"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-[#c84c8f]/80 to-transparent"></div>
+<div class="relative h-full p-5 flex flex-col justify-between text-white">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] opacity-80 font-bold tracking-widest">WONDER SKY</p>
+<p class="text-sm font-bold">全品牌會員卡</p>
+</div>
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-xs opacity-70">卡號: WS-8827-091</p>
+<p class="text-lg font-bold tracking-wider mt-1">王小明</p>
+</div>
+</div>
+</div>
+<!-- Assets Preview (From Balance Settings) -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
+<p class="text-[10px] text-slate-400">優惠券</p>
+<p class="text-lg font-bold text-on-surface">5 <span class="text-[10px] font-normal">張</span></p>
+</div>
+<div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
+<p class="text-[10px] text-slate-400">商品券</p>
+<p class="text-lg font-bold text-on-surface">12 <span class="text-[10px] font-normal">張</span></p>
+</div>
+<div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm col-span-2">
+<div class="flex justify-between items-center">
+<p class="text-[10px] text-slate-400">目前儲值金</p>
+<span class="material-symbols-outlined text-xs text-[#c84c8f]">add_circle</span>
+</div>
+<p class="text-xl font-bold text-on-surface">$ 12,850</p>
+</div>
+</div>
+<!-- Menu List Preview -->
+<div class="bg-white rounded-xl border border-slate-100 divide-y divide-slate-50">
+<div class="p-3 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-sm">history</span>
+<span class="text-xs font-medium">消費紀錄</span>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-sm">chevron_right</span>
+</div>
+<div class="p-3 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-sm">assignment</span>
+<span class="text-xs font-medium">預約行程</span>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-sm">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-caption text-slate-400 mt-6 text-center">預覽僅供外觀參考，實際功能以手機實體畫面為準。</p>
+</aside>
+</main>
+</div>
+</body></html>
