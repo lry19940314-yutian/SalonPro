@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#dac0c9",
+                        "secondary": "#794c8f",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#c14689",
+                        "on-surface": "#23191d",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-highest": "#f1dee3",
+                        "primary-fixed": "#ffd8e7",
+                        "on-surface-variant": "#554149",
+                        "on-secondary-container": "#6c4082",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-fixed": "#300247",
+                        "tertiary-container": "#328517",
+                        "tertiary-fixed-dim": "#84db64",
+                        "primary-fixed-dim": "#ffafd3",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-variant": "#f1dee3",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#ffafd3",
+                        "primary": "#a22c70",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed-variant": "#603475",
+                        "tertiary": "#1c6b00",
+                        "on-tertiary-fixed": "#042100",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "secondary-container": "#e8b3fe",
+                        "surface": "#fff8f8",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#392d32",
+                        "surface-container": "#fde9ef",
+                        "outline": "#88717a",
+                        "surface-container-high": "#f7e3e9",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-tint": "#a52f72",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f8",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-bright": "#fff8f8",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-background": "#23191d",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "md": "16px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold text-slate-900">Wonder sky 國際美妍館</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-[#c84c8f] text-white px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity active:scale-95 duration-150">開單</button>
+<div class="flex items-center gap-4 border-l border-slate-200 pl-6">
+<button class="text-slate-500 hover:bg-slate-50 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="flex items-center gap-3">
+<img alt="User profile photo" class="w-10 h-10 rounded-full object-cover border-2 border-primary-fixed" data-alt="A professional headshot of a smiling female manager in a modern, brightly lit office environment. The lighting is soft and flattering, highlighting her friendly expression and well-maintained appearance. The background is slightly blurred, showing hints of a luxury beauty salon interior with soft pink and white tones, creating a high-end corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDykhfhvHAZJ4lALVlxEyjllatPo4gaXD4fblUwgekEOUDmN6ydMweOjkKWm05M2w9RZxFivo2RM613kN59bEQNMfaYMvqejkRJrLogpwJf05m73uruUJEywDBNn0prus_ebC9dNypKroxwxUKgXSO47y0lSRK2ChxsWixKvw03TV3Tp5ZdA_ImMDRoBvoMtgqor_QzTEdr8e9lq0myE05Mbg7GUEAH3YcbiIYYIpV7sIbkTlD6XpGZFSh1P9JFxh46_YefKx1BAvc"/>
+<div class="hidden lg:block text-right">
+<p class="font-semibold text-sm text-on-surface">Manager Lin</p>
+<p class="text-xs text-slate-500">Administrator</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-white border-r border-slate-100 p-4 flex flex-col gap-2 pt-20 z-30">
+<div class="mb-8 px-4">
+<h2 class="font-bold text-[#c84c8f] text-xl">Wonder sky</h2>
+<p class="text-xs text-slate-500">Beauty Management</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary" data-icon="dashboard">dashboard</span>
+<span class="font-medium text-sm">Information Center</span>
+</a>
+<a class="text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary" data-icon="payments">payments</span>
+<span class="font-medium text-sm">Finance</span>
+</a>
+<!-- Active State: Billing maps to the general performance section in this context -->
+<a class="bg-pink-50 text-[#c84c8f] rounded-lg px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-medium text-sm">Billing</span>
+</a>
+<a class="text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary" data-icon="calendar_month">calendar_month</span>
+<span class="font-medium text-sm">Appointments</span>
+</a>
+<a class="text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary" data-icon="card_membership">card_membership</span>
+<span class="font-medium text-sm">Membership</span>
+</a>
+<a class="text-slate-600 hover:bg-slate-50 px-4 py-3 flex items-center gap-3 rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary" data-icon="spa">spa</span>
+<span class="font-medium text-sm">Services</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 pt-16 min-h-screen bg-surface">
+<div class="max-w-[1440px] mx-auto p-container-padding space-y-gutter">
+<!-- Page Header & Tabbed Navigation -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h1 class="font-h1 text-h1 text-on-surface">業績分析</h1>
+<div class="flex items-center gap-2 bg-surface-container rounded-lg p-1">
+<button class="px-6 py-2 rounded-md bg-white shadow-sm text-primary font-semibold text-body-md">員工業績</button>
+<button class="px-6 py-2 rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors text-body-md">業績分析</button>
+<button class="px-6 py-2 rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors text-body-md">年度業績</button>
+</div>
+</div>
+<!-- Filter Controls -->
+<div class="bg-white rounded-xl p-6 border border-slate-100 shadow-sm flex flex-wrap items-center gap-4">
+<div class="flex-1 min-w-[200px]">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface rounded-lg border-slate-200 focus:ring-primary focus:border-primary text-body-md" placeholder="搜尋員工姓名..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<input class="pl-3 pr-3 py-2 bg-surface rounded-lg border-slate-200 text-body-md focus:ring-primary focus:border-primary" type="date"/>
+</div>
+<span class="text-slate-400">至</span>
+<div class="relative">
+<input class="pl-3 pr-3 py-2 bg-surface rounded-lg border-slate-200 text-body-md focus:ring-primary focus:border-primary" type="date"/>
+</div>
+</div>
+<select class="bg-surface border-slate-200 rounded-lg px-4 py-2 text-body-md focus:ring-primary focus:border-primary">
+<option>所有分類</option>
+<option>美甲</option>
+<option>美睫</option>
+<option>美容保養</option>
+</select>
+<select class="bg-surface border-slate-200 rounded-lg px-4 py-2 text-body-md focus:ring-primary focus:border-primary">
+<option>所有職位</option>
+<option>資深美容師</option>
+<option>實習美容師</option>
+<option>店長</option>
+</select>
+<button class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg font-medium hover:bg-pink-50 transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+<span>匯出</span>
+</button>
+</div>
+</div>
+<!-- Wide Performance Table Card -->
+<div class="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low border-b border-slate-100">
+<tr>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">員工資訊</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-right">總服務業績</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-right">服務業績</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-right">產品銷售</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-right">虛業績</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-right">提成預估</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Table Row 1 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a professional beautician in a clean white uniform. She has a warm, confident smile and neat hair. The background consists of a high-end beauty salon with professional skincare products on glass shelves and soft ambient lighting, emphasizing a clean and clinical yet inviting atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_zFjUS0H5OuDt1EaSp0-0Wog7A41MR9XeS7vLnmcweGE8wziPzkHTUrKsSyq4Lai9Fwp4WUU6wpZYkiZSI9B74_XO68WRSZN2kCQZ4P4r8o7LZDaGz83ugSL-Ae7Z0peRSpWF0rj7Op2CIsmmstQwWV5n8lcck2Mk0pyvrisQCTh2ggl8jvW0mTM0K1kuMi3cZljmikfTNOtuuENDJpyAh7O8QLI4rWWUCf92fIwVRKaJY7njg7FP5jbbnPOaqIGP5PiFuv8XaMI"/>
+<div>
+<p class="font-h3 text-body-lg text-on-surface">張曉雅 Sarah</p>
+<p class="text-caption text-slate-500">資深美容師</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-semibold text-on-surface">$124,500</td>
+<td class="px-6 py-4 text-right text-slate-600 text-body-md">$98,000</td>
+<td class="px-6 py-4 text-right text-slate-600 text-body-md">$26,500</td>
+<td class="px-6 py-4 text-right font-bold text-primary">$12,000</td>
+<td class="px-6 py-4 text-right text-on-surface font-medium">$18,675</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A close-up portrait of a young, stylish beautician with a professional and attentive gaze. She is set against a backdrop of a modern salon with pastel-colored decor and elegant lighting fixtures. The lighting is bright and crisp, highlighting her clear skin and expert makeup, reflecting the high standards of the beauty clinic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMV4msUK-g764nDY7dtuv7CshMxhyKd3zPOVo8raGOpyrcWNWYjnowqyy1skP9eKQQv1qISGM_83rq1h5LkaIrzlaS0QCJt7nm0bLC85mQSlyikPwhv7HGykkGLomj7_PjKneCgWpfflj5CGuHqYvLuQyyN_hx0Xxq9l8ngzUUUOLIeDmv6ei10LsO9pkOOLhkjuMAKG6cKjfT-KmPFyZbaQ5NyrIle1GQCDRc62hbv2LpHOhagnN0H_XjTtpsaI-w1dwEvyjL6M8"/>
+<div>
+<p class="font-h3 text-body-lg text-on-surface">李美玲 Lisa</p>
+<p class="text-caption text-slate-500">美睫主管</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-semibold text-on-surface">$92,800</td>
+<td class="px-6 py-4 text-right text-slate-600 text-body-md">$85,200</td>
+<td class="px-6 py-4 text-right text-slate-600 text-body-md">$7,600</td>
+<td class="px-6 py-4 text-right font-bold text-primary">$8,500</td>
+<td class="px-6 py-4 text-right text-on-surface font-medium">$13,920</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a cheerful beauty therapist with light makeup and a neat hairstyle, wearing a professional uniform. The environment is a brightly lit, high-end spa with soft textures and a palette of blush pink and muted golds. The mood is tranquil and sophisticated, suggesting a premium customer service experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6DYZNuYxX6bAZ1-YETaivyrmK0q9FBL1-FsJ5GqphhqdASfzS2ouCZjn-wHBtC2ZCjk2NL-yogQND9w0nw0e1MqADLP0_t8F_j5e1hnpzl_pDamyBFxemBfI6ZadcS04MIIMmS6RB3ud99RlMvn573al5UWawkeM2VCna200Cf_m0sL8dlatcDokrlUsSv42b3_xki8ID6t8_ngUBbwK7FhEvvaNDF5X_vgh6Cc6P3CO0DTVCKHWur40lZmBR5rTsdhUudxPtoHo"/>
+<div>
+<p class="font-h3 text-body-lg text-on-surface">王若琳 Rainie</p>
+<p class="text-caption text-slate-500">美容顧問</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-semibold text-on-surface">$78,300</td>
+<td class="px-6 py-4 text-right text-slate-600 text-body-md">$45,000</td>
+<td class="px-6 py-4 text-right text-slate-600 text-body-md">$33,300</td>
+<td class="px-6 py-4 text-right font-bold text-primary">$5,200</td>
+<td class="px-6 py-4 text-right text-on-surface font-medium">$11,745</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a beauty professional with a serene and welcoming expression. She is in a minimalist treatment room featuring high-tech skincare equipment and clean, white architectural lines. The lighting is diffused and cool-toned, creating a modern, medical-grade aesthetic within a luxury beauty context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBC4hnF8MGGEHAtHOosZb_9he_zMKFEaKobiG5_Lc2XXnMnmms2AyWAfk8Z5mP2WYv5U8virGkSiRXn1TuZG6PxqVuiobFXCuRC1C4hLGKezk4OMK5h5iQqhJEUjnk59JbNwhz18X3wJYNbN42IHn1M1xCWkaZKV47sEL6XqYN1sVBupdKfG8cl3ekPvDdg-IU1GdyASFrfyn3lXVve-j4SkVZdYhSsN13gPN0kMeISxMSFM-m24HCrEAdG2mzBK-r65lOQsHIEcA"/>
+<div>
+<p class="font-h3 text-body-lg text-on-surface">林芯妤 Cindy</p>
+<p class="text-caption text-slate-500">實習美容師</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-semibold text-on-surface">$42,100</td>
+<td class="px-6 py-4 text-right text-slate-600 text-body-md">$40,500</td>
+<td class="px-6 py-4 text-right text-slate-600 text-body-md">$1,600</td>
+<td class="px-6 py-4 text-right font-bold text-primary">$2,000</td>
+<td class="px-6 py-4 text-right text-on-surface font-medium">$4,210</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+<tfoot class="bg-slate-50 font-bold">
+<tr>
+<td class="px-6 py-4 text-on-surface-variant">全店總計</td>
+<td class="px-6 py-4 text-right text-on-surface text-h2">$337,700</td>
+<td class="px-6 py-4 text-right text-slate-600">$268,700</td>
+<td class="px-6 py-4 text-right text-slate-600">$69,000</td>
+<td class="px-6 py-4 text-right text-primary">$27,700</td>
+<td class="px-6 py-4 text-right text-on-surface">$50,655</td>
+<td></td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!-- Dashboard Analytics Preview (Bento Grid Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm space-y-4">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<span class="bg-tertiary-container/10 text-tertiary px-2 py-1 rounded text-xs font-bold">+12.5%</span>
+</div>
+<div>
+<p class="text-slate-500 text-body-md">本月服務成長</p>
+<h4 class="text-h1 font-h1 text-on-surface">856 次</h4>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm space-y-4">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<span class="bg-tertiary-container/10 text-tertiary px-2 py-1 rounded text-xs font-bold">+4.2%</span>
+</div>
+<div>
+<p class="text-slate-500 text-body-md">新客成交率</p>
+<h4 class="text-h1 font-h1 text-on-surface">68.4%</h4>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm space-y-4">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-tertiary-container/10 rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="stars">stars</span>
+</div>
+<span class="bg-pink-100 text-primary px-2 py-1 rounded text-xs font-bold">TOP 1</span>
+</div>
+<div>
+<p class="text-slate-500 text-body-md">最佳員工</p>
+<h4 class="text-h1 font-h1 text-on-surface">張曉雅 Sarah</h4>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

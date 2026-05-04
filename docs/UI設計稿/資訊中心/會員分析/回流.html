@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#23191d",
+                        "on-secondary-fixed": "#300247",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-low": "#fff0f4",
+                        "inverse-primary": "#ffafd3",
+                        "background": "#fff8f8",
+                        "surface-container-high": "#f7e3e9",
+                        "on-secondary-fixed-variant": "#603475",
+                        "secondary-container": "#e8b3fe",
+                        "on-background": "#23191d",
+                        "outline": "#88717a",
+                        "secondary-fixed": "#f6d9ff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "error-container": "#ffdad6",
+                        "secondary": "#794c8f",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#c14689",
+                        "surface-bright": "#fff8f8",
+                        "surface-container": "#fde9ef",
+                        "primary": "#a22c70",
+                        "outline-variant": "#dac0c9",
+                        "tertiary-fixed-dim": "#84db64",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-tint": "#a52f72",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-container-highest": "#f1dee3",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#e8d5db",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#6c4082",
+                        "on-tertiary-container": "#f8ffee",
+                        "tertiary": "#1c6b00",
+                        "inverse-surface": "#392d32",
+                        "tertiary-container": "#328517",
+                        "surface": "#fff8f8",
+                        "on-surface-variant": "#554149",
+                        "on-primary-container": "#fffbff",
+                        "primary-fixed": "#ffd8e7",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#3d0025"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .chart-ring {
+            background: conic-gradient(#a22c70 0% 65%, #794c8f 65% 100%);
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            position: relative;
+        }
+        .chart-ring::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 flex flex-col h-full p-4 bg-white border-r border-slate-200 w-64 z-50">
+<div class="mb-8 px-3">
+<h1 class="text-xl font-black text-primary tracking-tight">Wonder Sky</h1>
+<p class="text-xs text-slate-500">Beauty &amp; Wellness</p>
+</div>
+<nav class="space-y-1 flex-1">
+<a class="text-slate-500 px-3 py-2 flex items-center gap-3 hover:bg-slate-50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md">Information Center</span>
+</a>
+<a class="text-slate-500 px-3 py-2 flex items-center gap-3 hover:bg-slate-50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md">Finance</span>
+</a>
+<a class="text-slate-500 px-3 py-2 flex items-center gap-3 hover:bg-slate-50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md">Billing</span>
+</a>
+<a class="text-slate-500 px-3 py-2 flex items-center gap-3 hover:bg-slate-50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md">Appointments</span>
+</a>
+<a class="bg-pink-50 text-primary rounded-lg px-3 py-2 flex items-center gap-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">card_membership</span>
+<span class="font-label-md">Membership</span>
+</a>
+<a class="text-slate-500 px-3 py-2 flex items-center gap-3 hover:bg-slate-50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">spa</span>
+<span class="font-label-md">Services</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-100">
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a beauty salon manager with a friendly expression, set against a soft-focus studio background with warm, professional lighting. The aesthetic is clean and high-end, reflecting the premium wellness brand identity with soft pink and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM97Z32LQL1PQdFgFOZRc75ZxjrBkZ8NejziKRAqoWGCOuNy1sZ4g2p0nTc2i79OhOM1-34Xt1DUxq4WbLxPtDlKPApOVaSkUWnn4716DeI-_XuMiWRb5zRaViRdBL8UqQUwXS_soS8HIr0Af3plqAi8y6IE5TWRNuivWi-9ySCFSW_BqIGimw6LvQvEuzxICfetJHYAaNM4BZvXAng8ofPFGeSSoSM-EBCC8J4tXNA8E9w-PTF6JzY3de6HE9JKPdC0uZoxfMfYM"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-bold truncate">Admin User</p>
+<p class="text-[10px] text-slate-500">Store Manager</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold tracking-tight text-slate-900">Wonder sky 國際美妍館</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-label-md active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Create Order
+                </button>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-lg space-y-lg">
+<!-- Header & Tabs -->
+<div class="space-y-md">
+<div class="flex items-end justify-between">
+<div>
+<nav class="flex gap-1 mb-2">
+<span class="text-slate-400 text-sm">會員分析</span>
+<span class="text-slate-400 text-sm">/</span>
+<span class="text-primary text-sm font-medium">回流分析</span>
+</nav>
+<h2 class="font-h1 text-h1 text-on-surface">回流數據中心</h2>
+</div>
+</div>
+<div class="flex border-b border-outline-variant">
+<button class="px-6 py-3 font-label-md text-slate-500 hover:text-primary transition-colors">新客總覽</button>
+<button class="px-6 py-3 font-label-md text-primary border-b-2 border-primary">回流</button>
+<button class="px-6 py-3 font-label-md text-slate-500 hover:text-primary transition-colors">基本分析</button>
+</div>
+</div>
+<!-- Filter Section -->
+<section class="bg-white border border-slate-200 rounded-xl p-md shadow-sm">
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 mb-1">消費時間區間</span>
+<div class="flex items-center gap-2 px-3 py-2 border border-slate-200 rounded-lg bg-slate-50">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">calendar_today</span>
+<span class="text-sm">2023-11-01 至 2024-01-31</span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end">
+<button class="px-4 py-2 text-sm border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">過去三個月</button>
+<button class="px-4 py-2 text-sm border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">本月</button>
+<button class="px-4 py-2 text-sm border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">去年</button>
+</div>
+<button class="ml-auto self-end px-6 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors">執行篩選</button>
+</div>
+</section>
+<!-- Overview Charts & Data -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Donut Chart Card -->
+<div class="col-span-12 lg:col-span-5 bg-white border border-slate-200 rounded-xl p-lg shadow-sm">
+<h3 class="font-h3 text-h3 mb-6">回流與未回流客占比</h3>
+<div class="flex items-center justify-around">
+<div class="chart-ring flex items-center justify-center">
+<div class="z-10 text-center">
+<p class="text-caption text-slate-500">回流率</p>
+<p class="text-h1 font-bold text-primary">65%</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<div>
+<p class="text-xs text-slate-500">回流客</p>
+<p class="text-lg font-bold">428 人</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<div>
+<p class="text-xs text-slate-500">未回流客</p>
+<p class="text-lg font-bold">231 人</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Loss Statistics Table -->
+<div class="col-span-12 lg:col-span-7 bg-white border border-slate-200 rounded-xl p-lg shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-h3 text-h3">工作人員回流數據統計</h3>
+<span class="px-3 py-1 bg-error-container text-on-error-container rounded-full text-xs font-bold">總流失會員數：25</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-caption text-slate-500 border-b border-slate-100">
+<th class="pb-3 font-semibold">工作人員</th>
+<th class="pb-3 font-semibold text-right">回流客數</th>
+<th class="pb-3 font-semibold text-right">未回流客數</th>
+<th class="pb-3 font-semibold text-right">流失率</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<tr class="text-sm">
+<td class="py-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-fixed-dim flex items-center justify-center text-[10px] text-primary">LY</div>
+                                        林雅亭</td>
+<td class="py-3 text-right">156</td>
+<td class="py-3 text-right">12</td>
+<td class="py-3 text-right text-error font-medium">7.1%</td>
+</tr>
+<tr class="text-sm">
+<td class="py-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed flex items-center justify-center text-[10px] text-secondary">CS</div>
+                                        陳思妤</td>
+<td class="py-3 text-right">142</td>
+<td class="py-3 text-right">8</td>
+<td class="py-3 text-right text-error font-medium">5.3%</td>
+</tr>
+<tr class="text-sm">
+<td class="py-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] text-slate-600">WH</div>
+                                        王曉華</td>
+<td class="py-3 text-right">130</td>
+<td class="py-3 text-right">5</td>
+<td class="py-3 text-right text-error font-medium">3.7%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Detailed Lists -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Returning Customers -->
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+<div class="bg-primary/5 px-lg py-md border-b border-primary/10 flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">person_check</span>
+                            回流客列表
+                        </h3>
+<span class="text-xs font-bold text-primary">共 428 筆</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 text-[11px] text-slate-500 uppercase tracking-wider">
+<tr>
+<th class="px-lg py-3">姓名/電話</th>
+<th class="px-md py-3">生日</th>
+<th class="px-md py-3">最近消費</th>
+<th class="px-lg py-3 text-right">消費金額</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50 transition-colors cursor-pointer">
+<td class="px-lg py-4">
+<div class="font-bold text-slate-900">陳小美</div>
+<div class="text-xs text-slate-500">0912-***-456</div>
+</td>
+<td class="px-md py-4 text-sm">05-12</td>
+<td class="px-md py-4 text-sm text-slate-600">2024-01-20</td>
+<td class="px-lg py-4 text-sm font-bold text-right text-slate-900">$3,200</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors cursor-pointer">
+<td class="px-lg py-4">
+<div class="font-bold text-slate-900">李佳穎</div>
+<div class="text-xs text-slate-500">0921-***-789</div>
+</td>
+<td class="px-md py-4 text-sm">11-23</td>
+<td class="px-md py-4 text-sm text-slate-600">2024-01-18</td>
+<td class="px-lg py-4 text-sm font-bold text-right text-slate-900">$12,800</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors cursor-pointer">
+<td class="px-lg py-4">
+<div class="font-bold text-slate-900">張靜芳</div>
+<div class="text-xs text-slate-500">0935-***-112</div>
+</td>
+<td class="px-md py-4 text-sm">08-04</td>
+<td class="px-md py-4 text-sm text-slate-600">2024-01-15</td>
+<td class="px-lg py-4 text-sm font-bold text-right text-slate-900">$4,500</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Non-Returning Customers -->
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+<div class="bg-secondary/5 px-lg py-md border-b border-secondary/10 flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined">person_off</span>
+                            未回流客列表
+                        </h3>
+<span class="text-xs font-bold text-secondary">共 231 筆</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 text-[11px] text-slate-500 uppercase tracking-wider">
+<tr>
+<th class="px-lg py-3">姓名/電話</th>
+<th class="px-md py-3">生日</th>
+<th class="px-md py-3">最近消費</th>
+<th class="px-lg py-3 text-right">消費金額</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50 transition-colors cursor-pointer">
+<td class="px-lg py-4">
+<div class="font-bold text-slate-900">林依柔</div>
+<div class="text-xs text-slate-500">0988-***-123</div>
+</td>
+<td class="px-md py-4 text-sm">02-28</td>
+<td class="px-md py-4 text-sm text-slate-600">2023-10-05</td>
+<td class="px-lg py-4 text-sm font-bold text-right text-slate-900">$2,800</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors cursor-pointer">
+<td class="px-lg py-4">
+<div class="font-bold text-slate-900">趙天心</div>
+<div class="text-xs text-slate-500">0972-***-998</div>
+</td>
+<td class="px-md py-4 text-sm">07-15</td>
+<td class="px-md py-4 text-sm text-slate-600">2023-09-22</td>
+<td class="px-lg py-4 text-sm font-bold text-right text-slate-900">$1,500</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors cursor-pointer">
+<td class="px-lg py-4">
+<div class="font-bold text-slate-900">吳曉梅</div>
+<div class="text-xs text-slate-500">0911-***-554</div>
+</td>
+<td class="px-md py-4 text-sm">04-30</td>
+<td class="px-md py-4 text-sm text-slate-600">2023-09-10</td>
+<td class="px-lg py-4 text-sm font-bold text-right text-slate-900">$6,200</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

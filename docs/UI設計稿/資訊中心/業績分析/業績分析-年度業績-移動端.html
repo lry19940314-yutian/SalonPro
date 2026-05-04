@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 業績分析</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#392d32",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f8",
+                        "tertiary": "#1c6b00",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-tertiary-fixed": "#042100",
+                        "on-tertiary-container": "#f8ffee",
+                        "secondary-container": "#e8b3fe",
+                        "secondary": "#794c8f",
+                        "on-primary-container": "#fffbff",
+                        "primary": "#a22c70",
+                        "on-secondary-container": "#6c4082",
+                        "surface": "#fff8f8",
+                        "background": "#fff8f8",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed-variant": "#861259",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#554149",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-dim": "#e8d5db",
+                        "surface-variant": "#f1dee3",
+                        "tertiary-container": "#328517",
+                        "surface-tint": "#a52f72",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#603475",
+                        "inverse-primary": "#ffafd3",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-surface": "#23191d",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#dac0c9",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-container-highest": "#f1dee3",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container": "#fde9ef",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-secondary-fixed": "#300247",
+                        "on-primary-fixed": "#3d0025",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-background": "#23191d",
+                        "outline": "#88717a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<div class="relative flex min-h-screen w-full flex-col bg-surface overflow-x-hidden pb-20">
+<!-- Header - Back to Main Style -->
+<div class="flex items-center bg-surface p-4 pb-2 justify-between sticky top-0 z-50 border-b border-surface-container">
+<div class="text-on-surface flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined cursor-pointer">arrow_back</span>
+</div>
+<h2 class="text-on-surface text-lg font-bold leading-tight tracking-tight flex-1 text-center">業績分析</h2>
+<div class="flex w-12 items-center justify-end">
+<span class="material-symbols-outlined cursor-pointer">search</span>
+</div>
+</div>
+<!-- 1. Top Sliding Tabs (Scrollable) -->
+<div class="bg-surface sticky top-[65px] z-40">
+<div class="flex border-b border-outline-variant px-4 gap-8 overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-on-surface pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-on-surface text-sm font-bold">年度業績</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-on-surface-variant pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-on-surface-variant text-sm font-bold">月度業績</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-on-surface-variant pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-on-surface-variant text-sm font-bold">每日分析</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-on-surface-variant pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-on-surface-variant text-sm font-bold">門店排行</p>
+</a>
+</div>
+</div>
+<!-- 2. Stacked Filters Section -->
+<div class="flex gap-3 p-4 flex-wrap bg-surface-container-low border-b border-surface-container">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-container-highest px-4 border border-outline-variant">
+<span class="text-on-surface text-sm font-medium">2023年度</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-container-highest px-4 border border-outline-variant">
+<span class="text-on-surface text-sm font-medium">台北忠孝店</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-container-highest px-4 border border-outline-variant">
+<span class="text-on-surface text-sm font-medium">所有員工</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<!-- 3. Horizontal Bar Chart for Employee Performance -->
+<section class="px-4 py-6 bg-surface">
+<h3 class="text-on-surface text-xl font-bold mb-4">員工年度業績分布</h3>
+<div class="space-y-4">
+<!-- Data Row 1 -->
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant">
+<span>林家宜 (設計師)</span>
+<span>$1,420,000</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-3">
+<div class="bg-primary h-3 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<!-- Data Row 2 -->
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant">
+<span>張雨柔 (資深技師)</span>
+<span>$1,180,000</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-3">
+<div class="bg-primary-container h-3 rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<!-- Data Row 3 -->
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant">
+<span>陳思妤 (技師)</span>
+<span>$940,000</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-3">
+<div class="bg-secondary h-3 rounded-full" style="width: 58%"></div>
+</div>
+</div>
+<!-- Data Row 4 -->
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant">
+<span>李若瑄 (美容顧問)</span>
+<span>$720,000</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-3">
+<div class="bg-outline h-3 rounded-full" style="width: 44%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Employee Performance List (Cards) -->
+<div class="px-4 py-4 space-y-4">
+<h3 class="text-on-surface text-xl font-bold">員工業績清單</h3>
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional close-up portrait of a female salon manager with a friendly expression. She is in a high-end, modern spa environment with soft, ambient lighting. The background features blurred shelves of premium beauty products, creating a professional and trustworthy atmosphere. The image uses a soft palette of pinks and whites to align with the brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHQ-cAdm5rKSxAkSj8fHSLa1wUS4jFm3rgsWV6U-H8xrhE1p3iAd1FHdLNcAPYvPtpICoYVO-e6uzjI53Khw9flMTmg7RnhLvhZfiPgKP29BxaK0-fbKhStOFguGg2ekKjccy5tekkIZFjyqhR_OUfsvz3pZYlkMLTYoG0AOq6lR8nuBEi1SKJ_ZGAc0XcZjc1yifg0-F39FCg_EUzqrwNEgKbbpuOXpT-Q9gX1FWWHU0rX4FaK5wsz5KveHm40zVjnwla2FYGzvQ"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">林家宜</p>
+<p class="text-xs text-on-surface-variant">年度總業績</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">$1,420,000</p>
+<span class="text-[10px] bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-bold">排名 1</span>
+</div>
+</div>
+<div class="grid grid-cols-3 border-t border-surface-container-high bg-surface-bright/50">
+<div class="p-3 text-center border-r border-surface-container-high">
+<p class="text-[10px] text-on-surface-variant">總服務</p>
+<p class="text-sm font-bold">1,248</p>
+</div>
+<div class="p-3 text-center border-r border-surface-container-high bg-primary-fixed/30">
+<p class="text-[10px] text-on-primary-fixed-variant">虛業績</p>
+<p class="text-sm font-bold text-primary">$32.5萬</p>
+</div>
+<div class="p-3 text-center">
+<p class="text-[10px] text-on-surface-variant">客次/客數</p>
+<p class="text-sm font-bold">892 / 410</p>
+</div>
+</div>
+<div class="flex items-center justify-center p-2 text-on-surface-variant text-xs cursor-pointer border-t border-surface-container-high">
+<span>展開詳情</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a senior beauty technician in a clinical but stylish salon setting. The lighting is bright and clean, emphasizing a high-standard hygienic environment. The technician wears a subtle, professional uniform in a soft gray or white, looking confidently at the camera. The background shows hints of modern equipment and elegant minimalist decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC48_3G_dVLQ11RsSHgErhQ7xN7tB-PUyq3J7Tm6Abemrbt_hTpq7NU3zSPebazjW5B4M7upDOfm0RX7Uv5-yZDsxKyFLHPYtiItWN141nvoHPX7gyquHMTBoD2TEj-dNH4FdYx-tOV1Xp8yYdXVbFbu7vgIwUQW0cgnS1oxKWJHYha3-OFQpXHDQtxtXdOUpLHXy85IixjQCiVmHuOH27TcgUCjvWMytzb4orbRXcM9dTunEe4bn464W5EK9vY_xNuiFxCAcgQe3A"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">張雨柔</p>
+<p class="text-xs text-on-surface-variant">年度總業績</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">$1,180,000</p>
+<span class="text-[10px] bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded-full font-bold">排名 2</span>
+</div>
+</div>
+<div class="grid grid-cols-3 border-t border-surface-container-high bg-surface-bright/50">
+<div class="p-3 text-center border-r border-surface-container-high">
+<p class="text-[10px] text-on-surface-variant">總服務</p>
+<p class="text-sm font-bold">980</p>
+</div>
+<div class="p-3 text-center border-r border-surface-container-high bg-primary-fixed/30">
+<p class="text-[10px] text-on-primary-fixed-variant">虛業績</p>
+<p class="text-sm font-bold text-primary">$21.8萬</p>
+</div>
+<div class="p-3 text-center">
+<p class="text-[10px] text-on-surface-variant">客次/客數</p>
+<p class="text-sm font-bold">650 / 285</p>
+</div>
+</div>
+<div class="flex items-center justify-center p-2 text-on-surface-variant text-xs cursor-pointer border-t border-surface-container-high">
+<span>展開詳情</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a youthful, smiling beauty therapist working in a high-end aesthetic clinic. The atmosphere is warm and welcoming, with soft natural light streaming into a room decorated with plants and elegant textures. The therapist is portrayed as skilled and accessible, embodying the personalized care of the Wonder Sky brand. The image conveys a sense of high-end service and comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy5ibRQSvmaIhrBJAMjVbSjFH5NcNM0fxzO97-X_kc-AA939_zEspiSGXZuw8v5gysDCDulv5FG8ReMyjPfdCxzCfMrP8W8QF4ndztydmCuvL3-Q0Fhom6P-Hq6wWa2gzDmJwLz16rSxZVtc9KYcC1frdyWsATwR0C9NUTSyUk1wcw-v3c1xlLQ36FqulmNsYypxocAZouhoXp-8uzGod2GGVetxBvZqmH0-vaOF_tJOKsT7PJevQP_6f6S8DUFmPMdneFv3EL2Ko"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">陳思妤</p>
+<p class="text-xs text-on-surface-variant">年度總業績</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">$940,000</p>
+<span class="text-[10px] bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded-full font-bold">排名 3</span>
+</div>
+</div>
+<div class="grid grid-cols-3 border-t border-surface-container-high bg-surface-bright/50">
+<div class="p-3 text-center border-r border-surface-container-high">
+<p class="text-[10px] text-on-surface-variant">總服務</p>
+<p class="text-sm font-bold">820</p>
+</div>
+<div class="p-3 text-center border-r border-surface-container-high bg-primary-fixed/30">
+<p class="text-[10px] text-on-primary-fixed-variant">虛業績</p>
+<p class="text-sm font-bold text-primary">$15.2萬</p>
+</div>
+<div class="p-3 text-center">
+<p class="text-[10px] text-on-surface-variant">客次/客數</p>
+<p class="text-sm font-bold">540 / 312</p>
+</div>
+</div>
+<div class="flex items-center justify-center p-2 text-on-surface-variant text-xs cursor-pointer border-t border-surface-container-high">
+<span>展開詳情</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+<!-- Shared Component: BottomNavBar (Fixed at Bottom) -->
+<div class="fixed bottom-0 left-0 right-0 z-[100] border-t border-[#f1e9ed] bg-[#fbf9fa] px-4 pb-3 pt-2">
+<div class="flex gap-2">
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#191015]" href="#">
+<div class="text-[#191015] flex h-8 items-center justify-center" data-icon="ChartBar" data-size="24px" data-weight="fill">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16h8V136a8,8,0,0,1,8-8H72a8,8,0,0,1,8,8v64H96V88a8,8,0,0,1,8-8h32a8,8,0,0,1,8,8V200h16V40a8,8,0,0,1,8-8h40a8,8,0,0,1,8,8V200h8A8,8,0,0,1,232,208Z"></path>
+</svg>
+</div>
+<p class="text-[#191015] text-[10px] font-medium leading-normal">資訊中心</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#8b5b74]" href="#">
+<div class="text-[#8b5b74] flex h-8 items-center justify-center" data-icon="Calendar" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0-16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"></path>
+</svg>
+</div>
+<p class="text-[#8b5b74] text-[10px] font-medium leading-normal">預約管理</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#8b5b74]" href="#">
+<div class="text-[#8b5b74] flex h-8 items-center justify-center" data-icon="Users" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path>
+</svg>
+</div>
+<p class="text-[#8b5b74] text-[10px] font-medium leading-normal">會員中心</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#8b5b74]" href="#">
+<div class="text-[#8b5b74] flex h-8 items-center justify-center" data-icon="Storefront" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M232,96a7.89,7.89,0,0,0-.3-2.2L217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.8A7.89,7.89,0,0,0,24,96v16a40,40,0,0,0,16,32v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V144a40,40,0,0,0,16-32ZM54,48H202l11.42,40H42.61Zm50,56h48v8a24,24,0,0,1-48,0Zm-16,0v8a24,24,0,0,1-48,0v-8ZM200,208H56V151.2a40.57,40.57,0,0,0,8,.8,40,40,0,0,0,32-16,40,40,0,0,0,64,0,40,40,0,0,0,32,16,40.57,40.57,0,0,0,8-.8Zm-8-72a24,24,0,0,1-24-24v-8h48v8A24,24,0,0,1,192,136Z"></path>
+</svg>
+</div>
+<p class="text-[#8b5b74] text-[10px] font-medium leading-normal">門店設置</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

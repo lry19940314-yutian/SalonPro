@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#88717a",
+            "tertiary": "#1c6b00",
+            "primary-fixed-dim": "#ffafd3",
+            "secondary-fixed-dim": "#e8b3fe",
+            "primary": "#a22c70",
+            "on-tertiary-fixed-variant": "#145200",
+            "on-tertiary-container": "#f8ffee",
+            "on-primary-fixed-variant": "#861259",
+            "inverse-on-surface": "#ffecf1",
+            "error": "#ba1a1a",
+            "surface-dim": "#e8d5db",
+            "inverse-primary": "#ffafd3",
+            "surface-container-highest": "#f1dee3",
+            "on-tertiary-fixed": "#042100",
+            "surface-container-low": "#fff0f4",
+            "on-primary-container": "#fffbff",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#f6d9ff",
+            "on-secondary-fixed": "#300247",
+            "background": "#fff8f8",
+            "tertiary-fixed": "#9ff87d",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "surface-bright": "#fff8f8",
+            "tertiary-fixed-dim": "#84db64",
+            "on-primary-fixed": "#3d0025",
+            "inverse-surface": "#392d32",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#f7e3e9",
+            "on-background": "#23191d",
+            "outline-variant": "#dac0c9",
+            "secondary": "#794c8f",
+            "on-secondary-fixed-variant": "#603475",
+            "secondary-container": "#e8b3fe",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#23191d",
+            "on-error": "#ffffff",
+            "surface-container": "#fde9ef",
+            "tertiary-container": "#328517",
+            "primary-fixed": "#ffd8e7",
+            "surface-tint": "#a52f72",
+            "primary-container": "#c14689",
+            "surface-variant": "#f1dee3",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#fff8f8",
+            "on-surface-variant": "#554149"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sm": "8px",
+            "lg": "24px",
+            "xs": "4px",
+            "gutter": "20px",
+            "xl": "32px",
+            "unit": "4px",
+            "md": "16px",
+            "container-padding": "24px"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "h3": ["Plus Jakarta Sans"],
+            "h2": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "caption": ["Plus Jakarta Sans"],
+            "h1": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-4 gap-2 bg-white dark:bg-slate-900 h-screen w-64 border-r border-slate-200 dark:border-slate-800 shadow-sm z-50">
+<div class="mb-8 px-4 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="spa">spa</span>
+</div>
+<div>
+<h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">SalonPro</h1>
+<p class="text-[10px] font-bold text-primary tracking-widest uppercase mt-1">Beauty SaaS</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors font-plus-jakarta-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+        Information Center
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20 rounded-lg font-bold font-plus-jakarta-sans text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+        Finance Center
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors font-plus-jakarta-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+        Billing
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors font-plus-jakarta-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+        Appointments
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors font-plus-jakarta-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="card_membership">card_membership</span>
+        Membership
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors font-plus-jakarta-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+        Services
+      </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 px-4 py-2">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="Manager Profile" data-alt="A professional headshot of a boutique salon manager in a clean, high-end environment with soft cinematic lighting. The setting is refined and corporate, reflecting a modern beauty SaaS platform aesthetic. The color palette is dominated by neutral whites and subtle pink accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlUFZtH6DbpTKZNripGYj_IDmKYUEJH0RCqDd67I8AhtlzSX2AarkF72eEaHh_qeVSCg7SfecwemvpD3pP4LeOq1kkFWmMt63NNvPqaBSEgkOEI9JvZ-PuAWPHojV8sgYt2oIcO1pjtlVsbDdu90i5ortMGssH-ZAR0vN9aEHJmnzpfOxhDVTHs1Md1CpWBfxC9UI1B7uR-BuWpQLP8aWOJc-RAHXRpj29-9Wv6_ukaN5PRnYw7HOF9rv203ePr5DPemq4NYeBjhs"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-bold truncate">Wonder sky 國際美妍館</p>
+<p class="text-[10px] text-slate-500 truncate">Store Manager</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar Anchor -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-40 border-b border-slate-200 dark:border-slate-800">
+<div class="flex flex-col">
+<nav class="flex items-center gap-2 text-caption text-outline mb-0.5">
+<span>財務中心</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-medium">營業總覽 (日)</span>
+</nav>
+<h2 class="text-h3 font-h3 text-on-surface leading-tight">Wonder sky 國際美妍館</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-outline hover:bg-surface-container rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+        Create Order
+      </button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="p-container-padding space-y-lg max-w-[1600px] mx-auto">
+<!-- Filter Bar -->
+<section class="flex flex-wrap items-center justify-between gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-on-surface">2023年 10月</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+<button class="px-4 py-2 text-primary font-label-md text-label-md border border-primary/20 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors">
+            Switch to Monthly
+          </button>
+<div class="h-6 w-px bg-slate-200 mx-2"></div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container-high rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-highest transition-colors">Today</button>
+<div class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-outline-variant">
+<span class="text-caption text-outline">Date Range:</span>
+<span class="font-body-md">2023/10/24 - 2023/10/24</span>
+<span class="material-symbols-outlined text-outline" data-icon="date_range">date_range</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-secondary text-secondary rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="bar_chart">bar_chart</span>
+            Annual Report
+          </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md shadow-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+            Export
+          </button>
+</div>
+</section>
+<!-- Key Metrics Hero -->
+<section class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-4 bg-white p-lg rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center">
+<p class="text-label-md text-outline mb-2 tracking-widest uppercase">今日營業總額 (Revenue)</p>
+<h2 class="text-[56px] font-extrabold text-primary leading-none">$0</h2>
+<div class="mt-4 flex items-center gap-2 text-caption px-3 py-1 bg-surface-container rounded-full">
+<span class="text-error font-bold flex items-center"><span class="material-symbols-outlined text-xs" data-icon="trending_down">trending_down</span> 100%</span>
+<span class="text-outline">vs Yesterday</span>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-white p-md rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<p class="text-label-md text-outline leading-tight">Daily Net Profit<br/>當日淨收支</p>
+<span class="material-symbols-outlined text-primary bg-primary/5 p-2 rounded-lg" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<p class="text-h2 font-h2 mt-4">$0</p>
+</div>
+<div class="bg-white p-md rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<p class="text-label-md text-outline leading-tight">Prepayment Balance<br/>預收餘額</p>
+<span class="material-symbols-outlined text-primary bg-primary/5 p-2 rounded-lg" data-icon="wallet">wallet</span>
+</div>
+<p class="text-h2 font-h2 mt-4">$2,458,900</p>
+</div>
+<div class="bg-white p-md rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<p class="text-label-md text-outline leading-tight">Counter Cash<br/>櫃檯現金</p>
+<span class="material-symbols-outlined text-primary bg-primary/5 p-2 rounded-lg" data-icon="payments">payments</span>
+</div>
+<p class="text-h2 font-h2 mt-4">$15,400</p>
+</div>
+<div class="bg-white p-md rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<p class="text-label-md text-outline leading-tight">Payment Methods<br/>支付比例</p>
+<span class="material-symbols-outlined text-primary bg-primary/5 p-2 rounded-lg" data-icon="pie_chart">pie_chart</span>
+</div>
+<p class="text-h2 font-h2 mt-4">7 Methods</p>
+</div>
+</div>
+</section>
+<!-- Details Cards Grid (Asymmetric Layout) -->
+<section class="grid grid-cols-12 gap-gutter">
+<!-- Column 1: Daily Net Profit Details -->
+<div class="col-span-12 md:col-span-4 space-y-gutter">
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+<div class="p-4 border-b border-slate-50 flex justify-between items-center bg-slate-50/50">
+<h3 class="font-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="receipt">receipt</span>
+                收支明細 (Income &amp; Expense)
+              </h3>
+</div>
+<div class="p-lg space-y-6">
+<div class="space-y-3">
+<p class="text-label-md text-primary font-bold">收入分析 (Income)</p>
+<div class="space-y-2">
+<div class="flex justify-between text-body-md">
+<span class="text-outline">Service Income (勞務收入)</span>
+<span class="font-semibold text-primary">$0</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-outline">Product Income (產品收入)</span>
+<span class="font-semibold text-primary">$0</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-outline">Membership Income (入會收入)</span>
+<span class="font-semibold text-primary">$0</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-slate-100"></div>
+<div class="space-y-3">
+<p class="text-label-md text-error font-bold">支出分析 (Expenses)</p>
+<div class="space-y-2">
+<div class="flex justify-between text-body-md">
+<span class="text-outline">General Fees (一般規費)</span>
+<span class="font-semibold text-error">-$0</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-outline">Operational Costs (營運成本)</span>
+<span class="font-semibold text-error">-$0</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: Prepayment & Cash & Customers -->
+<div class="col-span-12 md:col-span-4 space-y-gutter">
+<!-- Prepayment Details -->
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+<div class="p-4 border-b border-slate-50 bg-slate-50/50">
+<h3 class="font-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="savings">savings</span>
+                預收明細 (Prepayment)
+              </h3>
+</div>
+<div class="p-lg space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-body-md text-outline">Prepaid (預收)</span>
+<span class="font-h3">$0</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-outline">Real Prepaid (實收預收)</span>
+<span class="font-h3 text-error">-$0</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-outline">Used (核銷)</span>
+<span class="font-h3 text-tertiary">$0</span>
+</div>
+<div class="pt-4 mt-2 border-t border-slate-100 flex justify-between items-center">
+<span class="font-bold text-on-surface">Total Balance</span>
+<span class="text-h3 font-h3 text-primary">$2,458,900</span>
+</div>
+</div>
+</div>
+<!-- Counter Cash Details -->
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+<div class="p-4 border-b border-slate-50 bg-slate-50/50">
+<h3 class="font-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="point_of_sale">point_of_sale</span>
+                櫃檯現金 (Counter Cash)
+              </h3>
+</div>
+<div class="p-lg space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<p class="text-caption text-outline">Payment Types</p>
+<p class="text-body-md font-semibold">Cash (現金)</p>
+<p class="text-h2 text-on-surface">$15,400</p>
+</div>
+<div class="space-y-1">
+<p class="text-caption text-outline">Outflows</p>
+<p class="text-body-md font-semibold">Expenses (支出)</p>
+<p class="text-h2 text-error">-$0</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Customer Stats -->
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+<div class="p-4 border-b border-slate-50 bg-slate-50/50 flex justify-between items-center">
+<h3 class="font-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+                客群統計 (Customers)
+              </h3>
+<span class="text-caption px-2 py-1 bg-surface-container rounded-full text-on-surface-variant font-bold">Total: 0</span>
+</div>
+<div class="p-lg">
+<div class="flex gap-4">
+<div class="flex-1 bg-surface-container p-3 rounded-lg text-center">
+<p class="text-caption text-outline">Specified (指定)</p>
+<p class="text-h3 font-h3">0</p>
+</div>
+<div class="flex-1 bg-surface-container p-3 rounded-lg text-center">
+<p class="text-caption text-outline">Unspecified (不指定)</p>
+<p class="text-h3 font-h3">0</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 3: Payment Method Details -->
+<div class="col-span-12 md:col-span-4">
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 h-full overflow-hidden">
+<div class="p-4 border-b border-slate-50 bg-slate-50/50">
+<h3 class="font-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="credit_card">credit_card</span>
+                支付明細 (Payment Methods)
+              </h3>
+</div>
+<div class="p-lg space-y-5">
+<div class="flex items-center justify-between p-3 rounded-xl border border-slate-50 bg-white shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined text-sm" data-icon="storefront">storefront</span>
+</div>
+<span class="font-body-md font-medium">On-site (現場支付)</span>
+</div>
+<span class="font-h3 text-on-surface">$0</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl border border-slate-50 bg-white shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center text-pink-600">
+<span class="material-symbols-outlined text-sm" data-icon="prepayments">payments</span>
+</div>
+<span class="font-body-md font-medium">Prepaid (扣預收)</span>
+</div>
+<span class="font-h3 text-on-surface">$0</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl border border-slate-50 bg-white shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined text-sm" data-icon="confirmation_number">confirmation_number</span>
+</div>
+<span class="font-body-md font-medium">Vouchers (扣卷)</span>
+</div>
+<span class="font-h3 text-on-surface">$0</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl border border-slate-50 bg-white shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined text-sm" data-icon="sell">sell</span>
+</div>
+<span class="font-body-md font-medium">Coupons (優惠卷)</span>
+</div>
+<span class="font-h3 text-on-surface">$0</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl border border-slate-50 bg-white shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-purple-600">
+<span class="material-symbols-outlined text-sm" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+</div>
+<span class="font-body-md font-medium">Gift (贈送)</span>
+</div>
+<span class="font-h3 text-on-surface">$0</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl border border-slate-50 bg-white shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-sm" data-icon="money_off">money_off</span>
+</div>
+<span class="font-body-md font-medium">Free (免付)</span>
+</div>
+<span class="font-h3 text-on-surface">$0</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl border border-slate-50 bg-white shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined text-sm" data-icon="account_balance">account_balance</span>
+</div>
+<span class="font-body-md font-medium">Deposit (定金)</span>
+</div>
+<span class="font-h3 text-on-surface">$0</span>
+</div>
+<!-- Payment Method Chart Visual Placeholder -->
+<div class="mt-8 pt-8 border-t border-slate-100 flex flex-col items-center">
+<div class="w-40 h-40 relative flex items-center justify-center">
+<!-- Custom SVG for Donut Chart -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#f1dee3" stroke-dasharray="100, 100" stroke-width="3"></path>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-caption text-outline">Total</span>
+<span class="text-h1 font-h1 text-primary">0%</span>
+</div>
+</div>
+<div class="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-caption">
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> On-site</div>
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Prepaid</div>
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span> Others</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Action Button Contextual Check (Suppressed for this detailed view per instructions) -->
+</body></html>

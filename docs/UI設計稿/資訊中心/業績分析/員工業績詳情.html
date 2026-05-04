@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#f1dee3",
+            "surface-bright": "#fff8f8",
+            "on-background": "#23191d",
+            "on-primary-fixed": "#3d0025",
+            "on-error": "#ffffff",
+            "tertiary-container": "#328517",
+            "surface-dim": "#e8d5db",
+            "secondary": "#794c8f",
+            "surface": "#fff8f8",
+            "on-secondary-container": "#6c4082",
+            "on-primary-container": "#fffbff",
+            "on-secondary": "#ffffff",
+            "primary-container": "#c14689",
+            "outline": "#88717a",
+            "primary": "#a22c70",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#f7e3e9",
+            "surface-container": "#fde9ef",
+            "tertiary-fixed-dim": "#84db64",
+            "surface-container-highest": "#f1dee3",
+            "on-secondary-fixed": "#300247",
+            "inverse-primary": "#ffafd3",
+            "primary-fixed-dim": "#ffafd3",
+            "secondary-fixed": "#f6d9ff",
+            "primary-fixed": "#ffd8e7",
+            "on-tertiary-fixed-variant": "#145200",
+            "on-secondary-fixed-variant": "#603475",
+            "surface-tint": "#a52f72",
+            "on-tertiary-fixed": "#042100",
+            "on-error-container": "#93000a",
+            "secondary-container": "#e8b3fe",
+            "error": "#ba1a1a",
+            "outline-variant": "#dac0c9",
+            "tertiary": "#1c6b00",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#f8ffee",
+            "on-primary-fixed-variant": "#861259",
+            "tertiary-fixed": "#9ff87d",
+            "on-tertiary": "#ffffff",
+            "background": "#fff8f8",
+            "inverse-surface": "#392d32",
+            "on-surface-variant": "#554149",
+            "inverse-on-surface": "#ffecf1",
+            "secondary-fixed-dim": "#e8b3fe",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#fff0f4",
+            "on-surface": "#23191d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sm": "8px",
+            "gutter": "20px",
+            "md": "16px",
+            "xs": "4px",
+            "container-padding": "24px",
+            "lg": "24px",
+            "xl": "32px",
+            "unit": "4px"
+          },
+          "fontFamily": {
+            "caption": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "h2": ["Plus Jakarta Sans"],
+            "h1": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "h3": ["Plus Jakarta Sans"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .donut-segment { transition: stroke-dashoffset 0.3s ease; }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+<!-- Modal Overlay -->
+<div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-12">
+<!-- Modal Container -->
+<div class="bg-surface-container-lowest w-full max-w-6xl max-h-[921px] rounded-xl shadow-2xl overflow-hidden flex flex-col border border-outline-variant">
+<!-- TopAppBar (Modal Header) -->
+<header class="bg-slate-50 border-b border-slate-200 px-6 h-16 flex justify-between items-center shrink-0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+<h1 class="text-h2 font-h2 text-on-surface">LULU 店長-美容師</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="close">close</span>
+</button>
+</header>
+<!-- Modal Content Scroll Area -->
+<div class="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
+<!-- Employee Info Section -->
+<section class="flex flex-col md:flex-row items-center gap-6 bg-surface-container-low p-6 rounded-xl border border-outline-variant/30">
+<div class="relative">
+<img alt="Employee Avatar" class="w-24 h-24 rounded-full object-cover ring-4 ring-white shadow-md" data-alt="A professional headshot of a friendly female salon manager in her early 30s with a warm smile. She is wearing a professional white aesthetician uniform in a brightly lit, high-end beauty clinic setting. The background is softly blurred, showing hints of minimalist rose-gold and white decor, maintaining a clean and professional corporate beauty brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtOHbctiKQL0IcwzhG3E61m360a7ZcUz4G7c_CYxTZmFtlfCcnbX1p_-dowiQrCE6F7S_N3kTuhoUZvFuYf1xaLzwcKh2tbMSSqyR43AVsK-0aamq2r4AEYvtrgu2UAlxMtUa0ereSq2YN0Zt57GXBLtEi2mjL7y8yO0vdnm4z4IUMWpZvp8reVuWDpLHdcjXFsuTg1WnOy6WG42cMPVBDeTPc2Qt7U8w875uVEz4ZAzUG-M2AM4AaPLFV_btUns8ZY3Fgz0OCJI0"/>
+<div class="absolute bottom-1 right-1 bg-tertiary-container w-5 h-5 rounded-full border-2 border-white"></div>
+</div>
+<div class="text-center md:text-left space-y-1">
+<div class="flex items-center justify-center md:justify-start gap-2">
+<h2 class="text-h1 font-h1 text-on-surface">LULU</h2>
+<span class="bg-primary-container/10 text-primary px-3 py-0.5 rounded-full text-label-md font-label-md">店長</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2 justify-center md:justify-start">
+<span class="material-symbols-outlined text-sm" data-icon="storefront">storefront</span>
+              台北信義旗艦店 - 專業美容組
+            </p>
+</div>
+<div class="flex-1"></div>
+<div class="grid grid-cols-2 gap-4 w-full md:w-auto">
+<div class="bg-white p-4 rounded-lg shadow-sm border border-slate-100 text-center">
+<p class="text-caption font-caption text-on-surface-variant">本月總提成</p>
+<p class="text-h2 font-h2 text-primary">NT$ 42,850</p>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm border border-slate-100 text-center">
+<p class="text-caption font-caption text-on-surface-variant">達成進度</p>
+<p class="text-h2 font-h2 text-tertiary">85%</p>
+</div>
+</div>
+</section>
+<!-- Main Dashboard Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Foldable Modules -->
+<div class="lg:col-span-8 space-y-4">
+<h3 class="text-h3 font-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+              業績模塊詳情
+            </h3>
+<!-- Accordion Items -->
+<div class="space-y-3">
+<!-- Item 1: 服務 -->
+<div class="border border-outline-variant rounded-xl bg-white overflow-hidden shadow-sm">
+<button class="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-pink-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="spa">spa</span>
+</div>
+<span class="text-body-lg font-bold text-on-surface">服務</span>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden sm:block text-right">
+<span class="text-caption text-on-surface-variant block">提成</span>
+<span class="text-body-md font-semibold text-primary">NT$ 12,400</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</button>
+<div class="px-5 pb-5 border-t border-slate-50 pt-4 bg-slate-50/50">
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div class="p-3 bg-white rounded-lg border border-slate-200">
+<span class="text-caption text-on-surface-variant block">虛業績 / 客次</span>
+<span class="text-h3 font-h3 text-primary">NT$ 158,000 / 42</span>
+</div>
+<div class="p-3 bg-white rounded-lg border border-slate-200">
+<span class="text-caption text-on-surface-variant block">實業績</span>
+<span class="text-h3 font-h3 text-on-surface">NT$ 132,500</span>
+</div>
+<div class="p-3 bg-white rounded-lg border border-slate-200">
+<span class="text-caption text-on-surface-variant block">提成金額</span>
+<span class="text-h3 font-h3 text-primary">NT$ 12,400</span>
+</div>
+</div>
+<!-- Sub-table -->
+<div class="overflow-hidden rounded-lg border border-slate-200 bg-white">
+<table class="w-full text-left text-body-md">
+<thead class="bg-slate-100 text-on-surface-variant">
+<tr>
+<th class="px-4 py-2 font-semibold">類別</th>
+<th class="px-4 py-2 font-semibold">虛業績 / 客次</th>
+<th class="px-4 py-2 font-semibold">實業績</th>
+<th class="px-4 py-2 font-semibold text-right">提成</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr>
+<td class="px-4 py-3">面部護理</td>
+<td class="px-4 py-3 text-primary">NT$ 82,000 / 24</td>
+<td class="px-4 py-3">NT$ 75,000</td>
+<td class="px-4 py-3 text-right">NT$ 7,500</td>
+</tr>
+<tr>
+<td class="px-4 py-3">身體SPA</td>
+<td class="px-4 py-3 text-primary">NT$ 76,000 / 18</td>
+<td class="px-4 py-3">NT$ 57,500</td>
+<td class="px-4 py-3 text-right">NT$ 4,900</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Item 2: 使用商品券 -->
+<div class="border border-outline-variant rounded-xl bg-white overflow-hidden shadow-sm opacity-80">
+<button class="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-indigo-600" data-icon="confirmation_number">confirmation_number</span>
+</div>
+<span class="text-body-lg font-bold text-on-surface">使用商品券</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Item 3: 銷售商品 -->
+<div class="border border-outline-variant rounded-xl bg-white overflow-hidden shadow-sm">
+<button class="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-600" data-icon="inventory_2">inventory_2</span>
+</div>
+<span class="text-body-lg font-bold text-on-surface">銷售商品</span>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden sm:block text-right">
+<span class="text-caption text-on-surface-variant block">提成</span>
+<span class="text-body-md font-semibold text-primary">NT$ 8,250</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+</div>
+<!-- Item 4: 儲值 -->
+<div class="border border-outline-variant rounded-xl bg-white overflow-hidden shadow-sm">
+<button class="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-600" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="text-body-lg font-bold text-on-surface">儲值</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Item 5: 銷售商品券 -->
+<div class="border border-outline-variant rounded-xl bg-white overflow-hidden shadow-sm">
+<button class="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-600" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<span class="text-body-lg font-bold text-on-surface">銷售商品券</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Achievement Ratio -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm sticky top-0">
+<h3 class="text-h3 font-h3 text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="pie_chart">pie_chart</span>
+                業績佔比分析
+              </h3>
+<!-- Circular Progress / Donut Chart Simulation -->
+<div class="relative w-48 h-48 mx-auto mb-8">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="transparent" stroke="currentColor" stroke-width="3"></path>
+<!-- Pink Section (Services) -->
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="transparent" stroke="currentColor" stroke-dasharray="65, 100" stroke-linecap="round" stroke-width="3"></path>
+<!-- Deep Purple Section (Sales) -->
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="transparent" stroke="currentColor" stroke-dasharray="25, 100" stroke-dashoffset="-65" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-caption text-on-surface-variant">總業績額</span>
+<span class="text-h3 font-h3 text-on-surface">100%</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-body-md font-medium text-on-surface">服務業績</span>
+</div>
+<span class="text-body-md font-bold text-on-surface">65%</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span class="text-body-md font-medium text-on-surface">商品銷售</span>
+</div>
+<span class="text-body-md font-bold text-on-surface">25%</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-slate-300"></div>
+<span class="text-body-md font-medium text-on-surface">其他</span>
+</div>
+<span class="text-body-md font-bold text-on-surface">10%</span>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-100">
+<div class="flex items-center gap-3 p-4 bg-primary/5 rounded-xl border border-primary/10">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+<p class="text-caption text-primary-fixed-variant leading-relaxed">
+                    本月面部護理類別表現優異，建議下個月可針對「身體SPA」進行重點推廣。
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer Action -->
+<footer class="p-6 bg-white border-t border-slate-200 flex justify-end gap-3 shrink-0">
+<button class="px-6 py-2 rounded-lg border border-outline text-on-surface-variant font-medium hover:bg-slate-50 transition-colors">
+          匯出明細
+        </button>
+<button class="px-8 py-2 rounded-lg bg-primary text-white font-medium hover:bg-primary-container transition-shadow shadow-sm active:scale-95 duration-200">
+          確認
+        </button>
+</footer>
+</div>
+</div>
+</body></html>

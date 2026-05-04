@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#84db64",
+                    "tertiary-container": "#328517",
+                    "inverse-on-surface": "#ffecf1",
+                    "surface-bright": "#fff8f8",
+                    "secondary": "#794c8f",
+                    "surface-dim": "#e8d5db",
+                    "secondary-container": "#e8b3fe",
+                    "primary-fixed-dim": "#ffafd3",
+                    "primary-container": "#c14689",
+                    "secondary-fixed": "#f6d9ff",
+                    "on-primary-fixed": "#3d0025",
+                    "on-background": "#23191d",
+                    "on-secondary-fixed-variant": "#603475",
+                    "surface-container-high": "#f7e3e9",
+                    "on-tertiary-fixed": "#042100",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#dac0c9",
+                    "tertiary-fixed": "#9ff87d",
+                    "secondary-fixed-dim": "#e8b3fe",
+                    "on-primary-fixed-variant": "#861259",
+                    "surface": "#fff8f8",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#ffafd3",
+                    "surface-tint": "#a52f72",
+                    "on-primary-container": "#fffbff",
+                    "on-tertiary-container": "#f8ffee",
+                    "on-surface-variant": "#554149",
+                    "on-secondary-container": "#6c4082",
+                    "surface-container": "#fde9ef",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#145200",
+                    "surface-variant": "#f1dee3",
+                    "on-secondary-fixed": "#300247",
+                    "surface-container-low": "#fff0f4",
+                    "surface-container-highest": "#f1dee3",
+                    "background": "#fff8f8",
+                    "tertiary": "#1c6b00",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#392d32",
+                    "primary": "#a22c70",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#23191d",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffd8e7",
+                    "outline": "#88717a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "container-padding": "24px",
+                    "gutter": "20px",
+                    "xs": "4px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<header class="bg-white/80 backdrop-blur-md font-['Plus_Jakarta_Sans'] antialiased border-b border-slate-100 shadow-sm docked full-width top-0 sticky z-40 flex justify-between items-center px-6 h-16 w-full">
+<h1 class="text-xl font-bold text-[#c84c8f]">Wonder sky 國際美妍館</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden border border-slate-100">
+<img alt="用戶頭像" class="w-full h-full object-cover" data-alt="A professional close-up of a smiling salon manager in a clean, modern white medical-grade uniform. The background is a soft-focus high-end beauty spa interior with warm ambient lighting and neutral tones. The aesthetic is clean, professional, and trustworthy, matching the corporate beauty brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcZoVX0a1Wy0JpTG6j5eGjNoJFTqgkAfpNTmdf0Md1TZMidN3ZO_viR0M-y4EwBxSEc7daZy02hDpi7067Gx_TOWypp-pMwT4_gQmfvz5yrMn6DTB2YgRfHFgUxGa3SWeF4kkesfDUEbJ0t2XmO0spk5IdFsXGfo9Vn5YF3tlEzVxTc7fSMRouLv30i2waghsX2C4HTPM3Il-4wHE8Rhlh9ndLiZKYf3CoBEWZayLHUIcIkflxXX_Caiu6aayAszugHN2c6xC72sg"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<main class="w-full max-w-md mx-auto">
+<!-- Tab Switcher (Horizontal Scroll) -->
+<nav class="sticky top-16 z-30 bg-white/90 backdrop-blur-sm border-b border-surface-variant px-4 py-3">
+<div class="flex items-center gap-6 overflow-x-auto hide-scrollbar">
+<button class="whitespace-nowrap text-slate-600 font-medium py-1">員工業績</button>
+<button class="whitespace-nowrap text-[#c84c8f] font-semibold py-1 border-b-2 border-[#c84c8f]">業績分析</button>
+<button class="whitespace-nowrap text-slate-600 font-medium py-1">年度業績</button>
+</div>
+</nav>
+<!-- Filter Section -->
+<section class="p-4 space-y-3">
+<div class="flex flex-col gap-3">
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant">
+<p class="text-caption text-outline mb-1">開始日期</p>
+<div class="flex items-center justify-between text-body-md font-medium">
+                            2023-11-01
+                            <span class="material-symbols-outlined text-sm">calendar_today</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant">
+<p class="text-caption text-outline mb-1">結束日期</p>
+<div class="flex items-center justify-between text-body-md font-medium">
+                            2023-11-30
+                            <span class="material-symbols-outlined text-sm">calendar_today</span>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-secondary/10 text-secondary font-semibold rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+                    重新設定分析條件
+                </button>
+</div>
+</section>
+<!-- Hero Revenue Card -->
+<section class="px-4 py-2">
+<div class="bg-[#1a2b4b] rounded-2xl p-8 text-center shadow-lg relative overflow-hidden">
+<!-- Abstract Background Pattern -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+<p class="text-primary-fixed-dim text-body-md font-medium relative z-10 mb-2">總業績概覽</p>
+<h2 class="text-5xl font-extrabold text-white relative z-10 mb-2">9889</h2>
+<div class="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-caption text-white/80 relative z-10">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>較上月成長 12.5%</span>
+</div>
+</div>
+</section>
+<!-- Course Category Chart -->
+<section class="p-4">
+<div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-h3 text-slate-900">課程分類佔比</h3>
+<span class="material-symbols-outlined text-slate-400">more_horiz</span>
+</div>
+<div class="space-y-5">
+<!-- Bar 1 -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-caption font-medium">
+<span class="text-slate-700">臉部護理</span>
+<span class="text-slate-900">NT$ 4,500 (45%)</span>
+</div>
+<div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#1a2b4b] h-full rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Bar 2 -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-caption font-medium">
+<span class="text-slate-700">美體SPA</span>
+<span class="text-slate-900">NT$ 3,200 (32%)</span>
+</div>
+<div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#794c8f] h-full rounded-full" style="width: 32%;"></div>
+</div>
+</div>
+<!-- Bar 3 -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-caption font-medium">
+<span class="text-slate-700">美甲美睫</span>
+<span class="text-slate-900">NT$ 2,189 (23%)</span>
+</div>
+<div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#ffafd3] h-full rounded-full" style="width: 23%;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Employee Performance List -->
+<section class="p-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-h3 text-slate-900">員工業績排行</h3>
+<button class="text-primary font-semibold text-body-md flex items-center gap-1 px-3 py-1.5 rounded-lg hover:bg-primary/5">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    匯出列表
+                </button>
+</div>
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm flex items-center gap-4">
+<div class="relative">
+<img alt="員工" class="w-14 h-14 rounded-full object-cover" data-alt="Close-up headshot of a friendly professional beautician with neatly tied hair and light makeup, wearing a professional gray spa uniform. Soft focus background of a luxurious skincare clinic. Bright, high-key lighting for a clean and trustworthy medical-beauty aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtJ0wmUwogP7hWxcLbyUIX_g_i_F-6k2iiqIpdi7Fh3hXTPIcvbCVAR-MOaeq8MeVTCs4riR3pLsii8I07jR4nhQ8GDQr5MLoVBFFpyPVOkujLf-hy3SHsp5Yh495sv07KIy4iI0CQ0usNn_7DANyUJN5yXMvJqkvTzqJgzo18GtlaokOpkDfcxMKQ7pLdFyOHzdJbWW4GJz6BXkogwCHUxAaaVcRhTrn2w5b9QX3nk2vjQVoqCjHIBe4kI16Lld7oJjVb1h8nBSM"/>
+<div class="absolute -bottom-1 -right-1 bg-amber-400 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white font-bold">1</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-slate-900">陳小美 (Sherry)</h4>
+<p class="text-caption text-slate-500">客次 42 | 客數 28</p>
+</div>
+<div class="text-right">
+<p class="text-body-md font-bold text-[#c84c8f]">NT$ 3,850</p>
+<p class="text-[10px] text-primary/70 font-medium px-1.5 py-0.5 bg-primary/5 rounded border border-primary/20 inline-block mt-1">虛業績</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm flex items-center gap-4">
+<div class="relative">
+<img alt="員工" class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of a male massage therapist in a minimalist dark navy professional uniform. He has a calm and welcoming expression. The setting is a serene, dimly lit spa corridor with clean architectural lines. Corporate professional photography style with soft accent lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvN-MAEdEvmPGfGq9NvXJUNQ1iQUD3BHHV9V1BLM05rmINhm4sm82WGizR4PQrZZHEpA3BcQ5nlEVlSDaGPfs53vCmJ-Po_nqO_2lxkE1vxq-ldzRFQqDCas1dH5-HgSSug2n8hrSjnVOXRPzS66TB3OkEkwnMTh7QxF0CEzHmqxHd5uJ9pmM6ia2nbnZAk1Z3RDIBrrpGwQO0w3Do61Fk7HUDIBg5pjjg_xSt2S2eiRt06t8C1C9_8xmmbtKp1Jw6vLuIPGv6Ac"/>
+<div class="absolute -bottom-1 -right-1 bg-slate-300 text-slate-700 text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white font-bold">2</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-slate-900">王大明 (David)</h4>
+<p class="text-caption text-slate-500">客次 38 | 客數 25</p>
+</div>
+<div class="text-right">
+<p class="text-body-md font-bold text-slate-900">NT$ 3,240</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm flex items-center gap-4 opacity-90">
+<div class="relative">
+<img alt="員工" class="w-14 h-14 rounded-full object-cover" data-alt="Close-up headshot of a female nail technician with stylishly groomed nails visible, wearing a soft pink uniform. She is smiling gently at the camera. The background shows a modern nail art station with organized high-end polish bottles. Soft, bright light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALutoI_13MYsRmbGusEqUeQ4gc19ewDjcpcauJuPPrGAZiPc3fZ9vPgo-E_lML2WFo6Y1dSdopzn1c22HmWnqe4MyXjRtnD04iaBFYvUvImioYpab1GBJQiyNpOO0ZQ51TQFt2Ik6KeVG2Ed-OkJ7sf8DdMTPVcG3frxZk9f_avyV7cQbEgmUp-WQoYXpSSmHUTjHA5p1UR8H60H1ErIHaW-4uU9I-RdERTY3sTIbZmFwQtP4NplVPEXqgsZAhBMwXMG5IFq6vl-w"/>
+<div class="absolute -bottom-1 -right-1 bg-orange-300 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white font-bold">3</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-slate-900">林雅筑 (Alice)</h4>
+<p class="text-caption text-slate-500">客次 31 | 客數 20</p>
+</div>
+<div class="text-right">
+<p class="text-body-md font-bold text-slate-900">NT$ 2,799</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-100 flex justify-around items-center h-20 px-4 z-50">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">資訊中心</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#c84c8f]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-[10px] font-bold">財務中心</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-medium">預約系統</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">person_search</span>
+<span class="text-[10px] font-medium">會員管理</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">menu</span>
+<span class="text-[10px] font-medium">更多</span>
+</button>
+</footer>
+</body></html>

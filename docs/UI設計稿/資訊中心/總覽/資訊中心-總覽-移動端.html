@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fff8f8",
+                        "surface-container-low": "#fff0f4",
+                        "on-primary-container": "#fffbff",
+                        "background": "#fff8f8",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "surface-bright": "#fff8f8",
+                        "surface-dim": "#e8d5db",
+                        "inverse-surface": "#392d32",
+                        "on-surface": "#23191d",
+                        "inverse-primary": "#ffafd3",
+                        "on-secondary-container": "#6c4082",
+                        "surface-variant": "#f1dee3",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#554149",
+                        "on-tertiary-container": "#f8ffee",
+                        "primary-container": "#c14689",
+                        "secondary-container": "#e8b3fe",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#f1dee3",
+                        "primary-fixed": "#ffd8e7",
+                        "on-secondary-fixed": "#300247",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#3d0025",
+                        "primary-fixed-dim": "#ffafd3",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#dac0c9",
+                        "secondary-fixed": "#f6d9ff",
+                        "tertiary-container": "#328517",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-tertiary-fixed": "#042100",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#a22c70",
+                        "outline": "#88717a",
+                        "on-background": "#23191d",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-container": "#fde9ef",
+                        "tertiary": "#1c6b00",
+                        "secondary": "#794c8f",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-tint": "#a52f72",
+                        "surface-container-high": "#f7e3e9",
+                        "on-secondary-fixed-variant": "#603475"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "gutter": "20px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f8;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .chart-donut {
+            background: conic-gradient(#a22c70 0% 65%, #794c8f 65% 85%, #328517 85% 100%);
+            border-radius: 50%;
+            position: relative;
+        }
+        .chart-donut::after {
+            content: "";
+            position: absolute;
+            inset: 20%;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-30 flex justify-between items-center px-6 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex items-center gap-4">
+<button class="w-[44px] h-[44px] flex items-center justify-center hover:bg-slate-100 rounded-full transition-all">
+<span class="material-symbols-outlined text-slate-600">menu</span>
+</button>
+<span class="text-lg font-black tracking-tight text-[#c84c8f] font-h1">Wonder sky國際美妍館</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-[44px] h-[44px] flex items-center justify-center hover:bg-slate-100 rounded-full transition-all">
+<span class="material-symbols-outlined text-slate-600" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Manager Profile" data-alt="A professional headshot of a female salon manager with a friendly smile, set against a soft, clean studio background. The lighting is warm and high-key, complementing the modern beauty industry aesthetic. She wears business casual attire in soft pink tones, reflecting the brand identity. The overall image quality is crisp and high-definition, projecting trust and expertise in beauty management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_MAYQSU_vn4zmBFBYBo6b7eHBUYNu_eaRYQhN9c9sLRhwe9Lll_WEwiRneDf9JKzO5hFCTXUnt9Z-8TmGMe-0nxnjIEbSR_nYdj3K4WkS5G2U0Kqmv1bY-6SdGS5NeJ4c7De8MZ3L_Qe5sd6EthL8CwyQjbRWy6qjgJ1ySSw7Fdlt9imQ1PZVCBQEfbYnD0kmQBJhTZyOIJcS3JJFj_R1ofUzYacELnRtRNb-t7kwXgdlGLZcAekh1ok9yDwNKzqraWtInffCdRE"/>
+</div>
+</div>
+</header>
+<main class="p-4 flex flex-col gap-6 max-w-md mx-auto">
+<!-- Dashboard Header -->
+<section>
+<h1 class="font-h1 text-h1 text-on-surface mb-1">資訊中心</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">歡迎回來，這是您的今日營運概況。</p>
+</section>
+<!-- Top Stats Cards -->
+<section class="grid grid-cols-1 gap-4">
+<!-- Revenue Card -->
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_12px_20px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+</div>
+<span class="flex items-center text-tertiary font-label-md text-label-md bg-tertiary-fixed/20 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                        +12%
+                    </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-1">本月總營業額</p>
+<h2 class="font-h1 text-h1 text-on-surface">$158,000</h2>
+</div>
+<!-- Appointments Card -->
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_12px_20px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="calendar_month">calendar_month</span>
+</div>
+<button class="text-primary font-label-md text-label-md">查看詳情</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-1">今日預約數</p>
+<h2 class="font-h1 text-h1 text-on-surface">24 <span class="text-body-md font-normal text-on-surface-variant">組客戶</span></h2>
+</div>
+</section>
+<!-- Line Chart Card -->
+<section class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_12px_20px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-h3 text-h3 text-on-surface">年度營業額趨勢</h3>
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</div>
+<div class="h-48 w-full flex items-end justify-between gap-2 px-2">
+<div class="w-full bg-primary/10 rounded-t-sm h-[40%]"></div>
+<div class="w-full bg-primary/10 rounded-t-sm h-[55%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[45%]"></div>
+<div class="w-full bg-primary/30 rounded-t-sm h-[70%]"></div>
+<div class="w-full bg-primary/40 rounded-t-sm h-[60%]"></div>
+<div class="w-full bg-primary rounded-t-sm h-[90%]"></div>
+</div>
+<div class="flex justify-between mt-4 text-caption font-caption text-on-surface-variant">
+<span>1月</span><span>3月</span><span>5月</span><span>7月</span><span>9月</span><span>11月</span>
+</div>
+</section>
+<!-- Donut Chart Card -->
+<section class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_12px_20px_rgba(0,0,0,0.04)]">
+<h3 class="font-h3 text-h3 text-on-surface mb-6">分類營業額</h3>
+<div class="flex flex-col items-center">
+<div class="chart-donut w-40 h-40 mb-6 flex items-center justify-center">
+<div class="z-10 text-center">
+<span class="block font-h2 text-h2 text-primary">65%</span>
+<span class="text-caption font-caption text-on-surface-variant">美容護理</span>
+</div>
+</div>
+<div class="w-full grid grid-cols-2 gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">美容護理</p>
+<p class="font-caption text-caption text-on-surface-variant">$102,700</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">美甲美睫</p>
+<p class="font-caption text-caption text-on-surface-variant">$31,600</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-tertiary-container"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">產品銷售</p>
+<p class="font-caption text-caption text-on-surface-variant">$23,700</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bar Chart Card -->
+<section class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_12px_20px_rgba(0,0,0,0.04)] mb-20">
+<h3 class="font-h3 text-h3 text-on-surface mb-6">工作人員業績排行</h3>
+<div class="space-y-6">
+<!-- Rank 1 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-3">
+<span class="text-primary font-bold">01</span>
+<span class="font-body-md text-body-md text-on-surface">Emma Chen</span>
+</div>
+<span class="font-label-md text-label-md text-primary">$42,500</span>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[85%]"></div>
+</div>
+</div>
+<!-- Rank 2 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-3">
+<span class="text-slate-400 font-bold">02</span>
+<span class="font-body-md text-body-md text-on-surface">Sophie Wang</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">$38,200</span>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 rounded-full w-[70%]"></div>
+</div>
+</div>
+<!-- Rank 3 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-3">
+<span class="text-slate-400 font-bold">03</span>
+<span class="font-body-md text-body-md text-on-surface">Lisa Ho</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">$29,100</span>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary/40 rounded-full w-[55%]"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 px-6 py-2 flex justify-between items-center z-40 lg:hidden">
+<div class="flex flex-col items-center gap-1 text-[#c84c8f] font-semibold">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px]">資訊中心</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="text-[10px]">預約管理</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="text-[10px]">會員管理</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="text-[10px]">帳務管理</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="text-[10px]">產品服務</span>
+</div>
+</nav>
+<!-- FAB for Quick Action -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center z-50 hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-weight="fill">add</span>
+</button>
+</body></html>

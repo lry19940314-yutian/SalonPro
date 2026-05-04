@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-bright": "#fff8f8",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-background": "#23191d",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#392d32",
+                        "surface-container": "#fde9ef",
+                        "outline": "#88717a",
+                        "surface-container-high": "#f7e3e9",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-tint": "#a52f72",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f8",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#f1dee3",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#ffafd3",
+                        "primary": "#a22c70",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed-variant": "#603475",
+                        "tertiary": "#1c6b00",
+                        "on-tertiary-fixed": "#042100",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "secondary-container": "#e8b3fe",
+                        "surface": "#fff8f8",
+                        "outline-variant": "#dac0c9",
+                        "secondary": "#794c8f",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#c14689",
+                        "on-surface": "#23191d",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-highest": "#f1dee3",
+                        "primary-fixed": "#ffd8e7",
+                        "on-surface-variant": "#554149",
+                        "on-secondary-container": "#6c4082",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-fixed": "#300247",
+                        "tertiary-container": "#328517",
+                        "tertiary-fixed-dim": "#84db64",
+                        "primary-fixed-dim": "#ffafd3",
+                        "tertiary-fixed": "#9ff87d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 shadow-sm docked full-width top-0 z-40 sticky">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 text-gray-500 hover:bg-gray-50 rounded-lg transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-gray-900 dark:text-white font-['Plus_Jakarta_Sans'] antialiased">
+                    Wonder sky 國際美妍館
+                </h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-gray-500 hover:bg-gray-50 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-gray-200">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated Asian woman in her 30s, looking confidently at the camera with a friendly smile. She is in a high-end, minimalist corporate setting with soft bokeh background and warm professional lighting. The image evokes a sense of reliability and expert leadership in the beauty industry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOHMBLQq8sVWxlGEAtQKvy6Sl6auXj7nSdikqplZC3h70MXjSLoh-1WB9ikUKHUwe6SRj5AYbZKv3312mfBr_otI_MUZPimJd_Ywzw6SsN3TfOVLCif-IaDkn0Z0rUanOTXqo5203wxFfV2pk_97H4_GnQdc3wyC7UdPNXA49V05Dr6-jFDUKl17pj5X_XRvFFurU_Q5xmNphdgwtoGzL3AOquFIk-8t2mqqG4QQnuaL8H-tOU8ffTlAzc2o17ejBIWywlk-zcvak"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow pb-24">
+<!-- Horizontal Scroll Tabs -->
+<div class="bg-white sticky top-16 z-30 overflow-x-auto no-scrollbar border-b border-gray-50">
+<div class="flex px-4 whitespace-nowrap">
+<button class="px-4 py-4 text-[#c84c8f] font-semibold border-b-2 border-[#c84c8f]">消費記錄</button>
+<button class="px-4 py-4 text-gray-500 hover:bg-gray-50 transition-colors">儲值記錄</button>
+<button class="px-4 py-4 text-gray-500 hover:bg-gray-50 transition-colors">課程核銷</button>
+<button class="px-4 py-4 text-gray-500 hover:bg-gray-50 transition-colors">退款管理</button>
+<button class="px-4 py-4 text-gray-500 hover:bg-gray-50 transition-colors">月結報表</button>
+</div>
+</div>
+<!-- Total Amount Card -->
+<div class="px-4 pt-6 pb-4">
+<div class="bg-white p-6 rounded-xl border border-gray-100 shadow-[0_12px_20px_rgba(0,0,0,0.04)] text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-pink-50 -mr-16 -mt-16 rounded-full opacity-50"></div>
+<p class="text-gray-500 text-sm font-medium mb-1">當月總消費金額</p>
+<h2 class="text-4xl font-extrabold text-[#c84c8f] tracking-tight">$6,089</h2>
+<div class="mt-4 flex items-center justify-center gap-2 text-green-600 bg-green-50 w-fit mx-auto px-3 py-1 rounded-full text-xs font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>較上月增長 12.5%</span>
+</div>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="px-4 space-y-3">
+<div class="flex flex-col gap-3">
+<!-- Search -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-[#c84c8f] focus:ring-1 focus:ring-[#c84c8f] outline-none text-sm bg-white" placeholder="搜尋會員、手機或帳單號..." type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Dropdown -->
+<div class="relative">
+<select class="w-full pl-3 pr-8 py-3 rounded-lg border border-gray-200 appearance-none bg-white text-sm focus:border-[#c84c8f] outline-none">
+<option>全部服務類型</option>
+<option>面部護理</option>
+<option>美體SPA</option>
+<option>美睫美甲</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Time Picker -->
+<div class="relative">
+<input class="w-full px-3 py-3 rounded-lg border border-gray-200 bg-white text-sm focus:border-[#c84c8f] outline-none" type="date"/>
+</div>
+</div>
+<!-- Quick Filters -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+<button class="bg-[#c84c8f] text-white px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap">今日</button>
+<button class="bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap">本週</button>
+<button class="bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap">本月</button>
+<button class="bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap">自定義</button>
+</div>
+</div>
+</div>
+<!-- Global Actions -->
+<div class="px-4 py-4">
+<div class="flex items-center gap-2">
+<button class="flex-1 bg-white border border-gray-200 text-gray-700 py-3 rounded-lg flex items-center justify-center gap-2 text-sm font-semibold active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="ios_share">ios_share</span>
+                    匯出數據
+                </button>
+<button class="flex-1 bg-white border border-gray-200 text-gray-700 py-3 rounded-lg flex items-center justify-center gap-2 text-sm font-semibold active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="refresh">refresh</span>
+                    重新計算
+                </button>
+<button class="w-12 h-12 bg-red-50 border border-red-100 text-red-600 rounded-lg flex items-center justify-center active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Consumption List -->
+<div class="px-4 space-y-4">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-gray-900 font-bold flex items-center gap-2">
+<span class="w-1 h-4 bg-[#c84c8f] rounded-full"></span>
+                    消費明細
+                </h3>
+<span class="text-xs text-gray-400">共 128 筆</span>
+</div>
+<!-- List Item 1 -->
+<div class="bg-white rounded-xl border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.03)] overflow-hidden">
+<div class="p-4 flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center text-[#c84c8f]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-gray-900">陳小美</span>
+<span class="bg-pink-100 text-[#c84c8f] text-[10px] px-1.5 py-0.5 rounded font-bold">VIP</span>
+</div>
+<p class="text-xs text-gray-400 mb-1">TXN-20231015-001</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-extrabold text-gray-900">$2,400</p>
+<p class="text-[10px] text-gray-400">14:30:15</p>
+</div>
+</div>
+<div class="px-4 pb-4 border-b border-gray-50 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-sm" data-icon="spa">spa</span>
+<span class="text-sm text-gray-600">深層水氧活膚護理</span>
+</div>
+<button class="text-gray-400 hover:text-[#c84c8f]">
+<span class="material-symbols-outlined text-lg" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-white rounded-xl border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.03)] overflow-hidden">
+<div class="p-4 flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-gray-900">李瑞秋</span>
+<span class="bg-gray-100 text-gray-500 text-[10px] px-1.5 py-0.5 rounded font-bold">一般</span>
+</div>
+<p class="text-xs text-gray-400 mb-1">TXN-20231015-002</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-extrabold text-gray-900">$1,200</p>
+<p class="text-[10px] text-gray-400">15:45:30</p>
+</div>
+</div>
+<div class="px-4 pb-4 border-b border-gray-50 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-sm" data-icon="brush">brush</span>
+<span class="text-sm text-gray-600">凝膠指甲彩繪</span>
+</div>
+<button class="text-gray-400 hover:text-[#c84c8f]">
+<span class="material-symbols-outlined text-lg" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- List Item 3 (Expanded) -->
+<div class="bg-white rounded-xl border border-[#c84c8f]/20 shadow-[0_8px_16px_rgba(200,76,143,0.08)] overflow-hidden">
+<div class="p-4 flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center text-[#c84c8f]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-gray-900">王志強</span>
+<span class="bg-pink-100 text-[#c84c8f] text-[10px] px-1.5 py-0.5 rounded font-bold">VIP</span>
+</div>
+<p class="text-xs text-gray-400 mb-1">TXN-20231015-003</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-extrabold text-gray-900">$2,489</p>
+<p class="text-[10px] text-gray-400">16:20:00</p>
+</div>
+</div>
+<div class="px-4 py-3 bg-gray-50 flex flex-col gap-2">
+<div class="flex justify-between text-xs">
+<span class="text-gray-500">服務項目：</span>
+<span class="text-gray-900 font-medium">全身精油放鬆按摩 (90min)</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-gray-500">美容師：</span>
+<span class="text-gray-900 font-medium">Jessica</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-gray-500">支付方式：</span>
+<span class="text-gray-900 font-medium">信用卡 (VISA)</span>
+</div>
+</div>
+<div class="px-4 py-3 flex justify-end">
+<button class="text-[#c84c8f] text-xs font-bold flex items-center gap-1">
+                        收起詳情
+                        <span class="material-symbols-outlined text-lg" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="px-4 py-8 flex items-center justify-center gap-6">
+<button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-[#c84c8f] text-white flex items-center justify-center text-sm font-bold">1</span>
+<span class="w-8 h-8 rounded-lg text-gray-500 flex items-center justify-center text-sm font-medium">2</span>
+<span class="w-8 h-8 rounded-lg text-gray-500 flex items-center justify-center text-sm font-medium">3</span>
+</div>
+<button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#c84c8f]">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only Shell) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-50 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] md:hidden z-50">
+<div class="flex justify-around items-center h-16">
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-medium">首頁</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#c84c8f]">
+<span class="material-symbols-outlined" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-[10px] font-bold">財務</span>
+</button>
+<div class="relative -top-6">
+<button class="w-14 h-14 bg-[#c84c8f] text-white rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="text-[10px] font-medium">預約</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[10px] font-medium">會員</span>
+</button>
+</div>
+</nav>
+<style>
+        /* Custom styles for hidden scrollbars */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

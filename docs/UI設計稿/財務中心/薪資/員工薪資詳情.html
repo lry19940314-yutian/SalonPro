@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#a52f72",
+                        "inverse-surface": "#392d32",
+                        "outline-variant": "#dac0c9",
+                        "primary": "#a22c70",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#c14689",
+                        "on-secondary-container": "#6c4082",
+                        "on-background": "#23191d",
+                        "surface-container-highest": "#f1dee3",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-primary-fixed": "#3d0025",
+                        "background": "#fff8f8",
+                        "tertiary-container": "#328517",
+                        "secondary": "#794c8f",
+                        "surface": "#fff8f8",
+                        "outline": "#88717a",
+                        "surface-container-low": "#fff0f4",
+                        "inverse-primary": "#ffafd3",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-surface-variant": "#554149",
+                        "secondary-container": "#e8b3fe",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-bright": "#fff8f8",
+                        "on-primary-container": "#fffbff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "surface-variant": "#f1dee3",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#f6d9ff",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-tertiary-container": "#f8ffee",
+                        "tertiary": "#1c6b00",
+                        "surface-container": "#fde9ef",
+                        "on-surface": "#23191d",
+                        "on-secondary-fixed": "#300247",
+                        "surface-dim": "#e8d5db",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#603475",
+                        "primary-fixed": "#ffd8e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "gutter": "20px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- App Shell (Background Context) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-4 gap-2 bg-white dark:bg-slate-900 h-screen w-64 border-r border-slate-200 dark:border-slate-800 shadow-sm z-0">
+<div class="mb-8 px-4">
+<h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">SalonPro</h1>
+<p class="text-xs text-slate-500">Beauty SaaS</p>
+</div>
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-plus-jakarta-sans text-sm font-medium">Information Center</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20 rounded-lg font-bold">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-plus-jakarta-sans text-sm font-medium">Finance Center</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-plus-jakarta-sans text-sm font-medium">Billing</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-plus-jakarta-sans text-sm font-medium">Appointments</span>
+</div>
+</nav>
+</aside>
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 z-10">
+<div class="font-plus-jakarta-sans text-lg font-bold text-pink-600 dark:text-pink-400 uppercase tracking-tight">SalonPro</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-600">notifications</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-pink-100">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female salon manager with a confident and warm expression, set against a clean, softly lit corporate studio background. She is wearing a professional blazer, and the lighting is even and modern, reflecting the clean aesthetic of a high-end beauty SaaS platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDouOOAzv1NrIWoY0eMZMgf9kN9s4ykjADboS1gWSfYHiyKku8l3d2WfoA2MJEqdMC0HoGJboR9mPTxSTVQN16UWHOxNiRdhHEANK18GOVO_QbeAL4EhURsbB3ZuMqb02GxfnY6hjbSZSl-30UuGq_eSV98uZqDM1iBX12XT6Z2m1CpxcbhLjKVFb0yHqVLy93_zAjqjSKURLscZl62QC74Hk_a14jcB0D_i8Rrs17NLNTwxpA8d4vOm3i6HVJ8YbO2JCcC-2bQ4k"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area (Blurred Background) -->
+<main class="ml-64 mt-16 p-lg blur-sm">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 bg-white rounded-xl border border-outline-variant p-lg shadow-sm h-64">
+<div class="h-full bg-surface-container rounded-lg flex items-center justify-center border-2 border-dashed border-outline-variant">
+<span class="text-outline">Main Dashboard View Content</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-[2px]">
+<!-- Salary Details Dialog -->
+<div class="relative w-full max-w-[800px] max-h-[921px] overflow-y-auto bg-surface-container-lowest rounded-xl shadow-2xl border border-outline-variant flex flex-col">
+<!-- Header -->
+<div class="sticky top-0 z-20 flex items-center justify-center p-md bg-white border-b border-surface-container-highest">
+<h2 class="font-h1 text-h1 text-primary text-center">LULU 78,590</h2>
+<button class="absolute right-6 top-1/2 -translate-y-1/2 text-primary hover:bg-primary-container/10 p-2 rounded-full transition-all">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-lg flex flex-col gap-lg">
+<!-- Employee Info Section -->
+<div class="flex items-center gap-md pl-md border-l-4 border-primary">
+<div class="w-16 h-16 rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A high-quality portrait of a professional beauty salon employee named Lulu, featuring soft studio lighting and a clean pink-tinted background that matches the brand's primary color palette. The employee looks friendly and approachable, embodying the professional and high-end aesthetic of Wonder Sky International Beauty Salon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHfhrLm_ttfRp7WYn6nckrt-2O-Z9UVIQ8P9rZ66KOch0kj9E-8dGhBNZ3JaRbAFWiWW5887n1KeIzv4nXOXEsiETmeAuGBtUbnKjkP_24aP2TWQDbK9LNSGnGZlf8S9IegxDYOkC_EO4oQMVHxOxk4UhA-AWhX2BuFzeeFogbgHtyMrJjduQXO1SbzpIlkymfg9AIgsT0gwS4oP3D_tVIwSbloaUdZfd5ch2XHKX0oKs8oxwgr-xsapDjXzgcCGbOI2XpfOOZkOU"/>
+</div>
+<div class="flex flex-col">
+<span class="font-h2 text-h2 text-on-background">LULU 露露</span>
+<div class="flex items-center gap-sm mt-1">
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded text-caption font-semibold">高級美容師</span>
+<span class="text-on-surface-variant font-body-md">台北大安旗艦店</span>
+</div>
+</div>
+</div>
+<!-- Salary Overview Card -->
+<div class="bg-primary-container text-on-primary-container rounded-xl p-lg shadow-sm">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<p class="text-sm opacity-90 mb-1">本月實領薪資(含底薪)</p>
+<h3 class="text-[32px] font-bold leading-none">78,590</h3>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-4xl opacity-50" data-weight="fill">account_balance_wallet</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-xl border-t border-white/20 pt-lg">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-caption font-bold">
+<span>服務虛業績</span>
+<span>124,500</span>
+</div>
+<div class="flex justify-between text-caption opacity-80">
+<span>服務實業績</span>
+<span>118,200</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 border-l border-white/20 pl-xl">
+<div class="flex justify-between text-caption font-bold">
+<span>商品券虛業績</span>
+<span>23,400</span>
+</div>
+<div class="flex justify-between text-caption opacity-80">
+<span>商品券實業績</span>
+<span>21,000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid for Salary Modules -->
+<div class="grid grid-cols-2 gap-md">
+<!-- Additions Card -->
+<div class="bg-white border border-outline-variant rounded-xl p-md flex flex-col gap-md">
+<div class="flex justify-between items-center text-primary">
+<h4 class="font-h3 text-h3">加項 0</h4>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container rounded transition-all">expand_more</span>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">個人業績抽成</span>
+<span class="font-semibold">32,400</span>
+</div>
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">特別活動提成</span>
+<span class="font-semibold">0</span>
+</div>
+</div>
+</div>
+<!-- Deductions Card -->
+<div class="bg-white border border-outline-variant rounded-xl p-md flex flex-col gap-md">
+<div class="flex justify-between items-center text-error">
+<h4 class="font-h3 text-h3">減項 1,200</h4>
+<span class="material-symbols-outlined">remove_circle_outline</span>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center text-body-md text-error">
+<span class="opacity-80">遲到扣款</span>
+<span class="font-semibold">-500</span>
+</div>
+<div class="flex justify-between items-center text-body-md text-error">
+<span class="opacity-80">制服清洗費</span>
+<span class="font-semibold">-700</span>
+</div>
+</div>
+</div>
+<!-- Management Salary -->
+<div class="bg-surface-container-low rounded-xl p-md flex flex-col justify-between border border-surface-container-highest">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary">supervisor_account</span>
+<span class="font-h3 text-h3 text-on-surface">管理層薪資</span>
+</div>
+<div class="mt-4 text-right">
+<span class="text-h2 font-bold text-secondary">15,000</span>
+</div>
+</div>
+<!-- Base Salary -->
+<div class="bg-surface-container-low rounded-xl p-md flex flex-col justify-between border border-surface-container-highest">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant">payments</span>
+<span class="font-h3 text-h3 text-on-surface">底薪</span>
+</div>
+<div class="mt-4 text-right">
+<span class="text-h2 font-bold">32,000</span>
+</div>
+</div>
+<!-- Product Sales Commission -->
+<div class="col-span-1 bg-white border border-outline-variant rounded-xl p-md">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary text-sm">shopping_bag</span>
+<h4 class="font-label-md text-on-surface-variant">商品銷售提成</h4>
+</div>
+<div class="flex justify-between items-end">
+<p class="text-caption text-outline">本月累計</p>
+<span class="text-h3 font-bold text-primary">6,890</span>
+</div>
+</div>
+<!-- Performance Rewards -->
+<div class="col-span-1 bg-white border border-outline-variant rounded-xl p-md">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-tertiary text-sm">stars</span>
+<h4 class="font-label-md text-on-surface-variant">績效獎金</h4>
+</div>
+<div class="flex justify-between items-end">
+<p class="text-caption text-outline">當季評核</p>
+<span class="text-h3 font-bold text-tertiary">3,500</span>
+</div>
+</div>
+<!-- Salary Adjustments -->
+<div class="col-span-2 bg-surface-container-highest/50 rounded-xl p-md border border-outline-variant/30">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+<h4 class="font-h3 text-h3 text-on-surface">薪資調整與備註</h4>
+</div>
+<button class="flex items-center gap-1 px-4 py-1.5 bg-white border border-primary text-primary rounded-lg text-sm font-semibold hover:bg-primary hover:text-white transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                編輯調整
+                            </button>
+</div>
+<div class="mt-md bg-white/60 p-md rounded-lg text-body-md text-on-surface-variant italic">
+                            "本月特殊津貼：含大慶分店支援交通補助 1,000 元。"
+                        </div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-lg bg-surface-container-low border-t border-surface-container-highest flex justify-end gap-md">
+<button class="px-8 py-2.5 rounded-lg border border-outline text-on-surface font-semibold hover:bg-surface-variant transition-colors">列印薪資單</button>
+<button class="px-8 py-2.5 rounded-lg bg-primary text-on-primary font-semibold shadow-lg shadow-primary/20 hover:bg-primary-container transition-all active:scale-[0.98]">確認發送</button>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fff8f8",
+                        "surface-bright": "#fff8f8",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface": "#fff8f8",
+                        "surface-container-highest": "#f1dee3",
+                        "surface-variant": "#f1dee3",
+                        "on-secondary-fixed": "#300247",
+                        "tertiary-container": "#328517",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#a52f72",
+                        "on-background": "#23191d",
+                        "inverse-primary": "#ffafd3",
+                        "on-surface": "#23191d",
+                        "primary": "#a22c70",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#e8b3fe",
+                        "surface-container-low": "#fff0f4",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#9ff87d",
+                        "outline-variant": "#dac0c9",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-primary-fixed-variant": "#861259",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-primary-container": "#fffbff",
+                        "on-surface-variant": "#554149",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-dim": "#e8d5db",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-secondary-container": "#6c4082",
+                        "primary-container": "#c14689",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#392d32",
+                        "primary-fixed": "#ffd8e7",
+                        "outline": "#88717a",
+                        "surface-container": "#fde9ef",
+                        "tertiary": "#1c6b00",
+                        "on-primary-fixed": "#3d0025",
+                        "secondary": "#794c8f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "gutter": "20px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .soft-card {
+            background: #ffffff;
+            border: 1px solid #f1dee3;
+            box-shadow: 0 4px 20px rgba(165, 47, 114, 0.04);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="w-11 h-11 flex items-center justify-center hover:bg-slate-50 transition-colors active:scale-95 duration-200 rounded-lg">
+<span class="material-symbols-outlined text-slate-600">menu</span>
+</button>
+<span class="text-lg font-bold tracking-tight text-slate-900">Wonder sky 國際美妍館</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-11 h-11 flex items-center justify-center hover:bg-slate-50 transition-colors active:scale-95 duration-200 rounded-lg">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary-fixed">
+<img alt="User Avatar" data-alt="A professional and friendly female salon manager profile headshot, smiling warmly towards the camera. She has elegant styling and is set against a soft, clean, high-end salon background with warm ambient lighting. The visual style is polished, corporate, and trustworthy, using the brand's soft pink and white color palette for a cohesive beauty-tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmXfMl4OBTvXCv3nfAd7wQCTsu9atnFEgE5EDibcv09aYKapb3cMA1mi3T1KYnXg0dcJ0Aq3Z1ggoETMUS08q5r6Y_YmfFllth-mPTCBQnRQbyamRxWLG4sWEqZVePkxVrQREcrcMQ56OVgB6FAo9OI71UsfVKLk3BHIgz1bmwmXqzJQPgYeo_888_XWFs1G16Tesz1ozr42bvsnvQyfSvYBmXH4jepegemTvRTOboAjjIF8OFFno9prfRWsI6V5dRVPUh9xpPwrs"/>
+</div>
+</div>
+</header>
+<main class="p-4 space-y-6 max-w-md mx-auto">
+<!-- Page Title -->
+<div class="px-2">
+<h1 class="font-h1 text-h1 text-primary">營業總覽</h1>
+<p class="font-caption text-caption text-on-surface-variant">Finance / Billing Center</p>
+</div>
+<!-- Time Filter Section -->
+<section class="space-y-3">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2 w-full p-3 bg-white border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<span class="font-body-md text-body-md text-on-surface">2023年10月01日 - 2023年10月31日</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 h-11 bg-primary text-white font-label-md rounded-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">search</span>
+                        查詢報表
+                    </button>
+<button class="w-11 h-11 border border-primary text-primary font-label-md rounded-lg active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Hero Revenue Metric -->
+<section class="soft-card p-6 rounded-xl flex flex-col items-center text-center">
+<span class="font-label-md text-on-surface-variant mb-1">本月總營業額</span>
+<div class="text-[32px] font-black text-primary tracking-tight">$ 11,689</div>
+<div class="mt-2 flex items-center gap-1 px-2 py-0.5 bg-tertiary-fixed-dim/20 text-tertiary rounded-full">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="text-[12px] font-bold">+12.5%</span>
+</div>
+</section>
+<!-- Core Metrics Grid -->
+<section class="grid grid-cols-2 gap-3">
+<div class="soft-card p-4 rounded-xl">
+<span class="font-caption text-on-surface-variant">來客人數</span>
+<div class="font-h2 text-h2 mt-1">128</div>
+<div class="text-[10px] text-tertiary font-bold mt-1">▲ 8%</div>
+</div>
+<div class="soft-card p-4 rounded-xl">
+<span class="font-caption text-on-surface-variant">新客比例</span>
+<div class="font-h2 text-h2 mt-1">34%</div>
+<div class="text-[10px] text-primary font-bold mt-1">▲ 5%</div>
+</div>
+<div class="soft-card p-4 rounded-xl border-l-4 border-l-error">
+<span class="font-caption text-on-surface-variant">退款總額</span>
+<div class="font-h2 text-h2 mt-1 text-error">-$ 1,200</div>
+<div class="text-[10px] text-error font-bold mt-1">▼ 2%</div>
+</div>
+<div class="soft-card p-4 rounded-xl">
+<span class="font-caption text-on-surface-variant">平均客單</span>
+<div class="font-h2 text-h2 mt-1">$ 912</div>
+<div class="text-[10px] text-tertiary font-bold mt-1">▲ 12%</div>
+</div>
+</section>
+<!-- Detailed Breakdown Cards -->
+<section class="space-y-4 pb-10">
+<!-- 營業淨利 -->
+<div class="soft-card rounded-xl overflow-hidden">
+<button class="w-full p-4 flex items-center justify-between active:bg-slate-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<div class="text-left">
+<h3 class="font-h3 text-h3">營業淨利</h3>
+<p class="text-[12px] text-on-surface-variant">扣除各項成本後所得</p>
+</div>
+</div>
+<div class="text-right flex flex-col items-end">
+<span class="font-h3 text-h3 text-error">-$ 2,345</span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</button>
+<div class="px-4 pb-4 border-t border-slate-100 bg-surface-container-lowest pt-3 space-y-2">
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">總收入</span>
+<span class="text-on-surface">$ 11,689</span>
+</div>
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">人力支出</span>
+<span class="text-error">-$ 8,500</span>
+</div>
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">耗材成本</span>
+<span class="text-error">-$ 4,200</span>
+</div>
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">店租雜項</span>
+<span class="text-error">-$ 1,334</span>
+</div>
+</div>
+</div>
+<!-- 預收款明細 -->
+<div class="soft-card rounded-xl overflow-hidden">
+<button class="w-full p-4 flex items-center justify-between active:bg-slate-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">receipt_long</span>
+</div>
+<div class="text-left">
+<h3 class="font-h3 text-h3">預收款</h3>
+<p class="text-[12px] text-on-surface-variant">儲值金與課程票券</p>
+</div>
+</div>
+<div class="text-right flex flex-col items-end">
+<span class="font-h3 text-h3">$ 45,000</span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</button>
+<div class="px-4 pb-4 border-t border-slate-100 bg-surface-container-lowest pt-3 space-y-2">
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">本月新購</span>
+<span class="text-tertiary">+$ 12,000</span>
+</div>
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">本月使用</span>
+<span class="text-error">-$ 8,400</span>
+</div>
+</div>
+</div>
+<!-- 客數分析 -->
+<div class="soft-card rounded-xl overflow-hidden">
+<button class="w-full p-4 flex items-center justify-between active:bg-slate-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">groups</span>
+</div>
+<div class="text-left">
+<h3 class="font-h3 text-h3">客數分析</h3>
+<p class="text-[12px] text-on-surface-variant">服務對象構成</p>
+</div>
+</div>
+<div class="text-right flex flex-col items-end">
+<span class="font-h3 text-h3">128 人</span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</button>
+</div>
+<!-- 消費方式 -->
+<div class="soft-card rounded-xl overflow-hidden">
+<div class="w-full p-4 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+</div>
+<h3 class="font-h3 text-h3">消費方式</h3>
+</div>
+<div class="space-y-3">
+<div class="space-y-1">
+<div class="flex justify-between text-[12px]">
+<span>現金支付 (45%)</span>
+<span>$ 5,260</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[45%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[12px]">
+<span>信用卡 (30%)</span>
+<span>$ 3,506</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[30%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[12px]">
+<span>LINE Pay (25%)</span>
+<span>$ 2,923</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[25%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Filtered Out TopAppBar as specified) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-2px_10px_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-2 z-50">
+<button class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">總覽</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 h-full text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-[10px] font-bold">財務</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-medium">預約</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">card_membership</span>
+<span class="text-[10px] font-medium">會員</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">spa</span>
+<span class="text-[10px] font-medium">服務</span>
+</button>
+</nav>
+<!-- Contextual FAB (Create Order) -->
+<button class="fixed bottom-20 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</body></html>

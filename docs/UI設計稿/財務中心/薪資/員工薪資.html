@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#f8ffee",
+                    "secondary-container": "#e8b3fe",
+                    "on-surface-variant": "#554149",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "surface": "#fff8f8",
+                    "surface-container-highest": "#f1dee3",
+                    "primary": "#a22c70",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#f1dee3",
+                    "surface-container": "#fde9ef",
+                    "surface-container-low": "#fff0f4",
+                    "on-primary-container": "#fffbff",
+                    "outline-variant": "#dac0c9",
+                    "on-surface": "#23191d",
+                    "on-tertiary-fixed-variant": "#145200",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#e8d5db",
+                    "on-secondary-fixed": "#300247",
+                    "secondary-fixed-dim": "#e8b3fe",
+                    "on-secondary-container": "#6c4082",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#84db64",
+                    "inverse-primary": "#ffafd3",
+                    "tertiary-fixed": "#9ff87d",
+                    "inverse-on-surface": "#ffecf1",
+                    "on-background": "#23191d",
+                    "surface-container-high": "#f7e3e9",
+                    "tertiary": "#1c6b00",
+                    "secondary": "#794c8f",
+                    "primary-fixed": "#ffd8e7",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#a52f72",
+                    "primary-container": "#c14689",
+                    "on-primary-fixed": "#3d0025",
+                    "primary-fixed-dim": "#ffafd3",
+                    "tertiary-container": "#328517",
+                    "surface-bright": "#fff8f8",
+                    "inverse-surface": "#392d32",
+                    "background": "#fff8f8",
+                    "on-tertiary-fixed": "#042100",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#f6d9ff",
+                    "on-secondary-fixed-variant": "#603475",
+                    "on-primary-fixed-variant": "#861259",
+                    "outline": "#88717a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "sm": "8px",
+                    "gutter": "20px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "container-padding": "24px"
+            },
+            "fontFamily": {
+                    "h3": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fff8f8; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-tab-line { position: relative; }
+        .active-tab-line::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #a22c70;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-white border-r border-slate-100 flex flex-col p-4 gap-2 z-50">
+<div class="flex items-center gap-3 px-4 py-6 mb-4">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-xl">W</div>
+<div>
+<h1 class="text-primary font-bold text-lg leading-tight">Wonder sky</h1>
+<p class="text-xs text-slate-500">Beauty Management</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-600 hover:bg-slate-50 transition-all px-4 py-3 flex items-center gap-3 rounded-lg font-medium text-sm" href="#">
+<span class="material-symbols-outlined">dashboard</span> Information Center
+            </a>
+<a class="bg-pink-50 text-[#c84c8f] px-4 py-3 flex items-center gap-3 rounded-lg font-medium text-sm" href="#">
+<span class="material-symbols-outlined">payments</span> Finance
+            </a>
+<a class="text-slate-600 hover:bg-slate-50 transition-all px-4 py-3 flex items-center gap-3 rounded-lg font-medium text-sm" href="#">
+<span class="material-symbols-outlined">receipt_long</span> Billing
+            </a>
+<a class="text-slate-600 hover:bg-slate-50 transition-all px-4 py-3 flex items-center gap-3 rounded-lg font-medium text-sm" href="#">
+<span class="material-symbols-outlined">calendar_month</span> Appointments
+            </a>
+<a class="text-slate-600 hover:bg-slate-50 transition-all px-4 py-3 flex items-center gap-3 rounded-lg font-medium text-sm" href="#">
+<span class="material-symbols-outlined">card_membership</span> Membership
+            </a>
+<a class="text-slate-600 hover:bg-slate-50 transition-all px-4 py-3 flex items-center gap-3 rounded-lg font-medium text-sm" href="#">
+<span class="material-symbols-outlined">spa</span> Services
+            </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-50">
+<div class="flex items-center gap-3 px-4 py-3">
+<img alt="Manager" class="w-10 h-10 rounded-full object-cover" data-alt="A professional portrait of a confident female salon manager with a friendly smile, set against a clean, softly lit office background. The lighting is bright and airy, reflecting a modern corporate aesthetic with soft pastel undertones that match the beauty industry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ1AKyix6shebgpJnpDA0285A5QVI52MKEpRA4tJ_dpZVRdvPRIISr0VRFTdDRWe18Mogdh5hZk2STvpkS5A8OlfloSQ4vx86XAArOhCpyJcokQA9sMQk3ke-a7jQhldn37sekpzx-9Kep_fDOHxICPegTExiq-wqv8Q36rtQg1F4BoaBc1xq-ZethpYbYbdjYL-Jp3RkklhwgC3_aXGvRZwP8ApIQoIzaFeh92SpPQbaXVXtRwilUU0B1bnMMaf-SFCOE_HNAYA8"/>
+<div class="overflow-hidden">
+<p class="text-sm font-bold text-slate-900 truncate">Admin Jane</p>
+<p class="text-xs text-slate-500 truncate">Store Manager</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 min-h-screen">
+<!-- Top Nav Bar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-white/90 backdrop-blur-md border-b border-slate-100 flex justify-between items-center px-6 z-40 shadow-sm">
+<h2 class="font-h2 text-h2 text-slate-900">Wonder sky 國際美妍館</h2>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="bg-primary text-white px-6 py-2 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all">
+                    開單
+                </button>
+</div>
+</header>
+<div class="pt-16 p-lg space-y-lg">
+<!-- Secondary Navigation Tabs -->
+<div class="bg-white border-b border-slate-100 -mx-lg px-lg sticky top-16 z-30">
+<div class="flex gap-8">
+<button class="py-4 text-primary font-bold border-b-2 border-primary text-body-md transition-colors">員工薪資</button>
+<button class="py-4 text-slate-500 hover:text-slate-700 font-medium text-body-md transition-colors">員工費用科目</button>
+<button class="py-4 text-slate-500 hover:text-slate-700 font-medium text-body-md transition-colors">員工費用列表</button>
+</div>
+</div>
+<!-- Central Hero Metric -->
+<div class="relative overflow-hidden bg-white rounded-xl border border-slate-100 shadow-sm p-xl flex flex-col items-center justify-center text-center">
+<div class="absolute top-4 right-4">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+<div class="space-y-2">
+<p class="text-slate-500 font-medium text-body-md uppercase tracking-wider">本月薪資總額預估</p>
+<h1 class="text-[48px] font-extrabold text-primary flex items-baseline gap-2">
+<span class="text-2xl font-bold opacity-70">$</span>78,590
+                    </h1>
+<div class="flex items-center gap-2 text-tertiary font-medium bg-tertiary-container/10 px-4 py-1 rounded-full text-caption">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        較上月增長 12.5%
+                    </div>
+</div>
+<!-- Abstract Background Decor -->
+<div class="absolute -bottom-12 -left-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-secondary/5 rounded-full blur-3xl"></div>
+</div>
+<!-- Filters Area -->
+<div class="bg-white p-md rounded-xl border border-slate-100 shadow-sm flex flex-wrap items-center justify-between gap-md">
+<div class="flex items-center gap-md flex-1">
+<div class="relative max-w-xs w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" placeholder="搜尋工作人員..." type="text"/>
+</div>
+<div class="flex items-center bg-slate-100 rounded-lg p-1">
+<button class="p-1.5 hover:bg-white rounded-md transition-all text-slate-600"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<span class="px-4 text-sm font-bold text-slate-700">2023年10月</span>
+<button class="p-1.5 hover:bg-white rounded-md transition-all text-slate-600"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+<button class="px-4 py-2 text-sm font-semibold text-primary border border-primary/20 bg-primary/5 rounded-lg hover:bg-primary/10 transition-all">本月</button>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 transition-all text-sm font-medium text-slate-600">
+<span class="material-symbols-outlined text-sm">filter_list</span> 篩選
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 transition-all text-sm font-medium text-slate-600">
+<span class="material-symbols-outlined text-sm">download</span> 匯出
+                    </button>
+</div>
+</div>
+<!-- Data Table Card -->
+<div class="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 border-b border-slate-100">
+<th class="px-6 py-4 font-bold text-slate-700 text-sm">工作人員</th>
+<th class="px-4 py-4 font-bold text-slate-700 text-sm">實發薪資</th>
+<th class="px-4 py-4 font-bold text-slate-700 text-sm">加項 <span class="text-tertiary font-normal">(+)</span></th>
+<th class="px-4 py-4 font-bold text-slate-700 text-sm">管理層薪資</th>
+<th class="px-4 py-4 font-bold text-slate-700 text-sm">補足底薪</th>
+<th class="px-4 py-4 font-bold text-slate-700 text-sm">減項 <span class="text-error font-normal">(-)</span></th>
+<th class="px-4 py-4 font-bold text-slate-700 text-sm">提成</th>
+<th class="px-4 py-4 font-bold text-slate-700 text-sm">績效</th>
+<th class="px-6 py-4 font-bold text-slate-700 text-sm text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">CY</div>
+<div>
+<p class="font-bold text-slate-800 text-sm">陳雅婷 Candy</p>
+<p class="text-xs text-slate-400">高級美療師</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 font-bold text-slate-900">$38,200</td>
+<td class="px-4 py-4 text-tertiary font-semibold">+$2,500</td>
+<td class="px-4 py-4 text-slate-600">$5,000</td>
+<td class="px-4 py-4 text-tertiary font-semibold">$0</td>
+<td class="px-4 py-4 text-error font-semibold">-$850</td>
+<td class="px-4 py-4 text-slate-600">$12,450</td>
+<td class="px-4 py-4 text-slate-600">$3,000</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-sm font-bold">詳情</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary text-xs font-bold">LS</div>
+<div>
+<p class="font-bold text-slate-800 text-sm">林曉薇 Lisa</p>
+<p class="text-xs text-slate-400">中級美療師</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 font-bold text-slate-900">$24,500</td>
+<td class="px-4 py-4 text-tertiary font-semibold">+$1,200</td>
+<td class="px-4 py-4 text-slate-600">$0</td>
+<td class="px-4 py-4 text-tertiary font-semibold">+$3,000</td>
+<td class="px-4 py-4 text-error font-semibold">-$420</td>
+<td class="px-4 py-4 text-slate-600">$8,200</td>
+<td class="px-4 py-4 text-slate-600">$1,500</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-sm font-bold">詳情</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 text-xs font-bold">WH</div>
+<div>
+<p class="font-bold text-slate-800 text-sm">王慧心 Hana</p>
+<p class="text-xs text-slate-400">店長</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 font-bold text-slate-900">$52,800</td>
+<td class="px-4 py-4 text-tertiary font-semibold">+$5,000</td>
+<td class="px-4 py-4 text-slate-600">$15,000</td>
+<td class="px-4 py-4 text-tertiary font-semibold">$0</td>
+<td class="px-4 py-4 text-error font-semibold">-$1,200</td>
+<td class="px-4 py-4 text-slate-600">$18,400</td>
+<td class="px-4 py-4 text-slate-600">$8,000</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-sm font-bold">詳情</button>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-slate-50/80 font-bold border-t border-slate-100">
+<td class="px-6 py-4 text-slate-700">合計</td>
+<td class="px-4 py-4 text-primary">$115,500</td>
+<td class="px-4 py-4 text-tertiary">+$8,700</td>
+<td class="px-4 py-4 text-slate-700">$20,000</td>
+<td class="px-4 py-4 text-tertiary">+$3,000</td>
+<td class="px-4 py-4 text-error">-$2,470</td>
+<td class="px-4 py-4 text-slate-700">$39,050</td>
+<td class="px-4 py-4 text-slate-700">$12,500</td>
+<td class="px-6 py-4"></td>
+</tr>
+</tfoot>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-slate-50 flex items-center justify-between">
+<p class="text-xs text-slate-500">顯示 1 到 10，共 24 名員工</p>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-slate-50"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded border border-slate-200 flex items-center justify-center text-slate-600 text-xs font-medium hover:bg-slate-50">2</button>
+<button class="w-8 h-8 rounded border border-slate-200 flex items-center justify-center text-slate-600 text-xs font-medium hover:bg-slate-50">3</button>
+<button class="w-8 h-8 rounded border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-slate-50"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Dashboard Widgets Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Salary Breakdown Card -->
+<div class="bg-white p-lg rounded-xl border border-slate-100 shadow-sm space-y-4">
+<h3 class="font-h3 text-h3 text-slate-800 flex items-center justify-between">
+                        薪資構成佔比
+                        <span class="material-symbols-outlined text-slate-300">pie_chart</span>
+</h3>
+<div class="h-48 w-full flex items-center justify-center relative">
+<!-- Simulated Chart Drawing -->
+<div class="w-32 h-32 rounded-full border-[16px] border-primary border-r-secondary border-b-tertiary border-l-slate-100 rotate-45"></div>
+<div class="absolute flex flex-col items-center">
+<span class="text-xs text-slate-400">總體</span>
+<span class="font-bold text-sm text-slate-800">100%</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-xs">
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div><span>底薪 (45%)</span></div>
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div><span>提成 (32%)</span></div>
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-tertiary"></div><span>績效 (18%)</span></div>
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-slate-200"></div><span>其他 (5%)</span></div>
+</div>
+</div>
+<!-- Recent Expenses Card -->
+<div class="bg-white p-lg rounded-xl border border-slate-100 shadow-sm space-y-4 lg:col-span-2">
+<h3 class="font-h3 text-h3 text-slate-800 flex items-center justify-between">
+                        近期大額支出
+                        <span class="material-symbols-outlined text-slate-300">account_balance_wallet</span>
+</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-error-container/20 text-error rounded-lg">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-800">美容產品進貨</p>
+<p class="text-xs text-slate-500">2023-10-24 14:30</p>
+</div>
+</div>
+<span class="font-bold text-error">-$12,000</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-tertiary-container/20 text-tertiary rounded-lg">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-800">電費與商場管理費</p>
+<p class="text-xs text-slate-500">2023-10-20 09:15</p>
+</div>
+</div>
+<span class="font-bold text-slate-800">-$5,400</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-secondary-container/20 text-secondary rounded-lg">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-800">FB/IG 廣告投放費用</p>
+<p class="text-xs text-slate-500">2023-10-18 18:00</p>
+</div>
+</div>
+<span class="font-bold text-slate-800">-$3,500</span>
+</div>
+</div>
+<button class="w-full py-2 text-primary font-bold text-sm hover:bg-primary/5 transition-all rounded-lg mt-2">查看完整支出列表</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button - Only for Relevant Screens -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>
