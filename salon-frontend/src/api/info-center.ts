@@ -8,10 +8,15 @@
  *
  * 技術棧：Axios + TypeScript
  *
- * 對接後端控制器：PerformanceController（/api/performances）
- * - GET /performances/stats/yearly         門店年度營業額
- * - GET /performances/stats/category-revenue 分類營業額
- * - GET /performances/staff-ranking          工作人員業績排行
+ * 對接後端控制器：PerformanceController
+ * - GET /admin/information/yearly    門店年度營業額
+ * - GET /admin/information/category  分類營業額
+ * - GET /admin/information/staff     員工業績排行
+ *
+ * 數據庫表結構參考 README：
+ * - performance 表：業績記錄，按 shop_id + performance_date 聚合
+ * - service_category 表：服務分類，關聯 appointment_item
+ * - staff 表：員工資料，關聯 performance
  */
 
 import { get } from '@/utils/request'
@@ -62,20 +67,30 @@ export interface StaffRankingItem {
 /**
  * 獲取門店年度營業額統計
  *
- * GET /api/performances/stats/yearly?year=2026
+ * GET /admin/information/yearly?year=2026
+ *
+ * 數據庫來源：
+ * - performance 表：按 shop_id + YEAR(performance_date) 分組聚合
+ * - 計算 monthlyData：按 MONTH(performance_date) 分組
+ * - 計算 growthRate：與去年同比
  *
  * @param year - 年份（預設當前年份）
  * @returns 年度營業額數據
  */
 export function getYearlyRevenueApi(year?: number): Promise<ApiResponse<YearlyRevenueData>> {
   const targetYear = year || new Date().getFullYear()
-  return get<YearlyRevenueData>('/performances/stats/yearly', { year: targetYear })
+  return get<YearlyRevenueData>('/admin/information/yearly', { year: targetYear })
 }
 
 /**
  * 獲取分類營業額統計
  *
- * GET /api/performances/stats/category-revenue?startDate=2026-01-01&endDate=2026-12-31
+ * GET /admin/information/category?startDate=2026-01-01&endDate=2026-12-31
+ *
+ * 數據庫來源：
+ * - appointment_item 表：關聯 service_item.service_category_id
+ * - service_category 表：分類名稱
+ * - 按 service_category_id 分組聚合 amount
  *
  * @param startDate - 開始日期（YYYY-MM-DD）
  * @param endDate - 結束日期（YYYY-MM-DD）
@@ -85,7 +100,7 @@ export function getCategoryRevenueApi(
   startDate: string,
   endDate: string
 ): Promise<ApiResponse<CategoryRevenueItem[]>> {
-  return get<CategoryRevenueItem[]>('/performances/stats/category-revenue', {
+  return get<CategoryRevenueItem[]>('/admin/information/category', {
     startDate,
     endDate,
   })
@@ -94,7 +109,12 @@ export function getCategoryRevenueApi(
 /**
  * 獲取工作人員業績排行
  *
- * GET /api/performances/staff-ranking?startDate=2026-01-01&endDate=2026-12-31&limit=10
+ * GET /admin/information/staff?startDate=2026-01-01&endDate=2026-12-31&limit=10
+ *
+ * 數據庫來源：
+ * - performance 表：按 staff_id 分組聚合 amount
+ * - staff 表：員工姓名 name
+ * - percentage = 該員工金額 / 第一名金額 * 100
  *
  * @param startDate - 開始日期（YYYY-MM-DD）
  * @param endDate - 結束日期（YYYY-MM-DD）
@@ -106,7 +126,7 @@ export function getStaffRankingApi(
   endDate: string,
   limit: number = 10
 ): Promise<ApiResponse<StaffRankingItem[]>> {
-  return get<StaffRankingItem[]>('/performances/staff-ranking', {
+  return get<StaffRankingItem[]>('/admin/information/staff', {
     startDate,
     endDate,
     limit,

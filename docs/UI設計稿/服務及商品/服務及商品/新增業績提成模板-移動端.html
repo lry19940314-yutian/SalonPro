@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-container": "#328517",
+                  "on-error": "#ffffff",
+                  "outline": "#88717a",
+                  "surface-container-low": "#fff0f4",
+                  "on-background": "#23191d",
+                  "on-surface": "#23191d",
+                  "secondary-fixed": "#f6d9ff",
+                  "primary-fixed": "#ffd8e7",
+                  "surface-container-high": "#f7e3e9",
+                  "primary": "#a22c70",
+                  "inverse-surface": "#392d32",
+                  "surface-container-lowest": "#ffffff",
+                  "surface-tint": "#a52f72",
+                  "outline-variant": "#dac0c9",
+                  "on-primary-container": "#fffbff",
+                  "surface-variant": "#f1dee3",
+                  "surface-dim": "#e8d5db",
+                  "tertiary-fixed": "#9ff87d",
+                  "on-error-container": "#93000a",
+                  "on-tertiary-container": "#f8ffee",
+                  "background": "#fff8f8",
+                  "surface": "#fff8f8",
+                  "on-secondary-container": "#6c4082",
+                  "on-primary-fixed": "#3d0025",
+                  "on-primary-fixed-variant": "#861259",
+                  "inverse-on-surface": "#ffecf1",
+                  "surface-container": "#fde9ef",
+                  "secondary-container": "#e8b3fe",
+                  "secondary-fixed-dim": "#e8b3fe",
+                  "on-tertiary-fixed-variant": "#145200",
+                  "on-tertiary-fixed": "#042100",
+                  "on-secondary": "#ffffff",
+                  "on-secondary-fixed": "#300247",
+                  "surface-container-highest": "#f1dee3",
+                  "inverse-primary": "#ffafd3",
+                  "surface-bright": "#fff8f8",
+                  "primary-fixed-dim": "#ffafd3",
+                  "on-secondary-fixed-variant": "#603475",
+                  "on-primary": "#ffffff",
+                  "error": "#ba1a1a",
+                  "tertiary-fixed-dim": "#84db64",
+                  "tertiary": "#1c6b00",
+                  "secondary": "#794c8f",
+                  "on-surface-variant": "#554149",
+                  "error-container": "#ffdad6",
+                  "primary-container": "#c14689",
+                  "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "xl": "32px",
+                  "gutter": "20px",
+                  "sm": "8px",
+                  "md": "16px",
+                  "xs": "4px",
+                  "lg": "24px",
+                  "unit": "4px",
+                  "container-padding": "24px"
+          },
+          "fontFamily": {
+                  "label-md": ["Plus Jakarta Sans"],
+                  "h3": ["Plus Jakarta Sans"],
+                  "h2": ["Plus Jakarta Sans"],
+                  "body-md": ["Plus Jakarta Sans"],
+                  "body-lg": ["Plus Jakarta Sans"],
+                  "caption": ["Plus Jakarta Sans"],
+                  "h1": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+                  "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                  "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                  "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                  "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                  "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                  "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+          }
+        },
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm fixed top-0 left-0 right-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors p-2 rounded-full active:opacity-80 active:scale-95">
+<span class="material-symbols-outlined text-[#c84c8f]">menu</span>
+</button>
+<h1 class="text-xl font-bold text-[#c84c8f] dark:text-[#d672a8] font-['Plus_Jakarta_Sans'] tracking-tight">
+          Wonder sky 國際美妍館
+        </h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors p-2 rounded-full active:opacity-80 active:scale-95">
+<span class="material-symbols-outlined text-[#c84c8f]">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#c84c8f]/20">
+<img class="w-full h-full object-cover" data-alt="A professional user profile avatar showing a stylish, modern individual in a high-end beauty salon environment. The lighting is soft and flattering, with a clean and airy atmosphere. The background has subtle pink and white tones, reflecting the premium wellness brand identity. The composition is a centered close-up with a professional yet welcoming expression." src="https://lh3.googleusercontent.com/aida/ADBb0uhyTdIEyqi60wTygYASZ2BsdEkww0qh46GdjJtnc581Rx7HT_cF3NkWFbmkCflRFbuejBpYs5lNjMBjLm6xBJrOl1f4oRyGXI1EZu1J7YFQQN0FNDdDPvpEMK2qIkbG-FYCfqLWW9ibmrSFOPXPVE15zLHjCbxp5_IDvj2BaqAvF3Amim6eN-F4gtNAMh8FIkf3uIg3ek_Y7oTJoJPu2G8mKp81YKGBYihiaIaF21Tme3qkdPIzlMI9JvtNHwJqJcjnpTgAkvuo"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20 px-6">
+<!-- Page Header & Breadcrumbs -->
+<section class="mt-4">
+<nav class="flex items-center gap-1 text-[#c84c8f] font-medium text-sm mb-1">
+<span>服務及商品</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>業績提成模板設定</span>
+</nav>
+<h2 class="text-[#c84c8f] font-h2 text-h2">新增業績提成模板</h2>
+<p class="text-on-surface-variant font-caption text-caption mt-1">
+        在此設定不同職位的業績計算與提成獎金發放規則。
+      </p>
+</section>
+<!-- Secondary Tabs -->
+<section class="mt-6 -mx-6">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar px-6 py-2">
+<button class="whitespace-nowrap px-4 py-2 rounded-full text-gray-500 font-label-md text-label-md hover:bg-gray-100 transition-colors">
+          服務項目
+        </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full text-gray-500 font-label-md text-label-md hover:bg-gray-100 transition-colors">
+          商品/耗材
+        </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-[#c84c8f]/10 text-[#c84c8f] border-b-2 border-[#c84c8f] font-label-md text-label-md">
+          業績提成模板設定
+        </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full text-gray-500 font-label-md text-label-md hover:bg-gray-100 transition-colors">
+          服務上限
+        </button>
+</div>
+</section>
+<!-- Form Content -->
+<section class="mt-6 space-y-6">
+<!-- Section Image Backdrop Card -->
+<div class="relative w-full h-40 rounded-2xl overflow-hidden shadow-lg mb-8">
+<img class="w-full h-full object-cover" data-alt="A sophisticated administrative dashboard scene featuring a clean laptop on a white desk with floral accents. The background is a blurred high-end beauty spa interior with soft pink and rose gold lighting. The image conveys a sense of professional management and efficient data handling in a luxury wellness environment. The color palette emphasizes soft pinks and crisp whites." src="https://lh3.googleusercontent.com/aida/ADBb0uheuQO6wl3ZY61sW5_JnPuqdK_-PL95IqBaJ7Y0sih-uEkCJ2_QANGduy8jEl9UBKUZSmXxj0N5jh5d9kkB3xAGHs6nu61kmxa6j74CuqHAI_iu55qjuKk8l8j9x2GanyLN8R-O_KextZg9SLiySKDUs_3VHAFS9miZ4hTRo1JK8bbkpFdtGTXsRANhwpbQyRZl6Wf88J1DMsP0VTQuFZK6AZTaAIrs-upXTTNY1tbnK98y5-QMu6I6zh_6VOSuNzArchjoEEA6Kw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#c84c8f]/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="font-bold text-lg">模板資訊設定</p>
+<p class="text-xs opacity-90">請填寫基本資訊以建立新的獎金規則</p>
+</div>
+</div>
+<!-- Input Groups -->
+<div class="bg-white rounded-xl p-lg border border-gray-100 shadow-sm space-y-gutter">
+<!-- Name Input -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant">
+            名稱 <span class="text-error">*</span>
+</label>
+<input class="w-full h-[48px] px-4 rounded-lg border border-gray-200 focus:border-[#c84c8f] focus:ring-1 focus:ring-[#c84c8f] outline-none transition-all font-body-md text-body-md" placeholder="例如：資深美容師提成模板" type="text"/>
+</div>
+<!-- Position Dropdown -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant">
+            適用職位 <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-[48px] px-4 appearance-none rounded-lg border border-gray-200 focus:border-[#c84c8f] focus:ring-1 focus:ring-[#c84c8f] outline-none transition-all font-body-md text-body-md bg-white">
+<option disabled="" selected="" value="">請選擇職位</option>
+<option value="1">店長</option>
+<option value="2">資深美容師</option>
+<option value="3">美甲師</option>
+<option value="4">實習生</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Switches Section -->
+<div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+<div class="p-4 border-b border-gray-50 bg-[#c84c8f]/5">
+<h3 class="font-h3 text-h3 text-[#c84c8f] flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">settings_input_component</span>
+            進階計算設定
+          </h3>
+</div>
+<div class="p-lg space-y-6">
+<!-- Toggle 1 -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-body-lg text-body-lg font-semibold text-on-surface">啟用業績均分</p>
+<p class="text-caption text-on-surface-variant">多人服務時，總業績金額是否平均分配給所有參與者</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-12 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</label>
+</div>
+<!-- Divider -->
+<div class="h-px bg-gray-100"></div>
+<!-- Toggle 2 -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-body-lg text-body-lg font-semibold text-on-surface">啟用提成均分</p>
+<p class="text-caption text-on-surface-variant">多人服務時，提成獎金總額是否平均分配給參與者</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-12 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Decorative Card -->
+<section class="mt-8">
+<div class="rounded-xl overflow-hidden shadow-sm border border-gray-100 relative group">
+<img class="w-full h-32 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up aesthetic shot of luxury skincare products, including glass serum bottles and soft cotton pads, arranged on a marble surface. The scene is bathed in natural, bright morning light with soft shadows. The overall feel is minimal, clean, and premium, reinforcing the beauty and wellness theme. Subtle hints of rose-colored textures appear in the background." src="https://lh3.googleusercontent.com/aida/ADBb0uhEUJlFM2to0y5S6ihqdjVTyf_keGWyfBgwtW8-bhNzPqf29-Rxo3GY7uOxA8OZyO2yhnufowDFoxyMo8U_bwKvaXXSwNRO5dAaUpy8fW2_tivqlDurrUkqxi8u5D5eQIXLLdRTL42hL4-25em408dxWOMviG-anNuwG-zbROauIAdz83qusE0OKJbHZsZZ8HSThK_klvhD7K7_XZ9x8gR4aKiPMR6v30uXI1GID6k4Ck5OGneiohFCjT1AbBNDasXdEdveOr9K7w"/>
+<div class="absolute inset-0 bg-white/60 backdrop-blur-[2px] flex items-center justify-center p-6">
+<div class="text-center">
+<span class="material-symbols-outlined text-[#c84c8f] text-3xl mb-2">auto_awesome</span>
+<p class="text-sm font-medium text-[#a22c70]">智慧提成計算，讓營收管理更輕鬆</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-end gap-4 px-6 py-4 bg-white/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<button class="text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-gray-700 rounded-xl px-8 py-2 font-['Plus_Jakarta_Sans'] text-xs font-bold uppercase hover:opacity-90 transition-opacity active:scale-95 duration-200 min-h-[44px]">
+      取消
+    </button>
+<button class="bg-[#c84c8f] text-white rounded-xl px-8 py-2 shadow-lg shadow-[#c84c8f]/20 font-['Plus_Jakarta_Sans'] text-xs font-bold uppercase hover:opacity-90 transition-opacity active:scale-95 duration-200 min-h-[44px] flex items-center gap-2">
+<span class="material-symbols-outlined text-base">check_circle</span>
+      儲存
+    </button>
+</nav>
+</body></html>
