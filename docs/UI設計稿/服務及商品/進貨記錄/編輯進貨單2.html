@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Purchase Order Details - Wonder Sky</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fff8f8",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-tint": "#a52f72",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffafd3",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-background": "#23191d",
+                        "outline-variant": "#dac0c9",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary-fixed": "#042100",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#9ff87d",
+                        "secondary-container": "#e8b3fe",
+                        "primary-fixed-dim": "#ffafd3",
+                        "surface-dim": "#e8d5db",
+                        "primary-container": "#c14689",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-primary-fixed": "#3d0025",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary-container": "#328517",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary": "#794c8f",
+                        "surface-bright": "#fff8f8",
+                        "inverse-surface": "#392d32",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "error-container": "#ffdad6",
+                        "primary": "#a22c70",
+                        "primary-fixed": "#ffd8e7",
+                        "outline": "#88717a",
+                        "on-secondary-fixed": "#300247",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container-highest": "#f1dee3",
+                        "background": "#fff8f8",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#1c6b00",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-variant": "#f1dee3",
+                        "on-surface-variant": "#554149",
+                        "surface-container": "#fde9ef",
+                        "on-secondary-container": "#6c4082",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "xl": "32px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "xs": "4px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 md:p-8">
+<!-- Modal Card -->
+<div class="relative w-full max-w-[1024px] max-h-[90vh] bg-surface-container-lowest rounded-xl shadow-2xl flex flex-col overflow-hidden border border-outline-variant">
+<!-- Modal Header -->
+<div class="flex items-center justify-between px-lg py-md border-b border-outline-variant bg-surface-bright">
+<div class="flex flex-col">
+<h2 class="text-h1 text-on-surface">Purchase Order ST2026050001</h2>
+<p class="text-sm text-on-surface-variant">新增進貨單 (Step 2: Detailed Entry)</p>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant text-on-surface transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Step Navigation (Shared Component Logic Applied) -->
+<div class="px-lg bg-surface-bright">
+<div class="flex border-b border-outline-variant gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-outline pb-[13px] pt-4 cursor-pointer" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">選擇品項 (Select Items)</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4 cursor-pointer" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">詳細填寫 (Detailed Entry)</p>
+</a>
+</div>
+</div>
+<!-- Modal Body (Scrollable Content) -->
+<div class="flex-1 overflow-y-auto p-lg space-y-xl">
+<!-- Section 1: Basic Information -->
+<section>
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary">info</span>
+<h3 class="text-h2 text-on-surface">基本資訊 Basic Information</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md bg-surface-container-low p-md rounded-lg">
+<!-- Expense Account -->
+<label class="flex flex-col gap-sm">
+<span class="text-sm font-semibold text-on-surface-variant">支出帳戶 Expense Account</span>
+<div class="relative">
+<input class="w-full h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-white text-on-surface" readonly="" type="text" value="台北富邦 - 1688"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline">account_balance_wallet</span>
+</div>
+</label>
+<!-- Expense Category -->
+<label class="flex flex-col gap-sm">
+<span class="text-sm font-semibold text-on-surface-variant">費用項目 Expense Category</span>
+<div class="relative">
+<input class="w-full h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-white text-on-surface" placeholder="選擇費用類別" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline">category</span>
+</div>
+</label>
+<!-- Purchase Date -->
+<label class="flex flex-col gap-sm">
+<span class="text-sm font-semibold text-on-surface-variant">進貨日期 Purchase Date</span>
+<div class="relative">
+<input class="w-full h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-white text-on-surface" type="date" value="2024-05-20"/>
+</div>
+</label>
+<!-- Store -->
+<label class="flex flex-col gap-sm">
+<span class="text-sm font-semibold text-on-surface-variant">進貨門店 Store</span>
+<div class="relative">
+<select class="w-full h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-white text-on-surface">
+<option>忠孝旗艦館 (Zhongxiao Flagship)</option>
+<option>南京分館 (Nanjing Branch)</option>
+</select>
+</div>
+</label>
+<!-- Payment Method -->
+<label class="flex flex-col gap-sm">
+<span class="text-sm font-semibold text-on-surface-variant">支付方式 Payment Method</span>
+<select class="w-full h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-white text-on-surface">
+<option>銀行轉帳 Bank Transfer</option>
+<option>現金支付 Cash</option>
+<option>信用卡 Credit Card</option>
+</select>
+</label>
+<!-- Operator -->
+<label class="flex flex-col gap-sm">
+<span class="text-sm font-semibold text-on-surface-variant">經辦人員 Operator</span>
+<input class="w-full h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-white text-on-surface" type="text" value="林雅婷 (Tina Lin)"/>
+</label>
+<!-- Notes -->
+<label class="flex flex-col gap-sm md:col-span-2">
+<span class="text-sm font-semibold text-on-surface-variant">備註 Notes</span>
+<textarea class="w-full min-h-[80px] rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-white text-on-surface p-3" placeholder="請輸入備註內容..."></textarea>
+</label>
+</div>
+</section>
+<!-- Section 2: Item List -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+<h3 class="text-h2 text-on-surface">已選品項 Selected Items (3)</h3>
+</div>
+</div>
+<div class="space-y-md">
+<!-- Item Card 1 -->
+<div class="flex flex-col md:flex-row gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="A high-quality product photograph of professional skincare serum bottles arranged neatly in a bright, modern beauty salon setting. The lighting is soft and flattering, highlighting the elegant glass packaging against a clean, pink-toned background consistent with a high-end wellness brand. The image communicates luxury and clinical efficacy with a sophisticated, professional aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0uheuQO6wl3ZY61sW5_JnPuqdK_-PL95IqBaJ7Y0sih-uEkCJ2_QANGduy8jEl9UBKUZSmXxj0N5jh5d9kkB3xAGHs6nu61kmxa6j74CuqHAI_iu55qjuKk8l8j9x2GanyLN8R-O_KextZg9SLiySKDUs_3VHAFS9miZ4hTRo1JK8bbkpFdtGTXsRANhwpbQyRZl6Wf88J1DMsP0VTQuFZK6AZTaAIrs-upXTTNY1tbnK98y5-QMu6I6zh_6VOSuNzArchjoEEA6Kw"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-on-surface">SK-II 青春露 (Facial Treatment Essence 230ml)</h4>
+<p class="text-xs text-outline">SKU: PRO-2024-001</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant">品項總價 Subtotal</p>
+<p class="font-bold text-primary text-lg">$9,500</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-sm mt-md">
+<label class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-outline mb-1">進價 Cost</span>
+<input class="h-10 rounded border-outline-variant bg-surface-bright text-sm" type="number" value="4750"/>
+</label>
+<label class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-outline mb-1">數量 Qty</span>
+<input class="h-10 rounded border-outline-variant bg-surface-bright text-sm" type="number" value="2"/>
+</label>
+<label class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-outline mb-1">折扣 Disc. %</span>
+<input class="h-10 rounded border-outline-variant bg-surface-bright text-sm" type="number" value="0"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="flex flex-col md:flex-row gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Macro photography of premium essential oil bottles featuring delicate floral infusions on a minimalist marble surface. The lighting is bright and airy, creating a serene, spa-like atmosphere that aligns with a high-end beauty backend interface. The color palette emphasizes soft whites, subtle grays, and natural floral colors for a professional, trustworthy feel." src="https://lh3.googleusercontent.com/aida/ADBb0uhzNsFSiekdZ4ZwXFnA_Tas_-nRr5cHtyn5jT_ERtyErycgw6MKgyTvgZZa3a_KLfbZZLljvAyMUIO9lLiKgmBS0jBmu5XgYznmAPZvWfUV3OE6_bwhYwcDJWHF6wqKh0p1-OVDEbMBAITjSl3-V7CyppUlCqyGNqHrWJxFOrfELJaK9Z8AJ90WxMeXVa8d3tgM1u9FuFK8kany9KwDxPUoRRyaGqrEJBAD5yy4ymDvU4NDfCvIy3RpPxtPqz2FtLsxygSghUAnDQ"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-on-surface">Jo Malone 英國梨與小蒼蘭 擴香</h4>
+<p class="text-xs text-outline">SKU: DIFF-0082</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant">品項總價 Subtotal</p>
+<p class="font-bold text-primary text-lg">$4,760</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-sm mt-md">
+<label class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-outline mb-1">進價 Cost</span>
+<input class="h-10 rounded border-outline-variant bg-surface-bright text-sm" type="number" value="1190"/>
+</label>
+<label class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-outline mb-1">數量 Qty</span>
+<input class="h-10 rounded border-outline-variant bg-surface-bright text-sm" type="number" value="4"/>
+</label>
+<label class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-outline mb-1">折扣 Disc. %</span>
+<input class="h-10 rounded border-outline-variant bg-surface-bright text-sm" type="number" value="0"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Add more items if needed... -->
+</div>
+</section>
+</div>
+<!-- Modal Footer -->
+<div class="px-lg py-md border-t border-outline-variant bg-surface-bright flex flex-wrap items-center justify-between gap-md">
+<div class="flex flex-col">
+<p class="text-sm font-medium text-on-surface-variant">總計金額 Estimated Total</p>
+<p class="text-3xl font-bold text-primary">NT$ 14,260</p>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center justify-center px-lg h-12 rounded-lg border border-primary text-primary font-bold hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined mr-2">arrow_back</span>
+                        上一步 (Back)
+                    </button>
+<button class="flex items-center justify-center px-xl h-12 rounded-lg bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined mr-2">check_circle</span>
+                        確認進貨 (Confirm)
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

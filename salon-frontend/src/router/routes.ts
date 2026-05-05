@@ -146,7 +146,8 @@ const routes: AdaptiveRouteConfig[] = [
           icon: 'UserFilled',
           keepAlive: true,
         },
-        component: () => import('@/views/info-center/InfoCenterView.vue'),
+        component: () => import('@/views/info-center/MemberAnalysisView.vue'),
+        mobileComponent: () => import('@/views/info-center/MemberAnalysisMobile.vue'),
       },
       {
         path: 'info-center/performance-analysis',

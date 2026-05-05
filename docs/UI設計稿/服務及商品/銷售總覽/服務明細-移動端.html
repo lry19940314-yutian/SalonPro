@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>服務明細 - Wonder Sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-primary-fixed": "#3d0025",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#dac0c9",
+                        "inverse-surface": "#392d32",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-variant": "#f1dee3",
+                        "tertiary-container": "#328517",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-surface-variant": "#554149",
+                        "tertiary-fixed-dim": "#84db64",
+                        "outline": "#88717a",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#042100",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e8b3fe",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-tertiary-container": "#f8ffee",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-background": "#23191d",
+                        "secondary": "#794c8f",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fff8f8",
+                        "surface": "#fff8f8",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-secondary-container": "#6c4082",
+                        "on-secondary-fixed": "#300247",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container": "#fde9ef",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-primary": "#ffafd3",
+                        "primary-container": "#c14689",
+                        "background": "#fff8f8",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-surface": "#23191d",
+                        "primary": "#a22c70"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 w-full flex justify-between items-center px-6 h-16 bg-white dark:bg-neutral-900 shadow-sm border-b border-neutral-100 dark:border-neutral-800">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 rounded-full hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+<span class="material-symbols-outlined text-neutral-600 dark:text-neutral-400" data-icon="menu">menu</span>
+</button>
+<span class="text-xl font-bold text-[#c84c8f] tracking-tight font-['Plus_Jakarta_Sans']">Wonder Sky 國際美妍館</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors relative">
+<span class="material-symbols-outlined text-neutral-600 dark:text-neutral-400" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full border border-primary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional close-up portrait of a chic beauty salon manager with subtle makeup, set against a blurred, high-end spa interior. The lighting is soft and flattering, highlighting a clean and modern aesthetic. The color palette is composed of soft pinks and whites, reflecting a trustworthy and sophisticated corporate identity. The mood is welcoming and professional." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+</div>
+</header>
+<main class="pb-24">
+<!-- Breadcrumb -->
+<nav class="px-md py-sm bg-surface-container-low/50">
+<div class="flex items-center gap-2 text-caption text-on-surface-variant font-label-md">
+<span>服務及商品</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-bold">銷售總覽</span>
+</div>
+</nav>
+<!-- Tabs Navigation -->
+<div class="bg-white sticky top-16 z-40 shadow-sm overflow-x-auto hide-scrollbar flex border-b border-neutral-100">
+<a class="px-6 py-4 text-body-md whitespace-nowrap text-neutral-600 font-medium" href="#">商品銷售</a>
+<a class="px-6 py-4 text-body-md whitespace-nowrap text-[#c84c8f] font-bold border-b-2 border-[#c84c8f]" href="#">服務明細</a>
+<a class="px-6 py-4 text-body-md whitespace-nowrap text-neutral-600 font-medium" href="#">個人銷售明細</a>
+</div>
+<div class="p-md space-y-md">
+<!-- Data Overview Card -->
+<section class="bg-white rounded-xl border border-neutral-100 shadow-[0_12px_20px_rgba(200,76,143,0.04)] p-lg space-y-md">
+<div class="flex flex-col">
+<span class="text-caption text-on-surface-variant font-label-md">總銷售額</span>
+<span class="text-[32px] font-extrabold text-[#c84c8f] font-h1">NT$ 1,250,800</span>
+</div>
+<div class="pt-md border-t border-neutral-50 space-y-3">
+<div class="flex justify-between items-center group cursor-pointer">
+<span class="text-body-md text-on-surface-variant">實收總金額</span>
+<div class="flex items-center gap-1">
+<span class="font-bold text-on-surface">NT$ 1,180,000</span>
+<span class="material-symbols-outlined text-neutral-400 group-hover:text-primary transition-colors" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">折扣總金額</span>
+<span class="font-bold text-error">NT$ 45,800</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">優惠券折扣總金額</span>
+<span class="font-bold text-error">NT$ 25,000</span>
+</div>
+</div>
+</section>
+<!-- Search and Filter -->
+<section class="space-y-sm">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-neutral-400" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-body-md" placeholder="關鍵字搜尋" type="text"/>
+</div>
+<div class="flex justify-between items-center gap-2">
+<button class="flex-1 flex items-center justify-between px-4 py-2.5 bg-white border border-neutral-200 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-neutral-500 text-[20px]" data-icon="calendar_today">calendar_today</span>
+<span class="text-body-md text-on-surface">2023/10/01 - 2023/10/31</span>
+</div>
+<span class="material-symbols-outlined text-neutral-400 text-[18px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+<button class="px-4 py-2.5 border border-[#c84c8f] text-[#c84c8f] font-bold rounded-lg flex items-center gap-1 hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="ios_share">ios_share</span>
+<span class="text-body-md">匯出</span>
+</button>
+</div>
+<div class="flex justify-end">
+<button class="text-[#c84c8f] text-body-md font-bold flex items-center gap-1">
+<span>搜尋分類</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</section>
+<!-- Service Details List -->
+<div class="space-y-md">
+<!-- List Item 1 -->
+<div class="bg-white rounded-xl border border-neutral-100 shadow-[0_8px_16px_rgba(0,0,0,0.03)] overflow-hidden transition-all active:bg-primary/5">
+<div class="p-md space-y-3">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 bg-surface-container-high text-[#c84c8f] text-caption font-bold rounded">面部護理</span>
+<span class="material-symbols-outlined text-neutral-300" data-icon="expand_more">expand_more</span>
+</div>
+<h4 class="font-h3 text-on-surface leading-tight">頂級魚子醬緊緻活膚課程</h4>
+<div class="grid grid-cols-2 gap-y-3 pt-2">
+<div>
+<p class="text-caption text-neutral-500">銷售數量</p>
+<p class="text-body-md font-bold">48 次</p>
+</div>
+<div>
+<p class="text-caption text-neutral-500">折扣金額</p>
+<p class="text-body-md font-bold text-error">NT$ 9,600</p>
+</div>
+<div>
+<p class="text-caption text-neutral-500">銷售額</p>
+<p class="text-body-md font-bold">NT$ 192,000</p>
+</div>
+<div>
+<p class="text-caption text-neutral-500">實收金額</p>
+<p class="text-body-lg font-extrabold text-[#c84c8f]">NT$ 182,400</p>
+</div>
+</div>
+</div>
+</div>
+<!-- List Item 2 (Expanded Example/Highlighted) -->
+<div class="bg-primary-fixed/10 rounded-xl border border-primary/20 shadow-[0_8px_16px_rgba(200,76,143,0.08)] overflow-hidden">
+<div class="p-md space-y-3">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 bg-primary text-on-primary text-caption font-bold rounded">美體SPA</span>
+<span class="material-symbols-outlined text-primary" data-icon="expand_less">expand_less</span>
+</div>
+<h4 class="font-h3 text-on-surface leading-tight">深層釋壓淋巴排毒按摩</h4>
+<div class="grid grid-cols-2 gap-y-3 pt-2 border-b border-primary/10 pb-3">
+<div>
+<p class="text-caption text-neutral-500">銷售數量</p>
+<p class="text-body-md font-bold">35 次</p>
+</div>
+<div>
+<p class="text-caption text-neutral-500">折扣金額</p>
+<p class="text-body-md font-bold text-error">NT$ 5,250</p>
+</div>
+<div>
+<p class="text-caption text-neutral-500">銷售額</p>
+<p class="text-body-md font-bold">NT$ 122,500</p>
+</div>
+<div>
+<p class="text-caption text-neutral-500">實收金額</p>
+<p class="text-body-lg font-extrabold text-[#c84c8f]">NT$ 117,250</p>
+</div>
+</div>
+<!-- Detailed Sale Record -->
+<div class="pt-1 space-y-2">
+<p class="text-caption font-bold text-primary">最近銷售紀錄</p>
+<div class="bg-white/60 rounded-lg p-2 text-caption space-y-1">
+<div class="flex justify-between">
+<span class="text-neutral-600">2023/10/28 14:20</span>
+<span class="font-bold">王曉明 (店長)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-neutral-600">顧客: 李*美</span>
+<span class="text-[#c84c8f] font-bold">NT$ 3,500</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="bg-white rounded-xl border border-neutral-100 shadow-[0_8px_16px_rgba(0,0,0,0.03)] overflow-hidden transition-all active:bg-primary/5">
+<div class="p-md space-y-3">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 bg-surface-container-high text-[#c84c8f] text-caption font-bold rounded">美甲睫毛</span>
+<span class="material-symbols-outlined text-neutral-300" data-icon="expand_more">expand_more</span>
+</div>
+<h4 class="font-h3 text-on-surface leading-tight">山茶花空氣感美睫 200根</h4>
+<div class="grid grid-cols-2 gap-y-3 pt-2">
+<div>
+<p class="text-caption text-neutral-500">銷售數量</p>
+<p class="text-body-md font-bold">62 次</p>
+</div>
+<div>
+<p class="text-caption text-neutral-500">折扣金額</p>
+<p class="text-body-md font-bold text-error">NT$ 12,400</p>
+</div>
+<div>
+<p class="text-caption text-neutral-500">銷售額</p>
+<p class="text-body-md font-bold">NT$ 124,000</p>
+</div>
+<div>
+<p class="text-caption text-neutral-500">實收金額</p>
+<p class="text-body-lg font-extrabold text-[#c84c8f]">NT$ 111,600</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<footer class="flex flex-col items-center gap-4 py-8">
+<div class="flex items-center gap-8">
+<button class="flex items-center gap-1 text-neutral-400 font-medium disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
+<span class="text-body-md">上一頁</span>
+</button>
+<div class="text-caption text-on-surface-variant font-medium">
+                        第 <span class="text-on-surface font-bold">1-20</span> 筆 共 <span class="text-on-surface font-bold">50</span> 筆
+                    </div>
+<button class="flex items-center gap-1 text-[#c84c8f] font-bold">
+<span class="text-body-md">下一頁</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</footer>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-16 px-4 md:hidden bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border-t border-neutral-100 dark:border-neutral-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-neutral-400 p-2 active:bg-neutral-50" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">首頁</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 p-2 active:bg-neutral-50" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">預約</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c84c8f] p-2 active:bg-neutral-50" href="#">
+<span class="material-symbols-outlined" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold">銷售</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 p-2 active:bg-neutral-50" href="#">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">更多</span>
+</a>
+</nav>
+</body></html>

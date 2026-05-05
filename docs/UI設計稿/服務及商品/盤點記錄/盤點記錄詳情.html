@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inventory Audit Details - Wonder sky</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#042100",
+                        "on-tertiary-container": "#f8ffee",
+                        "inverse-surface": "#392d32",
+                        "surface": "#fff8f8",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-primary": "#ffafd3",
+                        "secondary-fixed": "#f6d9ff",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-secondary-container": "#6c4082",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#f1dee3",
+                        "outline-variant": "#dac0c9",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#300247",
+                        "surface-bright": "#fff8f8",
+                        "primary": "#a22c70",
+                        "secondary": "#794c8f",
+                        "on-primary-fixed": "#3d0025",
+                        "on-surface": "#23191d",
+                        "surface-dim": "#e8d5db",
+                        "primary-fixed": "#ffd8e7",
+                        "surface-container-high": "#f7e3e9",
+                        "primary-fixed-dim": "#ffafd3",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-surface-variant": "#554149",
+                        "on-primary-container": "#fffbff",
+                        "surface-container": "#fde9ef",
+                        "tertiary-container": "#328517",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f8",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-container-highest": "#f1dee3",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#ffecf1",
+                        "outline": "#88717a",
+                        "on-background": "#23191d",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#e8b3fe",
+                        "tertiary": "#1c6b00",
+                        "surface-container-low": "#fff0f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "gutter": "20px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .modal-overlay {
+            background-color: rgba(35, 25, 29, 0.6);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- Main Content Background (Mocking a dashboard behind the modal) -->
+<div class="fixed inset-0 z-0 overflow-hidden opacity-40">
+<img alt="Background Dashboard" class="w-full h-full object-cover" data-alt="A sophisticated management dashboard interface displayed on a large screen, featuring clean white panels and soft pink accents. The background suggests a professional spa or beauty clinic office setting with soft, ambient lighting and high-end aesthetic. The overall atmosphere is organized, data-driven, and luxurious." src="https://lh3.googleusercontent.com/aida/ADBb0uj_rwgig1KDvcpcz0ZhzmyFG6qeL_b-sVImoM4IoYV5utwB2ZDjy3txouNhzEHk9akWAD5lveGjR8v--T33_FoHtNhOHYopqt9qYRgAhzC2YUxNImKR8jVJzVdt-Pz-BSMpK6bKdG0VegBQbvUD5tC_Th1fbhjwilW_WOA3nfUfm-Kql3vS_J_5haSKs8ZhHiRbNjo6paLUdbpJlkwMu16Qy2M5IlSmwpmbVKxn7tuNMqjNiIC2DlzXvtfkC7NxdZKHEfq6WRwuvg"/>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-md modal-overlay">
+<!-- Modal Container -->
+<div class="bg-surface-container-lowest w-full max-w-4xl max-h-[90vh] rounded-xl shadow-2xl flex flex-col overflow-hidden border border-outline-variant">
+<!-- Modal Header -->
+<div class="flex items-center justify-between px-lg py-md bg-white border-b border-outline-variant">
+<div class="w-10"></div> <!-- Spacer for centering -->
+<h2 class="font-h2 text-h2 text-on-surface tracking-tight">盤點記錄 2026040004</h2>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#c84c8f] text-[28px]">close</span>
+</button>
+</div>
+<!-- Modal Content (Scrollable) -->
+<div class="overflow-y-auto p-lg space-y-lg">
+<!-- Audit Info Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter bg-surface-container-low p-lg rounded-lg border border-outline-variant/30">
+<div class="space-y-sm">
+<div class="flex items-center gap-sm">
+<span class="text-on-surface-variant font-medium min-w-[80px]">盤點日期：</span>
+<span class="text-[#c84c8f] font-semibold">2026-04-21</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="text-on-surface-variant font-medium min-w-[80px]">盤點人員：</span>
+<span class="text-[#c84c8f] font-semibold">LULU</span>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm">
+<span class="text-on-surface-variant font-medium min-w-[80px]">盤點門店：</span>
+<span class="text-[#c84c8f] font-semibold">沐茉珐複合式國際美妍館</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="text-on-surface-variant font-medium min-w-[80px]">備註：</span>
+<span class="text-[#c84c8f] font-semibold">年度大盤點</span>
+</div>
+</div>
+</div>
+<!-- Items Table Section -->
+<div class="space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+                            盤點明細
+                        </h3>
+<span class="text-caption text-on-surface-variant">共 5 項品項</span>
+</div>
+<div class="overflow-hidden border border-outline-variant rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 border-b border-outline-variant">
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant">品項</th>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant text-right">系統存量</th>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant text-right">實際存量</th>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant text-center">結果</th>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant">備註</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant bg-white">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-md py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<img alt="Product 1" class="w-full h-full object-cover" data-alt="Close-up shot of a luxury rose-infused facial serum bottle in a minimalist pink and white studio setting. High-key lighting emphasizes the premium glass packaging and soft floral aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">大馬士革玫瑰精華液 50ml</p>
+<p class="text-caption text-on-surface-variant">SKU: WS-ROS-001</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md text-right font-medium">45</td>
+<td class="px-md py-md text-right font-medium">45</td>
+<td class="px-md py-md text-center">
+<span class="px-sm py-xs bg-gray-100 text-gray-600 rounded-full text-caption font-bold">無差異</span>
+</td>
+<td class="px-md py-md text-on-surface-variant text-caption">-</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-md py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<img alt="Product 2" class="w-full h-full object-cover" data-alt="Modern organic skincare cream jar presented on a white marble surface with a soft pink background. The lighting is bright and clean, showcasing the professional branding and high-end texture of the product." src="https://lh3.googleusercontent.com/aida/ADBb0uhGI3dPgfcHAm-Y5FAjbQYcZ8iYbwbu9u2O7XFo8akZYeBoOIUmCi-bipkZU3uFpYpJqzOvx7rm4oIcf4r1QiNWKpEARyksY3FyYTCx4FNoLCRU2BDpcy9kdYVJ854lmjZt8ktHMKR2-jnuHF7I1nV8CU_R67FVCBY9a8S0asv_GebUwe7LR6NNwq3vqPq8dz8lIYm7V_9bvPG-XvVrymeHTeEbs1DfYFUBhUt1O-iS6VUBIDxq4qhIJmL2M7NnA3uoN3sgg9dDbw"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">玻尿酸深層鎖水霜 100g</p>
+<p class="text-caption text-on-surface-variant">SKU: WS-HYA-002</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md text-right font-medium">28</td>
+<td class="px-md py-md text-right font-medium">25</td>
+<td class="px-md py-md text-center">
+<span class="px-sm py-xs bg-red-50 text-red-600 rounded-full text-caption font-bold">盤虧 (-3)</span>
+</td>
+<td class="px-md py-md text-on-surface-variant text-caption">破損銷毀未入帳</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-md py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<img alt="Product 3" class="w-full h-full object-cover" data-alt="Set of professional beauty tools including brushes and applicators, arranged neatly in a bright, modern salon environment. Soft rose pink tones dominate the palette, creating a sense of luxury and precision." src="https://lh3.googleusercontent.com/aida/ADBb0uj0JQGRkm-EH6zpMniIH0qNc5khGKJVKYV9V9ipe_E0gPw0XTR4b8AH8ZbzSGKshxK2xjULCIap8Wi5RHznBr4_0V3tSLIczm_zDGtARZMi945ztPWBzu64ZyVe5maetMh81mR16sQSZF_nvssnPDCnKUyTvfsVyk6ns3j_shkTyM9HE5tq58yVc8BiGgvWQAvwDOo8N4C9NM_KIEFkg5-k28sm9CiM0j2YmioHMCPvWX9v-hRDnDMUS8CT4CsFPmjN-OZsvcXpZw"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">專業煥膚面膜組 (10入)</p>
+<p class="text-caption text-on-surface-variant">SKU: WS-MSK-005</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md text-right font-medium">120</td>
+<td class="px-md py-md text-right font-medium">122</td>
+<td class="px-md py-md text-center">
+<span class="px-sm py-xs bg-green-50 text-green-600 rounded-full text-caption font-bold">盤盈 (+2)</span>
+</td>
+<td class="px-md py-md text-on-surface-variant text-caption">進貨數量登載誤差</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-md py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<img alt="Product 4" class="w-full h-full object-cover" data-alt="Artistic composition of essential oil bottles with fresh flowers and botanical elements. The scene is bright and airy, reflecting a high-end wellness and aromatherapy branding style with soft pink highlights." src="https://lh3.googleusercontent.com/aida/ADBb0uhAf24gp8pJt-E_-y1G_1Y83rsKKTDPil6QAC7ZT3hEEAp1Y2pxQQHMW4nBYJPxoDeolXwLOfnHT7zQtw96wCxa_NBPGOn7A4OWAJKKLvgvX1oWYnB0D8xBac_jfvF15G21RmV-ZEFSZbnmo-6EYSMx4CU_lsZqskpMXZE4MAZcxB978foC_rVFGuRpK-VHNQWiaTp0tJ_ddBtRJMUPkRVpa2Cgvdexk_MMYhFssk2yoMgZJ6sZjveNf0zsC7O6GjzaVBvo8AId0g"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">薰衣草舒緩精油 10ml</p>
+<p class="text-caption text-on-surface-variant">SKU: WS-OIL-008</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md text-right font-medium">56</td>
+<td class="px-md py-md text-right font-medium">56</td>
+<td class="px-md py-md text-center">
+<span class="px-sm py-xs bg-gray-100 text-gray-600 rounded-full text-caption font-bold">無差異</span>
+</td>
+<td class="px-md py-md text-on-surface-variant text-caption">-</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-md py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<img alt="Product 5" class="w-full h-full object-cover" data-alt="Elegant display of organic face wash and cleansers in a modern bathroom setting with high-end fixtures. The lighting is soft and flattering, emphasizing a clean, fresh, and luxurious beauty brand image." src="https://lh3.googleusercontent.com/aida/ADBb0ugWqXxyCQNeAfHcYZJgDkeN4amsXMc4wo66AGFa02D1TQh_HEtbcRgKRm7jWCQBBBO65X6ziviWe0zU8YfuTClLP0rD-KsWiW4FS-pE2DqPkwpgfy9VrnLFtil509HwQL3EPOxew4uvj2J8C6u8X2TZejtm97Y6dGDUKO2qNzmtcCjzTUfcqXItxnveTrDIY_icEzYdcat7C6xp2VajB061xPqDT-day7kDpcmoOhdZnfgJjGv60b5YuooGT6Of13_R8qotfhtM"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">氨基酸溫和潔顏慕斯</p>
+<p class="text-caption text-on-surface-variant">SKU: WS-CLN-012</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md text-right font-medium">84</td>
+<td class="px-md py-md text-right font-medium">84</td>
+<td class="px-md py-md text-center">
+<span class="px-sm py-xs bg-gray-100 text-gray-600 rounded-full text-caption font-bold">無差異</span>
+</td>
+<td class="px-md py-md text-on-surface-variant text-caption">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Footer Visual Decoration -->
+<div class="pt-md border-t border-outline-variant flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[#c84c8f] text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-caption text-on-surface-variant">此報表由系統自動生成，核准後不可更改。</span>
+</div>
+<div class="flex gap-md">
+<button class="px-lg py-sm border border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-all active:scale-95">列印詳情</button>
+<button class="px-xl py-sm bg-primary text-on-primary font-semibold rounded-lg shadow-md hover:bg-primary/90 transition-all active:scale-95">確認核准</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

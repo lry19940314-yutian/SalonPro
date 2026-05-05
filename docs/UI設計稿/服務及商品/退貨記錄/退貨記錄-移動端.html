@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>退貨記錄 - Wonder sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "primary": "#a22c70",
+                    "on-secondary-fixed": "#300247",
+                    "on-primary-fixed-variant": "#861259",
+                    "tertiary-container": "#328517",
+                    "surface-tint": "#a52f72",
+                    "on-secondary-fixed-variant": "#603475",
+                    "secondary-fixed": "#f6d9ff",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-highest": "#f1dee3",
+                    "surface-bright": "#fff8f8",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#f1dee3",
+                    "on-tertiary-fixed-variant": "#145200",
+                    "inverse-surface": "#392d32",
+                    "on-primary-fixed": "#3d0025",
+                    "inverse-on-surface": "#ffecf1",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#554149",
+                    "on-background": "#23191d",
+                    "surface-container-high": "#f7e3e9",
+                    "on-tertiary-fixed": "#042100",
+                    "background": "#fff8f8",
+                    "on-tertiary-container": "#f8ffee",
+                    "on-surface": "#23191d",
+                    "primary-fixed-dim": "#ffafd3",
+                    "on-secondary-container": "#6c4082",
+                    "surface-container-low": "#fff0f4",
+                    "outline": "#88717a",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container": "#fde9ef",
+                    "secondary-fixed-dim": "#e8b3fe",
+                    "tertiary": "#1c6b00",
+                    "primary-container": "#c14689",
+                    "surface-dim": "#e8d5db",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#794c8f",
+                    "inverse-primary": "#ffafd3",
+                    "secondary-container": "#e8b3fe",
+                    "outline-variant": "#dac0c9",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#84db64",
+                    "primary-fixed": "#ffd8e7",
+                    "surface": "#fff8f8",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#9ff87d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "gutter": "20px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "container-padding": "24px",
+                    "unit": "4px",
+                    "xl": "32px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "h3": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .pink-gradient { background: linear-gradient(135deg, #a22c70 0%, #c84c8f 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm dark:shadow-none docked full-width top-0 sticky z-40 flex justify-between items-center w-full px-4 h-16">
+<div class="flex items-center gap-2">
+<button class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-200" data-icon="menu">menu</span>
+</button>
+</div>
+<div class="text-lg font-bold text-pink-700 dark:text-pink-300">Wonder sky 國際美妍館</div>
+<div class="flex items-center gap-1">
+<button class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-200" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-pink-100">
+<img alt="Admin" data-alt="A professional profile portrait of a modern salon manager with a friendly and trustworthy expression. The lighting is soft and high-key, reflecting a high-end beauty industry professional. The background is a blurred elegant salon interior with subtle pink and white tones, matching the corporate and modern aesthetic of the brand Wonder sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK_nWbGWG2wmtUqNLqaewhJ_GDbrzp_8X6E_l8H8AA7yZjEmWLTLE2rieUq8QI-7TvTgFgPC_qKCJzknjj5s4RripEXOAGdUEYlDZBtPBzTAG2Xvmx4l7VhaRSbnDtc8wtoqDfyQzIScrI_bZ5VkDyUQvwKVUGBE-fjJCIh-d4HMP6ydLvep0H_sEcG4XzdztxjHengFbHoXrv4j24EsquJEccBNDfgVKJ2Oqz4J0U5_WB8WP9ac8UtHk7OBd5fbKSAR3MGrTSBgY"/>
+</div>
+</div>
+</header>
+<main class="px-4 py-4 space-y-5">
+<!-- Breadcrumb Navigation -->
+<nav class="flex items-center space-x-2 text-on-surface-variant opacity-70">
+<span class="font-caption text-caption">服務及商品</span>
+<span class="material-symbols-outlined text-[14px] leading-none" data-icon="chevron_right">chevron_right</span>
+<span class="font-caption text-caption text-primary font-medium">退貨記錄</span>
+</nav>
+<!-- Overview Card -->
+<section class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 shadow-[0_12px_20px_rgba(162,44,112,0.04)] text-center relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-2">退貨總金額</h2>
+<div class="font-h1 text-[36px] font-extrabold text-[#c84c8f] tracking-tight">$0</div>
+</section>
+<!-- Search & Filter Area -->
+<section class="space-y-4">
+<!-- Search Box -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full h-12 pl-12 pr-4 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-body-md placeholder:text-outline-variant" placeholder="關鍵字搜尋(退貨單號)" type="text"/>
+</div>
+<!-- Quick Links -->
+<div class="flex justify-between px-1">
+<button class="flex items-center gap-1.5 text-primary font-label-md text-label-md hover:opacity-80 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="page_info">page_info</span>
+<span>進階搜尋</span>
+</button>
+<button class="flex items-center gap-1.5 text-primary font-label-md text-label-md hover:opacity-80 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+<span>搜尋分類</span>
+</button>
+</div>
+<!-- Time Filter -->
+<div class="bg-white border border-outline-variant rounded-xl p-4 space-y-3">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="calendar_today">calendar_today</span>
+                    時間區間選擇
+                </label>
+<div class="grid grid-cols-1 gap-2">
+<div class="relative">
+<input class="w-full h-11 px-4 bg-surface-bright border border-outline-variant/60 rounded-lg text-body-md focus:border-primary transition-colors" type="date" value="2023-11-01"/>
+</div>
+<div class="flex justify-center text-outline-variant">
+<span class="material-symbols-outlined" data-icon="arrow_downward">arrow_downward</span>
+</div>
+<div class="relative">
+<input class="w-full h-11 px-4 bg-surface-bright border border-outline-variant/60 rounded-lg text-body-md focus:border-primary transition-colors" type="date" value="2023-11-30"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Empty State Content -->
+<section class="flex flex-col items-center justify-center py-16 px-4 animate-fade-in">
+<div class="w-48 h-48 mb-6 relative">
+<img alt="Empty state illustration" class="w-full h-full object-contain grayscale opacity-30" data-alt="A minimalist and artistic line-drawing style illustration for a digital dashboard empty state. It features a stack of documents, a large magnifying glass, and a subtle question mark floating in the air. The lines are clean, thin, and colored in a soft neutral gray. The background is a pure white, following the high-end corporate aesthetic of the Wonder sky brand." src="https://lh3.googleusercontent.com/aida/ADBb0ui-zUiwgeWA8sSrQtukxGFvM6BnrE3atcJU833MSOLWn8XDX62Nn3JKrutqLDuXdBoPzpOLIwyGnwV0ZpkmfcB5aFAIPGVwej_1eJhhj9WWJHDfQWjqeUKU99jHYbRzDKIdAt2RYc1un_Y7mvUN3RwtmHbLWqjoRdqUYaG9x4RiwKzTH1ZC1UehSioStFeUSxeyCWkppZ3U-iDFVfGIWSdfZudC5XK7li7wQl7tvInk58LWWyanEqKxGoBp2Vv6D-atKvSse2x_"/>
+<!-- Overlaying material icons for extra visual cue -->
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-200 text-6xl" data-icon="inbox">inbox</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface-variant">沒有記錄</h3>
+<p class="font-caption text-caption text-outline mt-2">目前沒有符合篩選條件的退貨記錄</p>
+<button class="mt-8 px-8 py-3 bg-primary text-white rounded-xl font-label-md text-label-md shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                新增退貨單
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-2 py-3 pb-safe bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] z-50 rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-pink-500 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-plus-jakarta-sans text-[10px] tracking-tight">儀表板</span>
+</a>
+<a class="flex flex-col items-center justify-center text-pink-600 dark:text-pink-400 bg-pink-50/50 dark:bg-pink-900/20 rounded-xl px-2 py-1 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-plus-jakarta-sans text-[10px] tracking-tight">進貨管理</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-pink-500 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="search_check">search_check</span>
+<span class="font-plus-jakarta-sans text-[10px] tracking-tight">庫存查詢</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-pink-500 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-plus-jakarta-sans text-[10px] tracking-tight">門店排班</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-pink-500 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-plus-jakarta-sans text-[10px] tracking-tight">會員資料</span>
+</a>
+</nav>
+</body></html>

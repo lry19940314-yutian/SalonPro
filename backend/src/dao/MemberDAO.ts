@@ -1,12 +1,12 @@
 // ============================================================================
-// 美業 SaaS 智慧管理系統 — 會員 DAO
+// 美業 SaaS 智慧管理系統 — 會員數據訪問層
 // ============================================================================
-// 功能：會員表數據訪問層
+// 功能：會員 CRUD、查詢、統計
 // ============================================================================
 
 import { Provide } from '@midwayjs/core';
 import { InjectDataSource } from '@midwayjs/typeorm';
-import { DataSource, In, Like, Between } from 'typeorm';
+import { DataSource, Between, Like } from 'typeorm';
 import { Member } from '../entity/Member';
 
 @Provide()
@@ -20,23 +20,13 @@ export class MemberDAO {
 
   /**
    * 根據 ID 查詢會員
-   *
-   * @param id - 會員 ID
-   * @returns 會員實體或 null
    */
   async findById(id: number): Promise<Member | null> {
-    return this.entityManager.findOne(Member, {
-      where: { id },
-    });
+    return this.entityManager.findOne(Member, { where: { id } });
   }
 
   /**
-   * 根據門店 ID 查詢所有會員
-   *
-   * @param shopId - 門店 ID
-   * @param page - 頁碼
-   * @param pageSize - 每頁數量
-   * @returns 會員列表及總數
+   * 根據門店 ID 查詢會員列表（分頁）
    */
   async findByShopId(
     shopId: number,
@@ -45,53 +35,35 @@ export class MemberDAO {
   ): Promise<[Member[], number]> {
     return this.entityManager.findAndCount(Member, {
       where: { shopId },
-      order: { createdAt: 'DESC' },
       skip: (page - 1) * pageSize,
       take: pageSize,
+      order: { createdAt: 'DESC' },
     });
   }
 
   /**
    * 根據手機號查詢會員
-   *
-   * @param phone - 手機號
-   * @returns 會員實體或 null
    */
   async findByPhone(phone: string): Promise<Member | null> {
-    return this.entityManager.findOne(Member, {
-      where: { phone },
-    });
+    return this.entityManager.findOne(Member, { where: { phone } });
   }
 
   /**
-   * 根據會員編號查詢
-   *
-   * @param memberNo - 會員編號
-   * @returns 會員實體或 null
+   * 根據會員編號查詢會員
    */
   async findByMemberNo(memberNo: string): Promise<Member | null> {
-    return this.entityManager.findOne(Member, {
-      where: { memberNo },
-    });
+    return this.entityManager.findOne(Member, { where: { memberNo } });
   }
 
   /**
-   * 根據 ID 列表批量查詢
-   *
-   * @param ids - 會員 ID 列表
-   * @returns 會員列表
+   * 根據 ID 列表批量查詢會員
    */
   async findByIds(ids: number[]): Promise<Member[]> {
-    return this.entityManager.find(Member, {
-      where: { id: In(ids) },
-    });
+    return this.entityManager.findByIds(Member, ids);
   }
 
   /**
-   * 多條件搜索會員
-   *
-   * @param params - 搜索參數
-   * @returns 會員列表及總數
+   * 搜尋會員（支援關鍵字、等級、性別、狀態、日期範圍）
    */
   async search(params: {
     shopId: number;
@@ -104,64 +76,44 @@ export class MemberDAO {
     page?: number;
     pageSize?: number;
   }): Promise<[Member[], number]> {
-    const queryBuilder = this.entityManager
-      .createQueryBuilder(Member, 'member')
-      .where('member.shopId = :shopId', { shopId: params.shopId });
+    const { shopId, keyword, levelId, gender, status, startDate, endDate, page = 1, pageSize = 20 } = params;
 
-    if (params.keyword) {
-      queryBuilder.andWhere(
-        '(member.name LIKE :keyword OR member.phone LIKE :keyword OR member.memberNo LIKE :keyword)',
-        { keyword: `%${params.keyword}%` }
-      );
+    const where: any = { shopId };
+
+    if (keyword) {
+      where.name = Like(`%${keyword}%`);
+    }
+    if (levelId !== undefined) {
+      where.levelId = levelId;
+    }
+    if (gender !== undefined) {
+      where.gender = gender;
+    }
+    if (status !== undefined) {
+      where.status = status;
+    }
+    if (startDate && endDate) {
+      where.createdAt = Between(startDate, endDate);
     }
 
-    if (params.levelId) {
-      queryBuilder.andWhere('member.levelId = :levelId', { levelId: params.levelId });
-    }
-
-    if (params.gender !== undefined) {
-      queryBuilder.andWhere('member.gender = :gender', { gender: params.gender });
-    }
-
-    if (params.status !== undefined) {
-      queryBuilder.andWhere('member.status = :status', { status: params.status });
-    }
-
-    if (params.startDate) {
-      queryBuilder.andWhere('member.createdAt >= :startDate', { startDate: params.startDate });
-    }
-
-    if (params.endDate) {
-      queryBuilder.andWhere('member.createdAt <= :endDate', { endDate: params.endDate });
-    }
-
-    const page = params.page || 1;
-    const pageSize = params.pageSize || 20;
-
-    return queryBuilder
-      .orderBy('member.createdAt', 'DESC')
-      .skip((page - 1) * pageSize)
-      .take(pageSize)
-      .getManyAndCount();
+    return this.entityManager.findAndCount(Member, {
+      where,
+      skip: (page - 1) * pageSize,
+      take: pageSize,
+      order: { createdAt: 'DESC' },
+    });
   }
 
   /**
-   * 創建會員
-   *
-   * @param member - 會員實體
-   * @returns 創建後的會員
+   * 新增會員
    */
   async create(member: Partial<Member>): Promise<Member> {
-    const entity = this.entityManager.create(Member, member);
-    return this.entityManager.save(entity);
+    const result = this.entityManager.create(Member, member);
+    return this.entityManager.save(result);
   }
 
   /**
    * 更新會員
-   *
-   * @param id - 會員 ID
-   * @param data - 更新數據
-   * @returns 更新後的會員
    */
   async update(id: number, data: Partial<Member>): Promise<Member | null> {
     await this.entityManager.update(Member, id, data as any);
@@ -170,58 +122,100 @@ export class MemberDAO {
 
   /**
    * 刪除會員
-   *
-   * @param id - 會員 ID
    */
   async delete(id: number): Promise<void> {
     await this.entityManager.delete(Member, id);
   }
 
   /**
-   * 更新會員累計消費
-   *
-   * @param id - 會員 ID
-   * @param amount - 消費金額
+   * 更新會員消費資訊（累計金額 + 到店次數 + 最後到店時間）
    */
   async updateConsumption(id: number, amount: number): Promise<void> {
     await this.entityManager
       .createQueryBuilder()
       .update(Member)
       .set({
-        totalConsumption: () => `total_consumption + ${amount}`,
-        visitCount: () => 'visit_count + 1',
-        lastVisitAt: () => 'NOW()',
+        totalConsumption: () => 'totalConsumption + :amount',
+        visitCount: () => 'visitCount + 1',
+        lastVisit: () => 'NOW()',
       })
       .where('id = :id', { id })
+      .setParameter('amount', amount)
       .execute();
   }
 
   /**
-   * 獲取指定門店的會員總數
-   *
-   * @param shopId - 門店 ID
-   * @returns 會員總數
+   * 統計門店會員總數
    */
   async countByShopId(shopId: number): Promise<number> {
-    return this.entityManager.count(Member, {
-      where: { shopId },
-    });
+    return this.entityManager
+      .createQueryBuilder(Member, 'member')
+      .where('member.shop_id = :shopId', { shopId })
+      .getCount();
   }
 
   /**
-   * 獲取指定時間範圍內的新增會員數
+   * 統計指定時間範圍內新增會員數（新客人數）
+   */
+  async countNewMembers(shopId: number, startDate: Date, endDate: Date): Promise<number> {
+    return this.entityManager
+      .createQueryBuilder(Member, 'member')
+      .where('member.shop_id = :shopId', { shopId })
+      .andWhere('member.created_at BETWEEN :startDate AND :endDate', { startDate, endDate })
+      .getCount();
+  }
+
+  /**
+   * 獲取指定時間範圍內每日新增會員數（新客增長趨勢）
    *
    * @param shopId - 門店 ID
    * @param startDate - 開始日期
    * @param endDate - 結束日期
-   * @returns 新增會員數
+   * @returns 每日新增會員數列表
    */
-  async countNewMembers(shopId: number, startDate: Date, endDate: Date): Promise<number> {
-    return this.entityManager.count(Member, {
-      where: {
-        shopId,
-        createdAt: Between(startDate, endDate),
-      },
-    });
+  async getNewCustomerTrend(
+    shopId: number,
+    startDate: Date,
+    endDate: Date
+  ): Promise<Array<{ date: string; count: number }>> {
+    const rawData: Array<{ createdAt: Date }> = await this.entityManager
+      .createQueryBuilder(Member, 'member')
+      .select('DATE(member.created_at)', 'date')
+      .addSelect('COUNT(*)', 'count')
+      .where('member.shop_id = :shopId', { shopId })
+      .andWhere('member.created_at >= :startDate', { startDate })
+      .andWhere('member.created_at <= :endDate', { endDate })
+      .groupBy('DATE(member.created_at)')
+      .orderBy('DATE(member.created_at)', 'ASC')
+      .getRawMany();
+
+    return rawData.map((item: any) => ({
+      date: item.date,
+      count: parseInt(item.count, 10),
+    }));
+  }
+
+  /**
+   * 獲取新客來源統計（按 source 字段分組）
+   *
+   * @param shopId - 門店 ID
+   * @returns 各來源渠道的新客數量列表
+   */
+  async getNewCustomerSourceStats(shopId: number): Promise<Array<{ source: string; count: number }>> {
+    const rawData: Array<{ source: string; count: number }> = await this.entityManager
+      .createQueryBuilder(Member, 'member')
+      .select('member.source', 'source')
+      .addSelect('COUNT(*)', 'count')
+      .where('member.shop_id = :shopId', { shopId })
+      .andWhere('member.source IS NOT NULL')
+      .andWhere("member.source != ''")
+      .groupBy('member.source')
+      .orderBy('COUNT(*)', 'DESC')
+      .getRawMany();
+
+    return rawData.map((item: any) => ({
+      source: item.source,
+      count: parseInt(item.count, 10),
+    }));
   }
 }

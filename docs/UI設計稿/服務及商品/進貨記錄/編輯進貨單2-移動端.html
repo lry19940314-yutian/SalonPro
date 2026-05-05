@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Purchase Entry - Step 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#392d32",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#1c6b00",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-bright": "#fff8f8",
+                        "on-tertiary-fixed": "#042100",
+                        "on-tertiary-container": "#f8ffee",
+                        "secondary-container": "#e8b3fe",
+                        "secondary": "#794c8f",
+                        "on-primary-container": "#fffbff",
+                        "primary": "#a22c70",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#861259",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#554149",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-dim": "#e8d5db",
+                        "tertiary-container": "#328517",
+                        "surface-tint": "#a52f72",
+                        "surface-variant": "#f1dee3",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface-container-high": "#f7e3e9",
+                        "on-secondary-fixed-variant": "#603475",
+                        "inverse-primary": "#ffafd3",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-surface": "#23191d",
+                        "surface-container-highest": "#f1dee3",
+                        "outline-variant": "#dac0c9",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container": "#fde9ef",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-secondary-fixed": "#300247",
+                        "on-primary-fixed": "#3d0025",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-background": "#23191d",
+                        "outline": "#88717a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "gutter": "20px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "lg": "24px"
+                    },
+                    "fontSize": {
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bottom-sheet-mask {
+            background-color: rgba(35, 25, 29, 0.6);
+            backdrop-filter: blur(4px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface-container font-body-md text-on-surface min-h-screen">
+<!-- Background Content Simulation -->
+<div class="p-6 opacity-30 pointer-events-none">
+<header class="flex justify-between items-center mb-8">
+<div class="h-8 w-32 bg-primary-container rounded"></div>
+<div class="h-10 w-10 bg-surface-container-highest rounded-full"></div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="h-48 bg-white rounded-xl shadow-sm"></div>
+<div class="h-48 bg-white rounded-xl shadow-sm"></div>
+<div class="h-48 bg-white rounded-xl shadow-sm"></div>
+</div>
+</div>
+<!-- Active Mask -->
+<div class="fixed inset-0 z-40 bottom-sheet-mask"></div>
+<!-- Bottom Sheet Modal -->
+<div class="fixed inset-x-0 bottom-0 z-50 flex flex-col max-h-[92vh] bg-surface-container-lowest rounded-t-[32px] shadow-2xl overflow-hidden">
+<!-- Drag Handle -->
+<div class="flex justify-center pt-3 pb-1">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full"></div>
+</div>
+<!-- Header -->
+<header class="px-6 py-4 flex items-center justify-between border-b border-surface-variant">
+<h1 class="font-h1 text-h1 text-on-surface">Purchase Order ST2026050001</h1>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+</header>
+<!-- Tabs -->
+<nav class="flex px-6 border-b border-surface-variant">
+<button class="flex-1 py-4 text-center font-label-md text-on-surface-variant transition-colors hover:text-primary">
+                項目選擇
+            </button>
+<button class="flex-1 py-4 text-center font-label-md text-primary relative">
+                詳細錄入
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-t-full"></span>
+</button>
+</nav>
+<!-- Scrollable Body -->
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<div class="p-6 space-y-6">
+<!-- Form Fields Stack -->
+<div class="space-y-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface-variant px-1">支出賬戶</label>
+<select class="w-full h-[48px] px-4 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-lg">
+<option>請選擇賬戶...</option>
+<option>現金賬戶</option>
+<option>銀行存款</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface-variant px-1">費用項目</label>
+<select class="w-full h-[48px] px-4 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-lg">
+<option>耗材採購</option>
+<option>設備維護</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface-variant px-1">進貨日期</label>
+<div class="relative">
+<input class="w-full h-[48px] pl-4 pr-12 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-lg" type="text" value="2023-10-27"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant">calendar_month</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface-variant px-1">進貨門店</label>
+<input class="w-full h-[48px] px-4 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-lg" placeholder="輸入門店名稱" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface-variant px-1">支付方式</label>
+<div class="flex gap-2">
+<button class="flex-1 h-[48px] rounded-xl border border-primary bg-primary-container/10 text-primary font-label-md">電子支付</button>
+<button class="flex-1 h-[48px] rounded-xl border border-outline-variant text-on-surface-variant font-label-md">現金</button>
+<button class="flex-1 h-[48px] rounded-xl border border-outline-variant text-on-surface-variant font-label-md">轉賬</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface-variant px-1">經辦人員</label>
+<input class="w-full h-[48px] px-4 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-lg" type="text" value="王小明"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface-variant px-1">備註說明</label>
+<textarea class="w-full p-4 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-lg resize-none" placeholder="請輸入備註內容..." rows="2"></textarea>
+</div>
+</div>
+<!-- Selected Items Cards Section -->
+<div class="mt-8">
+<h3 class="font-h3 text-h3 mb-4 text-on-surface">已選項目</h3>
+<div class="space-y-4">
+<!-- Item Card 1 -->
+<div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A high-quality product shot of premium beauty salon skincare bottles arranged elegantly on a white marble surface. The lighting is soft and luxurious, featuring soft pink and rose tones that reflect the brand's sophisticated identity. The background is slightly out of focus, emphasizing the professional quality and trustworthy nature of the B2B spa supplies." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<h4 class="font-body-lg font-bold text-on-surface">玫瑰亮顏精華液 (50ml)</h4>
+<span class="text-primary font-bold">$1,280</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2">
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">數量</label>
+<input class="h-8 w-full rounded bg-white border border-outline-variant text-center text-sm p-0" type="number" value="5"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">折扣</label>
+<input class="h-8 w-full rounded bg-white border border-outline-variant text-center text-sm p-0" type="text" value="0.9"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">備註</label>
+<input class="h-8 w-full rounded bg-white border border-outline-variant text-center text-sm p-0 px-1" placeholder="無" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up of a professional beauty tool and high-end facial mask container on a clean, white designer tray. The setting is a minimalist, modern spa clinic with bright key lighting and a clean corporate aesthetic. The visual tone is professional and trustworthy, emphasizing clarity and order in a luxury beauty management environment." src="https://lh3.googleusercontent.com/aida/ADBb0uhyTdIEyqi60wTygYASZ2BsdEkww0qh46GdjJtnc581Rx7HT_cF3NkWFbmkCflRFbuejBpYs5lNjMBjLm6xBJrOl1f4oRyGXI1EZu1J7YFQQN0FNDdDPvpEMK2qIkbG-FYCfqLWW9ibmrSFOPXPVE15zLHjCbxp5_IDvj2BaqAvF3Amim6eN-F4gtNAMh8FIkf3uIg3ek_Y7oTJoJPu2G8mKp81YKGBYihiaIaF21Tme3qkdPIzlMI9JvtNHwJqJcjnpTgAkvuo"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<h4 class="font-body-lg font-bold text-on-surface">胜肽抗衰老面膜 (10片/盒)</h4>
+<span class="text-primary font-bold">$850</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2">
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">數量</label>
+<input class="h-8 w-full rounded bg-white border border-outline-variant text-center text-sm p-0" type="number" value="10"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">折扣</label>
+<input class="h-8 w-full rounded bg-white border border-outline-variant text-center text-sm p-0" type="text" value="1.0"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">備註</label>
+<input class="h-8 w-full rounded bg-white border border-outline-variant text-center text-sm p-0 px-1" type="text" value="贈品1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer -->
+<footer class="p-6 bg-surface-container-lowest border-t border-surface-variant shadow-[0_-8px_20px_rgba(0,0,0,0.04)] flex items-center justify-between">
+<div>
+<span class="text-caption text-on-surface-variant block">總計金額</span>
+<span class="text-h1 font-h1 text-primary">Total: $14,260</span>
+</div>
+<div class="flex gap-3">
+<button class="h-[52px] px-6 rounded-xl border border-outline text-on-surface-variant font-h3 transition-all active:scale-95">
+                    上一步
+                </button>
+<button class="h-[52px] px-8 rounded-xl bg-primary text-on-primary font-h3 shadow-lg shadow-primary/30 transition-all active:scale-95">
+                    確認進貨
+                </button>
+</div>
+</footer>
+</div>
+</body></html>

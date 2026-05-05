@@ -5,6 +5,7 @@
  * 1. 門店年度營業額統計
  * 2. 分類營業額統計
  * 3. 工作人員業績排行
+ * 4. 新客分析 - 新客總覽數據
  *
  * 技術棧：Axios + TypeScript
  *
@@ -12,11 +13,13 @@
  * - GET /admin/information/yearly    門店年度營業額
  * - GET /admin/information/category  分類營業額
  * - GET /admin/information/staff     員工業績排行
+ * - GET /admin/member/analysis/new-customer  新客總覽分析
  *
  * 數據庫表結構參考 README：
  * - performance 表：業績記錄，按 shop_id + performance_date 聚合
  * - service_category 表：服務分類，關聯 appointment_item
  * - staff 表：員工資料，關聯 performance
+ * - member 表：會員資料，新客分析關聯 member.created_at、member.source
  */
 
 import { get } from '@/utils/request'
@@ -60,6 +63,50 @@ export interface StaffRankingItem {
   amount: number
   /** 完成百分比（相對於第一名） */
   percentage: number
+}
+
+// ==================== 新客分析類型定義 ====================
+
+/** 新客核心指標 */
+export interface NewCustomerMetrics {
+  /** 累計總新客數 */
+  totalNewCustomer: number
+  /** 本月新增新客數 */
+  monthNewCustomer: number
+  /** 本周新增新客數 */
+  weekNewCustomer: number
+  /** 今日新增新客數 */
+  dayNewCustomer: number
+  /** 本月新客數環比增長率（%） */
+  monthGrowthRate: number
+}
+
+/** 新客增長趨勢數據項 */
+export interface NewCustomerTrendItem {
+  /** 日期（YYYY-MM-DD） */
+  date: string
+  /** 該日新客數量 */
+  newCustomerCount: number
+}
+
+/** 新客來源統計數據項 */
+export interface SourceStatItem {
+  /** 來源渠道名稱 */
+  sourceName: string
+  /** 該渠道新客數量 */
+  sourceCount: number
+  /** 該渠道新客數占比（%） */
+  sourceRatio: number
+}
+
+/** 新客分析 - 新客總覽 API 響應數據結構 */
+export interface NewCustomerAnalysisData {
+  /** 新客核心指標 */
+  metrics: NewCustomerMetrics
+  /** 新客增長趨勢（最近30天） */
+  trend: NewCustomerTrendItem[]
+  /** 新客來源統計 */
+  sources: SourceStatItem[]
 }
 
 // ==================== API 接口 ====================
@@ -131,4 +178,21 @@ export function getStaffRankingApi(
     endDate,
     limit,
   })
+}
+
+/**
+ * 獲取新客分析 - 新客總覽數據
+ *
+ * GET /admin/member/analysis/new-customer
+ *
+ * 數據庫來源：
+ * - member 表：關聯 member.created_at（新客時間）、member.source（來源渠道）
+ * - 核心指標：按 shop_id 聚合，統計總數、本月、本周、今日新增
+ * - 增長趨勢：按日期聚合最近30天新增會員數
+ * - 來源統計：按 source 字段分組統計
+ *
+ * @returns 新客總覽分析數據（核心指標 + 趨勢 + 來源）
+ */
+export function getNewCustomerAnalysisApi(): Promise<ApiResponse<NewCustomerAnalysisData>> {
+  return get<NewCustomerAnalysisData>('/admin/member/analysis/new-customer')
 }
