@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新增商品券 | Wonder Sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#a22c70",
+                        "brand-pink": "#c84c8f",
+                        "on-surface-variant": "#554149",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-low": "#fff0f4",
+                        "on-surface": "#23191d",
+                        "background": "#fff8f8",
+                        "outline": "#88717a",
+                        "outline-variant": "#dac0c9",
+                        "surface": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-surface">
+<!-- SideNavBar (Left) -->
+<aside class="fixed left-0 top-0 h-screen w-64 border-r border-gray-100 bg-white z-40 transition-all duration-200 ease-in-out">
+<div class="p-6">
+<h1 class="text-xl font-bold text-brand-pink tracking-tight">Wonder Sky</h1>
+<p class="text-xs text-gray-400 mt-1">國際美妍館</p>
+</div>
+<nav class="px-3 space-y-1 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">資訊中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-medium">財務</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-medium">記帳</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-medium">預約</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium">會員</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-medium">服務及商品</span>
+</a>
+<!-- Active Item: 票券管理 -->
+<a class="flex items-center gap-3 px-4 py-3 text-brand-pink bg-brand-pink/5 rounded-lg font-semibold" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-medium">票券管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-medium">門店</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-medium">組織架構</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">設定</span>
+</a>
+</nav>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 h-16 bg-white/80 backdrop-blur-md border-b border-gray-100 z-30 flex items-center justify-between px-8" style="left: 16rem;">
+<div class="flex items-center gap-2 text-sm text-gray-500">
+<span>票券管理</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="font-semibold text-on-surface">新增商品券</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-gray-400 hover:text-brand-pink transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated business person in a bright, modern studio setting. The lighting is soft and flattering, emphasizing a clean and high-end aesthetic. The background is a neutral, minimalist office space with subtle pink and grey accents." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+<button class="bg-brand-pink text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-sm hover:opacity-90 transition-all scale-95 active:scale-100">
+                快速開單
+            </button>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="ml-64 pt-16 pb-24 min-h-screen">
+<div class="max-w-6xl mx-auto px-8 py-8 flex gap-8">
+<!-- Left Side Forms (Main Area) -->
+<div class="flex-1 space-y-6">
+<!-- 1. 基本資訊卡片 -->
+<section class="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100" id="基本資訊">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-h2 font-h2 flex items-center gap-2">
+<span class="w-1 h-6 bg-brand-pink rounded-full"></span>
+                            基本資訊
+                        </h2>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-gray-600">上架狀態</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-pink"></div>
+<span class="ms-2 text-sm font-semibold text-brand-pink">上架</span>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">商品券名稱</label>
+<input class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink transition-all" placeholder="請輸入名稱" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">銷售價格</label>
+<div class="relative">
+<input class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink pr-10" placeholder="0" type="number"/>
+<span class="absolute right-3 top-2.5 text-gray-400 text-sm">元</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">單次原價</label>
+<div class="relative">
+<input class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink pr-10" placeholder="0" type="number"/>
+<span class="absolute right-3 top-2.5 text-gray-400 text-sm">元</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">包含次數</label>
+<input class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink" placeholder="1" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">服務工時</label>
+<div class="relative">
+<input class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink pr-10" placeholder="60" type="number"/>
+<span class="absolute right-3 top-2.5 text-gray-400 text-sm">分</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">助理需求</label>
+<input class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink" placeholder="0" type="number"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="block text-sm font-semibold text-gray-700 mb-1">商品券圖片</label>
+<div class="flex-1 border-2 border-dashed border-gray-200 rounded-xl flex flex-col items-center justify-center bg-gray-50/50 hover:bg-gray-50 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-gray-300 group-hover:text-brand-pink transition-colors mb-2">image</span>
+<p class="text-sm text-gray-500">拖放圖片或是點此上傳</p>
+<p class="text-xs text-gray-400 mt-1">建議尺寸 800 x 600 px</p>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<label class="block text-sm font-semibold text-gray-700 mb-1">商品券介紹</label>
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<div class="bg-gray-50 border-b border-gray-200 px-4 py-2 flex gap-4">
+<button class="text-gray-400 hover:text-brand-pink" type="button"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+<button class="text-gray-400 hover:text-brand-pink" type="button"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+<button class="text-gray-400 hover:text-brand-pink" type="button"><span class="material-symbols-outlined text-lg">format_list_bulleted</span></button>
+<button class="text-gray-400 hover:text-brand-pink" type="button"><span class="material-symbols-outlined text-lg">link</span></button>
+</div>
+<textarea class="w-full border-none focus:ring-0 text-sm p-4" placeholder="請輸入關於此商品券的詳細描述..." rows="4"></textarea>
+</div>
+</div>
+</section>
+<!-- 2. 銷售資訊卡片 -->
+<section class="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100" id="銷售資訊">
+<h2 class="text-h2 font-h2 mb-6 flex items-center gap-2">
+<span class="w-1 h-6 bg-brand-pink rounded-full"></span>
+                        銷售資訊
+                    </h2>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">服務成本</label>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<input class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink" placeholder="0" type="number"/>
+</div>
+<div class="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink font-bold text-sm">元</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">折扣優惠金額</label>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<input class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink" placeholder="0" type="number"/>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary font-bold text-sm">元</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. 門店及類別卡片 -->
+<section class="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100" id="門店及類別">
+<h2 class="text-h2 font-h2 mb-6 flex items-center gap-2">
+<span class="w-1 h-6 bg-brand-pink rounded-full"></span>
+                        門店及類別
+                    </h2>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+<div>
+<h4 class="font-semibold text-gray-800">全門店適用</h4>
+<p class="text-xs text-gray-500">開啟後所有門店皆可銷售此票券</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-pink"></div>
+</label>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">指定門店</label>
+<select class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink">
+<option>台北總店</option>
+<option>台中旗艦店</option>
+<option>高雄店</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1">票券分類</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full border border-brand-pink bg-brand-pink/5 text-brand-pink text-sm font-medium">臉部護理</button>
+<button class="px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-sm font-medium hover:border-brand-pink transition-colors">頭療舒壓</button>
+<button class="px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-sm font-medium hover:border-brand-pink transition-colors">美甲美睫</button>
+<button class="px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-sm font-medium hover:border-brand-pink transition-colors">美體 SPA</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. 使用規範卡片 -->
+<section class="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100" id="使用規範">
+<h2 class="text-h2 font-h2 mb-6 flex items-center gap-2">
+<span class="w-1 h-6 bg-brand-pink rounded-full"></span>
+                        使用規範
+                    </h2>
+<div class="max-w-md">
+<label class="block text-sm font-semibold text-gray-700 mb-1">使用期限</label>
+<select class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink">
+<option selected="">無期限</option>
+<option>購買後 30 天</option>
+<option>購買後 90 天</option>
+<option>購買後 180 天</option>
+<option>特定日期截止</option>
+</select>
+<p class="text-xs text-gray-400 mt-2">顧客購買後需在此期限內使用完畢</p>
+</div>
+</section>
+<!-- 5. 點數兌換卡片 -->
+<section class="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100" id="點數兌換">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-h2 font-h2 flex items-center gap-2">
+<span class="w-1 h-6 bg-brand-pink rounded-full"></span>
+                            點數兌換
+                        </h2>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-pink"></div>
+<span class="ms-3 text-sm font-medium text-gray-600">開放點數兌換</span>
+</label>
+</div>
+<div class="max-w-md">
+<label class="block text-sm font-semibold text-gray-700 mb-1">所需點數</label>
+<div class="relative">
+<input class="w-full border-gray-200 rounded-lg focus:ring-brand-pink focus:border-brand-pink bg-gray-50" disabled="" placeholder="0" type="number"/>
+<span class="absolute right-3 top-2.5 text-gray-400 text-sm">Points</span>
+</div>
+<p class="text-xs text-gray-400 mt-2 italic">開啟上方開關後即可設定兌換點數</p>
+</div>
+</section>
+<!-- 6. 業績與抽成卡片 -->
+<section class="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100" id="業績與抽成">
+<h2 class="text-h2 font-h2 mb-6 flex items-center gap-2">
+<span class="w-1 h-6 bg-brand-pink rounded-full"></span>
+                        業績與抽成
+                    </h2>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div class="flex items-center justify-between p-4 border border-gray-100 rounded-lg bg-surface/50">
+<span class="font-medium text-gray-700">業績均分</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-pink"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 border border-gray-100 rounded-lg bg-surface/50">
+<span class="font-medium text-gray-700">抽成均分</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-pink"></div>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-3">職位與人員設定</label>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-3 border border-gray-100 rounded-lg">
+<span class="material-symbols-outlined text-brand-pink">person</span>
+<div class="flex-1">
+<div class="text-sm font-bold">店長 - 美容師</div>
+<div class="text-xs text-gray-400">主要銷售負責人</div>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-20 border-gray-200 rounded text-right text-sm" type="number" value="100"/>
+<span class="text-gray-400 text-xs">%</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 border border-gray-100 rounded-lg">
+<span class="material-symbols-outlined text-gray-400">person</span>
+<div class="flex-1">
+<div class="text-sm font-bold">美容師</div>
+<div class="text-xs text-gray-400">協助執行人員</div>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-20 border-gray-200 rounded text-right text-sm" type="number" value="0"/>
+<span class="text-gray-400 text-xs">%</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 border border-gray-100 rounded-lg">
+<span class="material-symbols-outlined text-gray-400">face</span>
+<div class="flex-1">
+<div class="text-sm font-bold text-on-surface-variant">君君</div>
+<div class="text-xs text-gray-400">資深美療師</div>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-20 border-gray-200 rounded text-right text-sm" type="number" value="0"/>
+<span class="text-gray-400 text-xs">%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Anchor Navigation -->
+<aside class="hidden lg:block w-48 sticky top-24 h-fit">
+<nav class="space-y-4 text-xs font-bold uppercase tracking-wider text-gray-400 border-r border-gray-100">
+<a class="block pr-4 border-r-2 border-brand-pink text-brand-pink transition-all" href="#基本資訊">基本資訊</a>
+<a class="block pr-4 border-r-2 border-transparent hover:text-gray-600 transition-all" href="#銷售資訊">銷售資訊</a>
+<a class="block pr-4 border-r-2 border-transparent hover:text-gray-600 transition-all" href="#門店及類別">門店及類別</a>
+<a class="block pr-4 border-r-2 border-transparent hover:text-gray-600 transition-all" href="#使用規範">使用規範</a>
+<a class="block pr-4 border-r-2 border-transparent hover:text-gray-600 transition-all" href="#點數兌換">點數兌換</a>
+<a class="block pr-4 border-r-2 border-transparent hover:text-gray-600 transition-all" href="#業績與抽成">業績與抽成</a>
+</nav>
+</aside>
+</div>
+</main>
+<!-- Fixed Bottom Footer Actions -->
+<footer class="fixed bottom-0 right-0 left-64 h-20 bg-white border-t border-gray-100 px-8 flex items-center justify-end gap-4 z-30 shadow-[0_-4px_15px_rgba(0,0,0,0.02)]">
+<button class="px-8 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-gray-500 hover:bg-gray-50 transition-colors">
+            取消
+        </button>
+<button class="px-10 py-2.5 bg-brand-pink text-white rounded-lg text-sm font-bold shadow-lg shadow-brand-pink/20 hover:opacity-90 transition-all active:scale-95">
+            儲存
+        </button>
+</footer>
+<!-- Decorative Canvas Image to maintain high-end aesthetic -->
+<div class="fixed bottom-32 -left-32 w-64 h-64 bg-brand-pink/5 rounded-full blur-3xl -z-10"></div>
+<div class="fixed top-24 -right-32 w-96 h-96 bg-secondary-container/10 rounded-full blur-3xl -z-10"></div>
+</body></html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky 儲值金編輯</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-background": "#23191d",
+                "error": "#ba1a1a",
+                "on-tertiary-container": "#f8ffee",
+                "secondary-fixed-dim": "#e8b3fe",
+                "inverse-surface": "#392d32",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#603475",
+                "on-tertiary": "#ffffff",
+                "primary-container": "#c14689",
+                "on-primary-fixed-variant": "#861259",
+                "on-tertiary-fixed-variant": "#145200",
+                "background": "#fff8f8",
+                "on-primary-container": "#fffbff",
+                "on-error": "#ffffff",
+                "outline": "#88717a",
+                "on-primary-fixed": "#3d0025",
+                "on-surface-variant": "#554149",
+                "on-primary": "#ffffff",
+                "surface": "#fff8f8",
+                "surface-tint": "#a52f72",
+                "secondary-container": "#e8b3fe",
+                "primary-fixed-dim": "#ffafd3",
+                "inverse-primary": "#ffafd3",
+                "error-container": "#ffdad6",
+                "tertiary": "#1c6b00",
+                "surface-container-highest": "#f1dee3",
+                "tertiary-fixed": "#9ff87d",
+                "surface-container": "#fde9ef",
+                "secondary-fixed": "#f6d9ff",
+                "surface-dim": "#e8d5db",
+                "on-tertiary-fixed": "#042100",
+                "surface-container-low": "#fff0f4",
+                "on-surface": "#23191d",
+                "inverse-on-surface": "#ffecf1",
+                "secondary": "#794c8f",
+                "tertiary-container": "#328517",
+                "on-error-container": "#93000a",
+                "surface-variant": "#f1dee3",
+                "tertiary-fixed-dim": "#84db64",
+                "primary": "#a22c70",
+                "on-secondary-fixed": "#300247",
+                "outline-variant": "#dac0c9",
+                "surface-container-high": "#f7e3e9",
+                "surface-container-lowest": "#ffffff",
+                "surface-bright": "#fff8f8",
+                "primary-fixed": "#ffd8e7",
+                "on-secondary-container": "#6c4082"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "lg": "24px",
+                "gutter": "20px",
+                "xs": "4px",
+                "xl": "32px",
+                "unit": "4px",
+                "sm": "8px",
+                "md": "16px",
+                "container-padding": "24px"
+            },
+            "fontFamily": {
+                "caption": ["Plus Jakarta Sans"],
+                "h2": ["Plus Jakarta Sans"],
+                "h1": ["Plus Jakarta Sans"],
+                "h3": ["Plus Jakarta Sans"],
+                "body-md": ["Plus Jakarta Sans"],
+                "body-lg": ["Plus Jakarta Sans"],
+                "label-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.bottom-sheet-shadow {
+    box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1), 0 -8px 10px -6px rgba(0, 0, 0, 0.1)
+    }
+body {
+    background-image: url(https://lh3.googleusercontent.com/aida/ADBb0uhGI3dPgfcHAm-Y5FAjbQYcZ8iYbwbu9u2O7XFo8akZYeBoOIUmCi-bipkZU3uFpYpJqzOvx7rm4oIcf4r1QiNWKpEARyksY3FyYTCx4FNoLCRU2BDpcy9kdYVJ854lmjZt8ktHMKR2-jnuHF7I1nV8CU_R67FVCBY9a8S0asv_GebUwe7LR6NNwq3vqPq8dz8lIYm7V_9bvPG-XvVrymeHTeEbs1DfYFUBhUt1O-iS6VUBIDxq4qhIJmL2M7NnA3uoN3sgg9dDbw);
+    background-size: cover;
+    background-position: center
+    }</style>
+</head>
+<body class="font-body-md text-on-surface bg-surface min-h-screen">
+<!-- Overlay Background -->
+<div class="fixed inset-0 bg-neutral-900/60 backdrop-blur-sm z-40 flex items-end sm:items-center sm:justify-center">
+<!-- Bottom Sheet Container -->
+<div class="w-full max-w-md bg-surface-container-lowest rounded-t-3xl sm:rounded-3xl bottom-sheet-shadow overflow-hidden flex flex-col max-h-[90vh] z-50">
+<!-- Header Section -->
+<div class="px-lg pt-lg pb-md flex items-center justify-between border-b border-outline-variant sticky top-0 bg-surface-container-lowest z-10">
+<div class="flex-1 text-center">
+<h2 class="font-h2 text-h3 text-on-surface">紀慧英儲值 餘額$141,000</h2>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto px-lg py-md space-y-lg">
+<!-- 1. 会員資訊概覽 -->
+<div class="flex flex-col items-center justify-center p-lg rounded-2xl bg-surface-container-low border border-outline-variant">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-sm border-2 border-primary-fixed">
+<img alt="" class="w-full h-full object-cover" data-alt="A professional studio portrait of a sophisticated middle-aged Asian woman with styled hair and elegant makeup. She is smiling warmly against a soft, clean backdrop. The lighting is high-end and gentle, reflecting a luxury beauty salon atmosphere with soft pink and white tones." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+<div class="flex items-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]" data-icon="person">person</span>
+<span class="font-h3 text-on-surface">紀慧英</span>
+</div>
+<div class="text-[32px] font-extrabold text-primary mb-xs tracking-tight">$141,000</div>
+<div class="font-label-md text-on-surface-variant bg-surface-variant px-md py-xs rounded-full">
+                        積分數：3,280 P
+                    </div>
+</div>
+<!-- 2. 儲值表單區 -->
+<div class="space-y-md">
+<!-- 儲值標題 -->
+<div class="flex items-center gap-sm">
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<h3 class="font-h3 text-on-surface">儲值</h3>
+</div>
+<!-- 金額顯示 -->
+<div class="flex items-end justify-between border-b border-outline-variant pb-sm">
+<span class="text-on-surface-variant font-label-md">儲值金額</span>
+<span class="text-h1 font-bold text-on-surface">$170,000</span>
+</div>
+<!-- 下拉控件堆疊 -->
+<div class="space-y-sm">
+<div class="relative">
+<label class="absolute -top-2 left-3 px-1 bg-surface-container-lowest text-caption text-primary font-bold">工作人員</label>
+<div class="w-full flex items-center justify-between border border-outline rounded-xl p-md bg-surface-container-lowest">
+<span class="text-on-surface">林美佳 (Mika)</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 px-1 bg-surface-container-lowest text-caption text-primary font-bold">部門</label>
+<div class="w-full flex items-center justify-between border border-outline rounded-xl p-md bg-surface-container-lowest">
+<span class="text-on-surface">美療二部</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 px-1 bg-surface-container-lowest text-caption text-primary font-bold">職位</label>
+<div class="w-full flex items-center justify-between border border-outline rounded-xl p-md bg-surface-container-lowest">
+<span class="text-on-surface">資深美容經理</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 px-1 bg-surface-container-lowest text-caption text-primary font-bold">級別</label>
+<div class="w-full flex items-center justify-between border border-outline rounded-xl p-md bg-surface-container-lowest">
+<span class="text-on-surface">L3 高級技術專家</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- 修改金額與折扣 折疊區 -->
+<div class="bg-surface-container rounded-2xl p-md space-y-md">
+<div class="flex items-center justify-between">
+<span class="font-h3 text-on-surface">修改金額與折扣</span>
+<span class="material-symbols-outlined text-primary" data-icon="expand_less">expand_less</span>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="flex items-center border border-outline-variant bg-surface-container-lowest rounded-xl p-sm">
+<input class="w-full border-none focus:ring-0 text-on-surface font-bold bg-transparent" type="text" value="170,000"/>
+</div>
+<div class="flex items-center gap-xs border border-outline-variant bg-surface-container-lowest rounded-xl p-sm">
+<input class="w-full border-none focus:ring-0 text-on-surface font-bold bg-transparent" type="text" value="100"/>
+<div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full shrink-0">
+<span class="text-[10px] text-white font-bold">折</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 可折疊下拉 -->
+<div class="space-y-sm">
+<div class="flex items-center justify-between border border-outline-variant rounded-xl p-md bg-surface-container-lowest">
+<span class="text-on-surface font-bold">消費方式</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+<div class="flex items-center justify-between border border-outline-variant rounded-xl p-md bg-surface-container-lowest">
+<span class="text-on-surface font-bold">業績與抽成</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- 3. 消費與支付明細 -->
+<div class="space-y-sm border-t border-dashed border-outline-variant pt-lg">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-md">現場付款</span>
+<span class="text-on-surface font-bold">$170,000</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-md">現金支付</span>
+<span class="text-on-surface font-bold">$170,000</span>
+</div>
+<div class="flex justify-between items-center py-sm border-y border-outline-variant/30 my-sm">
+<span class="text-on-surface font-bold text-h3">總額合計</span>
+<span class="text-primary font-extrabold text-h1">$170,000</span>
+</div>
+<div class="flex justify-between items-center text-caption text-on-surface-variant">
+<span>交易日期</span>
+<span>2024年11月14日 14:30</span>
+</div>
+</div>
+</div>
+<!-- 4. 底部按鈕 -->
+<div class="p-lg bg-surface-container-lowest border-t border-outline-variant">
+<button class="w-full bg-primary hover:bg-primary-container text-white font-bold py-md px-lg rounded-xl shadow-lg active:scale-[0.98] transition-all duration-200">
+                    確認結帳
+                </button>
+</div>
+</div>
+</div>
+<!-- Background Components for visual depth -->
+<div class="max-w-7xl mx-auto p-lg opacity-40 blur-[1px]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="bg-white p-lg rounded-2xl shadow-sm h-64 border border-gray-100">
+<div class="h-4 w-1/3 bg-gray-100 rounded-full mb-lg"></div>
+<div class="space-y-md">
+<div class="h-2 w-full bg-gray-50 rounded-full"></div>
+<div class="h-2 w-full bg-gray-50 rounded-full"></div>
+<div class="h-2 w-2/3 bg-gray-50 rounded-full"></div>
+</div>
+</div>
+<div class="bg-white p-lg rounded-2xl shadow-sm h-64 border border-gray-100">
+<div class="h-4 w-1/3 bg-gray-100 rounded-full mb-lg"></div>
+<div class="space-y-md">
+<div class="h-2 w-full bg-gray-50 rounded-full"></div>
+<div class="h-2 w-full bg-gray-50 rounded-full"></div>
+<div class="h-2 w-2/3 bg-gray-50 rounded-full"></div>
+</div>
+</div>
+<div class="bg-white p-lg rounded-2xl shadow-sm h-64 border border-gray-100">
+<div class="h-4 w-1/3 bg-gray-100 rounded-full mb-lg"></div>
+<div class="space-y-md">
+<div class="h-2 w-full bg-gray-50 rounded-full"></div>
+<div class="h-2 w-full bg-gray-50 rounded-full"></div>
+<div class="h-2 w-2/3 bg-gray-50 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

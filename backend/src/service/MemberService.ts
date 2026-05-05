@@ -224,4 +224,146 @@ export class MemberService {
       sources,
     };
   }
+
+  // ==================== 回流分析 ====================
+
+  /**
+   * 獲取工作人員未回流客統計
+   *
+   * GET /admin/member/backflow/staff-stat
+   *
+   * 統計每位工作人員負責的會員中，超過 30 天未到店的會員數與佔比
+   *
+   * @param shopId - 門店 ID
+   * @returns 工作人員未回流客統計列表
+   */
+  async getStaffNonReturnStats(shopId: number): Promise<
+    Array<{
+      staffId: number;
+      staffName: string;
+      noBackflowCount: number;
+      noBackflowRatio: number;
+    }>
+  > {
+    const stats = await this.memberDAO.getStaffNonReturnStats(shopId, 30);
+
+    return stats.map((item) => ({
+      staffId: item.staffId,
+      staffName: item.staffName,
+      noBackflowCount: item.noBackflowCount,
+      noBackflowRatio:
+        item.totalCount > 0
+          ? parseFloat(((item.noBackflowCount / item.totalCount) * 100).toFixed(1))
+          : 0,
+    }));
+  }
+
+  /**
+   * 獲取回流客列表
+   *
+   * GET /admin/member/backflow/list
+   *
+   * 查詢最近 30 天內有到店記錄的會員列表
+   *
+   * @param shopId - 門店 ID
+   * @param page - 當前頁碼
+   * @param pageSize - 每頁筆數
+   * @returns 回流客列表（分頁）
+   */
+  async getBackflowMemberList(
+    shopId: number,
+    page: number = 1,
+    pageSize: number = 10
+  ): Promise<{
+    items: Array<{
+      memberId: string;
+      memberName: string;
+      memberPhone: string;
+      memberLevel: string;
+      lastConsumeTime: string;
+      chargeStaffName: string;
+      backflowStatus: string;
+    }>;
+    total: number;
+    page: number;
+    pageSize: number;
+  }> {
+    const now = new Date();
+    const startDate = new Date(now);
+    startDate.setDate(now.getDate() - 30);
+
+    const [items, total] = await this.memberDAO.getBackflowMemberList(
+      shopId,
+      startDate,
+      now,
+      page,
+      pageSize
+    );
+
+    return { items, total, page, pageSize };
+  }
+
+  /**
+   * 獲取未回流客列表
+   *
+   * GET /admin/member/backflow/no-list
+   *
+   * 查詢超過 30 天未到店的會員列表
+   *
+   * @param shopId - 門店 ID
+   * @param page - 當前頁碼
+   * @param pageSize - 每頁筆數
+   * @returns 未回流客列表（分頁）
+   */
+  async getNonReturnMemberList(
+    shopId: number,
+    page: number = 1,
+    pageSize: number = 10
+  ): Promise<{
+    items: Array<{
+      memberId: string;
+      memberName: string;
+      memberPhone: string;
+      memberLevel: string;
+      lastConsumeTime: string;
+      chargeStaffName: string;
+      noBackflowDays: number;
+      lossLevel: string;
+    }>;
+    total: number;
+    page: number;
+    pageSize: number;
+  }> {
+    const [items, total] = await this.memberDAO.getNonReturnMemberList(
+      shopId,
+      30,
+      page,
+      pageSize
+    );
+
+    return { items, total, page, pageSize };
+  }
+
+  /**
+   * 獲取回流/未回流核心指標
+   *
+   * @param shopId - 門店 ID
+   * @returns 回流客總數、未回流客總數、回流佔比
+   */
+  async getBackflowMetrics(shopId: number): Promise<{
+    totalReturnCount: number;
+    totalNonReturnCount: number;
+    returnRatio: number;
+  }> {
+    const { totalReturnCount, totalNonReturnCount } =
+      await this.memberDAO.getBackflowMetrics(shopId, 30);
+
+    const total = totalReturnCount + totalNonReturnCount;
+    const returnRatio =
+      total > 0
+        ? parseFloat(((totalReturnCount / total) * 100).toFixed(1))
+        : 0;
+
+    return { totalReturnCount, totalNonReturnCount, returnRatio };
+  }
 }

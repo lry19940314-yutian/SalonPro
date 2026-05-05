@@ -29,6 +29,9 @@ import { CanvasRenderer } from 'echarts/renderers'
 
 use([LineChart, PieChart, GridComponent, TooltipComponent, DataZoomComponent, LegendComponent, CanvasRenderer])
 
+// ==================== 子組件導入 ====================
+import MemberBackflow from './MemberBackflow.vue'
+
 // ==================== API 導入 ====================
 import { getNewCustomerAnalysisApi } from '@/api/info-center'
 import type { NewCustomerAnalysisData, NewCustomerMetrics, NewCustomerTrendItem, SourceStatItem } from '@/api/info-center'
@@ -529,6 +532,11 @@ onMounted(() => {
 
     <!-- ==================== 主要內容（加載完成且有數據）==================== -->
     <template v-else>
+      <!-- ==================== 回流分析頁面 ==================== -->
+      <MemberBackflow v-if="activeTab === 'return'" />
+
+      <!-- ==================== 新客總覽內容 ==================== -->
+      <template v-if="activeTab === 'overview'">
       <!-- ==================== 新客核心數據概覽（4 指標卡片）==================== -->
       <div
         class="member-analysis__metrics"
@@ -904,6 +912,7 @@ onMounted(() => {
           </div>
         </section>
       </div>
+      </template><!-- end overview -->
     </template>
   </div>
 </template>

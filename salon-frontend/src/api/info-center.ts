@@ -196,3 +196,144 @@ export function getStaffRankingApi(
 export function getNewCustomerAnalysisApi(): Promise<ApiResponse<NewCustomerAnalysisData>> {
   return get<NewCustomerAnalysisData>('/admin/member/analysis/new-customer')
 }
+
+// ==================== 回流分析類型定義 ====================
+
+/** 工作人員未回流客統計項 */
+export interface StaffNonReturnStatItem {
+  /** 員工 ID */
+  staffId: number
+  /** 員工姓名 */
+  staffName: string
+  /** 未回流客數 */
+  noBackflowCount: number
+  /** 未回流率（%） */
+  noBackflowRatio: number
+}
+
+/** 回流客列表項 */
+export interface BackflowMemberItem {
+  /** 會員 ID */
+  memberId: string
+  /** 會員姓名 */
+  memberName: string
+  /** 會員電話 */
+  memberPhone: string
+  /** 會員等級 */
+  memberLevel: string
+  /** 最後消費日 */
+  lastConsumeTime: string
+  /** 負責人員 */
+  chargeStaffName: string
+  /** 回流狀態 */
+  backflowStatus: string
+}
+
+/** 未回流客列表項 */
+export interface NonReturnMemberItem {
+  /** 會員 ID */
+  memberId: string
+  /** 會員姓名 */
+  memberName: string
+  /** 會員電話 */
+  memberPhone: string
+  /** 會員等級 */
+  memberLevel: string
+  /** 最後消費日 */
+  lastConsumeTime: string
+  /** 負責人員 */
+  chargeStaffName: string
+  /** 未回流天數 */
+  noBackflowDays: number
+  /** 流失等級（輕度/中度/重度） */
+  lossLevel: string
+}
+
+/** 回流客分頁列表響應 */
+export interface BackflowListResponse {
+  /** 列表數據 */
+  items: BackflowMemberItem[]
+  /** 總筆數 */
+  total: number
+  /** 當前頁碼 */
+  page: number
+  /** 每頁筆數 */
+  pageSize: number
+}
+
+/** 未回流客分頁列表響應 */
+export interface NonReturnListResponse {
+  /** 列表數據 */
+  items: NonReturnMemberItem[]
+  /** 總筆數 */
+  total: number
+  /** 當前頁碼 */
+  page: number
+  /** 每頁筆數 */
+  pageSize: number
+}
+
+// ==================== 回流分析 API 接口 ====================
+
+/**
+ * 獲取工作人員未回流客統計
+ *
+ * GET /admin/member/backflow/staff-stat
+ *
+ * 統計每位工作人員負責的會員中，超過 30 天未到店的會員數與佔比
+ *
+ * 數據庫來源：
+ * - member 表：關聯 member.staff_id（負責人員）、member.last_visit（最後到店時間）
+ * - staff 表：員工姓名 name
+ *
+ * @returns 工作人員未回流客統計列表
+ */
+export function getStaffNonReturnStatsApi(): Promise<ApiResponse<StaffNonReturnStatItem[]>> {
+  return get<StaffNonReturnStatItem[]>('/admin/member/backflow/staff-stat')
+}
+
+/**
+ * 獲取回流客列表
+ *
+ * GET /admin/member/backflow/list?page=1&pageSize=10
+ *
+ * 查詢最近 30 天內有到店記錄的會員列表
+ *
+ * 數據庫來源：
+ * - member 表：關聯 member.last_visit（最後到店時間）
+ * - member_level 表：會員等級名稱
+ * - staff 表：負責人員姓名
+ *
+ * @param page - 當前頁碼（預設 1）
+ * @param pageSize - 每頁筆數（預設 10）
+ * @returns 回流客分頁列表
+ */
+export function getBackflowListApi(
+  page: number = 1,
+  pageSize: number = 10
+): Promise<ApiResponse<BackflowListResponse>> {
+  return get<BackflowListResponse>('/admin/member/backflow/list', { page, pageSize })
+}
+
+/**
+ * 獲取未回流客列表
+ *
+ * GET /admin/member/backflow/no-list?page=1&pageSize=10
+ *
+ * 查詢超過 30 天未到店的會員列表
+ *
+ * 數據庫來源：
+ * - member 表：關聯 member.last_visit（最後到店時間）
+ * - member_level 表：會員等級名稱
+ * - staff 表：負責人員姓名
+ *
+ * @param page - 當前頁碼（預設 1）
+ * @param pageSize - 每頁筆數（預設 10）
+ * @returns 未回流客分頁列表
+ */
+export function getNonReturnListApi(
+  page: number = 1,
+  pageSize: number = 10
+): Promise<ApiResponse<NonReturnListResponse>> {
+  return get<NonReturnListResponse>('/admin/member/backflow/no-list', { page, pageSize })
+}

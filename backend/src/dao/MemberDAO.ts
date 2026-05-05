@@ -218,4 +218,255 @@ export class MemberDAO {
       count: parseInt(item.count, 10),
     }));
   }
+
+  // ==================== 回流分析 ====================
+
+  /**
+   * 獲取工作人員未回流客統計
+   * 統計每位工作人員負責的會員中，超過指定天數未到店的會員數與佔比
+   *
+   * 注意：member 表沒有 staff_id 欄位，需透過 appointment 表關聯
+   * 每位會員取最後一次預約的美容師作為負責人
+   *
+   * @param shopId - 門店 ID
+   * @param thresholdDays - 未回流判定天數（預設 30 天）
+   * @returns 工作人員未回流客統計列表
+   */
+  async getStaffNonReturnStats(
+    shopId: number,
+    thresholdDays: number = 30
+  ): Promise<Array<{ staffId: number; staffName: string; noBackflowCount: number; totalCount: number }>> {
+    const rawData: Array<any> = await this.entityManager
+      .query(
+        `
+        SELECT
+          s.id AS staffId,
+          s.name AS staffName,
+          COUNT(DISTINCT latest.member_id) AS totalCount,
+          SUM(CASE WHEN m.last_visit IS NULL OR m.last_visit < DATE_SUB(NOW(), INTERVAL ? DAY) THEN 1 ELSE 0 END) AS noBackflowCount
+        FROM staff s
+        INNER JOIN (
+          SELECT a.member_id, a.staff_id
+          FROM appointment a
+          INNER JOIN (
+            SELECT member_id, MAX(id) AS max_id
+            FROM appointment
+            WHERE shop_id = ?
+            GROUP BY member_id
+          ) latest_appt ON a.id = latest_appt.max_id
+        ) latest ON latest.staff_id = s.id
+        INNER JOIN member m ON m.id = latest.member_id AND m.shop_id = ? AND m.status = 1
+        WHERE s.shop_id = ?
+        GROUP BY s.id, s.name
+        ORDER BY noBackflowCount DESC
+        `,
+        [thresholdDays, shopId, shopId, shopId]
+      );
+
+    return rawData.map((item: any) => ({
+      staffId: parseInt(item.staffId, 10),
+      staffName: item.staffName,
+      noBackflowCount: parseInt(item.noBackflowCount, 10),
+      totalCount: parseInt(item.totalCount, 10),
+    }));
+  }
+
+  /**
+   * 獲取回流客列表（指定時間範圍內有到店記錄的會員）
+   *
+   * @param shopId - 門店 ID
+   * @param startDate - 開始日期
+   * @param endDate - 結束日期
+   * @param page - 當前頁碼
+   * @param pageSize - 每頁筆數
+   * @returns 回流客列表與總數
+   */
+  async getBackflowMemberList(
+    shopId: number,
+    startDate: Date,
+    endDate: Date,
+    page: number = 1,
+    pageSize: number = 10
+  ): Promise<[Array<{
+    memberId: string;
+    memberName: string;
+    memberPhone: string;
+    memberLevel: string;
+    lastConsumeTime: string;
+    chargeStaffName: string;
+    backflowStatus: string;
+  }>, number]> {
+    const offset = (page - 1) * pageSize;
+
+    // member 表沒有 staff_id，需透過 appointment 表取最後一次服務的美容師
+    const rawData: Array<any> = await this.entityManager
+      .query(
+        `
+        SELECT
+          m.id AS memberId,
+          m.name AS memberName,
+          m.phone AS memberPhone,
+          COALESCE(ml.name, '一般會員') AS memberLevel,
+          DATE_FORMAT(m.last_visit, '%Y-%m-%d') AS lastConsumeTime,
+          COALESCE(s.name, '-') AS chargeStaffName,
+          '已回流' AS backflowStatus
+        FROM member m
+        LEFT JOIN member_level ml ON ml.id = m.level_id
+        LEFT JOIN (
+          SELECT a1.member_id, a1.staff_id
+          FROM appointment a1
+          INNER JOIN (
+            SELECT member_id, MAX(id) AS max_id
+            FROM appointment
+            WHERE shop_id = ?
+            GROUP BY member_id
+          ) a2 ON a1.id = a2.max_id
+        ) latest ON latest.member_id = m.id
+        LEFT JOIN staff s ON s.id = latest.staff_id
+        WHERE m.shop_id = ?
+          AND m.last_visit BETWEEN ? AND ?
+          AND m.status = 1
+        ORDER BY m.last_visit DESC
+        LIMIT ? OFFSET ?
+        `,
+        [shopId, shopId, startDate, endDate, pageSize, offset]
+      );
+
+    const total = await this.entityManager
+      .createQueryBuilder(Member, 'member')
+      .where('member.shop_id = :shopId', { shopId })
+      .andWhere('member.last_visit BETWEEN :startDate AND :endDate', { startDate, endDate })
+      .andWhere('member.status = 1')
+      .getCount();
+
+    const items = rawData.map((item: any) => ({
+      memberId: String(item.memberId),
+      memberName: item.memberName,
+      memberPhone: item.memberPhone,
+      memberLevel: item.memberLevel,
+      lastConsumeTime: item.lastConsumeTime,
+      chargeStaffName: item.chargeStaffName,
+      backflowStatus: item.backflowStatus,
+    }));
+
+    return [items, total];
+  }
+
+  /**
+   * 獲取未回流客列表（超過指定天數未到店的會員）
+   *
+   * @param shopId - 門店 ID
+   * @param thresholdDays - 未回流判定天數
+   * @param page - 當前頁碼
+   * @param pageSize - 每頁筆數
+   * @returns 未回流客列表與總數
+   */
+  async getNonReturnMemberList(
+    shopId: number,
+    thresholdDays: number = 30,
+    page: number = 1,
+    pageSize: number = 10
+  ): Promise<[Array<{
+    memberId: string;
+    memberName: string;
+    memberPhone: string;
+    memberLevel: string;
+    lastConsumeTime: string;
+    chargeStaffName: string;
+    noBackflowDays: number;
+    lossLevel: string;
+  }>, number]> {
+    const offset = (page - 1) * pageSize;
+
+    // member 表沒有 staff_id，需透過 appointment 表取最後一次服務的美容師
+    const rawData: Array<any> = await this.entityManager
+      .query(
+        `
+        SELECT
+          m.id AS memberId,
+          m.name AS memberName,
+          m.phone AS memberPhone,
+          COALESCE(ml.name, '一般會員') AS memberLevel,
+          DATE_FORMAT(m.last_visit, '%Y-%m-%d') AS lastConsumeTime,
+          COALESCE(s.name, '-') AS chargeStaffName,
+          DATEDIFF(NOW(), m.last_visit) AS noBackflowDays,
+          CASE
+            WHEN DATEDIFF(NOW(), m.last_visit) >= 120 THEN '重度'
+            WHEN DATEDIFF(NOW(), m.last_visit) >= 60 THEN '中度'
+            ELSE '輕度'
+          END AS lossLevel
+        FROM member m
+        LEFT JOIN member_level ml ON ml.id = m.level_id
+        LEFT JOIN (
+          SELECT a1.member_id, a1.staff_id
+          FROM appointment a1
+          INNER JOIN (
+            SELECT member_id, MAX(id) AS max_id
+            FROM appointment
+            WHERE shop_id = ?
+            GROUP BY member_id
+          ) a2 ON a1.id = a2.max_id
+        ) latest ON latest.member_id = m.id
+        LEFT JOIN staff s ON s.id = latest.staff_id
+        WHERE m.shop_id = ?
+          AND (m.last_visit IS NULL OR m.last_visit < DATE_SUB(NOW(), INTERVAL ? DAY))
+          AND m.status = 1
+        ORDER BY m.last_visit ASC
+        LIMIT ? OFFSET ?
+        `,
+        [shopId, shopId, thresholdDays, pageSize, offset]
+      );
+
+    const total = await this.entityManager
+      .createQueryBuilder(Member, 'member')
+      .where('member.shop_id = :shopId', { shopId })
+      .andWhere('(member.last_visit IS NULL OR member.last_visit < DATE_SUB(NOW(), INTERVAL :thresholdDays DAY))', { thresholdDays })
+      .andWhere('member.status = 1')
+      .getCount();
+
+    const items = rawData.map((item: any) => ({
+      memberId: String(item.memberId),
+      memberName: item.memberName,
+      memberPhone: item.memberPhone,
+      memberLevel: item.memberLevel,
+      lastConsumeTime: item.lastConsumeTime || '-',
+      chargeStaffName: item.chargeStaffName,
+      noBackflowDays: parseInt(item.noBackflowDays, 10) || 0,
+      lossLevel: item.lossLevel || '輕度',
+    }));
+
+    return [items, total];
+  }
+
+  /**
+   * 獲取回流/未回流核心指標
+   *
+   * @param shopId - 門店 ID
+   * @param thresholdDays - 未回流判定天數
+   * @returns 回流客總數、未回流客總數
+   */
+  async getBackflowMetrics(
+    shopId: number,
+    thresholdDays: number = 30
+  ): Promise<{ totalReturnCount: number; totalNonReturnCount: number }> {
+    const now = new Date();
+    const thresholdDate = new Date(now);
+    thresholdDate.setDate(now.getDate() - thresholdDays);
+
+    const totalReturnCount = await this.entityManager
+      .createQueryBuilder(Member, 'member')
+      .where('member.shop_id = :shopId', { shopId })
+      .andWhere('member.last_visit >= :thresholdDate', { thresholdDate })
+      .andWhere('member.status = 1')
+      .getCount();
+
+    const totalNonReturnCount = await this.entityManager
+      .createQueryBuilder(Member, 'member')
+      .where('member.shop_id = :shopId', { shopId })
+      .andWhere('(member.last_visit IS NULL OR member.last_visit < :thresholdDate)', { thresholdDate })
+      .andWhere('member.status = 1')
+      .getCount();
+
+    return { totalReturnCount, totalNonReturnCount };
+  }
 }

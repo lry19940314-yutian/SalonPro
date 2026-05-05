@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新增商品券 - Wonder Sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#fde9ef",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#dac0c9",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-background": "#23191d",
+                        "outline": "#88717a",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#1c6b00",
+                        "inverse-surface": "#392d32",
+                        "surface-bright": "#fff8f8",
+                        "on-secondary-container": "#6c4082",
+                        "on-surface-variant": "#554149",
+                        "surface-dim": "#e8d5db",
+                        "surface-container-low": "#fff0f4",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "primary": "#a22c70",
+                        "secondary-container": "#e8b3fe",
+                        "background": "#fff8f8",
+                        "tertiary-container": "#328517",
+                        "primary-fixed": "#ffd8e7",
+                        "surface-variant": "#f1dee3",
+                        "secondary-fixed": "#f6d9ff",
+                        "surface": "#fff8f8",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-container-highest": "#f1dee3",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#f7e3e9",
+                        "inverse-primary": "#ffafd3",
+                        "primary-container": "#c14689",
+                        "on-secondary-fixed": "#300247",
+                        "on-tertiary-fixed": "#042100",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary": "#794c8f",
+                        "on-surface": "#23191d",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "gutter": "20px",
+                        "xs": "4px",
+                        "container-padding": "24px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #c84c8f !important;
+            box-shadow: 0 0 0 2px rgba(200, 76, 143, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-neutral-900/90 shadow-sm border-b border-gray-100 dark:border-neutral-800 sticky top-0 z-50 flex justify-between items-center w-full px-4 py-3 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<button class="transition-all duration-200 active:opacity-70 p-2 hover:bg-gray-50 dark:hover:bg-neutral-800 rounded-lg">
+<span class="material-symbols-outlined text-[#c84c8f]" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-extrabold tracking-tighter text-lg text-[#c84c8f]">Wonder Sky</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="transition-all duration-200 active:opacity-70 p-2 hover:bg-gray-50 dark:hover:bg-neutral-800 rounded-lg">
+<span class="material-symbols-outlined text-gray-500" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full border border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated Asian woman in a luxury beauty spa setting. The lighting is high-key and soft, illuminating the clean, modern aesthetic of the salon. She has a serene and welcoming expression, perfectly embodying the high-end beauty and wellness brand identity with her elegant attire." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+</div>
+</header>
+<main class="flex-1 pb-24">
+<!-- Breadcrumbs & Tabs -->
+<div class="px-4 pt-4 pb-2">
+<nav class="flex items-center text-caption text-on-surface-variant mb-4">
+<span>票券管理</span>
+<span class="material-symbols-outlined text-[14px] mx-1">chevron_right</span>
+<span class="text-[#c84c8f] font-semibold">新增商品券</span>
+</nav>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4">
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary-container text-white text-label-md transition-all">基本資訊</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-white text-on-surface-variant border border-outline-variant text-label-md transition-all">銷售資訊</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-white text-on-surface-variant border border-outline-variant text-label-md transition-all">門店及類別</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-white text-on-surface-variant border border-outline-variant text-label-md transition-all">使用規範</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-white text-on-surface-variant border border-outline-variant text-label-md transition-all">點數兌換</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-white text-on-surface-variant border border-outline-variant text-label-md transition-all">業績與抽成</button>
+</div>
+</div>
+<!-- Form Cards -->
+<div class="px-4 space-y-4 mt-2">
+<!-- 基本資訊 -->
+<section class="bg-surface-container-lowest border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+<div class="px-4 py-3 border-b border-gray-50 flex justify-between items-center bg-white">
+<h3 class="font-h3 text-[#c84c8f]">基本資訊</h3>
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+<div class="p-4 space-y-4">
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">商品名稱</label>
+<input class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md" placeholder="請輸入票券名稱" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">價格</label>
+<div class="relative">
+<input class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md pr-8" placeholder="0" type="number"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-primary font-bold">元</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">單價</label>
+<input class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">次數</label>
+<input class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md" placeholder="1" type="number"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">工時 (分鐘)</label>
+<input class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md" placeholder="60" type="number"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">助理職位需求</label>
+<select class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md bg-white">
+<option>不限</option>
+<option>初級助理</option>
+<option>高級助理</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">票券圖片</label>
+<div class="w-full aspect-[2/1] border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center bg-surface-container-low cursor-pointer active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[#c84c8f] text-3xl" data-icon="add_photo_alternate">add_photo_alternate</span>
+<p class="text-caption text-on-surface-variant mt-2">建議尺寸 800x400px</p>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">商品描述</label>
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<div class="flex items-center gap-3 px-3 py-2 bg-gray-50 border-b border-gray-200">
+<span class="material-symbols-outlined text-sm">format_bold</span>
+<span class="material-symbols-outlined text-sm">format_italic</span>
+<span class="material-symbols-outlined text-sm">format_list_bulleted</span>
+<span class="material-symbols-outlined text-sm">image</span>
+</div>
+<textarea class="w-full px-3 py-2 border-none focus:ring-0 text-body-md" placeholder="請輸入詳細介紹..." rows="3"></textarea>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-body-md font-semibold">上架販售</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- 銷售資訊 -->
+<section class="bg-surface-container-lowest border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+<div class="px-4 py-3 border-b border-gray-50 flex justify-between items-center bg-white">
+<h3 class="font-h3 text-[#c84c8f]">銷售資訊</h3>
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+<div class="p-4 space-y-4">
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">服務成本</label>
+<div class="relative">
+<input class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md pr-8" placeholder="0" type="number"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-primary font-bold">元</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">折扣金額</label>
+<div class="relative">
+<input class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md pr-8" placeholder="0" type="number"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-primary font-bold">元</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 門店及類別 -->
+<section class="bg-surface-container-lowest border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+<div class="px-4 py-3 border-b border-gray-50 flex justify-between items-center bg-white">
+<h3 class="font-h3 text-[#c84c8f]">門店及類別</h3>
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-body-md">適用所有門店</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">選擇門店</label>
+<select class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md bg-white">
+<option>台北旗艦店</option>
+<option>台中崇德店</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-label-md text-on-surface-variant">隸屬分類 (多選)</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-3 border border-gray-100 rounded-lg bg-surface-bright active:bg-gray-50">
+<input checked="" class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary" type="checkbox"/>
+<span class="text-body-md">面部護理</span>
+</label>
+<label class="flex items-center gap-3 p-3 border border-gray-100 rounded-lg bg-surface-bright active:bg-gray-50">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary" type="checkbox"/>
+<span class="text-body-md">身體舒壓</span>
+</label>
+<label class="flex items-center gap-3 p-3 border border-gray-100 rounded-lg bg-surface-bright active:bg-gray-50">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary" type="checkbox"/>
+<span class="text-body-md">美睫嫁接</span>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- 使用規範 -->
+<section class="bg-surface-container-lowest border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+<div class="px-4 py-3 border-b border-gray-50 flex justify-between items-center bg-white">
+<h3 class="font-h3 text-[#c84c8f]">使用規範</h3>
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+<div class="p-4 space-y-4">
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">使用期限</label>
+<select class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md bg-white">
+<option>無期限</option>
+<option>自購買日起 30 天</option>
+<option>自購買日起 90 天</option>
+<option>固定截止日期</option>
+</select>
+</div>
+</div>
+</section>
+<!-- 點數兌換 -->
+<section class="bg-surface-container-lowest border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+<div class="px-4 py-3 border-b border-gray-50 flex justify-between items-center bg-white">
+<h3 class="font-h3 text-[#c84c8f]">點數兌換</h3>
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-body-md">開啟點數兌換</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="space-y-1.5 opacity-50">
+<label class="text-label-md text-on-surface-variant">兌換所需點數</label>
+<input class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md bg-gray-50" disabled="" placeholder="0" type="number"/>
+</div>
+</div>
+</section>
+<!-- 業績與抽成 -->
+<section class="bg-surface-container-lowest border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+<div class="px-4 py-3 border-b border-gray-50 flex justify-between items-center bg-white">
+<h3 class="font-h3 text-[#c84c8f]">業績與抽成</h3>
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-body-md">開啟分組設定</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">參與抽成職位</label>
+<select class="w-full h-11 px-3 rounded-lg border border-gray-200 text-body-md bg-white">
+<option>設計師</option>
+<option>美容師</option>
+<option>諮詢顧問</option>
+</select>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-100 p-4 flex gap-4 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] z-50">
+<button class="flex-1 h-12 rounded-xl border border-outline-variant text-on-surface font-semibold active:bg-gray-50 transition-colors">取消</button>
+<button class="flex-1 h-12 rounded-xl bg-[#c84c8f] text-white font-semibold shadow-lg shadow-pink-200/50 active:scale-95 transition-transform">儲存</button>
+</footer>
+<!-- BottomNavBar -->
+<nav class="hidden">
+<!-- Rendered contextually if needed, but suppressed here as requested by Task-Focused Page rule -->
+</nav>
+</body></html>
