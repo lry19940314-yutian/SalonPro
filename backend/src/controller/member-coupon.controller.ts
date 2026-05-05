@@ -22,7 +22,7 @@ import { LockKey } from '../redis/types';
 
 const MEMBER_COUPON_CACHE_PREFIX = 'mc:';
 
-@Controller('/api/member-coupons', {
+@Controller('/member-coupons', {
   tagName: '會員票券',
   description: '會員持有的票券查詢與使用',
 })

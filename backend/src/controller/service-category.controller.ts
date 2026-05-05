@@ -24,7 +24,7 @@ import { managerOnly } from '../middleware/role.middleware';
 
 const SERVICE_CAT_CACHE_PREFIX = 'svc_cat:';
 
-@Controller('/api/service-categories', {
+@Controller('/service-categories', {
   tagName: '服務分類',
   description: '服務分類的 CRUD 接口',
 })

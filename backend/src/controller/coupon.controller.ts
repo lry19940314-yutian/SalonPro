@@ -24,7 +24,7 @@ import { managerOnly } from '../middleware/role.middleware';
 
 const COUPON_CACHE_PREFIX = 'coupon:';
 
-@Controller('/api/coupons', {
+@Controller('/coupons', {
   tagName: '票券定義',
   description: '票券定義的 CRUD 接口',
 })

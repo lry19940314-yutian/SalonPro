@@ -23,7 +23,7 @@ import { CacheGuardService } from '../redis/guard.service';
 
 const SERVICE_ITEM_CACHE_PREFIX = 'svc_item:';
 
-@Controller('/api/service-items', {
+@Controller('/service-items', {
   tagName: '服務項目',
   description: '服務項目的 CRUD 接口',
 })

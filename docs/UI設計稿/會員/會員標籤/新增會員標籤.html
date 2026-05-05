@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新增會員標籤 - Wonder sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#042100",
+                        "on-surface-variant": "#554149",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-dim": "#e8d5db",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-primary-fixed-variant": "#861259",
+                        "tertiary-fixed": "#9ff87d",
+                        "outline-variant": "#dac0c9",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary-fixed": "#f6d9ff",
+                        "secondary": "#794c8f",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary": "#1c6b00",
+                        "primary-container": "#c14689",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#392d32",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-secondary-container": "#6c4082",
+                        "surface-container": "#fde9ef",
+                        "outline": "#88717a",
+                        "primary-fixed": "#ffd8e7",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#328517",
+                        "on-secondary-fixed": "#300247",
+                        "on-background": "#23191d",
+                        "surface-tint": "#a52f72",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface-bright": "#fff8f8",
+                        "background": "#fff8f8",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-highest": "#f1dee3",
+                        "surface": "#fff8f8",
+                        "secondary-container": "#e8b3fe",
+                        "surface-container-low": "#fff0f4",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "error": "#ba1a1a",
+                        "primary": "#a22c70",
+                        "on-surface": "#23191d",
+                        "inverse-primary": "#ffafd3",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#f7e3e9",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "gutter": "20px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-shadow {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md text-[#c84c8f] font-plus-jakarta-sans font-semibold text-base shadow-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-200 flex justify-between items-center w-full px-4 h-16 sticky top-0 z-40">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-primary-fixed">
+<img alt="Logo" class="w-full h-full object-cover" data-alt="A professional high-end corporate logo for a beauty and wellness brand named SayDou. The visual identity uses soft pink and clean white tones, reflecting a sophisticated medical spa and salon aesthetic. High-key lighting highlights the minimalist and clean design of the logo on a soft textured background." src="https://lh3.googleusercontent.com/aida/ADBb0uhEUJlFM2to0y5S6ihqdjVTyf_keGWyfBgwtW8-bhNzPqf29-Rxo3GY7uOxA8OZyO2yhnufowDFoxyMo8U_bwKvaXXSwNRO5dAaUpy8fW2_tivqlDurrUkqxi8u5D5eQIXLLdRTL42hL4-25em408dxWOMviG-anNuwG-zbROauIAdz83qusE0OKJbHZsZZ8HSThK_klvhD7K7_XZ9x8gR4aKiPMR6v30uXI1GID6k4Ck5OGneiohFCjT1AbBNDasXdEdveOr9K7w"/>
+</div>
+<span class="text-lg font-bold text-[#c84c8f] dark:text-[#e685a5]">Wonder sky 國際美妍館</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-50 transition-colors relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-white"></span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium hidden md:block">Wonder sky Admin</span>
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- NavigationDrawer -->
+<aside class="hidden lg:flex flex-col py-6 px-4 gap-2 bg-white dark:bg-gray-900 h-full w-72 rounded-r-2xl border-r border-gray-100 dark:border-gray-800 shadow-xl z-30 transition-all duration-200">
+<div class="px-4 mb-6">
+<div class="flex flex-col">
+<span class="text-xl font-black text-[#c84c8f]">Admin Console</span>
+<span class="text-xs text-on-surface-variant opacity-70">www.saydou.com</span>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 text-gray-600 dark:text-gray-400 px-4 py-3 hover:bg-gray-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-[#c84c8f]/5 text-[#c84c8f] font-bold rounded-lg px-4 py-3 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-md text-label-md">Appointments</span>
+</a>
+<a class="flex items-center gap-3 text-gray-600 dark:text-gray-400 px-4 py-3 hover:bg-gray-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-label-md text-label-md">Staff Management</span>
+</a>
+<a class="flex items-center gap-3 text-gray-600 dark:text-gray-400 px-4 py-3 hover:bg-gray-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 text-gray-600 dark:text-gray-400 px-4 py-3 hover:bg-gray-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<p class="text-xs font-bold text-[#c84c8f]">Need Help?</p>
+<p class="text-[10px] text-on-surface-variant">Contact our system support</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area (Background list to show modal overlay) -->
+<main class="flex-1 p-lg bg-[#fff8f8] relative overflow-y-auto">
+<div class="max-w-6xl mx-auto opacity-40 pointer-events-none">
+<div class="flex justify-between items-center mb-xl">
+<h1 class="font-h1 text-h1 text-on-surface">會員標籤管理</h1>
+<button class="bg-primary text-white px-lg py-sm rounded-lg font-label-md shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                        新增標籤
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="bg-white p-lg rounded-xl border border-gray-100 shadow-sm">
+<div class="flex justify-between items-start mb-md">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">VIP 會員</span>
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-lg">累積消費金額超過 50,000 元之尊榮客戶</p>
+<div class="flex items-center gap-2 text-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-xs">person</span>
+                            128 位會員
+                        </div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-gray-100 shadow-sm">
+<div class="flex justify-between items-start mb-md">
+<span class="bg-tertiary-container/10 text-tertiary-container px-3 py-1 rounded-full text-xs font-bold">新客戶</span>
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-lg">近一個月內首次來訪的客戶</p>
+<div class="flex items-center gap-2 text-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-xs">person</span>
+                            45 位會員
+                        </div>
+</div>
+</div>
+</div>
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+<!-- Modal Card -->
+<div class="bg-white w-full max-w-lg rounded-lg custom-shadow overflow-hidden flex flex-col animate-in fade-in zoom-in duration-300">
+<!-- 1. 標題欄 -->
+<div class="relative px-lg py-md border-b border-gray-100 flex items-center justify-center">
+<h2 class="font-h2 text-h2 text-on-surface text-center">新增會員標籤</h2>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-primary hover:bg-gray-100 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- 2. 表單輸入區 -->
+<div class="p-lg space-y-xl">
+<!-- 「啟用」滑塊開關 -->
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<span class="text-body-md font-medium text-on-surface">啟用</span>
+</div>
+<!-- 「標籤名稱」必填輸入框 -->
+<div class="space-y-sm">
+<label class="block font-label-md text-on-surface">
+<span class="text-error mr-1">*</span>標籤名稱
+                            </label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none text-on-surface placeholder:text-outline" placeholder="請輸入標籤名稱" type="text"/>
+<p class="text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                                輸入名稱後，按下Enter可以預覽標籤
+                            </p>
+</div>
+<!-- 顏色設定區 -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="space-y-sm">
+<label class="block font-label-md text-on-surface">
+<span class="text-error mr-1">*</span>背景顏色
+                                </label>
+<div class="flex items-center gap-2 p-2 border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer group">
+<div class="w-8 h-8 rounded bg-primary-container shadow-inner"></div>
+<span class="text-body-md text-on-surface-variant flex-1">#c14689</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary">colorize</span>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="block font-label-md text-on-surface">
+<span class="text-error mr-1">*</span>字體顏色
+                                </label>
+<div class="flex items-center gap-2 p-2 border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer group">
+<div class="w-8 h-8 rounded bg-white border border-outline-variant shadow-inner"></div>
+<span class="text-body-md text-on-surface-variant flex-1">#ffffff</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary">colorize</span>
+</div>
+</div>
+</div>
+<!-- 預覽區 (Extra to enhance UI) -->
+<div class="pt-md">
+<div class="bg-surface-container-low p-md rounded-lg flex flex-col items-center justify-center gap-2 border border-dashed border-outline-variant">
+<span class="text-[10px] uppercase tracking-wider text-outline font-bold">Preview 預覽</span>
+<div class="bg-primary-container text-white px-4 py-1.5 rounded-full font-bold text-sm shadow-sm">
+                                    預覽標籤
+                                </div>
+</div>
+</div>
+</div>
+<!-- 3. 底部操作按鈕區 -->
+<div class="px-lg py-lg bg-surface-container-low/50 flex justify-end items-center gap-md">
+<button class="px-xl py-md rounded-lg border border-outline text-on-surface hover:bg-white hover:border-primary-container hover:text-primary transition-all font-label-md">
+                            取消
+                        </button>
+<!-- Disabled style as requested: 預設為淺灰色禁用狀態 -->
+<button class="px-xl py-md rounded-lg bg-outline-variant text-white cursor-not-allowed font-label-md shadow-sm transition-all" disabled="">
+                            儲存
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<footer class="lg:hidden fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 shadow-[0_-2px_10px_rgba(0,0,0,0.04)] pb-safe px-2">
+<button class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-3 py-1 font-plus-jakarta-sans text-[11px] font-medium hover:text-[#c84c8f] active:scale-95 transition-transform">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-3 py-1 font-plus-jakarta-sans text-[11px] font-medium hover:text-[#c84c8f] active:scale-95 transition-transform">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Schedule</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#c84c8f] dark:text-[#e685a5] bg-[#c84c8f]/5 rounded-xl px-3 py-1 font-plus-jakarta-sans text-[11px] font-medium active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Clients</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-3 py-1 font-plus-jakarta-sans text-[11px] font-medium hover:text-[#c84c8f] active:scale-95 transition-transform">
+<span class="material-symbols-outlined">person</span>
+<span>Profile</span>
+</button>
+</footer>
+</body></html>

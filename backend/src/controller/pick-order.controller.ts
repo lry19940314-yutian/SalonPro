@@ -23,7 +23,7 @@ import { LockKey } from '../redis/types';
 
 const PICK_ORDER_CACHE_PREFIX = 'pick:';
 
-@Controller('/api/pick-orders', {
+@Controller('/pick-orders', {
   tagName: '領料單',
   description: '領料單管理接口',
 })

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky 國際美妍館 - LINE 推播後台</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#300247",
+                        "tertiary-fixed": "#9ff87d",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-surface-variant": "#554149",
+                        "on-primary-fixed": "#3d0025",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-container": "#6c4082",
+                        "inverse-primary": "#ffafd3",
+                        "tertiary-container": "#328517",
+                        "surface-tint": "#a52f72",
+                        "on-background": "#23191d",
+                        "outline-variant": "#dac0c9",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e8b3fe",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "surface-bright": "#fff8f8",
+                        "outline": "#88717a",
+                        "surface-container": "#fde9ef",
+                        "secondary-fixed": "#f6d9ff",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-high": "#f7e3e9",
+                        "primary-container": "#c14689",
+                        "inverse-surface": "#392d32",
+                        "surface-container-highest": "#f1dee3",
+                        "primary": "#a22c70",
+                        "surface": "#fff8f8",
+                        "secondary": "#794c8f",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed-dim": "#ffafd3",
+                        "background": "#fff8f8",
+                        "surface-dim": "#e8d5db",
+                        "on-tertiary-fixed": "#042100",
+                        "primary-fixed": "#ffd8e7",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed-variant": "#603475"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "xl": "32px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-6 h-16 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors rounded-full active:opacity-80">
+<span class="material-symbols-outlined text-[#c84c8f]">menu</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-semibold text-lg text-[#c84c8f] dark:text-[#d672a9] text-xl font-bold">Wonder Sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors rounded-full relative">
+<span class="material-symbols-outlined text-gray-500">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-[#c84c8f] rounded-full border-2 border-white"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional close-up of a salon manager's digital profile avatar, featuring a clean and friendly aesthetic with soft studio lighting. The background is a soft, blurred high-end spa environment in shades of blush and white. The overall visual style is corporate yet welcoming, maintaining the professional beauty industry standard with high-key lighting." src="https://lh3.googleusercontent.com/aida/ADBb0uhGI3dPgfcHAm-Y5FAjbQYcZ8iYbwbu9u2O7XFo8akZYeBoOIUmCi-bipkZU3uFpYpJqzOvx7rm4oIcf4r1QiNWKpEARyksY3FyYTCx4FNoLCRU2BDpcy9kdYVJ854lmjZt8ktHMKR2-jnuHF7I1nV8CU_R67FVCBY9a8S0asv_GebUwe7LR6NNwq3vqPq8dz8lIYm7V_9bvPG-XvVrymeHTeEbs1DfYFUBhUt1O-iS6VUBIDxq4qhIJmL2M7NnA3uoN3sgg9dDbw"/>
+</div>
+</div>
+</header>
+<main class="min-h-screen pb-24">
+<!-- Breadcrumbs & Section Title -->
+<div class="px-6 py-4">
+<nav class="flex items-center gap-2 text-caption text-on-surface-variant mb-1">
+<span>會員</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#c84c8f]">LINE 推播</span>
+</nav>
+</div>
+<!-- Secondary Navigation (Tabs) -->
+<div class="sticky top-16 bg-white z-40 border-b border-gray-100 flex items-center justify-between">
+<div class="flex-1 overflow-x-auto hide-scrollbar">
+<div class="flex px-6 space-x-8 min-w-max">
+<button class="py-4 text-gray-500 font-medium text-body-md border-b-2 border-transparent">推播訊息</button>
+<button class="py-4 text-gray-500 font-medium text-body-md border-b-2 border-transparent">推播記錄</button>
+<button class="py-4 text-gray-500 font-medium text-body-md border-b-2 border-transparent">草稿</button>
+<button class="py-4 text-[#c84c8f] font-bold text-body-md border-b-2 border-[#c84c8f]">已排定時間</button>
+</div>
+</div>
+<div class="px-4 py-3 bg-white shadow-[-12px_0_12px_-8px_rgba(0,0,0,0.1)]">
+<button class="w-10 h-10 flex items-center justify-center bg-[#c84c8f] text-white rounded-full shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined">sync</span>
+</button>
+</div>
+</div>
+<!-- Search Control Area -->
+<div class="px-6 py-6">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="block w-full h-[44px] pl-10 pr-4 bg-white border border-outline-variant rounded-xl text-body-md focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] transition-all" placeholder="搜尋主旨" type="text"/>
+</div>
+</div>
+<!-- Main Content Area: Empty State -->
+<div class="flex flex-col items-center justify-center px-6 py-20 animate-fade-in">
+<div class="relative w-64 h-64 mb-6">
+<!-- Abstract Empty State Illustration -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-48 h-48 bg-surface-container-low rounded-full opacity-50 blur-3xl"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[96px] text-gray-300 mb-2" style="font-variation-settings: 'wght' 200;">description</span>
+<div class="flex gap-2 -mt-4">
+<span class="material-symbols-outlined text-[32px] text-gray-200">search</span>
+<span class="material-symbols-outlined text-[32px] text-gray-200">help_outline</span>
+</div>
+</div>
+</div>
+<div class="text-center">
+<p class="font-h3 text-gray-600 mb-2">沒有資料</p>
+<p class="text-caption text-on-surface-variant px-12">目前尚無已排定的 LINE 推播訊息。您可以點擊「推播訊息」開始建立新的排程。</p>
+</div>
+<!-- Contextual CTA (Optional but useful UX) -->
+<button class="mt-8 px-8 py-3 bg-[#c84c8f] text-white font-semibold rounded-full shadow-md hover:opacity-90 active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                建立新推播
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 pb-safe bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] md:hidden">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Plus_Jakarta_Sans'] text-[10px] active:bg-gray-100 dark:active:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+            首頁
+        </a>
+<a class="flex flex-col items-center justify-center text-[#c84c8f] font-bold font-['Plus_Jakarta_Sans'] text-[10px] scale-110 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+            顧客
+        </a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Plus_Jakarta_Sans'] text-[10px] active:bg-gray-100 dark:active:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">receipt_long</span>
+            訂單
+        </a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Plus_Jakarta_Sans'] text-[10px] active:bg-gray-100 dark:active:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">settings</span>
+            設定
+        </a>
+</nav>
+<!-- Sidebar for Desktop (NavigationDrawer style logic applied) -->
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 w-64 bg-white dark:bg-gray-900 border-r border-gray-100 dark:border-gray-800 p-4 gap-2 z-50">
+<div class="flex items-center gap-3 px-2 py-6 mb-4">
+<div class="w-10 h-10 rounded-lg bg-[#c84c8f] flex items-center justify-center text-white">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<div>
+<p class="font-bold text-[#c84c8f]">Wonder Sky</p>
+<p class="text-caption text-gray-400">Admin Portal</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">send</span>
+                推播訊息
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">history</span>
+                推播記錄
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors font-['Plus_Jakarta_Sans'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">drafts</span>
+                草稿
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#c84c8f]/5 text-[#c84c8f] font-bold rounded-lg font-['Plus_Jakarta_Sans'] text-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                已排定時間
+            </a>
+</div>
+<div class="mt-auto border-t border-gray-100 pt-4 flex items-center gap-3 px-2">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A professional studio portrait of a salon manager for a corporate profile, set against a soft, clean aesthetic background with delicate pink and white color tones. The image exudes trust and professionalism, suitable for a high-end SaaS management dashboard, featuring high-quality lighting and a minimalist vibe." src="https://lh3.googleusercontent.com/aida/ADBb0uhGI3dPgfcHAm-Y5FAjbQYcZ8iYbwbu9u2O7XFo8akZYeBoOIUmCi-bipkZU3uFpYpJqzOvx7rm4oIcf4r1QiNWKpEARyksY3FyYTCx4FNoLCRU2BDpcy9kdYVJ854lmjZt8ktHMKR2-jnuHF7I1nV8CU_R67FVCBY9a8S0asv_GebUwe7LR6NNwq3vqPq8dz8lIYm7V_9bvPG-XvVrymeHTeEbs1DfYFUBhUt1O-iS6VUBIDxq4qhIJmL2M7NnA3uoN3sgg9dDbw"/>
+<div class="overflow-hidden">
+<p class="text-sm font-bold text-on-surface truncate">Wonder Sky Admin</p>
+<p class="text-[10px] text-on-surface-variant">Salon Manager</p>
+</div>
+</div>
+</aside>
+</body></html>

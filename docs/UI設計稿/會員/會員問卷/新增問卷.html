@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新增會員問卷 - Wonder Sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffd8e7",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffbff",
+                        "primary-container": "#c14689",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#554149",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-background": "#23191d",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-primary-fixed-variant": "#861259",
+                        "outline": "#88717a",
+                        "tertiary": "#1c6b00",
+                        "surface-container-highest": "#f1dee3",
+                        "surface-container-high": "#f7e3e9",
+                        "on-secondary-container": "#6c4082",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-container": "#fde9ef",
+                        "secondary-fixed": "#f6d9ff",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-tint": "#a52f72",
+                        "on-tertiary-fixed": "#042100",
+                        "on-surface": "#23191d",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-error": "#ffffff",
+                        "primary": "#a22c70",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed": "#300247",
+                        "inverse-primary": "#ffafd3",
+                        "tertiary-fixed": "#9ff87d",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fff8f8",
+                        "tertiary-container": "#328517",
+                        "secondary": "#794c8f",
+                        "outline-variant": "#dac0c9",
+                        "surface-dim": "#e8d5db",
+                        "surface": "#fff8f8",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#3d0025",
+                        "inverse-surface": "#392d32",
+                        "secondary-container": "#e8b3fe",
+                        "background": "#fff8f8",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "gutter": "20px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indicator {
+            border-left: 4px solid #a22c70;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white dark:bg-gray-950 shadow-sm dark:shadow-none border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-500 cursor-pointer">menu</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xl font-bold text-[#c84c8f] antialiased">Wonder Sky</span>
+<nav class="hidden md:flex ml-8 gap-1">
+<span class="text-gray-400">會員</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">chevron_right</span>
+<span class="text-[#c84c8f] font-semibold">新增問卷</span>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-gray-500 hover:bg-gray-50 p-2 rounded-full transition-colors">notifications</button>
+<button class="bg-[#c84c8f] text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-sm">add</span>
+                快速開單
+            </button>
+<img class="w-10 h-10 rounded-full border border-gray-200 object-cover" data-alt="A professional close-up portrait of a friendly beauty salon manager in a well-lit, modern spa environment. The lighting is soft and flattering, highlighting the clean and minimalist aesthetic of the high-end beauty industry. The overall mood is welcoming and professional, utilizing a soft color palette that aligns with the brand's sophisticated identity." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+</header>
+<!-- Sidebar / NavigationDrawer -->
+<aside class="hidden md:flex flex-col w-64 h-screen fixed left-0 top-16 bg-white dark:bg-gray-950 border-r border-gray-100 dark:border-gray-800 pt-6 px-4">
+<div class="mb-6 px-2">
+<h2 class="text-[#c84c8f] font-black text-sm uppercase tracking-wider">會員中心</h2>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#c84c8f] bg-[#c84c8f]/5 rounded-lg font-bold transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>會員</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span>會員等級</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>會員等級記錄</span>
+</a>
+<div class="mt-4 mb-2 px-3 text-xs font-semibold text-gray-400 uppercase">問卷管理</div>
+<a class="flex items-center gap-3 px-3 py-2 text-[#c84c8f] bg-[#c84c8f]/5 rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span>會員問卷</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="upload_file">upload_file</span>
+<span>匯入記錄</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="download_for_offline">download_for_offline</span>
+<span>匯出記錄</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span>LINE 推播記錄</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-0 md:ml-64 pt-20 pb-24 px-6 min-h-screen flex flex-col lg:flex-row gap-gutter">
+<!-- Left Side: Form Content -->
+<div class="flex-1 space-y-6 max-w-4xl">
+<!-- Section: 基本資訊 -->
+<section class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden" id="basic-info">
+<div class="px-lg py-md border-b border-gray-100 flex justify-between items-center bg-gray-50/30">
+<h3 class="font-h3 text-h3 text-on-surface">基本資訊</h3>
+<div class="flex items-center gap-3">
+<span class="text-sm text-gray-500">啟用狀態</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#c84c8f]"></div>
+</label>
+</div>
+</div>
+<div class="p-lg space-y-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+                            問卷名稱 <span class="text-error">*</span>
+</label>
+<input class="w-full h-10 px-4 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-300" placeholder="例如：新會員膚況諮詢表" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">問卷說明</label>
+<div class="border border-outline-variant rounded-lg overflow-hidden focus-within:border-primary transition-all">
+<div class="bg-gray-50 border-b border-gray-100 p-2 flex gap-1 flex-wrap">
+<button class="p-1.5 hover:bg-white rounded transition-colors text-gray-600"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors text-gray-600"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors text-gray-600"><span class="material-symbols-outlined text-lg">format_underlined</span></button>
+<div class="w-[1px] h-4 bg-gray-300 mx-1 my-auto"></div>
+<button class="p-1.5 hover:bg-white rounded transition-colors text-gray-600"><span class="material-symbols-outlined text-lg">format_align_left</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors text-gray-600"><span class="material-symbols-outlined text-lg">format_align_center</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors text-gray-600"><span class="material-symbols-outlined text-lg">format_list_bulleted</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors text-gray-600"><span class="material-symbols-outlined text-lg">image</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors text-gray-600"><span class="material-symbols-outlined text-lg">link</span></button>
+</div>
+<textarea class="w-full p-4 border-none focus:ring-0 resize-none placeholder:text-gray-300 min-h-[120px]" placeholder="請輸入問卷前導說明，引導會員填寫..." rows="4"></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: 問卷問題 -->
+<section class="space-y-4" id="question-list">
+<div class="flex justify-between items-center px-2">
+<h3 class="font-h3 text-h3 text-on-surface">問卷問題</h3>
+<button class="bg-[#c84c8f] text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 hover:bg-[#a22c70] transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">add</span>
+                        新增問題
+                    </button>
+</div>
+<!-- Question Card -->
+<div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-6 relative group">
+<div class="flex flex-col md:flex-row gap-4">
+<div class="flex-1 space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">題目內容</label>
+<input class="w-full h-10 px-4 rounded-lg border border-outline-variant focus:border-primary outline-none" type="text" value="請問您目前的膚質狀況？"/>
+</div>
+<div class="w-full md:w-48 space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">題目種類</label>
+<select class="w-full h-10 px-4 rounded-lg border border-outline-variant focus:border-primary outline-none bg-white">
+<option>單選題</option>
+<option>多選題</option>
+<option>簡答題</option>
+<option>日期選取</option>
+</select>
+</div>
+</div>
+<div class="space-y-3">
+<label class="font-label-md text-label-md text-on-surface-variant">選項設定</label>
+<div class="space-y-2">
+<!-- Option Item -->
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-300 cursor-move">drag_indicator</span>
+<input class="flex-1 h-9 px-3 rounded-lg border border-outline-variant focus:border-primary outline-none text-sm" type="text" value="乾性肌膚"/>
+<button class="material-symbols-outlined text-gray-400 hover:text-error transition-colors">delete</button>
+</div>
+<!-- Option Item -->
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-300 cursor-move">drag_indicator</span>
+<input class="flex-1 h-9 px-3 rounded-lg border border-outline-variant focus:border-primary outline-none text-sm" type="text" value="油性肌膚"/>
+<button class="material-symbols-outlined text-gray-400 hover:text-error transition-colors">delete</button>
+</div>
+<!-- Option Item -->
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-300 cursor-move">drag_indicator</span>
+<input class="flex-1 h-9 px-3 rounded-lg border border-outline-variant focus:border-primary outline-none text-sm" type="text" value="混合性肌膚"/>
+<button class="material-symbols-outlined text-gray-400 hover:text-error transition-colors">delete</button>
+</div>
+</div>
+<button class="text-[#c84c8f] text-sm font-semibold flex items-center gap-1 mt-2 hover:underline">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                            新增選項
+                        </button>
+</div>
+<div class="pt-4 border-t border-gray-50 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-outline-variant" type="checkbox"/>
+<span class="text-sm text-on-surface-variant">必填題目</span>
+</label>
+</div>
+<button class="flex items-center gap-1 text-gray-400 hover:text-error transition-colors text-sm">
+<span class="material-symbols-outlined text-lg">delete</span>
+                            刪除此問題
+                        </button>
+</div>
+<!-- Drag handle for whole card -->
+<div class="absolute -left-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-gray-300 cursor-grab">drag_handle</span>
+</div>
+</div>
+<!-- Empty State/Placeholder for next question -->
+<div class="border-2 border-dashed border-gray-100 rounded-xl p-8 flex flex-col items-center justify-center text-gray-400 bg-white/50">
+<span class="material-symbols-outlined text-4xl mb-2">post_add</span>
+<p class="text-sm">點擊上方「新增問題」按鈕開始建立問卷內容</p>
+</div>
+</section>
+</div>
+<!-- Right Side: Anchor Navigation -->
+<aside class="hidden lg:block w-48 shrink-0">
+<div class="sticky top-24 space-y-4">
+<div class="bg-white rounded-xl border border-gray-100 shadow-sm p-2">
+<nav class="flex flex-col">
+<a class="px-4 py-3 text-sm font-semibold text-[#c84c8f] active-tab-indicator flex items-center gap-2 bg-gray-50/50 rounded-r" href="#basic-info">
+<span class="material-symbols-outlined text-lg">info</span>
+                            基本資訊
+                        </a>
+<a class="px-4 py-3 text-sm font-medium text-gray-500 hover:text-[#c84c8f] transition-colors flex items-center gap-2 border-l-4 border-transparent" href="#question-list">
+<span class="material-symbols-outlined text-lg">list_alt</span>
+                            問卷問題
+                        </a>
+</nav>
+</div>
+<!-- Helper Card -->
+<div class="bg-primary-container/10 rounded-xl p-4 border border-primary-container/20">
+<h4 class="text-[#c84c8f] font-bold text-xs mb-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lightbulb</span>
+                        設計提示
+                    </h4>
+<p class="text-xs text-[#861259] leading-relaxed">
+                        良好的問卷設計應控制在 10 題以內，以確保會員有足夠耐心完成填寫。
+                    </p>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm aspect-square relative">
+<img class="w-full h-full object-cover" data-alt="A sophisticated abstract composition of soft pink and rose gold gradients, reflecting the luxury beauty aesthetic. The lighting is diffused and luminous, creating a sense of high-end skincare and wellness. The composition is clean and modern, suitable for a corporate SaaS backend for beauty salons." src="https://lh3.googleusercontent.com/aida/ADBb0ugWqXxyCQNeAfHcYZJgDkeN4amsXMc4wo66AGFa02D1TQh_HEtbcRgKRm7jWCQBBBO65X6ziviWe0zU8YfuTClLP0rD-KsWiW4FS-pE2DqPkwpgfy9VrnLFtil509HwQL3EPOxew4uvj2J8C6u8X2TZejtm97Y6dGDUKO2qNzmtcCjzTUfcqXItxnveTrDIY_icEzYdcat7C6xp2VajB061xPqDT-day7kDpcmoOhdZnfgJjGv60b5YuooGT6Of13_R8qotfhtM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-4">
+<p class="text-white text-[10px] font-medium">美容業數據化管理系統</p>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 w-full bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 h-16 z-50 flex items-center justify-between px-6 md:pl-72">
+<div class="text-xs text-gray-400 hidden sm:block">
+            最後自動儲存於 14:32:05
+        </div>
+<div class="flex items-center gap-3 ml-auto">
+<button class="px-6 py-2 border border-outline text-on-surface-variant rounded-lg hover:bg-gray-50 transition-colors font-medium active:scale-95">
+                取消
+            </button>
+<button class="px-8 py-2 bg-[#c84c8f] text-white rounded-lg font-bold hover:bg-[#a22c70] shadow-md shadow-primary/20 transition-all active:scale-95">
+                儲存問卷
+            </button>
+</div>
+</footer>
+<!-- Mobile Navigation (BottomNavBar) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 md:hidden px-4 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-gray-400">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">首頁</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#c84c8f] font-bold">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">會員</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">訂單</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">設定</span>
+</div>
+</nav>
+</body></html>

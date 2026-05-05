@@ -87,4 +87,67 @@ export class PerformanceService {
   }> {
     return this.performanceDAO.getShopPerformanceStats(shopId, startDate, endDate);
   }
+
+  /**
+   * 獲取工作人員業績排行
+   *
+   * @param shopId - 門店 ID
+   * @param startDate - 開始日期
+   * @param endDate - 結束日期
+   * @param limit - 排行數量（預設 10）
+   * @returns 工作人員業績排行列表
+   */
+  async getStaffRanking(
+    shopId: number,
+    startDate: string,
+    endDate: string,
+    limit: number = 10
+  ): Promise<Array<{
+    staffId: number;
+    name: string;
+    amount: number;
+    percentage: number;
+  }>> {
+    return this.performanceDAO.getStaffRanking(shopId, startDate, endDate, limit);
+  }
+
+  /**
+   * 獲取門店分類營業額統計
+   *
+   * @param shopId - 門店 ID
+   * @param startDate - 開始日期
+   * @param endDate - 結束日期
+   * @returns 分類營業額列表
+   */
+  async getCategoryRevenueStats(
+    shopId: number,
+    startDate: string,
+    endDate: string
+  ): Promise<Array<{
+    categoryId: number;
+    categoryName: string;
+    amount: number;
+    ratio: number;
+  }>> {
+    return this.performanceDAO.getCategoryRevenueStats(shopId, startDate, endDate);
+  }
+
+  /**
+   * 獲取門店年度營業額統計（含月度明細與同比增幅）
+   *
+   * @param shopId - 門店 ID
+   * @param year - 年份
+   * @returns 年度營業額統計
+   */
+  async getYearlyRevenueStats(
+    shopId: number,
+    year: number
+  ): Promise<{
+    year: number;
+    totalAmount: number;
+    monthlyData: number[];
+    growthRate: number;
+  }> {
+    return this.performanceDAO.getYearlyRevenueStats(shopId, year);
+  }
 }

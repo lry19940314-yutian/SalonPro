@@ -25,6 +25,31 @@ import { loginApi } from '@/api/auth'
 import type { LoginParams } from '@/types/api'
 import SalonDialog from '@/components/common/SalonDialog.vue'
 
+/**
+ * 正規化 expiresIn 為絕對時間戳（秒）
+ *
+ * 後端可能返回兩種格式：
+ * 1. 相對秒數（如 3600，表示 1 小時後過期）
+ * 2. 絕對時間戳（如 1746427000）
+ *
+ * 若為相對秒數（小於 86400 秒，即 1 天），則轉換為絕對時間戳
+ *
+ * @param raw - 原始 expiresIn 值
+ * @returns 絕對時間戳（秒），或 null
+ */
+function normalizeExpiresIn(raw: number | null | undefined): number | null {
+  if (raw === null || raw === undefined) return null
+  if (raw <= 0) return null
+
+  const ONE_DAY_IN_SECONDS = 86400
+  // 若值小於 1 天，視為相對秒數，轉換為絕對時間戳
+  if (raw < ONE_DAY_IN_SECONDS) {
+    return Math.floor(Date.now() / 1000) + raw
+  }
+  // 否則視為絕對時間戳，直接使用
+  return raw
+}
+
 const router = useRouter()
 const route = useRoute()
 const authStore = useAuthStore()
@@ -145,13 +170,33 @@ async function handleLogin(): Promise<void> {
 
   try {
     // 調用登入 API
-    const response = await loginApi({
+    // loginApi 返回後端 LoginResult 物件：{ accessToken, refreshToken, expiresIn, user }
+    const loginResult = await loginApi({
       shopCode: loginForm.shopCode.trim(),
       username: loginForm.username.trim(),
       password: loginForm.password,
     })
 
-    const { accessToken, refreshToken, expiresIn, user } = response.data
+    // 開發環境輸出調試日誌
+    if (import.meta.env.DEV) {
+      console.log('[登錄] API 響應:', loginResult)
+    }
+
+    const accessToken = loginResult.accessToken
+    const refreshToken = loginResult.refreshToken
+    const rawExpiresIn = loginResult.expiresIn
+    const user = loginResult.user
+
+    // 驗證必要字段
+    if (!accessToken) {
+      console.error('[登錄] 響應數據:', JSON.stringify(loginResult))
+      throw new Error('登錄響應中缺少 accessToken')
+    }
+
+    // 將 expiresIn 轉換為絕對時間戳（秒）
+    // 若後端返回的是相對秒數（如 3600），則轉換為當前時間 + 秒數
+    // 若後端返回的是絕對時間戳，則直接使用
+    const expiresIn = normalizeExpiresIn(rawExpiresIn)
 
     // 儲存登入狀態到 Pinia Store
     authStore.login({
@@ -177,8 +222,10 @@ async function handleLogin(): Promise<void> {
     }
 
     // 登入成功，跳轉至原始目標頁面或首頁
+    // 注意：使用 router.push 而非 router.replace，
+    // 避免因路由 redirect 鏈導致路由守衛重複觸發造成狀態不一致
     const redirect = (route.query.redirect as string) || '/info-center'
-    router.replace(redirect)
+    router.push(redirect)
   } catch (error: any) {
     // 顯示錯誤訊息（同時顯示內聯提示和彈窗）
     const message = error.message || '登入失敗，請檢查帳號密碼'

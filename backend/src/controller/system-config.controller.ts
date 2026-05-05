@@ -23,7 +23,7 @@ import { ConfigCacheKey } from '../redis/types';
 
 const SYSTEM_CONFIG_CACHE_PREFIX = 'sys_cfg:';
 
-@Controller('/api/system-configs', {
+@Controller('/system-configs', {
   tagName: '系統配置',
   description: '系統配置管理接口',
 })

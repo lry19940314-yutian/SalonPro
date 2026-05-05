@@ -22,7 +22,7 @@ import { CacheGuardService } from '../redis/guard.service';
 
 const STAFF_SHOP_CACHE_PREFIX = 'staff_shop:';
 
-@Controller('/api/staff-shops', {
+@Controller('/staff-shops', {
   tagName: '員工門店關聯',
   description: '員工門店歸屬管理接口',
 })

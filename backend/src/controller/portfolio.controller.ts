@@ -23,7 +23,7 @@ import { CacheGuardService } from '../redis/guard.service';
 
 const PORTFOLIO_CACHE_PREFIX = 'port:';
 
-@Controller('/api/portfolios', {
+@Controller('/portfolios', {
   tagName: '作品集',
   description: '作品集管理接口',
 })

@@ -25,7 +25,7 @@ import { managerOnly } from '../middleware/role.middleware';
 
 const SCHEDULE_CACHE_PREFIX = 'sched:';
 
-@Controller('/api/schedules', {
+@Controller('/schedules', {
   tagName: '排班/場務',
   description: '排班管理接口',
 })

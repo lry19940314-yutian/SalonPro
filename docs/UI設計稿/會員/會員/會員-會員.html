@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 會員管理</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-tint": "#a52f72",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary": "#794c8f",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#554149",
+                        "surface-bright": "#fff8f8",
+                        "surface": "#fff8f8",
+                        "on-background": "#23191d",
+                        "on-secondary-fixed": "#300247",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "background": "#fff8f8",
+                        "outline-variant": "#dac0c9",
+                        "outline": "#88717a",
+                        "inverse-primary": "#ffafd3",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed-variant": "#603475",
+                        "tertiary": "#1c6b00",
+                        "secondary-fixed": "#f6d9ff",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed": "#3d0025",
+                        "error": "#ba1a1a",
+                        "surface-container": "#fde9ef",
+                        "primary": "#a22c70",
+                        "on-primary-container": "#fffbff",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-container-high": "#f7e3e9",
+                        "secondary-container": "#e8b3fe",
+                        "primary-fixed": "#ffd8e7",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-dim": "#e8d5db",
+                        "on-surface": "#23191d",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "inverse-surface": "#392d32",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#6c4082",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary-container": "#328517",
+                        "surface-variant": "#f1dee3"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans", "Noto Sans TC"],
+                        "caption": ["Plus Jakarta Sans", "Noto Sans TC"],
+                        "h1": ["Plus Jakarta Sans", "Noto Sans TC"],
+                        "body-lg": ["Plus Jakarta Sans", "Noto Sans TC"],
+                        "body-md": ["Plus Jakarta Sans", "Noto Sans TC"],
+                        "label-md": ["Plus Jakarta Sans", "Noto Sans TC"],
+                        "h2": ["Plus Jakarta Sans", "Noto Sans TC"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-pill { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen overflow-hidden">
+<!-- SideNavBar Section -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-950 shrink-0 z-50">
+<div class="flex flex-col h-full p-4 space-y-2">
+<!-- Header/Brand Logo -->
+<div class="flex items-center space-x-3 px-2 py-4 mb-4">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-gray-900 dark:text-white leading-tight">Wonder sky</h2>
+<p class="text-xs text-gray-500 font-medium tracking-wider">Management System</p>
+</div>
+</div>
+<!-- Main Navigation Links -->
+<nav class="flex-1 space-y-1 overflow-y-auto">
+<a class="flex items-center space-x-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-[#c84c8f] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium text-[14px]">資訊中心</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-[#c84c8f] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-medium text-[14px]">財務中心</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-[#c84c8f] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-medium text-[14px]">記帳</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-[#c84c8f] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-medium text-[14px]">預約</span>
+</a>
+<!-- Active Member Tab -->
+<div class="space-y-1">
+<a class="flex items-center justify-between px-3 py-2.5 bg-[#c84c8f]/5 text-[#c84c8f] rounded-lg font-semibold transition-all duration-300" href="#">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined active-pill" data-icon="group">group</span>
+<span class="text-[14px]">會員</span>
+</div>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</a>
+<!-- Sub-navigation -->
+<div class="pl-11 space-y-1">
+<a class="block py-2 text-primary font-bold text-[13px]" href="#">會員列表</a>
+<a class="block py-2 text-gray-500 hover:text-primary transition-colors text-[13px]" href="#">封鎖名單</a>
+<a class="block py-2 text-gray-500 hover:text-primary transition-colors text-[13px]" href="#">LINE推播</a>
+</div>
+</div>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-[#c84c8f] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-medium text-[14px]">服務及商品</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-[#c84c8f] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-medium text-[14px]">票券管理</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-[#c84c8f] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-medium text-[14px]">門店管理</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-[#c84c8f] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-medium text-[14px]">組織架構</span>
+</a>
+</nav>
+<!-- Footer Navigation -->
+<div class="pt-4 border-t border-gray-100 dark:border-slate-800 space-y-1">
+<a class="flex items-center space-x-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-[#c84c8f] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium text-[14px]">設定</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-error transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-medium text-[14px]">登出</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden bg-background">
+<!-- TopAppBar Section -->
+<header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 shadow-sm sticky top-0 z-40 w-full h-16 flex items-center justify-between px-6 shrink-0">
+<div class="flex items-center space-x-4">
+<nav class="flex items-center space-x-2 text-sm font-['Plus_Jakarta_Sans'] antialiased">
+<span class="text-gray-400">會員</span>
+<span class="material-symbols-outlined text-xs text-gray-400" data-icon="chevron_right">chevron_right</span>
+<span class="text-[#c84c8f] font-semibold">會員</span>
+</nav>
+</div>
+<div class="flex items-center space-x-4">
+<button class="flex items-center space-x-2 px-4 py-2 bg-primary text-white rounded-lg font-medium text-sm hover:opacity-90 active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+<span>開單</span>
+</button>
+<div class="h-8 w-px bg-gray-200 mx-2"></div>
+<button class="p-2 text-gray-500 hover:bg-gray-50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center space-x-3 pl-2">
+<img alt="User Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" data-alt="A professional close-up portrait of a woman in her late 20s with a warm smile, set against a blurred high-end boutique interior. The lighting is soft and flattering, emphasizing a modern beauty industry aesthetic. She is wearing professional attire that fits a luxury salon environment. The overall image has a clean, high-key look with a soft pink and neutral color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkfasXv8PcQmfr0FFJy1XAfw2Cperm9TpJ_l2esrGpX7FOdXuxl_mEe37PcI0hmy9DlSRgpxq73ahp0Oi3IRCysodns5iXDlI3jwGL21DxGIrMJz4hnrgeg4aE3XXTsZz6tUjOCDOj3GCaAODdPCzRfoEb9IetOEsJuOBv2EXFaEBqCi-XWTmC_O535u16nikVBfiFzEipdJQkTyuvGVZdqXjoQj1V9dMpTbYR4dE0YF0LWrkocsiXFXJ1hZyrGMF8IsenSBv-VfM"/>
+<div class="hidden lg:block text-right">
+<p class="text-sm font-bold text-gray-900 leading-none">Emily Chen</p>
+<p class="text-[10px] text-gray-500 mt-1 uppercase tracking-tighter">Senior Manager</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Scrollable Area -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Page Tabs & Header Section -->
+<div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+<div class="flex border-b border-gray-100 px-6 pt-4">
+<a class="px-4 py-3 text-sm font-bold text-[#c84c8f] border-b-2 border-[#c84c8f]" href="#">會員</a>
+<a class="px-4 py-3 text-sm font-medium text-gray-500 hover:text-primary transition-colors" href="#">會員等級</a>
+<a class="px-4 py-3 text-sm font-medium text-gray-500 hover:text-primary transition-colors" href="#">會員等級記錄</a>
+<a class="px-4 py-3 text-sm font-medium text-gray-500 hover:text-primary transition-colors" href="#">匯入記錄</a>
+<a class="px-4 py-3 text-sm font-medium text-gray-500 hover:text-primary transition-colors" href="#">匯出記錄</a>
+</div>
+<!-- Search & Filters -->
+<div class="p-6 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center flex-1 min-w-[300px] max-w-2xl gap-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="搜尋姓名、LINE資訊、手機與備註" type="text"/>
+</div>
+<a class="text-primary text-sm font-medium hover:underline flex items-center gap-1 shrink-0" href="#">
+<span>進階搜尋</span>
+<span class="material-symbols-outlined text-xs" data-icon="tune">tune</span>
+</a>
+<div class="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 shrink-0">
+<span class="material-symbols-outlined text-sm text-gray-400 mr-2" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm text-gray-600">消費時間：全部</span>
+<span class="material-symbols-outlined text-sm text-gray-400 ml-2" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-[#c84c8f] text-white px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2 hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="person_add">person_add</span>
+<span>新增</span>
+</button>
+<button class="bg-gray-100 text-gray-600 px-4 py-2 rounded-lg font-bold text-sm hover:bg-gray-200 transition-all">
+<span>批次套用/刪除</span>
+</button>
+<button class="border border-gray-200 text-gray-600 px-4 py-2 rounded-lg font-bold text-sm hover:bg-gray-50 transition-all flex items-center gap-2">
+<span>其他動作</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-2 text-gray-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="view_column">view_column</span>
+<span class="text-sm font-medium">顯示欄位</span>
+</button>
+</div>
+</div>
+<!-- Table Content -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 border-b border-gray-100">
+<th class="p-4 w-12 text-center">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</th>
+<th class="p-4 font-bold text-gray-600 text-sm">會員姓名 / 手機</th>
+<th class="p-4 font-bold text-gray-600 text-sm">會員等級</th>
+<th class="p-4 font-bold text-gray-600 text-sm">加入門店</th>
+<th class="p-4 font-bold text-gray-600 text-sm">最近消費時間</th>
+<th class="p-4 font-bold text-gray-600 text-sm text-right">儲值金</th>
+<th class="p-4 font-bold text-gray-600 text-sm text-center">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-50">
+<!-- Row 1 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="p-4 text-center">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a sophisticated woman with natural makeup, looking directly at the camera with a confident expression. The environment is a brightly lit, high-end beauty salon with marble accents and soft focus product displays in the background. The lighting is bright and warm, conveying a sense of premium service and elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5EdlMjukujnL9C-pXvEDYQs3krjzCsuTaUFs63ZX7KT4v8QoNeWCTgGJbQ8FVTgMPn9UFpPk1_acJBU9PE0BB3wpn0_EEcQl0MClM5HUA2qceg-68lRdtyWs5VF-wX-UgQPgWplJ_yZklx-GBt7QWX824Y-FmTBF9yAhOrOJzINQO3UtLcoCZvy18S3m-Z-AvZYxw1ENSLsjctE32SUYHqpMBRY0GkVUGSZyrZJnT-yWuFI2HFrWidp9NMMw9bYr-r3waJ0i44kE"/>
+<div>
+<p class="font-bold text-gray-900 text-sm">林郁芳 Jasmine</p>
+<p class="text-xs text-gray-500">0988-123-456</p>
+</div>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#ffd8e7] text-[#a22c70]">
+                                        Diamond
+                                    </span>
+</td>
+<td class="p-4 text-sm text-gray-600">忠孝復興旗艦店</td>
+<td class="p-4 text-sm text-gray-600">2023-11-20 14:30</td>
+<td class="p-4 text-sm font-bold text-gray-900 text-right">NT$ 12,500</td>
+<td class="p-4 text-center">
+<div class="flex items-center justify-center gap-3">
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="p-4 text-center">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a stylish man with a well-groomed appearance. He is set against a clean, minimalist studio background with soft grey tones. The lighting is professional and high-contrast, highlighting a clean and modern skincare aesthetic. He wears a neutral-colored collared shirt, reflecting a high-end wellness clientele style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo8nNhr1JeZPhDs_LmrteID7dOqam0L_euVjNHBxihPEKcwk1dl37_saTDQc-pAllc2tx52m-2S_7912XcejhAlIpWHU2KZ0SQrwVvG163WnbhjjxLNKRvFFyNK8U5Nqk2_nbL8zVTXz00UFFX1BotN_RDAVy1Gsm5hhEpZbKm01vLt2CJX7ycmqsfegVzsHAyaNZjr9ChnHA9tHeNUckxYXpLkeFI2RnR9f_Qbo3A24-5NPnmacvJA6EONOTGttXaND2Qr2Kmh2c"/>
+<div>
+<p class="font-bold text-gray-900 text-sm">王大明 David</p>
+<p class="text-xs text-gray-500">0912-345-678</p>
+</div>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#f6d9ff] text-[#794c8f]">
+                                        Gold
+                                    </span>
+</td>
+<td class="p-4 text-sm text-gray-600">南京三民店</td>
+<td class="p-4 text-sm text-gray-600">2023-11-18 10:15</td>
+<td class="p-4 text-sm font-bold text-gray-900 text-right">NT$ 5,200</td>
+<td class="p-4 text-center">
+<div class="flex items-center justify-center gap-3">
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="p-4 text-center">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A close-up portrait of a woman with radiant skin and natural elegance. She is positioned in front of a soft pink floral wall in a luxury beauty clinic setting. The lighting is diffused and ethereal, creating a soft-focus dreamy aesthetic. Her expression is calm and refined, embodying the brand's premium wellness identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcXQ8XBPNfFZcCdo6GTeBgUxV6yng8L_yw9L-gkMigQ3cxlvNJPIFUGIaKXa9M4YiGnHRoyIequOmCZOjpgJAY9ZkSG0mFjw2WdBgypeJmSTik8lhJgTKlhoe5_PyfFeLUVB7_MWZ3fmK4e74YNx8EbEDpPdPQhjB9YwWUVvA0G1Tz0J-wT3MoO47dE0UrdQZyB0ayVkr4ABGKZciQ0FFdTaB21c1lx7DkscKszbJPTNRafbHBQa5O9pTlLrqkGJE-7Udaj1CMdQI"/>
+<div>
+<p class="font-bold text-gray-900 text-sm">李小華 Crystal</p>
+<p class="text-xs text-gray-500">0922-445-566</p>
+</div>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-gray-100 text-gray-600">
+                                        Basic
+                                    </span>
+</td>
+<td class="p-4 text-sm text-gray-600">台北站前店</td>
+<td class="p-4 text-sm text-gray-600">2023-11-15 16:45</td>
+<td class="p-4 text-sm font-bold text-gray-900 text-right">NT$ 0</td>
+<td class="p-4 text-center">
+<div class="flex items-center justify-center gap-3">
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="p-4 border-t border-gray-100 flex items-center justify-between bg-white">
+<div class="flex items-center gap-4 text-sm text-gray-500">
+<div class="flex items-center gap-2">
+<span>顯示</span>
+<select class="bg-gray-50 border border-gray-200 rounded px-2 py-1 text-xs outline-none focus:border-primary">
+<option>20</option>
+<option>50</option>
+<option>100</option>
+</select>
+<span>筆</span>
+</div>
+<span>第 1-20 筆 共 358 筆</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 text-gray-400 hover:text-primary disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-lg" data-icon="keyboard_arrow_left">keyboard_arrow_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white text-sm font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-600 hover:bg-gray-50 text-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-600 hover:bg-gray-50 text-sm">3</button>
+<span class="px-2 text-gray-400 text-xs">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-600 hover:bg-gray-50 text-sm">18</button>
+<button class="p-2 text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="keyboard_arrow_right">keyboard_arrow_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dashboard Stats Summary (Optional for better UI) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">本月新會員</p>
+<div class="flex items-end gap-2">
+<h3 class="text-2xl font-black text-gray-900">42</h3>
+<span class="text-xs text-green-500 font-bold flex items-center mb-1">
+<span class="material-symbols-outlined text-xs" data-icon="arrow_upward">arrow_upward</span> 12%
+                        </span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">活躍會員數</p>
+<div class="flex items-end gap-2">
+<h3 class="text-2xl font-black text-gray-900">215</h3>
+<span class="text-xs text-gray-400 font-medium mb-1">/ 358</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">儲值總額</p>
+<div class="flex items-end gap-2">
+<h3 class="text-2xl font-black text-[#c84c8f]">1.2M</h3>
+<span class="text-xs text-gray-400 font-medium mb-1">TWD</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">平均客單價</p>
+<div class="flex items-end gap-2">
+<h3 class="text-2xl font-black text-gray-900">3,450</h3>
+<span class="text-xs text-primary font-bold mb-1">VIP</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

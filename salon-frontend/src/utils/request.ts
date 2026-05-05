@@ -44,24 +44,35 @@ function addRefreshSubscriber(callback: (token: string) => void): void {
 
 /**
  * 從 localStorage 取得 Token
+ * 注意：Token 是經由 authStore.saveToStorage 使用 JSON.stringify 存儲的，
+ * 因此需要使用 JSON.parse 解析，否則會得到帶引號的原始字符串。
  */
 function getToken(): string | null {
   try {
-    return localStorage.getItem(STORAGE_KEYS.TOKEN)
+    const raw = localStorage.getItem(STORAGE_KEYS.TOKEN)
+    if (raw) {
+      return JSON.parse(raw) as string
+    }
   } catch {
-    return null
+    // JSON 解析失敗時忽略
   }
+  return null
 }
 
 /**
  * 從 localStorage 取得 Refresh Token
+ * 注意：Refresh Token 同樣經由 JSON.stringify 存儲，需要 JSON.parse 解析。
  */
 function getRefreshToken(): string | null {
   try {
-    return localStorage.getItem(STORAGE_KEYS.REFRESH_TOKEN)
+    const raw = localStorage.getItem(STORAGE_KEYS.REFRESH_TOKEN)
+    if (raw) {
+      return JSON.parse(raw) as string
+    }
   } catch {
-    return null
+    // JSON 解析失敗時忽略
   }
+  return null
 }
 
 /**
@@ -111,7 +122,7 @@ service.interceptors.request.use(
 // ==================== 響應攔截器 ====================
 
 service.interceptors.response.use(
-  (response: AxiosResponse<ApiResponse>) => {
+  (response: AxiosResponse<ApiResponse | Record<string, unknown>>) => {
     const res = response.data
 
     // 開發環境輸出響應日誌
@@ -119,13 +130,23 @@ service.interceptors.response.use(
       console.log(`[API 響應] ${response.config.url}`, res)
     }
 
-    // 後端統一回傳格式：{ code, message, data }
-    // code 為 200 表示成功
-    if (res.code !== 200) {
-      // 處理特定錯誤碼
-      handleBusinessError(res.code, res.message)
-      return Promise.reject(new Error(res.message || '請求失敗'))
+    // 後端響應格式有兩種情況：
+    // 1. 標準 ApiResponse 格式：{ code, message, data }
+    //     - code 為 200 表示成功
+    //     - code 不為 200 表示業務錯誤
+    // 2. 直接返回數據（如登錄接口返回 LoginResult）：{ accessToken, ... }
+    //     - 沒有 code 字段，直接視為成功
+
+    // 若 res 有 code 字段，則按標準 ApiResponse 格式處理
+    if (res !== null && res !== undefined && typeof res === 'object' && 'code' in res) {
+      const apiRes = res as ApiResponse
+      if (apiRes.code !== 200) {
+        // 處理特定錯誤碼
+        handleBusinessError(apiRes.code, apiRes.message)
+        return Promise.reject(new Error(apiRes.message || '請求失敗'))
+      }
     }
+    // 若沒有 code 字段（直接返回數據），則直接視為成功
 
     return response
   },
@@ -241,11 +262,19 @@ async function tryRefreshToken(): Promise<string | null> {
       { refreshToken: refreshTokenValue }
     )
 
-    const { accessToken: newToken, refreshToken: newRefreshToken } = response.data.data
+    const { accessToken: newToken, refreshToken: newRefreshToken, expiresIn: newExpiresIn } = response.data.data
 
-    // 更新 localStorage
-    localStorage.setItem(STORAGE_KEYS.TOKEN, newToken)
-    localStorage.setItem(STORAGE_KEYS.REFRESH_TOKEN, newRefreshToken)
+    // 同步更新 localStorage（使用 JSON.stringify 以與 authStore.saveToStorage 保持一致）
+    localStorage.setItem(STORAGE_KEYS.TOKEN, JSON.stringify(newToken))
+    localStorage.setItem(STORAGE_KEYS.REFRESH_TOKEN, JSON.stringify(newRefreshToken))
+    if (newExpiresIn) {
+      // 正規化 expiresIn（與 LoginView 中的邏輯保持一致）
+      const ONE_DAY_IN_SECONDS = 86400
+      const expiresIn = newExpiresIn < ONE_DAY_IN_SECONDS
+        ? Math.floor(Date.now() / 1000) + newExpiresIn
+        : newExpiresIn
+      localStorage.setItem('salon_expires_in', JSON.stringify(expiresIn))
+    }
 
     // 通知等待中的請求
     onTokenRefreshed(newToken)
@@ -263,12 +292,13 @@ async function tryRefreshToken(): Promise<string | null> {
  * 處理 Token 過期（強制登出）
  */
 function handleTokenExpired(): void {
-  // 清除認證資訊
+  // 清除所有認證相關的 localStorage 資料
   localStorage.removeItem(STORAGE_KEYS.TOKEN)
   localStorage.removeItem(STORAGE_KEYS.REFRESH_TOKEN)
   localStorage.removeItem('salon_user_info')
+  localStorage.removeItem('salon_expires_in')
 
-  // 跳轉至登入頁
+  // 跳轉至登入頁（使用 window.location.href 確保完全重新加載）
   window.location.href = '/login'
 }
 

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新增會員等級 - Wonder Sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-secondary-fixed": "#300247",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-error-container": "#93000a",
+                        "outline": "#88717a",
+                        "background": "#fff8f8",
+                        "outline-variant": "#dac0c9",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-bright": "#fff8f8",
+                        "primary-fixed": "#ffd8e7",
+                        "on-tertiary-fixed": "#042100",
+                        "on-surface": "#23191d",
+                        "inverse-primary": "#ffafd3",
+                        "surface-dim": "#e8d5db",
+                        "surface-container-high": "#f7e3e9",
+                        "on-primary-fixed-variant": "#861259",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#3d0025",
+                        "inverse-surface": "#392d32",
+                        "surface-tint": "#a52f72",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-background": "#23191d",
+                        "surface-container-highest": "#f1dee3",
+                        "surface": "#fff8f8",
+                        "surface-container": "#fde9ef",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-surface-variant": "#554149",
+                        "primary": "#a22c70",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#fff0f4",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-secondary-container": "#6c4082",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#328517",
+                        "secondary-container": "#e8b3fe",
+                        "primary-container": "#c14689",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-variant": "#f1dee3",
+                        "secondary": "#794c8f",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#ffecf1",
+                        "tertiary": "#1c6b00",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "8px",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "gutter": "20px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .form-input-focus:focus {
+            outline: none;
+            border-color: #a22c70;
+            box-shadow: 0 0 0 2px rgba(162, 44, 112, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-50 text-gray-600">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold text-[#c84c8f] font-['Plus_Jakarta_Sans']">Wonder Sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-50 text-gray-600 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-gray-200">
+<img alt="Manager Avatar" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a female salon manager with a friendly expression. She is wearing corporate attire in a modern, brightly lit office environment. The lighting is high-key and soft, aligning with a high-end beauty industry aesthetic. The overall mood is professional, polished, and trustworthy, with subtle warm tones in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyBloZ_u-A1GlPfmuImGokH-m9tB59O0NbCjlOse-LvN9PykPe4AG5v2kJkexiS71z-du0SXHq8O52b-67qWhDWEB8pw0pTkUfKeBvdF8OFfSHsCb3V8Wrc3LQENA75_nPJgapcUt1H7KohNT8avWYfKks4i_ytAF5LbmRxX1ZwLSov6kuKv9PwTSDdwmFNWXrmRGfoZhcEhwCk-pfoVmNt-FMrtK3AcVihYfX7HQlx8rJxIsfVSmQQDnpNNp7w420CdxY-U7X_Z8"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-4 md:pl-72 md:pr-8 max-w-screen-md mx-auto">
+<!-- Breadcrumbs & Help -->
+<div class="flex flex-col items-center mb-6">
+<nav class="flex items-center gap-2 mb-4">
+<span class="text-caption font-caption text-on-surface-variant">會員</span>
+<span class="material-symbols-outlined text-[16px] text-outline-variant" data-icon="chevron_right">chevron_right</span>
+<span class="text-caption font-caption text-on-surface">會員</span>
+</nav>
+<button class="flex flex-col items-center gap-1 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</div>
+<span class="text-caption font-caption text-on-surface-variant">說明</span>
+</button>
+</div>
+<!-- Form Area -->
+<div class="space-y-6">
+<!-- Basic Info Module -->
+<section class="bg-white rounded-lg border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.04)] p-md">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<h2 class="text-h2 font-h2 text-on-surface">基本資訊</h2>
+</div>
+<div class="space-y-5">
+<!-- Name Input -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface-variant">名稱</label>
+<input class="w-full h-12 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md font-body-md form-input-focus transition-all" placeholder="請輸入等級名稱" type="text"/>
+</div>
+<!-- Consumption Threshold -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface-variant">消費門檻</label>
+<div class="flex items-center gap-3">
+<span class="text-body-md font-body-md text-on-surface whitespace-nowrap">消費</span>
+<div class="relative flex-1">
+<input class="w-full h-12 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md font-body-md form-input-focus transition-all text-right pr-12" placeholder="0" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-body-md font-body-md text-on-surface-variant">元</span>
+</div>
+<span class="text-body-md font-body-md text-on-surface whitespace-nowrap">以上</span>
+</div>
+</div>
+<div class="h-px bg-surface-variant my-2"></div>
+<!-- Discount Toggle & Input -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-body-md font-body-md text-on-surface">無折扣</span>
+<button class="w-12 h-6 bg-gray-200 rounded-full relative transition-colors">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all"></div>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-body-md font-body-md text-on-surface">折扣</span>
+<div class="relative flex-1">
+<input class="w-full h-12 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md font-body-md form-input-focus transition-all text-right pr-12" placeholder="0.0" step="0.1" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-body-md font-body-md text-on-surface-variant">折</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-variant my-2"></div>
+<!-- Expiry Toggle & Dropdown -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-body-md font-body-md text-on-surface">無期限</span>
+<button class="w-12 h-6 bg-gray-200 rounded-full relative transition-colors">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all"></div>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-body-md font-body-md text-on-surface">期限</span>
+<div class="flex gap-2 flex-1">
+<input class="w-1/3 h-12 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md font-body-md form-input-focus transition-all" placeholder="0" type="number"/>
+<div class="relative flex-1">
+<select class="w-full h-12 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md font-body-md form-input-focus transition-all appearance-none">
+<option>期限...</option>
+<option>天</option>
+<option>月</option>
+<option>年</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Marketing Module -->
+<section class="bg-white rounded-lg border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.04)] p-md">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<h2 class="text-h2 font-h2 text-on-surface">集客預約會員等級相關設定</h2>
+</div>
+<div class="space-y-5">
+<!-- Description -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface-variant">描述</label>
+<div class="relative">
+<textarea class="w-full p-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md font-body-md form-input-focus transition-all resize-none" placeholder="請輸入等級描述細節" rows="4"></textarea>
+<span class="absolute bottom-3 right-4 text-caption font-caption text-outline-variant">0 / 512</span>
+</div>
+</div>
+<!-- Member Card Upload -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface-variant">會員卡背景圖</label>
+<div class="w-full h-48 border-2 border-dashed border-outline-variant rounded-lg bg-surface-container-lowest flex flex-col items-center justify-center p-6 text-center cursor-pointer hover:border-primary transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container mb-3">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<p class="text-body-md font-body-md font-semibold text-on-surface mb-1">點擊或拖入圖片上傳</p>
+<p class="text-caption font-caption text-on-surface-variant">建議尺寸：1035 x 633 px</p>
+</div>
+</div>
+<!-- Early Booking -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface-variant">提早預約天數</label>
+<div class="relative">
+<select class="w-full h-12 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md font-body-md form-input-focus transition-all appearance-none">
+<option>0</option>
+<option>7</option>
+<option>14</option>
+<option>30</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<div class="flex gap-2 p-3 bg-surface-container-low rounded-lg mt-1">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="info">info</span>
+<p class="text-caption font-caption text-on-surface-variant">設定該等級會員可提前預約的天數，設為0代表不限制。</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Action Shell) -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-end items-center px-8 py-4 gap-4 bg-white/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<button class="text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-lg px-8 py-3 text-sm font-bold active:scale-95 transition-transform hover:bg-gray-50">
+            取消
+        </button>
+<button class="bg-[#c84c8f] text-white rounded-lg px-8 py-3 text-sm font-bold active:scale-95 transition-transform hover:opacity-90 shadow-md">
+            儲存會員等級
+        </button>
+</footer>
+<!-- Hidden NavigationDrawer (For Desktop Reference/Scale) -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 hidden lg:block bg-white dark:bg-gray-900 border-r border-gray-100 dark:border-gray-800 p-6 pt-24">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-['Plus_Jakarta_Sans']">儀表板</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#c84c8f]/5 text-[#c84c8f] font-bold rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-['Plus_Jakarta_Sans']">會員管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm font-['Plus_Jakarta_Sans']">預約管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="content_cut">content_cut</span>
+<span class="text-sm font-['Plus_Jakarta_Sans']">服務項目</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-['Plus_Jakarta_Sans']">系統設定</span>
+</a>
+</div>
+</aside>
+</body></html>

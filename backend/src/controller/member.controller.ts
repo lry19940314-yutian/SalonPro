@@ -23,7 +23,7 @@ import { LockService } from '../redis/lock.service';
 import { CacheGuardService } from '../redis/guard.service';
 import { CacheKeyPrefix, MemberCacheKey, LockKey } from '../redis/types';
 
-@Controller('/api/members', {
+@Controller('/members', {
   tagName: '會員',
   description: '會員的 CRUD 接口',
 })

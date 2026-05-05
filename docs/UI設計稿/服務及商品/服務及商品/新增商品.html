@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新增商品及耗材 - Wonder sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#88717a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-container": "#6c4082",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary-container": "#e8b3fe",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-background": "#23191d",
+                        "primary": "#a22c70",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-tertiary-fixed": "#042100",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-container-low": "#fff0f4",
+                        "outline-variant": "#dac0c9",
+                        "primary-fixed-dim": "#ffafd3",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-secondary-fixed": "#300247",
+                        "surface": "#fff8f8",
+                        "tertiary-container": "#328517",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-container-high": "#f7e3e9",
+                        "tertiary": "#1c6b00",
+                        "surface-container": "#fde9ef",
+                        "surface-variant": "#f1dee3",
+                        "primary-container": "#c14689",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-surface": "#23191d",
+                        "on-primary": "#ffffff",
+                        "background": "#fff8f8",
+                        "primary-fixed": "#ffd8e7",
+                        "on-primary-fixed-variant": "#861259",
+                        "secondary": "#794c8f",
+                        "surface-tint": "#a52f72",
+                        "inverse-primary": "#ffafd3",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#392d32",
+                        "secondary-fixed": "#f6d9ff",
+                        "surface-container-highest": "#f1dee3",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-surface-variant": "#554149",
+                        "surface-bright": "#fff8f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "container-padding": "24px",
+                        "lg": "24px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .sidebar-item-active {
+            background-color: rgba(200, 76, 143, 0.05);
+            color: #c84c8f;
+            border-right: 4px solid #c84c8f;
+        }
+        .anchor-active {
+            color: #c84c8f;
+            font-weight: 600;
+            border-left: 2px solid #c84c8f;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-[#fff8f8] text-[#23191d] font-body-md min-h-screen flex">
+<!-- SideNavBar (Shared Component Identity) -->
+<aside class="flex flex-col h-screen sticky top-0 h-full w-64 border-r border-slate-200 bg-white dark:bg-slate-900 z-50">
+<div class="px-6 py-8 flex flex-col gap-1">
+<h1 class="text-[#c84c8f] font-bold text-xl font-['Plus_Jakarta_Sans']">Wonder sky</h1>
+<p class="text-slate-500 text-xs tracking-widest">國際美妍館</p>
+</div>
+<nav class="flex-1 overflow-y-auto px-2 space-y-1 custom-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-[#c84c8f]/5 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm">資訊中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-[#c84c8f]/5 transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-medium text-sm">財務中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-[#c84c8f]/5 transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-medium text-sm">記帳</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-[#c84c8f]/5 transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-medium text-sm">預約</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-[#c84c8f]/5 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium text-sm">會員</span>
+</a>
+<div class="pt-2">
+<a class="flex items-center gap-3 px-4 py-3 sidebar-item-active" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-medium text-sm">服務及商品</span>
+</a>
+<!-- 二級菜單 -->
+<div class="ml-9 mt-1 space-y-1">
+<a class="block px-4 py-2 text-sm text-[#c84c8f] font-semibold bg-[#c84c8f]/5 rounded-md" href="#">服務及商品</a>
+<a class="block px-4 py-2 text-sm text-slate-500 hover:text-[#c84c8f]" href="#">服務類別</a>
+<a class="block px-4 py-2 text-sm text-slate-500 hover:text-[#c84c8f]" href="#">商品類別</a>
+</div>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-[#c84c8f]/5 transition-all" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-medium text-sm">票券管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-[#c84c8f]/5 transition-all" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-medium text-sm">門店管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-[#c84c8f]/5 transition-all" href="#">
+<span class="material-symbols-outlined">corporate_fare</span>
+<span class="font-medium text-sm">組織架構</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-100 mt-auto">
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 cursor-pointer transition-colors">
+<div class="w-10 h-10 rounded-full bg-[#c84c8f]/20 flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a female manager in a modern salon setting. She is wearing a soft pastel blouse and smiling warmly. The lighting is bright and high-key, reflecting a professional yet welcoming beauty clinic atmosphere. The background shows blurred high-end skincare products on a shelf, following a clean, light-mode corporate aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-bold text-slate-800 truncate">陳店長</p>
+<p class="text-[10px] text-slate-400 truncate">總部管理者</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 bg-[#fff8f8] relative">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-8 h-16 w-full bg-white border-b border-slate-200 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<nav class="flex text-sm text-slate-400 items-center">
+<span class="hover:text-slate-600 cursor-pointer">服務及商品</span>
+<span class="material-symbols-outlined text-xs mx-2">chevron_right</span>
+<span class="text-slate-800 font-semibold">新增商品及耗材</span>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-[#c84c8f]">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</div>
+<button class="bg-[#c84c8f] text-white px-5 py-2 rounded-lg font-medium text-sm flex items-center gap-2 hover:bg-[#a22c70] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                    快速開單
+                </button>
+</div>
+</header>
+<div class="flex flex-1 p-8 gap-8">
+<!-- Form Scrollable Area -->
+<div class="flex-1 max-w-4xl space-y-8">
+<!-- 基本資訊 -->
+<section class="form-card" id="basic-info">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+<span class="w-1.5 h-6 bg-[#c84c8f] rounded-full"></span>
+                            基本資訊
+                        </h3>
+<div class="flex items-center gap-3">
+<span class="text-sm text-slate-500">上架狀態</span>
+<button class="w-12 h-6 bg-[#c84c8f] rounded-full relative p-1 transition-colors">
+<div class="w-4 h-4 bg-white rounded-full ml-auto"></div>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="col-span-1">
+<label class="block text-sm font-semibold text-slate-700 mb-2">商品序號</label>
+<input class="w-full bg-slate-50 border-slate-200 rounded-lg text-sm px-4 py-3 italic" disabled="" placeholder="系統自動生成" type="text"/>
+</div>
+<div class="col-span-1">
+<label class="block text-sm font-semibold text-slate-700 mb-2">商品售價 (TWD)</label>
+<div class="relative">
+<input class="w-full border-slate-200 focus:border-[#c84c8f] focus:ring-1 focus:ring-[#c84c8f] rounded-lg text-sm px-4 py-3" placeholder="0.00" type="number"/>
+<span class="absolute right-4 top-3.5 text-slate-400 text-xs">NT$</span>
+</div>
+</div>
+<div class="col-span-2">
+<label class="block text-sm font-semibold text-slate-700 mb-2">商品名稱 <span class="text-red-500">*</span></label>
+<input class="w-full border-slate-200 focus:border-[#c84c8f] focus:ring-1 focus:ring-[#c84c8f] rounded-lg text-sm px-4 py-3" placeholder="例如：緊緻活膚胜肽精華 50ml" type="text"/>
+</div>
+<div class="col-span-2">
+<label class="block text-sm font-semibold text-slate-700 mb-2">商品圖片</label>
+<div class="border-2 border-dashed border-slate-200 rounded-xl p-8 flex flex-col items-center justify-center bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-slate-300 mb-2">add_photo_alternate</span>
+<p class="text-sm text-slate-500">點擊或拖入圖片進行上傳</p>
+<p class="text-[10px] text-slate-400 mt-1">建議尺寸 800x800 px, 支援 JPG, PNG 格式</p>
+</div>
+</div>
+<div class="col-span-2">
+<label class="block text-sm font-semibold text-slate-700 mb-2">商品介紹</label>
+<div class="border border-slate-200 rounded-lg overflow-hidden">
+<div class="bg-slate-50 border-b border-slate-200 p-2 flex gap-2">
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-sm">image</span></button>
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-sm">link</span></button>
+</div>
+<textarea class="w-full border-none focus:ring-0 text-sm p-4 min-h-[120px]" placeholder="請輸入詳細的商品說明與成分介紹..." rows="4"></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- 銷售資訊 -->
+<section class="form-card" id="sales-info">
+<h3 class="text-lg font-bold text-slate-800 flex items-center gap-2 mb-6">
+<span class="w-1.5 h-6 bg-[#c84c8f] rounded-full"></span>
+                        銷售資訊
+                    </h3>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-2">販售成本</label>
+<input class="w-full border-slate-200 rounded-lg text-sm px-4 py-3" placeholder="0" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-2">進貨單價</label>
+<input class="w-full border-slate-200 rounded-lg text-sm px-4 py-3" placeholder="0" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-2">預設折扣</label>
+<div class="flex">
+<input class="w-full border-slate-200 rounded-l-lg text-sm px-4 py-3" placeholder="0.0" type="number"/>
+<select class="bg-slate-50 border-slate-200 border-l-0 rounded-r-lg text-xs font-semibold px-2 focus:ring-0">
+<option>折</option>
+<option>% OFF</option>
+<option>TWD</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-2">員工自購/領料價</label>
+<input class="w-full border-slate-200 rounded-lg text-sm px-4 py-3" placeholder="0" type="number"/>
+</div>
+</div>
+</section>
+<!-- 商品資訊 -->
+<section class="form-card" id="product-details">
+<h3 class="text-lg font-bold text-slate-800 flex items-center gap-2 mb-6">
+<span class="w-1.5 h-6 bg-[#c84c8f] rounded-full"></span>
+                        商品資訊
+                    </h3>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-1">
+                                品牌名稱
+                                <span class="material-symbols-outlined text-xs text-slate-400 cursor-help" title="輸入自定義品牌或選擇現有品牌">info</span>
+</label>
+<input class="w-full border-slate-200 rounded-lg text-sm px-4 py-3" placeholder="請輸入品牌名稱" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-2">規格/容量</label>
+<input class="w-full border-slate-200 rounded-lg text-sm px-4 py-3" placeholder="例如：50ml / 支" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-2">商品條碼</label>
+<div class="relative">
+<input class="w-full border-slate-200 rounded-lg text-sm px-4 py-3" placeholder="掃描或手動輸入" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-3 text-slate-400">barcode_scanner</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-2">耗材分類</label>
+<select class="w-full border-slate-200 rounded-lg text-sm px-4 py-3">
+<option>販售商品</option>
+<option>美容耗材</option>
+<option>店用贈品</option>
+</select>
+</div>
+</div>
+</section>
+<!-- 門店及類別 -->
+<section class="form-card" id="store-category">
+<h3 class="text-lg font-bold text-slate-800 flex items-center gap-2 mb-6">
+<span class="w-1.5 h-6 bg-[#c84c8f] rounded-full"></span>
+                        門店及類別
+                    </h3>
+<div class="space-y-6">
+<div>
+<div class="flex items-center justify-between mb-4">
+<label class="text-sm font-semibold text-slate-700">適用門店</label>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500">全門店套用</span>
+<button class="w-10 h-5 bg-slate-200 rounded-full relative p-0.5 transition-colors">
+<div class="w-4 h-4 bg-white rounded-full"></div>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-[#c84c8f]/10 text-[#c84c8f] border border-[#c84c8f]/20 rounded-full text-xs font-semibold cursor-pointer">台北忠孝總店</span>
+<span class="px-4 py-2 bg-slate-50 text-slate-500 border border-slate-100 rounded-full text-xs font-semibold cursor-pointer hover:bg-slate-100">台中公益店</span>
+<span class="px-4 py-2 bg-slate-50 text-slate-500 border border-slate-100 rounded-full text-xs font-semibold cursor-pointer hover:bg-slate-100">高雄巨蛋店</span>
+<button class="px-4 py-2 bg-white border border-dashed border-slate-300 text-slate-400 rounded-full text-xs font-semibold hover:border-[#c84c8f] hover:text-[#c84c8f] transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">add</span> 選擇更多門店
+                                </button>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-4">隸屬分類</label>
+<div class="grid grid-cols-4 gap-3">
+<div class="p-3 border border-[#c84c8f] bg-[#c84c8f]/5 rounded-xl text-center cursor-pointer transition-all">
+<span class="material-symbols-outlined text-[#c84c8f] block mb-1">face_retouching_natural</span>
+<span class="text-xs font-bold text-[#c84c8f]">臉部保養</span>
+</div>
+<div class="p-3 border border-slate-200 bg-white rounded-xl text-center cursor-pointer hover:border-slate-300 transition-all">
+<span class="material-symbols-outlined text-slate-400 block mb-1">spa</span>
+<span class="text-xs font-medium text-slate-600">身體護理</span>
+</div>
+<div class="p-3 border border-slate-200 bg-white rounded-xl text-center cursor-pointer hover:border-slate-300 transition-all">
+<span class="material-symbols-outlined text-slate-400 block mb-1">brush</span>
+<span class="text-xs font-medium text-slate-600">彩妝系列</span>
+</div>
+<div class="p-3 border border-slate-200 bg-white rounded-xl text-center cursor-pointer hover:border-slate-300 transition-all">
+<span class="material-symbols-outlined text-slate-400 block mb-1">category</span>
+<span class="text-xs font-medium text-slate-600">美甲材料</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 庫存/安全庫存 -->
+<section class="form-card" id="inventory-info">
+<h3 class="text-lg font-bold text-slate-800 flex items-center gap-2 mb-2">
+<span class="w-1.5 h-6 bg-[#c84c8f] rounded-full"></span>
+                        庫存/安全庫存
+                    </h3>
+<p class="text-xs text-red-500 mb-6">* 低於安全庫存量時，系統儀表板將自動顯示預警通知。</p>
+<div class="overflow-x-auto">
+<table class="w-full text-sm">
+<thead>
+<tr class="bg-slate-50 text-slate-600 border-b border-slate-100">
+<th class="text-left py-3 px-4 font-semibold">門店名稱</th>
+<th class="text-left py-3 px-4 font-semibold">當前庫存</th>
+<th class="text-left py-3 px-4 font-semibold">安全庫存量</th>
+<th class="text-left py-3 px-4 font-semibold">庫存單位</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr>
+<td class="py-4 px-4 font-medium">台北忠孝總店</td>
+<td class="py-4 px-4"><input class="w-24 border-slate-200 rounded-lg text-sm px-3 py-1.5" type="number" value="0"/></td>
+<td class="py-4 px-4"><input class="w-24 border-slate-200 rounded-lg text-sm px-3 py-1.5 border-red-200 bg-red-50" type="number" value="5"/></td>
+<td class="py-4 px-4">
+<select class="w-24 border-slate-200 rounded-lg text-sm px-3 py-1.5">
+<option>瓶</option>
+<option>盒</option>
+<option>支</option>
+</select>
+</td>
+</tr>
+<tr>
+<td class="py-4 px-4 font-medium">台中公益店</td>
+<td class="py-4 px-4"><input class="w-24 border-slate-200 rounded-lg text-sm px-3 py-1.5" type="number" value="0"/></td>
+<td class="py-4 px-4"><input class="w-24 border-slate-200 rounded-lg text-sm px-3 py-1.5" type="number" value="5"/></td>
+<td class="py-4 px-4 text-slate-400">連動單位</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- 業績與抽成 -->
+<section class="form-card" id="commission-info">
+<h3 class="text-lg font-bold text-slate-800 flex items-center gap-2 mb-6">
+<span class="w-1.5 h-6 bg-[#c84c8f] rounded-full"></span>
+                        業績與抽成
+                    </h3>
+<div class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-2">抽成計算模板</label>
+<select class="w-full border-slate-200 rounded-lg text-sm px-4 py-3">
+<option>標準商品抽成模板 (5%)</option>
+<option>進階保養品抽成 (8%)</option>
+<option>自定義...</option>
+</select>
+</div>
+<div class="flex items-center justify-between mt-8 p-3 bg-slate-50 rounded-lg">
+<span class="text-sm font-medium text-slate-700">多員工業績/抽成均分</span>
+<button class="w-10 h-5 bg-[#c84c8f] rounded-full relative p-0.5 transition-colors">
+<div class="w-4 h-4 bg-white rounded-full ml-auto"></div>
+</button>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-4">職位專屬提成設定</label>
+<div class="space-y-3">
+<div class="flex items-center gap-4 bg-white border border-slate-100 p-4 rounded-xl">
+<div class="w-10 h-10 bg-surface-container-low rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">face_2</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">資深美容師</p>
+<p class="text-[11px] text-slate-400">固定金額抽成</p>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-24 border-slate-200 rounded-lg text-sm px-3 py-2 text-right" placeholder="50" type="number"/>
+<span class="text-xs font-semibold">TWD / 件</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white border border-slate-100 p-4 rounded-xl">
+<div class="w-10 h-10 bg-surface-container-low rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person_3</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">實習美容師</p>
+<p class="text-[11px] text-slate-400">比例抽成</p>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-24 border-slate-200 rounded-lg text-sm px-3 py-2 text-right" placeholder="2" type="number"/>
+<span class="text-xs font-semibold">% / 件</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Padding for fixed footer -->
+<div class="h-24"></div>
+</div>
+<!-- Vertical Anchor Navigation -->
+<aside class="hidden lg:block w-48 sticky top-24 self-start">
+<div class="border-l border-slate-200 pl-4 space-y-4">
+<p class="text-[10px] font-bold text-slate-400 tracking-widest mb-2">快速索引</p>
+<a class="block text-sm text-[#c84c8f] font-bold border-l-2 border-[#c84c8f] -ml-[17px] pl-4 py-1" href="#basic-info">基本資訊</a>
+<a class="block text-sm text-slate-500 hover:text-[#c84c8f] transition-colors py-1" href="#sales-info">銷售資訊</a>
+<a class="block text-sm text-slate-500 hover:text-[#c84c8f] transition-colors py-1" href="#product-details">商品資訊</a>
+<a class="block text-sm text-slate-500 hover:text-[#c84c8f] transition-colors py-1" href="#store-category">門店及類別</a>
+<a class="block text-sm text-slate-500 hover:text-[#c84c8f] transition-colors py-1" href="#inventory-info">庫存/安全庫存</a>
+<a class="block text-sm text-slate-500 hover:text-[#c84c8f] transition-colors py-1" href="#commission-info">業績與抽成</a>
+</div>
+<div class="mt-12 bg-[#c84c8f]/5 rounded-xl p-4">
+<div class="flex items-center gap-2 text-[#c84c8f] mb-2">
+<span class="material-symbols-outlined text-sm">tips_and_updates</span>
+<span class="text-xs font-bold">小提示</span>
+</div>
+<p class="text-[11px] text-slate-500 leading-relaxed">
+                        完成基本資訊後，系統將自動同步至所有勾選門店。庫存變動將於儲存後立即生效。
+                    </p>
+</div>
+</aside>
+</div>
+<!-- Footer Action Bar -->
+<footer class="fixed bottom-0 right-0 left-64 bg-white border-t border-slate-200 px-8 py-4 flex justify-end gap-4 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.02)]">
+<button class="px-8 py-2.5 rounded-lg text-slate-600 font-semibold border border-slate-200 hover:bg-slate-50 active:scale-95 transition-all text-sm">取消</button>
+<button class="px-12 py-2.5 rounded-lg bg-[#c84c8f] text-white font-bold hover:bg-[#a22c70] shadow-md shadow-[#c84c8f]/20 active:scale-95 transition-all text-sm">儲存商品</button>
+</footer>
+</main>
+<!-- Overlay Decoration / Background Image integration -->
+<div class="fixed top-0 right-0 -z-10 opacity-[0.03] pointer-events-none">
+<img alt="Background Decoration" class="w-screen h-screen object-cover" data-alt="A delicate and abstract background pattern featuring soft, fluid gradients in rose pink and ethereal lavender. The aesthetic is extremely high-end and minimalist, resembling the subtle textures of premium skincare cream or the soft focus of a high-fashion beauty photoshoot. The lighting is diffused and luminous, creating a sense of serene professional luxury." src="https://lh3.googleusercontent.com/aida/ADBb0uhGI3dPgfcHAm-Y5FAjbQYcZ8iYbwbu9u2O7XFo8akZYeBoOIUmCi-bipkZU3uFpYpJqzOvx7rm4oIcf4r1QiNWKpEARyksY3FyYTCx4FNoLCRU2BDpcy9kdYVJ854lmjZt8ktHMKR2-jnuHF7I1nV8CU_R67FVCBY9a8S0asv_GebUwe7LR6NNwq3vqPq8dz8lIYm7V_9bvPG-XvVrymeHTeEbs1DfYFUBhUt1O-iS6VUBIDxq4qhIJmL2M7NnA3uoN3sgg9dDbw"/>
+</div>
+</body></html>

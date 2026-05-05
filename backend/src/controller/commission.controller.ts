@@ -20,7 +20,7 @@ import { CacheKeyPrefix, PerformanceCacheKey } from '../redis/types';
 
 const COMMISSION_CACHE_PREFIX = 'comm:';
 
-@Controller('/api/commissions', {
+@Controller('/commissions', {
   tagName: '佣金',
   description: '佣金記錄查詢與統計接口',
 })

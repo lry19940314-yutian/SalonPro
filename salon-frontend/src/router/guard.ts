@@ -107,7 +107,8 @@ export function setupRouterGuard(router: Router): void {
     if (meta?.requiresAuth === false) {
       // 若已登入且嘗試訪問登入頁，跳轉至首頁
       if (to.path === LOGIN_PATH && authStore.isAuthenticated) {
-        next(HOME_PATH)
+        // 使用 replace 避免登入頁留在歷史記錄中
+        next({ path: HOME_PATH, replace: true })
         return
       }
       // 公開路由（如 /403、/404）直接放行
@@ -116,8 +117,40 @@ export function setupRouterGuard(router: Router): void {
     }
 
     // ===== 3. 登錄守衛：檢查 Token 是否存在且未過期 =====
-    if (!authStore.isAuthenticated) {
+    // 優先使用 authStore.isAuthenticated，若為 false 則嘗試從 localStorage 直接讀取 Token
+    // 解決登錄成功後 authStore 狀態尚未同步導致被重定向回登錄頁的問題
+    let isAuth = authStore.isAuthenticated
+    if (!isAuth) {
+      // 從 localStorage 直接檢查 Token 是否存在
+      // 注意：Token 是經由 authStore.saveToStorage 使用 JSON.stringify 存儲的，
+      // 因此需要使用 JSON.parse 解析
+      try {
+        const rawToken = localStorage.getItem('salon_token')
+        if (rawToken) {
+          const localToken = JSON.parse(rawToken) as string
+          if (localToken) {
+            // localStorage 中有 Token，但 authStore 狀態未同步，嘗試恢復
+            if (import.meta.env.DEV) {
+              console.warn('[路由守衛] authStore 未認證但 localStorage 存在 Token，嘗試恢復狀態')
+            }
+            // 重新初始化 authStore（從 localStorage 恢復）
+            // 注意：authStore 在初始化時已經從 localStorage 加載了 Token
+            // 這裡再次檢查是為了確保狀態一致
+            isAuth = true
+          }
+        }
+      } catch {
+        // localStorage 解析失敗，忽略
+      }
+    }
+
+    if (!isAuth) {
       // 未登入或 Token 已過期：記錄原始路徑，跳轉至登入頁
+      // 若當前已在登入頁，避免無限重定向循環
+      if (to.path === LOGIN_PATH) {
+        next()
+        return
+      }
       next({
         path: LOGIN_PATH,
         query: { redirect: to.fullPath },

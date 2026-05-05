@@ -24,7 +24,7 @@ import { LockKey } from '../redis/types';
 
 const SETTLEMENT_CACHE_PREFIX = 'settle:';
 
-@Controller('/api/commission-settlements', {
+@Controller('/commission-settlements', {
   tagName: '佣金結算',
   description: '佣金結算管理接口',
 })

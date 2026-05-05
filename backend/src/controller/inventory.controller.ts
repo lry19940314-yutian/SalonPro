@@ -24,7 +24,7 @@ import { managerOnly } from '../middleware/role.middleware';
 
 const INVENTORY_CACHE_PREFIX = 'inv:';
 
-@Controller('/api/inventories', {
+@Controller('/inventories', {
   tagName: '庫存',
   description: '庫存管理接口',
 })

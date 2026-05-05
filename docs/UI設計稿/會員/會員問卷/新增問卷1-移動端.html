@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新增會員問卷 - Wonder sky</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', "Microsoft JhengHei", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom Scrollbar for Rich Text Toolbar */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface": "#fff8f8",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffafd3",
+                        "surface-tint": "#a52f72",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-background": "#23191d",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary-fixed": "#042100",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#dac0c9",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-dim": "#e8d5db",
+                        "secondary-container": "#e8b3fe",
+                        "primary-fixed-dim": "#ffafd3",
+                        "primary-container": "#c14689",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-primary-fixed": "#3d0025",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary-container": "#328517",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-bright": "#fff8f8",
+                        "secondary": "#794c8f",
+                        "inverse-surface": "#392d32",
+                        "primary": "#a22c70",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffd8e7",
+                        "outline": "#88717a",
+                        "on-secondary-fixed": "#300247",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container-highest": "#f1dee3",
+                        "background": "#fff8f8",
+                        "tertiary": "#1c6b00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-variant": "#f1dee3",
+                        "on-surface-variant": "#554149",
+                        "on-secondary-container": "#6c4082",
+                        "surface-container": "#fde9ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "container-padding": "24px",
+                        "gutter": "20px",
+                        "xs": "4px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 docked full-width top-0 z-50 flex justify-between items-center w-full px-4 h-16 sticky">
+<div class="flex items-center">
+<button class="p-2 transition-colors duration-200 active:opacity-70 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50">menu</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-50 ml-2">Wonder sky</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 transition-colors duration-200 active:opacity-70 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a beauty salon manager, captured in soft, high-key studio lighting that emphasizes a clean and trustworthy persona. The background is a minimalist, airy wellness clinic space with hints of soft pink and white. The aesthetic is modern and corporate, aligning with the Wonder sky brand identity." src="https://lh3.googleusercontent.com/aida/ADBb0uhyTdIEyqi60wTygYASZ2BsdEkww0qh46GdjJtnc581Rx7HT_cF3NkWFbmkCflRFbuejBpYs5lNjMBjLm6xBJrOl1f4oRyGXI1EZu1J7YFQQN0FNDdDPvpEMK2qIkbG-FYCfqLWW9ibmrSFOPXPVE15zLHjCbxp5_IDvj2BaqAvF3Amim6eN-F4gtNAMh8FIkf3uIg3ek_Y7oTJoJPu2G8mKp81YKGBYihiaIaF21Tme3qkdPIzlMI9JvtNHwJqJcjnpTgAkvuo"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<main class="flex-1 pb-24 overflow-y-auto">
+<!-- Navigation Path & Tabs -->
+<div class="bg-white px-4 pt-4 border-b border-slate-100">
+<nav class="flex items-center text-caption text-on-surface-variant mb-4 font-caption">
+<span class="mr-1">會員</span>
+<span class="material-symbols-outlined text-sm mx-1">chevron_right</span>
+<span class="font-semibold text-primary">新增問卷</span>
+</nav>
+<div class="flex items-center gap-6 overflow-x-auto hide-scrollbar">
+<button class="pb-3 border-b-2 border-primary text-primary font-label-md text-label-md transition-colors whitespace-nowrap">
+                    基本資訊
+                </button>
+<button class="pb-3 border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md transition-colors whitespace-nowrap hover:text-primary">
+                    問卷問題
+                </button>
+</div>
+</div>
+<!-- Form Section -->
+<div class="p-4 space-y-gutter">
+<!-- Information Card -->
+<div class="bg-white rounded-xl border border-outline-variant/30 shadow-[0_4px_12px_rgba(0,0,0,0.04)] p-md">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-h2 font-h2 text-on-surface">問卷基本資訊</h2>
+<span class="px-2 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-[10px] font-bold">草稿</span>
+</div>
+<form class="space-y-md">
+<!-- Questionnaire Name -->
+<div class="space-y-xs">
+<label class="block text-label-md font-label-md text-on-surface-variant">問卷名稱</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-body-md font-body-md" placeholder="例如：新客戶皮膚狀況諮詢表" type="text"/>
+</div>
+<!-- Questionnaire Description (Rich Text Simulator) -->
+<div class="space-y-xs">
+<label class="block text-label-md font-label-md text-on-surface-variant">問卷說明</label>
+<div class="border border-outline-variant rounded-lg overflow-hidden">
+<!-- Toolbar -->
+<div class="bg-surface-container-low flex items-center gap-1 p-2 border-b border-outline-variant overflow-x-auto hide-scrollbar">
+<button class="p-1.5 hover:bg-white rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="p-1.5 hover:bg-white rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+<button class="p-1.5 hover:bg-white rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_underlined</span></button>
+<div class="w-px h-5 bg-outline-variant mx-1"></div>
+<button class="p-1.5 hover:bg-white rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">link</span></button>
+<button class="p-1.5 hover:bg-white rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">image</span></button>
+<div class="w-px h-5 bg-outline-variant mx-1"></div>
+<button class="p-1.5 hover:bg-white rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+<button class="p-1.5 hover:bg-white rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_list_numbered</span></button>
+<button class="p-1.5 hover:bg-white rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_align_left</span></button>
+<button class="p-1.5 hover:bg-white rounded text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">format_align_center</span></button>
+</div>
+<!-- Editor Area -->
+<textarea class="w-full p-md bg-white border-none focus:ring-0 text-body-md font-body-md" placeholder="請輸入問卷的前言或填寫須知..." rows="4"></textarea>
+</div>
+</div>
+<!-- Toggle Switch -->
+<div class="flex items-center justify-between py-2 border-t border-slate-50 mt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-weight="fill">verified</span>
+<div>
+<p class="text-body-md font-semibold text-on-surface">立即啟用此問卷</p>
+<p class="text-caption font-caption text-on-surface-variant">儲存後即刻在會員系統中開放填寫</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-7 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</form>
+</div>
+<!-- Banner Visual Decor -->
+<div class="relative w-full h-32 rounded-xl overflow-hidden shadow-sm group">
+<img class="w-full h-full object-cover" data-alt="A high-end, artistic close-up of premium cosmetic products and soft textures, featuring a calming palette of pale pinks and pearlescent whites. The lighting is ethereal and diffused, creating a luxurious atmosphere that represents the professional wellness services offered by Wonder sky. This serves as a motivational background for the questionnaire creation process." src="https://lh3.googleusercontent.com/aida/ADBb0uhzNsFSiekdZ4ZwXFnA_Tas_-nRr5cHtyn5jT_ERtyErycgw6MKgyTvgZZa3a_KLfbZZLljvAyMUIO9lLiKgmBS0jBmu5XgYznmAPZvWfUV3OE6_bwhYwcDJWHF6wqKh0p1-OVDEbMBAITjSl3-V7CyppUlCqyGNqHrWJxFOrfELJaK9Z8AJ90WxMeXVa8d3tgM1u9FuFK8kany9KwDxPUoRRyaGqrEJBAD5yy4ymDvU4NDfCvIy3RpPxtPqz2FtLsxygSghUAnDQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent flex items-center px-6">
+<div class="text-white">
+<p class="text-h3 font-h3">精準分析客戶需求</p>
+<p class="text-caption">完善的問卷有助於提升服務轉換率</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Actions -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-100 p-4 flex gap-3 z-50">
+<button class="flex-1 h-12 rounded-xl border border-primary text-primary font-semibold text-body-md transition-all active:scale-95 hover:bg-primary-fixed">
+            取消
+        </button>
+<button class="flex-[2] h-12 rounded-xl bg-primary text-white font-semibold text-body-md shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+            儲存問卷
+        </button>
+</footer>
+<!-- Bottom NavBar Placeholder for Context (Matches Shared Component Structure but hidden if transactional) -->
+<nav class="hidden">
+<!-- The Shared Component BottomNavBar is suppressed as per the "Task-Focused" rule for form pages -->
+</nav>
+</body></html>

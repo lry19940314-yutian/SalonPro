@@ -19,7 +19,7 @@ import { CacheGuardService } from '../redis/guard.service';
 
 const INVENTORY_LOG_CACHE_PREFIX = 'inv_log:';
 
-@Controller('/api/inventory-logs', {
+@Controller('/inventory-logs', {
   tagName: '庫存變動日誌',
   description: '庫存變動記錄查詢接口',
 })

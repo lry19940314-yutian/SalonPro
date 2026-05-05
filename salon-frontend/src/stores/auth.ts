@@ -49,6 +49,7 @@ const STORAGE_KEYS = {
   TOKEN: 'salon_token',
   REFRESH_TOKEN: 'salon_refresh_token',
   USER_INFO: 'salon_user_info',
+  EXPIRES_IN: 'salon_expires_in',
 } as const
 
 /**
@@ -72,8 +73,8 @@ export const useAuthStore = defineStore('auth', () => {
     loadFromStorage<string>(STORAGE_KEYS.REFRESH_TOKEN)
   )
 
-  /** Token 過期時間戳（秒） */
-  const expiresIn = ref<number | null>(null)
+  /** Token 過期時間戳（秒）- 從 localStorage 恢復 */
+  const expiresIn = ref<number | null>(loadFromStorage<number>(STORAGE_KEYS.EXPIRES_IN))
 
   /** 使用者資訊 */
   const user = ref<UserInfo | null>(loadFromStorage<UserInfo>(STORAGE_KEYS.USER_INFO))
@@ -83,7 +84,7 @@ export const useAuthStore = defineStore('auth', () => {
   /** 是否已登入（Token 存在且未過期） */
   const isAuthenticated = computed<boolean>(() => {
     if (!token.value) return false
-    if (expiresIn.value) {
+    if (expiresIn.value !== null && expiresIn.value > 0) {
       const now = Math.floor(Date.now() / 1000)
       if (now >= expiresIn.value) return false
     }
@@ -132,6 +133,7 @@ export const useAuthStore = defineStore('auth', () => {
     // 同步到 localStorage
     saveToStorage(STORAGE_KEYS.TOKEN, authState.token)
     saveToStorage(STORAGE_KEYS.REFRESH_TOKEN, authState.refreshToken)
+    saveToStorage(STORAGE_KEYS.EXPIRES_IN, authState.expiresIn)
     saveToStorage(STORAGE_KEYS.USER_INFO, authState.user)
   }
 
@@ -166,6 +168,7 @@ export const useAuthStore = defineStore('auth', () => {
 
     saveToStorage(STORAGE_KEYS.TOKEN, newToken)
     saveToStorage(STORAGE_KEYS.REFRESH_TOKEN, newRefreshToken)
+    saveToStorage(STORAGE_KEYS.EXPIRES_IN, newExpiresIn)
   }
 
   /**
@@ -222,6 +225,7 @@ export const useAuthStore = defineStore('auth', () => {
       localStorage.removeItem(STORAGE_KEYS.TOKEN)
       localStorage.removeItem(STORAGE_KEYS.REFRESH_TOKEN)
       localStorage.removeItem(STORAGE_KEYS.USER_INFO)
+      localStorage.removeItem(STORAGE_KEYS.EXPIRES_IN)
     } catch {
       // 清除失敗時忽略
     }

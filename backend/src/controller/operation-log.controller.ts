@@ -22,7 +22,7 @@ import { CacheGuardService } from '../redis/guard.service';
 
 const OPERATION_LOG_CACHE_PREFIX = 'op_log:';
 
-@Controller('/api/operation-logs', {
+@Controller('/operation-logs', {
   tagName: '操作日誌',
   description: '操作日誌查詢接口',
 })

@@ -25,7 +25,7 @@ import {
   AppointmentCacheKey,
 } from '../redis/types';
 
-@Controller('/api/appointments', {
+@Controller('/appointments', {
   tagName: '預約',
   description: '預約管理接口',
 })

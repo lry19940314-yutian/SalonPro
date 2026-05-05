@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky 國際美妍館 - 分類管理</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#fffbff",
+                    "on-tertiary-fixed": "#042100",
+                    "inverse-primary": "#ffafd3",
+                    "secondary-fixed": "#f6d9ff",
+                    "tertiary-container": "#328517",
+                    "background": "#fff8f8",
+                    "on-background": "#23191d",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#f1dee3",
+                    "surface-container-low": "#fff0f4",
+                    "primary-fixed-dim": "#ffafd3",
+                    "surface-variant": "#f1dee3",
+                    "inverse-on-surface": "#ffecf1",
+                    "outline-variant": "#dac0c9",
+                    "error-container": "#ffdad6",
+                    "secondary": "#794c8f",
+                    "primary-fixed": "#ffd8e7",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#84db64",
+                    "surface-container": "#fde9ef",
+                    "on-primary-fixed-variant": "#861259",
+                    "inverse-surface": "#392d32",
+                    "on-secondary-container": "#6c4082",
+                    "tertiary-fixed": "#9ff87d",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#603475",
+                    "tertiary": "#1c6b00",
+                    "surface-bright": "#fff8f8",
+                    "on-tertiary-fixed-variant": "#145200",
+                    "surface-container-high": "#f7e3e9",
+                    "on-surface": "#23191d",
+                    "outline": "#88717a",
+                    "on-secondary-fixed": "#300247",
+                    "primary-container": "#c14689",
+                    "secondary-container": "#e8b3fe",
+                    "on-surface-variant": "#554149",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#f8ffee",
+                    "surface": "#fff8f8",
+                    "surface-dim": "#e8d5db",
+                    "primary": "#a22c70",
+                    "on-primary-fixed": "#3d0025",
+                    "secondary-fixed-dim": "#e8b3fe",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#a52f72"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "container-padding": "24px",
+                    "gutter": "20px",
+                    "unit": "4px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "label-md": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #fff8f8;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .active-item {
+            background-color: #f1dee3 !important;
+            border-left: 4px solid #a22c70;
+        }
+        .touch-target {
+            min-width: 44px;
+            min-height: 44px;
+        }
+    </style>
+</head>
+<body class="bg-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white border-b border-gray-100 shadow-sm shadow-gray-200/50 flex items-center justify-between px-6 h-16">
+<div class="flex items-center gap-4">
+<button class="touch-target flex items-center justify-center hover:bg-gray-50 transition-colors rounded-full text-gray-600">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold text-[#c84c8f] tracking-tight font-['Plus_Jakarta_Sans']">Wonder Sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="touch-target flex items-center justify-center hover:bg-gray-50 transition-colors rounded-full text-gray-600">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="touch-target w-10 h-10 rounded-full overflow-hidden border border-primary-fixed">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated salon manager in a high-end wellness center. The person is dressed in modern business attire, exuding confidence and approachability. The background is a soft-focus, minimalist beauty clinic interior with subtle pink and white accents, illuminated by gentle, diffused daylight. The overall mood is upscale and professional." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-24 px-4 max-w-md mx-auto">
+<!-- Breadcrumb & Description -->
+<section class="mb-6">
+<div class="flex items-center gap-1 text-on-surface-variant mb-1">
+<span class="font-label-md text-label-md">服務及商品</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<span class="font-label-md text-label-md text-primary">分類</span>
+<button class="ml-1 flex items-center text-outline">
+<span class="material-symbols-outlined text-[18px]" data-icon="help">help</span>
+</button>
+</div>
+<p class="font-caption text-caption text-outline">由此設定服務及商品的分類</p>
+</section>
+<!-- Action Bar -->
+<section class="flex items-center gap-2 mb-6">
+<button class="flex-1 h-11 bg-primary text-white rounded-lg flex items-center justify-center gap-2 font-label-md text-label-md shadow-md active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                新增
+            </button>
+<div class="flex items-center gap-2">
+<!-- Disabled States by default until an item is selected -->
+<button class="touch-target w-11 h-11 rounded-lg border border-gray-200 bg-gray-50 text-gray-400 flex items-center justify-center cursor-not-allowed">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="touch-target w-11 h-11 rounded-lg border border-gray-200 bg-gray-50 text-gray-400 flex items-center justify-center cursor-not-allowed">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+<button class="touch-target w-11 h-11 rounded-lg border border-gray-200 bg-white text-on-surface-variant flex items-center justify-center hover:bg-gray-50 active:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</section>
+<!-- Category List (Bento-like Card Items) -->
+<section class="space-y-3">
+<!-- Item 1 -->
+<div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between touch-target active:bg-surface-container-low transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="face">face</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">臉部課程</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<!-- Item 2 (Active/Selected State Example) -->
+<div class="active-item p-4 rounded-xl border border-primary-fixed shadow-sm flex items-center justify-between touch-target transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="self_care">self_care</span>
+</div>
+<span class="font-h3 text-h3 text-primary">頭療課程</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between touch-target active:bg-surface-container-low transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="accessibility_new">accessibility_new</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">身體課程</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<!-- Item 4 -->
+<div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between touch-target active:bg-surface-container-low transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">保養品銷售</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<!-- Item 5 -->
+<div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between touch-target active:bg-surface-container-low transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface">精油系列</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="drag_indicator">drag_indicator</span>
+</div>
+</section>
+<!-- Illustration Empty State / Decoration -->
+<section class="mt-12 opacity-40">
+<div class="relative h-40 rounded-2xl overflow-hidden grayscale">
+<img alt="Background decoration" class="w-full h-full object-cover" data-alt="A minimalist, top-down view of a modern aesthetic salon workstation. Various high-end skincare products in elegant packaging are neatly arranged on a clean, white marble surface. The lighting is soft and high-key, creating a serene and professional atmosphere that reflects the beauty industry. The color palette is composed of neutrals, soft grays, and a hint of dusty rose, matching the brand identity." src="https://lh3.googleusercontent.com/aida/ADBb0uhyTdIEyqi60wTygYASZ2BsdEkww0qh46GdjJtnc581Rx7HT_cF3NkWFbmkCflRFbuejBpYs5lNjMBjLm6xBJrOl1f4oRyGXI1EZu1J7YFQQN0FNDdDPvpEMK2qIkbG-FYCfqLWW9ibmrSFOPXPVE15zLHjCbxp5_IDvj2BaqAvF3Amim6eN-F4gtNAMh8FIkf3uIg3ek_Y7oTJoJPu2G8mKp81YKGBYihiaIaF21Tme3qkdPIzlMI9JvtNHwJqJcjnpTgAkvuo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Contextual) -->
+<nav class="fixed bottom-0 w-full bg-white border-t border-gray-100 flex justify-around items-center h-16 md:hidden z-50">
+<button class="flex flex-col items-center justify-center w-full h-full text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] mt-1">儀表板</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="text-[10px] mt-1">預約管理</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-primary">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="text-[10px] mt-1 font-bold">服務商品</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[10px] mt-1">顧客資料</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-[10px] mt-1">營收報表</span>
+</button>
+</nav>
+</body></html>

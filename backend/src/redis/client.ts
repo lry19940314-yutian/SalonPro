@@ -4,10 +4,9 @@
 // 功能：基於 ioredis 的連接池管理、客戶端實例封裝、健康檢查
 // ============================================================================
 
-import { Provide, Scope, ScopeEnum, Init, Destroy, Inject } from '@midwayjs/core';
+import { Provide, Scope, ScopeEnum, Init, Destroy } from '@midwayjs/core';
 import Redis from 'ioredis';
 import redisConfig from '../config/config.redis';
-import type { RedisConfig } from './types';
 
 /**
  * Redis 客戶端封裝類
@@ -22,14 +21,11 @@ export class RedisClient {
   private connectTime: Date | null = null;
   private commandCount = 0;
 
-  @Inject()
-  private config: RedisConfig;
-
   // -------- 初始化與銷毀 --------
 
   @Init()
   async init(): Promise<void> {
-    const cfg = this.config?.redis || redisConfig.redis;
+    const cfg = redisConfig.redis;
     const { host, port, password, db, maxRetriesPerRequest, retryStrategy,
             connectTimeout, commandTimeout, keepAlive, enableAutoPipelining,
             enableOfflineQueue, lazyConnect } = cfg;
@@ -130,10 +126,11 @@ export class RedisClient {
   // -------- 連接等待 --------
 
   private async waitForConnection(client: Redis, label: string): Promise<void> {
-    const timeoutMs = this.config?.redis?.connectTimeout || redisConfig.redis.connectTimeout || 10000;
-    return new Promise<void>((resolve, reject) => {
+    const timeoutMs = redisConfig.redis.connectTimeout || 10000;
+    return new Promise<void>((resolve) => {
       const timeout = setTimeout(() => {
-        reject(new Error(`[Redis] ${label} 連接超時`));
+        console.warn(`[Redis] ${label} 連接超時（${timeoutMs}ms），將以降級模式運行`);
+        resolve(); // 超時不拋錯，優雅降級
       }, timeoutMs);
 
       client.once('ready', () => {
@@ -143,7 +140,8 @@ export class RedisClient {
 
       client.once('error', (err: Error) => {
         clearTimeout(timeout);
-        reject(err);
+        console.warn(`[Redis] ${label} 連接錯誤: ${err.message}，將以降級模式運行`);
+        resolve(); // 錯誤不拋錯，優雅降級
       });
     });
   }
@@ -155,6 +153,13 @@ export class RedisClient {
    */
   getClient(): Redis {
     return this.client;
+  }
+
+  /**
+   * 檢查 Redis 是否已連接
+   */
+  isReady(): boolean {
+    return this.isConnected;
   }
 
   /**

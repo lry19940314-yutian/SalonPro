@@ -128,6 +128,11 @@ export class CacheGuardService {
     fetchFn: () => Promise<T | null>,
     ttl?: number,
   ): Promise<T | null> {
+    // 0. 檢查 Redis 是否可用，不可用時直接回源查詢 DB（優雅降級）
+    if (!this.redisClient.isReady()) {
+      return await fetchFn();
+    }
+
     // 1. 查緩存
     const cached = await this.cacheService.get<T>(cacheKey);
     if (cached !== null) {

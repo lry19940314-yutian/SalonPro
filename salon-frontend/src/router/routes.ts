@@ -134,6 +134,7 @@ const routes: AdaptiveRouteConfig[] = [
           keepAlive: true,
         },
         component: () => import('@/views/info-center/InfoCenterView.vue'),
+        mobileComponent: () => import('@/views/info-center/InformationIndex.vue'),
       },
       {
         path: 'info-center/member-analysis',

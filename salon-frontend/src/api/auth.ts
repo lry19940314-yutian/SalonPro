@@ -34,9 +34,16 @@ import type {
  *   password: 'password123',
  * })
  * ```
+ *
+ * @remarks
+ * 後端登錄接口返回標準 ApiResponse 格式：{ code, message, data: LoginResult }，
+ * 此函數會自動解開 data 層，返回 LoginResult 物件。
  */
-export function loginApi(params: LoginParams): Promise<ApiResponse<LoginResult>> {
-  return post<LoginResult>('/auth/login', params)
+export async function loginApi(params: LoginParams): Promise<LoginResult> {
+  const response = await post<LoginResult>('/auth/login', params)
+  // 後端返回標準 ApiResponse 格式：{ code, message, data: LoginResult }
+  // 需要解開 data 層，返回真正的 LoginResult
+  return response.data
 }
 
 /**

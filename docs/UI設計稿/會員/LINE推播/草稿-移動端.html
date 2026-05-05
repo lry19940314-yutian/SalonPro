@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>草稿 - Wonder sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#23191d",
+                    "secondary-fixed": "#f6d9ff",
+                    "outline": "#88717a",
+                    "tertiary-container": "#328517",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#fff0f4",
+                    "on-background": "#23191d",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#a22c70",
+                    "inverse-surface": "#392d32",
+                    "on-primary-container": "#fffbff",
+                    "surface-tint": "#a52f72",
+                    "outline-variant": "#dac0c9",
+                    "surface-variant": "#f1dee3",
+                    "surface-dim": "#e8d5db",
+                    "primary-fixed": "#ffd8e7",
+                    "surface-container-high": "#f7e3e9",
+                    "on-primary-fixed-variant": "#861259",
+                    "inverse-on-surface": "#ffecf1",
+                    "surface-container": "#fde9ef",
+                    "secondary-fixed-dim": "#e8b3fe",
+                    "on-tertiary-fixed-variant": "#145200",
+                    "on-tertiary-fixed": "#042100",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#e8b3fe",
+                    "tertiary-fixed": "#9ff87d",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#f8ffee",
+                    "background": "#fff8f8",
+                    "surface": "#fff8f8",
+                    "on-secondary-container": "#6c4082",
+                    "on-primary-fixed": "#3d0025",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#84db64",
+                    "tertiary": "#1c6b00",
+                    "secondary": "#794c8f",
+                    "on-surface-variant": "#554149",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#c14689",
+                    "on-secondary-fixed": "#300247",
+                    "surface-container-highest": "#f1dee3",
+                    "inverse-primary": "#ffafd3",
+                    "surface-bright": "#fff8f8",
+                    "primary-fixed-dim": "#ffafd3",
+                    "on-secondary-fixed-variant": "#603475"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "unit": "4px",
+                    "container-padding": "24px",
+                    "xl": "32px",
+                    "gutter": "20px"
+            },
+            "fontFamily": {
+                    "caption": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-gray-950 flex justify-between items-center w-full px-4 h-16 docked full-width top-0 border-b border-gray-100 dark:border-gray-800 flat no shadows sticky z-50">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-[#c84c8f] dark:text-[#d672a9] w-11 h-11 flex items-center justify-center hover:opacity-80 transition-opacity Active: scale-95 duration-150">
+                menu
+            </button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-semibold text-base text-gray-900 dark:text-gray-50">Wonder sky 國際美妍館</h1>
+</div>
+<button class="material-symbols-outlined text-[#c84c8f] dark:text-[#d672a9] w-11 h-11 flex items-center justify-center hover:opacity-80 transition-opacity Active: scale-95 duration-150">
+            notifications
+        </button>
+</header>
+<!-- Breadcrumb -->
+<nav class="px-4 py-3 bg-surface-container-lowest">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-caption">
+<span>會員</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">LINE推播</span>
+</div>
+</nav>
+<!-- Horizontal Tabs -->
+<div class="bg-white sticky top-16 z-40 flex items-center border-b border-surface-variant">
+<div class="flex-1 overflow-x-auto hide-scrollbar flex items-center">
+<div class="flex min-w-max px-4">
+<a class="h-12 flex items-center px-4 font-label-md text-body-md text-gray-500 hover:text-[#c84c8f] transition-colors" href="#">
+                    推播訊息
+                </a>
+<a class="h-12 flex items-center px-4 font-label-md text-body-md text-gray-500 hover:text-[#c84c8f] transition-colors" href="#">
+                    推播記錄
+                </a>
+<a class="h-12 flex items-center px-4 font-label-md text-body-md text-[#c84c8f] border-b-2 border-[#c84c8f] font-bold" href="#">
+                    草稿
+                </a>
+<a class="h-12 flex items-center px-4 font-label-md text-body-md text-gray-500 hover:text-[#c84c8f] transition-colors" href="#">
+                    已排定時間
+                </a>
+</div>
+</div>
+<button aria-label="Refresh" class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors border-l border-surface-variant shrink-0">
+<span class="material-symbols-outlined">sync</span>
+</button>
+</div>
+<!-- Search Section -->
+<div class="p-4 bg-white">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline">search</span>
+<input class="w-full h-12 pl-12 pr-4 rounded-xl border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary text-body-md outline-none transition-all" placeholder="搜尋主旨" type="text"/>
+</div>
+</div>
+<!-- Empty State Content -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 pt-20">
+<div class="w-48 h-48 mb-6 flex items-center justify-center bg-surface-container rounded-full overflow-hidden">
+<!-- As specified: Linear illustration (Document + Magnifier) -->
+<div class="relative">
+<span class="material-symbols-outlined text-[80px] text-outline-variant">drafts</span>
+<span class="material-symbols-outlined text-[40px] text-outline absolute -bottom-2 -right-2 bg-surface-container rounded-full p-1">search</span>
+</div>
+</div>
+<h2 class="font-h2 text-on-surface-variant mb-2">沒有資料</h2>
+<p class="text-body-md text-outline font-body-md">目前尚無任何推播草稿內容</p>
+<!-- Action Prompt (Contextual) -->
+<button class="mt-8 px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-body-lg shadow-lg active:scale-95 transition-transform">
+            新增推播草稿
+        </button>
+</main>
+<!-- Visual Divider Decor (Cards with images for aesthetic context) -->
+<section class="mt-12 px-4 space-y-4">
+<div class="bg-white rounded-xl p-4 border border-surface-variant shadow-sm overflow-hidden">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-h3 text-body-md text-on-surface">智慧推播建議</h3>
+<p class="text-caption text-outline">根據會員行為自動生成訊息</p>
+</div>
+</div>
+<img class="w-full h-32 object-cover rounded-lg" data-alt="A clean, minimalist high-end beauty salon interior with soft, diffuse lighting. The space features elegant pastel pink and white architectural lines, creating a tranquil and professional atmosphere. Modern salon furniture and subtle botanical accents are visible, emphasizing a premium B2B SaaS management aesthetic for the beauty industry." src="https://lh3.googleusercontent.com/aida/ADBb0ugDY42y6Gm--HQa4Wj1E_Lcl-uX5Ik2Xa3oAGiE89H8bSXA4EYHWvuepyoReRR2TtmM2bHgn3Yptik7GczwF0eqLaMgMXMMTgmwCxcomOBBJbfDe0LY_iM5pQeepjlqsT-yBxm--kMX8FYNH8OYiI8XyXc69U1TK01_8tgMlkgel2PBJHt5jEFhc6UIMzW0vhAemcnbFR-p2vhQWFOUY5BWX9TvfYsWowN_k1c20hjOsDJ2JE7XbM2UrhUJhIHTLGLbbIipgSJOyQ"/>
+</div>
+</section>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-6 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-[#c84c8f] Active: scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">儀表板</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c84c8f] dark:text-[#d672a9] Active: scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium font-bold">顧客管理</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-[#c84c8f] Active: scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">預約排程</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-[#c84c8f] Active: scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">系統設定</span>
+</a>
+</nav>
+</body></html>

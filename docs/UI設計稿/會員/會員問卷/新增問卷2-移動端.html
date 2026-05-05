@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新增會員問卷 - Wonder sky</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface": "#fff8f8",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffafd3",
+                        "surface-tint": "#a52f72",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-background": "#23191d",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-container-high": "#f7e3e9",
+                        "on-tertiary-fixed": "#042100",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#dac0c9",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface-dim": "#e8d5db",
+                        "secondary-container": "#e8b3fe",
+                        "primary-fixed-dim": "#ffafd3",
+                        "primary-container": "#c14689",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-primary-fixed": "#3d0025",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary-container": "#328517",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-bright": "#fff8f8",
+                        "secondary": "#794c8f",
+                        "inverse-surface": "#392d32",
+                        "primary": "#a22c70",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffd8e7",
+                        "outline": "#88717a",
+                        "on-secondary-fixed": "#300247",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container-highest": "#f1dee3",
+                        "background": "#fff8f8",
+                        "tertiary": "#1c6b00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "surface-variant": "#f1dee3",
+                        "on-surface-variant": "#554149",
+                        "on-secondary-container": "#6c4082",
+                        "surface-container": "#fde9ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "container-padding": "24px",
+                        "gutter": "20px",
+                        "xs": "4px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center w-full px-4 h-16 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-h1 text-h2 text-slate-900 dark:text-slate-50">新增會員問卷</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden border border-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional portrait of a store manager in a bright, modern beauty salon setting. The background features soft pink and white interior design elements with elegant lighting, reflecting a premium wellness center atmosphere. The person is smiling warmly, conveying trust and hospitality." src="https://lh3.googleusercontent.com/aida/ADBb0uhyTdIEyqi60wTygYASZ2BsdEkww0qh46GdjJtnc581Rx7HT_cF3NkWFbmkCflRFbuejBpYs5lNjMBjLm6xBJrOl1f4oRyGXI1EZu1J7YFQQN0FNDdDPvpEMK2qIkbG-FYCfqLWW9ibmrSFOPXPVE15zLHjCbxp5_IDvj2BaqAvF3Amim6eN-F4gtNAMh8FIkf3uIg3ek_Y7oTJoJPu2G8mKp81YKGBYihiaIaF21Tme3qkdPIzlMI9JvtNHwJqJcjnpTgAkvuo"/>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Breadcrumb / Path -->
+<nav class="px-4 py-3 flex items-center gap-2 overflow-x-auto hide-scrollbar text-caption text-on-surface-variant bg-white border-b border-slate-100">
+<span>會員</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>會員問卷</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">新增會員問卷</span>
+</nav>
+<!-- Tabs -->
+<div class="bg-white flex px-4 border-b border-slate-100 sticky top-16 z-40">
+<button class="flex-1 py-4 text-body-md font-label-md text-on-surface-variant border-b-2 border-transparent">基本資料</button>
+<button class="flex-1 py-4 text-body-md font-label-md text-primary border-b-2 border-primary">問卷問題</button>
+</div>
+<!-- Question Section -->
+<div class="p-4 space-y-6">
+<!-- Add Question Button -->
+<button class="w-full flex items-center justify-center gap-2 py-4 border-2 border-dashed border-primary-container rounded-xl text-primary font-h3 transition-all active:scale-95 bg-primary-container/5">
+<span class="material-symbols-outlined">add_circle</span>
+<span>新增問題</span>
+</button>
+<!-- Question Card 1 -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden flex flex-col">
+<div class="p-4 border-b border-slate-50 bg-slate-50/50 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline cursor-move">drag_indicator</span>
+<span class="text-label-md bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded">問題 1</span>
+</div>
+</div>
+<div class="p-4 space-y-4">
+<!-- Title Input -->
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant flex items-center gap-1">
+                            題目內容 <span class="text-error font-bold">*</span>
+</label>
+<input class="w-full h-12 px-4 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-white" placeholder="請輸入問題標題" type="text" value="您的膚質屬於哪一種類型？"/>
+</div>
+<!-- Type Selector -->
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">題目種類</label>
+<div class="relative">
+<select class="w-full h-12 pl-4 pr-10 rounded-lg border border-outline-variant appearance-none focus:border-primary focus:ring-1 focus:ring-primary bg-white">
+<option>單選題</option>
+<option>複選題</option>
+<option>簡答題</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- Options List -->
+<div class="space-y-3">
+<label class="text-label-md text-on-surface-variant">選項設定</label>
+<div class="space-y-2">
+<!-- Option Item -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline-variant">drag_handle</span>
+<input class="flex-1 h-11 px-4 rounded-lg border border-outline-variant bg-white" type="text" value="乾性肌膚"/>
+<button class="text-on-surface-variant active:text-error"><span class="material-symbols-outlined">delete</span></button>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline-variant">drag_handle</span>
+<input class="flex-1 h-11 px-4 rounded-lg border border-outline-variant bg-white" type="text" value="油性肌膚"/>
+<button class="text-on-surface-variant active:text-error"><span class="material-symbols-outlined">delete</span></button>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline-variant">drag_handle</span>
+<input class="flex-1 h-11 px-4 rounded-lg border border-outline-variant bg-white" type="text" value="混合性肌膚"/>
+<button class="text-on-surface-variant active:text-error"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<button class="text-primary font-label-md flex items-center gap-1 py-1">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>新增選項</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="h-px bg-slate-100 my-4"></div>
+<!-- Footer Settings -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer group">
+<span class="text-body-md text-on-surface-variant">是否必填</span>
+<div class="relative inline-flex items-center">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+</div>
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg border border-outline-variant text-on-surface-variant text-label-md active:bg-error/5 active:text-error active:border-error transition-all">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span>刪除問題</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Question Card 2 (Empty Placeholder Pattern) -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden flex flex-col opacity-90">
+<div class="p-4 border-b border-slate-50 bg-slate-50/50 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline cursor-move">drag_indicator</span>
+<span class="text-label-md bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded">問題 2</span>
+</div>
+</div>
+<div class="p-4 space-y-4">
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant flex items-center gap-1">題目內容 <span class="text-error font-bold">*</span></label>
+<input class="w-full h-12 px-4 rounded-lg border border-outline-variant bg-white" placeholder="請輸入問題標題" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-md text-on-surface-variant">題目種類</label>
+<div class="relative">
+<select class="w-full h-12 pl-4 pr-10 rounded-lg border border-outline-variant appearance-none bg-white">
+<option>簡答題</option>
+<option>單選題</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">keyboard_arrow_down</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<span class="text-body-md text-on-surface-variant">是否必填</span>
+<div class="relative inline-flex items-center">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg border border-outline-variant text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span>刪除問題</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-100 p-4 pb-safe grid grid-cols-2 gap-3 z-50">
+<button class="w-full py-4 border border-primary text-primary font-h3 rounded-xl active:bg-primary/5 transition-all">
+            暫存草稿
+        </button>
+<button class="w-full py-4 bg-primary text-white font-h3 rounded-xl shadow-lg shadow-primary/20 active:bg-primary/90 transition-all">
+            儲存問卷
+        </button>
+</div>
+<!-- Hidden Bottom Nav for top-level pages - but we are in a sub-page, so we show action buttons instead -->
+<!-- Applying logic from mandate: suppress FAB on transactional screens like adding a questionnaire -->
+</body></html>

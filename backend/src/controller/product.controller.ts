@@ -23,7 +23,7 @@ import { CacheGuardService } from '../redis/guard.service';
 
 const PRODUCT_CACHE_PREFIX = 'prod:';
 
-@Controller('/api/products', {
+@Controller('/products', {
   tagName: '產品',
   description: '產品的 CRUD 接口',
 })

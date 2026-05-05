@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新增會員 - Wonder sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#300247",
+                      "primary-fixed": "#ffd8e7",
+                      "on-surface": "#23191d",
+                      "tertiary": "#1c6b00",
+                      "surface-container-low": "#fff0f4",
+                      "error-container": "#ffdad6",
+                      "outline-variant": "#dac0c9",
+                      "tertiary-container": "#328517",
+                      "surface-tint": "#a52f72",
+                      "surface-container-high": "#f7e3e9",
+                      "surface-container-highest": "#f1dee3",
+                      "on-tertiary-container": "#f8ffee",
+                      "on-tertiary-fixed": "#042100",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#fde9ef",
+                      "on-background": "#23191d",
+                      "on-primary-fixed": "#3d0025",
+                      "on-primary-container": "#fffbff",
+                      "outline": "#88717a",
+                      "primary": "#a22c70",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#e8b3fe",
+                      "tertiary-fixed-dim": "#84db64",
+                      "primary-container": "#c14689",
+                      "inverse-surface": "#392d32",
+                      "on-tertiary-fixed-variant": "#145200",
+                      "on-surface-variant": "#554149",
+                      "tertiary-fixed": "#9ff87d",
+                      "secondary-fixed": "#f6d9ff",
+                      "on-primary-fixed-variant": "#861259",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#f1dee3",
+                      "primary-fixed-dim": "#ffafd3",
+                      "surface-dim": "#e8d5db",
+                      "surface-bright": "#fff8f8",
+                      "secondary-container": "#e8b3fe",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#603475",
+                      "inverse-on-surface": "#ffecf1",
+                      "on-primary": "#ffffff",
+                      "background": "#fff8f8",
+                      "surface": "#fff8f8",
+                      "secondary": "#794c8f",
+                      "on-secondary-container": "#6c4082",
+                      "inverse-primary": "#ffafd3",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "container-padding": "24px",
+                      "unit": "4px",
+                      "gutter": "20px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "caption": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "h3": ["Plus Jakarta Sans"],
+                      "h1": ["Plus Jakarta Sans"],
+                      "h2": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .sidebar-active { background-color: rgba(200, 76, 143, 0.05); color: #c84c8f; border-radius: 0.5rem; font-weight: 600; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e0e0e0; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Layout Shell -->
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation (Fixed) -->
+<aside class="h-screen w-64 border-r fixed left-0 top-0 bg-white border-slate-200 shadow-[4px_0_12px_rgba(0,0,0,0.02)] flex flex-col py-6">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg">spa</span>
+</div>
+<div>
+<h1 class="text-lg font-black tracking-tighter text-[#c84c8f]">Wonder Sky</h1>
+<p class="text-[10px] font-semibold text-slate-400">國際美妍館</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-50 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-50 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-body-md text-body-md">Appointments</span>
+</a>
+<!-- Active Item: Clients / 會員 -->
+<a class="flex items-center gap-3 px-4 py-2 sidebar-active transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-body-md text-body-md">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-50 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-50 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-md text-body-md">Marketing</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-50 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Reports</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-1 border-t border-slate-100 pt-4">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-50 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-50 rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="ml-64 flex-1 flex flex-col relative pb-24">
+<!-- Top App Bar -->
+<header class="h-16 sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200 flex justify-between items-center px-8 z-30">
+<div class="flex items-center gap-2">
+<nav class="flex text-slate-400 font-body-md text-body-md">
+<span class="hover:text-primary transition-colors cursor-pointer">會員</span>
+<span class="mx-2 text-slate-300">/</span>
+<span class="text-on-surface font-semibold">新增會員</span>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-slate-100 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+<button class="bg-primary text-white px-5 py-2 rounded-lg font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all shadow-sm">
+                        快速開單
+                    </button>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+<div class="text-right">
+<p class="text-sm font-bold leading-tight">Manager</p>
+<p class="text-[10px] text-slate-500">System Admin</p>
+</div>
+<img class="w-10 h-10 rounded-full object-cover border border-slate-200" data-alt="A professional headshot of a female salon manager with a confident and warm expression. She is set against a clean, modern corporate office background with soft natural lighting and a high-end beauty industry aesthetic, aligning with the brand's sophisticated pink and white palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg9H8ZeTeoPgmrs9HMlKNW2iQZNeu4Sgq-hHR1koajCJtZ_J1PnFdsDmoGYeW044uz4nZu2rj1pv5_J4gDu2VZrtzlG_g-TQ-dyt5F2N8UO0v_F6TmARU_mtoxgpSvIbHXUWt3Im8cGbEdsnuhbrqd6GR5npJHWsoeoe65OetwIlaM0nMmwDPCiWUuZzNoSfyslSOZ_N0PJrv2VCHOZa_Ig7cjFEdItBcdDAeMTwQ5XQWrVh2K2Dv3wi1ySxPjjIOvqkc-iNRLJDI"/>
+</div>
+</div>
+</header>
+<!-- Page Content Layout with Right Anchor Nav -->
+<div class="p-8 flex gap-8 max-w-[1440px] mx-auto w-full">
+<!-- Main Content Area -->
+<div class="flex-1 space-y-8">
+<!-- Section: 基本資訊 -->
+<section class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden" id="basic-info">
+<div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+<h2 class="text-lg font-h2 font-semibold flex items-center gap-2">
+<span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                                基本資訊
+                            </h2>
+</div>
+<div class="p-8 space-y-10">
+<!-- Avatar Upload -->
+<div class="flex flex-col items-center">
+<div class="w-32 h-32 rounded-full border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center text-slate-400 group hover:border-primary hover:bg-primary/5 transition-colors cursor-pointer mb-3">
+<span class="material-symbols-outlined text-4xl mb-1 group-hover:scale-110 transition-transform">add_a_photo</span>
+<p class="text-[10px] text-center px-4 leading-tight">拖放圖片或是<br/><span class="text-primary font-bold">點此上傳</span></p>
+</div>
+<p class="text-caption text-slate-400">最大限制: 8MB</p>
+</div>
+<!-- Form Grid -->
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">姓名 <span class="text-error">*</span></label>
+<input class="w-full h-11 px-4 border border-error bg-error-container/10 rounded-lg focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-300" type="text" value="李曉明"/>
+<p class="text-[11px] text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                                        必需要有姓名
+                                    </p>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">手機號碼 <span class="text-error">*</span></label>
+<input class="w-full h-11 px-4 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="0912345678" type="tel"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">開發人 <span class="text-error">*</span></label>
+<select class="w-full h-11 px-4 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white appearance-none">
+<option>請選擇人員</option>
+<option>陳大文</option>
+<option>林小美</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">Email</label>
+<input class="w-full h-11 px-4 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="example@wondersky.com" type="email"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">生日</label>
+<div class="relative">
+<input class="w-full h-11 px-4 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 outline-none transition-all text-slate-500" type="date"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">性別</label>
+<div class="flex items-center gap-6 h-11">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 text-primary focus:ring-primary border-slate-300" name="gender" type="radio"/>
+<span class="text-body-md font-body-md">男</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary border-slate-300" name="gender" type="radio"/>
+<span class="text-body-md font-body-md">女</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 text-primary focus:ring-primary border-slate-300" name="gender" type="radio"/>
+<span class="text-body-md font-body-md">其他</span>
+</label>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">職業</label>
+<input class="w-full h-11 px-4 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="輸入職業" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">居住城市</label>
+<input class="w-full h-11 px-4 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="例如：台北市" type="text"/>
+</div>
+<div class="col-span-2 space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">備註</label>
+<textarea class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none" placeholder="請輸入額外資訊..." rows="3"></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: 會員關係 -->
+<section class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden" id="member-relation">
+<div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors">
+<h2 class="text-lg font-h2 font-semibold flex items-center gap-2">
+<span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                                會員關係
+                            </h2>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-1.5 px-3 py-1.5 border border-primary/20 text-primary bg-primary/5 rounded-lg text-sm font-semibold hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+                                    新增會員關係
+                                </button>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+<div class="p-6 bg-slate-50/50">
+<div class="flex gap-4 items-center animate-in fade-in slide-in-from-top-1 duration-300">
+<div class="flex-1 grid grid-cols-2 gap-4">
+<div class="bg-white p-1 rounded-lg border border-slate-200">
+<select class="w-full border-none focus:ring-0 text-body-md font-body-md py-2">
+<option>搜尋並選擇會員</option>
+<option>王大明 (0911***111)</option>
+</select>
+</div>
+<div class="bg-white p-1 rounded-lg border border-slate-200">
+<input class="w-full border-none focus:ring-0 text-body-md font-body-md py-2 px-3" placeholder="輸入關係（例如：家人、好友）" type="text"/>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-error hover:bg-error/5 rounded-lg transition-all">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section: 會員等級 -->
+<section class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden" id="member-level">
+<div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors">
+<h2 class="text-lg font-h2 font-semibold flex items-center gap-2">
+<span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                                會員等級
+                            </h2>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-1.5 px-3 py-1.5 border border-primary/20 text-primary bg-primary/5 rounded-lg text-sm font-semibold hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+                                    新增會員等級
+                                </button>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+<div class="p-6 bg-slate-50/50">
+<div class="flex gap-4 items-center">
+<div class="flex-[2] grid grid-cols-3 gap-4">
+<div class="bg-white p-1 rounded-lg border border-slate-200">
+<select class="w-full border-none focus:ring-0 text-body-md font-body-md py-2">
+<option selected="">黃金會員</option>
+<option>白金會員</option>
+<option>鑽石會員</option>
+</select>
+</div>
+<div class="bg-white p-1 rounded-lg border border-slate-200 flex items-center">
+<span class="text-caption text-slate-400 pl-3">起</span>
+<input class="w-full border-none focus:ring-0 text-body-md font-body-md py-2 px-2" type="date" value="2023-11-01"/>
+</div>
+<div class="bg-white p-1 rounded-lg border border-slate-200 flex items-center">
+<span class="text-caption text-slate-400 pl-3">迄</span>
+<input class="w-full border-none focus:ring-0 text-body-md font-body-md py-2 px-2" type="date" value="2024-10-31"/>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-error hover:bg-error/5 rounded-lg transition-all">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Sidebar Anchor Nav (Fixed position relative to container) -->
+<aside class="w-48 shrink-0">
+<div class="sticky top-24 space-y-2">
+<p class="font-label-md text-label-md text-slate-400 uppercase tracking-widest mb-4 px-4">快訊導覽</p>
+<a class="flex items-center gap-3 px-4 py-2 border-l-2 border-primary text-primary font-semibold transition-all" href="#basic-info">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-body-md">基本資訊</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 border-l-2 border-transparent text-slate-400 hover:text-primary hover:border-primary/30 transition-all" href="#member-relation">
+<span class="material-symbols-outlined text-lg">diversity_3</span>
+<span class="text-body-md">會員關係</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 border-l-2 border-transparent text-slate-400 hover:text-primary hover:border-primary/30 transition-all" href="#member-level">
+<span class="material-symbols-outlined text-lg">stars</span>
+<span class="text-body-md">會員等級</span>
+</a>
+<div class="mt-12 p-4 bg-primary/5 rounded-xl border border-primary/10">
+<h4 class="text-sm font-bold text-primary mb-2">快速提示</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed">
+                                填寫會員的基本資訊與生日，系統將會自動在生日前七天發送優惠簡訊。
+                            </p>
+</div>
+</div>
+</aside>
+</div>
+<!-- Bottom Action Bar (Fixed at bottom of workspace) -->
+<div class="fixed bottom-0 left-64 right-0 h-20 bg-white/90 backdrop-blur-md border-t border-slate-200 flex items-center justify-between px-10 z-40">
+<div class="flex items-center text-slate-400 text-caption italic">
+                    * 所有必填欄位皆需完成始可儲存
+                </div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 rounded-lg font-label-md text-label-md border border-slate-200 text-slate-500 hover:bg-slate-50 transition-all">
+                        取消
+                    </button>
+<button class="px-6 py-2.5 rounded-lg font-label-md text-label-md border border-secondary/30 text-secondary hover:bg-secondary/5 transition-all">
+                        重設
+                    </button>
+<button class="px-8 py-2.5 rounded-lg font-label-md text-label-md bg-[#c84c8f] text-white shadow-lg shadow-primary/20 hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">save</span>
+                        儲存
+                    </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

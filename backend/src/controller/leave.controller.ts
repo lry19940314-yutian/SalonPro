@@ -23,7 +23,7 @@ import { CacheGuardService } from '../redis/guard.service';
 
 const LEAVE_CACHE_PREFIX = 'leave:';
 
-@Controller('/api/leaves', {
+@Controller('/leaves', {
   tagName: '請假',
   description: '請假申請與審批接口',
 })

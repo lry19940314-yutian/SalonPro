@@ -22,7 +22,7 @@ import { CacheGuardService } from '../redis/guard.service';
 
 const PROD_CAT_CACHE_PREFIX = 'prod_cat:';
 
-@Controller('/api/product-categories', {
+@Controller('/product-categories', {
   tagName: '產品分類',
   description: '產品分類的 CRUD 接口',
 })

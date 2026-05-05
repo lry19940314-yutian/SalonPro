@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 商品/耗材管理</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e8b3fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-fixed": "#042100",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#3d0025",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary-container": "#328517",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-surface-variant": "#554149",
+                        "surface-tint": "#a52f72",
+                        "outline": "#88717a",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#dac0c9",
+                        "inverse-surface": "#392d32",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container": "#fde9ef",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-primary": "#ffafd3",
+                        "on-secondary-fixed": "#300247",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-surface": "#23191d",
+                        "primary": "#a22c70",
+                        "primary-container": "#c14689",
+                        "background": "#fff8f8",
+                        "inverse-on-surface": "#ffecf1",
+                        "secondary": "#794c8f",
+                        "on-background": "#23191d",
+                        "surface-bright": "#fff8f8",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-secondary-container": "#6c4082",
+                        "tertiary-fixed": "#9ff87d",
+                        "surface": "#fff8f8",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 shadow-sm docked full-width top-0 sticky z-50 flex justify-between items-center w-full px-4 h-16">
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 rounded-full">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">menu</span>
+</button>
+<h1 class="text-lg font-bold text-[#c84c8f] dark:text-[#e685a5] font-plus-jakarta-sans">Wonder sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 rounded-full">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#c84c8f]/20">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a sophisticated female administrator with a warm smile, set against a soft-focus high-end beauty salon interior. The lighting is clean and bright, reflecting a modern light-mode aesthetic with pink and white tones. The image conveys trustworthiness and elegance suited for a luxury wellness brand." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+</div>
+</header>
+<main class="pb-24">
+<!-- Breadcrumb -->
+<div class="px-4 py-3 flex items-center gap-2 text-caption text-outline">
+<span>服務及商品</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-medium">商品/耗材</span>
+</div>
+<!-- Horizontal Scrollable Tabs -->
+<nav class="border-b border-outline-variant/30 overflow-x-auto hide-scrollbar flex whitespace-nowrap px-4 bg-white">
+<a class="px-4 py-3 text-body-md text-outline hover:text-primary transition-colors" href="#">服務</a>
+<a class="px-4 py-3 text-body-md text-primary font-bold border-b-2 border-primary relative" href="#">
+                商品/耗材
+            </a>
+<a class="px-4 py-3 text-body-md text-outline hover:text-primary transition-colors" href="#">業績提成模板設定</a>
+<a class="px-4 py-3 text-body-md text-outline hover:text-primary transition-colors" href="#">服務上限</a>
+</nav>
+<!-- Search & Actions -->
+<div class="p-4 space-y-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant/50 rounded-xl focus:ring-1 focus:ring-primary focus:border-primary text-body-md outline-none" placeholder="搜尋商品名稱或品牌" type="text"/>
+</div>
+<div class="flex justify-between items-center text-label-md">
+<div class="flex gap-4">
+<button class="text-primary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-sm">filter_alt</span> 進階搜尋
+                    </button>
+<button class="text-primary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-sm">category</span> 搜尋分類
+                    </button>
+</div>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-bold flex items-center gap-1 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span> 新增
+                </button>
+</div>
+</div>
+<!-- List Area -->
+<div class="px-4 space-y-4">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-xl border border-outline-variant/30 shadow-sm p-4 flex gap-3">
+<div class="pt-1">
+<input class="rounded text-primary focus:ring-primary border-outline-variant" type="checkbox"/>
+</div>
+<div class="flex-1 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-caption text-outline font-medium tracking-wide">L'Oreal</p>
+<h3 class="text-body-lg font-bold text-on-surface">金盞花修護面膜</h3>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-caption text-on-surface-variant">100ml/瓶</span>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-caption text-on-surface-variant">保養品</span>
+</div>
+</div>
+<span class="bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-bold">未上架</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-caption border-t border-gray-50 pt-3">
+<div class="space-y-1">
+<p class="text-outline">庫存: <span class="text-on-surface font-semibold">50</span></p>
+<p class="text-outline">售價: <span class="text-primary font-bold text-body-md">$1,500</span></p>
+</div>
+<div class="space-y-1 text-right">
+<p class="text-outline">建立: 2024/03/01</p>
+<p class="text-outline">更新: 2024/03/05</p>
+</div>
+</div>
+<div class="flex justify-end gap-2 pt-1">
+<button class="flex items-center justify-center p-2 rounded-lg border border-outline-variant/50 text-outline hover:bg-gray-50">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+<button class="flex-1 bg-white border border-primary text-primary py-2 rounded-lg font-bold flex items-center justify-center gap-1 hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span> 編輯
+                        </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-xl border border-outline-variant/30 shadow-sm p-4 flex gap-3">
+<div class="pt-1">
+<input class="rounded text-primary focus:ring-primary border-outline-variant" type="checkbox"/>
+</div>
+<div class="flex-1 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-caption text-outline font-medium tracking-wide">SHISEIDO</p>
+<h3 class="text-body-lg font-bold text-on-surface">紅妍超導循環肌活露</h3>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-caption text-on-surface-variant">50ml/瓶</span>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-caption text-on-surface-variant">精華液</span>
+</div>
+</div>
+<span class="bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-bold">未上架</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-caption border-t border-gray-50 pt-3">
+<div class="space-y-1">
+<p class="text-outline">庫存: <span class="text-on-surface font-semibold">12</span></p>
+<p class="text-outline">售價: <span class="text-primary font-bold text-body-md">$3,950</span></p>
+</div>
+<div class="space-y-1 text-right">
+<p class="text-outline">建立: 2024/02/15</p>
+<p class="text-outline">更新: 2024/03/02</p>
+</div>
+</div>
+<div class="flex justify-end gap-2 pt-1">
+<button class="flex items-center justify-center p-2 rounded-lg border border-outline-variant/50 text-outline hover:bg-gray-50">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+<button class="flex-1 bg-white border border-primary text-primary py-2 rounded-lg font-bold flex items-center justify-center gap-1 hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span> 編輯
+                        </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 (耗材) -->
+<div class="bg-white rounded-xl border border-outline-variant/30 shadow-sm p-4 flex gap-3">
+<div class="pt-1">
+<input class="rounded text-primary focus:ring-primary border-outline-variant" type="checkbox"/>
+</div>
+<div class="flex-1 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-caption text-outline font-medium tracking-wide">Own Brand</p>
+<h3 class="text-body-lg font-bold text-on-surface">專業用美容巾 (加厚)</h3>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-caption text-on-surface-variant">100入/包</span>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-caption text-on-surface-variant">耗材</span>
+</div>
+</div>
+<span class="bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-bold">未上架</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-caption border-t border-gray-50 pt-3">
+<div class="space-y-1">
+<p class="text-outline">庫存: <span class="text-on-surface font-semibold">240</span></p>
+<p class="text-outline">成本: <span class="text-primary font-bold text-body-md">$450</span></p>
+</div>
+<div class="space-y-1 text-right">
+<p class="text-outline">建立: 2023/12/10</p>
+<p class="text-outline">更新: 2024/02/28</p>
+</div>
+</div>
+<div class="flex justify-end gap-2 pt-1">
+<button class="flex items-center justify-center p-2 rounded-lg border border-outline-variant/50 text-outline hover:bg-gray-50">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+<button class="flex-1 bg-white border border-primary text-primary py-2 rounded-lg font-bold flex items-center justify-center gap-1 hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span> 編輯
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="p-6 flex flex-col items-center gap-4">
+<p class="text-caption text-outline">第1-20筆 共117筆</p>
+<div class="flex gap-4">
+<button class="flex items-center gap-1 text-primary border border-primary px-4 py-2 rounded-full font-bold text-caption active:bg-primary/10">
+<span class="material-symbols-outlined text-sm">arrow_back_ios</span> 上一頁
+                </button>
+<button class="flex items-center gap-1 text-primary border border-primary px-4 py-2 rounded-full font-bold text-caption active:bg-primary/10">
+                    下一頁 <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-2 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 shadow-[0_-2px_10px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-3 py-1 font-plus-jakarta-sans text-[11px] font-medium transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-3 py-1 font-plus-jakarta-sans text-[11px] font-medium transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c84c8f] dark:text-[#e685a5] bg-[#c84c8f]/5 rounded-xl px-3 py-1 font-plus-jakarta-sans text-[11px] font-medium transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Clients</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-3 py-1 font-plus-jakarta-sans text-[11px] font-medium transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

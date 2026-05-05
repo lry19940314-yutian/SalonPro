@@ -18,7 +18,7 @@ import { CacheService } from '../redis/cache.service';
 import { CacheGuardService } from '../redis/guard.service';
 import { CacheKeyPrefix, PerformanceCacheKey } from '../redis/types';
 
-@Controller('/api/performances', {
+@Controller('/performances', {
   tagName: '業績',
   description: '業績記錄查詢與統計接口',
 })
@@ -181,6 +181,97 @@ export class PerformanceController {
     );
     if (!result) {
       return { totalAmount: 0, totalCommission: 0, totalCount: 0 };
+    }
+    return result;
+  }
+
+  /**
+   * 獲取工作人員業績排行（含緩存）
+   *
+   * GET /api/performances/staff-ranking?startDate=2026-05-01&endDate=2026-05-31&limit=10
+   */
+  @Get('/staff-ranking', { summary: '獲取工作人員業績排行' })
+  async getStaffRanking(
+    @Query('startDate') startDate: string,
+    @Query('endDate') endDate: string,
+    @Query('limit') limit?: number
+  ): Promise<Array<{
+    staffId: number;
+    name: string;
+    amount: number;
+    percentage: number;
+  }>> {
+    const shopId: number = this.ctx.state.shopId;
+    const rankingLimit = limit || 10;
+    const cacheKey = `${PerformanceCacheKey.DAILY}staffRanking:${shopId}:${startDate}:${endDate}:${rankingLimit}`;
+    const result = await this.cacheGuardService.safeQuery(
+      cacheKey,
+      PerformanceCacheKey.DAILY,
+      `staffRanking:${shopId}:${startDate}:${endDate}:${rankingLimit}`,
+      () => this.performanceService.getStaffRanking(shopId, startDate, endDate, rankingLimit),
+      120
+    );
+    return result || [];
+  }
+
+  /**
+   * 獲取門店分類營業額統計（含緩存）
+   *
+   * GET /api/performances/stats/category-revenue?startDate=2026-01-01&endDate=2026-12-31
+   */
+  @Get('/stats/category-revenue', { summary: '獲取門店分類營業額統計' })
+  async getCategoryRevenueStats(
+    @Query('startDate') startDate: string,
+    @Query('endDate') endDate: string
+  ): Promise<Array<{
+    categoryId: number;
+    categoryName: string;
+    amount: number;
+    ratio: number;
+  }>> {
+    const shopId: number = this.ctx.state.shopId;
+    const cacheKey = `${PerformanceCacheKey.DAILY}category:${shopId}:${startDate}:${endDate}`;
+    const result = await this.cacheGuardService.safeQuery(
+      cacheKey,
+      PerformanceCacheKey.DAILY,
+      `category:${shopId}:${startDate}:${endDate}`,
+      () => this.performanceService.getCategoryRevenueStats(shopId, startDate, endDate),
+      300
+    );
+    return result || [];
+  }
+
+  /**
+   * 獲取門店年度營業額統計（含月度明細與同比增幅）
+   *
+   * GET /api/performances/stats/yearly?year=2026
+   */
+  @Get('/stats/yearly', { summary: '獲取門店年度營業額統計' })
+  async getYearlyRevenueStats(
+    @Query('year') year: number
+  ): Promise<{
+    year: number;
+    totalAmount: number;
+    monthlyData: number[];
+    growthRate: number;
+  }> {
+    const shopId: number = this.ctx.state.shopId;
+    const targetYear = year || new Date().getFullYear();
+    const cacheKey = `${PerformanceCacheKey.DAILY}yearly:${shopId}:${targetYear}`;
+    const result = await this.cacheGuardService.safeQuery(
+      cacheKey,
+      PerformanceCacheKey.DAILY,
+      `yearly:${shopId}:${targetYear}`,
+      () => this.performanceService.getYearlyRevenueStats(shopId, targetYear),
+      300
+    );
+    if (!result) {
+      return {
+        year: targetYear,
+        totalAmount: 0,
+        monthlyData: new Array(12).fill(0),
+        growthRate: 0,
+      };
     }
     return result;
   }

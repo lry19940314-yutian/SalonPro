@@ -255,4 +255,253 @@ export class PerformanceDAO {
       totalCount: Number(result?.totalCount || 0),
     };
   }
+
+  /**
+   * 獲取工作人員業績排行
+   *
+   * 按 staff_id 分組，SUM(amount) 計算總業績，JOIN staff 表取得姓名
+   *
+   * @param shopId - 門店 ID
+   * @param startDate - 開始日期
+   * @param endDate - 結束日期
+   * @param limit - 排行數量（預設 10）
+   * @returns 工作人員業績排行列表
+   */
+  async getStaffRanking(
+    shopId: number,
+    startDate: string,
+    endDate: string,
+    limit: number = 10
+  ): Promise<Array<{
+    staffId: number;
+    name: string;
+    amount: number;
+    percentage: number;
+  }>> {
+    // 1. 查詢該門店在日期範圍內的總業績（用於計算百分比）
+    const totalResult = await this.entityManager
+      .createQueryBuilder(Performance, 'performance')
+      .select('COALESCE(SUM(performance.amount), 0)', 'totalAmount')
+      .where('performance.shopId = :shopId', { shopId })
+      .andWhere('performance.performanceDate BETWEEN :startDate AND :endDate', {
+        startDate,
+        endDate,
+      })
+      .getRawOne();
+
+    const totalAmount = Number(totalResult?.totalAmount || 0);
+
+    // 2. 按 staff_id 分組統計業績，JOIN staff 表取得姓名
+    const rawResults = await this.entityManager
+      .createQueryBuilder(Performance, 'performance')
+      .select([
+        'performance.staffId AS staffId',
+        'COALESCE(SUM(performance.amount), 0) AS amount',
+      ])
+      .where('performance.shopId = :shopId', { shopId })
+      .andWhere('performance.performanceDate BETWEEN :startDate AND :endDate', {
+        startDate,
+        endDate,
+      })
+      .groupBy('performance.staffId')
+      .orderBy('amount', 'DESC')
+      .limit(limit)
+      .getRawMany();
+
+    if (rawResults.length === 0) {
+      return [];
+    }
+
+    // 3. 查詢員工姓名
+    const staffIds = rawResults.map((r: any) => Number(r.staffId));
+    const staffList = await this.entityManager
+      .createQueryBuilder()
+      .select(['id', 'name'])
+      .from('staff', 's')
+      .where('s.id IN (:...ids)', { ids: staffIds })
+      .getRawMany();
+
+    const staffNameMap = new Map<number, string>();
+    staffList.forEach((s: any) => {
+      staffNameMap.set(Number(s.id), s.name);
+    });
+
+    // 4. 計算最大業績金額（用於百分比）
+    const maxAmount = Math.max(...rawResults.map((r: any) => Number(r.amount)), 1);
+
+    // 5. 組裝返回數據（含排名）
+    return rawResults.map((r: any, index: number) => {
+      const staffId = Number(r.staffId);
+      const amount = Number(r.amount);
+      return {
+        staffId,
+        name: staffNameMap.get(staffId) || `員工#${staffId}`,
+        amount,
+        percentage: Math.round((amount / maxAmount) * 100),
+      };
+    });
+  }
+
+  /**
+   * 獲取門店分類營業額統計（按 service_category 分組）
+   *
+   * @param shopId - 門店 ID
+   * @param startDate - 開始日期
+   * @param endDate - 結束日期
+   * @returns 分類營業額列表（含分類名稱、營業額、佔比）
+   */
+  async getCategoryRevenueStats(
+    shopId: number,
+    startDate: string,
+    endDate: string
+  ): Promise<Array<{
+    categoryId: number;
+    categoryName: string;
+    amount: number;
+    ratio: number;
+  }>> {
+    // 1. 先查詢該門店在日期範圍內的總營業額
+    const totalResult = await this.entityManager
+      .createQueryBuilder(Performance, 'performance')
+      .select('COALESCE(SUM(performance.amount), 0)', 'totalAmount')
+      .where('performance.shopId = :shopId', { shopId })
+      .andWhere('performance.performanceDate BETWEEN :startDate AND :endDate', {
+        startDate,
+        endDate,
+      })
+      .getRawOne();
+
+    const totalAmount = Number(totalResult?.totalAmount || 0);
+
+    if (totalAmount === 0) {
+      return [];
+    }
+
+    // 2. 按 category_id 分組統計營業額
+    const rawResults = await this.entityManager
+      .createQueryBuilder(Performance, 'performance')
+      .select([
+        'performance.categoryId AS categoryId',
+        'COALESCE(SUM(performance.amount), 0) AS amount',
+      ])
+      .where('performance.shopId = :shopId', { shopId })
+      .andWhere('performance.performanceDate BETWEEN :startDate AND :endDate', {
+        startDate,
+        endDate,
+      })
+      .andWhere('performance.categoryId IS NOT NULL')
+      .groupBy('performance.categoryId')
+      .orderBy('amount', 'DESC')
+      .getRawMany();
+
+    if (rawResults.length === 0) {
+      return [];
+    }
+
+    // 3. 查詢分類名稱（從 service_category 表）
+    const categoryIds = rawResults.map((r: any) => Number(r.categoryId));
+    const categories = await this.entityManager
+      .createQueryBuilder()
+      .select(['id', 'name'])
+      .from('service_category', 'sc')
+      .where('sc.id IN (:...ids)', { ids: categoryIds })
+      .getRawMany();
+
+    const categoryMap = new Map<number, string>();
+    categories.forEach((c: any) => {
+      categoryMap.set(Number(c.id), c.name);
+    });
+
+    // 4. 組裝返回數據
+    return rawResults.map((r: any) => {
+      const catId = Number(r.categoryId);
+      const amount = Number(r.amount);
+      return {
+        categoryId: catId,
+        categoryName: categoryMap.get(catId) || `分類#${catId}`,
+        amount,
+        ratio: Math.round((amount / totalAmount) * 1000) / 10, // 保留一位小數
+      };
+    });
+  }
+
+  /**
+   * 獲取門店年度營業額統計（含月度明細與同比增幅）
+   *
+   * 查詢邏輯：
+   * 1. 按月份 GROUP BY performanceDate，SUM(amount) 計算各月營業額
+   * 2. 計算去年同期的總營業額（用於同比增幅）
+   *
+   * @param shopId - 門店 ID
+   * @param year - 年份
+   * @returns 年度營業額統計
+   */
+  async getYearlyRevenueStats(
+    shopId: number,
+    year: number
+  ): Promise<{
+    year: number;
+    totalAmount: number;
+    monthlyData: number[];
+    growthRate: number;
+  }> {
+    const startDate = `${year}-01-01`;
+    const endDate = `${year}-12-31`;
+    const lastYear = year - 1;
+    const lastYearStart = `${lastYear}-01-01`;
+    const lastYearEnd = `${lastYear}-12-31`;
+
+    // 1. 查詢今年各月營業額
+    const monthlyResults = await this.entityManager
+      .createQueryBuilder(Performance, 'performance')
+      .select([
+        'MONTH(performance.performanceDate) AS month',
+        'COALESCE(SUM(performance.amount), 0) AS amount',
+      ])
+      .where('performance.shopId = :shopId', { shopId })
+      .andWhere('performance.performanceDate BETWEEN :startDate AND :endDate', {
+        startDate,
+        endDate,
+      })
+      .groupBy('MONTH(performance.performanceDate)')
+      .orderBy('month', 'ASC')
+      .getRawMany();
+
+    // 2. 初始化月度陣列（1-12月，預設 0）
+    const monthlyData: number[] = new Array(12).fill(0);
+    let totalAmount = 0;
+
+    monthlyResults.forEach((r: any) => {
+      const monthIndex = Number(r.month) - 1;
+      const amount = Number(r.amount);
+      monthlyData[monthIndex] = amount;
+      totalAmount += amount;
+    });
+
+    // 3. 查詢去年總營業額（用於同比增幅）
+    const lastYearResult = await this.entityManager
+      .createQueryBuilder(Performance, 'performance')
+      .select('COALESCE(SUM(performance.amount), 0)', 'totalAmount')
+      .where('performance.shopId = :shopId', { shopId })
+      .andWhere('performance.performanceDate BETWEEN :startDate AND :endDate', {
+        startDate: lastYearStart,
+        endDate: lastYearEnd,
+      })
+      .getRawOne();
+
+    const lastYearTotal = Number(lastYearResult?.totalAmount || 0);
+
+    // 4. 計算同比增幅
+    let growthRate = 0;
+    if (lastYearTotal > 0) {
+      growthRate = Math.round(((totalAmount - lastYearTotal) / lastYearTotal) * 1000) / 10;
+    }
+
+    return {
+      year,
+      totalAmount,
+      monthlyData,
+      growthRate,
+    };
+  }
 }

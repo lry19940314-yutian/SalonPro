@@ -21,7 +21,7 @@ import { CacheService } from '../redis/cache.service';
 import { CacheGuardService } from '../redis/guard.service';
 import { MemberCacheKey } from '../redis/types';
 
-@Controller('/api/member-levels', {
+@Controller('/member-levels', {
   tagName: '會員等級',
   description: '會員等級的 CRUD 接口',
 })

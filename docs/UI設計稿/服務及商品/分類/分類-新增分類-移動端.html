@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 新增分類</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#6c4082",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#328517",
+                        "surface-variant": "#f1dee3",
+                        "tertiary-fixed-dim": "#84db64",
+                        "primary-fixed-dim": "#ffafd3",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "inverse-surface": "#392d32",
+                        "surface-container-high": "#f7e3e9",
+                        "secondary-container": "#e8b3fe",
+                        "primary-fixed": "#ffd8e7",
+                        "surface-dim": "#e8d5db",
+                        "on-surface": "#23191d",
+                        "on-tertiary-fixed": "#042100",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-container": "#f8ffee",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#fde9ef",
+                        "primary": "#a22c70",
+                        "on-primary-container": "#fffbff",
+                        "outline-variant": "#dac0c9",
+                        "outline": "#88717a",
+                        "inverse-primary": "#ffafd3",
+                        "background": "#fff8f8",
+                        "tertiary": "#1c6b00",
+                        "secondary-fixed": "#f6d9ff",
+                        "primary-container": "#c14689",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface": "#fff8f8",
+                        "surface-bright": "#fff8f8",
+                        "on-secondary-fixed": "#300247",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#23191d",
+                        "secondary": "#794c8f",
+                        "surface-tint": "#a52f72",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-surface-variant": "#554149",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-tertiary-fixed-variant": "#145200"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "xs": "4px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .bottom-sheet-shadow { box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dac0c9; border-radius: 10px; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+<!-- Background Mockup for context (The page behind the popup) -->
+<div class="fixed inset-0 z-0 opacity-40 grayscale pointer-events-none overflow-hidden">
+<div class="p-8 max-w-4xl mx-auto space-y-6">
+<div class="h-8 w-48 bg-slate-200 rounded-full"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-32 bg-slate-200 rounded-xl"></div>
+<div class="h-32 bg-slate-200 rounded-xl"></div>
+</div>
+<div class="h-64 bg-slate-200 rounded-xl"></div>
+</div>
+</div>
+<!-- Semi-transparent Overlay -->
+<div class="fixed inset-0 bg-slate-900/40 backdrop-blur-[2px] z-40 transition-opacity"></div>
+<!-- Bottom Sheet Container -->
+<div class="fixed inset-x-0 bottom-0 z-50 flex flex-col max-h-[92vh] bg-surface-container-lowest rounded-t-[32px] bottom-sheet-shadow overflow-hidden">
+<!-- Header -->
+<div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/30">
+<div class="w-10"></div> <!-- Spacer for centering -->
+<h1 class="font-h2 text-h2 text-on-surface">新增分類</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-primary active:scale-90 duration-200">
+<span class="material-symbols-outlined !text-[32px]">close</span>
+</button>
+</div>
+<!-- Scrollable Form Content -->
+<div class="flex-1 overflow-y-auto custom-scrollbar px-6 py-6 space-y-6">
+<!-- Category Name -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+                    分類名稱 <span class="text-error">*</span>
+</label>
+<input class="w-full h-14 px-4 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-lg text-on-surface" placeholder="請輸入分類名稱" type="text"/>
+</div>
+<!-- Time and Attributes Group -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Working Hours -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">工時 (分鐘)</label>
+<div class="relative group">
+<select class="w-full h-14 px-4 pr-12 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary appearance-none font-body-lg text-on-surface transition-all">
+<option value="">請選擇工時</option>
+<option value="30">30 分鐘</option>
+<option value="60">60 分鐘</option>
+<option value="90">90 分鐘</option>
+<option value="120">120 分鐘</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<!-- Attributes -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">屬性</label>
+<div class="relative group">
+<select class="w-full h-14 px-4 pr-12 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary appearance-none font-body-lg text-on-surface transition-all">
+<option value="">請選擇屬性</option>
+<option value="service">美顏服務</option>
+<option value="product">實體商品</option>
+<option value="course">美容課程</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Image Upload -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">分類圖片</label>
+<div class="relative group">
+<div class="w-full h-40 border-2 border-dashed border-outline-variant rounded-2xl bg-surface-container-low flex flex-col items-center justify-center gap-3 active:bg-surface-container-high transition-colors cursor-pointer overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-10" data-alt="A clean, professional studio photography background with soft pink silk textures and high-end cosmetic bottles, representing a luxury beauty brand aesthetic for a digital application. The lighting is bright and ethereal, using a light-mode color palette with subtle shadows." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+<span class="material-symbols-outlined text-primary !text-[40px]">cloud_upload</span>
+<p class="font-body-md text-on-surface-variant text-center">
+                            拖放圖片或是 <span class="text-primary font-semibold">點此上傳</span>
+</p>
+<p class="font-caption text-outline">建議尺寸: 800 x 800 px (最大 5MB)</p>
+</div>
+</div>
+</div>
+<!-- Parent Category -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">隸屬分類</label>
+<button class="w-full h-14 px-4 flex items-center justify-between bg-surface-container-low border border-outline-variant rounded-xl active:scale-[0.98] transition-all font-body-lg text-on-surface">
+<span class="text-outline">選擇隸屬分類</span>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+</div>
+<!-- Toggle Switches Area -->
+<div class="space-y-6 pt-2">
+<!-- Recruitment Project Toggle -->
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1">
+<h4 class="font-body-lg font-semibold text-on-surface">集客預約項目</h4>
+<p class="font-caption text-on-surface-variant leading-relaxed">開啟後，此分類將顯示於集客預約頁面，方便顧客線上自助預約。</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer min-w-[56px] h-8">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-8 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- System Project Toggle -->
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1">
+<h4 class="font-body-lg font-semibold text-on-surface">系統預約項目</h4>
+<p class="font-caption text-on-surface-variant leading-relaxed">開啟後，此分類將允許在後台管理系統中手動建立預約單據。</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer min-w-[56px] h-8">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-8 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-6 bg-surface-container-lowest border-t border-outline-variant/30 flex gap-4">
+<button class="flex-1 h-14 flex items-center justify-center font-h3 text-h3 text-on-surface-variant bg-surface-container-high rounded-xl active:scale-95 transition-transform">
+                取消
+            </button>
+<button class="flex-[2] h-14 flex items-center justify-center font-h3 text-h3 text-on-primary bg-primary rounded-xl shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                儲存
+            </button>
+</div>
+<!-- Safe Area Indicator for Mobile -->
+<div class="h-6 w-full bg-surface-container-lowest"></div>
+</div>
+<!-- Inline Bottom Sheet for Parent Category Selection (Hidden Context) -->
+<div class="hidden fixed inset-x-0 bottom-0 z-[60] bg-white rounded-t-[32px] p-6 space-y-4">
+<h3 class="font-h2 text-h2 text-center pb-4">選擇分類</h3>
+<div class="space-y-2">
+<div class="p-4 bg-primary/5 text-primary font-semibold rounded-xl border border-primary/20">無隸屬分類 (主分類)</div>
+<div class="p-4 hover:bg-slate-50 rounded-xl transition-colors">臉部保養</div>
+<div class="p-4 hover:bg-slate-50 rounded-xl transition-colors">身體按摩</div>
+<div class="p-4 hover:bg-slate-50 rounded-xl transition-colors">美甲美睫</div>
+</div>
+</div>
+</body></html>

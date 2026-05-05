@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky - LINE 推播記錄</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .active-tab-underline {
+            position: relative;
+        }
+        .active-tab-underline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #c84c8f;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffafd3",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-dim": "#e8d5db",
+                        "primary-fixed": "#ffd8e7",
+                        "on-surface": "#23191d",
+                        "on-primary-fixed": "#3d0025",
+                        "secondary": "#794c8f",
+                        "primary": "#a22c70",
+                        "surface-bright": "#fff8f8",
+                        "on-secondary-fixed": "#300247",
+                        "surface-variant": "#f1dee3",
+                        "outline-variant": "#dac0c9",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#a52f72",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-secondary-container": "#6c4082",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#9ff87d",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-primary": "#ffafd3",
+                        "primary-container": "#c14689",
+                        "on-primary": "#ffffff",
+                        "surface": "#fff8f8",
+                        "inverse-surface": "#392d32",
+                        "on-tertiary-fixed": "#042100",
+                        "on-tertiary-container": "#f8ffee",
+                        "surface-container-low": "#fff0f4",
+                        "tertiary": "#1c6b00",
+                        "secondary-container": "#e8b3fe",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#88717a",
+                        "on-background": "#23191d",
+                        "surface-container-highest": "#f1dee3",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-error-container": "#93000a",
+                        "background": "#fff8f8",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#84db64",
+                        "tertiary-container": "#328517",
+                        "surface-container": "#fde9ef",
+                        "on-surface-variant": "#554149",
+                        "on-primary-container": "#fffbff",
+                        "secondary-fixed-dim": "#e8b3fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white dark:bg-gray-950 shadow-sm dark:shadow-none border-b border-gray-100 dark:border-gray-800 font-['Plus_Jakarta_Sans'] antialiased">
+<div class="flex items-center gap-4">
+<button class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-95 duration-200 transition-colors">
+<span class="material-symbols-outlined text-[#c84c8f]">menu</span>
+</button>
+<span class="text-xl font-bold text-[#c84c8f]">Wonder Sky</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a high-end salon manager with a friendly expression. The background is a blurred, luxury beauty spa environment with soft pink and white tones, reflecting the professional and trustworthy brand identity of the Luminous Analytics system. The lighting is soft and flattering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA98OwCLKVkYGbM1YLxPBhK7AYm8XPK_wSCZ1YV5ZMjVqLv8Uc_a2YGRDXv1sXzb_kMF1KcYhEd1H4WCoGL4vvUPJIwEsfTxgalma2lxZfNbEv_wNNGP6nKHpkY17R8CXL9LElBBi7uu8b3zUYr6VT7HzicuFubfEJd5ZaS1AFRA6HvQvjLSfodRQwqd-G9mqa42uHpzpqMu2EwRv6AM_6DVTT2Sr0Uf4VKplkPlLOxPrv2GuSAjaKaYdqCHmbXD9VzJKpmMugzMYI"/>
+</div>
+</header>
+<!-- Sidebar (Desktop only, hidden on mobile as per requirement) -->
+<aside class="hidden md:flex flex-col w-64 h-screen fixed left-0 top-16 bg-white dark:bg-gray-950 border-r border-gray-100 dark:border-gray-800 z-40">
+<div class="p-6">
+<h2 class="text-[#c84c8f] font-black text-sm mb-4">會員中心</h2>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 dark:hover:bg-gray-900 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm">會員</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:text-[#c84c8f] hover:bg-gray-50 dark:hover:bg-gray-900 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm">會員等級</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#c84c8f] bg-[#c84c8f]/5 rounded-lg font-bold transition-all duration-300" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm">LINE 推播記錄</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-16 pb-20 md:ml-64 min-h-screen bg-background">
+<!-- Breadcrumb & Title Section -->
+<section class="px-md pt-md pb-xs">
+<div class="flex items-center gap-2 text-caption text-outline mb-2">
+<span>會員</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#c84c8f]">LINE 推播</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface">LINE 推播記錄</h1>
+</section>
+<!-- Tab Navigation (Horizontal Scroll) -->
+<nav class="sticky top-16 z-30 bg-white/80 backdrop-blur-md border-b border-surface-variant mb-md">
+<div class="flex items-center justify-between px-4">
+<div class="flex overflow-x-auto no-scrollbar gap-6">
+<a class="flex-shrink-0 py-4 font-label-md text-outline hover:text-[#c84c8f] transition-colors h-[44px] flex items-center" href="#">推播訊息</a>
+<a class="flex-shrink-0 py-4 font-label-md text-[#c84c8f] active-tab-underline h-[44px] flex items-center" href="#">推播記錄</a>
+<a class="flex-shrink-0 py-4 font-label-md text-outline hover:text-[#c84c8f] transition-colors h-[44px] flex items-center" href="#">草稿</a>
+<a class="flex-shrink-0 py-4 font-label-md text-outline hover:text-[#c84c8f] transition-colors h-[44px] flex items-center whitespace-nowrap" href="#">已排定時間</a>
+</div>
+<button class="w-11 h-11 flex items-center justify-center text-[#c84c8f] rounded-full hover:bg-primary-fixed/20 active:rotate-180 transition-transform duration-500">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</nav>
+<!-- Search Bar -->
+<section class="px-md mb-lg">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-white border border-outline-variant rounded-xl focus:border-[#c84c8f] focus:ring-1 focus:ring-[#c84c8f] placeholder:text-outline/60 outline-none transition-all shadow-sm" placeholder="搜尋主旨" type="text"/>
+</div>
+</section>
+<!-- Empty State Container -->
+<section class="flex flex-col items-center justify-center pt-xl px-xl text-center">
+<div class="relative w-64 h-64 mb-6 flex items-center justify-center">
+<!-- Abstract Linear Illustration via Background Image -->
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
+<div class="relative z-10 w-48 h-48 flex items-center justify-center rounded-3xl bg-surface-container-low shadow-inner">
+<div class="relative flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-[64px] text-[#c84c8f]/40">description</span>
+<div class="absolute -bottom-2 -right-4 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border border-surface-variant">
+<span class="material-symbols-outlined text-[32px] text-[#c84c8f]">search</span>
+</div>
+<span class="material-symbols-outlined absolute -top-4 -left-4 text-[24px] text-secondary">help</span>
+</div>
+</div>
+</div>
+<p class="font-body-lg text-outline mb-2">目前尚無記錄</p>
+<p class="font-caption text-outline/60 max-w-[200px]">沒有找到任何符合「搜尋主旨」的推播記錄，請嘗試其他關鍵字或建立新推播。</p>
+<!-- Contextual CTA for New Message -->
+<button class="mt-8 px-8 py-3 bg-[#c84c8f] text-white rounded-xl font-h3 shadow-lg shadow-[#c84c8f]/20 active:scale-95 transition-all">
+                建立新訊息
+            </button>
+</section>
+<!-- Visual Enhancement: Corporate Background Decor -->
+<div class="fixed top-0 right-0 -z-10 w-1/2 h-screen overflow-hidden opacity-30 pointer-events-none">
+<div class="absolute -top-20 -right-20 w-[400px] h-[400px] bg-primary-fixed blur-[100px] rounded-full"></div>
+<div class="absolute bottom-40 right-0 w-[300px] h-[300px] bg-secondary-fixed-dim blur-[80px] rounded-full opacity-50"></div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 md:hidden px-4 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-[#c84c8f] transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">首頁</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c84c8f] font-bold active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">會員</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-[#c84c8f] transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">訂單</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-[#c84c8f] transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans']">設定</span>
+</a>
+</nav>
+<!-- Aesthetic Decorative Image for Background Section -->
+<div class="hidden">
+<img data-alt="A clean, minimalist high-key abstract background showing soft pink and white gradients with subtle geometric light patterns. The image evokes a sense of high-end clinical professionalism and beauty sector elegance. The soft transitions between colors create a serene and organized mood for a business analytics platform." src="https://lh3.googleusercontent.com/aida/ADBb0uhGI3dPgfcHAm-Y5FAjbQYcZ8iYbwbu9u2O7XFo8akZYeBoOIUmCi-bipkZU3uFpYpJqzOvx7rm4oIcf4r1QiNWKpEARyksY3FyYTCx4FNoLCRU2BDpcy9kdYVJ854lmjZt8ktHMKR2-jnuHF7I1nV8CU_R67FVCBY9a8S0asv_GebUwe7LR6NNwq3vqPq8dz8lIYm7V_9bvPG-XvVrymeHTeEbs1DfYFUBhUt1O-iS6VUBIDxq4qhIJmL2M7NnA3uoN3sgg9dDbw"/>
+</div>
+</body></html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>服務及商品 - Wonder sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffafd3",
+                        "surface-bright": "#fff8f8",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-secondary-fixed-variant": "#603475",
+                        "on-secondary-fixed": "#300247",
+                        "surface-container-highest": "#f1dee3",
+                        "tertiary": "#1c6b00",
+                        "secondary": "#794c8f",
+                        "on-surface-variant": "#554149",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#c14689",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-tertiary-container": "#f8ffee",
+                        "background": "#fff8f8",
+                        "surface": "#fff8f8",
+                        "on-secondary-container": "#6c4082",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#e8b3fe",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-tertiary-fixed": "#042100",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-on-surface": "#ffecf1",
+                        "surface-container": "#fde9ef",
+                        "surface-container-high": "#f7e3e9",
+                        "primary-fixed": "#ffd8e7",
+                        "surface-variant": "#f1dee3",
+                        "surface-dim": "#e8d5db",
+                        "primary": "#a22c70",
+                        "inverse-surface": "#392d32",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "outline-variant": "#dac0c9",
+                        "on-primary-container": "#fffbff",
+                        "on-background": "#23191d",
+                        "tertiary-container": "#328517",
+                        "on-error": "#ffffff",
+                        "outline": "#88717a",
+                        "surface-container-low": "#fff0f4",
+                        "on-surface": "#23191d",
+                        "secondary-fixed": "#f6d9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "gutter": "20px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff8f8;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- Left Sidebar -->
+<aside class="h-screen w-64 border-r border-slate-200 bg-white flex flex-col flex-shrink-0 sticky top-0 overflow-y-auto">
+<div class="p-6">
+<h1 class="text-xl font-bold text-[#a22c70] flex items-center gap-2">
+<span class="material-symbols-outlined">auto_awesome</span>
+                Wonder sky
+            </h1>
+<p class="text-xs text-slate-400 mt-1">國際美妍館</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">資訊中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">財務中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-sm font-medium">記帳</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-sm font-medium">預約</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">會員</span>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#a22c70] bg-[#a22c70]/5 rounded-lg font-semibold border-r-4 border-[#a22c70]" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm">服務及商品</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="text-sm font-medium">票券管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-sm font-medium">門店管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="text-sm font-medium">組織架構</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-100">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-[#a22c70] transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-sm">設定</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-[#a22c70] transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">help</span>
+<span class="text-sm">說明中心</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 bg-background">
+<!-- Top Navigation -->
+<header class="w-full h-16 bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 flex justify-between items-center sticky top-0 z-40">
+<div class="flex items-center text-sm text-slate-500">
+<span class="hover:text-[#a22c70] cursor-pointer">服務及商品</span>
+<span class="mx-2 text-slate-300">/</span>
+<span class="text-slate-900 font-semibold">服務及商品</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-[#a22c70] text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-[#861259] transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+                    快速開單
+                </button>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all">
+<span class="material-symbols-outlined">apps</span>
+</button>
+</div>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+<div class="text-right">
+<p class="text-xs font-semibold text-slate-900">經理人</p>
+<p class="text-[10px] text-slate-400">總店管理者</p>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="A professional close-up of a smiling salon manager in a sleek workspace. The lighting is soft and natural, emphasizing a professional yet warm environment. The aesthetic is clean and modern, with soft pink and deep burgundy accents in the background to match the brand colors of Wonder sky." src="https://lh3.googleusercontent.com/aida/ADBb0uj_rwgig1KDvcpcz0ZhzmyFG6qeL_b-sVImoM4IoYV5utwB2ZDjy3txouNhzEHk9akWAD5lveGjR8v--T33_FoHtNhOHYopqt9qYRgAhzC2YUxNImKR8jVJzVdt-Pz-BSMpK6bKdG0VegBQbvUD5tC_Th1fbhjwilW_WOA3nfUfm-Kql3vS_J_5haSKs8ZhHiRbNjo6paLUdbpJlkwMu16Qy2M5IlSmwpmbVKxn7tuNMqjNiIC2DlzXvtfkC7NxdZKHEfq6WRwuvg"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-lg space-y-lg">
+<!-- Tabs Section -->
+<div class="bg-white rounded-xl shadow-sm overflow-hidden">
+<div class="flex border-b border-slate-100">
+<button class="px-8 py-4 text-sm font-bold text-[#a22c70] border-b-2 border-[#a22c70] transition-colors">服務</button>
+<button class="px-8 py-4 text-sm font-medium text-slate-500 hover:text-slate-700 transition-colors">商品/耗材</button>
+<button class="px-8 py-4 text-sm font-medium text-slate-500 hover:text-slate-700 transition-colors">業績提成模板設定</button>
+<button class="px-8 py-4 text-sm font-medium text-slate-500 hover:text-slate-700 transition-colors">服務上限</button>
+</div>
+<div class="p-6 space-y-6">
+<!-- Search & Controls -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4 flex-1 max-w-2xl">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-[#a22c70]/20 focus:border-[#a22c70] transition-all outline-none" placeholder="搜尋服務名稱或編號..." type="text"/>
+</div>
+<button class="flex items-center gap-1 text-sm text-[#a22c70] font-medium hover:underline">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+                                進階搜尋
+                            </button>
+<button class="flex items-center gap-1 text-sm text-[#a22c70] font-medium hover:underline">
+<span class="material-symbols-outlined text-lg">category</span>
+                                搜尋分類
+                            </button>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 bg-[#a22c70] text-white rounded-lg text-sm font-semibold shadow-md hover:bg-[#861259] transition-all">
+                                新增服務
+                            </button>
+<button class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-lg text-sm font-medium hover:bg-slate-50 transition-all">
+                                批次套用
+                            </button>
+<button class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-lg text-sm font-medium hover:bg-slate-50 transition-all">
+                                批次複製
+                            </button>
+<button class="px-4 py-2 bg-slate-100 text-slate-400 rounded-lg text-sm font-medium cursor-not-allowed">
+                                刪除
+                            </button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto rounded-lg border border-slate-100">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 text-slate-600 text-xs font-semibold uppercase tracking-wider">
+<th class="px-4 py-4 w-12"><input class="rounded border-slate-300 text-[#a22c70] focus:ring-[#a22c70]" type="checkbox"/></th>
+<th class="px-4 py-4 w-16">序號</th>
+<th class="px-4 py-4">服務名稱</th>
+<th class="px-4 py-4">分類</th>
+<th class="px-4 py-4">適用門店</th>
+<th class="px-4 py-4">價格 (TWD)</th>
+<th class="px-4 py-4 text-center">集客/系統預約</th>
+<th class="px-4 py-4">狀態</th>
+<th class="px-4 py-4 text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Row 1 -->
+<tr class="group hover:bg-[#a22c70]/5 transition-colors">
+<td class="px-4 py-4"><input class="rounded border-slate-300 text-[#a22c70] focus:ring-[#a22c70]" type="checkbox"/></td>
+<td class="px-4 py-4 text-sm text-slate-500">01</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High-end beauty treatment visualization showing a close-up of premium facial skincare application. The lighting is ethereal and bright, emphasizing clarity and professionalism. Deep pink and soft gold color palette reflects a luxury aesthetic in line with Wonder sky brand identity." src="https://lh3.googleusercontent.com/aida/ADBb0uheuQO6wl3ZY61sW5_JnPuqdK_-PL95IqBaJ7Y0sih-uEkCJ2_QANGduy8jEl9UBKUZSmXxj0N5jh5d9kkB3xAGHs6nu61kmxa6j74CuqHAI_iu55qjuKk8l8j9x2GanyLN8R-O_KextZg9SLiySKDUs_3VHAFS9miZ4hTRo1JK8bbkpFdtGTXsRANhwpbQyRZl6Wf88J1DMsP0VTQuFZK6AZTaAIrs-upXTTNY1tbnK98y5-QMu6I6zh_6VOSuNzArchjoEEA6Kw"/>
+</div>
+<div>
+<p class="text-sm font-semibold text-slate-900">極緻奢華水氧活膚療程</p>
+<p class="text-xs text-slate-400">S-00219</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-sm text-slate-600">面部護理</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 bg-slate-100 text-slate-600 rounded text-[11px] font-medium">台北信義店</span>
+</td>
+<td class="px-4 py-4 text-sm font-bold text-slate-900">$ 3,800</td>
+<td class="px-4 py-4 text-center">
+<span class="material-symbols-outlined text-tertiary font-bold" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">銷售中</span>
+</td>
+<td class="px-4 py-4 text-right space-x-2">
+<button class="text-[#a22c70] hover:underline text-sm font-medium">編輯</button>
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined text-lg align-middle">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-[#a22c70]/5 transition-colors">
+<td class="px-4 py-4"><input class="rounded border-slate-300 text-[#a22c70] focus:ring-[#a22c70]" type="checkbox"/></td>
+<td class="px-4 py-4 text-sm text-slate-500">02</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro shot of essential oil bottles and smooth massage stones on a white linen surface. Soft, high-key lighting creates a serene, spa-like atmosphere. The scene is clean and organized, with a minimalist aesthetic and subtle pink floral accents in the blurred background." src="https://lh3.googleusercontent.com/aida/ADBb0uhzNsFSiekdZ4ZwXFnA_Tas_-nRr5cHtyn5jT_ERtyErycgw6MKgyTvgZZa3a_KLfbZZLljvAyMUIO9lLiKgmBS0jBmu5XgYznmAPZvWfUV3OE6_bwhYwcDJWHF6wqKh0p1-OVDEbMBAITjSl3-V7CyppUlCqyGNqHrWJxFOrfELJaK9Z8AJ90WxMeXVa8d3tgM1u9FuFK8kany9KwDxPUoRRyaGqrEJBAD5yy4ymDvU4NDfCvIy3RpPxtPqz2FtLsxygSghUAnDQ"/>
+</div>
+<div>
+<p class="text-sm font-semibold text-slate-900">深層肌肉經絡放鬆SPA</p>
+<p class="text-xs text-slate-400">S-00220</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-sm text-slate-600">身體SPA</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 bg-slate-100 text-slate-600 rounded text-[11px] font-medium">全門店</span>
+</td>
+<td class="px-4 py-4 text-sm font-bold text-slate-900">$ 2,500</td>
+<td class="px-4 py-4 text-center">
+<span class="material-symbols-outlined text-tertiary font-bold" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">銷售中</span>
+</td>
+<td class="px-4 py-4 text-right space-x-2">
+<button class="text-[#a22c70] hover:underline text-sm font-medium">編輯</button>
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined text-lg align-middle">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-[#a22c70]/5 transition-colors">
+<td class="px-4 py-4"><input class="rounded border-slate-300 text-[#a22c70] focus:ring-[#a22c70]" type="checkbox"/></td>
+<td class="px-4 py-4 text-sm text-slate-500">03</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed view of elegant nail art being applied by a professional technician. The environment is a brightly lit, high-end beauty salon with a soft-focus background of rose-pink decor. The lighting is crisp and clear, highlighting the precision of the service and the clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ugDY42y6Gm--HQa4Wj1E_Lcl-uX5Ik2Xa3oAGiE89H8bSXA4EYHWvuepyoReRR2TtmM2bHgn3Yptik7GczwF0eqLaMgMXMMTgmwCxcomOBBJbfDe0LY_iM5pQeepjlqsT-yBxm--kMX8FYNH8OYiI8XyXc69U1TK01_8tgMlkgel2PBJHt5jEFhc6UIMzW0vhAemcnbFR-p2vhQWFOUY5BWX9TvfYsWowN_k1c20hjOsDJ2JE7XbM2UrhUJhIHTLGLbbIipgSJOyQ"/>
+</div>
+<div>
+<p class="text-sm font-semibold text-slate-900">法式經典藝術凝膠美甲</p>
+<p class="text-xs text-slate-400">S-00221</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-sm text-slate-600">美甲美睫</td>
+<td class="px-4 py-4">
+<span class="px-2 py-1 bg-slate-100 text-slate-600 rounded text-[11px] font-medium">台中勤美店</span>
+</td>
+<td class="px-4 py-4 text-sm font-bold text-slate-900">$ 1,800</td>
+<td class="px-4 py-4 text-center">
+<span class="material-symbols-outlined text-slate-200">check_circle</span>
+</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-500">已停售</span>
+</td>
+<td class="px-4 py-4 text-right space-x-2">
+<button class="text-[#a22c70] hover:underline text-sm font-medium">編輯</button>
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined text-lg align-middle">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between pt-4">
+<p class="text-xs text-slate-500">顯示第 1 到 3 筆服務，共計 124 筆</p>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-400 hover:bg-slate-50">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center border border-[#a22c70] bg-[#a22c70] rounded text-white text-xs font-bold shadow-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-600 text-xs font-medium hover:bg-slate-50 transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-600 text-xs font-medium hover:bg-slate-50 transition-colors">3</button>
+<span class="px-2 text-slate-400 text-xs">...</span>
+<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-600 text-xs font-medium hover:bg-slate-50 transition-colors">42</button>
+<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-400 hover:bg-slate-50">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Dashboard Analytics Preview (Bento Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm col-span-2">
+<h3 class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+                        熱門服務趨勢
+                    </h3>
+<div class="h-48 w-full bg-slate-50 rounded-lg flex items-end justify-between px-6 pb-4">
+<div class="w-8 bg-primary/20 h-1/2 rounded-t-sm"></div>
+<div class="w-8 bg-primary/40 h-2/3 rounded-t-sm"></div>
+<div class="w-8 bg-primary/60 h-3/4 rounded-t-sm"></div>
+<div class="w-8 bg-primary h-full rounded-t-sm"></div>
+<div class="w-8 bg-primary/30 h-1/2 rounded-t-sm"></div>
+<div class="w-8 bg-primary/50 h-2/3 rounded-t-sm"></div>
+</div>
+</div>
+<div class="bg-[#a22c70] p-6 rounded-xl shadow-lg relative overflow-hidden text-white flex flex-col justify-between">
+<div class="relative z-10">
+<p class="text-sm opacity-80">本月銷售額</p>
+<p class="text-2xl font-bold mt-1">$ 1,248,300</p>
+</div>
+<div class="relative z-10 flex items-center gap-2 text-xs">
+<span class="bg-white/20 px-2 py-1 rounded">+12.5%</span>
+<span>較上月成長</span>
+</div>
+<!-- Background Decoration -->
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+<span class="material-symbols-outlined absolute top-4 right-4 text-4xl opacity-20">payments</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

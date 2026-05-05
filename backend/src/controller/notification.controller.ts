@@ -21,7 +21,7 @@ import { CacheGuardService } from '../redis/guard.service';
 
 const NOTIFICATION_CACHE_PREFIX = 'notif:';
 
-@Controller('/api/notifications', {
+@Controller('/notifications', {
   tagName: '通知',
   description: '通知管理接口',
 })
