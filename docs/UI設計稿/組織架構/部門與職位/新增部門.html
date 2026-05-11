@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky - Organization Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e4e2e1",
+                    "on-tertiary-fixed": "#241912",
+                    "inverse-surface": "#303030",
+                    "secondary-fixed": "#f1dde7",
+                    "outline-variant": "#dac0c9",
+                    "background": "#fbf9f8",
+                    "primary": "#a22c70",
+                    "tertiary-fixed": "#f3dfd1",
+                    "on-secondary-fixed": "#23181f",
+                    "inverse-primary": "#ffafd3",
+                    "on-tertiary-fixed-variant": "#51443b",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#fbf9f8",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-background": "#1b1c1c",
+                    "primary-fixed-dim": "#ffafd3",
+                    "primary-fixed": "#ffd8e7",
+                    "on-surface-variant": "#554149",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#fffbff",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface": "#1b1c1c",
+                    "on-tertiary-container": "#fffbff",
+                    "tertiary-fixed-dim": "#d6c3b6",
+                    "on-secondary-fixed-variant": "#50434b",
+                    "secondary-container": "#f1dde7",
+                    "surface": "#fbf9f8",
+                    "on-primary-fixed-variant": "#861259",
+                    "surface-variant": "#e4e2e1",
+                    "primary-container": "#c14689",
+                    "surface-container": "#f0eded",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary": "#685a63",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#6f6069",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#a52f72",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#817267",
+                    "secondary-fixed-dim": "#d4c2cb",
+                    "on-primary-fixed": "#3d0025",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#68594f",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eae8e7",
+                    "outline": "#88717a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "xl": "64px",
+                    "gutter": "24px",
+                    "margin": "32px",
+                    "lg": "40px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Manrope"],
+                    "h2": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "h1": ["Manrope"],
+                    "h3": ["Manrope"],
+                    "button": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .backdrop-blur-custom {
+            backdrop-filter: blur(8px);
+            background-color: rgba(27, 28, 28, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-full border-r-0 p-base bg-surface dark:bg-surface-dim docked h-full w-72 left-0 top-0 shadow-sm dark:shadow-none shrink-0 z-50">
+<div class="flex items-center gap-sm mb-lg px-4 pt-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="Wonder Sky Salon Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADjI3lgbhW-RhW5mJIcU3fQuei7R04uT24rC3hNlfo53yZ-Alh0ikqp6M9ZKKLfp90KpJ3c3YhhACirm6mlUQAm4VSpsuwn_CB9ezn8q_ofxxk-qLj6k-c-X2Tm7hD39jXfSxe6pYSdIDO3HAGOMuelDIPTgceYLrLjgN2hkXzCQ6nZt5PgImzpsNzppjl0yIfu8V80o7-CxZUXstE5ZtrSCC7zTC7WmlfvDZloXQYUG7Kya295vYLTc9ptLodxCTqsAdCpdCd5GAP"/>
+</div>
+<div>
+<h1 class="text-h2 font-h2 font-bold text-primary dark:text-primary-fixed-dim leading-none">Wonder Sky</h1>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">Beauty &amp; Wellness</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md">Appointments</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md">Members</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+<span class="font-body-md">Services &amp; Products</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-body-md">Ticket Management</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-body-md">Store Management</span>
+</a>
+<a class="flex items-center gap-sm bg-primary-container text-on-primary-container rounded-full px-4 py-2 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-body-md">Organization</span>
+</a>
+</nav>
+<div class="mt-auto space-y-2 pt-base border-t border-surface-container">
+<button class="w-full bg-primary text-white rounded-full py-3 mb-4 font-button active:scale-95 transition-transform">
+                New Appointment
+            </button>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col min-w-0 bg-background overflow-y-auto relative">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin py-base w-full sticky top-0 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm dark:shadow-none z-40">
+<div class="flex items-center gap-md">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-12 pr-4 py-2.5 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 font-body-md transition-all" placeholder="Search resources, members..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-sm py-1.5 px-4 bg-primary text-on-primary rounded-full font-button active:opacity-80 transition-opacity">
+                    Create Order
+                </button>
+<div class="flex items-center gap-sm pl-2">
+<div class="text-right">
+<div class="font-button text-on-surface">LULU</div>
+<div class="text-[10px] text-on-surface-variant">Manager</div>
+</div>
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full border-2 border-primary-fixed object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEt-kxmkMYufiHSlweJIg88FhZ3QctLXj6n0jMoHeXCDIfMf5tlfjU7yfqQ7yWjIfLfOsCTiUAPWRX5NF72edRDm3OSc1E8YNSv4L8Yw_smuTQtJbEG_RJTrmGlSamisqOGRszK3QoUg_i2RhMODyk4MJKbUSXrK2lWvy2OHVadDbD5iZkYzgWp8hYzAjvz59tFU9WafZT8WjdQwwH8b3XAs4KnHZdGz4SfK96zyeQWbwWvaF0YhUx5om1D-qxjEn9Ns9c32rqHn0s"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-margin max-w-7xl mx-auto w-full">
+<div class="mb-lg">
+<h2 class="font-h1 text-h1 text-on-surface mb-2">組織架構</h2>
+<div class="flex gap-lg border-b border-surface-container-highest">
+<button class="py-4 px-2 text-on-surface-variant font-button hover:text-primary transition-colors">職位</button>
+<button class="py-4 px-2 text-on-surface-variant font-button hover:text-primary transition-colors">管理層職位</button>
+<button class="py-4 px-2 text-on-surface-variant font-button hover:text-primary transition-colors">級別</button>
+<button class="py-4 px-2 text-primary font-button border-b-2 border-primary">部門</button>
+</div>
+</div>
+<!-- Bento-style Content Overview -->
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 flex justify-between items-center bg-white p-md rounded-lg shadow-sm">
+<div class="flex gap-base">
+<button class="flex items-center gap-xs px-6 py-2.5 bg-primary text-white rounded-full font-button shadow-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                            新增部門
+                        </button>
+<button class="flex items-center gap-xs px-6 py-2.5 border border-outline-variant text-on-surface-variant rounded-full font-button hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="sort">sort</span>
+                            排序
+                        </button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="col-span-12 bg-white rounded-lg shadow-sm overflow-hidden">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-md py-4 font-label-caps text-on-surface-variant">名稱</th>
+<th class="px-md py-4 font-label-caps text-on-surface-variant text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-md py-5 font-body-lg text-on-surface">美容部</td>
+<td class="px-md py-5 text-right">
+<div class="flex justify-end gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-md py-5 font-body-lg text-on-surface">櫃檯接待部</td>
+<td class="px-md py-5 text-right">
+<div class="flex justify-end gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-md py-5 font-body-lg text-on-surface">行銷企劃部</td>
+<td class="px-md py-5 text-right">
+<div class="flex justify-end gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Descriptive Visual Card -->
+<div class="col-span-12 rounded-xl h-64 relative overflow-hidden bg-primary-fixed">
+<img class="w-full h-full object-cover mix-blend-overlay opacity-40" data-alt="A serene spa environment with soft lighting, warm wooden accents, and a focused therapist performing a professional treatment, embodying luxury beauty services and organized wellness management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH_jILXjzf3aU11LNYhEw064bMKnBuP8mYN014_qK5d2zo_m1jYEBmOGuFMMHhu9u8e9ps0CKVXnGvfhxXIRaZbMJYtGfgoA11KYAyn-1pMo5Wqfopg1zNuZmXs0QZ7Leh2G_MNCFlDApz6iS1Y4Wcgg6kfQqvMOI2wOMtJZIuPMncWEPsCG5Mr2QNIOPcbUppKuZnju7r0y2pI_5WNajZ-Ss5hacQ7fCOj28otT4E1e0rdT1oQTUesXZpw0ExWwV1PTrzni_DoFEL"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent p-lg flex flex-col justify-end">
+<h3 class="text-white font-h1 text-h1">高效組織，優質服務</h3>
+<p class="text-white/90 font-body-lg max-w-md mt-2">Wonder Sky 致力於透過完善的組織分工，為每一位顧客提供尊榮的美容體驗。</p>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL OVERLAY -->
+<div class="fixed inset-0 z-[60] flex items-center justify-center backdrop-blur-custom p-margin">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-xl shadow-2xl overflow-hidden relative active:scale-[0.99] transition-transform duration-300">
+<!-- Modal Header -->
+<div class="bg-surface-container-low px-md py-4 flex justify-center items-center relative">
+<h3 class="font-h3 text-h3 text-on-surface">新增</h3>
+<button class="absolute right-4 p-1 text-primary hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-lg">
+<div class="relative group">
+<label class="block text-label-caps text-on-surface-variant mb-2">部門名稱</label>
+<input autofocus="" class="w-full px-md py-4 bg-white border border-outline-variant rounded-full text-body-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-surface-dim" placeholder="部門" type="text"/>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-md pb-lg pt-2 flex justify-end gap-md">
+<button class="px-8 py-3 text-on-surface-variant font-button hover:bg-surface-container-high rounded-full transition-colors">
+                        取消
+                    </button>
+<button class="px-8 py-3 bg-primary text-white font-button rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all">
+                        新增
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

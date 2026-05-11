@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky - 會員點數兌換</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#51443b",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#f3f0f0",
+            "surface-dim": "#dcd9d9",
+            "secondary-fixed-dim": "#d4c2cb",
+            "on-primary-container": "#fffbff",
+            "surface-container": "#f0eded",
+            "surface-container-low": "#f6f3f2",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#554149",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#817267",
+            "on-tertiary": "#ffffff",
+            "outline": "#88717a",
+            "on-surface": "#1b1c1c",
+            "surface-variant": "#e4e2e1",
+            "tertiary-fixed-dim": "#d6c3b6",
+            "on-secondary-fixed": "#23181f",
+            "on-secondary-fixed-variant": "#50434b",
+            "tertiary-fixed": "#f3dfd1",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#ffafd3",
+            "on-primary": "#ffffff",
+            "secondary": "#685a63",
+            "inverse-surface": "#303030",
+            "surface": "#fbf9f8",
+            "inverse-primary": "#ffafd3",
+            "surface-container-highest": "#e4e2e1",
+            "secondary-container": "#f1dde7",
+            "outline-variant": "#dac0c9",
+            "on-tertiary-fixed": "#241912",
+            "on-tertiary-container": "#fffbff",
+            "on-primary-fixed-variant": "#861259",
+            "primary-fixed": "#ffd8e7",
+            "on-primary-fixed": "#3d0025",
+            "tertiary": "#68594f",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#fbf9f8",
+            "primary": "#a22c70",
+            "primary-container": "#c14689",
+            "on-background": "#1b1c1c",
+            "on-secondary-container": "#6f6069",
+            "surface-container-high": "#eae8e7",
+            "secondary-fixed": "#f1dde7",
+            "error": "#ba1a1a",
+            "background": "#fbf9f8",
+            "surface-tint": "#a52f72"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "32px",
+            "gutter": "24px",
+            "md": "24px",
+            "lg": "40px",
+            "xs": "4px",
+            "base": "8px",
+            "xl": "64px",
+            "sm": "12px"
+          },
+          "fontFamily": {
+            "body-md": ["Manrope"],
+            "body-lg": ["Manrope"],
+            "button": ["Manrope"],
+            "label-caps": ["Manrope"],
+            "h3": ["Manrope"],
+            "h1": ["Manrope"],
+            "h2": ["Manrope"]
+          },
+          "fontSize": {
+            "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+            "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #dac0c9;
+      border-radius: 10px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface min-h-screen overflow-hidden">
+<!-- Main Workspace (Underlay) -->
+<div class="flex h-screen overflow-hidden">
+<!-- Predicted Component: SideNavBar -->
+<aside class="hidden md:flex flex-col h-full border-r-0 p-base docked h-full w-72 left-0 top-0 shadow-sm dark:shadow-none bg-surface dark:bg-surface-dim">
+<div class="mb-lg px-md">
+<h1 class="text-h2 font-h2 font-bold text-primary dark:text-primary-fixed-dim">Wonder Sky</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Beauty &amp; Wellness</p>
+</div>
+<nav class="flex-1 space-y-xs">
+<div class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high transition-all duration-200 cursor-pointer active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-body-md">Appointments</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high transition-all duration-200 cursor-pointer active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">Members</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high transition-all duration-200 cursor-pointer active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+<span class="font-body-md text-body-md">Services &amp; Products</span>
+</div>
+<!-- Active: Ticket Management -->
+<div class="flex items-center gap-sm bg-primary-container text-on-primary-container rounded-full px-4 py-2 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-body-md text-body-md">Ticket Management</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high transition-all duration-200 cursor-pointer active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-body-md text-body-md">Store Management</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface px-4 py-2 hover:bg-surface-container-high transition-all duration-200 cursor-pointer active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-body-md text-body-md">Organization</span>
+</div>
+</nav>
+<div class="mt-auto pt-md border-t border-surface-variant">
+<div class="flex items-center gap-sm text-on-surface-variant px-4 py-2 hover:bg-surface-container-high rounded-full cursor-pointer transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 relative bg-surface-container-lowest">
+<!-- Predicted Component: TopAppBar -->
+<header class="flex justify-between items-center px-margin py-base w-full sticky top-0 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm dark:shadow-none z-40">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined md:hidden" data-icon="menu">menu</span>
+<h2 class="text-h2 font-h2 font-bold text-primary dark:text-primary-fixed-dim">Wonder Sky</h2>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chat_bubble">chat_bubble</span>
+<div class="flex items-center gap-sm border border-outline-variant px-md py-xs rounded-full">
+<div class="w-8 h-8 rounded-full bg-secondary-container overflow-hidden">
+<img alt="LULU" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdfC2lIMMVPJkrFd-LI4Wm40PhLOGColbSM3Kz4noY3NnpyoUPSlONudRW5_KK4Uo3OMjheUt2O00uVfy9xN6q38BVg4voW0phTSW3WJiPfTVPtxhwdwn6uJMGV1REN-c2VUK1CcMyluL8M_71bwvb2VL0cWK6ErXfwdQ3gsujLje82mMoamvASn-DZoPBvu1hPUjsopDMKIQO8DHCpt9dXNzNzCsWBxha-unFoCsD2VxG9yDgHQrHYvZO5sS3UFChvJLPAgZEAQZS"/>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface font-bold uppercase">LULU</span>
+</div>
+</div>
+</header>
+<!-- Dashboard Mock Content -->
+<div class="p-margin space-y-lg opacity-40 select-none pointer-events-none">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-white p-md rounded-lg shadow-sm">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-xs">Today's Revenue</p>
+<h3 class="text-h1 font-h1 text-primary">$12,450</h3>
+</div>
+<div class="bg-white p-md rounded-lg shadow-sm">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-xs">Active Members</p>
+<h3 class="text-h1 font-h1 text-primary">842</h3>
+</div>
+<div class="bg-white p-md rounded-lg shadow-sm">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-xs">New Inquiries</p>
+<h3 class="text-h1 font-h1 text-primary">15</h3>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- MODAL BACKDROP -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex flex-col justify-end">
+<!-- MODAL BODY: Bottom-sheet style -->
+<div class="bg-surface w-full max-h-[839px] rounded-t-xl flex flex-col shadow-2xl overflow-hidden animate-slide-up">
+<!-- HEADER -->
+<div class="relative px-md py-lg text-center border-b border-surface-variant">
+<h2 class="text-h2 font-h2 text-on-surface font-bold">會員點數兌換</h2>
+<button class="absolute right-md top-md w-12 h-12 flex items-center justify-center text-primary hover:bg-primary/10 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[28px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- MEMBER INFO BAR -->
+<div class="bg-surface-container-low px-md py-md flex justify-between items-center border-b border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<p class="text-h3 font-h3 text-on-surface">Lulu</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Platinum Member</p>
+</div>
+</div>
+<div class="flex gap-lg">
+<div class="text-center">
+<div class="flex items-center justify-center text-primary mb-1">
+<span class="material-symbols-outlined text-[20px] mr-1" data-icon="savings">savings</span>
+<span class="font-h3 text-h3">0</span>
+</div>
+<p class="text-label-caps font-label-caps text-on-surface-variant">預儲金</p>
+</div>
+<div class="text-center">
+<div class="flex items-center justify-center text-primary mb-1">
+<span class="material-symbols-outlined text-[20px] mr-1" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-h3 text-h3">0</span>
+</div>
+<p class="text-label-caps font-label-caps text-on-surface-variant">現有點數</p>
+</div>
+</div>
+</div>
+<!-- CONTENT AREA -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-md pb-[120px]">
+<div class="max-w-3xl mx-auto space-y-lg">
+<!-- Dropdown: 兌換類型 -->
+<div class="space-y-base">
+<label class="text-label-caps font-label-caps text-on-surface-variant px-1">兌換類型</label>
+<div class="relative">
+<select class="w-full h-14 bg-surface-container-lowest border-0 rounded-lg px-md text-body-lg font-body-lg text-on-surface focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option>優惠券</option>
+<option>實體贈品</option>
+<option>儲值金轉換</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-4 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Select Coupon Button -->
+<button class="w-full h-14 bg-secondary-container hover:bg-outline-variant text-primary font-button text-button rounded-lg transition-colors flex items-center justify-center gap-sm active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+            選擇優惠券
+          </button>
+<!-- Textarea: 備註 -->
+<div class="space-y-base">
+<label class="text-label-caps font-label-caps text-on-surface-variant px-1">備註</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-lowest border-0 rounded-lg p-md text-body-lg font-body-lg text-on-surface focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/40 resize-none" placeholder="請輸入備註內容..." rows="4"></textarea>
+<div class="absolute bottom-md right-md text-label-caps font-label-caps text-on-surface-variant bg-surface-container/50 px-2 py-1 rounded">
+                0 / 256
+              </div>
+</div>
+</div>
+<!-- Data Summary Card -->
+<div class="bg-white rounded-lg shadow-lg shadow-primary/5 p-md border border-primary/10 grid grid-cols-2 gap-md">
+<div class="space-y-base">
+<p class="text-label-caps font-label-caps text-on-surface-variant">所需點數</p>
+<div class="text-h1 font-h1 text-primary">0</div>
+</div>
+<div class="space-y-base text-right">
+<p class="text-label-caps font-label-caps text-on-surface-variant">兌換後剩餘點數</p>
+<div class="text-h1 font-h1 text-on-surface">0</div>
+</div>
+</div>
+<!-- Staff Dropdown -->
+<div class="space-y-base">
+<label class="text-label-caps font-label-caps text-on-surface-variant px-1">工作人員</label>
+<div class="relative">
+<select class="w-full h-14 bg-surface-container-lowest border-0 rounded-lg px-md text-body-lg font-body-lg text-on-surface focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option>LULU</option>
+<option>AMY</option>
+<option>JACK</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-4 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- FOOTER: Fixed at bottom -->
+<div class="absolute bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md p-md border-t border-surface-variant">
+<button class="w-full h-16 bg-primary hover:bg-primary-container text-white font-button text-body-lg rounded-full shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+          確認兌換
+        </button>
+</div>
+</div>
+</div>
+<!-- Decorative Background Image for Context (Light Luxury Aesthetic) -->
+<div class="fixed top-0 right-0 -z-10 w-1/3 h-full opacity-10 pointer-events-none">
+<img alt="Wellness Background" class="w-full h-full object-cover" data-alt="A serene and luxurious spa interior featuring soft Morandi color tones, elegant marble surfaces, and minimalist wooden accents. The lighting is diffused and warm, highlighting a pristine wellness atmosphere with delicate floral arrangements and premium skincare products. The composition is clean and airy, perfectly embodying a high-end beauty salon brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1pigZ1Zgk6bsFMcbMpEh_tkLQWYf4LrXAnpktTqmXwt64jWwBl9ID0n1h1xRf-T3eA8P2zq598B52E-qzb7GSKGdTiY-9t5iKmdJLDSJZ81z6hjG0oF-GDT9dJ1XOXgjAsaQGOQXlPMxgGNPc70x_LZgOcsJF4_IGpQevwW1GAaxmZJdllI6vVwNbzZw-V6YyuSnWk4o5nmvtbq3Ptu_DdTlNnfXIgFZAPLf8P3Jqond1LxvjDVbO8k6ElTiahuBMWDqVmZDX09lQ"/>
+</div>
+</body></html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 票券管理</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae8e7",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "on-tertiary-fixed": "#241912",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#554149",
+                        "surface-container-highest": "#e4e2e1",
+                        "tertiary-fixed": "#f3dfd1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#23181f",
+                        "on-background": "#1b1c1c",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "inverse-primary": "#ffafd3",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-container": "#f1dde7",
+                        "on-primary-container": "#fffbff",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-tertiary-container": "#fffbff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#f1dde7",
+                        "outline-variant": "#dac0c9",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-tint": "#a52f72",
+                        "outline": "#88717a",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-container": "#c14689",
+                        "background": "#fbf9f8",
+                        "secondary": "#685a63",
+                        "primary": "#a22c70",
+                        "on-secondary-container": "#6f6069",
+                        "tertiary": "#68594f",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-primary-fixed": "#3d0025",
+                        "surface": "#fbf9f8",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "surface-bright": "#fbf9f8",
+                        "primary-fixed": "#ffd8e7",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#817267"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "32px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "xl": "64px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "button": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "h1": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fbf9f8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-md overflow-y-auto bg-surface-container-low border-r border-outline-variant w-64 z-50">
+<div class="px-md mb-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-h3">W</div>
+<div>
+<h1 class="font-h3 text-h3 text-primary">Wonder Sky</h1>
+<p class="text-label-caps text-on-surface-variant">國際美妍館</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-body-md">預約</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">會員</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="card_giftcard">card_giftcard</span>
+<span class="font-body-md text-body-md">服務及商品</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container text-primary rounded-full px-4 py-3 mx-2 my-1 font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-body-md text-body-md">票券管理</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span class="font-body-md text-body-md">門店管理</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-body-md text-body-md">組織架構</span>
+</a>
+</nav>
+<div class="px-md mt-auto">
+<button class="w-full bg-primary text-white rounded-full py-3 flex items-center justify-center gap-2 shadow-md hover:opacity-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="font-button text-button">快速新增</span>
+</button>
+<div class="mt-md pt-md border-t border-outline-variant space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">系統設定</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-md text-body-md">登出</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-gutter w-full sticky top-0 z-40 shadow-sm bg-surface">
+<div class="flex items-center gap-2">
+<nav class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span>票券管理</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-bold">優惠券(代金券)</span>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<img alt="User avatar for LULU" class="w-8 h-8 rounded-full bg-secondary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyTiJqgUgpAm48d7oubUkPKGDwbzfWdqOmTa7JDTOr9bYpdB2mQgiP46z9ziUpMzfLJwF52TiqxFxcSEYrUchb-SzzENysXB5VtGNqXzEz3GvfLK4FXJ4IGpyomaYERt3_TyOwdR5POc8zzVgf9_nCvcoDCEzUrf6t7iSPDo-xTJE5VGF3c_q0Tui7yrnJJd9kDNTZ7b5m2XQOMgc5qL1XTwLVjfUCxy__M45eN7pz84WNo2x_u0TVnbCuv8LuP9kWBrTDYiFWrvLb"/>
+<span class="font-button text-on-surface">LULU</span>
+</div>
+</div>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-button hover:opacity-90 transition-all">開單</button>
+</div>
+</header>
+<!-- Content Area -->
+<div class="p-gutter flex-1 space-y-gutter">
+<!-- Tabs Navigation -->
+<div class="bg-surface rounded-xl shadow-sm overflow-hidden">
+<div class="flex border-b border-outline-variant">
+<button class="px-lg py-md text-on-surface-variant hover:text-primary transition-colors font-body-md">優惠券</button>
+<button class="px-lg py-md text-primary font-bold border-b-2 border-primary relative font-body-md">
+                        會員持有優惠券
+                    </button>
+<button class="px-lg py-md text-on-surface-variant hover:text-primary transition-colors font-body-md">購買使用記錄</button>
+</div>
+</div>
+<!-- Filters & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 text-body-md transition-all" placeholder="輸入姓名、手機搜尋" type="text"/>
+</div>
+<button class="flex items-center gap-2 border-2 border-primary text-primary px-6 py-2.5 rounded-full font-button hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined" data-icon="ios_share">ios_share</span>
+                    匯出會員剩餘記錄
+                </button>
+</div>
+<!-- Data Table Section -->
+<div class="bg-white rounded-xl shadow-sm overflow-hidden border border-surface-container-high">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="p-md w-12"><input class="rounded text-primary focus:ring-primary" type="checkbox"/></th>
+<th class="p-md text-label-caps text-on-surface-variant">會員</th>
+<th class="p-md text-label-caps text-on-surface-variant">加入門店</th>
+<th class="p-md text-label-caps text-on-surface-variant">持有優惠券</th>
+<th class="p-md text-label-caps text-on-surface-variant text-center">使用完畢</th>
+<th class="p-md text-label-caps text-on-surface-variant text-center">已過期</th>
+<th class="p-md text-label-caps text-on-surface-variant text-center">購買</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="p-md"><input class="rounded text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-md">
+<div class="flex items-center gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full bg-secondary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6y8uNMO_3hfIfLdWdCAjL-eCPtqG8_zQNkSECzxMSMZGgchNcwCKX1RfYmCPmYND4hPIABvNKpYvsEqvQJHYlmYvCSOVlnRnYPcfmh0OaJIJErRUJW12eYCwuct9xYjODeqrQ53M-BpbYk06YmKd4owY7TNE3OBALHEDznNSitAxV9pXO7opiFnZkfLOZg6IgshECvJASmXxABwZHNGU8uzh_8bjuT26Gjuxd1QSeRftB7x30aPjUXyQtQrWR8xEzeFVzx_kPpTuq"/>
+<div>
+<p class="font-bold text-on-surface">林芯妤 Anna</p>
+<p class="text-label-caps text-outline">0912-345-678</p>
+</div>
+</div>
+</td>
+<td class="p-md text-body-md text-on-surface-variant">台北大安旗艦店</td>
+<td class="p-md">
+<button class="flex items-center gap-1 text-primary hover:underline">
+<span class="font-body-md">查看全部(3)</span>
+<span class="material-symbols-outlined text-sm">arrow_drop_down</span>
+</button>
+</td>
+<td class="p-md text-center text-body-md">12</td>
+<td class="p-md text-center text-body-md text-error">1</td>
+<td class="p-md text-center">
+<button class="text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-background transition-colors">
+<td class="p-md"><input class="rounded text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-md">
+<div class="flex items-center gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full bg-secondary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN8Gl6GWzuwsva8pqf6CH3LLi5fEdJ8ygELZeDQnrV599hS-kBhBRi-17ESkl2kUqVJqdRHwWN4cSrtyzkmwjijAsHURfhLRW_W7lILI9SjDdiTbNhV0AyOyvX4l4hY-eExUzvxGLJnyxcVwH6mnuY_y4FAqRmorz__0nVB0s98Is3DCqSAwxUdFpzy8s5i44793r74A-efHdT4JBu83Lcrl6hMgLthRRrr7ng4RR2hgXvKcCcmQ7Jq07fdluj2Kzy87Ounw_iniFC"/>
+<div>
+<p class="font-bold text-on-surface">陳美玲 Grace</p>
+<p class="text-label-caps text-outline">0921-987-654</p>
+</div>
+</div>
+</td>
+<td class="p-md text-body-md text-on-surface-variant">台中勤美店</td>
+<td class="p-md">
+<button class="flex items-center gap-1 text-primary hover:underline">
+<span class="font-body-md">查看全部(5)</span>
+<span class="material-symbols-outlined text-sm">arrow_drop_down</span>
+</button>
+</td>
+<td class="p-md text-center text-body-md">8</td>
+<td class="p-md text-center text-body-md">0</td>
+<td class="p-md text-center">
+<button class="text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-background transition-colors">
+<td class="p-md"><input class="rounded text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-md">
+<div class="flex items-center gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full bg-secondary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5T69sOcoJTHzsymjusDk57TmApC767OcW1P4rz8tK8R1lKHnppvFM1ukULMKOV0UvfleiSy5F_bMIrFfU93uVWyj_cthxg28oIA4-AsyShhzu_c_mM7EP4I2Pwv4WM_wOdhcndKh4joigc-afb_OlBVz9kR6iTMWzbteZqQ0R4LoJQu725aB3kGjRCs9SO8Ijk5tRBy-2XyN0uA4_UBWuKXXyqwlRg-5A8C0-_M8flPVWRrQC1Iswr4X35LvvKXEP9woOktCUv_uQ"/>
+<div>
+<p class="font-bold text-on-surface">張曉雯 Sophie</p>
+<p class="text-label-caps text-outline">0933-222-111</p>
+</div>
+</div>
+</td>
+<td class="p-md text-body-md text-on-surface-variant">台北信義店</td>
+<td class="p-md">
+<button class="flex items-center gap-1 text-primary hover:underline">
+<span class="font-body-md">查看全部(2)</span>
+<span class="material-symbols-outlined text-sm">arrow_drop_down</span>
+</button>
+</td>
+<td class="p-md text-center text-body-md">24</td>
+<td class="p-md text-center text-body-md text-error">3</td>
+<td class="p-md text-center">
+<button class="text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-background transition-colors">
+<td class="p-md"><input class="rounded text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-md">
+<div class="flex items-center gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full bg-secondary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6MX2VBbAXjU0pSHA-d_ip-cLNgjIg0zQPZdLmb_nFVAQ2qmsZ1WlIxSMfmK9AeTtBojtQuTdu68h7QZ2QGzHpTAf4yJemCLp215Mk5jyIvU1tDkEHcYb5eG0AJkTbXtux6pPijLMh3pYSQzPjGiuHGyjStOR41447w8Ne-QQCeUQgz3HECshw4kvjLDID_q7EQWhZe_Ur2tQXH_Dkut306jjaWWwWSpoqal17bCZOy12aEOjAxSf3h4Y3JGT6F8WmJ8yhSk5-0XMR"/>
+<div>
+<p class="font-bold text-on-surface">李凱莉 Kelly</p>
+<p class="text-label-caps text-outline">0988-777-666</p>
+</div>
+</div>
+</td>
+<td class="p-md text-body-md text-on-surface-variant">高雄左營店</td>
+<td class="p-md">
+<button class="flex items-center gap-1 text-primary hover:underline">
+<span class="font-body-md">查看全部(1)</span>
+<span class="material-symbols-outlined text-sm">arrow_drop_down</span>
+</button>
+</td>
+<td class="p-md text-center text-body-md">3</td>
+<td class="p-md text-center text-body-md">0</td>
+<td class="p-md text-center">
+<button class="text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Area -->
+<div class="p-md border-t border-surface-container flex flex-col sm:flex-row justify-between items-center gap-md">
+<div class="flex items-center gap-4 text-body-md text-on-surface-variant">
+<span>顯示第 1 到 10 筆，共 84 筆記錄</span>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low border border-outline-variant rounded-full px-4 py-1.5 pr-8 focus:ring-1 focus:ring-primary text-body-md outline-none">
+<option>10 筆/頁</option>
+<option>20 筆/頁</option>
+<option>50 筆/頁</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-sm">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-variant text-on-surface-variant transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-primary text-white font-bold text-body-md flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-variant text-on-surface-variant text-body-md flex items-center justify-center transition-colors">2</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-variant text-on-surface-variant text-body-md flex items-center justify-center transition-colors">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded-full hover:bg-surface-variant text-on-surface-variant text-body-md flex items-center justify-center transition-colors">9</button>
+<button class="p-2 rounded-full hover:bg-surface-variant text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Aesthetic Background Decoration (Subtle Glassmorphism Element) -->
+<div class="fixed -bottom-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="fixed top-40 right-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+</div>
+</main>
+</body></html>

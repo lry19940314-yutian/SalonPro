@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        /* Custom scrollbar for horizontal tabs */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffafd3",
+                      "on-surface": "#1b1c1c",
+                      "tertiary-fixed": "#f3dfd1",
+                      "on-primary-fixed-variant": "#861259",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#f6f3f2",
+                      "primary-container": "#c14689",
+                      "outline-variant": "#dac0c9",
+                      "surface": "#fbf9f8",
+                      "on-primary-container": "#fffbff",
+                      "on-secondary-fixed-variant": "#50434b",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#241912",
+                      "on-secondary-fixed": "#23181f",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#f1dde7",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-container": "#6f6069",
+                      "on-primary-fixed": "#3d0025",
+                      "primary": "#a22c70",
+                      "secondary": "#685a63",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#ffd8e7",
+                      "on-tertiary-container": "#fffbff",
+                      "secondary-fixed": "#f1dde7",
+                      "on-surface-variant": "#554149",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#eae8e7",
+                      "surface-bright": "#fbf9f8",
+                      "surface-dim": "#dcd9d9",
+                      "tertiary-fixed-dim": "#d6c3b6",
+                      "outline": "#88717a",
+                      "inverse-surface": "#303030",
+                      "on-tertiary-fixed-variant": "#51443b",
+                      "surface-tint": "#a52f72",
+                      "inverse-on-surface": "#f3f0f0",
+                      "tertiary": "#68594f",
+                      "surface-container-highest": "#e4e2e1",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1b1c1c",
+                      "inverse-primary": "#ffafd3",
+                      "tertiary-container": "#817267",
+                      "background": "#fbf9f8",
+                      "secondary-fixed-dim": "#d4c2cb",
+                      "surface-variant": "#e4e2e1",
+                      "surface-container": "#f0eded"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "lg": "40px",
+                      "gutter": "24px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "xl": "64px",
+                      "md": "24px",
+                      "margin": "32px"
+              },
+              "fontFamily": {
+                      "h1": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "h2": ["Manrope"],
+                      "body-lg": ["Manrope"],
+                      "h3": ["Manrope"],
+                      "label-caps": ["Manrope"],
+                      "button": ["Manrope"]
+              },
+              "fontSize": {
+                      "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-md py-sm bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-variant/50 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface" data-icon="menu">menu</span>
+</button>
+<h1 class="font-h3 text-h3 font-bold text-on-surface">Wonder sky</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-variant/50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined text-on-surface" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/50">
+<img alt="店長頭像" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a spa manager with a friendly smile, set in a bright, modern beauty salon office. The aesthetic is clean and high-end, featuring soft Morandi tones of pink and cream. The lighting is diffused and warm, emphasizing a sophisticated and trustworthy business atmosphere for a beauty SaaS platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbqhumTMhO9LVioy9aUU0pjHjwCENM_ggJS8lSB5nKPLyRBaC6eT9k4zgPOCrXgIkwm1nDt8k_Gn2VpP69zujCS-Q8AaQVM9IvrNTYlno7Raht8-6nm_j-70xZnfaggbki-mwAtnZO5iGS_5iZTSIf52BR0QQisH_WEq1OgEVy_E4S3oZu5cU2qXeHVgnIyniYTEKNMbAdsSClauVHNieyB2qthdFi-P8JJA9kpOlbrOXRNr_lrq0kG9gioVezAk6MAhvmBjkmdAUX"/>
+</div>
+</div>
+</header>
+<main class="px-md py-md space-y-md">
+<!-- Breadcrumb & Title -->
+<div class="space-y-1">
+<nav class="flex items-center gap-1 text-on-surface-variant font-label-caps tracking-wider">
+<span>票券管理</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary-container">點數及贈品</span>
+</nav>
+<h2 class="font-h2 text-h2 text-on-surface">點數記錄</h2>
+</div>
+<!-- Horizontal Scrollable Tabs -->
+<div class="relative -mx-md px-md overflow-x-auto no-scrollbar flex items-center gap-6 border-b border-surface-variant/50">
+<a class="pb-3 px-1 text-on-surface-variant whitespace-nowrap hover:text-primary transition-colors font-button text-button" href="#">
+                贈品列表
+            </a>
+<a class="pb-3 px-1 text-on-surface-variant whitespace-nowrap hover:text-primary transition-colors font-button text-button" href="#">
+                會員點數
+            </a>
+<a class="pb-3 px-1 text-primary border-b-2 border-primary whitespace-nowrap font-bold font-button text-button" href="#">
+                點數記錄
+            </a>
+<a class="pb-3 px-1 text-on-surface-variant whitespace-nowrap hover:text-primary transition-colors font-button text-button" href="#">
+                兌換列表
+            </a>
+</div>
+<!-- Data Overview Cards (Vertical Stack) -->
+<div class="grid grid-cols-1 gap-gutter">
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant/10 flex flex-col items-center justify-center text-center">
+<span class="text-on-surface-variant font-label-caps mb-2">積點總計</span>
+<div class="flex items-baseline gap-1">
+<span class="font-h1 text-h1 text-primary">0</span>
+<span class="text-primary-container font-h3 text-h3">點</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant/10 flex flex-col items-center justify-center text-center">
+<span class="text-on-surface-variant font-label-caps mb-2">兌換總計</span>
+<div class="flex items-baseline gap-1">
+<span class="font-h1 text-h1 text-secondary">0</span>
+<span class="text-on-secondary-container font-h3 text-h3">點</span>
+</div>
+</div>
+</div>
+<!-- Search Control -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-body-lg placeholder:text-outline" placeholder="輸入姓名、手機搜尋" type="text"/>
+</div>
+<!-- Empty State -->
+<div class="flex flex-col items-center justify-center py-xl px-md text-center">
+<div class="w-48 h-48 mb-6 rounded-full bg-gradient-to-tr from-primary-fixed-dim/20 to-tertiary-fixed/20 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<svg fill="none" height="100%" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50" cy="50" r="40" stroke="currentColor" stroke-dasharray="2 4"></circle>
+</svg>
+</div>
+<span class="material-symbols-outlined text-[80px] text-primary-container opacity-40" data-icon="history">history</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-2">尚無點數記錄</h3>
+<p class="text-on-surface-variant text-body-md mb-8 max-w-[240px]">目前的搜尋條件下沒有找到任何相關的點數記錄，請嘗試更換關鍵字。</p>
+<button class="flex items-center gap-2 px-md py-3 text-primary border border-primary/30 rounded-full font-button text-button hover:bg-primary/5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="refresh">refresh</span>
+                清空搜尋條件
+            </button>
+</div>
+</main>
+<!-- Bottom Mobile Navigation Placeholder (Visible on mobile) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/80 backdrop-blur-md flex justify-around items-center py-3 px-4 border-t border-outline-variant/20 md:hidden">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-medium">儀表板</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[10px] font-medium">會員管理</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="loyalty" style="font-variation-settings: 'FILL' 1;">loyalty</span>
+<span class="text-[10px] font-bold">票券管理</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="text-[10px] font-medium">庫存管理</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-medium">系統設置</span>
+</div>
+</div>
+<!-- Floating Action Button for Quick Entry -->
+<button class="fixed right-6 bottom-24 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform z-50">
+<span class="material-symbols-outlined text-[28px]" data-icon="add">add</span>
+</button>
+</body></html>

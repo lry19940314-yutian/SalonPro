@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 新增工作人員</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e4e2e1",
+                    "surface-variant": "#e4e2e1",
+                    "surface-tint": "#a52f72",
+                    "surface": "#fbf9f8",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fffbff",
+                    "outline-variant": "#dac0c9",
+                    "on-tertiary-fixed": "#241912",
+                    "on-primary-fixed-variant": "#861259",
+                    "tertiary-fixed-dim": "#d6c3b6",
+                    "on-background": "#1b1c1c",
+                    "inverse-on-surface": "#f3f0f0",
+                    "surface-container-low": "#f6f3f2",
+                    "on-primary-fixed": "#3d0025",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#51443b",
+                    "primary-container": "#c14689",
+                    "on-surface": "#1b1c1c",
+                    "on-secondary-fixed": "#23181f",
+                    "secondary-fixed-dim": "#d4c2cb",
+                    "on-secondary-container": "#6f6069",
+                    "primary-fixed": "#ffd8e7",
+                    "tertiary-container": "#817267",
+                    "surface-container-high": "#eae8e7",
+                    "tertiary-fixed": "#f3dfd1",
+                    "error": "#ba1a1a",
+                    "outline": "#88717a",
+                    "background": "#fbf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#685a63",
+                    "surface-container": "#f0eded",
+                    "on-surface-variant": "#554149",
+                    "secondary-container": "#f1dde7",
+                    "surface-bright": "#fbf9f8",
+                    "on-secondary-fixed-variant": "#50434b",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary": "#68594f",
+                    "primary": "#a22c70",
+                    "surface-dim": "#dcd9d9",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#303030",
+                    "primary-fixed-dim": "#ffafd3",
+                    "on-primary-container": "#fffbff",
+                    "inverse-primary": "#ffafd3",
+                    "secondary-fixed": "#f1dde7",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin": "32px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "md": "24px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "h2": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "button": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "h3": ["Manrope"],
+                    "h1": ["Manrope"]
+            },
+            "fontSize": {
+                    "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-item-active { background-color: #f1dde7; color: #a22c70; font-weight: 700; border-radius: 9999px; margin-right: 16px; }
+        .sidebar-item-inactive { color: #554149; border-radius: 9999px; margin-right: 16px; transition: background-color 0.2s; }
+        .sidebar-item-inactive:hover { background-color: #e4e2e1; }
+        .custom-shadow { box-shadow: 0 10px 30px -10px rgba(162, 44, 112, 0.08); }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 z-50 h-16 border-b border-outline-variant flex justify-between items-center px-lg w-full">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<h1 class="font-h3 text-h3 font-semibold text-on-surface">Wonder sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-md">
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="font-body-md text-primary font-bold" href="#">組織架構</a>
+<a class="font-body-md text-on-surface-variant" href="#">新增工作人員</a>
+</nav>
+<div class="flex items-center gap-sm ml-xl">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+<span class="absolute -top-2 -right-2 bg-primary text-on-primary text-[10px] w-5 h-5 flex items-center justify-center rounded-full">49</span>
+</div>
+<button class="bg-primary-container text-on-primary-container font-button px-sm py-xs rounded-full flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+                    開單
+                </button>
+<div class="flex items-center gap-xs px-sm py-xs border border-outline-variant rounded-full cursor-pointer hover:bg-surface-container transition-all">
+<img alt="User" class="w-6 h-6 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi-kXLh8UTDPnm2LyoFSK9pj8Eh9T9OMmqMcJMbeiyDuk1Ja_GRWRX6JH3HO5-Ca2LefT3aU71SMrwbljrBZZdeUCnxVpLJkD4e5aw3D6rqyCoRvZLlXxDLCpconMMHI2kIi_uuBkoHLTJX0Rvx_3yay5VEnchsjgs043d-Qgi77QNloJ7iff5Fd_w3AGYyZDGY5SQ52-YqKJoxKMIWks-xefGe_divDEnkEl9lKkQnW1jyDn_TPYQy5wP5kr5KFPu7I2dKSxiM7-A"/>
+<span class="font-button text-on-surface">LULU</span>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- SideNavBar -->
+<aside class="w-64 h-[calc(100vh-64px)] sticky top-16 bg-surface-container-low border-r border-outline-variant hidden md:flex flex-col py-md gap-xs">
+<div class="px-md mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">spa</span>
+</div>
+<div>
+<p class="font-h2 text-[18px] font-bold text-on-surface">Wonder sky</p>
+<p class="text-[12px] text-on-surface-variant">國際美妍館</p>
+</div>
+</div>
+</div>
+<a class="sidebar-item-inactive flex items-center gap-sm px-md py-sm ml-md" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-body-md">服務及商品</span>
+</a>
+<a class="sidebar-item-inactive flex items-center gap-sm px-md py-sm ml-md" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-body-md">票券管理</span>
+</a>
+<a class="sidebar-item-inactive flex items-center gap-sm px-md py-sm ml-md" href="#">
+<span class="material-symbols-outlined">store</span>
+<span class="font-body-md">門店管理</span>
+</a>
+<a class="sidebar-item-active flex items-center gap-sm px-md py-sm ml-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-body-md">組織架構</span>
+</a>
+<div class="ml-xl flex flex-col gap-xs mt-xs">
+<a class="text-primary font-bold py-2 text-sm" href="#">工作人員</a>
+<a class="text-on-surface-variant py-2 text-sm" href="#">部門與職位</a>
+<a class="text-on-surface-variant py-2 text-sm" href="#">權限與指派</a>
+</div>
+<a class="sidebar-item-inactive flex items-center gap-sm px-md py-sm ml-md mt-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">設定</span>
+</a>
+<a class="sidebar-item-inactive flex items-center gap-sm px-md py-sm ml-md" href="#">
+<span class="material-symbols-outlined">card_giftcard</span>
+<span class="font-body-md">集客好物</span>
+</a>
+<a class="sidebar-item-inactive flex items-center gap-sm px-md py-sm ml-md" href="#">
+<span class="material-symbols-outlined">redeem</span>
+<span class="font-body-md">集客美券</span>
+</a>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-margin relative bg-surface-container-lowest">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-xs mb-lg text-on-surface-variant">
+<span class="font-body-md">組織架構</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+<span class="font-body-md font-bold text-on-surface">新增工作人員</span>
+</nav>
+<div class="flex gap-gutter">
+<!-- Form Area -->
+<div class="flex-1 space-y-gutter pb-xl">
+<!-- Section: 登入資訊 -->
+<section class="bg-surface-container-lowest rounded-lg custom-shadow overflow-hidden border border-surface-container-high" id="login-info">
+<div class="p-md flex items-center justify-between border-b border-surface-container">
+<div class="flex items-center gap-sm">
+<span class="w-1 h-5 bg-primary rounded-full"></span>
+<h2 class="font-h3 text-primary">基本資訊</h2>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">expand_less</span>
+</div>
+<div class="p-lg space-y-md">
+<div class="flex flex-col items-center mb-xl">
+<p class="font-label-caps text-on-surface-variant mb-md self-start">大頭照 (大小: 8MB)</p>
+<div class="w-40 h-40 rounded-full border-2 border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center text-center p-md cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[40px] text-outline mb-xs">photo_camera</span>
+<p class="text-[12px] text-on-surface-variant">拖放圖片或是 <span class="text-primary underline">點此上傳</span></p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-gutter">
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">* 姓名</label>
+<input class="w-full border border-outline-variant rounded-md py-sm px-md focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="輸入姓名" type="text"/>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">* 員工編號</label>
+<input class="w-full border border-outline-variant rounded-md py-sm px-md focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="輸入編號" type="text"/>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">* 登入帳號</label>
+<input class="w-full border border-outline-variant rounded-md py-sm px-md bg-secondary-fixed/30 outline-none" type="text" value="LULU"/>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">* 登入密碼</label>
+<input class="w-full border border-outline-variant rounded-md py-sm px-md bg-secondary-fixed/30 outline-none" type="password" value="********"/>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">* 再次輸入密碼</label>
+<input class="w-full border border-error rounded-md py-sm px-md outline-none focus:ring-1 focus:ring-error" type="password"/>
+<p class="text-[12px] text-error mt-1 ml-4">密碼不一致</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: 基本資料 -->
+<section class="bg-surface-container-lowest rounded-lg custom-shadow overflow-hidden border border-surface-container-high" id="basic-info">
+<div class="p-md flex items-center justify-between border-b border-surface-container">
+<div class="flex items-center gap-sm">
+<span class="w-1 h-5 bg-primary rounded-full"></span>
+<h2 class="font-h3 text-primary">基本資料</h2>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">expand_less</span>
+</div>
+<div class="p-lg space-y-gutter">
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">* 手機號碼</label>
+<input class="w-full border border-outline-variant rounded-md py-sm px-md focus:ring-1 focus:ring-primary focus:border-primary outline-none" type="tel"/>
+</div>
+<div>
+<p class="text-[12px] text-on-surface-variant mb-sm ml-4">* 性別</p>
+<div class="flex gap-lg ml-4">
+<label class="flex items-center gap-xs cursor-pointer">
+<input class="text-primary focus:ring-primary" name="gender" type="radio"/>
+<span class="text-body-md">男</span>
+</label>
+<label class="flex items-center gap-xs cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary" name="gender" type="radio"/>
+<span class="text-body-md">女</span>
+</label>
+<label class="flex items-center gap-xs cursor-pointer">
+<input class="text-primary focus:ring-primary" name="gender" type="radio"/>
+<span class="text-body-md">其他</span>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">開始工作日期</label>
+<input class="w-full border border-outline-variant rounded-md py-sm px-md outline-none" type="date" value="2026-03-05"/>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">生日</label>
+<input class="w-full border border-outline-variant rounded-md py-sm px-md outline-none" type="date" value="2026-03-05"/>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">身分證字號</label>
+<input class="w-full border border-outline-variant rounded-md py-sm px-md outline-none" type="text"/>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-4 px-1 bg-surface-container-lowest text-[12px] text-on-surface-variant">備註</label>
+<textarea class="w-full border border-outline-variant rounded-md py-sm px-md outline-none h-24" placeholder="輸入備註..."></textarea>
+<p class="text-[10px] text-on-surface-variant mt-1 text-right">備註上限30字</p>
+</div>
+</div>
+</section>
+<!-- Section: 職位與門店 -->
+<section class="bg-surface-container-lowest rounded-lg custom-shadow overflow-hidden border border-surface-container-high" id="job-info">
+<div class="p-md flex items-center justify-between border-b border-surface-container">
+<div class="flex items-center gap-sm">
+<span class="w-1 h-5 bg-primary rounded-full"></span>
+<h2 class="font-h3 text-primary">職位與門店</h2>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">expand_less</span>
+</div>
+<div class="p-lg space-y-gutter">
+<div class="flex items-center justify-between bg-surface-container-low p-md rounded-md">
+<div>
+<p class="font-body-md font-bold">管理員帳號</p>
+<p class="text-[12px] text-on-surface-variant">不佔用帳號數，登入系統之帳號，不能開單服務</p>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative p-xs cursor-pointer">
+<div class="w-4 h-4 bg-white rounded-full transition-transform"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-gutter">
+<select class="w-full border border-outline-variant rounded-md py-sm px-md outline-none appearance-none bg-white">
+<option>* 主要服務門店</option>
+</select>
+<select class="w-full border border-outline-variant rounded-md py-sm px-md outline-none appearance-none bg-white">
+<option>* 主要隸屬部門</option>
+<option selected="">美容部</option>
+</select>
+<select class="w-full border border-outline-variant rounded-md py-sm px-md outline-none appearance-none bg-white">
+<option>* 員工級別</option>
+<option selected="">A級</option>
+</select>
+</div>
+<div>
+<p class="text-[12px] text-on-surface-variant mb-md">代表色</p>
+<div class="flex flex-wrap gap-sm">
+<div class="w-6 h-6 rounded-full bg-primary ring-2 ring-primary ring-offset-2 cursor-pointer"></div>
+<div class="w-6 h-6 rounded-full bg-red-400 cursor-pointer"></div>
+<div class="w-6 h-6 rounded-full bg-orange-400 cursor-pointer"></div>
+<div class="w-6 h-6 rounded-full bg-yellow-400 cursor-pointer"></div>
+<div class="w-6 h-6 rounded-full bg-green-400 cursor-pointer"></div>
+<div class="w-6 h-6 rounded-full bg-teal-400 cursor-pointer"></div>
+<div class="w-6 h-6 rounded-full bg-blue-400 cursor-pointer"></div>
+<div class="w-6 h-6 rounded-full bg-indigo-400 cursor-pointer"></div>
+<div class="w-6 h-6 rounded-full bg-purple-400 cursor-pointer"></div>
+<div class="w-6 h-6 rounded-full bg-black cursor-pointer"></div>
+</div>
+</div>
+<button class="w-full py-sm border border-dashed border-primary text-primary rounded-md flex items-center justify-center gap-xs hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+                                新增遇調職位狀態
+                            </button>
+</div>
+</section>
+</div>
+<!-- Anchor Navigation -->
+<aside class="w-48 sticky top-margin self-start hidden lg:block">
+<nav class="flex flex-col border-l-2 border-outline-variant">
+<a class="py-sm pl-md border-l-2 border-primary -ml-[2px] font-bold text-primary" href="#login-info">登入資訊</a>
+<a class="py-sm pl-md hover:text-primary transition-colors text-on-surface-variant" href="#basic-info">基本資料</a>
+<a class="py-sm pl-md hover:text-primary transition-colors text-on-surface-variant" href="#job-info">職位與門店</a>
+<a class="py-sm pl-md hover:text-primary transition-colors text-on-surface-variant" href="#booking-info">集客預約</a>
+<a class="py-sm pl-md hover:text-primary transition-colors text-on-surface-variant" href="#permission-info">手機與平板權限</a>
+<a class="py-sm pl-md hover:text-primary transition-colors text-on-surface-variant" href="#salary-info">固定薪資調整</a>
+</nav>
+</aside>
+</div>
+<!-- Footer Actions -->
+<div class="fixed bottom-0 right-0 left-0 md:left-64 bg-white/80 backdrop-blur-md p-md border-t border-outline-variant flex justify-end gap-md z-40">
+<button class="px-xl py-sm rounded-full border border-primary text-primary font-button hover:bg-primary/5 transition-colors">取消</button>
+<button class="px-xl py-sm rounded-full border border-primary text-primary font-button hover:bg-primary/5 transition-colors">重設</button>
+<button class="px-xl py-sm rounded-full bg-primary text-on-primary font-button shadow-md active:scale-95 transition-all">儲存</button>
+</div>
+</main>
+</div>
+<!-- Extra Sections (Collapsed View Mockups) -->
+<div class="hidden">
+<section id="booking-info">集客預約</section>
+<section id="permission-info">手機與平板權限</section>
+<section id="salary-info">固定薪資調整</section>
+</div>
+</body></html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#ffafd3",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#303030",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed-variant": "#51443b",
+            "on-surface-variant": "#554149",
+            "on-primary-fixed": "#3d0025",
+            "on-primary-container": "#fffbff",
+            "on-secondary-fixed": "#23181f",
+            "secondary-container": "#f1dde7",
+            "on-background": "#1b1c1c",
+            "tertiary-fixed": "#f3dfd1",
+            "tertiary-fixed-dim": "#d6c3b6",
+            "inverse-on-surface": "#f3f0f0",
+            "surface-container-low": "#f6f3f2",
+            "on-secondary-container": "#6f6069",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#861259",
+            "surface-container-high": "#eae8e7",
+            "primary": "#a22c70",
+            "background": "#fbf9f8",
+            "on-surface": "#1b1c1c",
+            "on-secondary-fixed-variant": "#50434b",
+            "surface-container": "#f0eded",
+            "secondary": "#685a63",
+            "surface-variant": "#e4e2e1",
+            "secondary-fixed-dim": "#d4c2cb",
+            "outline-variant": "#dac0c9",
+            "outline": "#88717a",
+            "primary-container": "#c14689",
+            "secondary-fixed": "#f1dde7",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#e4e2e1",
+            "inverse-primary": "#ffafd3",
+            "primary-fixed": "#ffd8e7",
+            "tertiary-container": "#817267",
+            "surface": "#fbf9f8",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#fffbff",
+            "surface-tint": "#a52f72",
+            "on-tertiary-fixed": "#241912",
+            "tertiary": "#68594f",
+            "surface-dim": "#dcd9d9",
+            "surface-bright": "#fbf9f8"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "32px",
+            "lg": "40px",
+            "gutter": "24px",
+            "base": "8px",
+            "sm": "12px",
+            "xl": "64px",
+            "xs": "4px",
+            "md": "24px"
+          },
+          "fontFamily": {
+            "label-caps": ["Manrope"],
+            "button": ["Manrope"],
+            "body-md": ["Manrope"],
+            "h2": ["Manrope"],
+            "body-lg": ["Manrope"],
+            "h3": ["Manrope"],
+            "h1": ["Manrope"]
+          },
+          "fontSize": {
+            "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 flex justify-between items-center w-full px-margin py-base h-16">
+<div class="flex items-center gap-base">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-low p-2 rounded-full transition-colors">menu</button>
+<h2 class="text-h2 font-h2 text-on-surface dark:text-on-surface-variant truncate max-w-[150px]">Wonder sky 國際美妍館</h2>
+</div>
+<div class="flex items-center gap-base">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">notifications</button>
+<img alt="LULU" class="w-8 h-8 rounded-full object-cover" data-alt="A professional headshot of a young woman with a friendly smile, representing the luxury beauty industry. She is wearing sophisticated business casual attire against a clean, softly lit interior background that reflects the light luxury Morandi aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWxHwJkLPj2pAmgwMZLaZKc4N03AjpqB5gHVPWgSxEB3ea7Wd_niyEooAAgITaYvGQSO3WyEltgXJS4XAXXZnCzKpOYmF85cHgx9tHwhpbU5YoLeUhtDUYDyRccTNMtCeh4slwyU76ib-3cJ5Uy2Pct3GYkb8f9536v31GLMOBsRAbarBvpPw7YXeNfP7ntTdX-vXpfu2LWwuueqzXQZO9bS_fr5lSZvjrQQsqbnenhSU6lMrJDACWUyt09OxE2UW-JX3vg1gLyXHv"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-margin">
+<!-- Breadcrumb & Header Action -->
+<div class="mb-gutter">
+<nav class="flex items-center gap-xs text-label-caps font-label-caps text-on-surface-variant mb-base">
+<span>組織架構</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-primary">工作人員列表</span>
+</nav>
+<div class="flex flex-col gap-base">
+<div class="flex justify-between items-center">
+<h1 class="text-h3 font-h3 text-on-surface">工作人員列表</h1>
+<button class="bg-primary text-on-primary font-button text-button px-md py-sm rounded-full shadow-sm active:opacity-80 active:scale-95 transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            新增
+          </button>
+</div>
+<a class="text-primary text-label-caps font-label-caps self-end flex items-center gap-xs hover:underline" href="#">
+          執行固定薪資調整
+          <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Search Section -->
+<section class="mb-gutter space-y-base">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none rounded-full text-body-md focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="搜尋姓名、編號或電話" type="text"/>
+</div>
+<div class="flex flex-col gap-sm">
+<button class="flex items-center gap-base text-on-surface-variant font-label-caps text-label-caps px-base py-1 hover:bg-surface-container-high rounded-full transition-colors w-fit">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+          進階搜尋
+        </button>
+<label class="flex items-center gap-base px-base">
+<input class="w-5 h-5 rounded-md border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-on-surface-variant font-label-caps text-label-caps">顯示離職工作人員</span>
+</label>
+</div>
+</section>
+<!-- Staff Card List -->
+<div class="space-y-base">
+<!-- Staff Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-start mb-md">
+<div class="flex gap-md">
+<img alt="王小美" class="w-12 h-12 rounded-full object-cover" data-alt="Close up portrait of a professional beauty consultant with styled hair and elegant makeup. She embodies professional reliability and sophistication, perfectly aligned with the luxury brand's warm Morandi-inspired palette and minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC7U7bSxPzUs-18BPxI6rAw5hk5sex4nwHoOAsLrJqWLADWfwx3WxJ2RVIcRQHSLFQ6wLJSibFOAcWXJCNk5p1fMTWrmIoFK595efesNx6n2loqnvMDpRJOwYmiOwc8YFebKEXnBK3JOEQDozOMzZQxtLGnOk9GWlX6FLGIZQvxjmz98eyl_LSkHDGO4ceBv7gYYlhH04FwymIEgwrSZOCEPE-Tvzr3K4NeZgXtl6EyEOtrbS9G56sxqWvWQINWuWbSa45iPX6L5-o"/>
+<div>
+<div class="flex items-center gap-base">
+<p class="font-h3 text-h3">王小美</p>
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-label-caps font-label-caps px-2 py-0.5 rounded-full">S001</span>
+</div>
+<p class="text-on-surface-variant text-body-md">Wonder sky 台北旗艦店</p>
+</div>
+</div>
+<div class="w-4 h-4 rounded-full bg-[#E8A5C2]" title="代表色"></div>
+</div>
+<div class="grid grid-cols-2 gap-y-sm mb-md py-md border-t border-b border-surface-variant">
+<div>
+<p class="text-label-caps font-label-caps text-outline mb-xs">職位</p>
+<p class="text-body-md font-h3">高級美容師</p>
+</div>
+<div>
+<p class="text-label-caps font-label-caps text-outline mb-xs">狀態</p>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-caps font-label-caps">在職</span>
+</div>
+</div>
+<div class="flex gap-base">
+<button class="flex-1 py-2 rounded-full border border-outline text-on-surface-variant font-button text-button hover:bg-surface-container-high transition-colors flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+            編輯
+          </button>
+<button class="flex-1 py-2 rounded-full border border-error text-error font-button text-button hover:bg-error-container/20 transition-colors flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+            刪除
+          </button>
+<button class="w-12 h-10 rounded-full bg-surface-container-high flex justify-center items-center hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Staff Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-start mb-md">
+<div class="flex gap-md">
+<img alt="李大志" class="w-12 h-12 rounded-full object-cover" data-alt="Profile photo of a male therapist in a wellness center, radiating calm professional energy. The soft ambient lighting highlights the warm, premium quality of the skincare clinic environment, designed in a modern corporate aesthetic with subtle Morandi tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL4EyodPJ7A_k-mi5C7DfU4qz6kfLLZaPSFxW7dvTAB9xPjkX8cgVW4ey3jK69p2IFXyRTEHrbKtuIqDjIQoECKNlPeLSV3anpGQk_tk6Wqld1ypKBjZ5jt3v-APcXV9uioEbAniH2sNU49aRtFrYWVm8wJP20QzcnTuXi57vKDEu0E2n71hq0AdMkLRdGe0Wm6IcjDf17MSvyDNte0kpFv5rrR7qV4i7k5Z8waOumoynZReYJO8belpIaRP7TnA196bJkfaO2ZbfI"/>
+<div>
+<div class="flex items-center gap-base">
+<p class="font-h3 text-h3">李大志</p>
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-label-caps font-label-caps px-2 py-0.5 rounded-full">S002</span>
+</div>
+<p class="text-on-surface-variant text-body-md">Wonder sky 台中館</p>
+</div>
+</div>
+<div class="w-4 h-4 rounded-full bg-[#A5C8E8]" title="代表色"></div>
+</div>
+<div class="grid grid-cols-2 gap-y-sm mb-md py-md border-t border-b border-surface-variant">
+<div>
+<p class="text-label-caps font-label-caps text-outline mb-xs">職位</p>
+<p class="text-body-md font-h3">店長</p>
+</div>
+<div>
+<p class="text-label-caps font-label-caps text-outline mb-xs">狀態</p>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-caps font-label-caps">在職</span>
+</div>
+</div>
+<div class="flex gap-base">
+<button class="flex-1 py-2 rounded-full border border-outline text-on-surface-variant font-button text-button hover:bg-surface-container-high transition-colors flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+            編輯
+          </button>
+<button class="flex-1 py-2 rounded-full border border-error text-error font-button text-button hover:bg-error-container/20 transition-colors flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+            刪除
+          </button>
+<button class="w-12 h-10 rounded-full bg-surface-container-high flex justify-center items-center hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-gutter flex justify-between items-center bg-surface-container-low p-base rounded-full">
+<button class="w-10 h-10 rounded-full flex justify-center items-center text-outline hover:text-primary disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="text-label-caps font-label-caps text-on-surface-variant">第 1 頁，共 1 頁</span>
+<button class="w-10 h-10 rounded-full flex justify-center items-center text-outline hover:text-primary disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high flex flex-col items-center px-margin py-md gap-base border-t border-outline-variant/30">
+<div class="flex gap-md text-on-surface-variant text-body-md font-body-md">
+<a class="hover:text-primary transition-opacity" href="#">隱私條款</a>
+<a class="hover:text-primary transition-opacity" href="#">服務協定</a>
+</div>
+<p class="text-label-caps font-label-caps text-on-surface-variant opacity-60">© 2024 Wonder sky 國際美妍館 版權所有</p>
+</footer>
+<!-- Floating Navigation Placeholder (Representing the system shell) -->
+<nav class="fixed bottom-0 left-0 right-0 h-16 bg-surface/90 backdrop-blur-md shadow-[0_-4px_12px_rgba(0,0,0,0.05)] flex justify-around items-center px-base z-50 md:hidden">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-label-caps">預約</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-label-caps">會員</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<div class="bg-secondary-container px-4 py-1 rounded-full mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+</div>
+<span class="text-[10px] font-bold font-label-caps">組織</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined">spa</span>
+<span class="text-[10px] font-label-caps">服務</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-[10px] font-label-caps">門店</span>
+</div>
+</nav>
+</body></html>

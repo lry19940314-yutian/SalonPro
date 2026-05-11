@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae8e7",
+                    "primary-fixed-dim": "#ffafd3",
+                    "primary-fixed": "#ffd8e7",
+                    "on-surface-variant": "#554149",
+                    "secondary": "#685a63",
+                    "surface-tint": "#a52f72",
+                    "tertiary-fixed-dim": "#d6c3b6",
+                    "surface-variant": "#e4e2e1",
+                    "primary-container": "#c14689",
+                    "tertiary-fixed": "#f3dfd1",
+                    "on-primary-fixed": "#3d0025",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container": "#f0eded",
+                    "secondary-container": "#f1dde7",
+                    "on-secondary-fixed": "#23181f",
+                    "tertiary-container": "#817267",
+                    "secondary-fixed": "#f1dde7",
+                    "tertiary": "#68594f",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#dac0c9",
+                    "outline": "#88717a",
+                    "on-secondary-fixed-variant": "#50434b",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-background": "#1b1c1c",
+                    "on-secondary": "#ffffff",
+                    "background": "#fbf9f8",
+                    "on-tertiary-container": "#fffbff",
+                    "inverse-primary": "#ffafd3",
+                    "surface-dim": "#dcd9d9",
+                    "on-tertiary-fixed-variant": "#51443b",
+                    "on-surface": "#1b1c1c",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#303030",
+                    "on-secondary-container": "#6f6069",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface": "#fbf9f8",
+                    "surface-bright": "#fbf9f8",
+                    "primary": "#a22c70",
+                    "on-primary-fixed-variant": "#861259",
+                    "secondary-fixed-dim": "#d4c2cb",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f3f0f0",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#241912"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xl": "64px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "gutter": "24px",
+                    "margin": "32px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "h1": ["Manrope"],
+                    "h2": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "h3": ["Manrope"],
+                    "button": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-sheet {
+            background: rgba(251, 249, 248, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface overflow-hidden">
+<!-- Background Mock (Dashboard Context) -->
+<div class="fixed inset-0 flex flex-col md:flex-row">
+<!-- Desktop Sidebar (Hidden on mobile per prompt intent) -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full flex flex-col py-md overflow-y-auto bg-surface-container-low border-r border-outline-variant w-64">
+<div class="px-md mb-lg">
+<h2 class="font-h3 text-h3 text-primary">Wonder Sky</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">國際美妍館</p>
+</div>
+<nav class="flex-grow">
+<div class="flex items-center gap-3 bg-secondary-container text-primary rounded-full px-4 py-3 mx-2 my-1">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">會員</span>
+</div>
+<!-- Other Nav Items Simulating Content -->
+<div class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-body-md">預約</span>
+</div>
+</nav>
+</aside>
+<!-- Main Content Area Mock -->
+<main class="flex-1 flex flex-col min-h-screen md:ml-64">
+<header class="flex justify-between items-center h-16 px-gutter w-full sticky top-0 z-50 shadow-sm bg-surface">
+<h1 class="font-h2 text-h2 font-bold text-on-surface">Wonder sky國際美妍館</h1>
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+<button class="bg-primary text-on-primary px-sm py-xs rounded-full font-button text-button">開單</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden">
+<img alt="User avatar for LULU" data-alt="A professional portrait of a woman in her late 20s with a warm and friendly smile, representing a spa manager or beauty consultant. The lighting is soft and studio-quality, emphasizing a light luxury aesthetic. The background is a blurred high-end salon interior with soft pink and white tones, matching the brand's sophisticated and approachable identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4yLcuHJ9Vg7676fDHtv6xncnkSOg7TIPIc8MO-I0eyX5M8qHxFXqg3KJdSFWn-z29OyQDl_soW29DcvrtEoYprslz5S8ZBiSapPKqEHHZAbaCumSzFXBj5KejehDCUmd6tyShcXSbJ17SlNTQrNJ24PQ2olCfxuzX-rrSjjowiYR1Uwzn_iG3UwPK8gKle0JNvxcoMyXVO4q3DmHgLltTKYlkuF0U5lAtB4eIYuWfFpo2XCD7ExDUT0URGBQvx8FikKHjGZfp9Wse"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content Mockup -->
+<div class="p-gutter grid grid-cols-1 gap-gutter">
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-sm">
+<h3 class="font-h3 text-h3 mb-sm">會員詳情</h3>
+<div class="h-40 bg-surface-container rounded-md flex items-center justify-center text-on-surface-variant">
+                        會員資料加載中...
+                    </div>
+</div>
+</div>
+</main>
+</div>
+<!-- Bottom Sheet Overlay -->
+<div class="fixed inset-0 bg-black/40 z-[60] flex items-end">
+<!-- The Bottom Sheet Modal -->
+<section class="glass-sheet w-full rounded-t-lg shadow-[0_-8px_40px_-10px_rgba(162,44,112,0.15)] flex flex-col max-h-[813px] animate-slide-up">
+<!-- Header -->
+<div class="relative px-gutter py-md flex items-center justify-center border-b border-outline-variant/30">
+<h2 class="font-h2 text-h2 text-on-surface">購買優惠券</h2>
+<button class="absolute right-gutter p-sm text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-3xl" data-icon="close">close</span>
+</button>
+</div>
+<!-- Search Bar Area -->
+<div class="px-gutter pt-md pb-sm">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-low border-none rounded-full font-body-md text-body-md focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-on-surface-variant/50" placeholder="搜尋優惠券名稱或內容..." type="text"/>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-gutter py-sm space-y-md pb-xl">
+<!-- Coupon Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-md border border-outline-variant/20 shadow-sm flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs">
+<span class="bg-secondary-container text-primary-container px-sm py-1 rounded-full text-label-caps font-label-caps">限時促銷</span>
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-sm py-1 rounded-full text-label-caps font-label-caps">臉部課程</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface mt-1">黃金駐顏舒壓護理券</h4>
+</div>
+<div class="text-right">
+<span class="font-h2 text-h2 text-primary font-bold">$1,200</span>
+<p class="font-label-caps text-label-caps text-on-surface-variant line-through">$1,800</p>
+</div>
+</div>
+<div class="flex items-center gap-sm py-sm border-y border-outline-variant/10 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="font-body-md text-body-md">有效期：購買後 180 天內</span>
+</div>
+<div class="flex justify-between items-center pt-xs">
+<p class="font-body-md text-body-md text-on-surface-variant">剩餘庫存：25</p>
+<!-- Quantity Controller -->
+<div class="flex items-center bg-surface-container-low rounded-full p-1 gap-base">
+<button class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-sm text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="w-8 text-center font-h3 text-h3">1</span>
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary rounded-full shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Coupon Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-md border border-outline-variant/20 shadow-sm flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs">
+<span class="bg-secondary-container text-primary-container px-sm py-1 rounded-full text-label-caps font-label-caps">經典熱銷</span>
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-sm py-1 rounded-full text-label-caps font-label-caps">全身Spa</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface mt-1">深層組織放鬆按摩券</h4>
+</div>
+<div class="text-right">
+<span class="font-h2 text-h2 text-primary font-bold">$2,500</span>
+<p class="font-label-caps text-label-caps text-on-surface-variant line-through">$3,200</p>
+</div>
+</div>
+<div class="flex items-center gap-sm py-sm border-y border-outline-variant/10 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+<span class="font-body-md text-body-md">單次療程 90 分鐘，需提前預約</span>
+</div>
+<div class="flex justify-between items-center pt-xs">
+<p class="font-body-md text-body-md text-on-surface-variant">剩餘庫存：12</p>
+<!-- Quantity Controller -->
+<div class="flex items-center bg-surface-container-low rounded-full p-1 gap-base">
+<button class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-sm text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="w-8 text-center font-h3 text-h3">0</span>
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary rounded-full shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Coupon Card 3 (Visual Variant) -->
+<div class="relative bg-primary overflow-hidden rounded-lg p-md border border-primary-container shadow-md flex flex-col gap-sm">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+<div class="flex justify-between items-start relative z-10">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs">
+<span class="bg-white/20 text-white px-sm py-1 rounded-full text-label-caps font-label-caps">新客專屬</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-primary mt-1">全館通用 500 元抵用券</h4>
+</div>
+<div class="text-right">
+<span class="font-h2 text-h2 text-white font-bold">$400</span>
+</div>
+</div>
+<div class="flex items-center gap-sm py-sm border-y border-white/20 text-white/80 relative z-10">
+<span class="material-symbols-outlined text-sm" data-icon="sell">sell</span>
+<span class="font-body-md text-body-md">結帳滿 $2,000 可折抵</span>
+</div>
+<div class="flex justify-between items-center pt-xs relative z-10">
+<p class="font-body-md text-body-md text-white/70">限購 1 張</p>
+<div class="flex items-center bg-white/20 rounded-full p-1 gap-base">
+<button class="w-10 h-10 flex items-center justify-center bg-white/30 rounded-full text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="w-8 text-center font-h3 text-h3 text-white">0</span>
+<button class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-sm text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action Button -->
+<div class="p-gutter bg-surface-container-low border-t border-outline-variant/30 safe-area-bottom">
+<button class="w-full h-16 bg-primary text-on-primary rounded-full font-h3 text-h3 shadow-lg shadow-primary/20 active:scale-95 transition-all flex items-center justify-center gap-sm">
+<span>下一步：確認購買內容</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Navigation Shell (Invisible but conceptually present per instruction) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface shadow-lg flex items-center justify-around z-40">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-bold">首頁</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="group" data-weight="fill">group</span>
+<span class="text-[10px] font-bold">會員</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="text-[10px] font-bold">快加</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span class="text-[10px] font-bold">門店</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-bold">設定</span>
+</div>
+</nav>
+<style>
+        @keyframes slide-up {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        .animate-slide-up {
+            animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .safe-area-bottom {
+            padding-bottom: calc(theme('spacing.gutter') + env(safe-area-inset-bottom, 0px));
+        }
+    </style>
+</body></html>

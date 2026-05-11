@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#23181f",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1c1c",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary-container": "#f1dde7",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "on-secondary-container": "#6f6069",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#554149",
+                        "surface-bright": "#fbf9f8",
+                        "inverse-primary": "#ffafd3",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-container": "#fffbff",
+                        "background": "#fbf9f8",
+                        "surface-container-low": "#f6f3f2",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#dac0c9",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-high": "#eae8e7",
+                        "surface": "#fbf9f8",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#f3dfd1",
+                        "surface-variant": "#e4e2e1",
+                        "on-tertiary-fixed": "#241912",
+                        "secondary": "#685a63",
+                        "inverse-surface": "#303030",
+                        "tertiary-container": "#817267",
+                        "surface-dim": "#dcd9d9",
+                        "primary": "#a22c70",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "primary-fixed-dim": "#ffafd3",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "secondary-fixed": "#f1dde7",
+                        "surface-container": "#f0eded",
+                        "on-primary-fixed": "#3d0025",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#861259",
+                        "primary-container": "#c14689",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#68594f",
+                        "outline": "#88717a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "xs": "4px",
+                        "xl": "64px",
+                        "md": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "button": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-caps": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-hidden">
+<!-- Shell: Sidebar Navigation (Authority: JSON & Logic) -->
+<aside class="w-72 h-screen fixed left-0 top-0 bg-surface-container dark:bg-inverse-surface flex flex-col py-margin shadow-sm z-10">
+<div class="px-6 mb-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h1 class="font-h2 text-h2 text-primary dark:text-inverse-primary leading-none">Wonder Sky</h1>
+<p class="text-label-caps font-label-caps text-on-surface-variant">國際美妍館</p>
+</div>
+</div>
+</div>
+<nav class="flex-grow space-y-1">
+<div class="style_inactive_navigation flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-full px-4 py-3 mx-2 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-body-md text-body-md">預約管理</span>
+</div>
+<div class="style_inactive_navigation flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-full px-4 py-3 mx-2 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">會員中心</span>
+</div>
+<div class="style_inactive_navigation flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-full px-4 py-3 mx-2 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-md text-body-md">服務及商品</span>
+</div>
+<div class="style_inactive_navigation flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-full px-4 py-3 mx-2 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-body-md text-body-md">票券管理</span>
+</div>
+<div class="style_inactive_navigation flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-full px-4 py-3 mx-2 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span class="font-body-md text-body-md">門店管理</span>
+</div>
+<!-- Active Tab: Organization Structure (matches "新增角色" context) -->
+<div class="flex items-center gap-sm bg-primary-container text-on-primary-container rounded-full px-4 py-3 mx-2">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-body-md text-body-md">組織架構</span>
+</div>
+</nav>
+<div class="mt-auto px-2 space-y-1">
+<div class="style_inactive_navigation flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-full px-4 py-3 mx-0 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">設定</span>
+</div>
+<div class="style_inactive_navigation flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-full px-4 py-3 mx-0 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-md text-body-md">登出</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-72 min-h-screen">
+<!-- Top Nav Bar -->
+<header class="h-20 sticky top-0 bg-surface/80 backdrop-blur-md flex justify-between items-center px-margin w-full shadow-sm z-20">
+<div class="flex items-center gap-md">
+<h2 class="font-h3 text-h3 text-on-surface">組織角色管理</h2>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-body-md w-64 focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="搜尋角色或權限..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex gap-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-button text-button shadow-sm hover:opacity-90 active:scale-95 transition-all">
+                    立即開單
+                </button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="管理員頭像" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeOBEftk3YNQBrJ6DmcvDM2FKTeoePiHmmTg7H7GKcSzws8xafhsKGlLe6jyR01uSHsjgH-85_6gN3argvSoO4G59kggoHN2IvtH5406g7u-2wrCif-2M9wLuejIu4k21zeXmzpPGWff8JLXz1j2IPgwnyuUMyOSNDf5blZlwwF-O977O_fsOsGFwrKU6mHnhLRw1wtEpUfdAeLBsXv5Ho8LT9pyq-l8mZzRgtr6dgiRoHTb4I0edBowuiOO5pIiybgm8tW7scimIr"/>
+</div>
+</div>
+</header>
+<!-- Content Placeholder -->
+<section class="p-margin">
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Stat Cards -->
+<div class="col-span-4 bg-surface-container-lowest p-md rounded-xl shadow-[0_20px_30px_rgba(165,47,114,0.05)] border border-white">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-base">當前總角色數</p>
+<h3 class="font-h1 text-h1 text-primary">12</h3>
+</div>
+<div class="col-span-4 bg-surface-container-lowest p-md rounded-xl shadow-[0_20px_30px_rgba(165,47,114,0.05)] border border-white">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-base">活躍帳號數</p>
+<h3 class="font-h1 text-h1 text-primary">48</h3>
+</div>
+<div class="col-span-4 bg-surface-container-lowest p-md rounded-xl shadow-[0_20px_30px_rgba(165,47,114,0.05)] border border-white">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-base">權限異動次數</p>
+<h3 class="font-h1 text-h1 text-primary">5</h3>
+</div>
+<!-- Role List (Bento-style items) -->
+<div class="col-span-12 mt-md">
+<div class="flex justify-between items-end mb-md">
+<h4 class="font-h2 text-h2 text-on-surface">角色列表</h4>
+<button class="flex items-center gap-xs text-primary font-button">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                            篩選條件
+                        </button>
+</div>
+<div class="grid grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-white/50 hover:shadow-md transition-shadow">
+<div class="flex justify-between mb-sm">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-caps font-label-caps">系統</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<h5 class="font-h3 text-h3 mb-xs">超級管理員</h5>
+<p class="text-body-md text-on-surface-variant mb-md">具備全系統所有權限，包含金流及權限設定。</p>
+<div class="flex -space-x-2">
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZsXt5P5R2D6R-d4ssqoX1phidiozroE1TiZAU1C_uJRJWUhXYsXwvoDNdd_i19-hnPz_IiXhDqv6NZWeTXgWcEKgudTFGuxcoEWJ1tFNvQj5QQgGQ5hy2BAs40844QOBvLkoGbZccwGfbbqa4Z9xpgbxob1f_bv8EqtJdba2PVDFVWbo8y3F-y-xMr0SQAdZkm6UTXIr1Gp4M0uvZQVJrQdLxiTCY_Z2zPZw9VBNpKAz2ZhE9GraBx_9QnF8AMAPG37w5qhDG6vBi"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYL_FxQhoAUHGUhoyeLveUxaFteKEq95bW5so5zHdhzocrlubYQ8iivZiM5xkCVgjiYf2e0QKYfa6HhZP_Cn3dznImrnV68KuEO7yxd2_1xs0NsYOsyG4DkUroHzl8Igg-rUwW2-Jh29OA7_6x1DGelndCM2iC1T2Tx-Ms0CG7OCDdtLwvTfuzuQ1Ann_NR9Tz_YY8SEoZ-IlsFKiNiLvLzXZwukaZd31uZZ_huAnCVQekoL9n8ooEXLZBKPgBXbxMFWdGTR0jTUbr"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container flex items-center justify-center text-[10px] font-bold">+2</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-white/50 hover:shadow-md transition-shadow">
+<div class="flex justify-between mb-sm">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-label-caps font-label-caps">門店</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<h5 class="font-h3 text-h3 mb-xs">資深美容師</h5>
+<p class="text-body-md text-on-surface-variant mb-md">負責客戶療程執行、預約安排及基礎庫存管理。</p>
+<div class="flex -space-x-2">
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAONy1uP62i9owgvHXZd4HK016agvRyL-lHpfd02riFPkUZ9_JamsD4QkgHwcSZn9W0HqEhnOPDwo32xoyitgeNfe1Ah3N9SJylSENWma9USyVvlH1NssXx0gdir9k58ciJDk73h82B3TVd0w4BTdJ4yBmYTfxOMS_I8b6_Dl2SsODipxRl63btzFfI3wDObQAkFXCBiSeI2JjHiiXuiMGINMI8lNihOc8Tq9DotEwzCDgnLwwSYru0QUzIaB0vzjM3whMoPbZSqa-l"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAUO8XnJCRhpBdJVTSpFwJFnOIcQnyMYlOyaVeJe6J2wVa7vT9gQsLHADjF0NWUNIWFAWhQZPRCQ0k2_6JdAYwsNX0vxtur6vMSsE1eiRHO1-3ilXs-UzFzjrQHC9ttPhOUbpQwHHPX7XzwK-WCN6na-eMjC3ZIidJWc2r4OE3DcUvHm5RZp4Nh1sUtg_4OtAyZGAhVLJ6XcZN5Y3ziYUJukPjMuTG07Xylzc94Ha9axSKlxeTh2nr63cD-ks8jlrcJvfNhpJgCwTL"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHZ5UUAK4Ode9cT1FITQ5ZNduIeB_jiBVhn-bJ5KsuW4DKGpOx3acO7VVwuPsZhaE9bOtb9ZcWhV40gjnfvKzEcYuiGiIJg1o2XlGaC-yHcnfvld4PbDLOlj0fzTyir-eEAkWkHZ1qzACY-WYtY0PFGQQeUPrfzi4py1mQ8XoF90pYENxYFEkkETdnIL8fI-koF06yEDMR70v5GcctXOH9H_cYg9f2AHgIgd5fZxCLOZC8mTKwGthqv9eVX1jypu0MP0B-swOjztdb"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+</div>
+<!-- Add New Role Trigger (Visual only) -->
+<div class="bg-dashed border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center p-md cursor-pointer hover:bg-surface-container-low transition-colors group">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center mb-sm group-hover:bg-primary-container/20 group-hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</div>
+<span class="font-button text-button text-on-surface-variant group-hover:text-primary transition-colors">新增角色</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- MODAL OVERLAY: Add New Role -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-[#1b1c1c]/60 backdrop-blur-sm">
+<!-- Modal Card -->
+<div class="bg-surface-container-lowest w-full max-w-[480px] rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.18)] p-lg border border-white">
+<!-- Modal Header -->
+<div class="mb-lg">
+<h3 class="font-h2 text-h2 text-on-surface">新增</h3>
+</div>
+<!-- Modal Content -->
+<div class="space-y-md">
+<div class="flex flex-col gap-base">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="role-name">角色</label>
+<input class="w-full px-md py-sm bg-surface-container-low border-2 border-transparent rounded-full text-body-lg font-body-lg focus:border-primary focus:bg-white focus:ring-0 transition-all outline-none placeholder:text-on-surface-variant/40" id="role-name" placeholder="請輸入角色名稱（例如：店長、實習美容師）" type="text"/>
+</div>
+<div class="pt-sm">
+<p class="text-body-md text-on-surface-variant">
+                        新增後，您可以至「角色權限設定」中針對此角色配置對應的功能存取權。
+                    </p>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="mt-xl flex justify-end items-center gap-md">
+<button class="font-button text-button text-on-surface-variant px-md py-sm hover:text-primary transition-colors cursor-pointer">
+                    取消
+                </button>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-button text-button shadow-sm hover:opacity-90 active:scale-95 transition-all">
+                    新增
+                </button>
+</div>
+</div>
+</div>
+<!-- Background Decorative Elements -->
+<div class="fixed -bottom-32 -left-32 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl pointer-events-none -z-10"></div>
+<div class="fixed -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-tertiary-fixed-dim/10 blur-3xl pointer-events-none -z-10"></div>
+</body></html>

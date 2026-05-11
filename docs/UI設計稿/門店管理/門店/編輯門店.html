@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>編輯門店 - Wonder sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#817267",
+                        "surface-container": "#f0eded",
+                        "surface-bright": "#fbf9f8",
+                        "on-tertiary-fixed": "#241912",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "background": "#fbf9f8",
+                        "surface-tint": "#a52f72",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-primary": "#ffffff",
+                        "outline": "#88717a",
+                        "primary-container": "#c14689",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "secondary-container": "#f1dde7",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#68594f",
+                        "surface": "#fbf9f8",
+                        "on-secondary-fixed": "#23181f",
+                        "primary-fixed": "#ffd8e7",
+                        "on-primary-fixed": "#3d0025",
+                        "tertiary-fixed": "#f3dfd1",
+                        "surface-variant": "#e4e2e1",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#f1dde7",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "on-secondary-container": "#6f6069",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "secondary": "#685a63",
+                        "surface-container-highest": "#e4e2e1",
+                        "primary": "#a22c70",
+                        "surface-container-high": "#eae8e7",
+                        "outline-variant": "#dac0c9",
+                        "on-primary-container": "#fffbff",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-background": "#1b1c1c",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#554149",
+                        "inverse-primary": "#ffafd3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "base": "8px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "sm": "12px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "button": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { background-color: #fbf9f8; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dac0c9; border-radius: 10px; }
+        .form-input-pill {
+            border-radius: 9999px;
+            border-color: #dac0c9;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .form-input-pill:focus {
+            ring-color: #a22c70;
+            border-color: #a22c70;
+            box-shadow: 0 0 0 2px rgba(162, 44, 112, 0.1);
+        }
+        .sticky-footer {
+            background: rgba(251, 249, 248, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm h-16 flex justify-between items-center px-margin py-base">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<h1 class="text-h2 font-h2 text-on-surface dark:text-on-surface-variant">Wonder sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">49</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span class="text-button font-button">開單</span>
+</button>
+<div class="flex items-center gap-2 border border-outline-variant px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-primary">person</span>
+<span class="text-button font-button">LULU</span>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen pt-16">
+<!-- Sidebar -->
+<aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-low border-r border-outline-variant overflow-y-auto custom-scrollbar hidden md:flex flex-col">
+<nav class="flex-1 py-4">
+<div class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-3 hover:bg-surface-variant rounded-full cursor-pointer transition-all">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-body-md">預約</span>
+</div>
+<div class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-3 hover:bg-surface-variant rounded-full cursor-pointer transition-all">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md">會員</span>
+</div>
+<div class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-3 hover:bg-surface-variant rounded-full cursor-pointer transition-all">
+<span class="material-symbols-outlined">spa</span>
+<span class="font-body-md">服務及商品</span>
+</div>
+<div class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-3 hover:bg-surface-variant rounded-full cursor-pointer transition-all">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-body-md">票券管理</span>
+</div>
+<div class="bg-secondary-container text-primary rounded-full mx-2 px-4 py-3 flex items-center gap-3 font-bold">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-body-md">門店管理</span>
+</div>
+<div class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-3 hover:bg-surface-variant rounded-full cursor-pointer transition-all">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-body-md">組織架構</span>
+</div>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="ml-0 md:ml-64 flex-1 p-margin mb-20">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 mb-gutter text-on-surface-variant font-label-caps uppercase">
+<span>門店管理</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">編輯門店</span>
+</div>
+<div class="flex gap-margin">
+<!-- Form Section -->
+<div class="flex-1 space-y-margin max-w-4xl">
+<!-- Section: Basic Info -->
+<section class="bg-white rounded-xl shadow-sm overflow-hidden" id="basic-info">
+<div class="p-6 border-b border-surface-variant flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<h3 class="text-h3 font-h3 text-primary">基本資訊</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_less</span>
+</div>
+<div class="p-8 space-y-6">
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-2">圖片 (大小: 8MB)</label>
+<div class="relative w-full aspect-video bg-surface-container-low rounded-lg overflow-hidden flex flex-col items-center justify-center border-2 border-dashed border-outline-variant hover:border-primary transition-colors group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="A clean, minimalist logo of a premium beauty salon featuring elegant golden lettering and a professional black background, displayed as an uploaded image preview in a high-end web application. The lighting is soft and consistent, reflecting a luxurious spa atmosphere with a focus on high-fidelity brand presentation and modern aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo-kyXg0PTwSdwNi0Z10Jrc2NiDz-Pim9MT_FkyxWLjlQ4DsNP8XpLHlSqGko7QB_QrlWnejVInFHbzwHRyBeYED8FrhBA_nkPpLHlO3bzx2gM04g7DF8P5pR8AYG8z4nyrqyGN1cIj7F4oXQoMA5CnDRT6GFrMa0GUuxenQ9WCT0F77cwDr4gG3wG_71ADqFuT_LsrsfhOTQYW1DzfGw6Hbm8ik1T0m-_CKnDVZe0l21-wezIIKCrNtPCs4a0AhGoUraAE44bw3DX"/>
+<div class="absolute top-4 left-4 bg-black/60 text-white text-xs px-2 py-1 rounded flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">close</span>
+<span>070920251414.png (29 KB)</span>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">upload_file</span>
+<p class="text-body-md text-on-surface-variant">點擊或拖放圖片至此</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">* 名稱</label>
+<input class="w-full form-input-pill px-4 py-3 focus:outline-none" type="text" value="沐茉玹複合式國際美妍館"/>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">* 描述</label>
+<textarea class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary px-4 py-3 h-32" placeholder="請輸入門店介紹...">沐茉玹國際美妍館是一家以「健康為美」為理念所創立的專業健康養身美容館...</textarea>
+<p class="text-right text-label-caps text-on-surface-variant mt-1">153 / 512</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">電話</label>
+<input class="w-full form-input-pill px-4 py-3" type="text" value="04-7229506 / 0989847160"/>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">品牌地址資訊</label>
+<input class="w-full form-input-pill px-4 py-3" type="text" value="彰化縣彰化市彰化市孝德街28號"/>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">* 城市</label>
+<select class="w-full form-input-pill px-4 py-3"><option>彰化縣</option></select>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">* 區域</label>
+<select class="w-full form-input-pill px-4 py-3"><option>彰化市</option></select>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">* 路/街</label>
+<input class="w-full form-input-pill px-4 py-3" type="text" value="孝德街28號"/>
+</div>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">門店其他資訊</label>
+<input class="w-full form-input-pill px-4 py-3" placeholder="例：靠近xx車站等資訊" type="text"/>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">保障底薪</label>
+<input class="w-full form-input-pill px-4 py-3" type="number" value="28590"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Social -->
+<section class="bg-white rounded-xl shadow-sm overflow-hidden" id="social">
+<div class="p-6 border-b border-surface-variant flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<h3 class="text-h3 font-h3 text-primary">社群</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_less</span>
+</div>
+<div class="p-8 space-y-4">
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">官方網址</label>
+<input class="w-full form-input-pill px-4 py-3" type="text" value="https://maps.app.goo.gl/kTsE1Gy4XEdHhFvN6"/>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">Facebook粉絲專頁</label>
+<input class="w-full form-input-pill px-4 py-3" type="text" value="https://www.facebook.com/share/15MrF75pSK/"/>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">LINE官方帳號</label>
+<input class="w-full form-input-pill px-4 py-3" type="text" value="@zit2040p"/>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1">Instagram</label>
+<input class="w-full form-input-pill px-4 py-3" type="text" value="https://www.instagram.com/yunruzhou2612/"/>
+</div>
+</div>
+</section>
+<!-- Section: Business Hours -->
+<section class="bg-white rounded-xl shadow-sm overflow-hidden" id="hours">
+<div class="p-6 border-b border-surface-variant flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<h3 class="text-h3 font-h3 text-primary">營業時間</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_less</span>
+</div>
+<div class="p-8 space-y-6">
+<div class="flex items-center justify-between bg-surface-container-low p-4 rounded-lg">
+<div class="flex items-center gap-4">
+<span class="text-label-caps">工作人員上班時間</span>
+<div class="flex items-center gap-2">
+<select class="form-input-pill py-1 px-3 text-sm"><option>10:00</option></select>
+<span>至</span>
+<select class="form-input-pill py-1 px-3 text-sm"><option>22:00</option></select>
+</div>
+</div>
+<button class="text-primary text-button font-button hover:underline">同步至營業時間</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between pb-4 border-b border-dashed border-outline-variant">
+<div class="flex items-center gap-8">
+<span class="w-16 font-bold">星期日</span>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span>店休</span>
+</label>
+</div>
+<div class="flex items-center gap-4 opacity-40">
+<select class="form-input-pill py-1 px-3 text-sm" disabled=""><option>09:00</option></select>
+<span>至</span>
+<select class="form-input-pill py-1 px-3 text-sm" disabled=""><option>22:00</option></select>
+</div>
+</div>
+<!-- Monday Example -->
+<div class="flex items-center justify-between pb-4 border-b border-dashed border-outline-variant">
+<div class="flex items-center gap-8">
+<span class="w-16 font-bold">星期一</span>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span>店休</span>
+</label>
+</div>
+<div class="flex items-center gap-4">
+<select class="form-input-pill py-1 px-3 text-sm"><option>10:00</option></select>
+<span>至</span>
+<select class="form-input-pill py-1 px-3 text-sm"><option>22:00</option></select>
+</div>
+</div>
+<!-- repeat for other days... -->
+</div>
+</div>
+</section>
+</div>
+<!-- Anchor Navigation -->
+<aside class="hidden lg:block w-48 shrink-0">
+<div class="sticky top-24 space-y-1">
+<a class="flex items-center gap-2 px-4 py-2 text-primary font-bold border-l-4 border-primary bg-secondary-container rounded-r-lg" href="#basic-info">
+<span>基本資訊</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-2 text-on-surface-variant hover:text-primary transition-colors" href="#social">
+<span>社群</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-2 text-on-surface-variant hover:text-primary transition-colors" href="#hours">
+<span>營業時間</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-2 text-on-surface-variant hover:text-primary transition-colors" href="#booking">
+<span>開放預約時間</span>
+</a>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<!-- Sticky Footer -->
+<footer class="fixed bottom-0 left-0 right-0 z-50 sticky-footer h-20 border-t border-outline-variant flex justify-end items-center px-margin gap-4">
+<button class="px-8 py-2.5 rounded-full border border-primary text-primary hover:bg-secondary-container transition-colors font-button">取消</button>
+<button class="px-8 py-2.5 rounded-full border border-primary text-primary hover:bg-secondary-container transition-colors font-button">重設</button>
+<button class="px-10 py-2.5 rounded-full bg-primary text-white hover:bg-primary-container shadow-lg transition-all font-button">儲存</button>
+</footer>
+<!-- Image for Context Prompting logic -->
+<div class="hidden">
+<img data-alt="A lush, high-end botanical spa interior with soft pink and beige accents, featuring arched doorways and elegant minimalist furniture. The lighting is ethereal and warm, casting gentle shadows across marble floors. The overall atmosphere is one of serene luxury and modern professional wellness, perfectly aligning with a light luxury Morandi-inspired aesthetic for a beauty SaaS platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj_XWVw9Bnl7k34KmTvEIu-RCsqjdW8DGOtWSJA3oFI10LSMk9-jw5XQPxr4TjdvgrB6fCFvaUot6c3H6lUqhStk9bjriQHGQ8OF1rFasX_OhwZGGHsGHaWKsR3AZKNhrPK1J7_veOrRBEzIJ709fkesG-EBRi9F1p49RXvra_9adaMdK0f0RSFCAEyJ6NxkafNorLOS66GiUGrf6x9Fuwui27DSL5VMTcKeMH4P4Az97-vHrNhu68cRogRyKDJ2CmAiiAUjndzE_f"/>
+</div>
+</body></html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky 國際美妍館 - 會員持有點數</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#241912",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-container": "#6f6069",
+                        "on-secondary-fixed": "#23181f",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c1c",
+                        "background": "#fbf9f8",
+                        "inverse-surface": "#303030",
+                        "tertiary-container": "#817267",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "on-primary-fixed": "#3d0025",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#eae8e7",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-error": "#ffffff",
+                        "tertiary": "#68594f",
+                        "on-surface-variant": "#554149",
+                        "tertiary-fixed": "#f3dfd1",
+                        "primary-fixed": "#ffd8e7",
+                        "surface": "#fbf9f8",
+                        "secondary": "#685a63",
+                        "surface-container-highest": "#e4e2e1",
+                        "outline-variant": "#dac0c9",
+                        "error": "#ba1a1a",
+                        "primary-container": "#c14689",
+                        "surface-container": "#f0eded",
+                        "surface-variant": "#e4e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "on-error-container": "#93000a",
+                        "primary": "#a22c70",
+                        "surface-bright": "#fbf9f8",
+                        "secondary-fixed": "#f1dde7",
+                        "secondary-container": "#f1dde7",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "surface-tint": "#a52f72",
+                        "inverse-primary": "#ffafd3",
+                        "inverse-on-surface": "#f3f0f0",
+                        "outline": "#88717a",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "md": "24px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "button": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .backdrop-blur {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center w-full px-gutter h-16 sticky top-0 z-40 border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+<h1 class="font-h3 text-h3 font-bold text-primary dark:text-primary-fixed-dim">Wonder Sky</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-surface"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional female salon manager headshot with a friendly smile, set against a soft, clean studio background. The lighting is bright and airy, reflecting a premium wellness center atmosphere. The overall style is modern corporate, maintaining the light luxury and sophisticated vibe of the Wonder Sky brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXWoPq0Pma6epH7kxjoD12KXRq03hhX0O9IIOfWEV52kD-fP8fSyxm8iW0BCkvgnhmn1lgwUPL1pqMm_UJhXXNs6jWylDT-zUneaSB19731KDP1Pq6H2iuLcNhV4ulbM1f_xnMSKl6WtpkCSrSZHjYlHyXaElW5w_84AbyAftI32mUbm1WvSqaw1IU6UkAY-k33DKA9BaQGOEraPqgKS87q1geEk8wpqTLFOzOoR1GFwIv3JRLYMxfyrO1RHu48nksUgGSbnziu_cT"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="pb-24">
+<!-- Horizontal Scrollable TabBar -->
+<div class="bg-surface sticky top-16 z-30">
+<div class="flex overflow-x-auto gap-gutter px-gutter py-4 no-scrollbar">
+<a class="flex-shrink-0 text-on-surface font-semibold border-b-2 border-primary pb-2 transition-colors" href="#">會員持有點數</a>
+<a class="flex-shrink-0 text-on-surface-variant hover:text-primary pb-2 transition-colors whitespace-nowrap" href="#">基本資料管理</a>
+<a class="flex-shrink-0 text-on-surface-variant hover:text-primary pb-2 transition-colors whitespace-nowrap" href="#">消費記錄</a>
+<a class="flex-shrink-0 text-on-surface-variant hover:text-primary pb-2 transition-colors whitespace-nowrap" href="#">預約清單</a>
+</div>
+</div>
+<!-- Search Section -->
+<div class="px-gutter pt-4 pb-6">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-4 text-on-surface-variant">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 focus:bg-surface transition-all font-body-md placeholder:text-on-surface-variant/60" placeholder="輸入姓名、手機搜尋" type="text"/>
+</div>
+</div>
+<!-- Member Points List -->
+<div class="px-gutter space-y-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-outline-variant/10">
+<div class="flex items-start gap-4 mb-4">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-secondary-container">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a serene young woman with natural makeup, representing a beauty salon member. The image is captured in soft, natural daylight with a shallow depth of field, conveying a high-end wellness and skincare aesthetic. Colors are warm Morandi tones that align with the brand's sophisticated visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNuPMA1IsxDB7joLpUzQCB_X6Cv3Hk9fIafPcRyHR9J08FehzYJdxyViCceufnE8MTJLLmoqkWwVa5AXkxbNBmGey5FWY307vsSk0ylIXDEptUE0vIJPOPUi11-wIjdvmYq0zroFRJWtnODFYPE58v4dGMBvAtaAF8fxXnyyXQHxPu3vScnP_khYOry5sIFqEwgeU5mTBKbLancFCgcc7-cCD4VkCwGH51z_6xZv_cVUMnyAiUXHFKrIyFL8_QAPwH1ryJDOMEpGHc"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-0.5">陳映美</h3>
+<p class="text-on-surface-variant text-body-md font-medium">0912-345-678</p>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full font-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">stars</span>
+                                2,450 點
+                            </div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-y-3 gap-x-4 py-4 border-y border-outline-variant/20 mb-4">
+<div>
+<p class="text-label-caps text-on-surface-variant/70 mb-1">所屬門店</p>
+<p class="text-on-surface font-medium">台北忠孝總店</p>
+</div>
+<div>
+<p class="text-label-caps text-on-surface-variant/70 mb-1">生日日期</p>
+<p class="text-on-surface font-medium">1992-05-12</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 min-h-[44px] flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-button hover:bg-primary-container/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined">redeem</span>
+                        點數兌換
+                    </button>
+<button class="flex-1 min-h-[44px] flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-button hover:bg-primary-container/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined">history</span>
+                        點數記錄
+                    </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-outline-variant/10 opacity-90">
+<div class="flex items-start gap-4 mb-4">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-secondary-container">
+<img class="w-full h-full object-cover" data-alt="A portrait of a cheerful beauty enthusiast with radiant skin, looking towards the camera with a gentle expression. The background is a soft-focus interior of a luxurious spa or wellness center. Soft, warm lighting enhances the premium Morandi-inspired color palette of the UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1D7FhDTXdEVfwtnXHkBHTQ9C4GOpMfbJ9pKbrVzFgnnlOxkY3pbLxHkW7vKVwC1EYhKYj5lrpD4KXQtCM4pKnugAST-j_2KnL3ubPPrVxDGb2AXRfDNS_0h_Wo04PLgdJjT9a8Asj6F3NQljOBasZmi35LcdMCw2TD1nf3FhGxpRjdjl-SxF15GmbPugz3GLq9IFxjP-oWrCLiShQxXR4Ys2_Vk0lLA9vxrFmV2XNGUd9R6cw7b9NWRPtEG-fiAt8e3pgUtm1G4or"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-0.5">林若晴</h3>
+<p class="text-on-surface-variant text-body-md font-medium">0921-987-654</p>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full font-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">stars</span>
+                                890 點
+                            </div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-y-3 gap-x-4 py-4 border-y border-outline-variant/20 mb-4">
+<div>
+<p class="text-label-caps text-on-surface-variant/70 mb-1">所屬門店</p>
+<p class="text-on-surface font-medium">台中勤美店</p>
+</div>
+<div>
+<p class="text-label-caps text-on-surface-variant/70 mb-1">生日日期</p>
+<p class="text-on-surface font-medium">1995-11-28</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 min-h-[44px] flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-button hover:bg-primary-container/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined">redeem</span>
+                        點數兌換
+                    </button>
+<button class="flex-1 min-h-[44px] flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-button hover:bg-primary-container/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined">history</span>
+                        點數記錄
+                    </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-outline-variant/10">
+<div class="flex items-start gap-4 mb-4">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-secondary-container">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist portrait of a man in a white linen shirt, representing a male member of the beauty club. The lighting is soft and even, highlighting a healthy complexion. The setting is a bright, modern minimalist space with subtle beige and pink tones, echoing the brand's light luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQW7oigGkiBN5-VJLCRncXiOZgt4UL8pyx5WeuUGszGwzWSCLP9YyEj9wMUbk4QY0JwoabYrNioAZJDXaDWbvS-DUB9OZyKrLwq5bwmhCbkk4s2gu67809kbXKfBgxXCU5WydwP8J4XHPFMoH1wvk9Q-i5ca0UhtEqvbtlyEvc3yH-eLisQaOK5aiJyKPBF3IP6Ek-nFyCWFbpnMfESGvGSC4GBIhyMOEF1jBAOgvxGe6BILgE2J4bdykcQh--Ec7SpEH5l8_J0NI-"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-0.5">張浩天</h3>
+<p class="text-on-surface-variant text-body-md font-medium">0933-112-233</p>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full font-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">stars</span>
+                                12,300 點
+                            </div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-y-3 gap-x-4 py-4 border-y border-outline-variant/20 mb-4">
+<div>
+<p class="text-label-caps text-on-surface-variant/70 mb-1">所屬門店</p>
+<p class="text-on-surface font-medium">高雄漢神店</p>
+</div>
+<div>
+<p class="text-label-caps text-on-surface-variant/70 mb-1">生日日期</p>
+<p class="text-on-surface font-medium">1988-03-04</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 min-h-[44px] flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-button hover:bg-primary-container/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined">redeem</span>
+                        點數兌換
+                    </button>
+<button class="flex-1 min-h-[44px] flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-button hover:bg-primary-container/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined">history</span>
+                        點數記錄
+                    </button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-6 py-10">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant active:scale-90 transition-transform disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-2 font-body-md text-on-surface">
+<span class="font-bold text-primary">1</span>
+<span class="text-on-surface-variant/50">/</span>
+<span>12</span>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant hover:bg-primary-container/20 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Only for Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface/90 backdrop-blur-lg border-t border-outline-variant/20 flex items-center justify-around px-gutter z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">預約管理</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[10px] font-bold">會員管理</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">spa</span>
+<span class="text-[10px] font-bold">服務商品</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">設定</span>
+</button>
+</nav>
+<!-- FAB -->
+<button class="fixed bottom-20 right-gutter w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-[28px]">person_add</span>
+</button>
+</body></html>

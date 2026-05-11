@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 佣金方案設定</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fff8f8",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-secondary-container": "#6c4082",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary-fixed": "#f6d9ff",
+                        "on-background": "#23191d",
+                        "secondary": "#794c8f",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fff8f8",
+                        "primary-container": "#c14689",
+                        "background": "#fff8f8",
+                        "inverse-on-surface": "#ffecf1",
+                        "on-surface": "#23191d",
+                        "primary": "#a22c70",
+                        "on-secondary-fixed": "#300247",
+                        "surface-dim": "#e8d5db",
+                        "on-secondary-fixed-variant": "#603475",
+                        "surface-container-low": "#fff0f4",
+                        "surface-container": "#fde9ef",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-primary": "#ffafd3",
+                        "outline-variant": "#dac0c9",
+                        "inverse-surface": "#392d32",
+                        "surface-container-high": "#f7e3e9",
+                        "surface-variant": "#f1dee3",
+                        "tertiary-container": "#328517",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-surface-variant": "#554149",
+                        "tertiary-fixed-dim": "#84db64",
+                        "outline": "#88717a",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-primary-fixed": "#3d0025",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#042100",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e8b3fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "20px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+        .drawer-shadow {
+            box-shadow: -10px 0 30px -5px rgba(165, 47, 114, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-hidden">
+<!-- Main Layout Wrapper -->
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Navigation Drawer (Sidebar) -->
+<aside class="hidden md:flex flex-col h-full p-4 bg-white border-r border-gray-100 w-72 shadow-sm transition-transform shrink-0">
+<div class="mb-10 px-2">
+<h1 class="text-2xl font-black text-[#c84c8f]">Wonder sky</h1>
+<p class="text-caption text-on-surface-variant mt-1">International Beauty Salon</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-6 mb-6">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A professional headshot of a refined Asian female salon manager in a well-lit, contemporary spa office. The background is softly blurred with warm wooden tones and elegant floral arrangements. The manager is dressed in a professional, light-colored blazer, conveying a sense of trustworthiness and expertise in the high-end beauty sector." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+<div>
+<p class="font-label-md text-on-surface">沙龍管理員</p>
+<p class="text-caption text-on-surface-variant">管理中心</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-[#c84c8f]">dashboard</span>
+<span class="font-label-md">儀表板</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-[#c84c8f]">payments</span>
+<span class="font-label-md">銷售管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#c84c8f]/5 text-[#c84c8f] font-bold rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">loyalty</span>
+<span class="font-label-md">佣金設定</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-[#c84c8f]">inventory_2</span>
+<span class="font-label-md">產品管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-[#c84c8f]">groups</span>
+<span class="font-label-md">員工管理</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content (List Preview Behind Mask) -->
+<main class="flex-1 flex flex-col min-w-0 bg-surface h-full relative">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 h-16 w-full bg-white border-b border-gray-100 shrink-0">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-gray-500 hover:bg-gray-50 p-2 rounded-full transition-colors">arrow_back</button>
+<h2 class="font-h2 text-on-surface">佣金方案設定</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-[#a22c70] text-white px-4 py-2 rounded-lg font-label-md flex items-center gap-2 shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-lg">add</span>
+                        新增佣金級距
+                    </button>
+<button class="material-symbols-outlined text-gray-500 hover:bg-gray-50 p-2 rounded-full transition-colors">more_vert</button>
+</div>
+</header>
+<!-- Dashboard Body -->
+<div class="p-lg overflow-auto custom-scrollbar flex-1">
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Stat Cards -->
+<div class="col-span-12 md:col-span-4 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+<div class="flex justify-between mb-4">
+<span class="text-caption text-on-surface-variant">本月總銷售額</span>
+<span class="material-symbols-outlined text-[#c84c8f]">trending_up</span>
+</div>
+<p class="text-h1 text-[#a22c70]">NT$ 1,280,000</p>
+</div>
+<div class="col-span-12 md:col-span-4 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+<div class="flex justify-between mb-4">
+<span class="text-caption text-on-surface-variant">佣金方案總數</span>
+<span class="material-symbols-outlined text-[#c84c8f]">list_alt</span>
+</div>
+<p class="text-h1 text-[#a22c70]">24 個</p>
+</div>
+<div class="col-span-12 md:col-span-4 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+<div class="flex justify-between mb-4">
+<span class="text-caption text-on-surface-variant">生效員工數</span>
+<span class="material-symbols-outlined text-[#c84c8f]">person_check</span>
+</div>
+<p class="text-h1 text-[#a22c70]">115 名</p>
+</div>
+<!-- List Content -->
+<div class="col-span-12 bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-gray-50 flex justify-between items-center">
+<h3 class="font-h3 text-on-surface">佣金級距列表</h3>
+<div class="flex gap-2">
+<input class="text-body-md border border-gray-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#c84c8f]/20 focus:border-[#c84c8f] outline-none" placeholder="搜尋職位或方案..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-md">
+<tr>
+<th class="px-6 py-4">職位</th>
+<th class="px-6 py-4">級別</th>
+<th class="px-6 py-4">抽成規則數</th>
+<th class="px-6 py-4">更新時間</th>
+<th class="px-6 py-4">狀態</th>
+<th class="px-6 py-4">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-50">
+<tr class="hover:bg-gray-50/50">
+<td class="px-6 py-4 font-body-md">店長 (Manager)</td>
+<td class="px-6 py-4">L1 頂級</td>
+<td class="px-6 py-4">5 級</td>
+<td class="px-6 py-4 text-caption">2023/11/05</td>
+<td class="px-6 py-4"><span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-caption">使用中</span></td>
+<td class="px-6 py-4 flex gap-2">
+<button class="material-symbols-outlined text-gray-400 hover:text-[#c84c8f]">edit</button>
+<button class="material-symbols-outlined text-gray-400 hover:text-error">delete</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50/50">
+<td class="px-6 py-4 font-body-md">高級美容師 (Senior)</td>
+<td class="px-6 py-4">A 級別</td>
+<td class="px-6 py-4">4 級</td>
+<td class="px-6 py-4 text-caption">2023/10/28</td>
+<td class="px-6 py-4"><span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-caption">使用中</span></td>
+<td class="px-6 py-4 flex gap-2">
+<button class="material-symbols-outlined text-gray-400 hover:text-[#c84c8f]">edit</button>
+<button class="material-symbols-outlined text-gray-400 hover:text-error">delete</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- Overlay Mask -->
+<div class="absolute inset-0 bg-black/30 backdrop-blur-[1px] z-40 transition-opacity"></div>
+<!-- Side Drawer (The Panel) -->
+<div class="absolute right-0 top-0 h-full w-[480px] bg-white z-50 drawer-shadow flex flex-col transform transition-transform border-l border-gray-50">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-gray-50 flex justify-between items-center">
+<div>
+<h2 class="font-h2 text-on-surface">新增銷售商品券抽成級距</h2>
+<p class="text-caption text-on-surface-variant">請設定該職位與級別對應的銷售佣金規則</p>
+</div>
+<button class="material-symbols-outlined text-gray-400 hover:text-on-surface p-1 rounded-full">close</button>
+</div>
+<!-- Drawer Content -->
+<div class="flex-1 overflow-y-auto p-6 custom-scrollbar">
+<form class="space-y-8">
+<!-- Top Selection Row -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant block">職位</label>
+<div class="relative">
+<select class="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 font-body-md text-on-surface focus:ring-2 focus:ring-[#c84c8f]/10 focus:border-[#c84c8f] outline-none appearance-none cursor-pointer">
+<option>店長 (Manager)</option>
+<option>高級美容師 (Senior)</option>
+<option>初級美容師 (Junior)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant block">級別</label>
+<div class="relative">
+<select class="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 font-body-md text-on-surface focus:ring-2 focus:ring-[#c84c8f]/10 focus:border-[#c84c8f] outline-none appearance-none cursor-pointer">
+<option>L1 頂級</option>
+<option>A 級</option>
+<option>B 級</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Commission Settings Section -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-label-md text-on-surface-variant flex items-center gap-2">
+<span class="w-1 h-4 bg-[#c84c8f] rounded-full"></span>
+                                    抽成設定
+                                </h3>
+<button class="text-[#c84c8f] font-label-md flex items-center gap-1 hover:underline" type="button">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                                    新增規則
+                                </button>
+</div>
+<div class="space-y-3">
+<!-- Rule Row 1 -->
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl border border-gray-100 group">
+<div class="flex-1 flex items-center gap-2">
+<input class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2 font-body-md focus:border-[#c84c8f] outline-none text-right" type="number" value="0"/>
+<span class="text-caption text-gray-400 shrink-0">以下</span>
+</div>
+<div class="w-16 h-px bg-gray-200"></div>
+<div class="flex-1 flex items-center gap-2">
+<div class="flex items-center bg-white border border-gray-200 rounded-lg px-3 py-2 w-full">
+<input class="w-full font-body-md outline-none text-right" type="number" value="5"/>
+<span class="ml-1 text-gray-400">%</span>
+</div>
+</div>
+<div class="flex gap-1 shrink-0">
+<button class="material-symbols-outlined text-[#c84c8f] p-1.5 hover:bg-[#c84c8f]/10 rounded-lg transition-colors" type="button">content_copy</button>
+<button class="material-symbols-outlined text-[#c84c8f] p-1.5 hover:bg-[#c84c8f]/10 rounded-lg transition-colors" type="button">delete</button>
+</div>
+</div>
+<!-- Rule Row 2 -->
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl border border-gray-100">
+<div class="flex-1 flex items-center gap-2">
+<input class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2 font-body-md focus:border-[#c84c8f] outline-none text-right" type="number" value="1"/>
+<span class="text-caption text-gray-400 shrink-0">至</span>
+<input class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2 font-body-md focus:border-[#c84c8f] outline-none text-right" type="number" value="10000"/>
+</div>
+<div class="w-16 h-px bg-gray-200"></div>
+<div class="flex-1 flex items-center gap-2">
+<div class="flex items-center bg-white border border-gray-200 rounded-lg px-3 py-2 w-full">
+<input class="w-full font-body-md outline-none text-right" type="number" value="8"/>
+<span class="ml-1 text-gray-400">%</span>
+</div>
+</div>
+<div class="flex gap-1 shrink-0">
+<button class="material-symbols-outlined text-[#c84c8f] p-1.5 hover:bg-[#c84c8f]/10 rounded-lg transition-colors" type="button">content_copy</button>
+<button class="material-symbols-outlined text-[#c84c8f] p-1.5 hover:bg-[#c84c8f]/10 rounded-lg transition-colors" type="button">delete</button>
+</div>
+</div>
+<!-- Rule Row 3 -->
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl border border-gray-100">
+<div class="flex-1 flex items-center gap-2">
+<input class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2 font-body-md focus:border-[#c84c8f] outline-none text-right" type="number" value="10001"/>
+<span class="text-caption text-gray-400 shrink-0">以上</span>
+</div>
+<div class="w-16 h-px bg-gray-200"></div>
+<div class="flex-1 flex items-center gap-2">
+<div class="flex items-center bg-white border border-gray-200 rounded-lg px-3 py-2 w-full">
+<input class="w-full font-body-md outline-none text-right" type="number" value="12"/>
+<span class="ml-1 text-gray-400">%</span>
+</div>
+</div>
+<div class="flex gap-1 shrink-0">
+<button class="material-symbols-outlined text-[#c84c8f] p-1.5 hover:bg-[#c84c8f]/10 rounded-lg transition-colors" type="button">content_copy</button>
+<button class="material-symbols-outlined text-[#c84c8f] p-1.5 hover:bg-[#c84c8f]/10 rounded-lg transition-colors" type="button">delete</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Card -->
+<div class="bg-[#c84c8f]/5 p-4 rounded-xl border border-[#c84c8f]/10 flex gap-3">
+<span class="material-symbols-outlined text-[#c84c8f]">info</span>
+<p class="text-caption text-[#a22c70] leading-relaxed">
+                                溫馨提示：佣金級距將依據該員當月「實際商品券銷售總額」進行計算。若有多個級距符合，系統將自動套用最高級距之百分比。
+                            </p>
+</div>
+</form>
+</div>
+<!-- Drawer Footer -->
+<div class="p-6 border-t border-gray-50 flex justify-end gap-3 bg-white">
+<button class="px-6 py-2.5 rounded-lg border border-gray-200 font-label-md text-on-surface-variant hover:bg-gray-50 transition-colors">取消</button>
+<button class="px-8 py-2.5 rounded-lg bg-[#a22c70] text-white font-label-md hover:bg-[#c84c8f] transition-all shadow-md shadow-[#a22c70]/20">儲存</button>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-16 bg-white/80 backdrop-blur-md border-t border-gray-100 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-gray-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">首頁</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c84c8f] bg-[#c84c8f]/10 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">percent</span>
+<span class="text-[10px] font-medium">佣金</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400" href="#">
+<span class="material-symbols-outlined">redeem</span>
+<span class="text-[10px] font-medium">產品</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">設定</span>
+</a>
+</nav>
+</body></html>

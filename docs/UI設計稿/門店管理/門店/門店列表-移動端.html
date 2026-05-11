@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky - 門店管理</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom Scrollbar for a cleaner SaaS look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#c14689",
+                        "outline-variant": "#dac0c9",
+                        "surface": "#fbf9f8",
+                        "surface-container": "#f0eded",
+                        "on-tertiary-fixed": "#241912",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "on-surface": "#1b1c1c",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-secondary-container": "#6f6069",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2e1",
+                        "tertiary-fixed": "#f3dfd1",
+                        "secondary-container": "#f1dde7",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "inverse-surface": "#303030",
+                        "outline": "#88717a",
+                        "on-secondary-fixed": "#23181f",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fbf9f8",
+                        "surface-tint": "#a52f72",
+                        "secondary": "#685a63",
+                        "surface-container-low": "#f6f3f2",
+                        "inverse-on-surface": "#f3f0f0",
+                        "background": "#fbf9f8",
+                        "primary": "#a22c70",
+                        "on-surface-variant": "#554149",
+                        "tertiary": "#68594f",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "on-primary-container": "#fffbff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dcd9d9",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffd8e7",
+                        "secondary-fixed": "#f1dde7",
+                        "on-background": "#1b1c1c",
+                        "tertiary-container": "#817267",
+                        "surface-container-high": "#eae8e7",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-variant": "#e4e2e1",
+                        "inverse-primary": "#ffafd3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "64px",
+                        "margin": "32px",
+                        "lg": "40px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "button": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-xl">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-gutter h-16 sticky top-0 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 z-40">
+<div class="flex items-center gap-base">
+<button class="p-2 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-h3 text-h3 font-bold text-primary dark:text-primary-fixed-dim">Wonder Sky</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary cursor-pointer transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/50">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated wellness center manager with a warm, welcoming smile. The lighting is soft and flattering, emphasizing a premium and trustworthy aesthetic. She is wearing a minimal, modern professional outfit against a neutral, high-end spa background with hints of Morandi pink and soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFvnKdMcDgTirIqk0YgsLK2t-x8m26a_trv_l9vNHNpjV9Ibt4YvXAukkoDQND4gDf8-IkfQrUSIYj8_D56JKgB1cCw5V21s3Fx6w5SibueHevHsit3yw6gk2VoMEcKz9cbNxcRchnjwNOBu5nyw4QWzluf22C3iB9nOtkIZI81JjH_7YHqvyxao7tR0KToR9np0nVSuOt4CUFnvI6jJvEn5NqfTLiHrvlD0C5-186Z2Rje4tdi30md6A2JAWvQpq8lcri7hY6tXGb"/>
+</div>
+</div>
+</header>
+<!-- Sub-header / Breadcrumbs & Action -->
+<div class="px-gutter pt-base pb-md bg-surface/40 flex justify-between items-end">
+<div>
+<div class="font-body-md text-on-surface-variant mb-1">首頁 / 門店管理</div>
+<h2 class="font-h2 text-h2 font-bold text-on-surface">門店管理列表</h2>
+</div>
+<button class="flex items-center gap-xs bg-primary text-on-primary rounded-full px-6 py-3 font-button text-button shadow-md active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+<span>排序</span>
+</button>
+</div>
+<!-- Main Content: Store Cards List -->
+<main class="px-gutter flex flex-col gap-md">
+<!-- Card Item 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0_4px_20px_rgba(165,47,114,0.06)] border border-outline-variant/10 active:bg-secondary-container transition-colors relative group">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-h3 text-h3 text-primary-container mb-xs">信義旗艦館</h3>
+<div class="inline-flex items-center px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps">
+                        營運中
+                    </div>
+</div>
+</div>
+<div class="space-y-2 mb-lg">
+<div class="flex items-start gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] mt-1">location_on</span>
+<p class="font-body-md">台北市信義區忠孝東路五段 123 號 5 樓</p>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<p class="font-body-md">02-2722-1234</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-[12px] text-on-surface-variant/70 border-t border-outline-variant/20 pt-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>建立：2024-01-15 10:30</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">update</span>
+<span>更新：2024-05-20 16:45</span>
+</div>
+</div>
+<!-- Large Edit Icon Button -->
+<button class="absolute bottom-4 right-4 w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">edit</span>
+</button>
+</div>
+<!-- Card Item 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0_4px_20px_rgba(165,47,114,0.06)] border border-outline-variant/10 active:bg-secondary-container transition-colors relative group">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-h3 text-h3 text-primary-container mb-xs">中山靜謐館</h3>
+<div class="inline-flex items-center px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-caps text-label-caps">
+                        裝修中
+                    </div>
+</div>
+</div>
+<div class="space-y-2 mb-lg">
+<div class="flex items-start gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] mt-1">location_on</span>
+<p class="font-body-md">台北市中山區南京西路 45 號 2 樓</p>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<p class="font-body-md">02-2511-5678</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-[12px] text-on-surface-variant/70 border-t border-outline-variant/20 pt-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>建立：2024-02-10 09:15</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">update</span>
+<span>更新：2024-04-12 11:20</span>
+</div>
+</div>
+<button class="absolute bottom-4 right-4 w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">edit</span>
+</button>
+</div>
+<!-- Card Item 3 -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0_4px_20px_rgba(165,47,114,0.06)] border border-outline-variant/10 active:bg-secondary-container transition-colors relative group">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-h3 text-h3 text-primary-container mb-xs">台中美學館</h3>
+<div class="inline-flex items-center px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps">
+                        營運中
+                    </div>
+</div>
+</div>
+<div class="space-y-2 mb-lg">
+<div class="flex items-start gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] mt-1">location_on</span>
+<p class="font-body-md">台中市西屯區台灣大道三段 301 號</p>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<p class="font-body-md">04-2258-9999</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-[12px] text-on-surface-variant/70 border-t border-outline-variant/20 pt-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>建立：2023-11-28 14:00</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">update</span>
+<span>更新：2024-05-18 09:50</span>
+</div>
+</div>
+<button class="absolute bottom-4 right-4 w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">edit</span>
+</button>
+</div>
+</main>
+<!-- Navigation Shell: BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full bg-surface-container/90 backdrop-blur-lg flex justify-around items-center py-base px-gutter border-t border-outline-variant/20 z-50 md:hidden">
+<a class="flex flex-col items-center gap-xs text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span class="text-[10px] font-medium">預約管理</span>
+</a>
+<a class="flex flex-col items-center gap-xs text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<span class="text-[10px] font-medium">會員管理</span>
+</a>
+<div class="flex flex-col items-center gap-xs bg-primary-container text-on-primary-container px-4 py-1 rounded-full">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+<span class="text-[10px] font-bold">門店管理</span>
+</div>
+<a class="flex flex-col items-center gap-xs text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">confirmation_number</span>
+<span class="text-[10px] font-medium">票券管理</span>
+</a>
+<a class="flex flex-col items-center gap-xs text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-[10px] font-medium">系統設定</span>
+</a>
+</nav>
+<!-- Asymmetric Background Decal for "Light Luxury" feel -->
+<div class="fixed -top-24 -right-24 w-64 h-64 bg-primary-fixed opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="fixed bottom-24 -left-24 w-48 h-48 bg-secondary-fixed opacity-15 rounded-full blur-3xl pointer-events-none"></div>
+</body></html>

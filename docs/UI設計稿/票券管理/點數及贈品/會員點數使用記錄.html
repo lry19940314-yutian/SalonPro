@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lulu 點數記錄 - Wonder sky 國際美妍館</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f8",
+                        "primary-fixed-dim": "#ffafd3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffd8e7",
+                        "surface-bright": "#fbf9f8",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#861259",
+                        "secondary-container": "#f1dde7",
+                        "tertiary-fixed": "#f3dfd1",
+                        "on-secondary-container": "#6f6069",
+                        "on-surface": "#1b1c1c",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-surface-variant": "#554149",
+                        "tertiary": "#68594f",
+                        "inverse-on-surface": "#f3f0f0",
+                        "error": "#ba1a1a",
+                        "primary": "#a22c70",
+                        "surface-container": "#f0eded",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "on-secondary-fixed": "#23181f",
+                        "on-background": "#1b1c1c",
+                        "secondary-fixed": "#f1dde7",
+                        "tertiary-container": "#817267",
+                        "outline-variant": "#dac0c9",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "on-tertiary-fixed": "#241912",
+                        "inverse-primary": "#ffafd3",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-container-high": "#eae8e7",
+                        "outline": "#88717a",
+                        "on-primary-container": "#fffbff",
+                        "surface-tint": "#a52f72",
+                        "inverse-surface": "#303030",
+                        "surface-dim": "#dcd9d9",
+                        "secondary": "#685a63"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "xl": "64px",
+                        "md": "24px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "button": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex overflow-hidden">
+<!-- Sidebar Navigation Shell -->
+<aside class="flex flex-col h-full py-4 space-y-2 overflow-y-auto bg-surface-container-low dark:bg-surface-container-lowest shadow-md docked vertical left-0 w-64 fixed z-30">
+<div class="px-6 py-4">
+<h2 class="font-h3 text-h3 font-bold text-primary">Wonder sky</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">國際美妍館</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:text-on-surface mx-2 hover:bg-surface-variant rounded-full transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">calendar_today</span>
+<span class="font-body-md text-body-md">預約</span>
+</a>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:text-on-surface mx-2 hover:bg-surface-variant rounded-full transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+<span class="font-body-md text-body-md">會員</span>
+</a>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:text-on-surface mx-2 hover:bg-surface-variant rounded-full transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">spa</span>
+<span class="font-body-md text-body-md">服務及商品</span>
+</a>
+<a class="flex items-center px-4 py-3 bg-primary-container text-on-primary-container rounded-full mx-2 font-semibold shadow-sm" href="#">
+<span class="material-symbols-outlined mr-3">confirmation_number</span>
+<span class="font-body-md text-body-md">票券管理</span>
+</a>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:text-on-surface mx-2 hover:bg-surface-variant rounded-full transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">storefront</span>
+<span class="font-body-md text-body-md">門店管理</span>
+</a>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:text-on-surface mx-2 hover:bg-surface-variant rounded-full transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">account_tree</span>
+<span class="font-body-md text-body-md">組織架構</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-outline-variant/30">
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:text-on-surface mx-2 hover:bg-surface-variant rounded-full transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-body-md text-body-md">設定</span>
+</a>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:text-on-surface mx-2 hover:bg-surface-variant rounded-full transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">logout</span>
+<span class="font-body-md text-body-md">登出</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 min-h-screen relative">
+<!-- TopAppBar Navigation -->
+<header class="fixed top-0 right-0 left-64 z-20 flex justify-between items-center px-6 py-3 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-4">
+<h1 class="font-h2 text-h2 text-on-surface">Wonder sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-button text-button hover:opacity-90 active:scale-95 transition-all">
+                    開單
+                </button>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-outline-variant hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<span class="font-button text-button text-on-surface">LULU</span>
+</div>
+</div>
+</header>
+<!-- Dummy Background Content to Simulate the underlying page -->
+<section class="mt-20 p-margin">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="col-span-3 bg-white p-md rounded-lg shadow-sm border border-outline-variant/20 h-96 flex items-center justify-center text-on-surface-variant opacity-40">
+<p class="font-h3 text-h3">票券管理主內容區域</p>
+</div>
+</div>
+</section>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-[2px]">
+<!-- Modal Container -->
+<div class="bg-surface-container-lowest w-full max-w-4xl max-h-[921px] rounded-lg shadow-xl overflow-hidden flex flex-col mx-4">
+<!-- Modal Header -->
+<div class="relative px-md py-sm border-b border-outline-variant/20">
+<h3 class="font-h2 text-h2 text-center text-on-surface">Lulu 點數記錄</h3>
+<button class="absolute right-md top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-surface-container-low text-primary transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content Scrollable -->
+<div class="p-md space-y-md overflow-y-auto">
+<!-- Stats Overview Cards -->
+<div class="bg-white rounded-lg p-md border border-outline-variant/10 shadow-sm flex items-center justify-around text-center gap-gutter">
+<div class="flex-1 border-r border-outline-variant/10">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">目前點數</p>
+<p class="font-h2 text-h2 text-primary">積點 0 點</p>
+</div>
+<div class="flex-1">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">已兌換總計</p>
+<p class="font-h2 text-h2 text-secondary">兌換 0 點</p>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="flex flex-col md:flex-row justify-end items-center gap-md pt-4">
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">calendar_today</span>
+<input class="w-full pl-12 pr-4 py-2 bg-surface-container-low border-none rounded-full font-body-md text-body-md focus:ring-2 focus:ring-primary/20 text-on-surface" placeholder="時間區間" type="text"/>
+</div>
+<div class="relative w-full md:w-48">
+<select class="w-full px-6 py-2 bg-surface-container-low border-none rounded-full font-body-md text-body-md appearance-none focus:ring-2 focus:ring-primary/20 text-on-surface">
+<option value="all">獲取/兌換：全部</option>
+<option value="gain">獲取</option>
+<option value="redeem">兌換</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Empty State -->
+<div class="py-xl flex flex-col items-center justify-center text-center">
+<div class="mb-gutter opacity-60">
+<img alt="找不到任何資料" class="w-60 h-auto" data-alt="A minimalist and soft aesthetic illustration of a floating paper scroll with a large magnifying glass icon overlay. The scene is rendered in Morandi grey and soft pink tones, set against a clean white background with subtle geometric floating accents. The lighting is bright and even, conveying a sense of organized, high-end digital minimalist design suitable for a premium beauty wellness SaaS platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrZNuOkpH4821Y73A2onGxNn5TIzJ9ahy1e--UodBG-ag8v3Pcx8IDdPUlYibEsyhV_xbUrggi1qY49K-gzeSWMsmfaCyb0IWuSoFlds4qri3DxG2pWztUR4W2-dh3Sd_9S96CAjB001qo2af3UXWpN6hl_CbV9rd7_7-Gt7JQLQvOHMwYvgGB9ZQcUMqalmn3v6-ZdFMWUBCKXWiSMV3cvtMrQPMDkq3Azn0NbYQC6cYHsNNuMo-DZiwN-qgSrY1yvb4PBx1m8N1-"/>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface-variant mb-2">找不到任何資料</h4>
+<button class="font-button text-button text-primary hover:underline transition-all">
+                            清空搜尋條件
+                        </button>
+</div>
+</div>
+<!-- Modal Footer (Optional Pagination Space) -->
+<div class="px-md py-sm bg-surface-container-low/50 flex justify-end items-center gap-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant">每頁筆數：</span>
+<select class="bg-transparent border-none rounded-md font-label-caps text-label-caps py-1 focus:ring-0">
+<option>20</option>
+<option>50</option>
+</select>
+<span class="font-label-caps text-label-caps text-on-surface-variant mx-4">第 0 - 0 筆 共 0 筆</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]">last_page</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 票券管理</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#f1dde7",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary": "#685a63",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "tertiary-fixed": "#f3dfd1",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-tint": "#a52f72",
+                        "on-surface-variant": "#554149",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#817267",
+                        "surface-bright": "#fbf9f8",
+                        "inverse-primary": "#ffafd3",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#23181f",
+                        "surface-container": "#f0eded",
+                        "surface-container-high": "#eae8e7",
+                        "secondary-container": "#f1dde7",
+                        "surface": "#fbf9f8",
+                        "on-primary-fixed-variant": "#861259",
+                        "primary-fixed": "#ffd8e7",
+                        "on-primary-container": "#fffbff",
+                        "primary": "#a22c70",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#303030",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-tertiary-container": "#fffbff",
+                        "tertiary": "#68594f",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "background": "#fbf9f8",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-surface": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "outline": "#88717a",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "on-tertiary-fixed": "#241912",
+                        "on-background": "#1b1c1c",
+                        "on-secondary-container": "#6f6069",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#dac0c9",
+                        "primary-fixed-dim": "#ffafd3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "xl": "64px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Manrope"],
+                        "button": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "h2": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fbf9f8;
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden text-on-surface">
+<!-- Sidebar Navigation Shell -->
+<aside class="hidden md:flex flex-col h-full border-r border-outline-variant pt-md bg-surface-container-low w-64 shrink-0">
+<div class="px-gutter mb-lg">
+<h1 class="font-h2 text-h2 text-primary">Wonder sky</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant opacity-70 uppercase tracking-widest">SaaS Dashboard</p>
+</div>
+<nav class="flex-1 px-sm space-y-xs">
+<a class="text-on-secondary-fixed-variant flex items-center px-4 py-3 gap-3 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-caps text-label-caps">記帳</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center px-4 py-3 gap-3 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<span class="font-label-caps text-label-caps">預約</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center px-4 py-3 gap-3 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-caps text-label-caps">會員</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center px-4 py-3 gap-3 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+<span class="font-label-caps text-label-caps">服務及商品</span>
+</a>
+<!-- Active Navigation for Ticket Management -->
+<a class="bg-secondary-container text-primary rounded-full flex items-center px-4 py-3 gap-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-label-caps text-label-caps font-bold">票券管理</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center px-4 py-3 gap-3 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span class="font-label-caps text-label-caps">門店管理</span>
+</a>
+</nav>
+<footer class="p-sm mt-auto border-t border-outline-variant/30 space-y-xs">
+<a class="text-on-secondary-fixed-variant flex items-center px-4 py-3 gap-3 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">設定</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center px-4 py-3 gap-3 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-caps text-label-caps">登出</span>
+</a>
+</footer>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col relative overflow-hidden">
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center w-full px-gutter py-xs sticky top-0 z-40 bg-surface shadow-sm">
+<div class="flex items-center gap-base">
+<h2 class="font-h3 text-h3 font-bold text-on-surface">Wonder sky國際美妍館</h2>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<button class="hover:bg-surface-container transition-colors px-sm py-xs rounded-full">LULU</button>
+<button class="bg-primary text-on-primary px-gutter py-xs rounded-full font-button text-button scale-95 active:scale-90 transition-transform">開單</button>
+</div>
+</div>
+</header>
+<!-- Page Canvas (Behind Modal) -->
+<div class="flex-1 p-margin bg-background space-y-gutter">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-h2 text-h2 mb-xs">點數及贈品</h2>
+<nav class="flex gap-md border-b border-outline-variant/50">
+<button class="pb-base text-primary border-b-2 border-primary font-bold">會員點數記錄</button>
+<button class="pb-base text-on-surface-variant opacity-60">贈品管理</button>
+<button class="pb-base text-on-surface-variant opacity-60">點數設定</button>
+</nav>
+</div>
+</div>
+<!-- Mock Content Cards -->
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-8 space-y-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_20px_30px_rgba(162,44,112,0.05)] border border-outline-variant/20 h-96 flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[64px] mb-md opacity-20" data-icon="dataset">dataset</span>
+<p class="font-body-lg text-body-lg opacity-50">載入中...</p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_20px_30px_rgba(162,44,112,0.05)] border border-outline-variant/20 h-48"></div>
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_20px_30px_rgba(162,44,112,0.05)] border border-outline-variant/20 h-48"></div>
+</div>
+</div>
+</div>
+<!-- MODAL OVERLAY -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+<!-- Modal Card -->
+<div class="bg-surface-container-lowest w-full max-w-2xl mx-gutter rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] overflow-hidden relative border border-outline-variant/30">
+<!-- Modal Header -->
+<div class="px-gutter py-md flex items-center justify-center relative border-b border-outline-variant/10">
+<h3 class="font-h2 text-h2 text-on-surface">Lulu點數記錄</h3>
+<button class="absolute right-gutter top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-secondary-fixed text-primary hover:bg-primary hover:text-on-primary transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="p-gutter space-y-lg">
+<!-- Data Overview -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-bright border border-outline-variant/20 rounded-lg p-lg flex flex-col items-center justify-center text-center shadow-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-70 mb-xs">積點</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-h1 text-h1 text-primary">0</span>
+<span class="font-body-md text-body-md text-on-surface-variant">點</span>
+</div>
+</div>
+<div class="bg-surface-bright border border-outline-variant/20 rounded-lg p-lg flex flex-col items-center justify-center text-center shadow-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-70 mb-xs">兌換</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-h1 text-h1 text-on-surface-variant">0</span>
+<span class="font-body-md text-body-md text-on-surface-variant">點</span>
+</div>
+</div>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-col sm:flex-row justify-end items-center gap-md">
+<!-- Date Range Picker -->
+<div class="relative w-full sm:w-auto group">
+<div class="flex items-center gap-xs px-md py-sm bg-surface rounded-full border border-outline-variant group-focus-within:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant/70 group-focus-within:text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-body-md text-on-surface-variant">選擇時間區間</span>
+</div>
+</div>
+<!-- Dropdown Select -->
+<div class="relative w-full sm:w-48 group">
+<select class="appearance-none w-full px-md py-sm bg-surface rounded-full border border-outline-variant focus:border-primary focus:ring-0 font-body-md text-body-md text-on-surface-variant transition-colors cursor-pointer">
+<option selected="" value="all">全部</option>
+<option value="earn">僅顯示獲取</option>
+<option value="redeem">僅顯示兌換</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Empty State Area -->
+<div class="py-xl flex flex-col items-center justify-center text-center">
+<div class="relative mb-md">
+<div class="absolute inset-0 bg-secondary-fixed/30 rounded-full blur-xl scale-150"></div>
+<div class="relative bg-surface rounded-full w-24 h-24 flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px] text-on-surface-variant opacity-30" data-icon="search_off">search_off</span>
+</div>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface-variant mb-xs">找不到任何資料</h4>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60 mb-lg">目前的篩選條件下沒有任何點數異動記錄</p>
+<button class="text-primary font-button text-button hover:underline decoration-2 underline-offset-4 transition-all">
+                            清空搜尋條件
+                        </button>
+</div>
+</div>
+<!-- Modal Footer Image Decoration -->
+<div class="h-32 w-full relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/20 to-transparent"></div>
+<img alt="Spa background decoration" class="w-full h-full object-cover opacity-10" data-alt="A tranquil, high-end spa interior with soft, ambient lighting and minimalist wooden textures. The atmosphere is serene and luxurious, using a warm Morandi color palette of muted pinks and soft grays. Subtle steam rises from a treatment area in the background, reflecting a professional wellness establishment aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1WKrCweh_aMcn79twdg-B_No_zaaIX3l35V3E1GiAuemlgUdFiMrJVMjA2T6AGk4Sv1XTfm6344S4rGx4T4OjKO858oGP_db8buJwRmmfBEE3oBuNA_oXMIz4ckEaU3HsnXpmEHg9WbIROPzc8e73d_6BemuwGDwKzSD0atYybD2gf5RAbrVxSqxKy5P7B6oUVSqozkbeyQm0rW_OJDYnbph4CK6zpIBrVup1kTbwj-kfx2Mx4hygtNug5FOVoCJiDsSbgLrmRuqF"/>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>商品券業績提成模板設定 - Wonder sky 國際美妍館</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Awesome for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#c84c8f', // Morandi soft pink
+            'sidebar-hover': '#f9f2f5',
+            'table-header': '#f4f4f4',
+            'row-hover': '#fef1f7'
+          },
+          borderRadius: {
+            'xl': '1rem',
+            '2xl': '1.5rem',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Custom scrollbar for sidebar */
+    aside::-webkit-scrollbar {
+      width: 4px;
+    }
+    aside::-webkit-scrollbar-thumb {
+      background: #e2e8f0;
+      border-radius: 10px;
+    }
+    /* Tab active indicator */
+    .tab-active {
+      color: #c84c8f;
+      border-bottom: 3px solid #c84c8f;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen text-gray-700">
+<!-- BEGIN: TopHeader -->
+<header class="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-6 sticky top-0 z-50 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<!-- Placeholder for Logo -->
+<div class="w-8 h-8 bg-gray-800 rounded flex items-center justify-center">
+<span class="text-white text-xs font-bold">W</span>
+</div>
+<span class="text-xl font-medium tracking-wide">Wonder sky 國際美妍館</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<!-- Notification Icon -->
+<div class="relative cursor-pointer">
+<i class="fa-regular fa-bell text-xl text-gray-500"></i>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">56</span>
+</div>
+<!-- Checkout Button -->
+<button class="bg-primary text-white px-4 py-1.5 rounded-full flex items-center gap-2 hover:opacity-90 transition-all shadow-sm">
+<i class="fa-solid fa-receipt"></i>
+<span class="text-sm font-medium">開單</span>
+</button>
+<!-- User Profile -->
+<div class="flex items-center gap-2 border border-gray-200 rounded-full px-3 py-1 cursor-pointer hover:bg-gray-50">
+<i class="fa-regular fa-user text-primary"></i>
+<span class="text-sm font-medium text-primary uppercase">Lulu</span>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<div class="flex flex-1 overflow-hidden">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white border-r border-gray-100 flex flex-col overflow-y-auto" data-purpose="main-navigation">
+<nav class="p-4 space-y-1">
+<!-- Members -->
+<div class="group">
+<button class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-sidebar-hover rounded-xl transition-colors">
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-users w-5"></i>
+<span class="font-medium">會員</span>
+</div>
+<i class="fa-solid fa-chevron-down text-[10px]"></i>
+</button>
+</div>
+<!-- Services -->
+<div class="group">
+<button class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-sidebar-hover rounded-xl transition-colors">
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-briefcase w-5"></i>
+<span class="font-medium">服務及商品</span>
+</div>
+<i class="fa-solid fa-chevron-down text-[10px]"></i>
+</button>
+</div>
+<!-- Tickets (Active) -->
+<div class="space-y-1">
+<button class="w-full flex items-center justify-between p-3 text-primary bg-sidebar-hover rounded-xl">
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-ticket w-5"></i>
+<span class="font-bold">票券管理</span>
+</div>
+<i class="fa-solid fa-chevron-up text-[10px]"></i>
+</button>
+<!-- Submenu -->
+<div class="pl-12 space-y-2 py-2">
+<a class="block py-2 text-sm text-gray-500 hover:text-primary" href="#">儲值金</a>
+<a class="block py-2 text-sm text-primary font-medium" href="#">商品券</a>
+<a class="block py-2 text-sm text-gray-500 hover:text-primary" href="#">優惠券(代金券)</a>
+<a class="block py-2 text-sm text-gray-500 hover:text-primary" href="#">點數及贈品</a>
+</div>
+</div>
+<!-- Store Management -->
+<div class="group">
+<button class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-sidebar-hover rounded-xl transition-colors">
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-shop w-5"></i>
+<span class="font-medium">門店管理</span>
+</div>
+<i class="fa-solid fa-chevron-down text-[10px]"></i>
+</button>
+</div>
+<!-- Org Structure -->
+<div class="group">
+<button class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-sidebar-hover rounded-xl transition-colors">
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-sitemap w-5"></i>
+<span class="font-medium">組織架構</span>
+</div>
+<i class="fa-solid fa-chevron-down text-[10px]"></i>
+</button>
+</div>
+<!-- Settings -->
+<div class="group">
+<button class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-sidebar-hover rounded-xl transition-colors">
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-gear w-5"></i>
+<span class="font-medium">設定</span>
+</div>
+<i class="fa-solid fa-chevron-down text-[10px]"></i>
+</button>
+</div>
+</nav>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 overflow-y-auto bg-[#fafafa] p-6">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm text-gray-500 mb-6">
+<span>票券管理</span>
+<i class="fa-solid fa-chevron-right text-[10px]"></i>
+<span class="font-bold text-gray-800">商品券</span>
+</nav>
+<!-- Section Container -->
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 min-h-full">
+<!-- Tabs Header -->
+<div class="border-b border-gray-100 flex overflow-x-auto" data-purpose="content-tabs">
+<button class="px-6 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">商品券</button>
+<button class="px-6 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">會員持有商品券</button>
+<button class="px-6 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">購買使用記錄</button>
+<button class="px-6 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">銷售商品券抽成級距</button>
+<button class="px-6 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">銷售商品券業績抽成設定</button>
+<button class="px-6 py-4 text-sm font-medium tab-active whitespace-nowrap">商品券業績提成模板設定</button>
+</div>
+<!-- Action Bar -->
+<div class="p-6 flex justify-between items-center">
+<!-- Search Box -->
+<div class="relative w-64">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+<i class="fa-solid fa-magnifying-glass"></i>
+</span>
+<input class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:ring-primary focus:border-primary" placeholder="搜尋名稱" type="text"/>
+</div>
+<!-- Add Button -->
+<button class="bg-primary text-white px-5 py-2 rounded-lg flex items-center gap-2 hover:bg-[#b0427e] transition-colors shadow-sm">
+<i class="fa-solid fa-circle-plus"></i>
+<span class="font-medium text-sm">新增</span>
+</button>
+</div>
+<!-- Table Content -->
+<div class="px-6 pb-6">
+<div class="overflow-hidden rounded-xl border border-gray-200">
+<table class="w-full text-left" data-purpose="template-list-table">
+<thead class="bg-table-header text-gray-600 text-sm font-medium">
+<tr>
+<th class="px-6 py-4 w-1/4">名稱</th>
+<th class="px-6 py-4">建立時間</th>
+<th class="px-6 py-4">更新時間</th>
+<th class="px-6 py-4 text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 text-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-row-hover transition-colors group">
+<td class="px-6 py-5 font-medium">測試</td>
+<td class="px-6 py-5 text-gray-500">2026/05/07 週四 10:28</td>
+<td class="px-6 py-5 text-gray-500">2026/05/07 週四 10:28</td>
+<td class="px-6 py-5 text-right space-x-3">
+<button class="text-primary hover:opacity-70 transition-opacity" title="編輯">
+<i class="fa-regular fa-pen-to-square text-lg"></i>
+</button>
+<button class="text-primary hover:opacity-70 transition-opacity" title="刪除">
+<i class="fa-regular fa-trash-can text-lg"></i>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- END: MainContent -->
+</div>
+</body></html>

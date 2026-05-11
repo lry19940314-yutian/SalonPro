@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky - 新增部門</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-fixed": "#241912",
+                        "inverse-surface": "#303030",
+                        "secondary-fixed": "#f1dde7",
+                        "outline-variant": "#dac0c9",
+                        "background": "#fbf9f8",
+                        "primary": "#a22c70",
+                        "tertiary-fixed": "#f3dfd1",
+                        "on-secondary-fixed": "#23181f",
+                        "inverse-primary": "#ffafd3",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fbf9f8",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-background": "#1b1c1c",
+                        "primary-fixed-dim": "#ffafd3",
+                        "primary-fixed": "#ffd8e7",
+                        "on-surface-variant": "#554149",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "surface-dim": "#dcd9d9",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "secondary-container": "#f1dde7",
+                        "surface": "#fbf9f8",
+                        "on-primary-fixed-variant": "#861259",
+                        "surface-variant": "#e4e2e1",
+                        "primary-container": "#c14689",
+                        "surface-container": "#f0eded",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary": "#685a63",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#6f6069",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#a52f72",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#817267",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "on-primary-fixed": "#3d0025",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#68594f",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#eae8e7",
+                        "outline": "#88717a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "64px",
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "lg": "40px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "button": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .backdrop-blur-luxury {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Desktop Sidebar (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col h-full w-72 fixed left-0 top-0 bg-surface shadow-sm p-base z-30">
+<div class="mb-lg px-4 py-6">
+<h1 class="font-h2 text-h2 font-bold text-primary">Wonder Sky</h1>
+<p class="font-body-md text-on-surface-variant">Beauty &amp; Wellness</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-sm text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-2" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-body-md">Appointments</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-2" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md">Members</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-2" href="#">
+<span class="material-symbols-outlined">spa</span>
+<span class="font-body-md">Services &amp; Products</span>
+</a>
+<a class="flex items-center gap-sm bg-primary-container text-on-primary-container rounded-full px-4 py-2 shadow-sm" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-body-md">Organization</span>
+</a>
+</nav>
+<div class="mt-auto pt-base space-y-2">
+<a class="flex items-center gap-sm text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+<button class="w-full bg-primary text-on-primary rounded-full py-3 font-button shadow-md active:scale-95 transition-transform">
+                New Appointment
+            </button>
+</div>
+</aside>
+<!-- Main Content Background (Simulated Tablet/Desktop View) -->
+<main class="w-full max-w-4xl mx-auto p-margin md:ml-72 flex-1">
+<header class="flex justify-between items-center mb-lg">
+<h2 class="font-h1 text-h1 text-on-surface">組織架構</h2>
+<div class="flex gap-sm">
+<button class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-primary font-bold">L</div>
+</div>
+</header>
+<!-- Tabs Navigation -->
+<div class="flex border-b border-outline-variant mb-md overflow-x-auto whitespace-nowrap">
+<button class="px-6 py-4 font-button text-on-surface-variant hover:text-primary transition-colors">職位</button>
+<button class="px-6 py-4 font-button text-on-surface-variant hover:text-primary transition-colors">管理層職位</button>
+<button class="px-6 py-4 font-button text-on-surface-variant hover:text-primary transition-colors">級別</button>
+<button class="px-6 py-4 font-button text-primary border-b-2 border-primary transition-colors">部門</button>
+</div>
+<!-- Desktop Action Bar -->
+<div class="flex justify-end gap-sm mb-base">
+<button class="flex items-center gap-xs px-4 py-2 bg-primary text-on-primary rounded-full font-button shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                新增
+            </button>
+<button class="flex items-center gap-xs px-4 py-2 bg-surface text-on-surface-variant border border-outline-variant rounded-full font-button">
+                排序
+            </button>
+</div>
+<!-- Desktop Table Mock -->
+<div class="bg-surface rounded-xl shadow-sm border border-surface-container-highest overflow-hidden">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-6 py-4 font-label-caps text-on-surface-variant">名稱</th>
+<th class="px-6 py-4 font-label-caps text-on-surface-variant text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 font-body-lg text-on-surface">美容部</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="p-2 text-primary hover:bg-primary-fixed rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container rounded-full transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</main>
+<!-- MOBILE SCREEN OVERLAY & BOTTOM SHEET -->
+<!-- Darkened Overlay -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-40 md:hidden"></div>
+<!-- Bottom Sheet (The Core Task UI) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-surface rounded-t-xl md:hidden flex flex-col shadow-xl border-t border-surface-container-highest max-h-[795px]">
+<!-- Drag Handle for Mobile Feel -->
+<div class="flex justify-center py-3">
+<div class="w-10 h-1.5 bg-surface-container-highest rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="px-margin py-base flex justify-between items-center relative">
+<div class="w-11"></div> <!-- Spacer for centering -->
+<h3 class="font-h3 text-h3 text-on-surface text-center">新增</h3>
+<button class="w-11 h-11 flex items-center justify-center text-primary rounded-full hover:bg-surface-container-high active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[28px]">close</span>
+</button>
+</div>
+<!-- Input Section -->
+<div class="p-margin pt-base space-y-md">
+<div class="space-y-xs">
+<label class="block font-label-caps text-on-surface-variant px-1" for="dept_name">部門</label>
+<input class="w-full h-14 bg-surface-container-low border-0 rounded-xl px-4 font-body-lg text-on-surface focus:ring-2 focus:ring-primary-fixed-dim transition-all shadow-inner" id="dept_name" placeholder="請輸入部門名稱" type="text"/>
+</div>
+<!-- Aesthetic Decoration (Light Luxury Vibe) -->
+<div class="flex items-center gap-sm p-4 bg-primary-fixed/30 rounded-xl">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="font-body-md text-on-primary-fixed-variant">新增後的部門將會立即出現在組織架構列表中。</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="p-margin pt-0 flex flex-row items-center justify-end gap-md pb-lg">
+<button class="px-6 py-3 font-button text-on-surface-variant hover:text-on-surface active:scale-95 transition-all">
+                取消
+            </button>
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-button shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                新增
+            </button>
+</div>
+</div>
+<!-- Mobile Navigation Shell (BottomNavBar) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-20 bg-surface/80 backdrop-blur-md flex items-center justify-around px-base z-30 shadow-2xl border-t border-surface-container-highest">
+<div class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-caps">首頁</span>
+</div>
+<div class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-label-caps">預約</span>
+</div>
+<div class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="text-[10px] font-label-caps">組織</span>
+</div>
+<div class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-caps">我的</span>
+</div>
+</nav>
+</body></html>

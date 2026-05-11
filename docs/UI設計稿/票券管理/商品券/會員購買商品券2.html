@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 國際美妍館 - 結算配置</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#f7e3e9",
+                        "on-error-container": "#93000a",
+                        "on-background": "#23191d",
+                        "secondary": "#794c8f",
+                        "on-secondary-fixed-variant": "#603475",
+                        "outline-variant": "#dac0c9",
+                        "secondary-container": "#e8b3fe",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "on-error": "#ffffff",
+                        "surface-container": "#fde9ef",
+                        "primary-fixed": "#ffd8e7",
+                        "tertiary-container": "#328517",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "primary-container": "#c14689",
+                        "surface": "#fff8f8",
+                        "on-surface-variant": "#554149",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed-dim": "#ffafd3",
+                        "outline": "#88717a",
+                        "primary": "#a22c70",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-on-surface": "#ffecf1",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-dim": "#e8d5db",
+                        "inverse-primary": "#ffafd3",
+                        "on-primary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed": "#300247",
+                        "background": "#fff8f8",
+                        "secondary-fixed": "#f6d9ff",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fff8f8",
+                        "on-secondary-container": "#6c4082",
+                        "inverse-surface": "#392d32",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-primary-fixed": "#3d0025",
+                        "brand-pink": "#c84c8f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "20px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-900/40 font-body-md text-on-surface overflow-hidden">
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
+<!-- Main Modal Container -->
+<div class="bg-surface rounded-[32px] w-full max-w-[1100px] max-h-[90vh] shadow-2xl overflow-hidden flex flex-col border border-outline-variant">
+<!-- Modal Header -->
+<div class="px-lg py-md border-b border-outline-variant flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">shopping_cart_checkout</span>
+<h2 class="text-h2 font-h2 text-on-background">購買商品券 - 配置與結算</h2>
+</div>
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-high transition-colors flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content (Scrollable) -->
+<div class="flex-1 overflow-y-auto hide-scrollbar p-lg grid grid-cols-1 lg:grid-cols-12 gap-gutter bg-surface">
+<!-- Left Configuration Area -->
+<div class="lg:col-span-7 space-y-lg">
+<!-- Member Info Card -->
+<div class="bg-white p-md rounded-2xl border border-outline-variant shadow-sm flex items-center gap-4">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a sophisticated woman with glowing skin, representing a premium beauty salon member. The lighting is soft and flattering, emphasizing a luxurious and clean aesthetic consistent with high-end wellness branding. The background is a minimalist, warm-toned beige that coordinates with a professional corporate UI." src="https://lh3.googleusercontent.com/aida/ADBb0ugvmtYARsqPOkY1TYDSRH72QE4WEcNrRBhxKVn1UO0cnrCu9ZIV5TmR-qrBTR2jswAjI7mqW_BsnnPDnGOurNYn18qc83pmqfNMSkylJvoXvLglAvX6fP4N8Avlq68hEgPBN9w1gjzLPindHd6dXT-l-_Z7wKjkNb1KHG4opdtlbdJzyoclqu0V7Ml2zk1vOW5r4IT4CYDuCNKVIbKNEaLDathJ--3Vwx_U0kp0b2Wr_lBQg3fSkZoMDYWhTiMhKpyoJOZw3D7tRg"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="text-h3 font-h3 text-on-background">林雅詩</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-caption font-label-md">金鑽會員</span>
+</div>
+<p class="text-body-md text-on-surface-variant">目前積分：<span class="text-primary font-bold">12,450 pt</span></p>
+</div>
+<div class="text-right">
+<span class="text-caption text-outline">會員編號</span>
+<p class="font-mono text-body-md">WS-20240801</p>
+</div>
+</div>
+<!-- Selected Items List -->
+<div class="space-y-sm">
+<h3 class="text-label-md text-on-surface-variant uppercase tracking-wider">已選購商品券</h3>
+<div class="bg-white rounded-2xl border border-outline-variant overflow-hidden">
+<div class="p-md flex items-center justify-between border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">featured_seasonal_and_gifts</span>
+</div>
+<div>
+<p class="font-h3 text-body-lg text-on-background">奢華胜肽修復課程券 (10堂)</p>
+<p class="text-caption text-outline">有效期限：2025/12/31</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-on-background">NT$ 28,000</p>
+<p class="text-caption text-primary">x 1</p>
+</div>
+</div>
+<div class="p-md flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">redeem</span>
+</div>
+<div>
+<p class="font-h3 text-body-lg text-on-background">亮采美肌單次體驗券</p>
+<p class="text-caption text-outline">有效期限：2024/12/31</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-on-background">NT$ 3,200</p>
+<p class="text-caption text-primary">x 2</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Staff Configuration Selects -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-md">
+<div class="space-y-1.5">
+<label class="text-caption font-label-md text-on-surface-variant">工作人員</label>
+<select class="w-full h-11 bg-white border border-outline-variant rounded-xl text-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary">
+<option>陳美玲</option>
+<option>張曉薇</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-caption font-label-md text-on-surface-variant">部門</label>
+<select class="w-full h-11 bg-white border border-outline-variant rounded-xl text-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary">
+<option>美容一部</option>
+<option>美容二部</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-caption font-label-md text-on-surface-variant">職位</label>
+<select class="w-full h-11 bg-white border border-outline-variant rounded-xl text-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary">
+<option>資深美容師</option>
+<option>首席理療師</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-caption font-label-md text-on-surface-variant">級別</label>
+<select class="w-full h-11 bg-white border border-outline-variant rounded-xl text-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary">
+<option>Level 3</option>
+<option>Level 4</option>
+</select>
+</div>
+</div>
+<!-- Collapsible Panels -->
+<div class="space-y-md">
+<!-- Panel 1 -->
+<div class="border border-outline-variant rounded-2xl bg-white overflow-hidden">
+<button class="w-full p-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">percent</span>
+<span class="font-h3 text-body-lg">修改價格與折扣</span>
+</div>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</button>
+</div>
+<!-- Panel 2 -->
+<div class="border border-outline-variant rounded-2xl bg-white overflow-hidden">
+<button class="w-full p-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">payments</span>
+<span class="font-h3 text-body-lg">消費方式</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-caption text-primary">現金、刷卡已設定</span>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</button>
+</div>
+<!-- Panel 3 -->
+<div class="border border-outline-variant rounded-2xl bg-white overflow-hidden">
+<button class="w-full p-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+<span class="font-h3 text-body-lg">業績與抽成</span>
+</div>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Summary Area -->
+<div class="lg:col-span-5 space-y-lg">
+<!-- Checkout Details Card -->
+<div class="bg-surface-container-low rounded-[24px] p-lg space-y-lg border border-outline-variant shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-8xl">receipt_long</span>
+</div>
+<div class="space-y-md">
+<h3 class="text-label-md text-on-surface-variant border-b border-outline-variant pb-2">結算明細</h3>
+<!-- Payment Breakdown -->
+<div class="space-y-3">
+<div class="flex justify-between items-center text-body-md text-on-surface-variant">
+<span>支付方式：現金</span>
+<span>NT$ 10,000</span>
+</div>
+<div class="flex justify-between items-center text-body-md text-on-surface-variant">
+<span>支付方式：信用卡 (末四碼 8821)</span>
+<span>NT$ 21,200</span>
+</div>
+<div class="flex justify-between items-center text-body-md text-on-surface-variant">
+<span>積分抵扣 (500 pt)</span>
+<span class="text-error">- NT$ 50</span>
+</div>
+<div class="flex justify-between items-center text-body-md text-on-surface-variant">
+<span>會員折扣 (金鑽 9 折)</span>
+<span class="text-error">- NT$ 3,120</span>
+</div>
+</div>
+<hr class="border-dashed border-outline-variant"/>
+<!-- Statistics -->
+<div class="space-y-4 pt-2">
+<div class="flex justify-between items-center">
+<span class="text-body-md">總金額</span>
+<span class="text-body-md font-semibold">NT$ 34,400</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md">折扣小計</span>
+<span class="text-body-md text-error">- NT$ 3,170</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-body-lg font-bold">合計金額</span>
+<span class="text-h1 font-h1 text-brand-pink">NT$ 31,230</span>
+</div>
+<div class="flex justify-between items-center bg-white p-3 rounded-xl border border-primary/10">
+<span class="text-label-md text-primary">現場付款合計</span>
+<span class="text-h3 font-h3 text-brand-pink">NT$ 31,230</span>
+</div>
+</div>
+</div>
+<!-- Date/Time Picker -->
+<div class="space-y-3 pt-4">
+<h3 class="text-label-md text-on-surface-variant">交易時間設定</h3>
+<div class="grid grid-cols-2 gap-sm">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">calendar_today</span>
+<input class="w-full pl-9 pr-3 h-10 bg-white border border-outline-variant rounded-lg text-caption focus:ring-primary focus:border-primary" type="date" value="2024-08-24"/>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">schedule</span>
+<input class="w-full pl-9 pr-3 h-10 bg-white border border-outline-variant rounded-lg text-caption focus:ring-primary focus:border-primary" type="time" value="14:30"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Promo Image -->
+<div class="rounded-2xl overflow-hidden h-32 relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious lifestyle image showing a modern, high-end spa interior with soft ambient lighting and premium materials like marble and wood. The atmosphere is peaceful and opulent, designed to appeal to high-net-worth clients. The colors are muted pinks and warm neutrals, perfectly matching the professional beauty salon branding and Luminous Analytics design system." src="https://lh3.googleusercontent.com/aida/ADBb0uhyTdIEyqi60wTygYASZ2BsdEkww0qh46GdjJtnc581Rx7HT_cF3NkWFbmkCflRFbuejBpYs5lNjMBjLm6xBJrOl1f4oRyGXI1EZu1J7YFQQN0FNDdDPvpEMK2qIkbG-FYCfqLWW9ibmrSFOPXPVE15zLHjCbxp5_IDvj2BaqAvF3Amim6eN-F4gtNAMh8FIkf3uIg3ek_Y7oTJoJPu2G8mKp81YKGBYihiaIaF21Tme3qkdPIzlMI9JvtNHwJqJcjnpTgAkvuo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<p class="text-white text-caption font-label-md">「Wonder Sky」讓您的每一刻都煥發光彩</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-lg py-md border-t border-outline-variant bg-surface-container-lowest">
+<button class="w-full h-14 bg-brand-pink hover:bg-primary text-white rounded-2xl font-h2 text-h2 shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    確認結帳
+                </button>
+<p class="text-center text-caption text-outline mt-3">完成後系統將自動發送購買通知與電子收據給會員</p>
+</div>
+</div>
+</div>
+<!-- Background Decoration for Context -->
+<div class="fixed inset-0 -z-10 grid grid-cols-12 grid-rows-6 opacity-30 gap-gutter p-gutter">
+<div class="col-span-3 row-span-2 rounded-3xl overflow-hidden shadow-sm border border-outline-variant bg-white">
+<img class="w-full h-full object-cover" data-alt="Corporate dashboard overview showing analytics and customer trends for a luxury beauty brand. The interface is clean, professional, and sophisticated, using a refined color palette of deep navy and soft pinks." src="https://lh3.googleusercontent.com/aida/ADBb0uhGI3dPgfcHAm-Y5FAjbQYcZ8iYbwbu9u2O7XFo8akZYeBoOIUmCi-bipkZU3uFpYpJqzOvx7rm4oIcf4r1QiNWKpEARyksY3FyYTCx4FNoLCRU2BDpcy9kdYVJ854lmjZt8ktHMKR2-jnuHF7I1nV8CU_R67FVCBY9a8S0asv_GebUwe7LR6NNwq3vqPq8dz8lIYm7V_9bvPG-XvVrymeHTeEbs1DfYFUBhUt1O-iS6VUBIDxq4qhIJmL2M7NnA3uoN3sgg9dDbw"/>
+</div>
+<div class="col-span-9 row-span-3 rounded-3xl overflow-hidden shadow-sm border border-outline-variant bg-white">
+<img class="w-full h-full object-cover" data-alt="A collage of professional beauty salon treatments and high-end skincare products. The images are artistic and minimalist, focusing on quality and sensory experience. The lighting is bright and airy, reflecting a modern wellness aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ughNWB2ZuKF8gJ_yPtG5yvT-U1ApZlWMLcxyEspCjks4EMNkj42A8vWbv5L_XitNuQgKRDLtFIzVScDTfq6rM14Uw5OxIQtDs_0_9xGSXiP6tKUxBsd8dos-pLXhmvEOogDBOzzkdQ7hVz_tOCs8C12fVQ8xjaXyllg7kPfiJs8upa_d0_jeuFCHb_Q8AtolaByb-ac9PVwcB9lMZw4dPPRJUf0mi7TIajYsCYACJ-X4Y1tK2mYlRlZZpG6PcfV4Wa20W2ucWvq7w"/>
+</div>
+<div class="col-span-3 row-span-4 rounded-3xl overflow-hidden shadow-sm border border-outline-variant bg-white">
+<img class="w-full h-full object-cover" data-alt="Close-up of a high-tech skincare analysis tool being used on a client. The focus is on the precision and data-driven nature of the service, highlighting professional expertise and luxury technology in a serene spa setting." src="https://lh3.googleusercontent.com/aida/ADBb0uj0JQGRkm-EH6zpMniIH0qNc5khGKJVKYV9V9ipe_E0gPw0XTR4b8AH8ZbzSGKshxK2xjULCIap8Wi5RHznBr4_0V3tSLIczm_zDGtARZMi945ztPWBzu64ZyVe5maetMh81mR16sQSZF_nvssnPDCnKUyTvfsVyk6ns3j_shkTyM9HE5tq58yVc8BiGgvWQAvwDOo8N4C9NM_KIEFkg5-k28sm9CiM0j2YmioHMCPvWX9v-hRDnDMUS8CT4CsFPmjN-OZsvcXpZw"/>
+</div>
+</div>
+</body></html>

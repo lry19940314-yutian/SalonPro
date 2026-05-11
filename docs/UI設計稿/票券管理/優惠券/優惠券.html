@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder sky 票券管理 - 優惠券</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c14689",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#68594f",
+                        "surface-container-high": "#eae8e7",
+                        "on-secondary-fixed": "#23181f",
+                        "surface": "#fbf9f8",
+                        "on-tertiary-fixed": "#241912",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "outline-variant": "#dac0c9",
+                        "surface-container": "#f0eded",
+                        "tertiary-container": "#817267",
+                        "tertiary-fixed": "#f3dfd1",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed": "#f1dde7",
+                        "surface-bright": "#fbf9f8",
+                        "primary-fixed": "#ffd8e7",
+                        "on-background": "#1b1c1c",
+                        "secondary": "#685a63",
+                        "inverse-surface": "#303030",
+                        "primary": "#a22c70",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary-fixed": "#3d0025",
+                        "on-secondary-container": "#6f6069",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "on-primary-fixed-variant": "#861259",
+                        "on-surface-variant": "#554149",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f3f0f0",
+                        "background": "#fbf9f8",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "on-primary-container": "#fffbff",
+                        "inverse-primary": "#ffafd3",
+                        "surface-tint": "#a52f72",
+                        "on-tertiary-container": "#fffbff",
+                        "secondary-container": "#f1dde7",
+                        "outline": "#88717a",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "surface-variant": "#e4e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "margin": "32px",
+                        "xl": "64px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Manrope"],
+                        "button": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "h1": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .sidebar-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar-scroll::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center h-16 px-gutter w-full sticky top-0 z-50 bg-surface dark:bg-surface-container shadow-sm">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">menu</span>
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary overflow-hidden flex items-center justify-center">
+<img alt="Wonder Sky Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiR24Kq9w_CBQ5wcbIKLgVjB5VdIQayGt6BgFbq-DoQrarvNtD6bsJT9bfUUkDrjAKWuhy0WsRawSdJw1yS2E_fC-ISEGsN27m3rKPRGgdLV6bEJOGDyOEmx63oIbxjcQJK763e6GbY2uYzKQU4k5w3NsKHFNoeo2IzO4_hhwDhhZzBomMIlfbrvBH1dLpJuzsJ4uU1vzaNZRuKfK5idyl3HrMGGAsBsKlpLBcsHsvcYA2PF7acG6uAWPnW8h5dSd7mRwqoX8Ybyms"/>
+</div>
+<h1 class="font-h2 text-h2 font-bold text-on-surface dark:text-on-surface-variant tracking-tight">Wonder sky國際美妍館</h1>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim cursor-pointer" data-icon="notifications">notifications</span>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full border-2 border-surface">47</span>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full flex items-center gap-xs font-button transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="receipt_long">receipt_long</span>
+                開單
+            </button>
+<div class="flex items-center gap-xs cursor-pointer group">
+<span class="text-on-surface-variant font-bold group-hover:text-primary transition-colors">LULU</span>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="User avatar for LULU" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgO7TtSFg1nsdJuaXGQjXz_S5Dh88FDieFRzTw2iQWOz-rHb98qfYAE8mRhDew2ioaevJUEhG5uDZTT3-dnTAX28-_YW5auiP0PSX4uzzNj-U32jB04Pa-u4SiF_gpDjdDJBK2ChZa5K8vPzp7xpS0XOmA0NSQIRhV_Lk1QnBlsI3CzKoJku06EvebOAXuWR_Bx4RuDrRBkexegNnh8Y3qyC1ztcZYjEj1YnlgNBUuxWVtiQ2N8SQvY5INIVk03YMjBzzz8rXyVbgf"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-surface-container-low dark:bg-surface-dim border-r border-outline-variant flex flex-col py-md overflow-hidden z-40">
+<div class="flex-1 overflow-y-auto sidebar-scroll">
+<nav class="space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>預約</span>
+<span class="material-symbols-outlined ml-auto text-sm">expand_more</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>會員</span>
+<span class="material-symbols-outlined ml-auto text-sm">expand_more</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="card_giftcard">card_giftcard</span>
+<span>服務及商品</span>
+<span class="material-symbols-outlined ml-auto text-sm">expand_more</span>
+</a>
+<div class="bg-secondary-container text-primary rounded-xl mx-2 overflow-hidden border border-primary/10">
+<a class="flex items-center gap-3 px-4 py-3 font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span>票券管理</span>
+<span class="material-symbols-outlined ml-auto text-sm">expand_less</span>
+</a>
+<div class="pb-2 space-y-1">
+<a class="block pl-12 pr-4 py-2 text-sm text-on-surface-variant hover:text-primary" href="#">儲值金</a>
+<a class="block pl-12 pr-4 py-2 text-sm text-on-surface-variant hover:text-primary" href="#">商品券</a>
+<a class="block pl-12 pr-4 py-2 text-sm text-primary font-bold border-l-4 border-primary bg-primary/5" href="#">優惠券(代金券)</a>
+<a class="block pl-12 pr-4 py-2 text-sm text-on-surface-variant hover:text-primary" href="#">點數及贈品</a>
+</div>
+</div>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span>門店管理</span>
+<span class="material-symbols-outlined ml-auto text-sm">expand_more</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span>組織架構</span>
+<span class="material-symbols-outlined ml-auto text-sm">expand_more</span>
+</a>
+</nav>
+</div>
+<!-- SideNav Footer -->
+<div class="mt-auto border-t border-outline-variant/30 pt-md">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>系統設定</span>
+</a>
+<a class="flex items-center gap-3 text-error hover:bg-error-container/20 rounded-full px-4 py-3 mx-2 my-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>登出</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-margin mt-16 bg-surface">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center text-on-surface-variant mb-gutter font-body-md">
+<span class="hover:text-primary cursor-pointer transition-colors">票券管理</span>
+<span class="material-symbols-outlined mx-xs text-sm">chevron_right</span>
+<span class="font-bold text-on-surface">優惠券(代金券)</span>
+</nav>
+<!-- Content Card with Bento-inspired subtle shadow -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_rgba(162,44,112,0.05)] overflow-hidden border border-outline-variant/20">
+<!-- Tabs -->
+<div class="flex border-b border-outline-variant px-md">
+<button class="relative px-md py-lg text-primary font-bold transition-all">
+                        優惠券
+                        <span class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-t-full"></span>
+</button>
+<button class="px-md py-lg text-on-surface-variant hover:text-primary transition-colors">會員持有優惠券</button>
+<button class="px-md py-lg text-on-surface-variant hover:text-primary transition-colors">購買使用記錄</button>
+</div>
+<!-- Filters & Actions -->
+<div class="p-md flex justify-between items-center flex-wrap gap-md">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 transition-all text-body-md placeholder:text-on-surface-variant/50" placeholder="輸入關鍵字搜尋" type="text"/>
+</div>
+<div class="flex gap-sm">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full flex items-center gap-2 font-button hover:bg-primary-container transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                            快速新增
+                        </button>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-full flex items-center gap-2 font-button hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+                            刪除
+                        </button>
+<button class="border border-primary text-primary px-6 py-2 rounded-full flex items-center gap-2 font-button hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined" data-icon="ios_share">ios_share</span>
+                            匯出報表
+                        </button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-caps uppercase">
+<tr>
+<th class="p-md"><input class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4" type="checkbox"/></th>
+<th class="p-md">名稱</th>
+<th class="p-md">銷售數量</th>
+<th class="p-md">價格</th>
+<th class="p-md">面額</th>
+<th class="p-md">折扣</th>
+<th class="p-md">使用期限</th>
+<th class="p-md">使用範圍</th>
+<th class="p-md text-center">狀態</th>
+<th class="p-md">兌換所需點數</th>
+<th class="p-md">更新時間</th>
+<th class="p-md">操作</th>
+</tr>
+</thead>
+<tbody class="text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-primary/5 border-b border-outline-variant/10 transition-colors group">
+<td class="p-md"><input class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4" type="checkbox"/></td>
+<td class="p-md font-bold">A方案/臉部小V臉</td>
+<td class="p-md">6</td>
+<td class="p-md">588</td>
+<td class="p-md">1,800</td>
+<td class="p-md">無</td>
+<td class="p-md">無期限</td>
+<td class="p-md">服務</td>
+<td class="p-md text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold">啟用中</span>
+</td>
+<td class="p-md text-center">0</td>
+<td class="p-md text-on-surface-variant whitespace-nowrap">2025/07/09 20:58</td>
+<td class="p-md text-primary">
+<button class="material-symbols-outlined p-2 hover:bg-primary/10 rounded-full transition-colors">more_horiz</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-primary/5 border-b border-outline-variant/10 transition-colors group">
+<td class="p-md"><input class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4" type="checkbox"/></td>
+<td class="p-md font-bold">全背淋巴放鬆課程</td>
+<td class="p-md">3</td>
+<td class="p-md">799</td>
+<td class="p-md">1,800</td>
+<td class="p-md">無</td>
+<td class="p-md">無期限</td>
+<td class="p-md">服務</td>
+<td class="p-md text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold">啟用中</span>
+</td>
+<td class="p-md text-center">0</td>
+<td class="p-md text-on-surface-variant whitespace-nowrap">2025/07/09 20:58</td>
+<td class="p-md text-primary">
+<button class="material-symbols-outlined p-2 hover:bg-primary/10 rounded-full transition-colors">more_horiz</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-md"><input class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4" type="checkbox"/></td>
+<td class="p-md font-bold">茶麩宮廷/皇后御髮</td>
+<td class="p-md">2</td>
+<td class="p-md">1,500</td>
+<td class="p-md">2,500</td>
+<td class="p-md">無</td>
+<td class="p-md">無期限</td>
+<td class="p-md">全部</td>
+<td class="p-md text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold">啟用中</span>
+</td>
+<td class="p-md text-center">0</td>
+<td class="p-md text-on-surface-variant whitespace-nowrap">2025/12/15 10:47</td>
+<td class="p-md text-primary">
+<button class="material-symbols-outlined p-2 hover:bg-primary/10 rounded-full transition-colors">more_horiz</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-md border-t border-outline-variant flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-sm">
+<span>每頁筆數：</span>
+<div class="relative">
+<select class="appearance-none bg-surface-container border border-outline-variant rounded-md px-4 py-1 pr-10 focus:ring-primary focus:border-primary">
+<option>20</option>
+<option>50</option>
+<option>100</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-sm">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="font-body-md text-on-surface-variant">第 1 - 3 筆 共 3 筆</span>
+<div class="flex gap-xs">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">first_page</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">last_page</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Decorative Floating Section / Insight -->
+<div class="mt-xl grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="bg-primary/5 p-md rounded-xl border border-primary/10 flex items-center gap-md">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-label-caps">本月核銷總額</p>
+<p class="text-primary font-bold text-h3">$ 42,300</p>
+</div>
+</div>
+<div class="bg-secondary/5 p-md rounded-xl border border-secondary/10 flex items-center gap-md">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-label-caps">優惠券轉換率</p>
+<p class="text-secondary font-bold text-h3">18.5%</p>
+</div>
+</div>
+<div class="bg-tertiary/5 p-md rounded-xl border border-tertiary/10 flex items-center gap-md">
+<div class="w-12 h-12 bg-tertiary rounded-full flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined">group_add</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-label-caps">新增持券會員</p>
+<p class="text-tertiary font-bold text-h3">+ 24</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Background Decoration -->
+<div class="fixed top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-[300px] h-[300px] bg-secondary/5 rounded-full blur-2xl opacity-50 -translate-x-1/2 translate-y-1/2"></div>
+</body></html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#f1dde7",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e4e2e1",
+                    "secondary-fixed-dim": "#d4c2cb",
+                    "outline-variant": "#dac0c9",
+                    "outline": "#88717a",
+                    "primary-container": "#c14689",
+                    "surface-container": "#f0eded",
+                    "secondary": "#685a63",
+                    "tertiary": "#68594f",
+                    "surface-dim": "#dcd9d9",
+                    "surface-bright": "#fbf9f8",
+                    "surface-tint": "#a52f72",
+                    "on-tertiary-fixed": "#241912",
+                    "primary-fixed": "#ffd8e7",
+                    "tertiary-container": "#817267",
+                    "surface": "#fbf9f8",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e4e2e1",
+                    "inverse-primary": "#ffafd3",
+                    "on-primary-fixed": "#3d0025",
+                    "on-primary-container": "#fffbff",
+                    "on-secondary-fixed": "#23181f",
+                    "on-tertiary-fixed-variant": "#51443b",
+                    "on-surface-variant": "#554149",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#ffafd3",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#303030",
+                    "surface-container-high": "#eae8e7",
+                    "primary": "#a22c70",
+                    "background": "#fbf9f8",
+                    "on-surface": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#50434b",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary-container": "#6f6069",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#861259",
+                    "secondary-container": "#f1dde7",
+                    "on-background": "#1b1c1c",
+                    "tertiary-fixed": "#f3dfd1",
+                    "tertiary-fixed-dim": "#d6c3b6",
+                    "inverse-on-surface": "#f3f0f0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin": "32px",
+                    "lg": "40px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "h2": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "h3": ["Manrope"],
+                    "h1": ["Manrope"],
+                    "button": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #fbf9f8;
+            font-family: 'Manrope', sans-serif;
+        }
+        .sidebar-active {
+            background-color: #f1dde7;
+            color: #a22c70;
+            border-radius: 9999px;
+            font-weight: 700;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d4c2cb;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 flex flex-col bg-surface-container-low shadow-sm px-4 py-8 z-50">
+<div class="mb-10 px-4">
+<h1 class="font-h2 text-h2 text-primary font-bold">Wonder sky</h1>
+<p class="text-on-surface-variant text-body-md opacity-80">國際美妍館</p>
+</div>
+<nav class="flex-1 space-y-2 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors rounded-full duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">首頁</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors rounded-full duration-200" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-body-md">預約管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 sidebar-active" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-body-md">票券管理</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors rounded-full duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md">會員中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors rounded-full duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md">報表分析</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-outline-variant/30 space-y-2">
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-button shadow-md active:scale-95 transition-all mb-4">
+                快速開單
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">設定</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md">登出</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 flex flex-col min-w-0">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-lg h-20 sticky top-0 z-40 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-8">
+<h2 class="font-h3 text-h3 text-primary font-bold">票券管理</h2>
+<nav class="hidden md:flex gap-6">
+<a class="text-secondary hover:text-primary transition-all font-body-lg" href="#">點數管理</a>
+<a class="text-secondary hover:text-primary transition-all font-body-lg" href="#">贈品兌換</a>
+<a class="text-secondary hover:text-primary transition-all font-body-lg" href="#">活動紀錄</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-secondary hover:text-primary transition-all"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-secondary hover:text-primary transition-all"><span class="material-symbols-outlined">help</span></button>
+</div>
+<div class="flex items-center gap-3 pl-6 border-l border-outline-variant/30">
+<img alt="User Avatar" class="w-10 h-10 rounded-full border-2 border-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDldZNFwbfeANp0Py7-6jH2TXF8DW0SI6yspsFCGgcC3PZN2bk3mqxmPO8L7scbuf0i8xZfljcSN1a3zqv2OaSQRrmFanuohASe2MYBOYQ71IGYP6sXW-mkV2dmuMQV8WkU0-Fx3J3zz6BnHAhB85yW-w0Pq4ImrGFIBt94Y3Hv8RyMvuAF0RZdsFkkDEeHYFEnVM7iRbZpH3GlSV1ntKootzgp42qGX0Ed6kkxmfhVR2DgdNN1SPrDSPde4OoC0h_JwBM8dkWvAdYm"/>
+<span class="font-body-md font-bold">店長 曉雲</span>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-margin flex-1 flex flex-col">
+<!-- Breadcrumbs / Page Title Context -->
+<div class="mb-8 flex items-center gap-2 text-on-surface-variant font-label-caps">
+<span>票券管理</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span>點數及贈品</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">點數兌換列表</span>
+</div>
+<!-- Tab Navigation Bar -->
+<div class="flex border-b border-outline-variant/30 mb-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<button class="px-8 py-4 text-secondary font-body-lg hover:text-primary transition-colors">贈品列表</button>
+<button class="px-8 py-4 text-secondary font-body-lg hover:text-primary transition-colors">會員持有點數</button>
+<button class="px-8 py-4 text-secondary font-body-lg hover:text-primary transition-colors">點數記錄</button>
+<button class="px-8 py-4 text-primary border-b-2 border-primary font-bold font-body-lg">點數兌換列表</button>
+</div>
+<!-- Main Workspace Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_rgba(162,44,112,0.05)] p-md flex-1 flex flex-col">
+<!-- Search & Filters -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-gutter mb-xl">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary-container outline-none transition-shadow text-body-md" placeholder="輸入關鍵字搜尋" type="text"/>
+</div>
+<div class="flex items-center gap-gutter w-full md:w-auto">
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant font-body-md whitespace-nowrap">種類</span>
+<select class="min-w-[140px] px-4 py-3 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary-container outline-none appearance-none cursor-pointer text-body-md">
+<option selected="">商品券</option>
+<option>服務券</option>
+<option>抵用券</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Empty State Section -->
+<div class="flex-1 flex flex-col items-center justify-center py-20">
+<div class="relative mb-8">
+<!-- Abstract Empty State Illustration using Icons & Shapes -->
+<div class="w-48 h-48 bg-surface-container rounded-full flex items-center justify-center opacity-40">
+<span class="material-symbols-outlined text-[80px] text-on-surface-variant">manage_search</span>
+</div>
+<div class="absolute -bottom-2 -right-2 w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant">description</span>
+</div>
+</div>
+<h3 class="text-h3 font-h3 text-on-surface-variant mb-4">找不到任何可兌換商品</h3>
+<p class="text-body-md text-on-surface-variant/60 mb-6">目前沒有符合篩選條件的商品資料，請嘗試變更搜尋關鍵字。</p>
+<button class="text-primary font-button flex items-center gap-2 hover:underline active:opacity-70 transition-all">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                        清空搜尋條件
+                    </button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto py-md flex flex-col md:flex-row justify-between items-center text-on-surface-variant/70 font-label-caps border-t border-outline-variant/30">
+<p>© 2024 Wonder sky 國際美妍館. All Rights Reserved.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-primary transition-colors" href="#">隱私政策</a>
+<a class="hover:text-primary transition-colors" href="#">服務條款</a>
+<a class="hover:text-primary transition-colors" href="#">技術支援</a>
+</div>
+</footer>
+</div>
+</main>
+<!-- Contextual FAB (Hidden on this specific management screen as per instructions, but kept in code structure if needed for home) -->
+<!-- Suppression rule applied: FAB suppressed on management/transactional screens -->
+</body></html>

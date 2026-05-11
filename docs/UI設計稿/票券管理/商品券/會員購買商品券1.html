@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky 國際美妍館 - 購買商品券</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#f7e3e9",
+                        "on-error-container": "#93000a",
+                        "on-background": "#23191d",
+                        "secondary": "#794c8f",
+                        "on-secondary-fixed-variant": "#603475",
+                        "outline-variant": "#dac0c9",
+                        "secondary-container": "#e8b3fe",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#23191d",
+                        "on-error": "#ffffff",
+                        "surface-container": "#fde9ef",
+                        "primary-fixed": "#ffd8e7",
+                        "tertiary-container": "#328517",
+                        "surface-variant": "#f1dee3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a52f72",
+                        "primary-container": "#c14689",
+                        "surface": "#fff8f8",
+                        "on-surface-variant": "#554149",
+                        "tertiary": "#1c6b00",
+                        "primary-fixed-dim": "#ffafd3",
+                        "outline": "#88717a",
+                        "primary": "#a22c70",
+                        "secondary-fixed-dim": "#e8b3fe",
+                        "on-tertiary-fixed-variant": "#145200",
+                        "on-tertiary-container": "#f8ffee",
+                        "on-primary-fixed-variant": "#861259",
+                        "inverse-on-surface": "#ffecf1",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#f1dee3",
+                        "on-tertiary-fixed": "#042100",
+                        "surface-dim": "#e8d5db",
+                        "inverse-primary": "#ffafd3",
+                        "on-primary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#fff0f4",
+                        "on-secondary-fixed": "#300247",
+                        "background": "#fff8f8",
+                        "secondary-fixed": "#f6d9ff",
+                        "tertiary-fixed": "#9ff87d",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fff8f8",
+                        "on-secondary-container": "#6c4082",
+                        "inverse-surface": "#392d32",
+                        "tertiary-fixed-dim": "#84db64",
+                        "on-primary-fixed": "#3d0025"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "20px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .modal-overlay {
+            background-color: rgba(35, 25, 29, 0.6);
+            backdrop-filter: blur(4px);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dac0c9;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a22c70;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-background min-h-screen flex items-center justify-center p-md">
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 modal-overlay z-50 flex items-center justify-center p-md sm:p-lg">
+<!-- Modal Container -->
+<div class="bg-surface-container-lowest w-full max-w-5xl h-[90vh] flex flex-col rounded-xl shadow-2xl overflow-hidden border border-outline-variant">
+<!-- 1. Top Control Area -->
+<header class="p-lg border-b border-outline-variant bg-surface-container-low relative">
+<!-- Close Button -->
+<button class="absolute top-md right-md text-primary hover:bg-primary-fixed p-1 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-[28px]" data-icon="close">close</span>
+</button>
+<!-- Title -->
+<div class="text-center mb-lg">
+<h1 class="font-h1 text-h1 text-primary tracking-tight">Lulu 購買商品券</h1>
+<p class="text-on-surface-variant font-label-md text-label-md mt-1">選購您喜愛的服務券品項</p>
+</div>
+<!-- Controls -->
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<!-- Search Box -->
+<div class="relative w-full md:flex-1">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-xl pr-md py-sm bg-white border border-outline-variant rounded-full text-body-md font-body-md focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="輸入商品券名稱搜尋" type="text"/>
+</div>
+<!-- Store Dropdown -->
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline" data-icon="store">store</span>
+<select class="w-full pl-xl pr-md py-sm bg-white border border-outline-variant rounded-full text-body-md font-body-md appearance-none focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none">
+<option>所有門店</option>
+<option>台北旗艦店</option>
+<option>台中精誠店</option>
+<option>高雄夢時代店</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-outline pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Category Link -->
+<button class="flex items-center gap-xs text-primary font-label-md text-label-md hover:underline active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                        搜尋分類
+                    </button>
+</div>
+</header>
+<!-- 2. 商品券網格區 -->
+<main class="flex-1 overflow-y-auto p-lg bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[16/9] w-full rounded-lg mb-md overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional aesthetician performing a high-end facial treatment in a serene, luxury spa setting. The lighting is soft and golden, emphasizing the clean, white linens and the pink accent colors of the Wonder Sky branding. The atmosphere is calm and restorative, showcasing a high-quality wellness experience." src="https://lh3.googleusercontent.com/aida/ADBb0uhGI3dPgfcHAm-Y5FAjbQYcZ8iYbwbu9u2O7XFo8akZYeBoOIUmCi-bipkZU3uFpYpJqzOvx7rm4oIcf4r1QiNWKpEARyksY3FyYTCx4FNoLCRU2BDpcy9kdYVJ854lmjZt8ktHMKR2-jnuHF7I1nV8CU_R67FVCBY9a8S0asv_GebUwe7LR6NNwq3vqPq8dz8lIYm7V_9bvPG-XvVrymeHTeEbs1DfYFUBhUt1O-iS6VUBIDxq4qhIJmL2M7NnA3uoN3sgg9dDbw"/>
+</div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-h3 text-on-background">極致保濕煥顏療程券</h3>
+<span class="bg-secondary-fixed text-on-secondary-container text-caption font-caption px-2 py-0.5 rounded-full">臉部護理</span>
+</div>
+<div class="space-y-1 mb-lg text-on-surface-variant font-body-md">
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="counter_5">counter_5</span> 次數</span>
+<span class="font-semibold">10 次</span>
+</div>
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span> 期限</span>
+<span>365 天</span>
+</div>
+<div class="flex justify-between items-baseline mt-md pt-md border-t border-dashed border-outline-variant">
+<span class="text-label-md text-outline">單價 $1,800</span>
+<span class="text-primary font-h2 text-h2">$18,000</span>
+</div>
+</div>
+<!-- Quantity Control -->
+<div class="flex items-center justify-between bg-surface-container-low rounded-full p-1 border border-outline-variant">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-primary hover:bg-primary-fixed transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="font-h3 text-h3 px-4">0</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary-container transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[16/9] w-full rounded-lg mb-md overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of luxury skincare products including serums and creams arranged on a marble surface. Soft sunlight illuminates the translucent glass bottles, creating delicate shadows. The scene uses a palette of soft pinks and neutral tones to reflect a premium, sophisticated beauty brand identity." src="https://lh3.googleusercontent.com/aida/ADBb0ughNWB2ZuKF8gJ_yPtG5yvT-U1ApZlWMLcxyEspCjks4EMNkj42A8vWbv5L_XitNuQgKRDLtFIzVScDTfq6rM14Uw5OxIQtDs_0_9xGSXiP6tKUxBsd8dos-pLXhmvEOogDBOzzkdQ7hVz_tOCs8C12fVQ8xjaXyllg7kPfiJs8upa_d0_jeuFCHb_Q8AtolaByb-ac9PVwcB9lMZw4dPPRJUf0mi7TIajYsCYACJ-X4Y1tK2mYlRlZZpG6PcfV4Wa20W2ucWvq7w"/>
+</div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-h3 text-on-background">全身舒壓經絡按摩券</h3>
+<span class="bg-secondary-fixed text-on-secondary-container text-caption font-caption px-2 py-0.5 rounded-full">身體舒緩</span>
+</div>
+<div class="space-y-1 mb-lg text-on-surface-variant font-body-md">
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="counter_5">counter_5</span> 次數</span>
+<span class="font-semibold">6 次</span>
+</div>
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span> 期限</span>
+<span>180 天</span>
+</div>
+<div class="flex justify-between items-baseline mt-md pt-md border-t border-dashed border-outline-variant">
+<span class="text-label-md text-outline">單價 $2,500</span>
+<span class="text-primary font-h2 text-h2">$15,000</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low rounded-full p-1 border border-outline-variant">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-primary hover:bg-primary-fixed transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="font-h3 text-h3 px-4">1</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary-container transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[16/9] w-full rounded-lg mb-md overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="The interior of a modern, upscale beauty salon with ergonomic chairs and sleek minimalist decor. The lighting is bright and airy with large windows. Subtle pink and gold decorative elements are strategically placed to evoke a sense of elegance and professionalism typical of the Wonder Sky international aesthetics brand." src="https://lh3.googleusercontent.com/aida/ADBb0uj0JQGRkm-EH6zpMniIH0qNc5khGKJVKYV9V9ipe_E0gPw0XTR4b8AH8ZbzSGKshxK2xjULCIap8Wi5RHznBr4_0V3tSLIczm_zDGtARZMi945ztPWBzu64ZyVe5maetMh81mR16sQSZF_nvssnPDCnKUyTvfsVyk6ns3j_shkTyM9HE5tq58yVc8BiGgvWQAvwDOo8N4C9NM_KIEFkg5-k28sm9CiM0j2YmioHMCPvWX9v-hRDnDMUS8CT4CsFPmjN-OZsvcXpZw"/>
+</div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-h3 text-on-background">胜肽抗皺提拉專案券</h3>
+<span class="bg-secondary-fixed text-on-secondary-container text-caption font-caption px-2 py-0.5 rounded-full">高階抗老</span>
+</div>
+<div class="space-y-1 mb-lg text-on-surface-variant font-body-md">
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="counter_5">counter_5</span> 次數</span>
+<span class="font-semibold">12 次</span>
+</div>
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span> 期限</span>
+<span>540 天</span>
+</div>
+<div class="flex justify-between items-baseline mt-md pt-md border-t border-dashed border-outline-variant">
+<span class="text-label-md text-outline">單價 $3,200</span>
+<span class="text-primary font-h2 text-h2">$38,400</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low rounded-full p-1 border border-outline-variant">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-primary hover:bg-primary-fixed transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="font-h3 text-h3 px-4">0</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary-container transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[16/9] w-full rounded-lg mb-md overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up of a relaxation area in a luxury wellness clinic. A small table holds a cup of herbal tea next to a sprig of lavender. The background is softly blurred with warm, ambient lighting, creating an inviting and therapeutic mood for clients seeking relaxation and premium beauty services." src="https://lh3.googleusercontent.com/aida/ADBb0uhAf24gp8pJt-E_-y1G_1Y83rsKKTDPil6QAC7ZT3hEEAp1Y2pxQQHMW4nBYJPxoDeolXwLOfnHT7zQtw96wCxa_NBPGOn7A4OWAJKKLvgvX1oWYnB0D8xBac_jfvF15G21RmV-ZEFSZbnmo-6EYSMx4CU_lsZqskpMXZE4MAZcxB978foC_rVFGuRpK-VHNQWiaTp0tJ_ddBtRJMUPkRVpa2Cgvdexk_MMYhFssk2yoMgZJ6sZjveNf0zsC7O6GjzaVBvo8AId0g"/>
+</div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-h3 text-on-background">能量石溫感熱摩券</h3>
+<span class="bg-secondary-fixed text-on-secondary-container text-caption font-caption px-2 py-0.5 rounded-full">特殊療癒</span>
+</div>
+<div class="space-y-1 mb-lg text-on-surface-variant font-body-md">
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="counter_5">counter_5</span> 次數</span>
+<span class="font-semibold">5 次</span>
+</div>
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span> 期限</span>
+<span>120 天</span>
+</div>
+<div class="flex justify-between items-baseline mt-md pt-md border-t border-dashed border-outline-variant">
+<span class="text-label-md text-outline">單價 $2,200</span>
+<span class="text-primary font-h2 text-h2">$11,000</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low rounded-full p-1 border border-outline-variant">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-primary hover:bg-primary-fixed transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="font-h3 text-h3 px-4">0</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary-container transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[16/9] w-full rounded-lg mb-md overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A digitally-rendered artistic visualization of water ripples and glowing energy particles, symbolizing hydration and skin rejuvenation. The color palette consists of iridescent pinks and deep purples, aligning with the high-tech, data-driven aesthetic of a modern B2B beauty SaaS platform." src="https://lh3.googleusercontent.com/aida/ADBb0ugWqXxyCQNeAfHcYZJgDkeN4amsXMc4wo66AGFa02D1TQh_HEtbcRgKRm7jWCQBBBO65X6ziviWe0zU8YfuTClLP0rD-KsWiW4FS-pE2DqPkwpgfy9VrnLFtil509HwQL3EPOxew4uvj2J8C6u8X2TZejtm97Y6dGDUKO2qNzmtcCjzTUfcqXItxnveTrDIY_icEzYdcat7C6xp2VajB061xPqDT-day7kDpcmoOhdZnfgJjGv60b5YuooGT6Of13_R8qotfhtM"/>
+</div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-h3 text-on-background">深層毛孔淨化療程券</h3>
+<span class="bg-secondary-fixed text-on-secondary-container text-caption font-caption px-2 py-0.5 rounded-full">清潔修復</span>
+</div>
+<div class="space-y-1 mb-lg text-on-surface-variant font-body-md">
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="counter_5">counter_5</span> 次數</span>
+<span class="font-semibold">8 次</span>
+</div>
+<div class="flex justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span> 期限</span>
+<span>270 天</span>
+</div>
+<div class="flex justify-between items-baseline mt-md pt-md border-t border-dashed border-outline-variant">
+<span class="text-label-md text-outline">單價 $1,500</span>
+<span class="text-primary font-h2 text-h2">$12,000</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low rounded-full p-1 border border-outline-variant">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-primary hover:bg-primary-fixed transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="font-h3 text-h3 px-4">2</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary-container transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm hover:shadow-md transition-shadow group border-dashed border-2 flex flex-col items-center justify-center opacity-60">
+<span class="material-symbols-outlined text-[48px] text-outline mb-sm" data-icon="more_horiz">more_horiz</span>
+<p class="text-on-surface-variant font-body-md">更多商品券項目</p>
+<p class="text-caption font-caption text-outline">請調整篩選條件或聯絡門店</p>
+</div>
+</div>
+</main>
+<!-- 3. Footer Summary Area -->
+<footer class="p-lg bg-surface-container-high border-t border-outline-variant flex flex-col sm:flex-row justify-between items-center gap-md">
+<div class="flex items-center gap-lg">
+<div class="text-on-surface-variant">
+<span class="font-body-md text-body-md">已選擇：</span>
+<span class="font-h3 text-h3 text-primary">3 項商品券</span>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div class="text-on-surface-variant">
+<span class="font-body-md text-body-md">總金額：</span>
+<span class="font-h2 text-h2 text-primary">$27,000</span>
+</div>
+</div>
+<div class="flex items-center gap-md w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-xl py-sm rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary-fixed transition-all active:scale-95">
+                        取消
+                    </button>
+<button class="flex-1 sm:flex-none px-xl py-sm rounded-full bg-primary text-white font-label-md text-label-md hover:bg-primary-container shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-sm">
+                        下一步：確認付款
+                        <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

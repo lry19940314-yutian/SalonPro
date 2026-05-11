@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+    }
+    .bottom-sheet-gradient {
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 248, 1) 100%);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#9ff87d",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#300247",
+            "background": "#fff8f8",
+            "secondary-fixed": "#f6d9ff",
+            "surface-bright": "#fff8f8",
+            "on-secondary-container": "#6c4082",
+            "inverse-surface": "#392d32",
+            "tertiary-fixed-dim": "#84db64",
+            "on-primary-fixed": "#3d0025",
+            "error-container": "#ffdad6",
+            "primary": "#a22c70",
+            "secondary-fixed-dim": "#e8b3fe",
+            "on-tertiary-fixed-variant": "#145200",
+            "on-tertiary-container": "#f8ffee",
+            "tertiary": "#1c6b00",
+            "primary-fixed-dim": "#ffafd3",
+            "outline": "#88717a",
+            "surface-container-highest": "#f1dee3",
+            "on-tertiary-fixed": "#042100",
+            "surface-dim": "#e8d5db",
+            "inverse-primary": "#ffafd3",
+            "on-primary-container": "#fffbff",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#fff0f4",
+            "on-primary-fixed-variant": "#861259",
+            "inverse-on-surface": "#ffecf1",
+            "error": "#ba1a1a",
+            "surface-variant": "#f1dee3",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#a52f72",
+            "primary-container": "#c14689",
+            "on-surface-variant": "#554149",
+            "surface": "#fff8f8",
+            "secondary": "#794c8f",
+            "on-secondary-fixed-variant": "#603475",
+            "outline-variant": "#dac0c9",
+            "surface-container-high": "#f7e3e9",
+            "on-error-container": "#93000a",
+            "on-background": "#23191d",
+            "surface-container": "#fde9ef",
+            "primary-fixed": "#ffd8e7",
+            "tertiary-container": "#328517",
+            "secondary-container": "#e8b3fe",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#23191d",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontSize": {
+            "h3": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-100 min-h-screen flex flex-col justify-end">
+<!-- Background Content Mock (Simulation of underlying page) -->
+<div class="fixed inset-0 z-0 p-container-padding opacity-40 select-none">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary-fixed"></div>
+<div class="flex-1 space-y-2">
+<div class="h-4 w-32 bg-outline-variant rounded"></div>
+<div class="h-3 w-48 bg-outline-variant rounded opacity-50"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-32 bg-white rounded-xl shadow-sm"></div>
+<div class="h-32 bg-white rounded-xl shadow-sm"></div>
+</div>
+</div>
+<!-- Deep Gray Semi-transparent Overlay -->
+<div class="fixed inset-0 bg-slate-900/60 z-10 backdrop-blur-sm"></div>
+<!-- Bottom Sheet Container -->
+<div class="relative z-20 w-full max-w-md mx-auto h-[90vh] bottom-sheet-gradient rounded-t-[32px] shadow-2xl flex flex-col animate-in slide-in-from-bottom duration-500 overflow-hidden">
+<!-- Drag Handle -->
+<div class="w-12 h-1.5 bg-outline-variant/40 rounded-full mx-auto mt-3 mb-1"></div>
+<!-- Header Section -->
+<header class="relative px-6 py-4 flex items-center justify-center">
+<h1 class="font-h1 text-on-surface">Lulu 購買商品券</h1>
+<button class="absolute right-6 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-secondary-container text-on-secondary-container hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl font-bold">close</span>
+</button>
+</header>
+<!-- Filter & Control Area -->
+<div class="px-6 space-y-4 pb-4">
+<!-- Full Width Search -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-full font-body-md text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="搜尋商品券名稱..." type="text"/>
+</div>
+<div class="space-y-3">
+<!-- Store Dropdown -->
+<div class="relative">
+<label class="block font-label-md text-on-surface-variant mb-1 ml-1">所屬門店</label>
+<div class="relative group">
+<select class="w-full appearance-none pl-4 pr-10 py-3 bg-surface-container-highest border border-outline-variant rounded-xl font-body-md text-on-surface focus:ring-2 focus:ring-primary outline-none cursor-pointer">
+<option>台北忠孝旗艦店</option>
+<option>台中西屯門市</option>
+<option>高雄左營門市</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Search Categories Link -->
+<div class="flex justify-between items-center px-1">
+<span class="font-label-md text-on-surface-variant">快速篩選類別</span>
+<a class="flex items-center gap-1 font-label-md text-primary hover:underline" href="#">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+            進階分類搜尋
+          </a>
+</div>
+</div>
+</div>
+<!-- Main Content Area: Scrollable Product List -->
+<div class="flex-1 overflow-y-auto px-6 pb-24 space-y-4">
+<!-- Card 1 -->
+<div class="bg-white border border-outline-variant rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow active:scale-[0.98] transition-transform duration-200">
+<div class="flex p-4 gap-4">
+<div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A luxurious aesthetic clinic interior with soft warm lighting and minimalist decor. The room features a comfortable medical-grade lounge chair in a pristine white color, surrounded by high-end skincare products on glass shelves. The mood is tranquil and professional, emphasizing a premium beauty treatment experience for the B2B sector." src="https://lh3.googleusercontent.com/aida/ADBb0uhGI3dPgfcHAm-Y5FAjbQYcZ8iYbwbu9u2O7XFo8akZYeBoOIUmCi-bipkZU3uFpYpJqzOvx7rm4oIcf4r1QiNWKpEARyksY3FyYTCx4FNoLCRU2BDpcy9kdYVJ854lmjZt8ktHMKR2-jnuHF7I1nV8CU_R67FVCBY9a8S0asv_GebUwe7LR6NNwq3vqPq8dz8lIYm7V_9bvPG-XvVrymeHTeEbs1DfYFUBhUt1O-iS6VUBIDxq4qhIJmL2M7NnA3uoN3sgg9dDbw"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-h3 text-on-surface">7D 海芙拉 3 堂</h3>
+<p class="font-caption text-outline">高階拉提療程 | 適用於全臉</p>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-primary font-h2">NT$ 12,800</span>
+<span class="font-caption text-outline line-through">NT$ 15,000</span>
+</div>
+</div>
+</div>
+<div class="px-4 py-3 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="bg-tertiary-container/10 text-tertiary px-2 py-0.5 rounded font-label-md">折扣 85 折</span>
+<span class="font-label-md text-on-surface-variant">單價 NT$ 4,266</span>
+</div>
+<!-- Stepper -->
+<div class="flex items-center bg-white border border-outline-variant rounded-full px-1 py-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-primary hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<input class="w-10 text-center font-h3 border-none focus:ring-0 p-0 bg-transparent" type="number" value="0"/>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-outline-variant rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow active:scale-[0.98] transition-transform duration-200">
+<div class="flex p-4 gap-4">
+<div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a sophisticated medical skincare device with a sleek metallic finish and glowing LED indicators. The device is placed on a white marble counter with soft pink orchid flowers in the background, creating a feminine yet clinical atmosphere. High-key lighting illuminates the scene, highlighting the advanced technology and hygienic environment." src="https://lh3.googleusercontent.com/aida/ADBb0ughNWB2ZuKF8gJ_yPtG5yvT-U1ApZlWMLcxyEspCjks4EMNkj42A8vWbv5L_XitNuQgKRDLtFIzVScDTfq6rM14Uw5OxIQtDs_0_9xGSXiP6tKUxBsd8dos-pLXhmvEOogDBOzzkdQ7hVz_tOCs8C12fVQ8xjaXyllg7kPfiJs8upa_d0_jeuFCHb_Q8AtolaByb-ac9PVwcB9lMZw4dPPRJUf0mi7TIajYsCYACJ-X4Y1tK2mYlRlZZpG6PcfV4Wa20W2ucWvq7w"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-h3 text-on-surface">煥膚保濕精華導入 5 堂</h3>
+<p class="font-caption text-outline">基礎保養 | 加強肌膚保水度</p>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-primary font-h2">NT$ 8,800</span>
+<span class="font-caption text-outline line-through">NT$ 11,000</span>
+</div>
+</div>
+</div>
+<div class="px-4 py-3 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="bg-tertiary-container/10 text-tertiary px-2 py-0.5 rounded font-label-md">折扣 8 折</span>
+<span class="font-label-md text-on-surface-variant">單價 NT$ 1,760</span>
+</div>
+<div class="flex items-center bg-white border border-outline-variant rounded-full px-1 py-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-primary hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<input class="w-10 text-center font-h3 border-none focus:ring-0 p-0 bg-transparent" type="number" value="1"/>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-outline-variant rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow active:scale-[0.98] transition-transform duration-200 opacity-80">
+<div class="flex p-4 gap-4">
+<div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale" data-alt="A designer reception desk of a modern beauty salon made of polished light wood and white stone. The background is a vertical garden wall with lush green ferns and subtle accent lighting. The overall feel is organic, high-end, and welcoming, representing a luxury spa and wellness center focused on client comfort and natural beauty." src="https://lh3.googleusercontent.com/aida/ADBb0uj0JQGRkm-EH6zpMniIH0qNc5khGKJVKYV9V9ipe_E0gPw0XTR4b8AH8ZbzSGKshxK2xjULCIap8Wi5RHznBr4_0V3tSLIczm_zDGtARZMi945ztPWBzu64ZyVe5maetMh81mR16sQSZF_nvssnPDCnKUyTvfsVyk6ns3j_shkTyM9HE5tq58yVc8BiGgvWQAvwDOo8N4C9NM_KIEFkg5-k28sm9CiM0j2YmioHMCPvWX9v-hRDnDMUS8CT4CsFPmjN-OZsvcXpZw"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-h3 text-on-surface">亮白美顏 SPA 10 堂</h3>
+<span class="bg-surface-dim text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full">售完</span>
+</div>
+<p class="font-caption text-outline">深層放鬆 | 亮白膚色專用</p>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-primary font-h2">NT$ 19,900</span>
+<span class="font-caption text-outline line-through">NT$ 25,000</span>
+</div>
+</div>
+</div>
+<div class="px-4 py-3 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="bg-tertiary-container/10 text-tertiary px-2 py-0.5 rounded font-label-md">折扣 79 折</span>
+<span class="font-label-md text-on-surface-variant">單價 NT$ 1,990</span>
+</div>
+<div class="flex items-center bg-white border border-outline-variant rounded-full px-1 py-1 opacity-50 cursor-not-allowed">
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-outline" disabled="">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<span class="w-10 text-center font-h3 text-outline">0</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-outline-variant text-white" disabled="">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-white/80 backdrop-blur-lg border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-on-surface-variant">已選擇 1 項商品</span>
+<span class="font-h2 text-primary">NT$ 8,800</span>
+</div>
+<button class="px-8 py-3 bg-primary text-white rounded-full font-h3 shadow-lg shadow-primary/20 flex items-center gap-2 active:scale-95 transition-transform">
+        下一步：確認清單
+        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

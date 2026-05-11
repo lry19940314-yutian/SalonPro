@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wonder Sky 國際美妍館 - 點數相關設定</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffd8e7",
+                    "on-secondary-container": "#6f6069",
+                    "secondary-fixed-dim": "#d4c2cb",
+                    "on-surface": "#1b1c1c",
+                    "on-secondary-fixed": "#23181f",
+                    "primary-container": "#c14689",
+                    "on-tertiary-fixed-variant": "#51443b",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f6f3f2",
+                    "on-primary-fixed": "#3d0025",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-background": "#1b1c1c",
+                    "tertiary-fixed-dim": "#d6c3b6",
+                    "outline-variant": "#dac0c9",
+                    "on-tertiary-fixed": "#241912",
+                    "on-primary-fixed-variant": "#861259",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-tint": "#a52f72",
+                    "surface": "#fbf9f8",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#f1dde7",
+                    "on-primary-container": "#fffbff",
+                    "inverse-primary": "#ffafd3",
+                    "primary-fixed-dim": "#ffafd3",
+                    "inverse-surface": "#303030",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dcd9d9",
+                    "tertiary": "#68594f",
+                    "primary": "#a22c70",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fbf9f8",
+                    "on-secondary-fixed-variant": "#50434b",
+                    "secondary-container": "#f1dde7",
+                    "surface-container": "#f0eded",
+                    "on-surface-variant": "#554149",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#685a63",
+                    "background": "#fbf9f8",
+                    "outline": "#88717a",
+                    "tertiary-fixed": "#f3dfd1",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#817267",
+                    "surface-container-high": "#eae8e7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "xl": "64px",
+                    "md": "24px",
+                    "margin": "32px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "h2": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "button": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "h3": ["Manrope"],
+                    "h1": ["Manrope"]
+            },
+            "fontSize": {
+                    "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fbf9f8; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .switch-toggle:checked ~ .switch-dot { transform: translateX(100%); background-color: white; }
+        .switch-toggle:checked ~ .switch-bg { background-color: #a22c70; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen text-on-surface">
+<!-- Top Bar (Mobile Optimized) -->
+<header class="h-16 flex items-center justify-between px-4 sticky top-0 bg-surface/80 backdrop-blur-md z-50 shadow-sm">
+<div class="flex items-center gap-sm">
+<button class="p-2 hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+<h1 class="font-h3 text-h3 text-on-surface">Wonder Sky</h1>
+</div>
+<div class="flex items-center gap-sm">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">47</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Lulu Profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a sophisticated woman with a warm, friendly smile, set against a soft-focus minimalist salon background. The lighting is high-key and elegant, reflecting a light luxury beauty service aesthetic. The color palette is composed of soft whites, neutral Morandi tones, and subtle hints of warm pink." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3jR202_QdJpaCW3Uf27YKWdsnXyDtHB4au9NkcZU2f_tbCtrkOY9xWcW_nIbPz478Fc9_AlMPDjB2TXy0G2pR1ZZYFoYllDn5c6IfTsPsrrFWMp57AXGIOwHTlgHDAEAlC_cEjAjqZKfykgkUQ8nkq5pN36U0IwYfCcjL32d2-31fJ46KfUHWsWoecOMW--_jNemZqvn9WbxKfgeFWh7TVMh3OW9Z4Wy5ci-r6I5bQZcJY2E9c03LG5o3AxLnEuIxSe_0XeiXkJdB"/>
+</div>
+</div>
+</header>
+<!-- Breadcrumb -->
+<nav class="px-4 py-3 flex items-center gap-xs font-label-caps text-label-caps text-on-surface-variant">
+<span>設定</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">各項設定</span>
+</nav>
+<!-- Horizontal Tabs (Scrollable) -->
+<div class="border-b border-surface-container overflow-x-auto hide-scrollbar bg-surface sticky top-16 z-40">
+<div class="flex px-4 whitespace-nowrap">
+<button class="px-4 py-4 font-button text-button text-on-surface-variant hover:text-primary transition-colors">支付設定</button>
+<button class="px-4 py-4 font-button text-button text-on-surface-variant hover:text-primary transition-colors">出單紙設定</button>
+<button class="px-4 py-4 font-button text-button text-on-surface-variant hover:text-primary transition-colors">iPad相關設定</button>
+<button class="px-4 py-4 font-button text-button text-primary border-b-2 border-primary">點數相關設定</button>
+<button class="px-4 py-4 font-button text-button text-on-surface-variant hover:text-primary transition-colors">薪資相關設定</button>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-4 pb-32">
+<div class="space-y-gutter max-w-md mx-auto">
+<!-- Section: 基本設定 -->
+<section class="bg-surface-container-lowest p-md rounded-lg shadow-sm">
+<div class="flex items-center gap-xs mb-md border-l-4 border-primary pl-3">
+<h2 class="font-h2 text-h2 text-on-surface">基本設定</h2>
+</div>
+<!-- Select Input -->
+<div class="space-y-base">
+<label class="font-label-caps text-label-caps text-on-surface-variant">積點機制</label>
+<div class="relative">
+<select class="w-full h-14 pl-4 pr-10 bg-surface-container-low border-none rounded-full font-body-md text-on-surface focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>不開放積點</option>
+<option>開放積點</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="mt-lg pt-4 border-t border-surface-variant/50">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4">以實收現金為基準，贈送點數(含信用卡及第三方支付)</p>
+<div class="grid grid-cols-1 gap-sm">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between">
+<span class="font-body-md">每消費</span>
+<div class="flex items-center gap-xs">
+<input class="w-16 bg-transparent border-b border-outline text-center font-h3 text-primary focus:border-primary outline-none" type="number" value="1"/>
+<span class="font-body-md">元</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between">
+<span class="font-body-md">可以換</span>
+<div class="flex items-center gap-xs">
+<input class="w-16 bg-transparent border-b border-outline text-center font-h3 text-primary focus:border-primary outline-none" type="number" value="1"/>
+<span class="font-body-md">點</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: 積點設定 -->
+<section class="bg-surface-container-lowest p-md rounded-lg shadow-sm">
+<div class="flex items-center gap-xs mb-md border-l-4 border-primary pl-3">
+<h2 class="font-h2 text-h2 text-on-surface">積點設定</h2>
+</div>
+<!-- Input Item -->
+<div class="mb-gutter space-y-base">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">加入會員贈送點數</label>
+<input class="w-full h-14 px-4 bg-surface-container-low border-none rounded-full font-body-md text-on-surface focus:ring-2 focus:ring-primary/20" placeholder="500" type="number"/>
+</div>
+<!-- Switch Item -->
+<div class="space-y-md">
+<div class="flex items-center justify-between py-2">
+<div class="space-y-1">
+<p class="font-body-lg font-semibold">服務積點</p>
+<p class="text-label-caps text-on-surface-variant">來店消費服務是否能積點</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only switch-toggle" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full switch-bg transition-colors"></div>
+<div class="absolute left-1 top-1 bg-on-surface-variant w-4 h-4 rounded-full transition-transform switch-dot"></div>
+</label>
+</div>
+<div class="flex items-center justify-between py-2">
+<div class="space-y-1">
+<p class="font-body-lg font-semibold">商品積點</p>
+<p class="text-label-caps text-on-surface-variant">來店購買商品是否能積點</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only switch-toggle" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full switch-bg transition-colors"></div>
+<div class="absolute left-1 top-1 bg-on-surface-variant w-4 h-4 rounded-full transition-transform switch-dot"></div>
+</label>
+</div>
+<div class="flex items-center justify-between py-2">
+<div class="space-y-1">
+<p class="font-body-lg font-semibold">儲值積點</p>
+<p class="text-label-caps text-on-surface-variant">儲值是否能積點</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only switch-toggle" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full switch-bg transition-colors"></div>
+<div class="absolute left-1 top-1 bg-on-surface-variant w-4 h-4 rounded-full transition-transform switch-dot"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Usage Rules Bento Card -->
+<section class="bg-primary-fixed/30 p-md rounded-lg border border-primary-fixed/50">
+<div class="flex items-center gap-sm mb-4">
+<span class="material-symbols-outlined text-primary">info</span>
+<h3 class="font-h3 text-h3 text-on-primary-fixed-variant">使用規則提示</h3>
+</div>
+<ul class="space-y-sm font-body-md text-on-surface-variant">
+<li class="flex items-start gap-xs">
+<span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+<span>只限於開單使用，<span class="text-primary font-bold">購買商品券、優惠券不能積點</span>。</span>
+</li>
+<li class="flex items-start gap-xs">
+<span class="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></span>
+<span>『使用』儲值金付款是否能積點，請至細項設定。</span>
+</li>
+</ul>
+</section>
+</div>
+</main>
+<!-- Bottom Action Bar (Fixed) -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-surface/90 backdrop-blur-lg border-t border-surface-container-high z-50">
+<button class="w-full h-14 bg-primary text-on-primary font-button text-button rounded-full shadow-lg active:scale-95 transition-transform">
+            儲存變更
+        </button>
+</div>
+</body></html>

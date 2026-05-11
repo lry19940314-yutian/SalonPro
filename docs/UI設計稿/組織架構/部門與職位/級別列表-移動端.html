@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0eded",
+                        "secondary": "#685a63",
+                        "secondary-fixed": "#f1dde7",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "outline-variant": "#dac0c9",
+                        "outline": "#88717a",
+                        "primary-container": "#c14689",
+                        "primary-fixed": "#ffd8e7",
+                        "tertiary-container": "#817267",
+                        "surface": "#fbf9f8",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e4e2e1",
+                        "inverse-primary": "#ffafd3",
+                        "tertiary": "#68594f",
+                        "surface-dim": "#dcd9d9",
+                        "surface-bright": "#fbf9f8",
+                        "surface-tint": "#a52f72",
+                        "on-tertiary-fixed": "#241912",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffafd3",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed": "#3d0025",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-fixed": "#23181f",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "on-surface-variant": "#554149",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-container": "#6f6069",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#861259",
+                        "secondary-container": "#f1dde7",
+                        "on-background": "#1b1c1c",
+                        "tertiary-fixed": "#f3dfd1",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "inverse-on-surface": "#f3f0f0",
+                        "surface-container-high": "#eae8e7",
+                        "primary": "#a22c70",
+                        "background": "#fbf9f8",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#50434b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "base": "8px",
+                        "margin": "32px",
+                        "lg": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "button": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-color: #fbf9f8;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin h-16 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-sm">
+<h1 class="font-h2 text-h2 font-bold text-primary">Wonder Sky 國際美妍館</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 duration-200">notifications</button>
+<button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 duration-200">receipt_long</button>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="pt-20 pb-28 px-margin flex flex-col gap-md">
+<!-- Breadcrumbs & Add Button Container -->
+<div class="flex justify-between items-center">
+<nav class="flex items-center gap-1 text-on-surface-variant font-label-caps opacity-70">
+<span class="cursor-pointer">組織架構</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="cursor-pointer">部門與職位</span>
+</nav>
+<button class="flex items-center gap-xs bg-primary text-on-primary px-sm py-2 rounded-full font-button shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>新增</span>
+</button>
+</div>
+<!-- Horizontal Tab Bar (Scrollable) -->
+<section class="flex overflow-x-auto gap-md py-xs -mx-margin px-margin no-scrollbar">
+<button class="flex-none text-on-surface-variant py-2 border-b-2 border-transparent transition-all">部門總覽</button>
+<button class="flex-none text-on-surface-variant py-2 border-b-2 border-transparent transition-all">職位設定</button>
+<button class="flex-none text-primary font-bold border-b-2 border-primary pb-1 transition-all">級別</button>
+<button class="flex-none text-on-surface-variant py-2 border-b-2 border-transparent transition-all">權限分配</button>
+<button class="flex-none text-on-surface-variant py-2 border-b-2 border-transparent transition-all">晉升規則</button>
+</section>
+<!-- Level Card List -->
+<section class="flex flex-col gap-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0_10px_30px_rgba(162,44,112,0.05)] border border-outline-variant/20 flex flex-col gap-md">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-h3 text-h3 text-primary">首席美容總監</h2>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-caps px-2 py-1 rounded-full">L10</span>
+</div>
+<div class="flex flex-col gap-1 text-secondary opacity-80 text-body-md">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>建立時間：2023-10-12 14:30</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span>更新時間：2024-01-20 09:15</span>
+</div>
+</div>
+</div>
+<!-- Card Footer Buttons -->
+<div class="grid grid-cols-2 gap-sm border-t border-outline-variant/30 pt-md">
+<button class="flex items-center justify-center gap-xs py-3 rounded-full bg-secondary-fixed text-on-secondary-fixed font-button active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+<span>編輯</span>
+</button>
+<button class="flex items-center justify-center gap-xs py-3 rounded-full bg-surface-container-high text-error font-button active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+<span>刪除</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0_10px_30px_rgba(162,44,112,0.05)] border border-outline-variant/20 flex flex-col gap-md">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-h3 text-h3 text-primary">高級美妍技師</h2>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-caps px-2 py-1 rounded-full">L5</span>
+</div>
+<div class="flex flex-col gap-1 text-secondary opacity-80 text-body-md">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>建立時間：2023-11-05 10:00</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span>更新時間：2023-11-05 10:00</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm border-t border-outline-variant/30 pt-md">
+<button class="flex items-center justify-center gap-xs py-3 rounded-full bg-secondary-fixed text-on-secondary-fixed font-button active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+<span>編輯</span>
+</button>
+<button class="flex items-center justify-center gap-xs py-3 rounded-full bg-surface-container-high text-error font-button active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+<span>刪除</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-lg p-md shadow-[0_10px_30px_rgba(162,44,112,0.05)] border border-outline-variant/20 flex flex-col gap-md opacity-90">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-h3 text-h3 text-primary">實習美容助手</h2>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-caps px-2 py-1 rounded-full">L1</span>
+</div>
+<div class="flex flex-col gap-1 text-secondary opacity-80 text-body-md">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>建立時間：2024-02-01 16:45</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span>更新時間：2024-02-15 11:20</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm border-t border-outline-variant/30 pt-md">
+<button class="flex items-center justify-center gap-xs py-3 rounded-full bg-secondary-fixed text-on-secondary-fixed font-button active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+<span>編輯</span>
+</button>
+<button class="flex items-center justify-center gap-xs py-3 rounded-full bg-surface-container-high text-error font-button active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+<span>刪除</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Aesthetic Empty/End Placeholder -->
+<div class="flex flex-col items-center justify-center py-xl opacity-30 gap-sm">
+<span class="material-symbols-outlined text-[48px]">spa</span>
+<p class="font-label-caps">已顯示所有級別設定</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Contextual) -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-surface/95 backdrop-blur-xl border-t border-outline-variant/20 px-margin flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-xs text-on-primary font-bold bg-primary px-6 py-2 rounded-full transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="text-[10px] font-label-caps">組織架構</span>
+</div>
+<div class="flex flex-col items-center gap-xs text-secondary opacity-70 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined">badge</span>
+<span class="text-[10px] font-label-caps">職員管理</span>
+</div>
+<div class="flex flex-col items-center gap-xs text-secondary opacity-70 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-[10px] font-label-caps">業績報表</span>
+</div>
+<div class="flex flex-col items-center gap-xs text-secondary opacity-70 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-label-caps">庫存管理</span>
+</div>
+<div class="flex flex-col items-center gap-xs text-secondary opacity-70 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-label-caps">系統設置</span>
+</div>
+</nav>
+<!-- Floating Action Button Suppression - Not rendered on details/list pages according to rules unless context is perfect -->
+</body></html>

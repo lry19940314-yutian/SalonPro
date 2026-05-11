@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f8",
+                        "primary-fixed-dim": "#ffafd3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffd8e7",
+                        "surface-bright": "#fbf9f8",
+                        "on-secondary-fixed-variant": "#50434b",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#861259",
+                        "secondary-container": "#f1dde7",
+                        "tertiary-fixed": "#f3dfd1",
+                        "on-secondary-container": "#6f6069",
+                        "on-surface": "#1b1c1c",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-surface-variant": "#554149",
+                        "tertiary": "#68594f",
+                        "inverse-on-surface": "#f3f0f0",
+                        "error": "#ba1a1a",
+                        "primary": "#a22c70",
+                        "surface-container": "#f0eded",
+                        "secondary-fixed-dim": "#d4c2cb",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#d6c3b6",
+                        "on-secondary-fixed": "#23181f",
+                        "on-background": "#1b1c1c",
+                        "secondary-fixed": "#f1dde7",
+                        "tertiary-container": "#817267",
+                        "outline-variant": "#dac0c9",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "on-tertiary-fixed": "#241912",
+                        "inverse-primary": "#ffafd3",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "primary-container": "#c14689",
+                        "on-primary-fixed": "#3d0025",
+                        "surface-container-high": "#eae8e7",
+                        "outline": "#88717a",
+                        "on-primary-container": "#fffbff",
+                        "surface-tint": "#a52f72",
+                        "inverse-surface": "#303030",
+                        "surface-dim": "#dcd9d9",
+                        "secondary": "#685a63"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "xl": "64px",
+                        "md": "24px",
+                        "margin": "32px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Bar (Mobile Reference) -->
+<header class="fixed top-0 w-full z-40 flex justify-between items-center px-6 py-3 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">menu</span>
+<h1 class="font-h2 text-h2 text-on-surface font-bold">Wonder sky</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary font-bold">L</div>
+</div>
+</header>
+<!-- Main Content Background (Mocking the Underlying Screen) -->
+<main class="pt-20 px-6 pb-24">
+<div class="space-y-6">
+<section class="p-6 bg-surface-container-lowest rounded-lg shadow-sm border border-outline-variant/20">
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-h3 text-h3 text-on-surface">票券管理</h2>
+<span class="material-symbols-outlined text-on-surface-variant">arrow_forward_ios</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low rounded-lg text-center">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">我的儲值金</p>
+<p class="font-h2 text-h2 text-primary">$0</p>
+</div>
+<div class="p-4 bg-primary-container/10 rounded-lg text-center border border-primary/20">
+<p class="font-label-caps text-label-caps text-primary mb-1">點數及贈品</p>
+<p class="font-h2 text-h2 text-primary">0 點</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Mobile Drawer Overlay -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-50 flex flex-col justify-end">
+<!-- Bottom Sheet Drawer -->
+<div class="bg-surface-container-lowest w-full max-h-[92%] rounded-t-xl shadow-lg flex flex-col overflow-hidden">
+<!-- Drawer Header -->
+<div class="relative px-6 py-5 border-b border-outline-variant/30 text-center">
+<div class="w-12 h-1.5 bg-surface-variant rounded-full mx-auto mb-4"></div>
+<h3 class="font-h3 text-h3 text-on-surface font-bold">Lulu點數記錄</h3>
+<button class="absolute right-6 top-7 text-primary hover:bg-surface-container rounded-full p-1 transition-colors">
+<span class="material-symbols-outlined text-[28px]">close</span>
+</button>
+</div>
+<!-- Drawer Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+<!-- Data Overview Cards -->
+<div class="grid grid-cols-1 gap-3">
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<p class="font-label-caps text-label-caps text-on-surface-variant tracking-widest mb-1">積點</p>
+<p class="font-h1 text-h1 text-primary">0 點</p>
+</div>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<p class="font-label-caps text-label-caps text-on-surface-variant tracking-widest mb-1">兌換</p>
+<p class="font-h1 text-h1 text-on-surface-variant">0 點</p>
+</div>
+</div>
+<!-- Filter Controls -->
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant ml-2">時間區間</label>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-full border border-outline-variant/40">
+<span class="font-body-md text-body-md text-on-surface-variant">請選擇日期範圍</span>
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant ml-2">獲取/兌換</label>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-full border border-outline-variant/40">
+<span class="font-body-md text-body-md text-on-surface">全部</span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Empty State -->
+<div class="flex flex-col items-center justify-center py-12 px-8 space-y-4">
+<div class="w-48 h-48 bg-surface-container-low rounded-full flex items-center justify-center mb-2">
+<img alt="Empty Search" class="w-24 h-24 opacity-60" data-alt="A minimalist and soft-focused 3D illustration of a magnifying glass inspecting a blank document, representing an empty search state. The style follows a light luxury aesthetic with a palette of soft pinks, warm greys, and pure whites. The lighting is diffused and bright, creating a clean, professional corporate look for a wellness SaaS application. Soft shadows add depth to the serene composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMsLq3Aupvg1F0kcCX7HJxGPzAiXkBKhiX-c-RDYa9aNIg0x7Log2lbKoyfVwG6T0FBkUjrLxhOqK5lq5TFx9Fd5EtvQ5rQt_088zJvpqNNWJe2i2h8wUIta0_w3bZlmLGxPyg2DeRzu24iQSjtfUIOrj8-XIBibdxeq37qtqChuEZ5FlVe4ZXnJt4QpSl5hAN37wXwr6lrmXfNU4wtALBSdQ_FKaLz1emjRMXF9YR_7bC5wy4b0oy2qN79FZ8J31j29XHUgf8cS0-"/>
+</div>
+<p class="font-h3 text-h3 text-on-surface-variant text-center">找不到任何資料</p>
+<button class="font-button text-button text-primary px-6 py-2 rounded-full hover:bg-primary/5 border border-primary transition-all">
+                        清空搜尋條件
+                    </button>
+</div>
+</div>
+<!-- Bottom Action (Optional) -->
+<div class="p-6 bg-surface-container-lowest border-t border-outline-variant/20">
+<button class="w-full bg-primary text-on-primary font-button text-button py-4 rounded-full shadow-md active:scale-95 transition-transform">
+                    確認
+                </button>
+</div>
+</div>
+</div>
+</body></html>

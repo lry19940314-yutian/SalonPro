@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Wonder sky - 新增職位</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#c84c8f',
+              light: '#fdf2f8',
+              dark: '#a63d75',
+            },
+          },
+          borderRadius: {
+            'xl': '1rem',
+            '2xl': '1.5rem',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-animations">
+    /* Custom style for the iOS-like toggle switch */
+    .switch-checkbox:checked + .switch-label {
+      background-color: #c84c8f;
+    }
+    .switch-checkbox:checked + .switch-label .switch-dot {
+      transform: translateX(1.5rem);
+    }
+    
+    /* Hide scrollbar but keep functionality */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Active state for touch elements */
+    .touch-active:active {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-slate-800 antialiased overflow-x-hidden">
+<!-- BEGIN: Navigation Header -->
+<header class="sticky top-0 z-50 bg-white border-b border-gray-100 px-4 py-3 flex items-center justify-between shadow-sm" data-purpose="main-header">
+<div class="flex items-center gap-3">
+<button aria-label="Menu" class="p-2 -ml-2 rounded-full touch-active">
+<svg class="h-6 w-6 text-slate-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<span class="font-bold text-brand text-lg tracking-tight">Wonder sky</span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="p-2 rounded-full touch-active">
+<svg class="h-6 w-6 text-slate-500" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="w-8 h-8 rounded-full bg-brand-light border border-brand/20 flex items-center justify-center">
+<span class="text-brand text-xs font-medium">JD</span>
+</div>
+</div>
+</header>
+<!-- END: Navigation Header -->
+<main class="pb-32" data-purpose="page-content">
+<!-- BEGIN: Breadcrumbs -->
+<nav class="px-5 py-4 flex items-center text-sm font-medium text-slate-500" data-purpose="breadcrumbs">
+<span>組織架構</span>
+<svg class="w-4 h-4 mx-1.5 text-slate-400" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd"></path>
+</svg>
+<span class="text-slate-900">新增職位</span>
+</nav>
+<!-- END: Breadcrumbs -->
+<div class="px-4 space-y-4">
+<!-- BEGIN: Section Basic Information -->
+<section class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden" data-purpose="basic-info-card">
+<div class="p-5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-1 h-5 bg-brand rounded-full"></div>
+<h2 class="text-brand font-bold">基本資訊</h2>
+</div>
+<button aria-label="Collapse" class="text-slate-400">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div class="px-5 pb-6 space-y-6">
+<!-- Position Name Input -->
+<div class="relative">
+<label class="block text-sm font-medium text-slate-500 mb-1 ml-1" for="pos-name">名稱</label>
+<input class="w-full h-12 px-4 rounded-xl border-gray-200 focus:border-brand focus:ring-brand text-slate-700 transition-colors" id="pos-name" name="pos-name" placeholder="請輸入職位名稱" type="text"/>
+</div>
+<!-- Attribute Dropdown -->
+<div>
+<label class="block text-sm font-medium text-slate-500 mb-1 ml-1" for="attribute">抽成屬性</label>
+<div class="relative">
+<select class="w-full h-12 px-4 appearance-none rounded-xl border-gray-200 focus:border-brand focus:ring-brand text-slate-700 bg-white" id="attribute">
+<option selected="" value="designer">設計師</option>
+<option value="other">其他</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+<svg class="h-5 w-5 text-slate-400" fill="currentColor" viewbox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path></svg>
+</div>
+</div>
+<p class="mt-2 text-xs text-slate-400 leading-relaxed">設計師屬性為 店內營收來源，計算業績</p>
+</div>
+<!-- Assistant Dropdown -->
+<div>
+<label class="block text-sm font-medium text-slate-500 mb-1 ml-1" for="assistant">選擇扣成本之協助人員</label>
+<div class="relative">
+<select class="w-full h-12 px-4 appearance-none rounded-xl border-gray-200 focus:border-brand focus:ring-brand text-slate-700 bg-white" id="assistant">
+<option disabled="" selected="" value="">請選擇</option>
+<option value="asst1">全職助理</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+<svg class="h-5 w-5 text-slate-400" fill="currentColor" viewbox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path></svg>
+</div>
+</div>
+<p class="mt-2 text-xs text-slate-400 leading-relaxed">協助人員之業績及提成，將會是此職位的薪資/業績扣項(根據設定)</p>
+</div>
+<!-- Service Categories -->
+<div class="pt-2 border-t border-gray-50">
+<h3 class="text-slate-800 font-bold mb-4">可服務分類</h3>
+<div class="flex justify-center mb-4">
+<a class="inline-flex items-center gap-2 text-brand font-medium min-h-[44px] px-6 rounded-full border border-brand/20 bg-brand/5 touch-active" href="#">
+<span>可服務全部</span>
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+<p class="text-center text-xs text-slate-400">沒有選擇，代表可以服務全部項目</p>
+</div>
+</div>
+</section>
+<!-- END: Section Basic Information -->
+<!-- BEGIN: Section Commission Settings -->
+<section class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden" data-purpose="commission-settings-card">
+<div class="p-5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-1 h-5 bg-brand rounded-full"></div>
+<h2 class="text-brand font-bold">服務業績抽成設定</h2>
+</div>
+<button aria-label="Collapse" class="text-slate-400">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div class="px-5 pb-6 space-y-6">
+<!-- Tabbed Interface -->
+<div class="relative border-b border-gray-100 flex gap-8 overflow-x-auto no-scrollbar scroll-smooth">
+<button class="relative pb-2 font-medium text-brand">
+              A級
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand"></span>
+</button>
+<button class="pb-2 font-medium text-slate-400">B級</button>
+<button class="pb-2 font-medium text-slate-400">C級</button>
+</div>
+<!-- Add Button -->
+<button class="w-full flex items-center justify-center gap-2 h-12 rounded-full border border-gray-200 text-slate-600 shadow-sm touch-active font-medium">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            新增設定
+          </button>
+</div>
+</section>
+<!-- END: Section Commission Settings -->
+<!-- BEGIN: Section Reward Settings -->
+<section class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden" data-purpose="reward-settings-card">
+<div class="p-5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-1 h-5 bg-brand rounded-full"></div>
+<h2 class="text-brand font-bold">獎懲設定</h2>
+</div>
+<button aria-label="Collapse" class="text-slate-400">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div class="px-5 pb-8">
+<div class="flex items-center gap-4">
+<div class="flex items-center">
+<input class="switch-checkbox hidden" id="toggle-reward" type="checkbox"/>
+<label class="switch-label relative block w-11 h-6 bg-gray-200 rounded-full cursor-pointer transition-all duration-300" for="toggle-reward">
+<span class="switch-dot absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-300"></span>
+</label>
+</div>
+<span class="font-medium text-slate-700">啟用</span>
+</div>
+</div>
+</section>
+<!-- END: Section Reward Settings -->
+</div>
+</main>
+<!-- BEGIN: Sticky Bottom Actions -->
+<footer class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-gray-100 px-4 py-4" data-purpose="footer-actions">
+<div class="max-w-md mx-auto flex gap-3">
+<button class="flex-1 h-12 rounded-full border border-brand text-brand font-medium touch-active bg-white transition-colors">
+        取消
+      </button>
+<button class="flex-1 h-12 rounded-full border border-brand text-brand font-medium touch-active bg-white transition-colors">
+        重設
+      </button>
+<button class="flex-[2] h-12 rounded-full bg-brand text-white font-bold shadow-lg shadow-brand/20 touch-active hover:bg-brand-dark transition-colors">
+        儲存
+      </button>
+</div>
+<!-- iPhone Home Indicator Spacer -->
+<div class="h-6 w-full"></div>
+</footer>
+<!-- END: Sticky Bottom Actions -->
+</body></html>
